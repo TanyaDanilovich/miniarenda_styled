@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import isValidProp from "@emotion/is-prop-valid";
 import {StyleSheetManager} from "styled-components";
+import {GlobalStyle} from './styles/GlobalStyle.styled';
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement,
@@ -11,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <StyleSheetManager shouldForwardProp = {(propName) => isValidProp(propName)}>
-            {/*<GlobalStyle />*/}
+            <GlobalStyle />
             <App/>
         </StyleSheetManager>
     </React.StrictMode>,
