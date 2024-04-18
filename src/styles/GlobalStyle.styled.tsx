@@ -60,7 +60,10 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
+    
   }
+
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
   ul,

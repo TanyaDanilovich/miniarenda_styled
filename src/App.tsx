@@ -21,6 +21,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import {theme} from './styles/Theme.styled';
 import {Header} from './features/header/Header';
+import React from 'react';
+import {Footer} from './features/footer/Footer';
 
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
             {/*<p>Бла бла блаv Бла бла бла - P</p>*/}
             {/*<FontAwesomeIcon icon = {faMapMarkerAlt} size = {'4x'} color = {theme.colors.primary}/>*/}
             <Header/>
-
+            <Footer/>
         </div>
     );
 }

@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import isValidProp from "@emotion/is-prop-valid";
-import {StyleSheetManager} from "styled-components";
+import {ThemeProvider} from "styled-components";
 import {GlobalStyle} from './styles/GlobalStyle.styled';
-import { ThemeProvider } from 'styled-components'
 import {theme} from './styles/Theme.styled';
 
 const root = ReactDOM.createRoot(
@@ -13,11 +11,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
-        <StyleSheetManager shouldForwardProp = {(propName) => isValidProp(propName)}>
-            <GlobalStyle />
+        <ThemeProvider theme = {theme}>
+            {/*<StyleSheetManager shouldForwardProp = {(propName) => isValidProp(propName)}>*/}
+            <GlobalStyle/>
             <App/>
-        </StyleSheetManager>
+            {/*</StyleSheetManager>*/}
         </ThemeProvider>
     </React.StrictMode>,
 );
