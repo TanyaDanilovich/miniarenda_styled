@@ -5,6 +5,7 @@ import {Flex} from '../../shared/styled/Flex';
 import {HideContent} from '../../shared/styled/HideContent';
 import {outline} from '../../styles/mixins';
 import image from '../../assets/images/footer/_DSC3958.jpg'
+import {ImageContainer} from '../../shared/styled/ImageContainer';
 
 type props = {};
 export const Footer = ({}: props) => {
@@ -27,10 +28,12 @@ export const Footer = ({}: props) => {
 
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>НАША ТЕХНИКА</h5>
-
-                        <img src = {image} alt = "" width = "300"/>
-                        <a href = "#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
-                        <a href = "#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
+                        <ImageContainer>
+                            <img src = {image} alt = "" width = "300"/></ImageContainer>
+                        <Flex direction = {"column"}>
+                            <a href = "#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
+                            <a href = "#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
+                        </Flex>
                     </StyledFooterItem>
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>РАЗДЕЛЫ</h5>
@@ -92,11 +95,8 @@ export const StyledFooter = styled.footer<{}>`
   color: ${({theme}) => theme.colors.white};`;
 
 
-export const StyledFooterItem = styled.div
-    < {color : string} > `
-${
-        ({color}) => outline(3, color ||"red")
-    }
+export const StyledFooterItem = styled.div<{ $color?: string }>`
+  ${({$color}) => outline(3, $color)}
 `;
 
 export const FooterFlexWrapper = styled.div<{}>`
