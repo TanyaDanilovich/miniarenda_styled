@@ -5,16 +5,20 @@ import reportWebVitals from "./reportWebVitals";
 import isValidProp from "@emotion/is-prop-valid";
 import {StyleSheetManager} from "styled-components";
 import {GlobalStyle} from './styles/GlobalStyle.styled';
+import { ThemeProvider } from 'styled-components'
+import {theme} from './styles/Theme.styled';
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement,
 );
 root.render(
     <React.StrictMode>
+        <ThemeProvider theme={theme}>
         <StyleSheetManager shouldForwardProp = {(propName) => isValidProp(propName)}>
             <GlobalStyle />
             <App/>
         </StyleSheetManager>
+        </ThemeProvider>
     </React.StrictMode>,
 );
 

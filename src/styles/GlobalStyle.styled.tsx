@@ -1,5 +1,4 @@
 import {createGlobalStyle} from "styled-components";
-import {theme} from './Theme.styled';
 import {font} from './mixins';
 
 
@@ -15,17 +14,17 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     ${font({
-      family: `${theme.fonts.family.base}, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif`
+      family: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',    'Droid Sans', 'Helvetica Neue', 'sans-serif'"
     })}
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${theme.colors.font_dark};
+    color: ${({theme}) => theme.colors.dark};
     line-height: 1.2;
   }
 
   h1 {
-    ${font({family: theme.fonts.family.accent, size: theme.fonts.size.h1, weight: theme.fonts.weight.bold})}
+
   }
 
   h2,
@@ -34,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-family: inherit;
-    font-weight: ${theme.fonts.weight.medium};
+    font-weight: ${({theme}) => theme.fonts.weight.medium};
     color: inherit;
   }
 

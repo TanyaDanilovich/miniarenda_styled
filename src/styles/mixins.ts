@@ -1,5 +1,5 @@
-import {theme} from './Theme.styled';
 import {css} from 'styled-components';
+
 
 export const border = (width: number = 1, color: string = "red") =>
     `border: ${width}px solid ${color};`;
@@ -7,17 +7,15 @@ export const border = (width: number = 1, color: string = "red") =>
 export const outline = (width: number = 1, color: string = "red") =>
     `border: ${width}px solid ${color};`;
 
-export const font = ({color = theme.colors.font_dark,
-                         size = theme.fonts.size.base,
-                         family=theme.fonts.family.base,
-                         weight=theme.fonts.weight.regular
-                     }) => css`
 
-  color: ${color};
-  font-size: ${size};
-  font-family: ${family};
-  font-weight: ${weight};
+type Props = { fontColor?: string, size?: string, family?: string, weight?: number }
+
+
+export const font = ({fontColor, size, family, weight}: Props) => css`
+  color: ${({theme}) => fontColor ?? theme.colors.dark};
+  font-size: ${({theme}) => size ?? theme.fonts.size.base};
+  font-family: ${({theme}) => family ?? theme.fonts.family.base};
+  font-weight: ${({theme}) => weight ?? theme.fonts.weight.regular};
 `;
-
 
 

@@ -1,17 +1,28 @@
 import {BREAKPOINTS} from "../common/constants";
 import {getResponsiveSize} from "../common/utils/getResponsiveSize";
-import {DefaultTheme} from 'styled-components';
+import {MyDefaultTheme} from 'styled-components';
 
-export const theme: DefaultTheme = {
+
+export const theme: MyDefaultTheme = {
     colors: {
+
         primary: "#f68800",
         secondary: "#cd7100",
-        bg_dark: "#363f3e",
-        bg_light: "#f5f5f5",
+        bg_primary: "#030e27",
+        white: "#ffffff",
+        white_smoke: "#f5f5f5",
+        gainsboro: "#e9ecef",
+        lightGray: "#D3D3D3",
+        silver: "#C0C0C0",
+        gray: "#A9A9A9",
+        dimGray: "#808080",
+        darkGray: "#696969",
+        lightSlateGray: "#778899",
+        slateGray: "#708090",
+        darkSlateGray: "#657674",
+        dark: "#363f3e",
+        black: "#000000"
 
-        font_dark: "#363f3e",
-        font_medium: "#535372",
-        font_light: "#fff",
     },
 
     fonts: {
