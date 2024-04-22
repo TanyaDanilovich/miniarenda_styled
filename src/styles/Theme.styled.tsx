@@ -363,7 +363,7 @@ export const theme: MyDefaultTheme = {
     duration: {
         long: "1s",
         middle: "0.5s",
-        short: "250ms",
+        short: "0.25s",
     },
 
     order: {
