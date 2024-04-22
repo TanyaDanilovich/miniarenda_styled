@@ -3,9 +3,15 @@ import {Logo} from '../../shared/Logo';
 import {Navigation} from '../navigation/Navigation';
 import {HeaderTop} from './HeaderTop';
 import {Container} from '../../shared/styled/Container';
+import {BurgerButton} from '../BurgerButton';
+import {useState} from 'react';
 
 type props = {};
 export const Header = ({}: props) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const isOpenToggler = () => setIsOpen((prev) => !prev);
+
     return (
 
 
@@ -16,6 +22,7 @@ export const Header = ({}: props) => {
                 <Logo/>
                 <Navigation/>
                 <HeaderTop/>
+                <BurgerButton isOpen = {isOpen} callback = {isOpenToggler}/>
 
 
             </Container>
@@ -26,7 +33,7 @@ export const Header = ({}: props) => {
 };
 
 export const StyledHeader = styled.header<{}>`
-  background-color: ${props => props.theme.colors.bg_primary};
+  background-color: ${({theme}) => theme.colors.bg_primary};
 `;
 
 

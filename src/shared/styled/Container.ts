@@ -13,7 +13,7 @@ export const Container = styled.div<ContainerProps>`
    display: grid;
    align-self: center;
    position: relative;
-   ${outline(5, "green")} 
+      // ${outline(5, "green")} 
            //   @media ${({theme}) => theme.media.desktop} {
            //   max-width: ${({theme}) => theme.breakpoints.computer};
        // }

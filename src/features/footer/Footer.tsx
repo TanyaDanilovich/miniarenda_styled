@@ -30,14 +30,14 @@ export const Footer = ({}: props) => {
                         <h5>НАША ТЕХНИКА</h5>
                         <ImageContainer>
                             <img src = {image} alt = "" width = "300"/></ImageContainer>
-                        <Flex direction = {"column"}>
+                        <Flex $direction = {"column"}>
                             <a href = "#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
                             <a href = "#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
                         </Flex>
                     </StyledFooterItem>
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>РАЗДЕЛЫ</h5>
-                        <Flex direction = {"column"}>
+                        <Flex $direction = {"column"}>
                             <a href = "#servises">Услуги</a>
                             <a href = "#technic">Наша техника</a>
                             <a href = "#portfolio">Наши работы</a>
@@ -48,7 +48,7 @@ export const Footer = ({}: props) => {
                     </StyledFooterItem>
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>НАШИ УСЛУГИ</h5>
-                        <Flex direction = {"column"}>
+                        <Flex $direction = {"column"}>
                             <a href = "#burenie-svaj">Бурение свай под фундамент</a>
                             <a href = "#burenie-zabor">Бурение отверстий под столбы забора</a>
                             <a href = "#burenie-svet">Бурение отверстий под столбы освещения</a>
@@ -91,7 +91,7 @@ export const Footer = ({}: props) => {
 };
 
 export const StyledFooter = styled.footer<{}>`
-  background-color: ${({theme}) => theme.colors.dark};
+  background-color: ${({theme}) => theme.colors.bg_primary};
   color: ${({theme}) => theme.colors.white};`;
 
 
