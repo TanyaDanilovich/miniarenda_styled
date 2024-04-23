@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import {Logo} from '../../shared/Logo';
-import {Navigation} from '../navigation/Navigation';
+import {Logo} from '../../shared/styled/Logo';
+import {Navigation} from '../../shared/styled/navigation/Navigation';
 import {HeaderTop} from './HeaderTop';
 import {Container} from '../../shared/styled/Container';
-import {BurgerButton} from '../BurgerButton';
+import {BurgerButton} from '../../shared/styled/BurgerButton';
 import {useState} from 'react';
 
 type props = {};

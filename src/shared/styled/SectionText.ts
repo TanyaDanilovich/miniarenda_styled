@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from '../../styles/Theme.styled';
+import {theme} from '../../app/styles/Theme.styled';
 
 
 export const SectionText = styled.p<{ $fontSize?: string }>`

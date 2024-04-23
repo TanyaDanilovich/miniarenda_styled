@@ -3,7 +3,7 @@ import styled, {useTheme} from "styled-components";
 import {Container} from '../../shared/styled/Container';
 import {Flex} from '../../shared/styled/Flex';
 import {HideContent} from '../../shared/styled/HideContent';
-import {outline} from '../../styles/mixins';
+import {outline} from '../../app/styles/mixins';
 import image from '../../assets/images/footer/_DSC3958.jpg'
 import {ImageContainer} from '../../shared/styled/ImageContainer';
 

@@ -1,15 +1,15 @@
 import styled, {css} from "styled-components";
+import {ButtonsType} from '../../types/common.types';
 
 
 type LinkAsButtonProps = {
-    $monocolor?: boolean,
-    $bicolor?: boolean
+    $type: ButtonsType,
 };
 
-const transition=css`
-  transition: all ${({theme})=>theme.duration.short} linear;
+const transition = css`
+  transition: all ${({theme}) => theme.duration.short} linear;
 `
-export const StyledButton = styled.a<LinkAsButtonProps>`
+export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
 
   display: inline-block;
   text-align: center;
@@ -17,7 +17,7 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
   font-size: 1rem;
   font-weight: 500;
   padding-block: 5px;
-  padding-right:0.5rem;
+  padding-right: 0.5rem;
   padding-left: 1.5rem;
   color: ${({theme}) => theme.colors.white};
   background-color: ${({theme}) => theme.colors.primary};
@@ -33,8 +33,8 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
     padding-left: 3px;
   }
 
-  ${({$monocolor}) =>
-          $monocolor && css`
+  ${({$type}) =>
+          $type === "read more" && css`
             &:after {
               content: " ";
               position: absolute;
@@ -60,8 +60,8 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
       ${transition}
     }
 
-    ${({$monocolor}) =>
-            $monocolor && css`
+    ${({$type}) =>
+            $type === "read more" && css`
               &:after {
                 background-color: ${({theme}) => theme.colors.secondary};
               }`

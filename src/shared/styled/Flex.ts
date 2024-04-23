@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 type FlexItemProp = {
     $direction?: string;
@@ -9,6 +9,7 @@ type FlexItemProp = {
     $columnGap?: string;
     $rowGap?: string;
     $grow?: string;
+    $style?:string
 };
 
 export type StyledFlexWrapperProps = FlexItemProp;
@@ -22,5 +23,6 @@ export const Flex = styled.div<StyledFlexWrapperProps>`
   flex-grow: ${({$grow}) => $grow || "0"};
   column-gap: ${({$gap, $columnGap}) => $gap || $columnGap || "0"};
   row-gap: ${({$gap, $rowGap}) => $gap || $rowGap || "0"};
-  height: 100%;
+  ${({$style})=>$style && css`${$style}`};
+  //height: 100%;
 `;

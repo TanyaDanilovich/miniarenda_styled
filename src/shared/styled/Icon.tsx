@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import iconSprite from "../assets/svg/spriteWeather.svg";
+import iconSprite from "../../assets/svg/spriteWeather.svg";
 
 
 type props = {

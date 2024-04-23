@@ -1,9 +1,63 @@
-import {BREAKPOINTS} from "../shared/constants";
-import {getResponsiveSize} from "../shared/utils/getResponsiveSize";
+import {BREAKPOINTS} from "../../shared/constants";
+import {getResponsiveSize} from "../../shared/utils/getResponsiveSize";
 import {MyDefaultTheme} from 'styled-components';
 
 
 export const theme: MyDefaultTheme = {
+
+
+    fonts: {
+        family: {
+            base: "Poppins",
+            accent: "Roboto",
+        },
+        weight: {
+            regular: 400,
+            medium: 500,
+            semiBold: 600,
+            bold: 700
+        },
+        size: {
+            base: "16px",
+            h1: getResponsiveSize(20, 65, 700, 1200,),
+            h2: getResponsiveSize(38, 38),
+            h3: getResponsiveSize(28.125, 22),
+            h4: getResponsiveSize(30, 70),
+            p: getResponsiveSize(16.875, 20),
+        },
+    },
+
+    breakpoints: BREAKPOINTS,
+
+    media: {
+        smallMobile: `screen and (max-width:${BREAKPOINTS.smallMobile})`,
+        mobile: `screen and (max-width:${BREAKPOINTS.mobile})`,
+        tablet: `screen and (max-width:${BREAKPOINTS.tablet})`,
+        computer: `screen and (max-width:${BREAKPOINTS.computer})`,
+        desktop: `screen and (max-width:${BREAKPOINTS.desktop})`,
+        widescreen: `screen and (max-width:${BREAKPOINTS.widescreen})`,
+        extraWidescreen: `screen and (max-width:${BREAKPOINTS.extraWidescreen})`,
+    },
+
+    // padding: {
+    //   section: "clamp(50px, 10dvh, 100px)",
+    //   sectionTitle: {
+    //     left: SECTION_TITLE_PADDING.left,
+    //     beforeWidth: SECTION_TITLE_PADDING.beforeWidth,
+    //     beforeLeft: `calc(${SECTION_TITLE_PADDING.left} - ${SECTION_TITLE_PADDING.beforeWidth})`,
+    //   },
+    // },
+    duration: {
+        long: "1s",
+        middle: "0.5s",
+        short: "0.25s",
+    },
+
+    order: {
+        header: 50,
+        modal: 100,
+    },
+    shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)"},
     colors: {
 
         primary: "#f68800",
@@ -21,7 +75,7 @@ export const theme: MyDefaultTheme = {
         slateGray: "#708090",
         darkSlateGray: "#657674",
         dark: "#363f3e",
-        black: "#000000",
+        black: "#030e27",
 
 
         "red": {
@@ -319,56 +373,6 @@ export const theme: MyDefaultTheme = {
         }
 
 
-    },
-
-    fonts: {
-        family: {
-            base: "Poppins",
-            accent: "Roboto",
-        },
-        weight: {
-            regular: 400,
-            medium: 500,
-            bold: 700
-        },
-        size: {
-            base: "16px",
-            h1: getResponsiveSize(20, 65, 700, 1200,),
-            h2: getResponsiveSize(28.125, 22),
-            h3: getResponsiveSize(30, 70),
-            p: getResponsiveSize(16.875, 20),
-        },
-    },
-
-    breakpoints: BREAKPOINTS,
-
-    media: {
-        smallMobile: `screen and (max-width:${BREAKPOINTS.smallMobile})`,
-        mobile: `screen and (max-width:${BREAKPOINTS.mobile})`,
-        tablet: `screen and (max-width:${BREAKPOINTS.tablet})`,
-        computer: `screen and (max-width:${BREAKPOINTS.computer})`,
-        desktop: `screen and (max-width:${BREAKPOINTS.desktop})`,
-        widescreen: `screen and (max-width:${BREAKPOINTS.widescreen})`,
-        extraWidescreen: `screen and (max-width:${BREAKPOINTS.extraWidescreen})`,
-    },
-
-    // padding: {
-    //   section: "clamp(50px, 10dvh, 100px)",
-    //   sectionTitle: {
-    //     left: SECTION_TITLE_PADDING.left,
-    //     beforeWidth: SECTION_TITLE_PADDING.beforeWidth,
-    //     beforeLeft: `calc(${SECTION_TITLE_PADDING.left} - ${SECTION_TITLE_PADDING.beforeWidth})`,
-    //   },
-    // },
-    duration: {
-        long: "1s",
-        middle: "0.5s",
-        short: "0.25s",
-    },
-
-    order: {
-        header: 50,
-        modal: 100,
     },
 
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {outline} from '../../styles/mixins';
+import {outline} from '../../../app/styles/mixins';
 
 type props = {};
 export const Navigation = ({}: props) => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import logo from '../assets/icons/logo.svg'
-import {outline} from '../styles/mixins';
+import logo from '../../assets/icons/logo.svg'
+import {outline} from '../../app/styles/mixins';
 
 
 type props = {
