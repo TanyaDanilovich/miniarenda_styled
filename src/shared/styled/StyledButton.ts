@@ -16,9 +16,9 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 500;
-  padding-block: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 2rem;
+  padding-block: 5px;
+  padding-right:0.5rem;
+  padding-left: 1.5rem;
   color: ${({theme}) => theme.colors.white};
   background-color: ${({theme}) => theme.colors.primary};
   position: relative;
@@ -30,7 +30,7 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
     position: relative;
     display: inline-block;
     z-index: 100;
-    padding-left: 0.5rem;
+    padding-left: 3px;
   }
 
   ${({$monocolor}) =>
@@ -43,7 +43,7 @@ export const StyledButton = styled.a<LinkAsButtonProps>`
               width: 100%;
               height: 100%;
               top: 0;
-              right: -2.3rem;
+              right: -1.9rem;
               transform-origin: bottom left;
               -ms-transform: skew(-20deg, 0deg);
               transform: skew(-20deg, 0deg);
