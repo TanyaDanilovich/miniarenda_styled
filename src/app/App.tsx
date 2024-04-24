@@ -5,7 +5,7 @@ import {
     faPlusCircle,
     faSoap,
     faBars,
-    faLinkSlash,
+
     faExternalLinkSquare,
     faAngleDown,
     faFaceGrinStars,

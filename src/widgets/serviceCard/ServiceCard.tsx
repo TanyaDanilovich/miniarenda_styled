@@ -1,12 +1,13 @@
 import styled, {useTheme} from 'styled-components';
 import {ImageContainer} from '../../shared/styled/ImageContainer';
 import {Button} from '../../shared/ui/button/Button';
-import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {Flex} from '../../shared/styled/Flex';
 import React from 'react';
 import {StyledBox} from '../../shared/styled/Box';
+import {fullAbsoluteElement, plainTransition} from '../../app/styles/mixins';
+import {HoverIcons} from '../../shared/ui/hoverIcons/HoverIcons';
 
 
 export type ServiceCardData = {
@@ -21,7 +22,8 @@ export const ServiceCard = ({title, text, image}: props) => {
     return (
         <StyledServiceCard>
             <ImageContainer>
-                <img src = {image.src} alt = {image.alt}/>
+                <img src = {image.src} alt = {image.alt} />
+                <HoverIcons secondLink = {""} firstLink = {""}/>
             </ImageContainer>
 
             <Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
@@ -39,22 +41,50 @@ export const ServiceCard = ({title, text, image}: props) => {
             <StyledBox $marginTop = {"1rem"}>
                 <Button type = {'read more'}/>
             </StyledBox>
-        </StyledServiceCard>);
+        </StyledServiceCard>
+    );
 };
 
-export const StyledServiceCard = styled.div<{}>`
+export const StyledServiceCard = styled.div <{}>`
   padding: 15px;
   box-shadow: ${({theme}) => theme.shadow.full};
 
   a {
     text-transform: uppercase;
   }
+
+  & div:first-child:before {
+    ${fullAbsoluteElement()}
+    ${plainTransition()};
+    z-index: 3;
+  }
+
+  & div:first-child:hover:before {
+    opacity: 1;
+  }
+
+  & div:first-child {
+    img {
+      transform: scale(1);
+      ${plainTransition()};
+    }
+  }
+
+  & div:first-child:hover {
+    img {
+      transform: scale(1.2);
+      ${plainTransition()};
+    }
+  }
+
 `;
 
-export const ServiceCardTitle = styled.h3<{}>`
+export const ServiceCardTitle = styled.h3
+    < {} > `
 
 `;
 
-export const ServiceCardText = styled.p<{}>`
+export const ServiceCardText = styled.p
+    < {} > `
 
 `

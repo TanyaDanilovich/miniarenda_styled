@@ -1,14 +1,13 @@
 import styled, {css} from "styled-components";
 import {ButtonsType} from '../../types/common.types';
+import {plainTransition} from '../../../app/styles/mixins';
 
 
 type LinkAsButtonProps = {
     $type: ButtonsType,
 };
 
-const transition = css`
-  transition: all ${({theme}) => theme.duration.short} linear;
-`
+
 export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
 
   display: inline-block;
@@ -25,7 +24,7 @@ export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
   overflow: hidden;
   z-index: 10;
 
-  ${transition}
+  ${plainTransition()}
   & span:nth-child(2) {
     position: relative;
     display: inline-block;
@@ -49,7 +48,7 @@ export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
               transform: skew(-20deg, 0deg);
               border-left: 2px solid ${({theme}) => theme.colors.white};
               background-color: ${({theme}) => theme.colors.bg_primary};
-              ${transition}
+              ${plainTransition()}
             }`
   }
   &:hover {
@@ -57,7 +56,7 @@ export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
 
     .fa-circle-plus {
       color: ${({theme}) => theme.colors.white};
-      ${transition}
+      ${plainTransition()}
     }
 
     ${({$type}) =>
@@ -68,7 +67,7 @@ export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
     }
     & span:nth-child(1) {
       background-color: ${({theme}) => theme.colors.bg_primary};
-      ${transition}
+      ${plainTransition()}
     }
   }
 `;

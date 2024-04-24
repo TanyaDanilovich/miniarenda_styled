@@ -17,6 +17,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   color: ${({$color, theme}) => $color || theme.colors.dark};
   background: ${({$background, theme}) => $background || theme.colors.lightGray};
   opacity: ${({$opacity}) => $opacity || '1'};
+  position: relative;
 
   img {
     display: block;
