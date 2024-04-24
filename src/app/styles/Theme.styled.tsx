@@ -60,7 +60,7 @@ export const theme: MyDefaultTheme = {
     shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)"},
     colors: {
 
-        primary: "#f68800",
+        primary: "#fd5d14",
         secondary: "#cd7100",
         bg_primary: "#030e27",
         white: "#ffffff",

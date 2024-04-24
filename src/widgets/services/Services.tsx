@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Container} from '../../shared/styled/Container';
 import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {ServiceCard, ServiceCardData} from '../serviceCard/ServiceCard';
+import {ServiceCard, ServiceCardData} from './serviceCard/ServiceCard';
 import {Flex} from '../../shared/styled/Flex';
 
 type props = {

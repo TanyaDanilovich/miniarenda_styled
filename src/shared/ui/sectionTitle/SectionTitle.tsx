@@ -6,9 +6,12 @@ export const SectionTitle = ({title, text}: props) => {
 
     return (
         <StyledSectionTitleContainer>
-            <StyledSectionTitle>{title}</StyledSectionTitle>
+            <StyledSectionTitle>
+                {title}
+            </StyledSectionTitle>
             <p>{text}</p>
-        </StyledSectionTitleContainer>);
+        </StyledSectionTitleContainer>)
+        ;
 };
 
 export const StyledSectionTitleContainer = styled.div<{}>`

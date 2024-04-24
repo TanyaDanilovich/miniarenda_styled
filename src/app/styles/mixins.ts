@@ -31,9 +31,9 @@ export const plainTransition = (duration?: string) => css`
   transition: all ${({theme}) => duration ?? theme.duration.short} linear;
 `
 
-export const fullAbsoluteElement = (opasity: number = 0.4) => css`
+export const fullAbsoluteElement = (opacity: number = 0.4) => css`
 
-  background: rgba(0, 0, 0, ${opasity});
+  background: rgba(0, 0, 0, ${opacity});
   bottom: 0;
   content: "";
   left: 0;

@@ -1,13 +1,13 @@
 import styled, {useTheme} from 'styled-components';
-import {ImageContainer} from '../../shared/styled/ImageContainer';
-import {Button} from '../../shared/ui/button/Button';
+import {ImageContainer} from '../../../shared/styled/ImageContainer';
+import {Button} from '../../../shared/ui/button/Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
-import {Flex} from '../../shared/styled/Flex';
+import {Flex} from '../../../shared/styled/Flex';
 import React from 'react';
-import {StyledBox} from '../../shared/styled/Box';
-import {fullAbsoluteElement, plainTransition} from '../../app/styles/mixins';
-import {HoverIcons} from '../../shared/ui/hoverIcons/HoverIcons';
+import {StyledBox} from '../../../shared/styled/Box';
+import {fullAbsoluteElement, plainTransition} from '../../../app/styles/mixins';
+import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 
 
 export type ServiceCardData = {
@@ -22,7 +22,7 @@ export const ServiceCard = ({title, text, image}: props) => {
     return (
         <StyledServiceCard>
             <ImageContainer>
-                <img src = {image.src} alt = {image.alt} />
+                <img src = {image.src} alt = {image.alt}/>
                 <HoverIcons secondLink = {""} firstLink = {""}/>
             </ImageContainer>
 
@@ -33,7 +33,7 @@ export const ServiceCard = ({title, text, image}: props) => {
 
 
             <ServiceCardTitle>
-                {title}
+                <a href = {''}>{title}</a>
             </ServiceCardTitle>
             <ServiceCardText>
                 {text}
@@ -45,7 +45,7 @@ export const ServiceCard = ({title, text, image}: props) => {
     );
 };
 
-export const StyledServiceCard = styled.div <{}>`
+export const StyledServiceCard = styled.article <{}>`
   padding: 15px;
   box-shadow: ${({theme}) => theme.shadow.full};
 
@@ -79,9 +79,14 @@ export const StyledServiceCard = styled.div <{}>`
 
 `;
 
-export const ServiceCardTitle = styled.h3
-    < {} > `
+export const ServiceCardTitle = styled.h3 <{}>`
+  color: ${({theme}) => theme.colors.black};
+  ${plainTransition()};
 
+  &:hover {
+    color: ${({theme}) => theme.colors.primary};
+    ${plainTransition()};
+  }
 `;
 
 export const ServiceCardText = styled.p
