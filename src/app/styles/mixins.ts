@@ -69,3 +69,7 @@ export const ImageHover = () => css`
     }
   }
 `
+
+export const sectionMargin = css`
+  margin: 3rem auto;
+`

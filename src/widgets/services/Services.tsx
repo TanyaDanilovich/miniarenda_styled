@@ -4,6 +4,7 @@ import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard, ServiceCardData} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import {sectionMargin} from '../../app/styles/mixins';
 
 type props = {
     data: ServiceCardData[]
@@ -31,7 +32,7 @@ export const Services = ({data}: props) => {
 
 
 export const StyledServices = styled.section<{}>`
-
+  ${sectionMargin}
 `
 
 

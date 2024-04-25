@@ -4,6 +4,7 @@ import React, {useId} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {MachineryCard, machineryCardData} from './machneryCard/MachneryCard';
+import {sectionMargin} from '../../app/styles/mixins';
 
 type props = {
     data: machineryCardData[]
@@ -34,8 +35,10 @@ export const Machineries = ({data}: props) => {
 
 
 export const StyledMachineries = styled.section<{}>`
+  padding-block: 3rem;
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
+  ${sectionMargin}
 `
 
 

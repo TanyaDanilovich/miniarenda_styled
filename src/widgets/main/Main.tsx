@@ -4,7 +4,7 @@ import {Services} from '../services/Services';
 import {servicesData} from '../../shared/lib/servicesData';
 import {Machineries} from '../machineries/Machineries';
 import {machineriesData} from '../../shared/lib/machineriesData';
-
+import {Delivery} from '../delivery/Delivery';
 
 
 type props = {};
@@ -13,10 +13,9 @@ export const Main = ({}: props) => {
 
 
         <StyledMain>
-            {/*<Button type = {"read more"}/>*/}
-            {/*<Button type = {"colored"}/>*/}
-            <Services data={servicesData}/>
-            <Machineries data={machineriesData}/>
+            <Services data = {servicesData}/>
+            <Machineries data = {machineriesData}/>
+            <Delivery/>
 
 
         </StyledMain>
@@ -25,7 +24,7 @@ export const Main = ({}: props) => {
     );
 };
 
-export const StyledMain = styled.footer<{}>`
+export const StyledMain = styled.main<{}>`
 `
 
 
