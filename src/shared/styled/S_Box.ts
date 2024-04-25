@@ -21,7 +21,7 @@ type Props = {
 };
 
 
-export const StyledBox = styled.div<Props>`
+export const S_Box = styled.div<Props>`
 
   min-height: fit-content;
   height: ${({$height}) => $height || "100%"};

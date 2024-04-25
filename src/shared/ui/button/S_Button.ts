@@ -8,7 +8,7 @@ type LinkAsButtonProps = {
 };
 
 
-export const StyledLinkAsButton = styled.a<LinkAsButtonProps>`
+export const S_LinkAsButton = styled.a<LinkAsButtonProps>`
 
   display: inline-block;
   text-align: center;

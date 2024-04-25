@@ -1,5 +1,5 @@
 import img2 from '../../assets/images/servises/servises_2.jpg'
-import {machineryCardData} from '../../widgets/machineries/machneryCard/machneryCard';
+import {machineryCardData} from '../../widgets/machineries/machneryCard/MachneryCard';
 
 export const machineriesData: machineryCardData[] = [
     {

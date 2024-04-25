@@ -1,13 +1,14 @@
 import styled, {useTheme} from 'styled-components';
-import {ImageContainer} from '../../../shared/styled/ImageContainer';
+import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import {Button} from '../../../shared/ui/button/Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
-import {Flex} from '../../../shared/styled/Flex';
+import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
-import {StyledBox} from '../../../shared/styled/Box';
-import {fullAbsoluteElement, plainTransition} from '../../../app/styles/mixins';
+import {S_Box} from '../../../shared/styled/S_Box';
+import {fullAbsoluteElement, ImageHover, plainTransition} from '../../../app/styles/mixins';
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
+import {S_Image} from '../../../shared/styled/S_Image';
 
 
 export type ServiceCardData = {
@@ -21,15 +22,15 @@ export const ServiceCard = ({title, text, image}: props) => {
     const theme = useTheme()
     return (
         <StyledServiceCard>
-            <ImageContainer>
-                <img src = {image.src} alt = {image.alt}/>
+            <S_ImageContainer>
+                <S_Image src = {image.src} alt = {image.alt}/>
                 <HoverIcons secondLink = {""} firstLink = {""}/>
-            </ImageContainer>
+            </S_ImageContainer>
 
-            <Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
+            <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
                 <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
                 <a href = {""}>Услуги</a>
-            </Flex>
+            </S_Flex>
 
 
             <ServiceCardTitle>
@@ -38,9 +39,9 @@ export const ServiceCard = ({title, text, image}: props) => {
             <ServiceCardText>
                 {text}
             </ServiceCardText>
-            <StyledBox $marginTop = {"1rem"}>
+            <S_Box $marginTop = {"1rem"}>
                 <Button type = {'read more'}/>
-            </StyledBox>
+            </S_Box>
         </StyledServiceCard>
     );
 };
@@ -49,34 +50,10 @@ export const StyledServiceCard = styled.article <{}>`
   padding: 15px;
   box-shadow: ${({theme}) => theme.shadow.full};
 
+  ${ImageHover()}
   a {
     text-transform: uppercase;
   }
-
-  & div:first-child:before {
-    ${fullAbsoluteElement()}
-    ${plainTransition()};
-    z-index: 3;
-  }
-
-  & div:first-child:hover:before {
-    opacity: 1;
-  }
-
-  & div:first-child {
-    img {
-      transform: scale(1);
-      ${plainTransition()};
-    }
-  }
-
-  & div:first-child:hover {
-    img {
-      transform: scale(1.2);
-      ${plainTransition()};
-    }
-  }
-
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`
@@ -89,7 +66,4 @@ export const ServiceCardTitle = styled.h3 <{}>`
   }
 `;
 
-export const ServiceCardText = styled.p
-    < {} > `
-
-`
+export const ServiceCardText = styled.p<{}>``;

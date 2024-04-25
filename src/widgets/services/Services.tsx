@@ -3,7 +3,7 @@ import {Container} from '../../shared/styled/Container';
 import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard, ServiceCardData} from './serviceCard/ServiceCard';
-import {Flex} from '../../shared/styled/Flex';
+import {S_Flex} from '../../shared/styled/S_Flex';
 
 type props = {
     data: ServiceCardData[]
@@ -21,10 +21,10 @@ export const Services = ({data}: props) => {
     return (
         <StyledServices>
             <Container>
-                <Flex $direction = {"column"} $gap = {"40px"}>
+                <S_Flex $direction = {"column"} $gap = {"40px"}>
                     <SectionTitle title = {serviceTitle} text = {serviceText}/>
                     {data.map(card => <ServiceCard title = {card.title} text = {card.text} image = {card.image}/>)}
-                </Flex>
+                </S_Flex>
             </Container>
         </StyledServices>);
 };

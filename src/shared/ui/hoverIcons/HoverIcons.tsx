@@ -10,17 +10,18 @@ type props = {
 export const HoverIcons = ({firstLink, secondLink}: props) => {
     const theme = useTheme()
     return (
-        <StyledHoverIcons>
+        <S_HoverIcons>
             <a href = {firstLink}>
                 <FontAwesomeIcon icon = {faLinkSlash} size = {'1x'} color = {theme.colors.primary}/>
             </a>
-            <a href = {secondLink}><FontAwesomeIcon icon = {faSearch} size = {'1x'} color = {theme.colors.primary}/>
+            <a href = {secondLink}>
+                <FontAwesomeIcon icon = {faSearch} size = {'1x'} color = {theme.colors.primary}/>
             </a>
-        </StyledHoverIcons>);
+        </S_HoverIcons>);
 };
 
 
-export const StyledHoverIcons = styled.div<{}>`
+export const S_HoverIcons = styled.div<{}>`
   position: absolute;
   width: 100%;
   line-height: 100%;
@@ -47,10 +48,14 @@ export const StyledHoverIcons = styled.div<{}>`
 
   a:first-child {
 
+    // right: 0;
   }
 
   a:last-child {
     margin-left: 1rem;
+    // left: 0;
+      //${outline(4)};
+
   }
 
   &:hover {

@@ -1,11 +1,11 @@
 import styled, {useTheme} from "styled-components";
 
 import {Container} from '../../shared/styled/Container';
-import {Flex} from '../../shared/styled/Flex';
+import {S_Flex} from '../../shared/styled/S_Flex';
 import {HideContent} from '../../shared/styled/HideContent';
 import {outline} from '../../app/styles/mixins';
 import image from '../../assets/images/footer/_DSC3958.jpg'
-import {ImageContainer} from '../../shared/styled/ImageContainer';
+import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 
 type props = {};
 export const Footer = ({}: props) => {
@@ -28,32 +28,32 @@ export const Footer = ({}: props) => {
 
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>НАША ТЕХНИКА</h5>
-                        <ImageContainer>
-                            <img src = {image} alt = "" width = "300"/></ImageContainer>
-                        <Flex $direction = {"column"}>
+                        <S_ImageContainer>
+                            <img src = {image} alt = "" width = "300"/></S_ImageContainer>
+                        <S_Flex $direction = {"column"}>
                             <a href = "#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
                             <a href = "#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
-                        </Flex>
+                        </S_Flex>
                     </StyledFooterItem>
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>РАЗДЕЛЫ</h5>
-                        <Flex $direction = {"column"}>
+                        <S_Flex $direction = {"column"}>
                             <a href = "#servises">Услуги</a>
                             <a href = "#technic">Наша техника</a>
                             <a href = "#portfolio">Наши работы</a>
                             <a href = "#feedback">Отзывы</a>
                             <a href = "#price">Стоимость бурения</a>
                             <a href = "#contacts">Контакты</a>
-                        </Flex>
+                        </S_Flex>
                     </StyledFooterItem>
                     <StyledFooterItem color = {theme.colors.red["500"]}>
                         <h5>НАШИ УСЛУГИ</h5>
-                        <Flex $direction = {"column"}>
+                        <S_Flex $direction = {"column"}>
                             <a href = "#burenie-svaj">Бурение свай под фундамент</a>
                             <a href = "#burenie-zabor">Бурение отверстий под столбы забора</a>
                             <a href = "#burenie-svet">Бурение отверстий под столбы освещения</a>
                             <a href = "#burenie-plants">Бурение ям под посадку растений </a>
-                        </Flex>
+                        </S_Flex>
                     </StyledFooterItem>
 
 

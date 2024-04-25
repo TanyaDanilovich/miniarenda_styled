@@ -1,4 +1,4 @@
-import {StyledLinkAsButton} from './StyledButton';
+import {S_LinkAsButton} from './S_Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import styled, {useTheme} from 'styled-components';
@@ -13,18 +13,18 @@ export const Button = ({type}: props) => {
     switch (type) {
         case "read more": {
             return (
-                <StyledLinkAsButton $type = {"read more"}>
+                <S_LinkAsButton $type = {"read more"}>
                     <StyledCircle>
                         <FontAwesomeIcon icon = {faPlusCircle} size = {'1x'} color = {theme.colors.primary}/>
                     </StyledCircle>
                     <span>&nbsp;Подробнее</span>
-                </StyledLinkAsButton>);
+                </S_LinkAsButton>);
         }
         case "colored": {
             return (
-                <StyledLinkAsButton $type = {"colored"}>
+                <S_LinkAsButton $type = {"colored"}>
                     <span>Подробнее</span>
-                </StyledLinkAsButton>);
+                </S_LinkAsButton>);
         }
 
     }

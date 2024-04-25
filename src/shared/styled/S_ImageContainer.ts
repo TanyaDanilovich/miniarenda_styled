@@ -9,7 +9,7 @@ type ImageContainerProps = {
     $background?: string
     $opacity?: string
 };
-export const ImageContainer = styled.div<ImageContainerProps>`
+export const S_ImageContainer = styled.div<ImageContainerProps>`
   width: ${({$width}) => $width || "100%"};
   height: ${({$height}) => $height || "auto"};
   border-radius: ${({$radius}) => $radius || "0"};
@@ -19,9 +19,4 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   opacity: ${({$opacity}) => $opacity || '1'};
   position: relative;
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
 `;

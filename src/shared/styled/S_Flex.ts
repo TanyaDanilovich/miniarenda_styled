@@ -14,7 +14,7 @@ type FlexItemProp = {
 
 export type StyledFlexWrapperProps = FlexItemProp;
 
-export const Flex = styled.div<StyledFlexWrapperProps>`
+export const S_Flex = styled.div<StyledFlexWrapperProps>`
   display: flex;
   flex-direction: ${({$direction}) => $direction || "row"};
   justify-content: ${({$justify}) => $justify || "flex-start"};

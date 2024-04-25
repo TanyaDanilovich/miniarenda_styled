@@ -1,4 +1,6 @@
 import {css} from 'styled-components';
+import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
+import {S_Image} from '../../shared/styled/S_Image';
 
 
 export const border = (width: number = 1, color: string = "red") =>
@@ -43,3 +45,27 @@ export const fullAbsoluteElement = (opacity: number = 0.4) => css`
   top: 0;
 `
 
+export const ImageHover = () => css`
+
+  ${S_ImageContainer}:before {
+    ${fullAbsoluteElement()}
+    ${plainTransition()};
+    z-index: 3;
+  }
+
+  ${S_ImageContainer}:hover:before {
+    opacity: 1;
+  }
+
+  ${S_Image} {
+    transform: scale(1);
+    ${plainTransition()};
+  }
+
+  ${S_ImageContainer}:hover {
+    ${S_Image} {
+      transform: scale(1.2);
+      ${plainTransition()};
+    }
+  }
+`
