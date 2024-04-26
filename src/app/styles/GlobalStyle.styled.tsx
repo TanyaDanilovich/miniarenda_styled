@@ -40,60 +40,63 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: ${({theme}) => theme.fonts.size.h3}},
-    
-    h4,
-    h5,
-    h6 {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
+    font-size: ${({theme}) => theme.fonts.size.h3}
+  }
 
-    p {
-      margin: 0 0 10px;
-      line-height: 1.4;
-      font-size: 1rem;
-    }
+  ,
 
-    a {
-      text-decoration: none;
-      cursor: pointer;
-      color: inherit;
+  h4,
+  h5,
+  h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-    }
+  p {
+    margin: 0 0 10px;
+    line-height: 1.4;
+    font-size: 1rem;
+  }
 
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
 
-    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-
-    ul,
-    ol {
-      list-style: none;
-    }
+  }
 
 
-    li {
-      list-style-type: none;
-    }
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 
-    button {
-      background-color: unset;
-      border: none;
-      font-family: inherit;
-      cursor: pointer;
-    }
+  ul,
+  ol {
+    list-style: none;
+  }
 
 
-    /* Inherit fonts for inputs and buttons */
+  li {
+    list-style-type: none;
+  }
 
-    input,
-    button,
-    textarea,
-    select {
-      font: inherit;
-    }
+  button {
+    background-color: unset;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
 
-    img {
-      vertical-align: middle;
-    }
+
+  /* Inherit fonts for inputs and buttons */
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img {
+    vertical-align: middle;
+  }
 
 `;

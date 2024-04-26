@@ -8,6 +8,8 @@ export const BREAKPOINTS = {
     extraWidescreen: "1920px",
 } as const;
 
+export const BASE: number = 16
 
+export const countReviewLines: number = 4
 
 

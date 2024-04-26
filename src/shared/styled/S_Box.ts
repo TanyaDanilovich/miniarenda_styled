@@ -1,7 +1,8 @@
 import styled, {css} from "styled-components";
+import {outline} from '../../app/styles/mixins';
 
 type Props = {
-    $display?:string,
+    $display?: string,
     $height?: string,
 
     $paddingLeft?: string,
@@ -14,17 +15,16 @@ type Props = {
     $marginTop?: string,
     $marginBottom?: string,
 
-    $background?:string,
-    $borderRadius?:string,
+    $background?: string,
+    $borderRadius?: string,
 
     $lineHeight?: string
 };
 
 
 export const S_Box = styled.div<Props>`
-
   min-height: fit-content;
-  height: ${({$height}) => $height || "100%"};
+  height: ${({$height}) => $height || "auto"};
 
   ${({$display}) => $display && css`display: ${$display}`};
 

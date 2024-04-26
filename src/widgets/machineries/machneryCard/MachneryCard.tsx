@@ -1,7 +1,7 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import {Button} from '../../../shared/ui/button/Button';
-import React from 'react';
+import React, {useId} from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, outline, plainTransition} from '../../../app/styles/mixins';
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
@@ -22,6 +22,7 @@ export type machineryCardData = {
 type props = machineryCardData & {};
 export const MachineryCard = ({title, image, characteristics}: props) => {
     const theme = useTheme()
+    const id = useId()
     return (
         <S_MachineryCard>
             <S_MachineryImageCover>
@@ -49,7 +50,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
 
                 <tbody>
                 {characteristics.map((characteristic, index) => (
-                    <tr>
+                    <tr key = {`${id}-${index}`}>
                         <td>{characteristic.title}</td>
                         <td>{characteristic.value}</td>
                     </tr>))}

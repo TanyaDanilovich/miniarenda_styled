@@ -73,3 +73,31 @@ export const ImageHover = () => css`
 export const sectionMargin = css`
   margin: 3rem auto;
 `
+
+export const outlinedNestedDiv = css`
+
+  div {
+    ${({theme}) => outline(5, theme.colors.red.b400)};
+    margin: 5px;
+  }
+
+  div div {
+    ${({theme}) => outline(10, theme.colors.pink.b400)};
+    margin: 5px;
+  }
+
+  div div div {
+    ${({theme}) => outline(15, theme.colors.purple.b400)};
+    margin: 5px;
+  }
+
+  div div div div {
+    ${({theme}) => outline(20, theme.colors.deeppurple.b400)};
+    margin: 5px;
+  }
+
+  div div div div div {
+    ${({theme}) => outline(25, theme.colors.indigo.b400)};
+    margin: 5px;
+  }
+`

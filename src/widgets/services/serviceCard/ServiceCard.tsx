@@ -6,7 +6,7 @@ import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {fullAbsoluteElement, ImageHover, plainTransition} from '../../../app/styles/mixins';
+import {ImageHover, plainTransition} from '../../../app/styles/mixins';
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 

@@ -6,9 +6,9 @@ export const SectionTitle = ({title, text}: props) => {
 
     return (
         <StyledSectionTitleContainer>
-            <StyledSectionTitle>
+            <S_SectionTitle>
                 {title}
-            </StyledSectionTitle>
+            </S_SectionTitle>
             <p>{text}</p>
         </StyledSectionTitleContainer>)
         ;
@@ -24,7 +24,7 @@ export const StyledSectionTitleContainer = styled.div<{}>`
   }
 `;
 
-export const StyledSectionTitle = styled.h2<{}>`
+export const S_SectionTitle = styled.h2<{}>`
   text-align: center;
   line-height: 1.1;
   letter-spacing: 1px;
