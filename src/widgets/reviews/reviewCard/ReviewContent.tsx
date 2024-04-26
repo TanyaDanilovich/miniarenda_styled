@@ -9,7 +9,7 @@ type props = {
     text: string
 };
 export const ReviewContent = ({text}: props) => {
-    const [isCollapsed, setIsCollapsed] = useState<boolean | null>(null)
+    const [isCollapsed, setIsCollapsed] = useState<boolean | null>(true)
     const [showButton, setShowButton] = useState<boolean | null>(null);
     const contentRef = useRef<HTMLParagraphElement>(null)
 
@@ -60,12 +60,28 @@ export const ReviewContent = ({text}: props) => {
 export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
   ${({$isCollapsed}) => $isCollapsed && css`
     p {
+      padding-top: 1rem;
       -webkit-line-clamp: ${countReviewLines};
       -webkit-box-orient: vertical;
       display: -webkit-box;
       overflow: hidden;
       text-overflow: ellipsis;
       overflow-wrap: break-word;
+      position: relative;
     }
+
+    //
+    //p:after {
+    //  color: #ddd;
+    //  content: '"';
+    //  // font-family: FontAwesome;
+    //  font-size: 65px;
+    //  margin: auto;
+    //  position: absolute;
+    //  right: 0;
+    //  bottom: 0;
+    //  z-index: 2;
+    //  opacity: 0.85;
+    //}
   `}
 `

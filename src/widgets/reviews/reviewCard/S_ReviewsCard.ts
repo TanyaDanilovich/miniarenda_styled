@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import checkmark from "../../../assets/icons/checkmark-circle-green.svg"
+import {fullAbsoluteElement, outlinedNestedDiv} from '../../../app/styles/mixins';
 
 export const S_UserLetter = styled.div<{}>`
 
@@ -28,6 +29,11 @@ export const S_UserLetter = styled.div<{}>`
 `
 
 export const S_UserName = styled.div<{}>`
+    //background-color: ${({theme}) => theme.colors.red.b100};
+  flex-grow: 1;
+  font-size: ${({theme}) => theme.fonts.size.h4};
+  font-weight: ${({theme}) => theme.fonts.weight.semiBold};
+  text-align: center;
 `
 
 
@@ -35,5 +41,36 @@ export const S_ReviewCard = styled.div<{}>`
   padding: 1rem;
   width: 100%;
   background-color: ${({theme}) => theme.colors.white};
+  position: relative;
+  z-index: 50;
+  box-shadow: ${({theme}) => theme.shadow.full};
+  
+  // &:before {
+  //   content: " ";
+  //   position: absolute;
+  //   z-index: 0;
+  //   display: block;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+    //   background-color: ${({theme}) => theme.colors.red.b100};
+    //   box-shadow: ${({theme}) => theme.shadow.full};
+  // }
 
+  // &:after {
+  //   content: " ";
+  //   position: absolute;
+  //   z-index: -3;
+  //   display: block;
+  //   width: 96%;
+  //   height: 60px;
+  //   bottom: 4px;
+  //   left: 0;
+  //   transform-origin: left bottom;
+  //   transform: rotate(3deg);
+    //   background-color: ${({theme}) => theme.colors.white};
+  // }
+
+    //${outlinedNestedDiv}
 `

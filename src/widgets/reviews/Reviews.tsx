@@ -19,7 +19,7 @@ export const Reviews = ({}: props) => {
                 <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
                 <GoogleLink/>
 
-                <S_Flex $wrap = {"wrap"} $gap = {"1rem"} $style = {"margin-top: 2rem"}>
+                <S_Flex $wrap = {"wrap"} $gap = {"3rem"} $style = {"margin-top: 2rem"}>
                     {reviewsData.map((review, index) =>
                         <ReviewCard key = {`${id}-${index}`} userName = {review.userName}
                                     reviewContent = {review.reviewContent}/>
