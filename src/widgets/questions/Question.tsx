@@ -31,7 +31,7 @@ export const FullQuestion = ({question, answer}: props) => {
                     : <FontAwesomeIcon icon = {faPlus} size = {'xl'} color = {theme.colors.primary}
                                        onClick = {openToggler}/>}
 
-                <QuestionText text = {question}/>
+                <QuestionText text = {question} callback = {openToggler}/>
 
             </S_Flex>
 
@@ -42,11 +42,11 @@ export const FullQuestion = ({question, answer}: props) => {
 };
 
 
-export const QuestionText = ({text}: { text: string }) => {
+export const QuestionText = ({text, callback}: { text: string, callback: () => void }) => {
 
 
     return (
-        <S_QuestionText>
+        <S_QuestionText onClick = {callback}>
             {text}
         </S_QuestionText>)
 }
@@ -71,15 +71,16 @@ export const S_FullQuestion = styled.div<{ $isOpen: boolean }>`
   svg {
     ${plainTransition()}
     ${({$isOpen}) => $isOpen && css`
-      transform: rotate(180deg);
+      // transform: rotate(180deg);
     `}
-   
+
   }
 `
 
 export const S_QuestionText = styled.p<{}>`
   padding-left: 1rem;
   margin: 0;
+  cursor: pointer;
 `
 
 export const S_AnswerText = styled.p<{ $isOpen: boolean }>`

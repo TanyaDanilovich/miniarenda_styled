@@ -7,6 +7,7 @@ import {machineriesData} from '../../shared/lib/machineriesData';
 import {Delivery} from '../delivery/Delivery';
 import {Reviews} from '../reviews/Reviews';
 import {Questions} from '../questions/Questions';
+import {Clients} from '../clients/Clients';
 
 
 type props = {};
@@ -20,6 +21,8 @@ export const Main = ({}: props) => {
             <Delivery/>
             <Reviews/>
             <Questions/>
+
+            <Clients/>
 
         </StyledMain>
 
