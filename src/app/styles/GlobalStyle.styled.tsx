@@ -3,6 +3,9 @@ import {OpenSansFont} from './mixins';
 
 export const GlobalStyle = createGlobalStyle`
 
+
+
+
   *,
   *:before,
   *:after {
@@ -98,5 +101,6 @@ export const GlobalStyle = createGlobalStyle`
   img {
     vertical-align: middle;
   }
+
 
 `;

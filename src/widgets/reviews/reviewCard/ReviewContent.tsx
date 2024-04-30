@@ -70,11 +70,12 @@ export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
       position: relative;
     }
 
-    //
+
     //p:after {
     //  color: #ddd;
-    //  content: '"';
-    //  // font-family: FontAwesome;
+    //  content: close-quote;
+    //  height: 4rem;
+    //  width: 4rem;
     //  font-size: 65px;
     //  margin: auto;
     //  position: absolute;
@@ -82,6 +83,7 @@ export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
     //  bottom: 0;
     //  z-index: 2;
     //  opacity: 0.85;
+    //  background-color: red;
     //}
   `}
 `

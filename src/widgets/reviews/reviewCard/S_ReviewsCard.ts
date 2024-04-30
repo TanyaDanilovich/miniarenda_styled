@@ -44,18 +44,19 @@ export const S_ReviewCard = styled.div<{}>`
   position: relative;
   z-index: 50;
   box-shadow: ${({theme}) => theme.shadow.full};
-  
+
   // &:before {
-  //   content: " ";
+  //   content: close-quote;
   //   position: absolute;
   //   z-index: 0;
   //   display: block;
-  //   top: 0;
+  //   height: 4rem;
+  //   width: 4rem;
   //   bottom: 0;
-  //   left: 0;
+  //   ${outlinedNestedDiv};
   //   right: 0;
-    //   background-color: ${({theme}) => theme.colors.red.b100};
-    //   box-shadow: ${({theme}) => theme.shadow.full};
+  //      background-color: ${({theme}) => theme.colors.red.b100};
+  //   box-shadow: ${({theme}) => theme.shadow.full};
   // }
 
   // &:after {
@@ -72,5 +73,5 @@ export const S_ReviewCard = styled.div<{}>`
     //   background-color: ${({theme}) => theme.colors.white};
   // }
 
-    //${outlinedNestedDiv}
+    //    ${outlinedNestedDiv}
 `

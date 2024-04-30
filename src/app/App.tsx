@@ -5,6 +5,7 @@ import {Main} from '../widgets/main/Main';
 
 
 function App() {
+
     return (
         <div>
             <Header/>

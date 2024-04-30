@@ -1,31 +1,29 @@
-import React, {useId} from 'react';
+import React from 'react';
 import {S_Reviews} from './S_Reviews';
 import {S_SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {Container} from '../../shared/styled/Container';
-import {reviewsData} from './reviewData';
 import {GoogleLink} from './googleLink/GoogleLink';
-import {S_Flex} from '../../shared/styled/S_Flex';
-import {ReviewCard} from './reviewCard/ReviewCard';
-
+import {v4 as uuidv4} from 'uuid';
+import {ReviewSwiper} from './reviewSwiper/ReviewSwiper';
 
 type props = {};
 export const Reviews = ({}: props) => {
-    const id = useId();
+
+    const swiperId = uuidv4();
 
 
     return (
         <S_Reviews>
-            <Container>
-                <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
-                <GoogleLink/>
+            {/*<Container>*/}
+            <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
+            <GoogleLink/>
 
-                <S_Flex $wrap = {"wrap"} $gap = {"3rem"} $style = {"margin-top: 2rem"}>
-                    {reviewsData.map((review, index) =>
-                        <ReviewCard key = {`${id}-${index}`} userName = {review.userName}
-                                    reviewContent = {review.reviewContent}/>
-                    )}
-                </S_Flex>
-            </Container>
+
+            <ReviewSwiper id = {swiperId}/>
+
+
+            {/*</Container>*/}
+
+
         </S_Reviews>);
 };
 
