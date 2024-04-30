@@ -2,13 +2,13 @@ import {S_LinkAsButton} from './S_Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import styled, {useTheme} from 'styled-components';
-import {ButtonsType} from '../../types/common.types';
+import {ButtonsType, PropsWithChildren} from '../../types/common.types';
 
 
 type props = {
     type: ButtonsType
 };
-export const Button = ({type}: props) => {
+export const Button = ({type, children}: PropsWithChildren<props>) => {
     const theme = useTheme()
     switch (type) {
         case "read more": {
@@ -22,8 +22,8 @@ export const Button = ({type}: props) => {
         }
         case "colored": {
             return (
-                <S_LinkAsButton $type = {"colored"}>
-                    <span>Подробнее</span>
+                <S_LinkAsButton $type = {"colored"} as={"button"}>
+                    {children}
                 </S_LinkAsButton>);
         }
 
