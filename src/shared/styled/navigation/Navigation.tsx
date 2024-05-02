@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {outline} from '../../../app/styles/mixins';
 
 type props = {};
 export const Navigation = ({}: props) => {
@@ -56,8 +55,11 @@ export const Navigation = ({}: props) => {
 
 
 export const StyledNavigation = styled.nav<{}>`
-  ${outline()}
- a{
-   color:${props=>props.theme.colors.white};
- }
+  width: 0;
+  height: 0;
+  overflow: hidden;
+
+  a {
+    color: ${props => props.theme.colors.white};
+  }
 `;

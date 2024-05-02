@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {outline} from '../../app/styles/mixins';
+import {S_Flex} from '../../shared/styled/S_Flex';
 
 type props = {};
 export const HeaderTop = ({}: props) => {
@@ -22,12 +23,12 @@ export const HeaderTop = ({}: props) => {
                     <span>Ежедневно с 7-00 до 22-00</span>
                 </div>
 
-                <div>
+                <S_Flex $direction = {"column"}>
                     <p>Звоните для заказа техники</p>
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
                     <a href = "tel:+375336949698">+375 (33) 694-96-98</a>
 
-                </div>
+                </S_Flex>
             </div>
 
 

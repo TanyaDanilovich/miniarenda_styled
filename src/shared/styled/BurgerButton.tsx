@@ -13,19 +13,17 @@ export const BurgerButton = ({isOpen, callback}: props) => {
     );
 };
 
-const StyledBurgerButton = styled.button<{ $isOpen: boolean }>`
-  display: none;
-  border: none;
-  @media ${({theme}) => theme.media.tablet} {
-    display: flex;
-  }
-  width: 40px;
-  height: 40px;
-  padding: 5px;
+const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
+  display:flex;
+  align-items:center;
+  margin-left: 1rem;
+
+  height: 50px;
+  padding: 10px;
   position: relative;
-  justify-content: center;
-  align-items: center;
-  //border: none;
+  
+  background-color: ${({theme}) => theme.colors.primary};
+  border-radius: 8px;
 
   span {
     display: block;
@@ -39,18 +37,19 @@ const StyledBurgerButton = styled.button<{ $isOpen: boolean }>`
             css<{ $isOpen: boolean }>`
               background-color: transparent;
             `}
-    &:before,
-    &:after {
-      position: absolute;
-      content: "";
-      height: 3px;
-      width: 30px;
-      background-color: ${({theme}) => theme.colors.white_smoke};
-      left: 5px;
-      transform: rotate(0) translateX(0) translateY(0);
-      transition: ${({theme}) => theme.duration.middle};
-    }
-
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 3px;
+        width: 30px;
+          background-color: ${({theme}) => theme.colors.white_smoke};
+        //left: 50%;
+        transform: translateX(-50%);
+        //transform: rotate(0) translateX(-50%) translateY(0);
+          transition: ${({theme}) => theme.duration.middle};
+      }
     &:before {
       transform: translateY(10px);
 

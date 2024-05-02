@@ -12,5 +12,6 @@ export const Logo = ({}: props) => {
 
 type StyledLogoProps = {};
 const StyledLogo = styled.img<StyledLogoProps>`
-  ${({theme})=>outline(2,theme.colors.white)}
+  ${({theme}) => outline(2, theme.colors.white)}
+  display: none;
 `;
