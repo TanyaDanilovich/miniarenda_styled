@@ -9,6 +9,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {S_Image} from '../../../shared/styled/S_Image';
+import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
+import {BASE} from '../../../shared/constants';
 
 
 type Characteristic = { id: string, title: string, value: string }
@@ -110,7 +112,8 @@ export const S_MachineryCardTable = styled.table<{}>`
 
   th, td {
     border-bottom: 1px solid #ddd;
-    padding: 0.75rem 2rem;
+    padding-block: ${getResponsiveSize(BASE / 2, BASE, 320)};
+    padding-inline: ${getResponsiveSize(BASE * 0.75, BASE * 2, 320)};
   }
 
   tr:hover {
