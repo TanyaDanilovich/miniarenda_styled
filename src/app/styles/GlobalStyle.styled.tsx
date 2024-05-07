@@ -35,7 +35,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
-  h1,
   h2,
   h3 {
     margin-top: 10px;
@@ -56,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin: 0 0 10px;
+    margin: 0;
     line-height: 1.4;
     font-size: 1rem;
   }

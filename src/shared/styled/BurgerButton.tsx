@@ -14,14 +14,14 @@ export const BurgerButton = ({isOpen, callback}: props) => {
 };
 
 const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   margin-left: 1rem;
-
+  cursor: pointer;
   height: 50px;
   padding: 10px;
   position: relative;
-  
+
   background-color: ${({theme}) => theme.colors.primary};
   border-radius: 8px;
 
@@ -37,19 +37,20 @@ const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
             css<{ $isOpen: boolean }>`
               background-color: transparent;
             `}
-      &:before,
-      &:after {
-        position: absolute;
-        display: block;
-        content: "";
-        height: 3px;
-        width: 30px;
-          background-color: ${({theme}) => theme.colors.white_smoke};
-        //left: 50%;
-        transform: translateX(-50%);
-        //transform: rotate(0) translateX(-50%) translateY(0);
-          transition: ${({theme}) => theme.duration.middle};
-      }
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 3px;
+      width: 30px;
+      background-color: ${({theme}) => theme.colors.white_smoke};
+      //left: 50%;
+      transform: translateX(-50%);
+      //transform: rotate(0) translateX(-50%) translateY(0);
+      transition: ${({theme}) => theme.duration.middle};
+    }
+
     &:before {
       transform: translateY(10px);
 

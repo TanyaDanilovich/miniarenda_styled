@@ -19,7 +19,7 @@ export const theme: MyDefaultTheme = {
         size: {
 
             base: `${BASE}px`,
-            h1: getResponsiveSize(20, 65, 700, 1200,),
+            h1: getResponsiveSize(20, 45, 320, 768),
             h2: getResponsiveSize(38, 38),
             h3: getResponsiveSize(28.125, 22),
             h4: getResponsiveSize(20, 35),
@@ -32,7 +32,7 @@ export const theme: MyDefaultTheme = {
     media: {
         smallMobile: `screen and (max-width:${BREAKPOINTS.smallMobile})`,
         mobile: `screen and (max-width:${BREAKPOINTS.mobile})`,
-        tablet: `screen and (max-width:${BREAKPOINTS.tablet})`,
+        tablet: `screen and (min-width:${BREAKPOINTS.tablet})`,
         computer: `screen and (max-width:${BREAKPOINTS.computer})`,
         desktop: `screen and (max-width:${BREAKPOINTS.desktop})`,
         widescreen: `screen and (max-width:${BREAKPOINTS.widescreen})`,

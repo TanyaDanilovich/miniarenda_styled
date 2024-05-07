@@ -19,7 +19,7 @@ export const Header = ({}: props) => {
         <StyledHeader id = "header" className = "">
             <Container>
 
-                <S_Flex $align = {"center"}>
+                <S_Flex $align = {"center"} $justify={"space-between"}>
                     <Logo/>
                     <Navigation/>
                     <HeaderTop/>
@@ -35,6 +35,7 @@ export const Header = ({}: props) => {
 
 export const StyledHeader = styled.header<{}>`
   background-color: ${({theme}) => theme.colors.bg_primary};
+  padding: 0.5rem;
 `;
 
 

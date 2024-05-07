@@ -9,6 +9,7 @@ import {Reviews} from '../reviews/Reviews';
 import {Questions} from '../questions/Questions';
 import {Clients} from '../clients/Clients';
 import {OrderModal} from '../orderModal/OrderModal';
+import {Hero} from '../hero/Hero';
 
 
 type props = {};
@@ -17,6 +18,7 @@ export const Main = ({}: props) => {
 
 
         <StyledMain>
+            <Hero/>
             <Services data = {servicesData}/>
             <Machineries data = {machineriesData}/>
             <Delivery/>
