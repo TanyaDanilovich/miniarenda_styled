@@ -1,50 +1,44 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {plainTransition} from '../../../app/styles/mixins';
 
-type props = {};
-export const Navigation = ({}: props) => {
+type props = { isOpen: boolean };
+export const Navigation = ({isOpen}: props) => {
     return (
 
 
-        <StyledNavigation id = "navigation">
+        <StyledNavigation $isOpen = {isOpen}>
 
 
+            <nav>
 
+                <ul>
+                    <li>
+                        <a href = "#">Главная</a>
+                    </li>
 
+                    <li>
+                        <a href = "#">Техника</a>
+                    </li>
 
+                    <li>
+                        <a href = "#">Услуги</a>
+                    </li>
 
+                    <li>
+                        <a href = "#">Цены</a>
+                    </li>
 
-                            <nav className = "flex justify-between w-2/3">
+                    <li>
+                        <a href = "#">Наши работы</a>
+                    </li>
 
-                                <ul className = "flex justify-center text-primary-dark font-bold">
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle "><a
-                                        className = "block p-4 m-auto"
-                                        href = "#">Главная</a></li>
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle"><a
-                                        className = "block p-4 m-auto"
-                                        href = "#">Техника</a>
-                                    </li>
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle"><a
-                                        className = "block p-4 m-auto" href = "#">Услуги</a>
-                                    </li>
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle"><a
-                                        className = "block p-4 m-auto" href = "#">Цены</a>
-                                    </li>
+                    <li>
+                        <a href = "#">Контакты</a>
+                    </li>
 
+                </ul>
 
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle"><a
-                                        className = "block p-4 m-auto" href = "#">Наши
-                                                                              работы</a>
-                                    </li>
-                                    <li className = "hover:text-[--color-primary-darker] flex align-middle"><a
-                                        className = "block p-4 m-auto"
-                                        href = "#">Контакты</a></li>
-                                </ul>
-                                <div id = "nav-after" aria-hidden = "true"
-                                     className = "navAfter">
-                                </div>
-                            </nav>
-
-
+            </nav>
 
 
         </StyledNavigation>
@@ -54,10 +48,25 @@ export const Navigation = ({}: props) => {
 };
 
 
-export const StyledNavigation = styled.nav<{}>`
-  width: 0;
-  height: 0;
-  overflow: hidden;
+export const StyledNavigation = styled.nav<{ $isOpen: boolean }>`
+
+  position: absolute;
+  background-color: ${props => props.theme.colors.bg_primary};
+  z-index: 100;
+  // transform: translateX(-200%);
+  //
+    // ${({theme}) => plainTransition(theme.duration.middle)}
+
+  ${({$isOpen}) => $isOpen && css<{ $isOpen: boolean }>`
+    width: 80%;
+    height: auto;
+    left: 0;
+    //transform: translateX(0);
+    //position:fixed;
+  `}
+  ul {
+    list-style: none;
+  }
 
   a {
     color: ${props => props.theme.colors.white};

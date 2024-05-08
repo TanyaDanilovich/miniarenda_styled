@@ -53,9 +53,13 @@ export const theme: MyDefaultTheme = {
         short: "0.25s",
     },
 
-    order: {
-        header: 50,
-        modal: 100,
+    zIndices: {
+        modal: 1000,
+        tooltip: 1100,
+        dropdown: 1200,
+        header: 900,
+        footer: 100,
+        mainContent: 800,
     },
     shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)"},
     colors: {

@@ -1,32 +1,37 @@
 import styled from "styled-components";
 import {Logo} from '../../shared/styled/Logo';
-import {Navigation} from '../../shared/styled/navigation/Navigation';
 import {HeaderTop} from './HeaderTop';
-import {Container} from '../../shared/styled/Container';
-import {BurgerButton} from '../../shared/styled/BurgerButton';
 import {useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import {MobileNavigation} from '../../shared/styled/navigation/MobileNavigation';
+import {outlinedNestedDiv} from '../../app/styles/mixins';
+
 
 type props = {};
 export const Header = ({}: props) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const isOpenTogler = () => setIsOpen((prev) => !prev);
+    const isOpenToggle = () => setIsOpen((prev) => !prev);
+    const closeToggle = () => setIsOpen(false);
 
     return (
 
 
-        <StyledHeader id = "header" className = "">
-            <Container>
+        <StyledHeader>
 
-                <S_Flex $align = {"center"} $justify={"space-between"}>
-                    <Logo/>
-                    <Navigation/>
+
+            <S_Flex $align = {"center"} $justify = {"space-between"}>
+                <Logo/>
+                <S_Flex $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
-                    <BurgerButton isOpen = {isOpen} callback = {isOpenTogler}/>
-
+                    <MobileNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
+                    {/*<Navigation isOpen = {isOpen}/>*/}
                 </S_Flex>
-            </Container>
+
+
+            </S_Flex>
+
+
         </StyledHeader>
 
 
@@ -36,6 +41,13 @@ export const Header = ({}: props) => {
 export const StyledHeader = styled.header<{}>`
   background-color: ${({theme}) => theme.colors.bg_primary};
   padding: 0.5rem;
+  position: sticky;
+  z-index: ${({theme}) => theme.zIndices.header};
+  top: 0;
+  left: 0;
+  width: 100%;
+
+    //${outlinedNestedDiv}
 `;
 
 
