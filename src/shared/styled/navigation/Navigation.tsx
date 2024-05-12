@@ -1,74 +1,84 @@
-import styled, {css} from "styled-components";
-import {plainTransition} from '../../../app/styles/mixins';
+import styled from "styled-components";
+import {outline, plainTransition} from '../../../app/styles/mixins';
+import {BurgerButton, StyledBurgerButton} from '../BurgerButton';
+import React from 'react';
+import {S_NavItem} from './S_NavItem';
+import {S_NavLink} from './S_NavLink';
+import {StyledMain} from '../../../widgets/main/Main';
 
-type props = { isOpen: boolean };
-export const Navigation = ({isOpen}: props) => {
+type props = {
+    isOpen: boolean,
+    isOpenToggle: () => void,
+    closeToggle: () => void
+};
+export const Navigation = ({isOpen, isOpenToggle, closeToggle}: props) => {
     return (
 
 
-        <StyledNavigation $isOpen = {isOpen}>
+        <S_MobileNavigation $isOpen = {isOpen}>
 
-
-            <nav>
-
+            <nav onClick = {closeToggle}>
                 <ul>
-                    <li>
-                        <a href = "#">Главная</a>
-                    </li>
+                    <S_NavItem>
+                        <S_NavLink href = "#">Главная</S_NavLink>
+                    </S_NavItem>
 
-                    <li>
-                        <a href = "#">Техника</a>
-                    </li>
+                    <S_NavItem onClick = {closeToggle}>
+                        <S_NavLink href = "#">Техника</S_NavLink>
+                    </S_NavItem>
 
-                    <li>
-                        <a href = "#">Услуги</a>
-                    </li>
+                    <S_NavItem onClick = {closeToggle}>
+                        <S_NavLink href = "#">Услуги</S_NavLink>
+                    </S_NavItem>
 
-                    <li>
-                        <a href = "#">Цены</a>
-                    </li>
+                    <S_NavItem onClick = {closeToggle}>
+                        <S_NavLink href = "#">Цены</S_NavLink>
+                    </S_NavItem>
 
-                    <li>
-                        <a href = "#">Наши работы</a>
-                    </li>
+                    <S_NavItem onClick = {closeToggle}>
+                        <S_NavLink href = "#">Наши работы</S_NavLink>
+                    </S_NavItem>
 
-                    <li>
-                        <a href = "#">Контакты</a>
-                    </li>
+                    <S_NavItem onClick = {closeToggle}>
+                        <S_NavLink href = "#">Контакты</S_NavLink>
+                    </S_NavItem>
 
                 </ul>
 
             </nav>
-
-
-        </StyledNavigation>
+            <BurgerButton isOpen = {isOpen} callback = {isOpenToggle}/>
+        </S_MobileNavigation>
 
 
     );
 };
 
 
-export const StyledNavigation = styled.nav<{ $isOpen: boolean }>`
+export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
+  display: block;
+  z-index: ${({theme}) => theme.zIndices.header};
 
-  position: absolute;
-  background-color: ${props => props.theme.colors.bg_primary};
-  z-index: 100;
-  // transform: translateX(-200%);
-  //
-    // ${({theme}) => plainTransition(theme.duration.middle)}
+  nav {
+      // ${outline(10)}
+    width: 80dvw;
+    height: 80dvh;
+    min-height: min-content;
+    padding-top: 10dvh;
+    background-color: ${({theme}) => theme.colors.bg_primary};
+    position: absolute;
+    top: 0;
+    left: ${({$isOpen}) => $isOpen ? 0 : "-150%"};
+    ${({theme}) => plainTransition(theme.duration.middle)};
 
-  ${({$isOpen}) => $isOpen && css<{ $isOpen: boolean }>`
-    width: 80%;
-    height: auto;
-    left: 0;
-    //transform: translateX(0);
-    //position:fixed;
-  `}
+  }
+
   ul {
+    width: 100%;
     list-style: none;
   }
 
-  a {
-    color: ${props => props.theme.colors.white};
-  }
+
+
+
+
 `;

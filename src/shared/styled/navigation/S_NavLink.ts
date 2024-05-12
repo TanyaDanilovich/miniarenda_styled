@@ -16,4 +16,8 @@ export const S_NavLink = styled.a<{}>`
   font-weight: ${({theme}) => theme.fonts.weight.medium};
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  @media ${({theme}) => theme.media.tablet} {
+    padding: 1rem;
+  }
 `;

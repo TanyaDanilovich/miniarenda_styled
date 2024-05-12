@@ -3,8 +3,8 @@ import {Logo} from '../../shared/styled/Logo';
 import {HeaderTop} from './HeaderTop';
 import {useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {MobileNavigation} from '../../shared/styled/navigation/MobileNavigation';
-import {outlinedNestedDiv} from '../../app/styles/mixins';
+import {Navigation} from '../../shared/styled/navigation/Navigation';
+import {StyledMain} from '../main/Main';
 
 
 type props = {};
@@ -17,18 +17,13 @@ export const Header = ({}: props) => {
     return (
 
 
-        <StyledHeader>
+        <StyledHeader $isOpen = {isOpen}>
 
 
-            <S_Flex $align = {"center"} $justify = {"space-between"}>
-                <Logo/>
-                <S_Flex $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
-                    <HeaderTop/>
-                    <MobileNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
-                    {/*<Navigation isOpen = {isOpen}/>*/}
-                </S_Flex>
-
-
+            <Logo/>
+            <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
+                <HeaderTop/>
+                <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
             </S_Flex>
 
 
@@ -38,7 +33,8 @@ export const Header = ({}: props) => {
     );
 };
 
-export const StyledHeader = styled.header<{}>`
+export const StyledHeader = styled.header<{$isOpen: boolean}>`
+  display: flex;
   background-color: ${({theme}) => theme.colors.bg_primary};
   padding: 0.5rem;
   position: sticky;
@@ -47,7 +43,12 @@ export const StyledHeader = styled.header<{}>`
   left: 0;
   width: 100%;
 
-    //${outlinedNestedDiv}
+
+  & ~ ${StyledMain} {
+
+    touch-action: ${({$isOpen}) => $isOpen ? "none" : "auto"};
+  }
+
 `;
 
 

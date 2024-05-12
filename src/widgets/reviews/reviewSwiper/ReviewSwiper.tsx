@@ -53,7 +53,7 @@ export const ReviewSwiper = ({id}: props) => {
             //dynamicBullets:true,
         },
         navigation: true,
-        injectStyles: [css], loop:true
+        injectStyles: [css], loop: true
     }
 
 
@@ -66,8 +66,8 @@ export const ReviewSwiper = ({id}: props) => {
             {reviewsData.map((review, index) => {
                     const slideId = uuidv4();
                     return (
-                        <SwiperSlide id = {slideId}>
-                            <ReviewCard key = {`${id}-${index}`} userName = {review.userName}
+                        <SwiperSlide id = {slideId} key = {`${id}-${index}`}>
+                            <ReviewCard userName = {review.userName}
                                         reviewContent = {review.reviewContent}/>
                         </SwiperSlide>)
                 }

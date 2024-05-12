@@ -33,6 +33,8 @@ export const Main = ({}: props) => {
 };
 
 export const StyledMain = styled.main<{}>`
+ 
+   
 `
 
 

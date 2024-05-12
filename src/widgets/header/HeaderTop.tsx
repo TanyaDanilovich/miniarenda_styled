@@ -41,7 +41,6 @@ export const StyledHeaderTop = styled.div<{}>`
   flex-grow: 1;
   background-color: ${({theme}) => theme.colors.bg_primary};
   color: ${({theme}) => theme.colors.white};
-
 `;
 
 
@@ -81,6 +80,11 @@ export const S_Phone = styled(S_Flex)<{}>`
       &:nth-child(3) {
         display: inline-block;
       }
+    }
+
+
+    &:nth-child(3) {
+      display: block;
     }
   }
 `;

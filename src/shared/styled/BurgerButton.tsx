@@ -13,7 +13,7 @@ export const BurgerButton = ({isOpen, callback}: props) => {
     );
 };
 
-const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
+export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
   display: flex;
   align-items: center;
   margin-left: 1rem;
@@ -72,5 +72,11 @@ const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
                 width: 40px;
               `}
     }
+
+
+  }
+
+  @media ${({theme}) => theme.media.tablet} {
+    display: none;
   }
 `;
