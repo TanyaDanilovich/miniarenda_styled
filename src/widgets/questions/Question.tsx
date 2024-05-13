@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {FontAwesomeIconCover} from '../../shared/styled/FontAwesomeIconCover';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
-import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
-import {outlinedNestedDiv, plainTransition} from '../../app/styles/mixins';
+import {faMinus} from '@fortawesome/free-solid-svg-icons';
+import {plainTransition} from '../../app/styles/mixins';
 
 
 type props = {
@@ -24,12 +22,13 @@ export const FullQuestion = ({question, answer}: props) => {
 
             <S_Flex $align = {"center"}>
 
+                <S_MinusContainer>
+                    <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
+                                     onClick = {openToggler}/>
+                    <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
+                                     onClick = {openToggler}/>
+                </S_MinusContainer>
 
-                {isOpen
-                    ? <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
-                                       onClick = {openToggler}/>
-                    : <FontAwesomeIcon icon = {faPlus} size = {'xl'} color = {theme.colors.primary}
-                                       onClick = {openToggler}/>}
 
                 <QuestionText text = {question} callback = {openToggler}/>
 
@@ -70,8 +69,24 @@ export const S_FullQuestion = styled.div<{ $isOpen: boolean }>`
 
   svg {
     ${plainTransition()}
+    
+    &:first-child {
+      transform: rotate(90deg);
+    }
+
+    &:last-child {
+      opacity: 1;
+    }
+
     ${({$isOpen}) => $isOpen && css`
-      // transform: rotate(180deg);
+      &:first-child {
+        transform: rotate(180deg);
+      }
+
+      &:last-child {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
     `}
 
   }
@@ -93,4 +108,15 @@ export const S_AnswerText = styled.p<{ $isOpen: boolean }>`
     height: 100%;
     margin-top: 0.5rem;
   `}
+`
+
+const S_MinusContainer = styled.div<{}>`
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+
+  svg {
+    position: absolute;
+
+  }
 `
