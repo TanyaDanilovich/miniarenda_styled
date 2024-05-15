@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     font-weight: ${({theme}) => theme.fonts.weight.bold};
     color: inherit;
+    letter-spacing: 1px;
   }
 
 

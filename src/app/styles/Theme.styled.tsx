@@ -31,13 +31,13 @@ export const theme: MyDefaultTheme = {
     breakpoints: BREAKPOINTS,
 
     media: {
-        smallMobile: `screen and (max-width:${BREAKPOINTS.smallMobile})`,
-        mobile: `screen and (max-width:${BREAKPOINTS.mobile})`,
+        smallMobile: `screen and (min-width:${BREAKPOINTS.smallMobile})`,
+        mobile: `screen and (min-width:${BREAKPOINTS.mobile})`,
         tablet: `screen and (min-width:${BREAKPOINTS.tablet})`,
-        computer: `screen and (max-width:${BREAKPOINTS.computer})`,
-        desktop: `screen and (max-width:${BREAKPOINTS.desktop})`,
-        widescreen: `screen and (max-width:${BREAKPOINTS.widescreen})`,
-        extraWidescreen: `screen and (max-width:${BREAKPOINTS.extraWidescreen})`,
+        computer: `screen and (min-width:${BREAKPOINTS.computer})`,
+        desktop: `screen and (min-width:${BREAKPOINTS.desktop})`,
+        widescreen: `screen and (min-width:${BREAKPOINTS.widescreen})`,
+        extraWidescreen: `screen and (min-width:${BREAKPOINTS.extraWidescreen})`,
     },
 
     // padding: {

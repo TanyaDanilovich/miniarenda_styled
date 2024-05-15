@@ -74,6 +74,10 @@ export const sectionMargin = css`
   margin: 3rem auto;
 `
 
+export const sectionPadding = css`
+  padding-block: 3rem;
+`
+
 export const outlinedNestedDiv = css`
 
   div {
