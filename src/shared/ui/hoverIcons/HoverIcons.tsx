@@ -26,45 +26,22 @@ export const S_HoverIcons = styled.div<{}>`
   width: 100%;
   line-height: 100%;
   z-index: 100;
-  opacity: 1;
   top: 50%;
   transform: translateY(-50%);
-  text-align: center;
+  //text-align: center;
 
     //${outline(4)};
 
 
   a {
     ${({theme}) => plainTransition(theme.duration.middle)};
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    display: block;
     width: 2.75rem;
     line-height: 2.75rem;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
-    opacity: 1;
-  }
-
-  a:first-child {
-
-    // right: 0;
-  }
-
-  a:last-child {
-    margin-left: 1rem;
-    // left: 0;
-      //${outline(4)};
-
-  }
-
-  &:hover {
-
-
-    a:first-child {
-    }
-
-    a:last-child {
-    }
+    transform: translateY(-50%);
   }
 `;

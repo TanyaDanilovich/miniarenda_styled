@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {outline, plainTransition} from '../../../app/styles/mixins';
-import {BurgerButton, StyledBurgerButton} from '../BurgerButton';
+import {BurgerButton, StyledBurgerButton} from '../../styled/BurgerButton';
 import React from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';

@@ -3,7 +3,7 @@ import {Logo} from '../../shared/styled/Logo';
 import {HeaderTop} from './HeaderTop';
 import {useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {Navigation} from '../../shared/styled/navigation/Navigation';
+import {Navigation} from '../../shared/ui/navigation/Navigation';
 import {StyledMain} from '../main/Main';
 
 

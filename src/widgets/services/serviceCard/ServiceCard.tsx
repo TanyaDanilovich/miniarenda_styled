@@ -7,7 +7,7 @@ import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition} from '../../../app/styles/mixins';
-import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
+import {HoverIcons, S_HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 
 
@@ -50,10 +50,52 @@ export const StyledServiceCard = styled.article <{}>`
   padding: 15px;
   box-shadow: ${({theme}) => theme.shadow.full};
 
-  ${ImageHover()}
+  ${ImageHover()};
+
   a {
     text-transform: uppercase;
   }
+
+  a:first-child {
+    left: 30%;
+
+  }
+
+  a:last-child {
+    right: 30%;
+  }
+
+
+  ${S_HoverIcons} {
+    ${plainTransition()};
+    opacity: 0;
+
+    a:first-child {
+      left: 0;
+    }
+
+    a:last-child {
+      right: 0;
+    }
+  }
+
+  ${S_ImageContainer}:hover {
+    ${plainTransition()};
+
+    ${S_HoverIcons} {
+      opacity: 1;
+
+      a:first-child {
+        left: 30%;
+      }
+
+      a:last-child {
+        right: 30%;
+      }
+    }
+  }
+
+
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`
