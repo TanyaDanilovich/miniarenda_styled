@@ -1,4 +1,4 @@
-import {Container} from '../../shared/styled/Container';
+import {S_Container} from '../../shared/styled/S_Container';
 import React, {useId} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Questions} from './S_Questions';
@@ -15,7 +15,7 @@ export const Questions = ({}: props) => {
     return (
         <S_Questions>
 
-            <Container>
+            <S_Container>
                 <SectionTitle title = {"Вопросы и ответы"} text = {''}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>
@@ -26,7 +26,7 @@ export const Questions = ({}: props) => {
                         />)}
                 </S_Flex>
 
-            </Container>
+            </S_Container>
         </S_Questions>);
 };
 

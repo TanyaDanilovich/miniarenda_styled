@@ -23,6 +23,7 @@ export const theme: MyDefaultTheme = {
             h2: getResponsiveSize(38, 38),
             h3: getResponsiveSize(28.125, 22),
             h4: getResponsiveSize(20, 35),
+            h5: getResponsiveSize(20, 25),
             p: getResponsiveSize(16.875, 20),
         },
     },

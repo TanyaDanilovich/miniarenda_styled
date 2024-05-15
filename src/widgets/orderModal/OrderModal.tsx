@@ -1,6 +1,6 @@
 import React from 'react';
 import {S_OrderModal} from './S_OrderModal';
-import {Container} from '../../shared/styled/Container';
+import {S_Container} from '../../shared/styled/S_Container';
 import {Button} from '../../shared/ui/button/Button';
 import {S_Flex} from '../../shared/styled/S_Flex';
 
@@ -11,7 +11,7 @@ export const OrderModal = ({}: props) => {
     return (
         <S_OrderModal>
 
-            <Container>
+            <S_Container>
                 <S_Flex>
                     <div>
                         <h4>
@@ -26,7 +26,7 @@ export const OrderModal = ({}: props) => {
                     {/*<SectionTitle title = {""} text = {''}/>*/}
 
                 </S_Flex>
-            </Container>
+            </S_Container>
         </S_OrderModal>);
 };
 

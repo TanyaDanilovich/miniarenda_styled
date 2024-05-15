@@ -15,7 +15,7 @@ export const FullQuestion = ({question, answer}: props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const theme = useTheme()
 
-    const openToggler = () => setIsOpen(prev => !prev)
+    const openToggle = () => setIsOpen(prev => !prev)
 
     return (
         <S_FullQuestion $isOpen = {isOpen}>
@@ -24,13 +24,13 @@ export const FullQuestion = ({question, answer}: props) => {
 
                 <S_MinusContainer>
                     <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
-                                     onClick = {openToggler}/>
+                                     onClick = {openToggle}/>
                     <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
-                                     onClick = {openToggler}/>
+                                     onClick = {openToggle}/>
                 </S_MinusContainer>
 
 
-                <QuestionText text = {question} callback = {openToggler}/>
+                <QuestionText text = {question} callback = {openToggle}/>
 
             </S_Flex>
 
@@ -81,6 +81,7 @@ export const S_FullQuestion = styled.div<{ $isOpen: boolean }>`
     ${({$isOpen}) => $isOpen && css`
       &:first-child {
         transform: rotate(180deg);
+       color: ${({theme}) => theme.colors.gray};
       }
 
       &:last-child {

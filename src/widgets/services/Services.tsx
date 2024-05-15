@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Container} from '../../shared/styled/Container';
+import {S_Container} from '../../shared/styled/S_Container';
 import React, {useId} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard, ServiceCardData} from './serviceCard/ServiceCard';
@@ -22,13 +22,13 @@ export const Services = ({data}: props) => {
     const id = useId();
     return (
         <StyledServices>
-            <Container>
+            <S_Container>
                 <S_Flex $direction = {"column"} $gap = {"40px"}>
                     <SectionTitle title = {serviceTitle} text = {serviceText}/>
                     {data.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
                                                             text = {card.text} image = {card.image}/>)}
                 </S_Flex>
-            </Container>
+            </S_Container>
         </StyledServices>);
 };
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {outline} from '../../app/styles/mixins';
 
 type ContainerProps = {};
-export const Container = styled.div<ContainerProps>`
+export const S_Container = styled.div<ContainerProps>`
    margin-inline: auto;
       // max-width: ${props => props.theme.breakpoints.desktop};
    width: 100%;
