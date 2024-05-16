@@ -82,11 +82,14 @@ export const StyledServiceCard = styled.article <{}>`
     }
   }
 
-  @media ${({theme}) => theme.media.tablet} {
-    width: calc(50% - 2.5rem);
-    margin: 2rem auto;
+  @media ${({theme}) => theme.media.mobile} {
+    width: calc(50% - 20px);
+    margin: 1rem auto;
   }
-
+  @media ${({theme}) => theme.media.tablet} {
+    width: calc(30%);
+  }
+  
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`

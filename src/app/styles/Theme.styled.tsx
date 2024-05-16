@@ -20,7 +20,7 @@ export const theme: MyDefaultTheme = {
 
             base: `${BASE}px`,
             h1: getResponsiveSize(20, 45, 320, 768),
-            h2: getResponsiveSize(38, 38),
+            h2: "2rem",
             h3: getResponsiveSize(28.125, 22),
             h4: getResponsiveSize(20, 35),
             h5: getResponsiveSize(20, 25),

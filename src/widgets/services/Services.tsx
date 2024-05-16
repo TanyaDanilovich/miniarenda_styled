@@ -11,7 +11,8 @@ type props = {
 };
 
 export const Services = ({data}: props) => {
-    const serviceTitle = "Мини-погрузчики и мини-экскаваторы в аренду"
+//&#8288;
+    const serviceTitle = `Мини-погрузчики и мини-экскаваторы в аренду`
     const serviceText = " Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и\n" +
         "                        производственным\n" +
         "                        компаниям, так и представителям малого бизнеса, также и частным заказчикам. Мини-экскаваторы\n" +
@@ -25,7 +26,7 @@ export const Services = ({data}: props) => {
             <S_Container>
                 <SectionTitle title = {serviceTitle} text = {serviceText}/>
 
-                <S_Flex $direction = {"column"} $gap = {"40px"} $wrap = {"wrap"}>
+                <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
 
                     {data.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
                                                             text = {card.text} image = {card.image}/>)}
@@ -38,11 +39,11 @@ export const Services = ({data}: props) => {
 export const StyledServices = styled.section<{}>`
   ${sectionMargin};
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.media.mobile} {
     ${S_Flex} {
       flex-direction: row;
-      gap: 1rem;
-      
+      //gap: 1rem;
+
     }
   }
 `

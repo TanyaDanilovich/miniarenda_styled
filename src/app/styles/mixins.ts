@@ -105,3 +105,31 @@ export const outlinedNestedDiv = css`
     margin: 5px;
   }
 `
+
+export const outlinedNestedEverything = css`
+
+  * {
+    ${({theme}) => outline(5, theme.colors.red.b400)};
+    margin: 5px;
+  }
+
+  * * {
+    ${({theme}) => outline(10, theme.colors.pink.b400)};
+    margin: 5px;
+  }
+
+  * * * {
+    ${({theme}) => outline(15, theme.colors.purple.b400)};
+    margin: 5px;
+  }
+
+  * * * * {
+    ${({theme}) => outline(20, theme.colors.deeppurple.b400)};
+    margin: 5px;
+  }
+
+  * * * * * {
+    ${({theme}) => outline(25, theme.colors.indigo.b400)};
+    margin: 5px;
+  }
+`

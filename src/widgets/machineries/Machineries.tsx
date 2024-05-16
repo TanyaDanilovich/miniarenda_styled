@@ -18,8 +18,10 @@ export const Machineries = ({data}: props) => {
     return (
         <StyledMachineries>
             <S_Container>
+                <SectionTitle title = {machineryTitle} text = {machineryText}/>
+
                 <S_Flex $direction = {"column"} $gap = {"40px"}>
-                    <SectionTitle title = {machineryTitle} text = {machineryText}/>
+
                     {data.map((card, index) => (
                         <MachineryCard key = {`${id}-${index}`}
                                        title = {card.title}
@@ -39,6 +41,14 @@ export const StyledMachineries = styled.section<{}>`
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
   ${sectionMargin}
+  @media ${({theme}) => theme.media.tablet} {
+  ${S_Flex} {
+    flex-direction: row;
+    gap: 2rem;
+
+  }
+}
+  
 `
 
 
