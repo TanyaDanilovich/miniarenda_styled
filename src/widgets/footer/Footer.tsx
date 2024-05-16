@@ -157,7 +157,7 @@ export const S_FooterItem = styled.div<{}>`
   & h5 {
     position: relative;
     padding-bottom: 1rem;
-    padding-left: 2rem;
+    //padding-left: 2rem;
     margin-bottom: 1rem;
     display: inline-block;
     font-size: ${({theme}) => theme.fonts.size.h5};
