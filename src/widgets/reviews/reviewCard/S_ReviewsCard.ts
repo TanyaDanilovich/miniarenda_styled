@@ -39,6 +39,7 @@ export const S_UserName = styled.div<{}>`
 
 export const S_ReviewCard = styled.div<{}>`
   padding: 1rem;
+  margin-top: 4rem;
   width: 100%;
   background-color: ${({theme}) => theme.colors.white};
   position: relative;
@@ -53,10 +54,10 @@ export const S_ReviewCard = styled.div<{}>`
   //   height: 4rem;
   //   width: 4rem;
   //   bottom: 0;
-  //   ${outlinedNestedDiv};
+    //   ${outlinedNestedDiv};
   //   right: 0;
-  //      background-color: ${({theme}) => theme.colors.red.b100};
-  //   box-shadow: ${({theme}) => theme.shadow.full};
+    //      background-color: ${({theme}) => theme.colors.red.b100};
+    //   box-shadow: ${({theme}) => theme.shadow.full};
   // }
 
   // &:after {

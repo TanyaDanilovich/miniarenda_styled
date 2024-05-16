@@ -2,6 +2,8 @@ import styled from "styled-components";
 import bgImg from "../../../assets/svg/google-logo.svg"
 
 export const S_GoogleLink = styled.div<{}>`
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 
   & span {
     display: block;

@@ -4,6 +4,7 @@ import {S_SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {GoogleLink} from './googleLink/GoogleLink';
 import {v4 as uuidv4} from 'uuid';
 import {ReviewSwiper} from './reviewSwiper/ReviewSwiper';
+import {S_Container} from '../../shared/styled/S_Container';
 
 type props = {};
 export const Reviews = ({}: props) => {
@@ -13,15 +14,15 @@ export const Reviews = ({}: props) => {
 
     return (
         <S_Reviews>
-            {/*<Container>*/}
-            <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
-            <GoogleLink/>
+            <S_Container>
+                <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
+                <GoogleLink/>
 
 
-            <ReviewSwiper id = {swiperId}/>
+                <ReviewSwiper id = {swiperId}/>
 
 
-            {/*</Container>*/}
+            </S_Container>
 
 
         </S_Reviews>);
