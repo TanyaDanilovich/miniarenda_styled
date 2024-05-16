@@ -7,7 +7,7 @@ export const S_Container = styled.div<ContainerProps>`
   margin-inline: auto;
   width: 100%;
   min-height: 100%;
-  padding: 0 15px;
+  padding: 0 1rem;
   margin: 0 auto;
   display: grid;
   align-self: center;

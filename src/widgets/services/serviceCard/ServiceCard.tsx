@@ -6,7 +6,7 @@ import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, plainTransition} from '../../../app/styles/mixins';
+import {ImageHover, outline, plainTransition} from '../../../app/styles/mixins';
 import {HoverIcons, S_HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 
@@ -47,24 +47,11 @@ export const ServiceCard = ({title, text, image}: props) => {
 };
 
 export const StyledServiceCard = styled.article <{}>`
-  padding: 15px;
+  padding: 1rem;
+  margin: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
 
   ${ImageHover()};
-
-  a {
-    text-transform: uppercase;
-  }
-
-  a:first-child {
-    left: 30%;
-
-  }
-
-  a:last-child {
-    right: 30%;
-  }
-
 
   ${S_HoverIcons} {
     ${plainTransition()};
@@ -95,6 +82,10 @@ export const StyledServiceCard = styled.article <{}>`
     }
   }
 
+  @media ${({theme}) => theme.media.tablet} {
+    width: calc(50% - 2.5rem);
+    margin: 2rem auto;
+  }
 
 `;
 
@@ -106,6 +97,8 @@ export const ServiceCardTitle = styled.h3 <{}>`
     color: ${({theme}) => theme.colors.primary};
     ${plainTransition()};
   }
+
+
 `;
 
 export const ServiceCardText = styled.p<{}>``;

@@ -23,8 +23,10 @@ export const Services = ({data}: props) => {
     return (
         <StyledServices>
             <S_Container>
-                <S_Flex $direction = {"column"} $gap = {"40px"}>
-                    <SectionTitle title = {serviceTitle} text = {serviceText}/>
+                <SectionTitle title = {serviceTitle} text = {serviceText}/>
+
+                <S_Flex $direction = {"column"} $gap = {"40px"} $wrap = {"wrap"}>
+
                     {data.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
                                                             text = {card.text} image = {card.image}/>)}
                 </S_Flex>
@@ -34,7 +36,15 @@ export const Services = ({data}: props) => {
 
 
 export const StyledServices = styled.section<{}>`
-  ${sectionMargin}
+  ${sectionMargin};
+
+  @media ${({theme}) => theme.media.tablet} {
+    ${S_Flex} {
+      flex-direction: row;
+      gap: 1rem;
+      
+    }
+  }
 `
 
 

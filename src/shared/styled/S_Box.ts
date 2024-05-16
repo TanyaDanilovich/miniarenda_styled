@@ -18,14 +18,15 @@ type Props = {
     $background?: string,
     $borderRadius?: string,
 
-    $lineHeight?: string
+    $lineHeight?: string,
+    $textAlign?: string;
 };
 
 
 export const S_Box = styled.div<Props>`
   min-height: fit-content;
   height: ${({$height}) => $height || "auto"};
-
+  
   ${({$display}) => $display && css`display: ${$display}`};
 
   ${({$paddingLeft}) => $paddingLeft && css`padding-left: ${$paddingLeft}`};
@@ -42,5 +43,6 @@ export const S_Box = styled.div<Props>`
   ${({$borderRadius}) => $borderRadius && css`border-radius: ${$borderRadius}`};
 
   ${({$lineHeight}) => $lineHeight && css`line-height: ${$lineHeight}`};
-
+  ${({$textAlign}) => $textAlign && css`text-align: ${$textAlign}`};
+  //${outline(5)}
 `;

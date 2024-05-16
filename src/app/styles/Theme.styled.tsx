@@ -40,14 +40,6 @@ export const theme: MyDefaultTheme = {
         extraWidescreen: `screen and (min-width:${BREAKPOINTS.extraWidescreen})`,
     },
 
-    // padding: {
-    //   section: "clamp(50px, 10dvh, 100px)",
-    //   sectionTitle: {
-    //     left: SECTION_TITLE_PADDING.left,
-    //     beforeWidth: SECTION_TITLE_PADDING.beforeWidth,
-    //     beforeLeft: `calc(${SECTION_TITLE_PADDING.left} - ${SECTION_TITLE_PADDING.beforeWidth})`,
-    //   },
-    // },
     duration: {
         long: "1s",
         middle: "0.5s",
