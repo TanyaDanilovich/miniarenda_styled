@@ -59,7 +59,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
                 </tbody>
             </S_MachineryCardTable>
 
-            <S_Box $marginTop = {"1rem"}>
+            <S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>
                 <Button type = {'read more'}/>
             </S_Box>
 
@@ -72,6 +72,9 @@ export const S_MachineryCard = styled.article <{}>`
   color: ${({theme}) => theme.colors.black};
   position: relative;
   z-index: 10;
+  padding-bottom: 1rem;
+  max-width: 544px;
+  margin: 0 auto;
   ${ImageHover()}
 `;
 
@@ -112,7 +115,7 @@ export const S_MachineryCardTable = styled.table<{}>`
 
   th, td {
     border-bottom: 1px solid #ddd;
-    padding-block: ${getResponsiveSize(BASE / 2, BASE, 320)};
+    padding-block: ${getResponsiveSize(BASE / 3, BASE/2, 320)};
     padding-inline: ${getResponsiveSize(BASE * 0.75, BASE * 2, 320)};
   }
 
