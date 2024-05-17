@@ -13,7 +13,7 @@ export const ReviewCard = ({userName, reviewContent}: props) => {
 
     return (
         <S_ReviewCard>
-            <S_Flex $align = {"center"} $gap = {"1rem"}>
+            <S_Flex $align = {"center"} $gap = {"0.5rem"}>
                 <S_UserLetter>{userName[0]}</S_UserLetter>
                 <S_Flex $align = {"start"} $gap = {"0.5rem"} $wrap = {'wrap'} $direction = {'column'}>
                     <S_UserName>{userName}</S_UserName>
