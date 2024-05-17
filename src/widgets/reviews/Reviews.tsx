@@ -15,7 +15,7 @@ export const Reviews = ({}: props) => {
     return (
         <S_Reviews>
             <S_Container>
-                <S_SectionTitle>{"Отзывы наших клиентов"}</S_SectionTitle>
+                <S_SectionTitle $isWithText={false}>{"Отзывы наших клиентов"}</S_SectionTitle>
                 <GoogleLink/>
 
 

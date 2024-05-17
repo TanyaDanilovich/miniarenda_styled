@@ -16,7 +16,7 @@ export const Questions = ({}: props) => {
         <S_Questions>
 
             <S_Container>
-                <SectionTitle title = {"Вопросы и ответы"} text = {''}/>
+                <SectionTitle title = {"Вопросы и ответы"}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>
                     {questionsData.map((q, index) =>

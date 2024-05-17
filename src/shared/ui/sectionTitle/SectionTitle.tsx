@@ -1,21 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
-import {getResponsiveSize} from '../../utils/getResponsiveSize';
+import styled, {css} from 'styled-components';
 
-type props = { title: string, text: string };
+
+type props = { title: string, text?: string };
 export const SectionTitle = ({title, text}: props) => {
 
     return (
-        <StyledSectionTitleContainer>
-            <S_SectionTitle>
+        <StyledSectionTitleContainer $isWithText={!!text}>
+            <S_SectionTitle $isWithText={!!text}>
                 {title}
             </S_SectionTitle>
-            <p>{text}</p>
+            {text && <p>{text}</p>}
         </StyledSectionTitleContainer>)
         ;
 };
 
-export const StyledSectionTitleContainer = styled.div<{}>`
+export const StyledSectionTitleContainer = styled.div<{ $isWithText: boolean }>`
 
   margin: auto auto 4rem;
   white-space: normal;
@@ -30,22 +30,32 @@ export const StyledSectionTitleContainer = styled.div<{}>`
     gap: 1rem;
     width: 100%;
     border-left: 5px solid ${({theme}) => theme.colors.primary};
-    p {
-      width: 50%;
-    }
+
+    ${({$isWithText})=>$isWithText && css `
+      @media ${({theme}) => theme.media.tablet} {
+        p {
+          width: 50%;
+        }
+      }
+    `}
+    
+   
 
   }
 `;
 
-export const S_SectionTitle = styled.h2<{}>`
+export const S_SectionTitle = styled.h2<{$isWithText: boolean}>`
   text-align: center;
   line-height: 1.1;
   letter-spacing: 1px;
   position: relative;
   font-size: ${({theme}) => theme.fonts.size.h2};
 
-  @media ${({theme}) => theme.media.tablet} {
-    width: 50%;
-    padding-left: 1.5rem;
-  }
+  ${({$isWithText})=>$isWithText && css `
+    @media ${({theme}) => theme.media.tablet} {
+      width: 50%;
+      padding-left: 1.5rem;
+    }
+  `}
+ 
 `;

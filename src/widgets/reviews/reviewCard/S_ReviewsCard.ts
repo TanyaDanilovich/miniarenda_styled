@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import checkmark from "../../../assets/icons/checkmark-circle-green.svg"
-import {fullAbsoluteElement, outlinedNestedDiv} from '../../../app/styles/mixins';
+import {fullAbsoluteElement, outline, outlinedNestedDiv, outlinedNestedEverything} from '../../../app/styles/mixins';
+import {S_Flex} from '../../../shared/styled/S_Flex';
 
 export const S_UserLetter = styled.div<{}>`
 
@@ -13,7 +14,7 @@ export const S_UserLetter = styled.div<{}>`
   width: 3rem;
   text-align: center;
   position: relative;
-
+  flex-shrink: 0;
 
   &:after {
     position: absolute;
@@ -30,21 +31,38 @@ export const S_UserLetter = styled.div<{}>`
 
 export const S_UserName = styled.div<{}>`
     //background-color: ${({theme}) => theme.colors.red.b100};
-  flex-grow: 1;
-  font-size: ${({theme}) => theme.fonts.size.h4};
-  font-weight: ${({theme}) => theme.fonts.weight.semiBold};
-  text-align: center;
+  //flex-grow: 1;
+  font-size: ${({theme}) => theme.fonts.size.p};
+  font-weight: ${({theme}) => theme.fonts.weight.bold};
+  //text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100%);
+  max-width: 100%;
 `
 
 
 export const S_ReviewCard = styled.div<{}>`
   padding: 1rem;
-  margin-top: 4rem;
-  width: 100%;
+  margin: 4rem auto 0;
+  width: calc(100% - 2rem);
+  min-height: 220px;
   background-color: ${({theme}) => theme.colors.white};
   position: relative;
   z-index: 50;
   box-shadow: ${({theme}) => theme.shadow.full};
+
+  & > ${S_Flex}  {
+    //background-color: ${({theme}) => theme.colors.red.b400};
+  }
+  
+  & > ${S_Flex} > ${S_Flex} {
+    background-color: ${({theme}) => theme.colors.grey.b400};
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
 
   // &:before {
   //   content: close-quote;

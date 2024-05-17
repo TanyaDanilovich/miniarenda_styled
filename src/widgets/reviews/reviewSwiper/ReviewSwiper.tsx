@@ -42,6 +42,7 @@ export const ReviewSwiper = ({id}: props) => {
     .swiper-button-prev{
     //position:relative;
         top: 2rem;
+        
         background-color:${theme.colors.primary};
         height:30px;
         width:50px;
@@ -53,13 +54,33 @@ export const ReviewSwiper = ({id}: props) => {
     }
     } 
     .swiper-button-prev{
-         left:60dvw;
+         left:calc(100% - 140px);
          }
+         
 `
 
 
     const params: SwiperProps = {
         slidesPerView: 1,
+        breakpoints: {
+            // when window width is >= 320px
+
+            // when window width is >= 480px
+
+            // when window width is >= 640px
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 0
+            },
+            1170: {
+                slidesPerView: 4,
+                spaceBetween: 0
+            }
+        },
         pagination: {
             clickable: true,
             //dynamicBullets: true,
