@@ -88,6 +88,8 @@ export const StyledServiceCard = styled.article <{}>`
   }
   @media ${({theme}) => theme.media.tablet} {
     width: calc(30%);
+    
+    
   }
   
 `;

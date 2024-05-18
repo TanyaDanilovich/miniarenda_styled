@@ -1,7 +1,7 @@
 import img1 from '../../assets/images/servises/servises_1.jpg'
 import img2 from '../../assets/images/servises/servises_2.jpg'
 import img3 from '../../assets/images/servises/servises_3.jpg'
-import {ServiceCardData} from '../../widgets/services/serviceCard/ServiceCard';
+import {ServiceCardData} from './serviceCard/ServiceCard';
 
 export const servicesData: ServiceCardData[] = [
     {

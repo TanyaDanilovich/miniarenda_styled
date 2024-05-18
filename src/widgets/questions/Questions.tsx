@@ -6,6 +6,7 @@ import {FullQuestion} from './FullQuestion';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import styled from 'styled-components';
 import {sectionMargin} from '../../app/styles/mixins';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 
 type props = {};
@@ -35,5 +36,6 @@ export const Questions = ({}: props) => {
 
 export const S_Questions = styled.section<{}>`
   background-color: ${({theme}) => theme.colors.white};
-  ${sectionMargin}
+  ${sectionMargin};
+  padding-inline: ${getResponsiveSize(5,16*4,320,992)};
 `

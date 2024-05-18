@@ -57,6 +57,7 @@ export const S_SectionTitle = styled.h2<{$isWithText: boolean}>`
     @media ${({theme}) => theme.media.tablet} {
       width: 50%;
       padding-left: 1.5rem;
+      text-align: left;
     }
   `}
 

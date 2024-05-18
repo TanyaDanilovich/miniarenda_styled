@@ -14,21 +14,25 @@ export const BurgerButton = ({isOpen, callback}: props) => {
 };
 
 export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
+
+  --burgerHeight: 50px; //кратно 5
+  --burgerLineHeight: 3px;
+
   display: flex;
   align-items: center;
   margin-left: 1rem;
   cursor: pointer;
-  height: 50px;
-  padding: 10px;
+  height: var(--burgerHeight);
+  padding: calc(var(--burgerHeight) / 5);
   position: relative;
 
   background-color: ${({theme}) => theme.colors.primary};
-  border-radius: 8px;
+  border-radius: calc(var(--burgerHeight) / 5);
 
   span {
     display: block;
-    height: 3px;
-    width: 30px;
+    height: var(--burgerLineHeight);
+    width: calc(var(--burgerHeight) - (var(--burgerHeight) / 5 * 2));
     background-color: ${({theme}) => theme.colors.white_smoke};
     //transition: 0.5s;
 
@@ -39,37 +43,37 @@ export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
             `}
     &:before,
     &:after {
+      --width: calc(var(--burgerHeight) - (var(--burgerHeight) / 5));
+      --translateSize: calc(var(--width) / 10);
       position: absolute;
       display: block;
       content: "";
-      height: 3px;
-      width: 30px;
+      height: var(--burgerLineHeight);
+      width: calc(var(--burgerHeight) - (var(--burgerHeight) / 5 * 2));
       background-color: ${({theme}) => theme.colors.white_smoke};
-      //left: 50%;
       transform: translateX(-50%);
-      //transform: rotate(0) translateX(-50%) translateY(0);
       transition: ${({theme}) => theme.duration.middle};
     }
 
     &:before {
-      transform: translateY(10px);
+      transform: translateY(calc(var(--burgerHeight) / 5));
 
       ${(props) =>
               props.$isOpen &&
               css<{ $isOpen: boolean }>`
-                transform: rotate(-45deg) translateX(-4px) translateY(-4px);
-                width: 40px;
+                transform: rotate(-45deg) translateX(calc(var(--translateSize) * -1)) translateY(calc(var(--translateSize) * -1));
+                width: var(--width);
               `}
     }
 
     &:after {
-      transform: translateY(-10px);
+      transform: translateY(calc(var(--burgerHeight) / 5 * -1));
 
       ${(props) =>
               props.$isOpen &&
               css<{ $isOpen: boolean }>`
-                transform: rotate(45deg) translateX(-4px) translateY(4px);
-                width: 40px;
+                transform: rotate(45deg) translateX(calc(var(--translateSize) * -1)) translateY(var(--translateSize));
+                width: var(--width);
               `}
     }
 

@@ -2,7 +2,7 @@ import styled, {useTheme} from "styled-components";
 
 import {S_Container} from '../../shared/styled/S_Container';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {HideContent} from '../../shared/styled/HideContent';
+import {S_HideContent} from '../../shared/styled/S_HideContent';
 import image from '../../assets/images/footer/_DSC3958.jpg'
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
@@ -92,7 +92,7 @@ export const Footer = ({}: props) => {
                 <small>
                     Copyright © 2024 miniarenda.by
                 </small>
-                <HideContent>
+                <S_HideContent>
                     <p>Предосталяем в аренду мини-экскаватор в Минске и
                        Минской области
                        (Атолино, Богатырево,
@@ -113,7 +113,7 @@ export const Footer = ({}: props) => {
                        Тарасово, Узда, Фаниполь,
                        Хатежино, Цнянка,
                        Чачково, Червень, Черкассы, Чуденичи, Чуриловичи)</p>
-                </HideContent>
+                </S_HideContent>
             </S_FooterContainer>
         </S_Footer>
 
@@ -255,7 +255,7 @@ export const S_FooterItem = styled.div<{}>`
     width: calc(50% - 0.5rem);
   }
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.media.computer} {
     width: calc(25% - 0.75rem);
   }
 `;
