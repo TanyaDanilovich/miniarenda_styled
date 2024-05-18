@@ -1,10 +1,11 @@
 import {S_Container} from '../../shared/styled/S_Container';
 import React, {useId} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {S_Questions} from './S_Questions';
 import {questionsData} from './questionsData';
-import {FullQuestion} from './Question';
+import {FullQuestion} from './FullQuestion';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import styled from 'styled-components';
+import {sectionMargin} from '../../app/styles/mixins';
 
 
 type props = {};
@@ -31,3 +32,7 @@ export const Questions = ({}: props) => {
 };
 
 
+export const S_Questions = styled.section<{}>`
+  background-color: ${({theme}) => theme.colors.white};
+  ${sectionMargin}
+`

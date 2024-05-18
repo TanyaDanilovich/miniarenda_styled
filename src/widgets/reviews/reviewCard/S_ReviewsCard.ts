@@ -53,18 +53,11 @@ export const S_ReviewCard = styled.div<{}>`
   z-index: 50;
   box-shadow: ${({theme}) => theme.shadow.full};
 
-  & > ${S_Flex}  {
-    //background-color: ${({theme}) => theme.colors.red.b400};
-    min-width:0;
-  }
-  
   & > ${S_Flex} > ${S_Flex} {
-    background-color: ${({theme}) => theme.colors.grey.b400};
     flex: 0 1 auto;
     max-width: 100%;
-    min-width:0;
+    min-width: 0;
   }
-
 
   // &:before {
   //   content: close-quote;

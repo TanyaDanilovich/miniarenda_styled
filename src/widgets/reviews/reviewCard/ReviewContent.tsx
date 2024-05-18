@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {ReadMore} from './ReadMore';
 import {BASE, countReviewLines} from '../../../shared/constants';
+import {outline} from '../../../app/styles/mixins';
 
 //
 
@@ -68,22 +69,25 @@ export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
       text-overflow: ellipsis;
       overflow-wrap: break-word;
       position: relative;
+      
     }
 
 
-    //p:after {
-    //  color: #ddd;
-    //  content: close-quote;
-    //  height: 4rem;
-    //  width: 4rem;
-    //  font-size: 65px;
-    //  margin: auto;
-    //  position: absolute;
-    //  right: 0;
-    //  bottom: 0;
-    //  z-index: 2;
-    //  opacity: 0.85;
-    //  background-color: red;
-    //}
+    p:after {
+      display: block;
+      color: black;
+      //content: close-quote;
+      //content: '\201E';
+      height: 4rem;
+      width: 4rem;
+      font-size: 3rem;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      //opacity: 0.85;
+      //${outline(10)} //background-color: grey;
+    }
   `}
 `
