@@ -17,6 +17,7 @@ export const Questions = ({}: props) => {
         <S_Questions>
 
             <S_Container>
+
                 <SectionTitle title = {"Вопросы и ответы"}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>

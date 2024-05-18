@@ -29,10 +29,12 @@ export const StyledSectionTitleContainer = styled.div<{ $isWithText: boolean }>`
     display: flex;
     gap: 1rem;
     width: 100%;
-    border-left: 5px solid ${({theme}) => theme.colors.primary};
+    
 
     ${({$isWithText})=>$isWithText && css `
+      border-left: 5px solid ${({theme}) => theme.colors.primary};
       @media ${({theme}) => theme.media.tablet} {
+        
         p {
           width: 50%;
         }
@@ -50,12 +52,12 @@ export const S_SectionTitle = styled.h2<{$isWithText: boolean}>`
   letter-spacing: 1px;
   position: relative;
   font-size: ${({theme}) => theme.fonts.size.h2};
-
-  ${({$isWithText})=>$isWithText && css `
+  width: 100%;
+  ${({$isWithText}) => $isWithText && css`
     @media ${({theme}) => theme.media.tablet} {
       width: 50%;
       padding-left: 1.5rem;
     }
   `}
- 
+
 `;

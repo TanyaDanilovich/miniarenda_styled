@@ -1,12 +1,11 @@
 import React from 'react';
-
-import {S_ReviewSwiper} from './S_ReviewSwiper';
 import {SwiperSlide} from '../../../shared/ui/Swiper/SwiperSlide';
 import {reviewsData} from '../reviewData';
 import {ReviewCard} from '../reviewCard/ReviewCard';
 import {v4 as uuidv4} from 'uuid';
-import {useTheme} from 'styled-components';
+import styled, {useTheme} from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
+import {Swiper} from '../../../shared/ui/Swiper/Swiper';
 
 
 type props = {
@@ -16,58 +15,50 @@ export const ReviewSwiper = ({id}: props) => {
     const theme = useTheme()
 
     const swiperCss = `
- 
-    
-    .swiper-pagination{
-        position:relative;
-        padding-block:2rem;
-        // background-color:${theme.colors.lightGray};
-        width: 100%;
+        .swiper-pagination{
+            position:relative;
+            padding-block:2rem;
+            width:100%;
         }
         
-    .swiper-pagination-bullet{
-        width: 8px;
-        height:3px;
-        display: inline-block;
-        border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+        .swiper-pagination-bullet{
+            width:8px;
+            height:3px;
+            display:inline-block;
+            border-radius:var(--swiper-pagination-bullet-border-radius, 50%);
         }
         
-   .swiper-horizontal>.swiper-pagination-bullets, 
-   .swiper-pagination-bullets.swiper-pagination-horizontal, 
-   .swiper-pagination-custom, .swiper-pagination-fraction{
-        width: auto;
+        .swiper-horizontal > .swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .swiper-pagination-custom, .swiper-pagination-fraction{
+            width:auto;
         }
         
-    .swiper-button-next,
-    .swiper-button-prev{
-    //position:relative;
-        top: 2rem;
+        .swiper-button-next,
+        .swiper-button-prev{
+            top:2rem;
+            background-color:${theme.colors.primary};
+            height:30px;
+            width:50px;
+            transform:skewX(9deg);
+            box-shadow:3px 3px 0 0 ${theme.colors.dark};
         
-        background-color:${theme.colors.primary};
-        height:30px;
-        width:50px;
-        transform:skewX(9deg);
-        box-shadow: 3px 3px 0 0 ${theme.colors.dark};
-    & svg {
-       height:1rem; 
-       color:white;
-    }
-    } 
-    .swiper-button-prev{
-         left:calc(100% - 140px);
-         }
-         
+            & svg{
+                height:1rem;
+                color:white;
+            }
+        }
+        
+        .swiper-button-prev{
+            left:calc(100% - 140px);
+        }
+
 `
 
 
     const params: SwiperProps = {
         slidesPerView: 1,
         breakpoints: {
-            // when window width is >= 320px
-
-            // when window width is >= 480px
-
-            // when window width is >= 640px
             576: {
                 slidesPerView: 2,
                 spaceBetween: 0
@@ -82,8 +73,7 @@ export const ReviewSwiper = ({id}: props) => {
             }
         },
         pagination: {
-            clickable: true,
-            //dynamicBullets: true,
+            clickable: true
         },
         navigation: true,
         injectStyles: [swiperCss],
@@ -111,3 +101,11 @@ export const ReviewSwiper = ({id}: props) => {
 };
 
 
+export const S_ReviewSwiper = styled(Swiper)<{}>`
+  --swiper-theme-color: ${({theme}) => theme.colors.primary};
+  --swiper-pagination-bullet-size: 1rem;
+  --swiper-pagination-bullet-width: 1rem;
+  --swiper-pagination-bullet-height: 1rem;
+  --swiper-pagination-bullet-inactive-opacity: 0.75;
+
+`
