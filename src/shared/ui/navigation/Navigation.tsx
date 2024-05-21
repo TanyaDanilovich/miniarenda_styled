@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import {outline, plainTransition} from '../../../app/styles/mixins';
-import {BurgerButton, StyledBurgerButton} from '../BurgerButton';
+import {BurgerButton} from '../BurgerButton';
 import React from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
-import {StyledMain} from '../../../widgets/main/Main';
 
 type props = {
     isOpen: boolean,
@@ -60,14 +59,14 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
 
   nav {
       // ${outline(10)}
-    width: 80dvw;
+    width: calc(80dvw + 15px);
     height: 80dvh;
     min-height: min-content;
     padding-top: 10dvh;
     background-color: ${({theme}) => theme.colors.bg_primary};
     position: absolute;
     top: 0;
-    left: ${({$isOpen}) => $isOpen ? 0 : "-150%"};
+    left: ${({$isOpen}) => $isOpen ? "-20px" : "-150%"};
     ${({theme}) => plainTransition(theme.duration.middle)};
 
   }
@@ -77,7 +76,23 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
     list-style: none;
   }
 
+  @media ${({theme}) => theme.media.tablet} {
+    width: 100%;
 
+    nav {
+      position: static;
+      width: auto;
+      height: auto;
+      padding-top: 0;
+
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content:end;
+    }
+  }
 
 
 

@@ -11,4 +11,12 @@ export const S_NavItem = styled.li<{}>`
   &:focus {
     background-color: ${({theme}) => theme.colors.lightSlateGray};
   }
+
+  @media ${({theme}) => theme.media.tablet} {
+    &, &:first-child {
+      border: none;
+     
+    }
+
+  }
 `;

@@ -1,20 +1,30 @@
 import styled from "styled-components";
 import logo from '../../assets/icons/logo.svg'
-import {outline} from '../../app/styles/mixins';
 
 
 type props = {
     height?: string;
 };
 export const Logo = ({}: props) => {
-    return <StyledLogo src = {logo}/>
+    return <S_LogoContainer>
+        <S_Logo src = {logo}/>
+    </S_LogoContainer>
+
+
 };
 
-type StyledLogoProps = {};
-const StyledLogo = styled.img<StyledLogoProps>`
-  ${({theme}) => outline(2, theme.colors.white)}
+const S_LogoContainer = styled.div<{}>`
   display: none;
-  @media ${({theme}) => theme.media.tablet}{
-    display:block;
+  max-height: 110px;
+  padding: 1rem 2rem 1rem 1rem;
+  @media ${({theme}) => theme.media.tablet} {
+    display: block;
+
   }
+`
+
+
+const S_Logo = styled.img<{}>`
+  object-fit: cover;
+  height: 100%;
 `;

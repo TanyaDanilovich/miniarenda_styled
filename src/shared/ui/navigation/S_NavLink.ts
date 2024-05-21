@@ -18,6 +18,7 @@ export const S_NavLink = styled.a<{}>`
   text-transform: uppercase;
 
   @media ${({theme}) => theme.media.tablet} {
-    padding: 1rem;
+    padding: 1rem 0.75rem;
+
   }
 `;

@@ -50,7 +50,8 @@ export const StyledServiceCard = styled.article <{}>`
   padding: 1rem;
   margin: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
-
+  display: flex;
+  flex-direction: column;
   ${ImageHover()};
 
   ${S_HoverIcons} {
@@ -88,10 +89,10 @@ export const StyledServiceCard = styled.article <{}>`
   }
   @media ${({theme}) => theme.media.tablet} {
     width: calc(30%);
-    
-    
+
+
   }
-  
+
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`
@@ -106,4 +107,5 @@ export const ServiceCardTitle = styled.h3 <{}>`
 
 `;
 
-export const ServiceCardText = styled.p<{}>``;
+export const ServiceCardText = styled.p<{}>`
+  flex-grow: 1`;

@@ -84,6 +84,12 @@ export const Footer = ({}: props) => {
                             <li>
                                 <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
                             </li>
+                            <li>
+                                <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
+                            </li>
+                            <li>
+                                <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
+                            </li>
                         </ul>
                     </S_FooterItem>
 
@@ -138,6 +144,7 @@ export const S_Footer = styled.footer<{}>`
   small {
     text-align: center;
     padding-top: 1rem;
+    display: block;
   }
 
   @media ${({theme}) => theme.media.mobile} {
@@ -257,6 +264,9 @@ export const S_FooterItem = styled.div<{}>`
 
   @media ${({theme}) => theme.media.computer} {
     width: calc(25% - 0.75rem);
+    &:nth-child(3) {
+      padding-left: 2rem;
+    }
   }
 `;
 

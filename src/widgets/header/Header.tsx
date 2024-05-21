@@ -5,6 +5,8 @@ import {useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {Navigation} from '../../shared/ui/navigation/Navigation';
 import {StyledMain} from '../main/Main';
+import {S_Container} from '../../shared/styled/S_Container';
+import {outline} from '../../app/styles/mixins';
 
 
 type props = {};
@@ -18,14 +20,14 @@ export const Header = ({}: props) => {
 
 
         <StyledHeader $isOpen = {isOpen}>
+            <S_Container>
 
-
-            <Logo/>
-            <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
-                <HeaderTop/>
-                <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
-            </S_Flex>
-
+                <Logo/>
+                <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
+                    <HeaderTop/>
+                    <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
+                </S_Flex>
+            </S_Container>
 
         </StyledHeader>
 
@@ -33,10 +35,10 @@ export const Header = ({}: props) => {
     );
 };
 
-export const StyledHeader = styled.header<{$isOpen: boolean}>`
-  display: flex;
+export const StyledHeader = styled.header<{ $isOpen: boolean }>`
   background-color: ${({theme}) => theme.colors.bg_primary};
-  padding: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
   position: sticky;
   z-index: ${({theme}) => theme.zIndices.header};
   top: 0;
@@ -44,11 +46,26 @@ export const StyledHeader = styled.header<{$isOpen: boolean}>`
   width: 100%;
 
 
-  & ~ ${StyledMain} {
+  display: flex;
 
+
+  & ~ ${StyledMain} {
     touch-action: ${({$isOpen}) => $isOpen ? "none" : "auto"};
   }
 
+  @media ${({theme}) => theme.media.tablet} {
+    padding: 0;
+    ${S_Container} > ${S_Flex} {
+      //${outline()}
+      flex-direction: column;
+    }
+
+  }
+
+  ${S_Container} {
+    display: flex;
+    padding-inline: 0;
+  }
 `;
 
 

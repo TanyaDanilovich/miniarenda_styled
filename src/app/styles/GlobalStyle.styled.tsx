@@ -15,12 +15,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+
     ${OpenSansFont({})};
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${({theme}) => theme.colors.black};
     background-color: ${({theme}) => theme.colors.white};
+    min-width: 320px;
   }
 
 
