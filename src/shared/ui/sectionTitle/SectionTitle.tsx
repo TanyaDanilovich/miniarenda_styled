@@ -33,6 +33,7 @@ export const StyledSectionTitleContainer = styled.div<{ $isWithText: boolean }>`
 
     ${({$isWithText})=>$isWithText && css `
       border-left: 5px solid ${({theme}) => theme.colors.primary};
+      align-items: center;
       @media ${({theme}) => theme.media.tablet} {
         
         p {

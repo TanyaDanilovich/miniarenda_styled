@@ -56,16 +56,21 @@ export const StyledHeader = styled.header<{ $isOpen: boolean }>`
   @media ${({theme}) => theme.media.tablet} {
     padding: 0;
     ${S_Container} > ${S_Flex} {
-      //${outline()}
       flex-direction: column;
     }
 
   }
 
   ${S_Container} {
+
     display: flex;
     padding-inline: 0;
+
+    @media ${({theme}) => theme.media.desktop} {
+      max-width: min(calc(100vw - 6rem), 1500px);
+    }
   }
+
 `;
 
 

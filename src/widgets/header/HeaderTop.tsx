@@ -1,8 +1,8 @@
 import styled, {useTheme} from "styled-components";
-import {outline, outlinedNestedDiv} from '../../app/styles/mixins';
+import {outline} from '../../app/styles/mixins';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {faMobileScreen} from '@fortawesome/free-solid-svg-icons';
+import {faPhone} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -27,12 +27,12 @@ export const HeaderTop = ({}: props) => {
                 <p>Звоните для заказа техники</p>
 
                 <span>
-                    <FontAwesomeIcon icon = {faMobileScreen} size = {'1x'}/>
+                    <FontAwesomeIcon icon = {faPhone} size = {'1x'}/>
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
                 </span>
 
                 <span>
-                    <FontAwesomeIcon icon = {faMobileScreen} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {faPhone} size = {'1x'} color = {theme.colors.white}/>
                     <a href = "tel:+375336949698">+375 (33) 694-96-98</a>
                 </span>
 
@@ -51,7 +51,7 @@ export const HeaderTop = ({}: props) => {
 };
 
 export const S_HeaderTop = styled.div    <{}>`
-  flex-grow: 1;
+  //flex-grow: 1;
   width: 100%;
   align-content: center;
   background-color: ${({theme}) => theme.colors.bg_primary};
@@ -65,33 +65,32 @@ export const S_HeaderTop = styled.div    <{}>`
   @media ${({theme}) => theme.media.tablet} {
     position: relative;
     background-color: ${({theme}) => theme.colors.primary};
-    padding-block: 1rem;
+    padding-block: 0.75rem;
     padding-inline: 3rem 1rem;
 
     display: flex;
     justify-content: space-around;
 
-    &:before {
+    &:before, &:after {
       content: '';
       position: absolute;
       width: 0;
       height: 0;
-      left: 0;
       bottom: 0;
       border: 0 solid transparent;
       border-right-width: 2rem;
       border-left-width: 0;
+    }
+
+    &:before {
+      left: 0;
       border-bottom: 4rem solid ${({theme}) => theme.colors.bg_primary};
     }
 
     &:after {
-      content: '';
-      position: absolute;
-      width: calc(50vw - 50%);
-      height: 100%;
-      right: calc((50vw - 51%) * -1);
-      bottom: 0;
-      background-color: ${({theme}) => theme.colors.primary};
+      right: 0;
+      background-color: ${({theme}) => theme.colors.bg_primary};
+      border-bottom: 4rem solid ${({theme}) => theme.colors.primary};
     }
 
   }
@@ -167,7 +166,6 @@ const S_WorkingHours = styled.div<{}>`
   }
 
   span:last-of-type {
-      //${outline(1, "black")}
     margin-left: 0.5rem;
     font-weight: ${({theme}) => theme.fonts.weight.bold};
   }

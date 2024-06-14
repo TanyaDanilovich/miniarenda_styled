@@ -67,18 +67,20 @@ export const StyledServiceCard = styled.article <{}>`
     }
   }
 
-  ${S_ImageContainer}:hover {
+  ${S_ImageContainer} {
     ${plainTransition()};
+  }
 
+  ${S_ImageContainer}:hover {
     ${S_HoverIcons} {
       opacity: 1;
 
       a:first-child {
-        left: 30%;
+        left: calc(50% - 3rem);
       }
 
       a:last-child {
-        right: 30%;
+        right: calc(50% - 3rem);
       }
     }
   }
@@ -101,7 +103,6 @@ export const ServiceCardTitle = styled.h3 <{}>`
 
   &:hover {
     color: ${({theme}) => theme.colors.primary};
-    ${plainTransition()};
   }
 
 

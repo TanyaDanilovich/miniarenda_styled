@@ -107,5 +107,4 @@ export const S_ReviewSwiper = styled(Swiper)<{}>`
   --swiper-pagination-bullet-width: 1rem;
   --swiper-pagination-bullet-height: 1rem;
   --swiper-pagination-bullet-inactive-opacity: 0.75;
-
 `

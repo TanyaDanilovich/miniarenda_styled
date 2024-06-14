@@ -25,8 +25,8 @@ export const Footer = ({}: props) => {
 
                     <S_FooterItem>
                         <h5><span>MINIARENDA.BY</span></h5>
-                        <p>Аренда&nbsp;техники&nbsp;по выгодным&nbsp;ценам</p>
-                        <p>Огромный опыт в земляных&nbsp;работах</p>
+                        <p>Аренда&nbsp;техники по&nbsp;выгодным&nbsp;ценам</p>
+                        <p>Огромный&nbsp;опыт в&nbsp;земляных&nbsp;работах</p>
                         <p>
                             <FontAwesomeIcon icon = {faPhone} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375296949698">+375 29 694-96-98</a></p>
@@ -160,6 +160,9 @@ export const S_Footer = styled.footer<{}>`
 export const S_FooterItem = styled.div<{}>`
   padding-block: 0.5rem;
 
+  & > p:first-of-type {
+    margin-bottom: 1rem;
+  }
 
   & h5 {
     position: relative;
@@ -263,7 +266,16 @@ export const S_FooterItem = styled.div<{}>`
   }
 
   @media ${({theme}) => theme.media.computer} {
+    &:nth-child(odd) {
+      padding-left: 4rem;
+    }
+  }
+  @media ${({theme}) => theme.media.desktop} {
     width: calc(25% - 0.75rem);
+    &:nth-child(1) {
+      padding-left: 0;
+    }
+
     &:nth-child(3) {
       padding-left: 2rem;
     }

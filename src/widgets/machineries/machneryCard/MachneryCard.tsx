@@ -115,13 +115,16 @@ export const S_MachineryCardTable = styled.table<{}>`
 
   th, td {
     border-bottom: 1px solid #ddd;
-    padding-block: ${getResponsiveSize(BASE / 3, BASE/2, 320)};
+    padding-block: ${getResponsiveSize(BASE / 3, BASE / 2, 320)};
     padding-inline: ${getResponsiveSize(BASE * 0.75, BASE * 2, 320)};
+  }
+
+  tr {
+    ${plainTransition()}
   }
 
   tr:hover {
     background-color: ${({theme}) => theme.colors.white_smoke};
-    ${plainTransition()}
   }
 `;
 
