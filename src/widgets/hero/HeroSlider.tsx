@@ -4,6 +4,9 @@ import {S_Image} from '../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {S_Container} from '../../shared/styled/S_Container';
 import {translateAnimation} from '../../app/styles/animation';
+import {BREAKPOINTS} from '../../shared/constants';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPhone} from '@fortawesome/free-solid-svg-icons';
 
 
 type props = {
@@ -18,8 +21,12 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
 
 
             <S_HeroTitle>
-                <p>{mainText}</p>
+                <h2>{mainText}</h2>
                 <p>{additionalText}</p>
+                <p>
+                    {/*<FontAwesomeIcon icon = {faPhone} size = {'1x'}/>*/}
+                    <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
+                </p>
             </S_HeroTitle>
 
             <S_Image src = {imgUrl}/>
@@ -27,7 +34,7 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
         </S_HeroSlider>);
 };
 
-const S_HeroSlider = styled.div<{}>`
+const S_HeroSlider = styled.article<{}>`
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -37,7 +44,10 @@ const S_HeroSlider = styled.div<{}>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    //gap: 5svw;
+    @media screen and (min-width: ${BREAKPOINTS.tablet}) {
+      padding-inline: 60px;
+    }
   }
 
   ${S_Image} {
@@ -74,23 +84,37 @@ export const S_HeroTitle = styled(S_Container)`
   font-weight: ${({theme}) => theme.fonts.weight.semiBold};
   line-height: 1.75;
 
-
   p {
-    position: relative;
-  }
-
-  p:nth-child(1) {
-    ${translateAnimation({duration: "2s"})};
-    font-size: ${({theme}) => theme.fonts.size.h1};
-    font-weight: ${({theme}) => theme.fonts.weight.regular};
-  }
-
-  p:nth-child(2) {
-    ${translateAnimation({delay: "1s", transformType: "translateY", start: "50vh"})};
-    color: ${({theme}) => theme.colors.primary};
     font-size: ${getResponsiveSize(12, 32, 360, 768)};
     font-weight: ${({theme}) => theme.fonts.weight.bold};
   }
+
+  p:not(:has(a)) {
+    color: ${({theme}) => theme.colors.primary};
+    ${translateAnimation({delay: "1.5s", transformType: "translateY", start: "0", duration: "0.4s"})};
+  }
+
+  p:has(a) {
+    width: 100%;
+    ${translateAnimation({delay: "1.5s", transformType: "translateY", start: "10vh", duration: "0.4s"})};
+  }
+
+  a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  & h2 {
+    ${translateAnimation({duration: "1.3s", delay: "0.5s"})};
+    font-size: ${({theme}) => theme.fonts.size.h1};
+    font-weight: ${({theme}) => theme.fonts.weight.regular};
+    text-align: center;
+  }
+
+
 
 
 

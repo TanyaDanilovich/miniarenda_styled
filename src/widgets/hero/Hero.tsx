@@ -23,11 +23,18 @@ export const Hero = ({}: props) => {
 };
 
 export const S_Hero = styled.section<{}>`
+  aspect-ratio: 4/3;
+  width: 100%;
+
   & > h1 {
     height: 1px;
     width: 1px;
     overflow: hidden;
   }
 
-  height: 60svw;
+  @media ${({theme}) => theme.media.computer} {
+    height: calc(100svh - 110px);
+    aspect-ratio: initial;
+  }
+
 `
