@@ -94,7 +94,6 @@ export const S_HeroTitle = styled(S_Container)`
   p {
     font-size: ${getResponsiveSize(12, 32, 360, 768)};
     font-weight: ${({theme}) => theme.fonts.weight.bold};
-
   }
 
   p:not(:has(a)) {
@@ -112,8 +111,8 @@ export const S_HeroTitle = styled(S_Container)`
     width: 0;
     height: 0;
     overflow: hidden;
-    //padding: 1rem;
-    cursor: pointer;
+
+
   }
 
   & h2 {
@@ -123,7 +122,14 @@ export const S_HeroTitle = styled(S_Container)`
     text-align: center;
   }
 
-
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
+    p > a {
+      padding: 1rem;
+      cursor: pointer;
+      height: auto;
+      width: fit-content;
+    }
+  }
 
 
 `

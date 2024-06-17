@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import {sectionMargin} from '../../app/styles/mixins';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import {BREAKPOINTS} from '../../shared/constants';
 
 
 export const S_OrderModal = styled.div<{}>`
-
+  display: none;
   color: ${({theme}) => theme.colors.white};
   background-color: ${({theme}) => theme.colors.black};
   margin-bottom: 0.25rem;
@@ -44,6 +45,10 @@ export const S_OrderModal = styled.div<{}>`
 
   button {
     padding: 0.5rem;
+  }
+
+  @media ${({theme}) => theme.media.mobile} {
+    display: block;
   }
 `
 

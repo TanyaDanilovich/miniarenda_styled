@@ -101,6 +101,8 @@ export const S_HeroSwiper = styled(Swiper)<{}>`
   --swiper-pagination-bullet-width: 1rem;
   --swiper-pagination-bullet-height: 1rem;
   --swiper-pagination-bullet-inactive-opacity: 0.75;
-
   height: 100%;
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
+    --swiper-pagination-bottom: 8px;
+  }
 `
