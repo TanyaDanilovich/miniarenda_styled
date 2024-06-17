@@ -1,14 +1,14 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import {Button} from '../../../shared/ui/button/Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, outline, plainTransition} from '../../../app/styles/mixins';
+import {ImageHover, plainTransition} from '../../../app/styles/mixins';
 import {HoverIcons, S_HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
+import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
 
 
 export type ServiceCardData = {
@@ -40,7 +40,7 @@ export const ServiceCard = ({title, text, image}: props) => {
                 {text}
             </ServiceCardText>
             <S_Box $marginTop = {"1rem"}>
-                <Button type = {'read more'}/>
+                <ReadMoreButton/>
             </S_Box>
         </StyledServiceCard>
     );

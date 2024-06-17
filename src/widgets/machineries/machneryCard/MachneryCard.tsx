@@ -1,6 +1,5 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import {Button} from '../../../shared/ui/button/Button';
 import React, {useId} from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, outline, plainTransition} from '../../../app/styles/mixins';
@@ -11,6 +10,7 @@ import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover'
 import {S_Image} from '../../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants';
+import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
 
 
 type Characteristic = { id: string, title: string, value: string }
@@ -60,7 +60,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
             </S_MachineryCardTable>
 
             <S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>
-                <Button type = {'read more'}/>
+                <ReadMoreButton/>
             </S_Box>
 
         </S_MachineryCard>

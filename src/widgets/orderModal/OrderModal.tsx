@@ -1,8 +1,8 @@
 import React from 'react';
 import {S_OrderModal} from './S_OrderModal';
 import {S_Container} from '../../shared/styled/S_Container';
-import {Button} from '../../shared/ui/button/Button';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
 
 
 type props = {};
@@ -19,9 +19,7 @@ export const OrderModal = ({}: props) => {
                         </h4>
                     </div>
                     <div>
-                        <Button type = {'colored'}>
-                            Заказать звонок
-                        </Button>
+                        <ContactUsButton/>
                     </div>
                     {/*<SectionTitle title = {""} text = {''}/>*/}
 
