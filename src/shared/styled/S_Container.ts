@@ -11,7 +11,7 @@ export const S_Container = styled.div<ContainerProps>`
   margin: 0 auto;
   align-self: center;
   position: relative;
-    //${outline(5, "green")};
+  ${outline(5, "green")};
 
 
   @media ${({theme}) => theme.media.tablet} {
