@@ -7,6 +7,8 @@ import {translateAnimation} from '../../app/styles/animation';
 import {BREAKPOINTS} from '../../shared/constants';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPhone} from '@fortawesome/free-solid-svg-icons';
+import {S_ContactUs} from '../../shared/ui/linkAsButton/S_ContactUs';
+import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
 
 
 type props = {
@@ -26,7 +28,12 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
                 <p>
                     {/*<FontAwesomeIcon icon = {faPhone} size = {'1x'}/>*/}
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
+                    <div>
+                        <ContactUsButton/>
+                    </div>
+
                 </p>
+
             </S_HeroTitle>
 
             <S_Image src = {imgUrl}/>
@@ -87,6 +94,7 @@ export const S_HeroTitle = styled(S_Container)`
   p {
     font-size: ${getResponsiveSize(12, 32, 360, 768)};
     font-weight: ${({theme}) => theme.fonts.weight.bold};
+
   }
 
   p:not(:has(a)) {
@@ -95,15 +103,16 @@ export const S_HeroTitle = styled(S_Container)`
   }
 
   p:has(a) {
-    width: 100%;
     ${translateAnimation({delay: "1.5s", transformType: "translateY", start: "10vh", duration: "0.4s"})};
   }
 
-  a {
+  p > a {
     display: inline-block;
     text-align: center;
-    width: 100%;
-    padding: 1rem;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    //padding: 1rem;
     cursor: pointer;
   }
 
@@ -113,7 +122,6 @@ export const S_HeroTitle = styled(S_Container)`
     font-weight: ${({theme}) => theme.fonts.weight.regular};
     text-align: center;
   }
-
 
 
 
