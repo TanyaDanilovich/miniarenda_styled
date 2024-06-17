@@ -1,6 +1,7 @@
 import {css} from 'styled-components';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {S_Image} from '../../shared/styled/S_Image';
+import {S_HoverIcons} from '../../shared/ui/hoverIcons/HoverIcons';
 
 
 export const border = (width: number = 1, color: string = "red") =>
@@ -8,6 +9,10 @@ export const border = (width: number = 1, color: string = "red") =>
 
 export const outline = (width: number = 1, color: string = "red") =>
     `border: ${width}px solid ${color};`;
+
+export const plainTransition = (duration?: string) => css`
+  transition: all ${({theme}) => duration ?? theme.duration.short} linear;
+`
 
 
 type FontProps = { size?: string, weight?: number }
@@ -29,9 +34,6 @@ export const RobotoFont = ({size, weight}: FontProps) => css`
   font-style: normal;
 `;
 
-export const plainTransition = (duration?: string) => css`
-  transition: all ${({theme}) => duration ?? theme.duration.short} linear;
-`
 
 export const fullAbsoluteElement = (opacity: number = 0.4) => css`
 
@@ -131,5 +133,42 @@ export const outlinedNestedEverything = css`
   * * * * * {
     ${({theme}) => outline(25, theme.colors.indigo.b400)};
     margin: 5px;
+  }
+`
+
+export const transitionHoverIcon = css`
+
+
+  ${S_HoverIcons} {
+
+    
+    a {
+      opacity: 0;
+      ${plainTransition()}
+    }
+
+    a:first-child {
+      left: 0;
+    }
+
+    a:last-child {
+      right: 0;
+    }
+  }
+
+  ${S_ImageContainer}:hover {
+    ${S_HoverIcons} {
+      a {
+        opacity: 1;
+      }
+
+      a:first-child {
+        left: calc(50% - 3rem);
+      }
+
+      a:last-child {
+        right: calc(50% - 3rem);
+      }
+    }
   }
 `

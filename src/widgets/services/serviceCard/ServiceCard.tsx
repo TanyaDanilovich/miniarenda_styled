@@ -5,7 +5,7 @@ import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, plainTransition} from '../../../app/styles/mixins';
+import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {HoverIcons, S_HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
@@ -54,36 +54,10 @@ export const StyledServiceCard = styled.article <{}>`
   flex-direction: column;
   ${ImageHover()};
 
-  ${S_HoverIcons} {
-    ${plainTransition()};
-    opacity: 0;
 
-    a:first-child {
-      left: 0;
-    }
+  ${transitionHoverIcon}
+  
 
-    a:last-child {
-      right: 0;
-    }
-  }
-
-  ${S_ImageContainer} {
-    ${plainTransition()};
-  }
-
-  ${S_ImageContainer}:hover {
-    ${S_HoverIcons} {
-      opacity: 1;
-
-      a:first-child {
-        left: calc(50% - 3rem);
-      }
-
-      a:last-child {
-        right: calc(50% - 3rem);
-      }
-    }
-  }
 
   @media ${({theme}) => theme.media.mobile} {
     width: calc(50% - 20px);

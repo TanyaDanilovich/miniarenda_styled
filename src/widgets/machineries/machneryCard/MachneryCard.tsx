@@ -2,7 +2,7 @@ import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React, {useId} from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, outline, plainTransition} from '../../../app/styles/mixins';
+import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
@@ -27,7 +27,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
     const id = useId()
     return (
         <S_MachineryCard>
-            <S_MachineryImageCover>
+            <S_ImageContainer>
 
                 <S_Image src = {image.src} alt = {image.alt}/>
                 <HoverIcons secondLink = {""} firstLink = {""}/>
@@ -35,7 +35,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
                 <FontAwesomeIconCover>
                     <FontAwesomeIcon icon = {faTable} size = {'1x'} color = {theme.colors.white}/>
                 </FontAwesomeIconCover>
-            </S_MachineryImageCover>
+            </S_ImageContainer>
 
 
             <S_MachineryCardTable>
@@ -75,26 +75,30 @@ export const S_MachineryCard = styled.article <{}>`
   padding-bottom: 1rem;
   max-width: 544px;
   margin: 0 auto;
+
   ${ImageHover()}
+  ${S_ImageContainer} {
+    position: relative;
+    z-index: 5;
+
+    &:after {
+      position: absolute;
+      content: "";
+      height: 6rem;
+      bottom: -4rem;
+      border-top: 10px solid ${({theme}) => theme.colors.primary};
+      width: 100%;
+      transform: skew(0deg, 5deg);
+      background-color: ${({theme}) => theme.colors.white};
+      z-index: 3;
+    }
+  }
+
+
+  ${transitionHoverIcon}
 `;
 
-export const S_MachineryImageCover = styled(S_ImageContainer)`
-    // ${outline(10)};
-  position: relative;
-  z-index: 5;
 
-  &:after {
-    position: absolute;
-    content: "";
-    height: 6rem;
-    bottom: -4rem;
-    border-top: 10px solid ${({theme}) => theme.colors.primary};
-    width: 100%;
-    transform: skew(0deg, 5deg);
-    background-color: ${({theme}) => theme.colors.white};
-    z-index: 3;
-  }
-}`;
 
 export const S_MachineryCardTitle = styled.caption <{}>`
   position: relative;

@@ -2,6 +2,7 @@ import styled, {useTheme} from 'styled-components';
 import {outline, plainTransition} from '../../../app/styles/mixins';
 import {faLinkSlash, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {S_ImageContainer} from '../../styled/S_ImageContainer';
 
 type props = {
     firstLink: string,
@@ -28,13 +29,12 @@ export const S_HoverIcons = styled.div<{}>`
   z-index: 100;
   top: 50%;
   transform: translateY(-50%);
-  //text-align: center;
 
     //${outline(4)};
 
 
   a {
-    ${({theme}) => plainTransition(theme.duration.middle)};
+    //${({theme}) => plainTransition(theme.duration.middle)};
     position: absolute;
     display: block;
     width: 2.75rem;
@@ -43,5 +43,9 @@ export const S_HoverIcons = styled.div<{}>`
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
     transform: translateY(-50%);
+  }
+
+  ${S_ImageContainer}:hover {
+    cursor: col-resize;
   }
 `;

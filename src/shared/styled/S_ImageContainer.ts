@@ -18,5 +18,4 @@ export const S_ImageContainer = styled.div<ImageContainerProps>`
   background: ${({$background, theme}) => $background || theme.colors.lightGray};
   opacity: ${({$opacity}) => $opacity || '1'};
   position: relative;
-
 `;
