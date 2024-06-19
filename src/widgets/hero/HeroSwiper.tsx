@@ -97,7 +97,7 @@ export const HeroSwiper = ({id}: props) => {
 export const S_HeroSwiper = styled(Swiper)<{}>`
   --swiper-theme-color: ${({theme}) => theme.colors.primary};
   --swiper-pagination-bottom: 1px;
-  --swiper-pagination-bullet-size: 1rem;
+  --swiper-pagination-bullet-size: 2rem;
   --swiper-pagination-bullet-width: 1rem;
   --swiper-pagination-bullet-height: 1rem;
   --swiper-pagination-bullet-inactive-opacity: 0.75;

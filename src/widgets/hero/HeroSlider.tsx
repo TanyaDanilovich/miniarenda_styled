@@ -26,11 +26,11 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
                 <h2>{mainText}</h2>
                 <p>{additionalText}</p>
                 <p>
-                    {/*<FontAwesomeIcon icon = {faPhone} size = {'1x'}/>*/}
+                    <FontAwesomeIcon icon = {faPhone} size = {'1x'}/>
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
-                    <div>
+                    <span>
                         <ContactUsButton/>
-                    </div>
+                    </span>
 
                 </p>
 

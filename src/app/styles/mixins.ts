@@ -47,25 +47,25 @@ export const fullAbsoluteElement = (opacity: number = 0.4) => css`
   top: 0;
 `
 
-export const ImageHover = () => css`
+export const ImageHover = css`
 
-  ${S_ImageContainer}:before {
+  &:before {
     ${fullAbsoluteElement()}
     ${plainTransition()};
     z-index: 3;
   }
 
-  ${S_ImageContainer}:hover:before {
+  &:hover:before {
     opacity: 1;
   }
 
-  ${S_Image} {
+  & > ${S_Image} {
     transform: scale(1);
     ${plainTransition()};
   }
 
-  ${S_ImageContainer}:hover {
-    ${S_Image} {
+  &:hover {
+    & > ${S_Image} {
       transform: scale(1.2);
       ${plainTransition()};
     }
@@ -141,32 +141,32 @@ export const transitionHoverIcon = css`
 
   ${S_HoverIcons} {
 
-    
-    a {
+
+    a, button {
       opacity: 0;
       ${plainTransition()}
     }
 
-    a:first-child {
+    a {
       left: 0;
     }
 
-    a:last-child {
+    button {
       right: 0;
     }
   }
 
   ${S_ImageContainer}:hover {
     ${S_HoverIcons} {
-      a {
+      a, button {
         opacity: 1;
       }
 
-      a:first-child {
+      a {
         left: calc(50% - 3rem);
       }
 
-      a:last-child {
+      button {
         right: calc(50% - 3rem);
       }
     }

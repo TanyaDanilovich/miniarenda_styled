@@ -5,16 +5,17 @@ import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
+import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {HoverIcons, S_HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
+import {ImageProps} from '../../../shared/types/common.types';
 
 
 export type ServiceCardData = {
     title: string,
     text: string,
-    image: { src: string, alt: string }
+    image: ImageProps
 }
 
 type props = ServiceCardData & {};
@@ -24,7 +25,7 @@ export const ServiceCard = ({title, text, image}: props) => {
         <StyledServiceCard>
             <S_ImageContainer>
                 <S_Image src = {image.src} alt = {image.alt}/>
-                <HoverIcons secondLink = {""} firstLink = {""}/>
+                <HoverIcons link = {""} image = {image}/>
             </S_ImageContainer>
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
@@ -52,11 +53,11 @@ export const StyledServiceCard = styled.article <{}>`
   box-shadow: ${({theme}) => theme.shadow.full};
   display: flex;
   flex-direction: column;
-  ${ImageHover()};
-
 
   ${transitionHoverIcon}
-  
+  & > ${S_ImageContainer} {
+    ${ImageHover};
+  }
 
 
   @media ${({theme}) => theme.media.mobile} {

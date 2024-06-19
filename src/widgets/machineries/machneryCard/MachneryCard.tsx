@@ -11,13 +11,14 @@ import {S_Image} from '../../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
+import {ImageProps} from '../../../shared/types/common.types';
 
 
 type Characteristic = { id: string, title: string, value: string }
 
 export type machineryCardData = {
     title: string,
-    image: { src: string, alt: string },
+    image: ImageProps,
     characteristics: Characteristic[],
 }
 
@@ -30,7 +31,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
             <S_ImageContainer>
 
                 <S_Image src = {image.src} alt = {image.alt}/>
-                <HoverIcons secondLink = {""} firstLink = {""}/>
+                <HoverIcons link={""} image={image}/>
 
                 <FontAwesomeIconCover>
                     <FontAwesomeIcon icon = {faTable} size = {'1x'} color = {theme.colors.white}/>
@@ -76,7 +77,7 @@ export const S_MachineryCard = styled.article <{}>`
   max-width: 544px;
   margin: 0 auto;
 
-  ${ImageHover()}
+  ${ImageHover}
   ${S_ImageContainer} {
     position: relative;
     z-index: 5;
