@@ -31,7 +31,7 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
             <S_ImageContainer>
 
                 <S_Image src = {image.src} alt = {image.alt}/>
-                <HoverIcons link={""} image={image}/>
+                {/*<HoverIcons link={""} image={image}/>*/}
 
                 <FontAwesomeIconCover>
                     <FontAwesomeIcon icon = {faTable} size = {'1x'} color = {theme.colors.white}/>
@@ -77,7 +77,7 @@ export const S_MachineryCard = styled.article <{}>`
   max-width: 544px;
   margin: 0 auto;
 
-  ${ImageHover}
+  // ${ImageHover}
   ${S_ImageContainer} {
     position: relative;
     z-index: 5;
@@ -96,7 +96,7 @@ export const S_MachineryCard = styled.article <{}>`
   }
 
 
-  ${transitionHoverIcon}
+  // ${transitionHoverIcon}
 `;
 
 
