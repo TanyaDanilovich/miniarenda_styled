@@ -1,22 +1,24 @@
 import {useEffect, useRef} from 'react';
 import {register, SwiperContainer} from 'swiper/element/bundle';
+import "swiper/swiper-bundle.css";
 import {PropsWithChildren} from '../../types/common.types';
-import {SwiperProps} from 'swiper/swiper-react';
 import {SwiperOptions} from 'swiper/types';
 
-type props = SwiperOptions & SwiperProps & {
+type props = SwiperOptions & {
     id: string,
     name: string
 }
 
+// Register Swiper web component
+register();
 
 export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
 
     const swiperRef = useRef<SwiperContainer>(null);
 
+
     useEffect(() => {
-        // Register Swiper web component
-        register();
+
 
         // Object with parameters
         const params = {
@@ -27,19 +29,16 @@ export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
             Object.assign(swiperRef.current, params);
             swiperRef.current.initialize();
         }
+
     }, []);
 
 
     return (
-
-        <swiper-container init = {false} ref = {swiperRef}
-
-            // navigation-next-el="#my-next-button"
-            // navigation-prev-el="#my-prev-button"
-        >
-            {children}
-        </swiper-container>
-
+        <>
+            <swiper-container init = {false} ref = {swiperRef}>
+                {children}
+            </swiper-container>
+        </>
     );
 };
 

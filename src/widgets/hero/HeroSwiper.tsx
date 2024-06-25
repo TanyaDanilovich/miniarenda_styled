@@ -2,16 +2,17 @@ import React from 'react';
 
 import {v4 as uuidv4} from 'uuid';
 import styled, {useTheme} from 'styled-components';
-import {SwiperProps} from 'swiper/swiper-react';
 import {heroData} from './heroData';
 import {SwiperSlide} from '../../shared/ui/Swiper/SwiperSlide';
 import {Swiper} from '../../shared/ui/Swiper/Swiper';
+import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
 import img1 from "../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
 import img2 from "../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
 import img3 from "../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
 import img4 from "../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
 import {BREAKPOINTS} from '../../shared/constants';
+import {outline} from '../../app/styles/mixins';
 
 
 type props = {
@@ -23,45 +24,21 @@ export const HeroSwiper = ({id}: props) => {
     const urls = [img1, img2, img3, img4]
 
     const swiperCss = `
-        .swiper-pagination{
-            width:100%;      
-        }
-        
-        .swiper-pagination-bullet{
-            width:8px;
-            height:8px;
-            display:inline-block;
-            border-radius:var(--swiper-pagination-bullet-border-radius, 50%);
-        }
- 
-        .swiper-button-next,
-        .swiper-button-prev{
-            width:0;
-            background-color:${theme.colors.primary};
-            height:30px;
-           
-            transform:skewX(9deg);
-            box-shadow:3px 3px 0 0 ${theme.colors.dark};
-            
-        & svg{
-                height:1rem;
-                color:white;
-            }
-            
-        @media screen and (min-width:${BREAKPOINTS.tablet}) {
-            width:50px;
-             }  
-        }
-
-`
+   
+   
+   
+   
+    `
 
 
-    const params: SwiperProps = {
+    const params: SwiperOptions = {
         slidesPerView: 1,
 
         navigation: {
             enabled: true,
         },
+
+
         pagination: {
             clickable: true
         },
@@ -105,4 +82,42 @@ export const S_HeroSwiper = styled(Swiper)<{}>`
   @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     --swiper-pagination-bottom: 8px;
   }
+
+  &::part(button-prev), &::part(button-next) {
+    width: 0;
+    background-color: ${({theme}) => theme.colors.primary};
+    height: 30px;
+    color: white;
+    transform: skewX(9deg);
+    box-shadow: 3px 3px 0 0 ${({theme}) => theme.colors.dark};
+
+
+    @media screen and (min-width: ${BREAKPOINTS.tablet}) {
+      width: 50px;
+    }
+
+    & > svg {
+      height: 1rem;
+    }
+  }
+
+
+  &::part(pagination) {
+    width: 100%;
+  }
+
+  &::part(bullet) {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  }
+
+  &::part(bullet-active) {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  }
+
 `
