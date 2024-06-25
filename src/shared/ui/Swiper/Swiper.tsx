@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react';
-import {register, SwiperContainer} from 'swiper/element/bundle';
+import {SwiperContainer} from 'swiper/element/bundle';
 import "swiper/swiper-bundle.css";
 import {PropsWithChildren} from '../../types/common.types';
 import {SwiperOptions} from 'swiper/types';
@@ -9,8 +9,6 @@ type props = SwiperOptions & {
     name: string
 }
 
-// Register Swiper web component
-register();
 
 export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
 
