@@ -57,8 +57,11 @@ export const ReviewSwiper = ({id}: props) => {
 
 
     const params: SwiperProps = {
-        slidesPerView: 1,
         breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
             576: {
                 slidesPerView: 2,
                 spaceBetween: 0
@@ -123,9 +126,7 @@ export const S_ReviewSwiper = styled(Swiper)<{}>`
     border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
   }
 
-  .swiper-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper-pagination-custom, .swiper-pagination-fraction {
+  &::part(pagination) {
     width: auto;
   }
 
