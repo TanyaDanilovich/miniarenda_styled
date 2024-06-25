@@ -107,4 +107,48 @@ export const S_ReviewSwiper = styled(Swiper)<{}>`
   --swiper-pagination-bullet-width: 1rem;
   --swiper-pagination-bullet-height: 1rem;
   --swiper-pagination-bullet-inactive-opacity: 0.75;
+
+
+  &::part(pagination) {
+    position: relative;
+    padding-block: 2rem;
+    width: 100%;
+  }
+
+  &::part(bullet),
+  &::part(bullet-active) {
+    width: 8px;
+    height: 3px;
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    width: auto;
+  }
+
+  &::part(button-prev),
+  &::part(button-next) {
+    top: 2rem;
+    background-color: ${({theme}) => theme.colors.primary};
+    height: 1rem;
+    width: 50px;
+    transform: skewX(9deg);
+    box-shadow: 3px 3px 0 0 ${({theme}) => theme.colors.dark};
+    padding-block: 0.5rem;
+    color: white;
+  }
+
+  &::part(button-prev) {
+    left: calc(100% - 140px);
+  }
+
+
+
+
+
+
+
 `

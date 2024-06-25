@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React from 'react';
 
 import {v4 as uuidv4} from 'uuid';
-import styled, {useTheme} from 'styled-components';
+import styled from 'styled-components';
 import {heroData} from './heroData';
 import {SwiperSlide} from '../../shared/ui/Swiper/SwiperSlide';
 import {Swiper} from '../../shared/ui/Swiper/Swiper';
@@ -12,20 +12,14 @@ import img2 from "../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
 import img3 from "../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
 import img4 from "../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
 import {BREAKPOINTS} from '../../shared/constants';
-import {outline} from '../../app/styles/mixins';
-import {ReadMoreButton} from '../../shared/ui/linkAsButton/ReadMoreButton';
 
 
 type props = {
     id: string,
 };
 export const HeroSwiper = ({id}: props) => {
-    const theme = useTheme();
-
-    const swiperElRef = useRef(null);
 
     const urls = [img1, img2, img3, img4]
-
 
 
     const params: SwiperOptions = {
@@ -79,7 +73,8 @@ export const S_HeroSwiper = styled(Swiper)<{}>`
     --swiper-pagination-bottom: 8px;
   }
 
-  &::part(button-prev), &::part(button-next) {
+  &::part(button-prev),
+  &::part(button-next) {
     width: 0;
     background-color: ${({theme}) => theme.colors.primary};
     height: 1rem;
