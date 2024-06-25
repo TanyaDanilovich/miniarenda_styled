@@ -20,4 +20,5 @@ export const S_ReadMore = styled.div<{ $isCollapsed: boolean | null }>`
   text-decoration: underline;
   color: ${({theme}) => theme.colors.dimGray};
   margin-top: 0.75rem;
+  cursor: pointer;
 `

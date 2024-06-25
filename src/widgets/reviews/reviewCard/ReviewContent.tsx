@@ -30,12 +30,15 @@ export const ReviewContent = ({text}: props) => {
     useEffect(() => {
         const checkIsShowButton = () => {
             if (contentRef.current) {
-                if (contentRef.current.scrollHeight <= (Math.round(BASE * countReviewLines * 1.4))) {
+                console.log(contentRef.current.scrollHeight)
+                if (contentRef.current.scrollHeight <= (Math.round(BASE * countReviewLines * 1.4) + BASE)) {
                     setIsCollapsed(false)
                     setShowButton(false)
+                    console.log(false)
                 } else {
                     setIsCollapsed(true)
                     setShowButton(true)
+                    console.log(true)
                 }
             }
         }
@@ -45,9 +48,8 @@ export const ReviewContent = ({text}: props) => {
         window.addEventListener("resize", debounce);
         checkIsShowButton();
         return () => window.removeEventListener("resize", debounce);
-
-
     }, [contentRef]);
+
 
     return (
         <S_reviewContent $isCollapsed = {isCollapsed}>
@@ -59,9 +61,13 @@ export const ReviewContent = ({text}: props) => {
 
 
 export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
+  p {
+    padding-top: 1rem;
+  }
+
   ${({$isCollapsed}) => $isCollapsed && css`
     p {
-      padding-top: 1rem;
+
       -webkit-line-clamp: ${countReviewLines};
       -webkit-box-orient: vertical;
       display: -webkit-box;
@@ -69,7 +75,7 @@ export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
       text-overflow: ellipsis;
       overflow-wrap: break-word;
       position: relative;
-      
+        //${outline(5)}
     }
 
 
@@ -87,7 +93,7 @@ export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
       bottom: 0;
       z-index: 2;
       //opacity: 0.85;
-      //${outline(10)} //background-color: grey;
+        //${outline(10)} //background-color: grey;
     }
   `}
 `
