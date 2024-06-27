@@ -18,18 +18,18 @@ export const Dropdown = ({text, isOpen}: { text: string, isOpen: boolean }) => {
 
 
 export const S_Dropdown = styled.div<{ $maxHeight: string, $height: string }>`
-  ${plainTransition()}
-  padding: 0 1rem 0 3.5rem;
   margin: 0;
 
-  ${({$height}) => $height !== "0" && css`
-    padding: 1rem 1rem 01rem 3.5rem;
-  `}
   p {
+    padding: 0 1rem 0 3.5rem;
     overflow: hidden;
     ${plainTransition()}
     max-height: ${({$maxHeight}) => $maxHeight};
     height: ${({$height}) => $height};
+
+    ${({$height}) => $height !== "0" && css`
+      padding: 1rem 1rem 01rem 3.5rem;
+    `}
   }
 
 `
