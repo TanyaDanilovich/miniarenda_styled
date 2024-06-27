@@ -3,24 +3,27 @@ import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
-import {plainTransition} from '../../app/styles/mixins';
-import {QuestionText} from './QuestionText';
-import {AnswerText} from './AnswerText';
+import {outline, plainTransition} from '../../app/styles/mixins';
+import {Question} from './Question';
+import {Dropdown} from './Dropdown';
 
 
 type props = {
+    id: string,
     question: string,
-    answer: string
+    answer: string,
+    callback: () => void,
+    isOpend: boolean
 }
 
-export const FullQuestion = ({question, answer}: props) => {
+export const FullQuestion = ({question, answer, id, callback, isOpend}: props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const theme = useTheme()
 
     const openToggle = () => setIsOpen(prev => !prev)
 
     return (
-        <S_FullQuestion $isOpen = {isOpen}>
+        <S_FullQuestion $isOpen = {isOpend} onClick = {() => callback()}>
 
             <S_Flex $align = {"center"}>
 
@@ -32,12 +35,12 @@ export const FullQuestion = ({question, answer}: props) => {
                 </S_MinusContainer>
 
 
-                <QuestionText text = {question} callback = {openToggle}/>
+                <Question text = {question} callback = {openToggle}/>
 
             </S_Flex>
 
 
-            <AnswerText text = {answer} isOpen = {isOpen}/>
+            <Dropdown text = {answer} isOpen = {isOpend}/>
 
         </S_FullQuestion>);
 };
@@ -72,9 +75,6 @@ export const S_FullQuestion = styled.div<{ $isOpen: boolean }>`
   }
 
   ${S_Flex} {
-    ${plainTransition()}
-  
-    padding: 1rem;
     background-color: transparent;
     ${({$isOpen}) => $isOpen && css`
       background-color: ${({theme}) => theme.colors.gainsboro};
@@ -87,9 +87,9 @@ const S_MinusContainer = styled.div<{}>`
   position: relative;
   width: 1.5em;
   height: 1.5em;
+  margin-left: 1rem;
 
   svg {
     position: absolute;
-
   }
 `

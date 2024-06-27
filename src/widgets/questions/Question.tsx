@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export const QuestionText = ({text, callback}: { text: string, callback: () => void }) => {
+export const Question = ({text, callback}: { text: string, callback: () => void }) => {
 
 
     return (
@@ -14,8 +14,7 @@ export const QuestionText = ({text, callback}: { text: string, callback: () => v
 
 
 export const S_QuestionText = styled.p<{  }>`
-  padding-left: 1rem;
-  margin: 0;
+  padding: 1rem;
   cursor: pointer;
   flex-grow: 1;
 `

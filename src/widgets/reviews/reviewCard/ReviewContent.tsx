@@ -30,15 +30,15 @@ export const ReviewContent = ({text}: props) => {
     useEffect(() => {
         const checkIsShowButton = () => {
             if (contentRef.current) {
-                console.log(contentRef.current.scrollHeight)
+                //console.log(contentRef.current.scrollHeight)
                 if (contentRef.current.scrollHeight <= (Math.round(BASE * countReviewLines * 1.4) + BASE)) {
                     setIsCollapsed(false)
                     setShowButton(false)
-                    console.log(false)
+                    //console.log(false)
                 } else {
                     setIsCollapsed(true)
                     setShowButton(true)
-                    console.log(true)
+                    //console.log(true)
                 }
             }
         }

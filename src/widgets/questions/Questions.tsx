@@ -1,5 +1,5 @@
 import {S_Container} from '../../shared/styled/S_Container';
-import React, {useId} from 'react';
+import React, {useId, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {questionsData} from './questionsData';
 import {FullQuestion} from './FullQuestion';
@@ -11,8 +11,13 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 type props = {};
 export const Questions = ({}: props) => {
-
+    const [openIndex, setOpenIndex] = useState<string | null>(null)
     const id = useId()
+
+    const toggleQuestion = (index: string) => {
+        setOpenIndex(openIndex !== index? index:null)
+    };
+
 
     return (
         <S_Questions>
@@ -22,11 +27,16 @@ export const Questions = ({}: props) => {
                 <SectionTitle title = {"Вопросы и ответы"}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>
-                    {questionsData.map((q, index) =>
-                        <FullQuestion key = {`${id}-${index}`}
-                                      question = {q.question}
-                                      answer = {q.answer}
-                        />)}
+                    {questionsData.map((q, index) => {
+                        console.log(openIndex, id)
+                        return <FullQuestion id = {`${id}-${index}`}
+                                             key = {`${id}-${index}`}
+                                             question = {q.question}
+                                             answer = {q.answer}
+                                             callback = {() => toggleQuestion(`${id}-${index}`)}
+                                             isOpend = {openIndex === `${id}-${index}`}
+                        />
+                    })}
                 </S_Flex>
 
             </S_Container>
@@ -37,5 +47,5 @@ export const Questions = ({}: props) => {
 export const S_Questions = styled.section<{}>`
   background-color: ${({theme}) => theme.colors.white};
   ${sectionMargin};
-  padding-inline: ${getResponsiveSize(5,16*4,320,992)};
+  padding-inline: ${getResponsiveSize(5, 16 * 4, 320, 992)};
 `

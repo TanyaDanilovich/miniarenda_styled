@@ -70,10 +70,10 @@ export const ReviewSwiper = ({id}: props) => {
                 slidesPerView: 3,
                 spaceBetween: 0
             },
-            1170: {
-                slidesPerView: 4,
-                spaceBetween: 0
-            }
+            // 1170: {
+            //     slidesPerView: 4,
+            //     spaceBetween: 0
+            // }
         },
         pagination: {
             clickable: true
