@@ -5,7 +5,7 @@ import {outline, plainTransition} from '../../app/styles/mixins';
 
 export const Dropdown = ({text, isOpen}: { text: string, isOpen: boolean }) => {
 
-    const maxHeight = isOpen ? "6rem" : "0";
+    const maxHeight = isOpen ? "8rem" : "0";
     const height = isOpen ? "100%" : "0"
 
     return (

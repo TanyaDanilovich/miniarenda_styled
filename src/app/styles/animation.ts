@@ -1,11 +1,11 @@
-import {css, keyframes} from 'styled-components';
+import {RuleSet, css, keyframes} from 'styled-components';
 
 type props = {
-    start?: string,
-    end?: string,
-    duration?: string,
-    delay?: string,
-    transformType?: string
+    start?: RuleSet | string,
+    end?: RuleSet | string,
+    duration?: RuleSet | string,
+    delay?: RuleSet | string,
+    transformType?: RuleSet | string
 }
 export const translateAnimation = ({start, end, transformType, duration, delay}: props) => {
 
@@ -14,7 +14,7 @@ export const translateAnimation = ({start, end, transformType, duration, delay}:
         transform: ${transformType || "translateX"}(${start || "-100vw"});
         opacity: 0;
       }
-      50%{
+      50% {
         opacity: 1;
       }
       100% {

@@ -15,7 +15,7 @@ export const Questions = ({}: props) => {
     const id = useId()
 
     const toggleQuestion = (index: string) => {
-        setOpenIndex(openIndex !== index? index:null)
+        setOpenIndex(openIndex !== index ? index : null)
     };
 
 
@@ -27,16 +27,14 @@ export const Questions = ({}: props) => {
                 <SectionTitle title = {"Вопросы и ответы"}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>
-                    {questionsData.map((q, index) => {
-                        console.log(openIndex, id)
-                        return <FullQuestion id = {`${id}-${index}`}
-                                             key = {`${id}-${index}`}
-                                             question = {q.question}
-                                             answer = {q.answer}
-                                             callback = {() => toggleQuestion(`${id}-${index}`)}
-                                             isOpend = {openIndex === `${id}-${index}`}
+                    {questionsData.map((q, index) => <FullQuestion id = {`${id}-${index}`}
+                                                                   key = {`${id}-${index}`}
+                                                                   question = {q.question}
+                                                                   answer = {q.answer}
+                                                                   callback = {() => toggleQuestion(`${id}-${index}`)}
+                                                                   isOpend = {openIndex === `${id}-${index}`}
                         />
-                    })}
+                    )}
                 </S_Flex>
 
             </S_Container>
