@@ -6,17 +6,21 @@ import {ThemeProvider} from "styled-components";
 import {theme} from './app/styles/Theme.styled';
 import {GlobalStyle} from './app/styles/GlobalStyle.styled';
 
+
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement,
 );
 root.render(
     <React.StrictMode>
+
         <ThemeProvider theme = {theme}>
-            {/*<StyleSheetManager shouldForwardProp = {(propName) => isValidProp(propName)}>*/}
+
             <GlobalStyle/>
+
             <App/>
-            {/*</StyleSheetManager>*/}
+
         </ThemeProvider>
+
     </React.StrictMode>,
 );
 

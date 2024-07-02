@@ -4,6 +4,7 @@ import {BurgerButton} from '../BurgerButton';
 import React from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
+import {Link} from 'react-router-dom';
 
 type props = {
     isOpen: boolean,
@@ -19,27 +20,27 @@ export const Navigation = ({isOpen, isOpenToggle, closeToggle}: props) => {
             <nav onClick = {closeToggle}>
                 <ul>
                     <S_NavItem>
-                        <S_NavLink href = "#">Главная</S_NavLink>
+                        <S_NavLink to = "/"> Главная </S_NavLink>
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#machineries">Техника</S_NavLink>
+                        {/*<S_NavLink href = "#machineries">Техника</S_NavLink>*/}
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#">Услуги</S_NavLink>
+                        <S_NavLink to = "uslugi">Услуги</S_NavLink>
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#">Цены</S_NavLink>
+                        <S_NavLink to = "price">Цены</S_NavLink>
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#">Наши работы</S_NavLink>
+                        <S_NavLink to = "projects">Наши работы</S_NavLink>
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#">Контакты</S_NavLink>
+                        <S_NavLink to = "contacts">Контакты</S_NavLink>
                     </S_NavItem>
 
                 </ul>

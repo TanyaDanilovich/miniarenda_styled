@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from 'react';
 import {Services} from '../services/Services';
-import {servicesData} from '../services/servicesData';
+
 import {Machineries} from '../machineries/Machineries';
 import {machineriesData} from '../machineries/machineriesData';
 import {Delivery} from '../delivery/Delivery';
@@ -19,7 +19,7 @@ export const Main = ({}: props) => {
 
         <StyledMain>
             <Hero/>
-            <Services data = {servicesData}/>
+            <Services/>
             <Machineries data = {machineriesData}/>
             <Delivery/>
             <Reviews/>

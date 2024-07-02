@@ -1,11 +1,9 @@
 /// <reference types="react/canary" />
-
-import {Header} from '../widgets/header/Header';
 import React from 'react';
 import {Footer} from '../widgets/footer/Footer';
-import {Main} from '../widgets/main/Main';
-
 import {register} from 'swiper/element/bundle';
+import {RouterProvider} from 'react-router-dom';
+import {router} from './router';
 
 
 // Register Swiper web component
@@ -15,9 +13,7 @@ function App() {
 
     return (
         <div>
-            <Header/>
-            <Main/>
-
+            <RouterProvider router = {router} fallbackElement = {<p>Loading...</p>}/>;
             <Footer/>
         </div>
     );

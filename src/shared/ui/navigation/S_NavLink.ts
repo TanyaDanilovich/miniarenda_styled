@@ -2,9 +2,10 @@ import styled from "styled-components";
 import {outline} from '../../../app/styles/mixins';
 import {getResponsiveSize} from '../../utils/getResponsiveSize';
 import {BASE} from '../../constants';
+import {NavLink} from 'react-router-dom';
 
 
-export const S_NavLink = styled.a<{}>`
+export const S_NavLink = styled(NavLink)<{}>`
     //${outline()}
   display: inline-block;
   width: 100%;
@@ -16,6 +17,10 @@ export const S_NavLink = styled.a<{}>`
   font-weight: ${({theme}) => theme.fonts.weight.medium};
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  &.active {
+    color: ${({theme}) => theme.colors.primary};
+  }
 
   @media ${({theme}) => theme.media.tablet} {
     padding: 1rem 0.75rem;

@@ -2,15 +2,17 @@ import styled from "styled-components";
 import {S_Container} from '../../shared/styled/S_Container';
 import React, {useId} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {ServiceCard, ServiceCardData} from './serviceCard/ServiceCard';
+import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
+import {servicesData} from './servicesData';
 
 type props = {
-    data: ServiceCardData[]
+   // data: ServiceCardData[]
 };
 
-export const Services = ({data}: props) => {
+export const Services = ({}: props) => {
+
 //&#8288;
     const serviceTitle = `Мини-погрузчики и мини-экскаваторы в аренду`
     const serviceText = " Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и\n" +
@@ -28,7 +30,7 @@ export const Services = ({data}: props) => {
 
                 <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
 
-                    {data.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
+                    {servicesData.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
                                                             text = {card.text} image = {card.image}/>)}
                 </S_Flex>
             </S_Container>
