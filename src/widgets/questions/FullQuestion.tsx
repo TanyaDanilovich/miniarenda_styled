@@ -3,7 +3,7 @@ import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
-import {outline, plainTransition} from '../../app/styles/mixins';
+import {plainTransition} from '../../app/styles/mixins';
 import {Question} from './Question';
 import {Dropdown} from './Dropdown';
 
@@ -12,35 +12,34 @@ type props = {
     id: string,
     question: string,
     answer: string,
-    callback: () => void,
-    isOpend: boolean
+    toggleQuestionCallback: () => void,
+    isOpen: boolean
 }
 
-export const FullQuestion = ({question, answer, id, callback, isOpend}: props) => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
+export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOpen}: props) => {
     const theme = useTheme()
 
-    const openToggle = () => setIsOpen(prev => !prev)
+    const onToggleQuestion = () => toggleQuestionCallback()
 
     return (
-        <S_FullQuestion $isOpen = {isOpend} onClick = {() => callback()}>
+        <S_FullQuestion $isOpen = {isOpen}>
 
-            <S_Flex $align = {"center"}>
+            <S_Flex $align = {"center"} onClick = {onToggleQuestion}>
 
                 <S_MinusContainer>
                     <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
-                                     onClick = {openToggle}/>
+                    />
                     <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
-                                     onClick = {openToggle}/>
+                    />
                 </S_MinusContainer>
 
 
-                <Question text = {question} callback = {openToggle}/>
+                <Question text = {question}/>
 
             </S_Flex>
 
 
-            <Dropdown text = {answer} isOpen = {isOpend}/>
+            <Dropdown text = {answer} isOpen = {isOpen}/>
 
         </S_FullQuestion>);
 };

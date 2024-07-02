@@ -5,7 +5,7 @@ import {outline, plainTransition} from '../../app/styles/mixins';
 
 export const Dropdown = ({text, isOpen}: { text: string, isOpen: boolean }) => {
 
-    const maxHeight = isOpen ? "8rem" : "0";
+    const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
 
     return (
@@ -28,7 +28,7 @@ export const S_Dropdown = styled.div<{ $maxHeight: string, $height: string }>`
     height: ${({$height}) => $height};
 
     ${({$height}) => $height !== "0" && css`
-      padding: 1rem 1rem 01rem 3.5rem;
+      padding: 1rem 1rem 1rem 3.5rem;
     `}
   }
 

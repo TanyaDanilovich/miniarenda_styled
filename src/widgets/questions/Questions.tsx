@@ -31,8 +31,8 @@ export const Questions = ({}: props) => {
                                                                    key = {`${id}-${index}`}
                                                                    question = {q.question}
                                                                    answer = {q.answer}
-                                                                   callback = {() => toggleQuestion(`${id}-${index}`)}
-                                                                   isOpend = {openIndex === `${id}-${index}`}
+                                                                   toggleQuestionCallback = {() => toggleQuestion(`${id}-${index}`)}
+                                                                   isOpen = {openIndex === `${id}-${index}`}
                         />
                     )}
                 </S_Flex>
