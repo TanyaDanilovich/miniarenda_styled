@@ -6,7 +6,6 @@ import {S_Flex} from '../../shared/styled/S_Flex';
 import {Navigation} from '../../shared/ui/navigation/Navigation';
 import {StyledMain} from '../main/Main';
 import {S_Container} from '../../shared/styled/S_Container';
-import {outline} from '../../app/styles/mixins';
 
 
 type props = {};

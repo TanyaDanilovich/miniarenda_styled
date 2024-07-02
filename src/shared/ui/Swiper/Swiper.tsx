@@ -6,7 +6,8 @@ import {SwiperOptions} from 'swiper/types';
 
 type props = SwiperOptions & {
     id: string,
-    name: string
+    name: string,
+    // onSwiperSlideChange?: () => void
 }
 
 
@@ -26,17 +27,20 @@ export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
         if (swiperRef.current) {
             Object.assign(swiperRef.current, params);
             swiperRef.current.initialize();
+
+            // onSwiperSlideChange && swiperRef.current.addEventListener('swiperslidechange', (e) => {
+            //     onSwiperSlideChange()
+            // });
         }
+
 
     }, []);
 
 
     return (
-        <>
-            <swiper-container init = {false} ref = {swiperRef}>
-                {children}
-            </swiper-container>
-        </>
+        <swiper-container init = {false} ref = {swiperRef}>
+            {children}
+        </swiper-container>
     );
 };
 

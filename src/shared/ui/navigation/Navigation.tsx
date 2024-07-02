@@ -23,7 +23,7 @@ export const Navigation = ({isOpen, isOpenToggle, closeToggle}: props) => {
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>
-                        <S_NavLink href = "#">Техника</S_NavLink>
+                        <S_NavLink href = "#machineries">Техника</S_NavLink>
                     </S_NavItem>
 
                     <S_NavItem onClick = {closeToggle}>

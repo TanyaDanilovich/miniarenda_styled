@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SwiperSlide} from '../../../shared/ui/Swiper/SwiperSlide';
 import {reviewsData} from '../reviewData';
 import {ReviewCard} from '../reviewCard/ReviewCard';
@@ -14,46 +14,46 @@ type props = {
 export const ReviewSwiper = ({id}: props) => {
     const theme = useTheme()
 
-    const swiperCss = `
-        .swiper-pagination{
-            position:relative;
-            padding-block:2rem;
-            width:100%;
-        }
-        
-        .swiper-pagination-bullet{
-            width:8px;
-            height:3px;
-            display:inline-block;
-            border-radius:var(--swiper-pagination-bullet-border-radius, 50%);
-        }
-        
-        .swiper-horizontal > .swiper-pagination-bullets,
-        .swiper-pagination-bullets.swiper-pagination-horizontal,
-        .swiper-pagination-custom, .swiper-pagination-fraction{
-            width:auto;
-        }
-        
-        .swiper-button-next,
-        .swiper-button-prev{
-            top:2rem;
-            background-color:${theme.colors.primary};
-            height:30px;
-            width:50px;
-            transform:skewX(9deg);
-            box-shadow:3px 3px 0 0 ${theme.colors.dark};
-        
-            & svg{
-                height:1rem;
-                color:white;
-            }
-        }
-        
-        .swiper-button-prev{
-            left:calc(100% - 140px);
-        }
-
-`
+//     const swiperCss = `
+//         .swiper-pagination{
+//             position:relative;
+//             padding-block:2rem;
+//             width:100%;
+//         }
+//
+//         .swiper-pagination-bullet{
+//             width:8px;
+//             height:3px;
+//             display:inline-block;
+//             border-radius:var(--swiper-pagination-bullet-border-radius, 50%);
+//         }
+//
+//         .swiper-horizontal > .swiper-pagination-bullets,
+//         .swiper-pagination-bullets.swiper-pagination-horizontal,
+//         .swiper-pagination-custom, .swiper-pagination-fraction{
+//             width:auto;
+//         }
+//
+//         .swiper-button-next,
+//         .swiper-button-prev{
+//             top:2rem;
+//             background-color:${theme.colors.primary};
+//             height:30px;
+//             width:50px;
+//             transform:skewX(9deg);
+//             box-shadow:3px 3px 0 0 ${theme.colors.dark};
+//
+//             & svg{
+//                 height:1rem;
+//                 color:white;
+//             }
+//         }
+//
+//         .swiper-button-prev{
+//             left:calc(100% - 140px);
+//         }
+//
+// `
 
 
     const params: SwiperProps = {
@@ -70,16 +70,13 @@ export const ReviewSwiper = ({id}: props) => {
                 slidesPerView: 3,
                 spaceBetween: 0
             },
-            // 1170: {
-            //     slidesPerView: 4,
-            //     spaceBetween: 0
-            // }
+
         },
         pagination: {
             clickable: true
         },
         navigation: true,
-        injectStyles: [swiperCss],
+        // injectStyles: [swiperCss],
         //loop: true
     }
 

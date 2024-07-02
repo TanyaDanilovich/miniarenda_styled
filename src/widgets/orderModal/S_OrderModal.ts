@@ -6,6 +6,7 @@ import {BREAKPOINTS} from '../../shared/constants';
 
 export const S_OrderModal = styled.div<{}>`
   display: none;
+  padding-block: 1rem;
   color: ${({theme}) => theme.colors.white};
   background-color: ${({theme}) => theme.colors.black};
   margin-bottom: 0.25rem;
@@ -29,7 +30,7 @@ export const S_OrderModal = styled.div<{}>`
   &:before {
     position: absolute;
     content: "";
-    width: 55%;
+    width: 60%;
     height: 100%;
     left: 0;
     bottom: 0;

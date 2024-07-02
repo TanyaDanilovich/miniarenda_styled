@@ -1,6 +1,5 @@
 import styled, {useTheme} from 'styled-components';
-import {outline, plainTransition} from '../../../app/styles/mixins';
-import {faLinkSlash, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faLink, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {S_ImageContainer} from '../../styled/S_ImageContainer';
 import {S_Image} from '../../styled/S_Image';
@@ -22,7 +21,7 @@ export const HoverIcons = ({link, image, children}: PropsWithChildren<props>) =>
 
 
             <a href = {link}>
-                <FontAwesomeIcon icon = {faLinkSlash} size = {'1x'} color = {theme.colors.primary}/>
+                <FontAwesomeIcon icon = {faLink} size = {'1x'} color = {theme.colors.primary}/>
             </a>
 
 

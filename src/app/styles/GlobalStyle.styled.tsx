@@ -3,7 +3,9 @@ import {OpenSansFont} from './mixins';
 
 export const GlobalStyle = createGlobalStyle`
 
-
+  html {
+    scroll-behavior: smooth;
+  }
 
 
   *,
