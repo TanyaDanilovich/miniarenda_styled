@@ -5,8 +5,6 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {S_Container} from '../../shared/styled/S_Container';
 import {translateAnimation} from '../../app/styles/animation';
 import {BASE, BREAKPOINTS} from '../../shared/constants';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPhone} from '@fortawesome/free-solid-svg-icons';
 import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
 import {PhoneLink, S_PhoneLink} from '../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../shared/styled/S_Flex';
@@ -50,6 +48,14 @@ const S_HeroSlider = styled.article<{}>`
     top: 0;
     left: 0;
     z-index: -1;
+
+    ${translateAnimation({
+      transformType: "scale",
+      start: "1.2",
+      duration: "2.5s",
+      end: "1"
+    })};
+
     //filter: blur(5px);
     //mask-image: linear-gradient(to bottom, black, transparent);
   }
@@ -86,7 +92,11 @@ export const S_HeroSliderContent = styled(S_Container)`
 `
 
 export const S_HeroTitle = styled.h2<{}>`
-  ${translateAnimation({duration: "1.3s", delay: "0.5s"})};
+  ${translateAnimation({
+    duration: "1.3s",
+    delay: "0.5s",
+    isWithOpacity: true
+  })};
   font-size: ${({theme}) => theme.fonts.size.h1};
   font-weight: ${({theme}) => theme.fonts.weight.regular};
   text-align: center;
@@ -96,7 +106,9 @@ export const S_HeroText = styled.p<{}>`
   color: ${({theme}) => theme.colors.primary};
   font-size: ${getResponsiveSize(12, 32, 360, 768)};
   font-weight: ${({theme}) => theme.fonts.weight.bold};
-  ${translateAnimation({delay: "1.5s", transformType: "translateY", start: "0", duration: "0.4s"})};
+  ${translateAnimation({
+    delay: "1.5s", transformType: "translateY", start: "0", duration: "0.4s", isWithOpacity: true
+  })};
 
 `
 
@@ -108,7 +120,8 @@ export const S_HeroPhoneWrapper = styled(S_Flex)<{}>`
     delay: "1.5s",
     transformType: "translateY",
     start: css`var(--animation-start)`,
-    duration: "0.4s"
+    duration: "0.4s",
+    isWithOpacity: true
   })};
   flex-direction: column;
   row-gap: ${getResponsiveSize(BASE / 2, BASE * 1.5, 320, 768)};
