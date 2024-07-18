@@ -3,6 +3,7 @@ import {SwiperContainer} from 'swiper/element/bundle';
 import "swiper/swiper-bundle.css";
 import {PropsWithChildren} from '../../types/common.types';
 import {SwiperOptions} from 'swiper/types';
+import {Swiper} from 'swiper';
 
 type props = SwiperOptions & {
     id: string,
@@ -11,7 +12,7 @@ type props = SwiperOptions & {
 }
 
 
-export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
+export const AppSwiper = ({children, ...rest}: PropsWithChildren<props>) => {
 
     const swiperRef = useRef<SwiperContainer>(null);
 
@@ -28,9 +29,13 @@ export const Swiper = ({children, ...rest}: PropsWithChildren<props>) => {
             Object.assign(swiperRef.current, params);
             swiperRef.current.initialize();
 
-            // onSwiperSlideChange && swiperRef.current.addEventListener('swiperslidechange', (e) => {
-            //     onSwiperSlideChange()
-            // });
+            swiperRef.current.addEventListener('swiperprogress', (event:CustomEvent<[swiper: Swiper]>|Event) => {
+                console.log(event)
+               // const [swiper, progress] = event.detail;
+            });
+            swiperRef.current.addEventListener('swiperslidechange', (e) => {
+                //console.log('swiperslidechange')
+            });
         }
 
 
