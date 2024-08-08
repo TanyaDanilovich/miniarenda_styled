@@ -7,22 +7,26 @@ import {outline} from '../../../app/styles/mixins';
 //
 
 type props = {
-    text: string
+    text: string,
+    isCollapsed: boolean | null,
+    setCollapsed: () => void,
+    setUnCollapsed: () => void,
 };
-export const ReviewContent = ({text}: props) => {
-    const [isCollapsed, setIsCollapsed] = useState<boolean | null>(true)
+export const ReviewContent = ({text, isCollapsed, setUnCollapsed, setCollapsed}: props) => {
+
     const [showButton, setShowButton] = useState<boolean | null>(null);
     const contentRef = useRef<HTMLParagraphElement>(null)
 
 
-    const readMoreCallback = () => setIsCollapsed(prev => !prev)
+    const readMoreCallback = () => {
+        isCollapsed ? setUnCollapsed() : setCollapsed()
+    }
 
     const debounceFunction = (cb: () => void, delay: number) => {
         let timer: ReturnType<typeof setTimeout>
         return () => {
             if (timer) clearTimeout(timer);
             timer = setTimeout(() => cb(), delay);
-
         };
     };
 
@@ -32,11 +36,11 @@ export const ReviewContent = ({text}: props) => {
             if (contentRef.current) {
                 //console.log(contentRef.current.scrollHeight)
                 if (contentRef.current.scrollHeight <= (Math.round(BASE * countReviewLines * 1.4) + BASE)) {
-                    setIsCollapsed(false)
+                    setUnCollapsed()
                     setShowButton(false)
                     //console.log(false)
                 } else {
-                    setIsCollapsed(true)
+                    setCollapsed()
                     setShowButton(true)
                     //console.log(true)
                 }

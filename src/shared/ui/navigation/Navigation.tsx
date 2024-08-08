@@ -4,42 +4,42 @@ import {BurgerButton} from '../BurgerButton';
 import React from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
-import {Link} from 'react-router-dom';
+import {DropdownMenu} from '../../../features/dropdownMenu/DropdownMenu';
 
 type props = {
     isOpen: boolean,
     isOpenToggle: () => void,
-    closeToggle: () => void
+    setClose: () => void
 };
-export const Navigation = ({isOpen, isOpenToggle, closeToggle}: props) => {
+export const Navigation = ({isOpen, isOpenToggle, setClose}: props) => {
     return (
 
 
         <S_MobileNavigation $isOpen = {isOpen}>
 
-            <nav onClick = {closeToggle}>
+            <nav onClick = {setClose}>
                 <ul>
                     <S_NavItem>
                         <S_NavLink to = "/"> Главная </S_NavLink>
                     </S_NavItem>
 
-                    <S_NavItem onClick = {closeToggle}>
+                    <S_NavItem onClick = {setClose}>
                         {/*<S_NavLink href = "#machineries">Техника</S_NavLink>*/}
                     </S_NavItem>
-
-                    <S_NavItem onClick = {closeToggle}>
+<DropdownMenu/>
+                    <S_NavItem onClick = {setClose}>
                         <S_NavLink to = "uslugi">Услуги</S_NavLink>
                     </S_NavItem>
 
-                    <S_NavItem onClick = {closeToggle}>
+                    <S_NavItem onClick = {setClose}>
                         <S_NavLink to = "price">Цены</S_NavLink>
                     </S_NavItem>
 
-                    <S_NavItem onClick = {closeToggle}>
+                    <S_NavItem onClick = {setClose}>
                         <S_NavLink to = "projects">Наши работы</S_NavLink>
                     </S_NavItem>
 
-                    <S_NavItem onClick = {closeToggle}>
+                    <S_NavItem onClick = {setClose}>
                         <S_NavLink to = "contacts">Контакты</S_NavLink>
                     </S_NavItem>
 

@@ -51,8 +51,8 @@ const S_HeroSlider = styled.article<{}>`
 
     ${translateAnimation({
       transformType: "scale",
-      start: "1.2",
-      duration: "2.5s",
+      start: "1.4",
+      duration: "3s",
       end: "1"
     })};
 

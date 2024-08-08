@@ -3,8 +3,8 @@ import React from 'react';
 import {v4 as uuidv4} from 'uuid';
 import styled from 'styled-components';
 import {heroData} from './heroData';
-import {SwiperSlide} from '../../shared/ui/Swiper/SwiperSlide';
-import {Swiper} from '../../shared/ui/Swiper/Swiper';
+import {AppSwiperSlide} from '../../shared/ui/Swiper/AppSwiperSlide';
+import {AppSwiper} from '../../shared/ui/Swiper/AppSwiper';
 import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
 import img1 from "../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
@@ -46,12 +46,12 @@ export const HeroSwiper = ({id}: props) => {
             {heroData.map(({mainText, additionalText, imgUrl}, index) => {
                     const slideId = uuidv4();
                     return (
-                        <SwiperSlide id = {slideId} key = {`${id}-${index}`}>
+                        <AppSwiperSlide id = {slideId} key = {`${id}-${index}`}>
                             <HeroSlider mainText = {mainText}
                                         additionalText = {additionalText}
                                         imgUrl = {urls[index]}
                             />
-                        </SwiperSlide>)
+                        </AppSwiperSlide>)
                 }
             )}
 
@@ -59,7 +59,7 @@ export const HeroSwiper = ({id}: props) => {
 };
 
 
-export const S_HeroSwiper = styled(Swiper)<{}>`
+export const S_HeroSwiper = styled(AppSwiper)<{}>`
   --swiper-theme-color: ${({theme}) => theme.colors.primary};
   --swiper-pagination-bottom: 1px;
   --swiper-pagination-bullet-size: 2rem;

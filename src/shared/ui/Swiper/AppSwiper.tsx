@@ -8,14 +8,21 @@ import {Swiper} from 'swiper';
 type props = SwiperOptions & {
     id: string,
     name: string,
-    // onSwiperSlideChange?: () => void
+    listenerType?: string,
+    eventCallback?: () => void
 }
 
 
-export const AppSwiper = ({children, ...rest}: PropsWithChildren<props>) => {
+export const AppSwiper = ({
+                              children, eventCallback = () => {
+    }, listenerType, ...rest
+                          }: PropsWithChildren<props>) => {
 
     const swiperRef = useRef<SwiperContainer>(null);
 
+    const listener = (event: CustomEvent<[swiper: Swiper]> | Event) => {
+        eventCallback()
+    };
 
     useEffect(() => {
 
@@ -28,16 +35,16 @@ export const AppSwiper = ({children, ...rest}: PropsWithChildren<props>) => {
         if (swiperRef.current) {
             Object.assign(swiperRef.current, params);
             swiperRef.current.initialize();
+//            swiperslidechange
+            if (listenerType) {
 
-            swiperRef.current.addEventListener('swiperprogress', (event:CustomEvent<[swiper: Swiper]>|Event) => {
-                console.log(event)
-               // const [swiper, progress] = event.detail;
-            });
-            swiperRef.current.addEventListener('swiperslidechange', (e) => {
-                //console.log('swiperslidechange')
-            });
+                swiperRef.current.addEventListener(listenerType, listener)
+
+                //return ()=>swiperRef.current.removeEventListener(listenerType, listener)
+            }
+
+
         }
-
 
     }, []);
 

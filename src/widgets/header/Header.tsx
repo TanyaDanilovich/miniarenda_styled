@@ -13,7 +13,7 @@ export const Header = ({}: props) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const isOpenToggle = () => setIsOpen((prev) => !prev);
-    const closeToggle = () => setIsOpen(false);
+    const setClose = () => setIsOpen(false);
 
     return (
 
@@ -24,7 +24,7 @@ export const Header = ({}: props) => {
                 <Logo/>
                 <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
-                    <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} closeToggle = {closeToggle}/>
+                    <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>
                 </S_Flex>
             </S_Container>
 

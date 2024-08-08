@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import {Swiper} from '../../../shared/ui/Swiper/Swiper';
+import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 
 
-export const S_ClientsSwiper = styled(Swiper)<{}>`
+export const S_ClientsSwiper = styled(AppSwiper)<{}>`
   ${S_ImageContainer} {
     aspect-ratio: 9/6;
     display: grid;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';

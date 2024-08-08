@@ -1,12 +1,13 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import styled, {css} from 'styled-components';
-import {outline, plainTransition} from '../../app/styles/mixins';
+import {plainTransition} from '../../app/styles/mixins';
 
 
 export const Dropdown = ({text, isOpen}: { text: string, isOpen: boolean }) => {
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
+
 
     return (
         <S_Dropdown $maxHeight = {maxHeight} $height = {height}>

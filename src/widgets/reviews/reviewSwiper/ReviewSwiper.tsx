@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
-import {SwiperSlide} from '../../../shared/ui/Swiper/SwiperSlide';
-import {reviewsData} from '../reviewData';
-import {ReviewCard} from '../reviewCard/ReviewCard';
-import {v4 as uuidv4} from 'uuid';
-import styled, {useTheme} from 'styled-components';
+import React, {useEffect, useState} from 'react';
+import styled from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
-import {Swiper} from '../../../shared/ui/Swiper/Swiper';
+import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
+import {reviewsData} from '../reviewData';
+import {ReviewSlide} from '../reviewSlide/ReviewSlide';
 
 
 type props = {
     id: string,
 };
 export const ReviewSwiper = ({id}: props) => {
-    const theme = useTheme()
+
+    const [close, setClose] = useState<boolean | null>(null)
+
+    const resetClose = () => setClose(null)
+
 
 //     const swiperCss = `
 //         .swiper-pagination{
@@ -80,28 +82,24 @@ export const ReviewSwiper = ({id}: props) => {
         //loop: true
     }
 
-
     return (
         <S_ReviewSwiper name = {"reviewSwiper"}
                         id = {id}
+                        listenerType = {'swiperslidechange'}
+                        eventCallback = {() => setClose(true)}
                         {...params}
         >
 
-            {reviewsData.map((review, index) => {
-                    const slideId = uuidv4();
-                    return (
-                        <SwiperSlide id = {slideId} key = {`${id}-${index}`}>
-                            <ReviewCard userName = {review.userName}
-                                        reviewContent = {review.reviewContent}/>
-                        </SwiperSlide>)
-                }
-            )}
+
+            {reviewsData.map((review, index) =>
+                <ReviewSlide userName = {review.userName} reviewContent = {review.reviewContent} close = {close}resetClose={resetClose}
+                             key = {`${id}-${index}`}/>)}
 
         </S_ReviewSwiper>);
 };
 
 
-export const S_ReviewSwiper = styled(Swiper)<{}>`
+export const S_ReviewSwiper = styled(AppSwiper)<{}>`
   --swiper-theme-color: ${({theme}) => theme.colors.primary};
   --swiper-pagination-bullet-size: 1rem;
   --swiper-pagination-bullet-width: 1rem;

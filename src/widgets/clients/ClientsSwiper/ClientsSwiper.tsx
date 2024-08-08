@@ -8,7 +8,7 @@ import img1 from '../../../assets/images/clients/aquapark.png'
 import img2 from '../../../assets/images/clients/gavan.webp'
 import img3 from '../../../assets/images/clients/stroytrest.webp'
 import img4 from '../../../assets/images/clients/world.webp'
-import {SwiperSlide} from '../../../shared/ui/Swiper/SwiperSlide';
+import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {v4 as uuidv4} from 'uuid';
 import {BASE} from '../../../shared/constants';
 
@@ -36,26 +36,26 @@ export const ClientsSwiper = ({id}: props) => {
                          id = {id}
                          {...params}
         >
-            <SwiperSlide id = {uuidv4()}>
+            <AppSwiperSlide id = {uuidv4()}>
                 <S_ImageContainer>
                     <img src = {img1} alt = {"alt"}/>
                 </S_ImageContainer>
-            </SwiperSlide>
-            <SwiperSlide id = {uuidv4()}>
+            </AppSwiperSlide>
+            <AppSwiperSlide id = {uuidv4()}>
                 <S_ImageContainer>
                     <img src = {img2} alt = {"alt"}/>
                 </S_ImageContainer>
-            </SwiperSlide>
-            <SwiperSlide id = {uuidv4()}>
+            </AppSwiperSlide>
+            <AppSwiperSlide id = {uuidv4()}>
                 <S_ImageContainer>
                     <img src = {img3} alt = {"alt"}/>
                 </S_ImageContainer>
-            </SwiperSlide>
-            <SwiperSlide id = {uuidv4()}>
+            </AppSwiperSlide>
+            <AppSwiperSlide id = {uuidv4()}>
                 <S_ImageContainer>
                     <img src = {img4} alt = {"alt"}/>
                 </S_ImageContainer>
-            </SwiperSlide>
+            </AppSwiperSlide>
 
 
         </S_ClientsSwiper>);

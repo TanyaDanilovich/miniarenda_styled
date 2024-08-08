@@ -7,9 +7,12 @@ import {Rating} from '../../../shared/ui/rating/Rating';
 
 type props = {
     userName: string,
-    reviewContent: string
+    reviewContent: string,
+    isCollapsed: boolean | null,
+    setCollapsed: () => void,
+    setUnCollapsed: () => void,
 };
-export const ReviewCard = ({userName, reviewContent}: props) => {
+export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed, setCollapsed}: props) => {
 
     return (
         <S_ReviewCard>
@@ -21,7 +24,10 @@ export const ReviewCard = ({userName, reviewContent}: props) => {
                 </S_Flex>
             </S_Flex>
 
-            <ReviewContent text = {reviewContent}/>
+            <ReviewContent text = {reviewContent}
+                           isCollapsed = {isCollapsed}
+                           setCollapsed = {setCollapsed}
+                           setUnCollapsed = {setUnCollapsed}/>
         </S_ReviewCard>);
 };
 

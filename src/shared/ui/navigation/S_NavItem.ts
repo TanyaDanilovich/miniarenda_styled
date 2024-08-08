@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 
-export const S_NavItem = styled.li<{}>`
+export const
+    S_NavItem = styled.li<{}>`
   border-bottom: 1px solid ${({theme}) => theme.colors.dark};
 
   &:first-child {

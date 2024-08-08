@@ -5,7 +5,7 @@ type props = SwiperSlideProps & {
     id: string,
 }
 
-export function SwiperSlide({children, ...rest}: PropsWithChildren<props>) {
+export function AppSwiperSlide({children, ...rest}: PropsWithChildren<props>) {
 
     return (
         <swiper-slide {...rest}>

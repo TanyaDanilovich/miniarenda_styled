@@ -15,8 +15,44 @@ export const router = createBrowserRouter([
                 Component: Main,
             },
             {
+                path: "arenda",
+                Component: Questions,
+                children:[
+                    {
+                    path: "arenda-mini-ekskavatora",
+                    Component: Questions,
+                },
+                    {
+                        path: "arenda-gidromolota",
+                        Component: Questions,
+                    },
+                    {
+                        path: "arenda-yamobura",
+                        Component: Questions,
+                    }
+                ]
+            },
+            {
                 path: "uslugi",
-                Component: Questions
+                Component: Questions,
+                children: [
+                    {
+                        path: "kopanie",
+                        Component: Services
+                    },
+                    {
+                        path: "burenie",
+                        Component: Services
+                    },
+                    {
+                        path: "peremeshchenie-grunta",
+                        Component: Services
+                    },
+                    {
+                        path: "korchevanie pnej",
+                        Component: Services
+                    },
+                ]
             },
             {
                 path: "price",
