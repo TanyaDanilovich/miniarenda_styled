@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
 import {plainTransition} from '../../app/styles/mixins';
 import {Question} from './Question';
-import {Dropdown} from './Dropdown';
+import {DropdownText} from './DropdownText';
 
 
 type props = {
@@ -39,7 +39,7 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
             </S_Flex>
 
 
-            <Dropdown text = {answer} isOpen = {isOpen}/>
+            <DropdownText text = {answer} isOpen = {isOpen}/>
 
         </S_FullQuestion>);
 };

@@ -3,22 +3,22 @@ import styled, {css} from 'styled-components';
 import {plainTransition} from '../../app/styles/mixins';
 
 
-export const Dropdown = ({text, isOpen}: { text: string, isOpen: boolean }) => {
+export const DropdownText = ({text, isOpen}: { text: string, isOpen: boolean }) => {
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
 
 
     return (
-        <S_Dropdown $maxHeight = {maxHeight} $height = {height}>
+        <S_DropdownText $maxHeight = {maxHeight} $height = {height}>
             <p>
                 {text}
             </p>
-        </S_Dropdown>);
+        </S_DropdownText>);
 };
 
 
-export const S_Dropdown = styled.div<{ $maxHeight: string, $height: string }>`
+export const S_DropdownText = styled.div<{ $maxHeight: string, $height: string }>`
   margin: 0;
 
   p {

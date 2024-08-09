@@ -4,7 +4,8 @@ import {BurgerButton} from '../BurgerButton';
 import React from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
-import {DropdownMenu} from '../../../features/dropdownMenu/DropdownMenu';
+import {DropdownMenuItem} from '../../../features/dropdownMenu/DropdownMenu';
+import {dropDownMenuContentData} from '../../../features/dropdownMenu/dropDownMenuContentData';
 
 type props = {
     isOpen: boolean,
@@ -23,13 +24,15 @@ export const Navigation = ({isOpen, isOpenToggle, setClose}: props) => {
                         <S_NavLink to = "/"> Главная </S_NavLink>
                     </S_NavItem>
 
-                    <S_NavItem onClick = {setClose}>
-                        {/*<S_NavLink href = "#machineries">Техника</S_NavLink>*/}
-                    </S_NavItem>
-<DropdownMenu/>
-                    <S_NavItem onClick = {setClose}>
-                        <S_NavLink to = "uslugi">Услуги</S_NavLink>
-                    </S_NavItem>
+                    {/*<S_NavItem onClick = {setClose}>*/}
+                    {/*    <S_NavLink href = "#machineries">Техника</S_NavLink>*/}
+                    {/*</S_NavItem>*/}
+
+
+                    <DropdownMenuItem onClickCallback = {setClose}
+                                      dropdown = {{title: "Услуги", link: "uslugi"}}
+                                      dropdownContent = {dropDownMenuContentData}/>
+
 
                     <S_NavItem onClick = {setClose}>
                         <S_NavLink to = "price">Цены</S_NavLink>
@@ -72,7 +75,7 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
 
   }
 
-  ul {
+  nav > ul {
     width: 100%;
     list-style: none;
   }
@@ -87,7 +90,7 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
       padding-top: 0;
     }
 
-    ul {
+    nav > ul {
       display: flex;
       align-items: center;
       justify-content: end;
