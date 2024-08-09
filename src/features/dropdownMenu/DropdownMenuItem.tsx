@@ -1,25 +1,34 @@
-import styled, {useTheme} from 'styled-components';
+import styled, {css} from 'styled-components';
 import React, {useId} from 'react';
-import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {S_NavLink} from '../../shared/ui/navigation/S_NavLink';
 import {S_NavItem} from '../../shared/ui/navigation/S_NavItem';
-import {plainTransition} from '../../app/styles/mixins';
 import {MenuItemType} from '../../shared/types/common.types';
 
 
 type props = {
     subMenuItems: MenuItemType[],
-    onClickCallback?: () => void
+    isDropdown: boolean,
+    onClickCallback?: () => void,
+    setCollapsed: () => void,
+    setDropdown: () => void
 };
-export const DropdownMenuItem = ({subMenuItems, onClickCallback}: props) => {
-    const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-    const theme = useTheme()
+export const DropdownMenuItem = ({
+                                     subMenuItems,
+                                     onClickCallback,
+                                     isDropdown,
+                                     setCollapsed,
+                                     setDropdown,
+                                     ...rest
+                                 }: props) => {
+
     const id = useId();
 
 
     return (
-        <S_DropdownMenu onClick = {onClickCallback}>
+        <S_DropdownMenu onClick = {onClickCallback}
+                        $isDropdown = {isDropdown}
+                        onMouseEnter = {setDropdown}
+                        onMouseLeave = {setCollapsed}>
             <ul>
                 {subMenuItems.map((item, index) =>
                     <S_NavItem onClick = {onClickCallback}>
@@ -32,14 +41,21 @@ export const DropdownMenuItem = ({subMenuItems, onClickCallback}: props) => {
 };
 
 
-export const S_DropdownMenu = styled(S_NavItem)<{}>`
+export const S_DropdownMenu = styled(S_NavItem)<{ $isDropdown: boolean }>`
   & > ul {
-    height: auto;
+    height: 0;
+    width: 0;
     overflow: hidden;
     position: absolute;
     background-color: ${({theme}) => theme.colors.bg_primary};
   }
 
+  ${({$isDropdown}) => $isDropdown && css`
+    & > ul {
+      height: auto;
+      width: fit-content;
+    }
+  `})
 
 
 `;

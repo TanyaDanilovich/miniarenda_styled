@@ -1,5 +1,5 @@
 import styled, {useTheme} from "styled-components";
-import React from 'react';
+import React, {useState} from 'react';
 import {S_NavLink} from './S_NavLink';
 import {MenuItemType} from '../../types/common.types';
 import {DropdownMenuItem, S_DropdownMenu} from '../../../features/dropdownMenu/DropdownMenuItem';
@@ -14,7 +14,11 @@ type props = {
     setClose?: () => void
 };
 export const MenuItem = ({menuItem, isOpen, isOpenToggle, setClose}: props) => {
-    const theme = useTheme()
+
+    const [isDropdown, setIsDropdown] = useState(false);
+    const setDropdown = () => setIsDropdown(true)
+    const setCollapsed = () => setIsDropdown(false)
+
     return (
 
 
@@ -22,7 +26,9 @@ export const MenuItem = ({menuItem, isOpen, isOpenToggle, setClose}: props) => {
             {menuItem.subMenuItems
                 ? (
                     <>
-                        <S_NavItem onClick = {setClose}>
+                        <S_NavItem onClick = {setClose}
+                                   onMouseEnter = {setDropdown}
+                                   onMouseLeave = {setCollapsed}>
                             <S_NavLink to = {menuItem.url}>
                                 {menuItem.title}
                                 <FontAwesomeIcon icon = {faAngleDown}
@@ -30,7 +36,7 @@ export const MenuItem = ({menuItem, isOpen, isOpenToggle, setClose}: props) => {
                                                  transform = {"right-6"}/>
                             </S_NavLink>
                         </S_NavItem>
-                        <DropdownMenuItem subMenuItems = {menuItem.subMenuItems}/>
+                        <DropdownMenuItem subMenuItems = {menuItem.subMenuItems} isDropdown = {isDropdown} setDropdown={setDropdown} setCollapsed={setCollapsed}/>
                     </>
                 )
                 : <S_NavItem onClick = {setClose}>

@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import {outline} from '../../../app/styles/mixins';
+import {outline, plainTransition} from '../../../app/styles/mixins';
 
 
 export const
     S_NavItem = styled.li<{}>`
+
+      &, & > a {
+        ${plainTransition()}
+      }
 
       &:hover {
         background-color: ${({theme}) => theme.colors.dark};
