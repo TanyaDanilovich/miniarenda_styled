@@ -5,5 +5,5 @@ export const menuItemsData:DropdownItem[] = [
     {title:"Услуги", url:"uslugi"},
     {title:"Цены", url:"price"},
     {title:"Наши работы", url:"projects"},
-    {title:"Главная", url:"contacts"}
+    {title:"Контакты", url:"contacts"}
 ]

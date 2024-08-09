@@ -17,11 +17,11 @@ export const DropdownMenuItem = ({dropdown, dropdownContent, onClickCallback}: p
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
     const theme = useTheme()
     const id = useId();
-    const {title, link} = dropdown;
+    const {title, url} = dropdown;
 
     return (
         <S_DropdownMenu onClick = {onClickCallback}>
-            <S_NavLink to = {link}>{title}
+            <S_NavLink to = {url}>{title}
                 <FontAwesomeIcon icon = {faAngleDown} size = {'1x'} color = {theme.colors.primary}
                                  transform = {"right-6"}/>
             </S_NavLink>
@@ -29,7 +29,7 @@ export const DropdownMenuItem = ({dropdown, dropdownContent, onClickCallback}: p
             <ul className = "dropdown-content">
                 {dropdownContent.map((item, index) =>
                     <S_NavItem onClick = {onClickCallback}>
-                        <S_NavLink key = {`${id}-${index}`} to = {item.link}>{item.title}</S_NavLink>
+                        <S_NavLink key = {`${id}-${index}`} to = {item.url}>{item.title}</S_NavLink>
                     </S_NavItem>)}
             </ul>
 
