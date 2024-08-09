@@ -5,29 +5,23 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {S_NavLink} from '../../shared/ui/navigation/S_NavLink';
 import {S_NavItem} from '../../shared/ui/navigation/S_NavItem';
 import {plainTransition} from '../../app/styles/mixins';
-import {DropdownItem} from '../../shared/types/common.types';
+import {MenuItemType} from '../../shared/types/common.types';
 
 
 type props = {
-    dropdown: DropdownItem,
-    dropdownContent: DropdownItem[],
-    onClickCallback: () => void
+    subMenuItems: MenuItemType[],
+    onClickCallback?: () => void
 };
-export const DropdownMenuItem = ({dropdown, dropdownContent, onClickCallback}: props) => {
+export const DropdownMenuItem = ({subMenuItems, onClickCallback}: props) => {
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
     const theme = useTheme()
     const id = useId();
-    const {title, url} = dropdown;
+
 
     return (
         <S_DropdownMenu onClick = {onClickCallback}>
-            <S_NavLink to = {url}>{title}
-                <FontAwesomeIcon icon = {faAngleDown} size = {'1x'} color = {theme.colors.primary}
-                                 transform = {"right-6"}/>
-            </S_NavLink>
-
-            <ul className = "dropdown-content">
-                {dropdownContent.map((item, index) =>
+            <ul>
+                {subMenuItems.map((item, index) =>
                     <S_NavItem onClick = {onClickCallback}>
                         <S_NavLink key = {`${id}-${index}`} to = {item.url}>{item.title}</S_NavLink>
                     </S_NavItem>)}
@@ -39,22 +33,13 @@ export const DropdownMenuItem = ({dropdown, dropdownContent, onClickCallback}: p
 
 
 export const S_DropdownMenu = styled(S_NavItem)<{}>`
-  width: auto;
-
-
   & > ul {
-    height: 0;
+    height: auto;
     overflow: hidden;
     position: absolute;
-    background-color: #fff;
-    z-index: 1000;
-    border-radius: 5px;
-    width: 160px;
+    background-color: ${({theme}) => theme.colors.bg_primary};
   }
 
-  &:hover > ul {
-    ${({theme}) => plainTransition(theme.duration.long)}
-    height: auto;
-  }
+
 
 `;

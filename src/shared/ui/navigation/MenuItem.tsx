@@ -1,21 +1,44 @@
-import styled from "styled-components";
+import styled, {useTheme} from "styled-components";
 import React from 'react';
-import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
+import {MenuItemType} from '../../types/common.types';
+import {DropdownMenuItem, S_DropdownMenu} from '../../../features/dropdownMenu/DropdownMenuItem';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
+import {S_NavItem} from './S_NavItem';
 
 type props = {
-    isOpen: boolean,
-    isOpenToggle: () => void,
-    setClose: () => void
+    menuItem: MenuItemType,
+    isOpen?: boolean,
+    isOpenToggle?: () => void,
+    setClose?: () => void
 };
-export const MenuItem = ({isOpen, isOpenToggle, setClose}: props) => {
+export const MenuItem = ({menuItem, isOpen, isOpenToggle, setClose}: props) => {
+    const theme = useTheme()
     return (
 
 
         <S_MenuItem>
-            <S_NavItem>
-                <S_NavLink to = "/"> Главная </S_NavLink>
-            </S_NavItem>
+            {menuItem.subMenuItems
+                ? (
+                    <>
+                        <S_NavItem onClick = {setClose}>
+                            <S_NavLink to = {menuItem.url}>
+                                {menuItem.title}
+                                <FontAwesomeIcon icon = {faAngleDown}
+                                                 size = {'1x'}
+                                                 transform = {"right-6"}/>
+                            </S_NavLink>
+                        </S_NavItem>
+                        <DropdownMenuItem subMenuItems = {menuItem.subMenuItems}/>
+                    </>
+                )
+                : <S_NavItem onClick = {setClose}>
+                    <S_NavLink to = {menuItem.url}>
+                        {menuItem.title}
+                    </S_NavLink>
+                </S_NavItem>}
+
         </S_MenuItem>
 
 
@@ -23,6 +46,6 @@ export const MenuItem = ({isOpen, isOpenToggle, setClose}: props) => {
 };
 
 
-export const S_MenuItem = styled.div<{}>`
-    
+export const S_MenuItem = styled.li<{}>`
+
 `;
