@@ -3,7 +3,7 @@ import {Logo} from '../../shared/styled/Logo';
 import {HeaderTop} from './HeaderTop';
 import {useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {Navigation} from '../../shared/ui/navigation/Navigation';
+import {DesktopNavigation} from '../../shared/ui/navigation/DesktopNavigation';
 import {StyledMain} from '../main/Main';
 import {S_Container} from '../../shared/styled/S_Container';
 
@@ -24,7 +24,7 @@ export const Header = ({}: props) => {
                 <Logo/>
                 <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
-                    <Navigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>
+                    <DesktopNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>
                 </S_Flex>
             </S_Container>
 

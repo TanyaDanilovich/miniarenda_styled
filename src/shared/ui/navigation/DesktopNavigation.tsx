@@ -1,63 +1,46 @@
 import styled from "styled-components";
 import {outline, plainTransition} from '../../../app/styles/mixins';
 import {BurgerButton} from '../BurgerButton';
-import React from 'react';
+import React, {useId} from 'react';
 import {S_NavItem} from './S_NavItem';
 import {S_NavLink} from './S_NavLink';
 import {DropdownMenuItem} from '../../../features/dropdownMenu/DropdownMenu';
 import {dropDownMenuContentData} from '../../../features/dropdownMenu/dropDownMenuContentData';
+import {menuItemsData} from './menuItemsData';
 
 type props = {
     isOpen: boolean,
     isOpenToggle: () => void,
     setClose: () => void
 };
-export const Navigation = ({isOpen, isOpenToggle, setClose}: props) => {
+export const DesktopNavigation = ({isOpen, isOpenToggle, setClose}: props) => {
+    const id = useId();
     return (
 
 
-        <S_MobileNavigation $isOpen = {isOpen}>
+        <S_DesctopNavigation $isOpen = {isOpen}>
 
             <nav onClick = {setClose}>
                 <ul>
-                    <S_NavItem>
-                        <S_NavLink to = "/"> Главная </S_NavLink>
-                    </S_NavItem>
+                    {menuItemsData.map((menuItem, index) =>
+                        <S_NavItem key = {`${id}-${index}`}>
+                            <S_NavLink to = {menuItem.url}> {menuItem.title} </S_NavLink>
+                        </S_NavItem>
+                    )}
 
-                    {/*<S_NavItem onClick = {setClose}>*/}
-                    {/*    <S_NavLink href = "#machineries">Техника</S_NavLink>*/}
-                    {/*</S_NavItem>*/}
-
-
-                    <DropdownMenuItem onClickCallback = {setClose}
-                                      dropdown = {{title: "Услуги", link: "uslugi"}}
-                                      dropdownContent = {dropDownMenuContentData}/>
-
-
-                    <S_NavItem onClick = {setClose}>
-                        <S_NavLink to = "price">Цены</S_NavLink>
-                    </S_NavItem>
-
-                    <S_NavItem onClick = {setClose}>
-                        <S_NavLink to = "projects">Наши работы</S_NavLink>
-                    </S_NavItem>
-
-                    <S_NavItem onClick = {setClose}>
-                        <S_NavLink to = "contacts">Контакты</S_NavLink>
-                    </S_NavItem>
 
                 </ul>
 
             </nav>
             <BurgerButton isOpen = {isOpen} callback = {isOpenToggle}/>
-        </S_MobileNavigation>
+        </S_DesctopNavigation>
 
 
     );
 };
 
 
-export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
+export const S_DesctopNavigation = styled.div<{ $isOpen: boolean }>`
   display: block;
   z-index: ${({theme}) => theme.zIndices.header};
 

@@ -1,6 +1,6 @@
 export const dropDownMenuContentData = [
-    {title:"Услуги 1", link:"uslugi"},
-    {title:"Услуги 2", link:"uslugi"},
-    {title:"Услуги 3", link:"uslugi"}
+    {title:"Услуги 1", url:"uslugi"},
+    {title:"Услуги 2", url:"uslugi"},
+    {title:"Услуги 3", url:"uslugi"}
    
 ];
