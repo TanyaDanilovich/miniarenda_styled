@@ -3,11 +3,44 @@ import {MenuItemType} from '../../types/common.types';
 export const menuItemsData: MenuItemType[] = [
     {title: "Главная", url: "/"},
     {
+        title: "Аренда", url: "arenda",
+        subMenuItems: [
+            {
+                title: "Аренда мини-экскаватора",
+                url: "arenda/arenda-mini-ekskavatora"
+            },
+            {
+                title: "Аренда гидромолота",
+                url: "arenda/arenda-gidromolota"
+            },
+
+            {
+                title: "Аренда ямобура",
+                url: "arenda/arenda-yamobura"
+            },
+        ]
+    },
+
+    {
         title: "Услуги", url: "uslugi",
         subMenuItems: [
-            {title: "Цены 1", url: "price1"},
-            {title: "Наши работы 1", url: "projects1"},
-            {title: "Контакты 1", url: "contacts1"}
+            {
+                title: "Бурение",
+                url: "uslugi/burenie"
+            },
+            {
+                title: "Копание",
+                url: "uslugi/kopanie"
+            },
+
+            {
+                title: "Корчевание пней",
+                url: "uslugi/korchevanie-pnej"
+            },
+            {
+                title: "Перемещение грунта",
+                url: "uslugi/peremeshchenie-grunta"
+            }
         ]
     },
     {title: "Цены", url: "price"},

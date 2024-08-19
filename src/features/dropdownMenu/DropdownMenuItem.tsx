@@ -7,6 +7,8 @@ import {MenuItemType} from '../../shared/types/common.types';
 
 type props = {
     subMenuItems: MenuItemType[],
+
+    mainUrl:string
     isDropdown: boolean,
     onClickCallback?: () => void,
     setCollapsed: () => void,

@@ -36,7 +36,11 @@ export const MenuItem = ({menuItem, isOpen, isOpenToggle, setClose}: props) => {
                                                  transform = {"right-6"}/>
                             </S_NavLink>
                         </S_NavItem>
-                        <DropdownMenuItem subMenuItems = {menuItem.subMenuItems} isDropdown = {isDropdown} setDropdown={setDropdown} setCollapsed={setCollapsed}/>
+                        <DropdownMenuItem mainUrl = {menuItem.url}
+                                          subMenuItems = {menuItem.subMenuItems}
+                                          isDropdown = {isDropdown}
+                                          setDropdown = {setDropdown}
+                                          setCollapsed = {setCollapsed}/>
                     </>
                 )
                 : <S_NavItem onClick = {setClose}>

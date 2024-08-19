@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
                         Component: Services
                     },
                     {
-                        path: "korchevanie pnej",
+                        path: "korchevanie-pnej",
                         Component: Services
                     },
                 ]
