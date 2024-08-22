@@ -24,7 +24,8 @@ export const Header = ({}: props) => {
                 <Logo/>
                 <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
-                    <DesktopNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>
+                    <DesktopNavigation/>
+                    {/*<DesktopNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>*/}
                 </S_Flex>
             </S_Container>
 
