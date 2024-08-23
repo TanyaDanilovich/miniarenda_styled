@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {outline} from '../../../app/styles/mixins';
 import {getResponsiveSize} from '../../utils/getResponsiveSize';
 import {BASE} from '../../constants';
@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 
 
 export const S_NavLink = styled(NavLink)<{}>`
-    //${outline()}
+    //${outline(3, "blue")}
   display: inline-block;
   width: 100%;
   color: ${({theme}) => theme.colors.white};
@@ -24,6 +24,5 @@ export const S_NavLink = styled(NavLink)<{}>`
 
   @media ${({theme}) => theme.media.tablet} {
     padding: 1rem 0.75rem;
-
   }
 `;

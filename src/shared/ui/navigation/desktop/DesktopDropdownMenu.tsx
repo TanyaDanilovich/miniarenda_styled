@@ -1,9 +1,8 @@
 import styled, {css} from 'styled-components';
 import React, {useId} from 'react';
-import {S_NavLink} from '../../shared/ui/navigation/S_NavLink';
-import {MenuItemType} from '../../shared/types/common.types';
-import {outline, plainTransition} from '../../app/styles/mixins';
-import {S_DesktopMenuItem} from '../../shared/ui/navigation/desktop/DesktopMenuItem';
+import {S_NavLink} from '../S_NavLink';
+import {MenuItemType} from '../../../types/common.types';
+import {S_DesktopMenuItem} from './DesktopMenuItem';
 
 
 type props = {
@@ -14,13 +13,13 @@ type props = {
     setCollapsed: () => void,
     setDropdown: () => void
 };
-export const DropdownMenuItem = ({
-                                     subMenuItems,
-                                     onClickCallback,
-                                     isDropdown,
-                                     setCollapsed,
-                                     setDropdown
-                                 }: props) => {
+export const DesktopDropdownMenu = ({
+                                        subMenuItems,
+                                        onClickCallback,
+                                        isDropdown,
+                                        setCollapsed,
+                                        setDropdown
+                                    }: props) => {
 
     const id = useId();
 
@@ -31,22 +30,22 @@ export const DropdownMenuItem = ({
                         onMouseEnter = {setDropdown}
                         onMouseLeave = {setCollapsed}>
 
-            <ul>
+
                 {subMenuItems.map((item, index) =>
                     <S_DesktopMenuItem key = {`${id}-${index}`} onClick = {onClickCallback}>
                         <S_NavLink to = {item.url}>{item.title}</S_NavLink>
                     </S_DesktopMenuItem>)}
-            </ul>
+
         </S_DropdownMenu>);
 };
 
 
-export const S_DropdownMenu = styled.div<{ $isDropdown: boolean }>`
+export const S_DropdownMenu = styled.ul<{ $isDropdown: boolean }>`
   a {
     text-wrap: nowrap;
   }
 
-  & > ul {
+  &  {
     height: auto;
     max-width: 0;
     overflow: hidden;
@@ -55,7 +54,7 @@ export const S_DropdownMenu = styled.div<{ $isDropdown: boolean }>`
   }
 
   ${({$isDropdown}) => $isDropdown && css`
-    & > ul {
+    & {
       max-width: min-content;
     }
   `})

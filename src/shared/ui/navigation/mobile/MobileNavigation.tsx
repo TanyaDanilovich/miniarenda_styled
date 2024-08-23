@@ -11,14 +11,14 @@ export const MobileNavigation = ({}: props) => {
 
     const id = 'mobile-navigation';
 
-    const [isOpen, setOpen] = React.useState(false);
+    const [isOpen, setOpen] = React.useState<boolean>(false);
     const openToggle = () => setOpen(!isOpen);
     const setClose = () => setOpen(false);
 
-    //console.log("MobileNavigation")
+
 
     return (
-        <S_MobileNavigation $isOpen = {isOpen} onTouchStart={()=>console.log("open")} onTouchEnd={()=>console.log("close")}>
+        <S_MobileNavigation $isOpen = {isOpen}>
 
             <nav onClick = {setClose}>
                 <ul>

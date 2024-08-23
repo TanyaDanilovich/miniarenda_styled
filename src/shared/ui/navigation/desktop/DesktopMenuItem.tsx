@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, {useState} from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
-import {DropdownMenuItem} from '../../../../features/dropdownMenu/DropdownMenuItem';
+import {DesktopDropdownMenu} from './DesktopDropdownMenu';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import {plainTransition} from '../../../../app/styles/mixins';
@@ -32,11 +32,11 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
                                              size = {'1x'}
                                              transform = {"right-6"}/>
                         </S_NavLink>
-                        <DropdownMenuItem mainUrl = {menuItem.url}
-                                          subMenuItems = {menuItem.subMenuItems}
-                                          isDropdown = {isDropdown}
-                                          setDropdown = {setDropdown}
-                                          setCollapsed = {setCollapsed}/>
+                        <DesktopDropdownMenu mainUrl = {menuItem.url}
+                                             subMenuItems = {menuItem.subMenuItems}
+                                             isDropdown = {isDropdown}
+                                             setDropdown = {setDropdown}
+                                             setCollapsed = {setCollapsed}/>
                     </>
                 )
                 :
