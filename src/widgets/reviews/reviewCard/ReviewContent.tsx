@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components';
 import {ReadMore} from './ReadMore';
 import {BASE, countReviewLines} from '../../../shared/constants';
 import {outline} from '../../../app/styles/mixins';
+import {debounceFunction} from '../../../shared/utils/debounceFunction';
 
 //
 
@@ -21,15 +22,6 @@ export const ReviewContent = ({text, isCollapsed, setUnCollapsed, setCollapsed}:
     const readMoreCallback = () => {
         isCollapsed ? setUnCollapsed() : setCollapsed()
     }
-
-    const debounceFunction = (cb: () => void, delay: number) => {
-        let timer: ReturnType<typeof setTimeout>
-        return () => {
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(() => cb(), delay);
-        };
-    };
-
 
     useEffect(() => {
         const checkIsShowButton = () => {

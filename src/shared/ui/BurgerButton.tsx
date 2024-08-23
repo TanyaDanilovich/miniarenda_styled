@@ -79,8 +79,4 @@ export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
 
 
   }
-
-  @media ${({theme}) => theme.media.tablet} {
-    display: none;
-  }
 `;

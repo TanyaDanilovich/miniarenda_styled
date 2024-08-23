@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import React, {useState} from 'react';
-import {S_NavLink} from './S_NavLink';
-import {MenuItemType} from '../../types/common.types';
-import {DropdownMenuItem} from '../../../features/dropdownMenu/DropdownMenuItem';
+import {S_NavLink} from '../S_NavLink';
+import {MenuItemType} from '../../../types/common.types';
+import {DropdownMenuItem} from '../../../../features/dropdownMenu/DropdownMenuItem';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
-import {plainTransition} from '../../../app/styles/mixins';
+import {plainTransition} from '../../../../app/styles/mixins';
 
 type props = {
     menuItem: MenuItemType,
     setClose?: () => void
 };
-export const MenuItem = ({menuItem, setClose}: props) => {
+export const MobileMenuItem = ({menuItem, setClose}: props) => {
 
     const [isDropdown, setIsDropdown] = useState(false);
     const setDropdown = () => setIsDropdown(true)
@@ -20,7 +20,7 @@ export const MenuItem = ({menuItem, setClose}: props) => {
     return (
 
 
-        <S_MenuItem onClick={setCollapsed} onMouseEnter={setDropdown} onMouseLeave = {setCollapsed}>
+        <S_MobileMenuItem onClick={setCollapsed} onMouseEnter={setDropdown} onMouseLeave = {setCollapsed}>
             {menuItem.subMenuItems
                 ? (
                     <>
@@ -44,22 +44,21 @@ export const MenuItem = ({menuItem, setClose}: props) => {
                 <S_NavLink to = {menuItem.url} onClick = {setClose}>
                     {menuItem.title}
                 </S_NavLink>
-
             }
-        </S_MenuItem>
+        </S_MobileMenuItem>
 
 
     );
 };
 
 
-export const S_MenuItem = styled.li<{}>`
+export const S_MobileMenuItem = styled.li<{}>`
   background-color: ${({theme}) => theme.colors.black};
 
   &, & > a {
     ${plainTransition()}
   }
-  
+
   & > a:hover {
     background-color: ${({theme}) => theme.colors.dark};
     color: ${({theme}) => theme.colors.primary};

@@ -13,7 +13,7 @@ function App() {
 
     return (
         <div>
-            <RouterProvider router = {router} fallbackElement = {<p>Loading...</p>}/>;
+            <RouterProvider router = {router} />;
             <Footer/>
         </div>
     );

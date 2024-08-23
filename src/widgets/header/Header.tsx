@@ -1,31 +1,52 @@
-import styled from "styled-components";
+import styled, {useTheme} from "styled-components";
 import {Logo} from '../../shared/styled/Logo';
 import {HeaderTop} from './HeaderTop';
-import {useState} from 'react';
+import {createRef, useEffect, useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {DesktopNavigation} from '../../shared/ui/navigation/DesktopNavigation';
-import {StyledMain} from '../main/Main';
+import {DesktopNavigation} from '../../shared/ui/navigation/desktop/DesktopNavigation';
 import {S_Container} from '../../shared/styled/S_Container';
+import {MobileNavigation} from '../../shared/ui/navigation/mobile/MobileNavigation';
+import {debounceFunction} from '../../shared/utils/debounceFunction';
 
 
 type props = {};
-export const Header = ({}: props) => {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const isOpenToggle = () => setIsOpen((prev) => !prev);
-    const setClose = () => setIsOpen(false);
+
+export const Header = ({}: props) => {
+    const theme = useTheme();
+
+    const [isMobileNavigation, setMobileNavigation] = useState<boolean>(
+        () => window.innerWidth <= parseInt(theme.breakpoints.tablet)
+    );
+
+    const headerRef = createRef<HTMLElement>()
+
+    useEffect(() => {
+        const choiceNavigation = () => {
+            if (headerRef.current) {
+                if (window.innerWidth <= parseInt(theme.breakpoints.tablet)) {
+                    setMobileNavigation(true); // mobile
+                } else {
+                    setMobileNavigation(false); // desktop
+                }
+            }
+        }
+        const debounce = debounceFunction(choiceNavigation, 250);
+        window.addEventListener("resize", debounce);
+
+        return () => window.removeEventListener("resize", debounce);
+    }, [headerRef]);
 
     return (
 
 
-        <StyledHeader $isOpen = {isOpen}>
+        <StyledHeader ref = {headerRef}>
             <S_Container>
 
                 <Logo/>
                 <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
-                    <DesktopNavigation/>
-                    {/*<DesktopNavigation isOpen = {isOpen} isOpenToggle = {isOpenToggle} setClose = {setClose}/>*/}
+                    {isMobileNavigation ? <MobileNavigation/> : <DesktopNavigation/>}
                 </S_Flex>
             </S_Container>
 
@@ -35,7 +56,7 @@ export const Header = ({}: props) => {
     );
 };
 
-export const StyledHeader = styled.header<{ $isOpen: boolean }>`
+export const StyledHeader = styled.header<{}>`
   background-color: ${({theme}) => theme.colors.bg_primary};
   padding-block: 0.5rem;
   padding-inline: 1rem;
@@ -48,10 +69,6 @@ export const StyledHeader = styled.header<{ $isOpen: boolean }>`
 
   display: flex;
 
-
-  & ~ ${StyledMain} {
-    touch-action: ${({$isOpen}) => $isOpen ? "none" : "auto"};
-  }
 
   @media ${({theme}) => theme.media.tablet} {
     padding: 0;
@@ -72,5 +89,4 @@ export const StyledHeader = styled.header<{ $isOpen: boolean }>`
   }
 
 `;
-
 

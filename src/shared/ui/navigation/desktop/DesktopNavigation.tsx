@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import {BurgerButton} from '../BurgerButton';
 import React, {useId} from 'react';
-import {menuItemsData} from './menuItemsData';
-import {MenuItem} from './MenuItem';
+import {menuItemsData} from '../menuItemsData';
+import {DesktopMenuItem} from './DesktopMenuItem';
 
-type props = {
-  };
+type props = {};
 export const DesktopNavigation = ({}: props) => {
     const id = useId();
-    
+
+    //console.log("DesktopNavigation")
+
     return (
 
 
@@ -16,7 +16,7 @@ export const DesktopNavigation = ({}: props) => {
             <nav>
                 <ul>
                     {menuItemsData.map((menuItem, index) =>
-                        <MenuItem key = {`${id}-${index}`} menuItem = {menuItem}/>
+                        <DesktopMenuItem key = {`${id}-${index}`} menuItem = {menuItem}/>
                     )}
                 </ul>
             </nav>
@@ -27,7 +27,7 @@ export const DesktopNavigation = ({}: props) => {
 };
 
 
-export const S_DesktopNavigation = styled.div<{ }>`
+export const S_DesktopNavigation = styled.div<{}>`
 
   z-index: ${({theme}) => theme.zIndices.header};
   width: 100%;
