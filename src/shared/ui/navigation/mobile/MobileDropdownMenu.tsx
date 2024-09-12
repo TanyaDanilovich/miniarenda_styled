@@ -57,7 +57,7 @@ export const S_MobileDropdownMenu = styled.ul<{ $asDropdown: boolean }>`
   ${({$asDropdown}) => $asDropdown && css`
       //${outline(1)}
     max-height: min-content;
-    right: -100%;
+    right: -80%;
     top: 0;
     left: 100%;
     border-left: 2px solid ${({theme}) => theme.colors.darkSlateGray};

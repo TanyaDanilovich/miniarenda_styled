@@ -32,7 +32,7 @@ export const MobileMenuItem = ({
             setAsDropDown()
         }
     }
-
+const rotateDeg=(dropDownId === id)? 90 : 0
     return (
 
 
@@ -54,7 +54,10 @@ export const MobileMenuItem = ({
                                 toggleDropdown();
                             }}>
                                 <FontAwesomeIcon icon = {faAngleRight}
-                                                 size = {'1x'} color = {"white"}/>
+                                                 size = {'1x'}
+                                                 color = {"white"}
+                                                 transform={{ rotate:rotateDeg }}
+                                />
                             </button>
                         </S_MobileDropdownNavLink>
 
