@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import React, {useState} from 'react';
+import styled, {css} from "styled-components";
+import React from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -8,55 +8,67 @@ import {MobileDropdownMenu} from './MobileDropdownMenu';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
 type props = {
+    id: string,
+    dropDownId: string | null,
     menuItem: MenuItemType,
-    setClose?: () => void
+    setNavigationClose: () => void,
+    setDropDown: (id: string) => void,
+    collapsedDropdown: () => void
 };
-export const MobileMenuItem = ({menuItem, setClose}: props) => {
-
-    const [isDropdown, setIsDropdown] = useState(false);
-    const setDropdown = () => setIsDropdown(true)
-    const setCollapsed = () => setIsDropdown(false)
+export const MobileMenuItem = ({
+                                   id,
+                                   menuItem,
+                                   setNavigationClose,
+                                   dropDownId,
+                                   setDropDown,
+                                   collapsedDropdown
+                               }: props) => {
+    //const ref = useRef(null)
+    const setAsDropDown = () => setDropDown(id)
+    const toggleDropdown = () => {
+        if (dropDownId === id) {
+            collapsedDropdown()
+        } else {
+            setAsDropDown()
+        }
+    }
 
     return (
 
 
-        <S_MobileMenuItem
-            // onMouseEnter = {setDropdown}
-            // onMouseLeave = {setCollapsed}
-            onTouchStart = {
-                (e) => {
-                    console.log(e.type)
-                    setDropdown()
-                }
-            }
-        >
+        <S_MobileMenuItem $isThereDropDown = {!!dropDownId}>
             {menuItem.subMenuItems
                 ? (
                     <>
-                        <S_MobileDropdownNavLink>
+                        <S_MobileDropdownNavLink
+                            //ref = {ref}
+                        >
                             <S_NavLink to = {menuItem.url}
-                                       onClick = {e => e.stopPropagation()}
-                                       onTouchStart = {setDropdown}>
+                                       onClick = {setNavigationClose}
+                            >
                                 {menuItem.title}
                             </S_NavLink>
 
-                            <button onClick = {e => e.stopPropagation()}
-                                    onTouchStart = {setDropdown}>
+                            <button onClick = {(e) => {
+                                e.stopPropagation();
+                                toggleDropdown();
+                            }}>
                                 <FontAwesomeIcon icon = {faAngleRight}
                                                  size = {'1x'} color = {"white"}/>
                             </button>
                         </S_MobileDropdownNavLink>
 
                         <MobileDropdownMenu mainUrl = {menuItem.url}
+                                            mainTitle = {menuItem.title}
                                             subMenuItems = {menuItem.subMenuItems}
-                                            isDropdown = {isDropdown}
-                                            setDropdown = {setDropdown}
-                                            setCollapsed = {setCollapsed}/>
+                                            isDropdown = {dropDownId === id}
+                                            setDropdown = {setAsDropDown}
+                                            setCollapsed = {collapsedDropdown}/>
                     </>
                 )
                 :
 
-                <S_NavLink to = {menuItem.url} onClick = {setClose}>
+                <S_NavLink to = {menuItem.url} onClick = {setNavigationClose}>
                     {menuItem.title}
                 </S_NavLink>
             }
@@ -67,10 +79,18 @@ export const MobileMenuItem = ({menuItem, setClose}: props) => {
 };
 
 
-export const S_MobileMenuItem = styled.li<{}>`
+export const S_MobileMenuItem = styled.li<{
+    $isThereDropDown?: boolean,
+    $isDropdown?: boolean
+}>`
   background-color: ${({theme}) => theme.colors.black};
 
     //${outline(3, "green")}
+  ${({$isThereDropDown}) => $isThereDropDown && css`
+      // ${outline(3)}
+    position: relative;
+    left: -80%;
+  `}
   &, & > a {
     ${plainTransition()}
   }
@@ -81,6 +101,7 @@ export const S_MobileMenuItem = styled.li<{}>`
   }
 
   border-bottom: 2px solid ${({theme}) => theme.colors.darkSlateGray};
+  border-right: 2px solid ${({theme}) => theme.colors.darkSlateGray};
 
   &:first-child {
     border-top: 2px solid ${({theme}) => theme.colors.darkSlateGray};
@@ -93,7 +114,7 @@ export const S_MobileDropdownNavLink = styled.div<{}>`
   grid-template-columns:auto 3.5rem;
 
   button {
-    border-left: 2px solid ${({theme}) => theme.colors.darkSlateGray};;
+    border-left: 2px solid ${({theme}) => theme.colors.darkSlateGray};
     outline: none;
     cursor: pointer;
 `;

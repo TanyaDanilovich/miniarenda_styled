@@ -1,34 +1,50 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {outline, plainTransition} from '../../../../app/styles/mixins';
 import {BurgerButton} from '../../BurgerButton';
-import React from 'react';
+import React, {useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {MobileMenuItem} from './MobileMenuItem';
 import {StyledMain} from '../../../../widgets/main/Main';
+import {Layout} from '../../../../widgets/layout/Layout';
 
 type props = {};
 export const MobileNavigation = ({}: props) => {
 
-    const id = 'mobile-navigation';
+    const id = useId();
 
-    const [isOpen, setOpen] = React.useState<boolean>(false);
-    const openToggle = () => setOpen(!isOpen);
-    const setClose = () => setOpen(false);
+    const [isNavigationOpen, setNavigationOpen] = React.useState<boolean>(false);
+    const [dropDownId, setDropDownId] = React.useState<string | null>(null);
+    const navToggle = () => {
+        setNavigationOpen(prev => !prev)
+        if (dropDownId) collapsedDropdown()
+    };
+    const setNavigationClose = () => setNavigationOpen(false);
+    const collapsedDropdown = () => setDropDownId(null);
 
 
+    const closeAll = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+        e.stopPropagation();
+        collapsedDropdown();
+        setNavigationClose();
+    }
 
     return (
-        <S_MobileNavigation $isOpen = {isOpen}>
-
-            <nav onClick = {setClose}>
+        <S_MobileNavigation $isOpen = {isNavigationOpen} $isDropdown={!!dropDownId}>
+            <nav onClick = {closeAll}>
                 <ul>
                     {menuItemsData.map((menuItem, index) =>
-                        <MobileMenuItem key = {`${id}-${index}`} menuItem = {menuItem}/>
+                        <MobileMenuItem key = {`${id}-${index}`}
+                                        id = {`mobile-navigation-item-${id}-${index}`}
+                                        dropDownId = {dropDownId}
+                                        setDropDown={setDropDownId}
+                                        menuItem = {menuItem}
+                                        setNavigationClose = {setNavigationClose}
+                                        collapsedDropdown={collapsedDropdown}
+                        />
                     )}
                 </ul>
-
             </nav>
-            <BurgerButton isOpen = {isOpen} callback = {openToggle}/>
+            <BurgerButton isOpen = {isNavigationOpen} callback = {navToggle}/>
         </S_MobileNavigation>
 
 
@@ -36,12 +52,13 @@ export const MobileNavigation = ({}: props) => {
 };
 
 
-export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
+export const S_MobileNavigation = styled.div<{ $isOpen: boolean, $isDropdown: boolean}>`
   display: block;
   z-index: ${({theme}) => theme.zIndices.header};
+  overscroll-behavior: contain;
 
   nav {
-      // ${outline(10)}
+      //${outline(10)}
     width: calc(80dvw + 15px);
     height: 80dvh;
     min-height: min-content;
@@ -51,6 +68,7 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
     top: 0;
     left: ${({$isOpen}) => $isOpen ? "-20px" : "-150%"};
     ${({theme}) => plainTransition(theme.duration.middle)};
+
 
   }
 
@@ -63,5 +81,7 @@ export const S_MobileNavigation = styled.div<{ $isOpen: boolean }>`
   & ~ ${StyledMain} {
     touch-action: ${({$isOpen}) => $isOpen ? "none" : "auto"};
   }
+
+
 
 `;
