@@ -4,6 +4,9 @@ import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {S_MobileMenuItem} from './MobileMenuItem';
 import {outline, plainTransition} from '../../../../app/styles/mixins';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowUpFromBracket} from '@fortawesome/free-solid-svg-icons/faArrowUpFromBracket';
+import {faLeftLong} from '@fortawesome/free-solid-svg-icons/faLeftLong';
 
 
 type props = {
@@ -36,7 +39,12 @@ export const MobileDropdownMenu = ({
                               onMouseEnter = {setDropdown}
                               onMouseLeave = {setCollapsed}>
 
-            <S_GoBackButton onClick = {goBack}>{mainTitle}</S_GoBackButton>
+            <S_GoBackButton onClick = {goBack}>
+                <FontAwesomeIcon icon = {faLeftLong}
+                                 size = {'1x'}
+                                 color = {"white"}
+                />
+                {mainTitle}</S_GoBackButton>
 
             {subMenuItems.map((item, index) =>
                 <S_MobileMenuItem key = {`${id}-${index}`} onClick = {onClickCallback} $isDropdown = {isDropdown}>
@@ -48,28 +56,28 @@ export const MobileDropdownMenu = ({
 
 
 export const S_MobileDropdownMenu = styled.ul<{ $asDropdown: boolean }>`
-  max-height: 0;
+  height: 0;
+  width: calc(80dvw + 15px);
   overflow: hidden;
-  position: absolute;
+  position: relative;
   z-index: ${({theme}) => theme.zIndices.header};
   ${({theme}) => plainTransition(theme.duration.middle)};
 
   ${({$asDropdown}) => $asDropdown && css`
       //${outline(1)}
-    max-height: min-content;
-    right: -80%;
+    position: absolute;
+    height: fit-content;
     top: 0;
     left: 100%;
-    border-left: 2px solid ${({theme}) => theme.colors.darkSlateGray};
 
-    a {
-      padding-inline: 1rem;
+    & > ${S_MobileMenuItem} {
+      border-right: 2px solid transparent;
     }
   `}
 
 `;
 export const S_GoBackButton = styled.button<{}>`
-  //display: inline-block;
+  position: relative;
   width: 100%;
   color: ${({theme}) => theme.colors.white};
   cursor: pointer;
@@ -80,4 +88,11 @@ export const S_GoBackButton = styled.button<{}>`
   letter-spacing: 1px;
   text-transform: uppercase;
   border-bottom: 2px solid ${({theme}) => theme.colors.primary};
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3rem;
+  }
 `;

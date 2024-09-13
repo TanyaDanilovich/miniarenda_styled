@@ -19,6 +19,12 @@ export const S_NavLink = styled(NavLink)<{}>`
   text-transform: uppercase;
 
   &.active {
+    background-color: ${({theme}) => theme.colors.primary};
+    
+  }
+
+  &.active + button > svg {
+      //${outline(3, "blue")}
     color: ${({theme}) => theme.colors.primary};
   }
 

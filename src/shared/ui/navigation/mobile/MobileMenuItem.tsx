@@ -32,7 +32,7 @@ export const MobileMenuItem = ({
             setAsDropDown()
         }
     }
-const rotateDeg=(dropDownId === id)? 90 : 0
+
     return (
 
 
@@ -56,7 +56,6 @@ const rotateDeg=(dropDownId === id)? 90 : 0
                                 <FontAwesomeIcon icon = {faAngleRight}
                                                  size = {'1x'}
                                                  color = {"white"}
-                                                 transform={{ rotate:rotateDeg }}
                                 />
                             </button>
                         </S_MobileDropdownNavLink>
@@ -87,21 +86,9 @@ export const S_MobileMenuItem = styled.li<{
     $isDropdown?: boolean
 }>`
   background-color: ${({theme}) => theme.colors.black};
-
-    //${outline(3, "green")}
-  ${({$isThereDropDown}) => $isThereDropDown && css`
-      // ${outline(3)}
-    position: relative;
-    left: -80%;
-  `}
-  &, & > a {
-    ${plainTransition()}
-  }
-
-  & > a:hover {
-    background-color: ${({theme}) => theme.colors.dark};
-    color: ${({theme}) => theme.colors.primary};
-  }
+  position: relative;
+  left: 0;
+  ${plainTransition()}
 
   border-bottom: 2px solid ${({theme}) => theme.colors.darkSlateGray};
   border-right: 2px solid ${({theme}) => theme.colors.darkSlateGray};
@@ -109,6 +96,15 @@ export const S_MobileMenuItem = styled.li<{
   &:first-child {
     border-top: 2px solid ${({theme}) => theme.colors.darkSlateGray};
   }
+
+  ${({$isThereDropDown}) => $isThereDropDown && css`
+    left: -100%;
+  `}
+  &, & > a {
+    ${plainTransition()}
+  }
+
+
 `;
 
 export const S_MobileDropdownNavLink = styled.div<{}>`
