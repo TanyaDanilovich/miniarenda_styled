@@ -14,7 +14,7 @@ export const BurgerButton = ({isOpen, callback}: props) => {
 };
 
 export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
-
+  z-index: ${({theme}) => theme.zIndices.header};
   --burgerHeight: 50px; //кратно 5
   --burgerLineHeight: 3px;
 
@@ -78,9 +78,5 @@ export const StyledBurgerButton = styled.div<{ $isOpen: boolean }>`
     }
 
 
-  }
-
-  @media ${({theme}) => theme.media.tablet} {
-    display: none;
   }
 `;

@@ -51,7 +51,7 @@ export const HeaderTop = ({}: props) => {
 };
 
 export const S_HeaderTop = styled.div    <{}>`
-  //flex-grow: 1;
+  z-index: ${({theme}) => theme.zIndices.modal};
   width: 100%;
   align-content: center;
   background-color: ${({theme}) => theme.colors.bg_primary};
