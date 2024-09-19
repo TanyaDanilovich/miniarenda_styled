@@ -2,13 +2,16 @@ import {createBrowserRouter, createRoutesFromElements, Link, Route} from 'react-
 import {Layout} from '../widgets/layouts/Layout';
 import {Questions} from '../widgets/questions/Questions';
 import {Services} from '../widgets/services/Services';
-import {Arenda} from '../pages/arenda/Arenda';
-import {ArendaExavatora} from '../widgets/arendaExavatora/ArendaExavatora';
+import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
+import {ExavatorRental} from '../pages/rentals/exavatorRental/ExavatorRental';
 import React from 'react';
 import {ROUTES_PATHS} from '../shared/constants';
 import {Main} from '../widgets/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
-import {Uslugi} from '../widgets/uslugi/Uslugi';
+import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
+import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental';
+import {UslugiAll} from '../pages/uslugiPages/uslugiAll/UslugiAll';
+import {Excavation} from '../pages/uslugiPages/excavation/Excavation';
 
 
 export const router = createBrowserRouter(
@@ -26,8 +29,8 @@ export const router = createBrowserRouter(
                    handle = {{
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.arenda.index.title}</Link>
                    }}>
-                <Route index element = {<Arenda/>}/>
-                <Route path = {ROUTES_PATHS.arenda.arenda_Ekskavatora.url} element = {<ArendaExavatora/>}
+                <Route index element = {<AllRentals/>}/>
+                <Route path = {ROUTES_PATHS.arenda.arenda_Ekskavatora.url} element = {<ExavatorRental/>}
                        handle = {{
                            crumb: () => (
                                <Link to = {ROUTES_PATHS.arenda.arenda_Ekskavatora.url}>
@@ -35,11 +38,11 @@ export const router = createBrowserRouter(
                                </Link>)
                        }}
                 />
-                <Route path = {ROUTES_PATHS.arenda.arenda_Gidromolota.url} element = {<Services/>} handle = {{
+                <Route path = {ROUTES_PATHS.arenda.arenda_Gidromolota.url} element = {<GidromolotRental/>} handle = {{
                     crumb: () => <Link
                         to = {ROUTES_PATHS.arenda.arenda_Gidromolota.url}>{ROUTES_PATHS.arenda.arenda_Gidromolota.title}</Link>
                 }}/>
-                <Route path = {ROUTES_PATHS.arenda.arenda_Yamobura.url} element = {<Questions/>} handle = {{
+                <Route path = {ROUTES_PATHS.arenda.arenda_Yamobura.url} element = {<YamoburRental/>} handle = {{
                     crumb: () => <Link
                         to = {ROUTES_PATHS.arenda.arenda_Yamobura.url}>{ROUTES_PATHS.arenda.arenda_Yamobura.title}</Link>
                 }}/>
@@ -51,8 +54,8 @@ export const router = createBrowserRouter(
                    handle = {{
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.uslugi.index.title}</Link>
                    }}>
-                <Route index element = {<Uslugi/>}/>
-                <Route path = {ROUTES_PATHS.uslugi.kopanie.url} element = {<Questions/>}
+                <Route index element = {<UslugiAll/>}/>
+                <Route path = {ROUTES_PATHS.uslugi.kopanie.url} element = {<Excavation/>}
                        handle = {{
                            crumb: () => <Link
                                to = {ROUTES_PATHS.uslugi.kopanie.url}>{ROUTES_PATHS.uslugi.kopanie.title}</Link>
