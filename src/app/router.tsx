@@ -12,6 +12,12 @@ import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRent
 import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental';
 import {UslugiAll} from '../pages/uslugiPages/uslugiAll/UslugiAll';
 import {Excavation} from '../pages/uslugiPages/excavation/Excavation';
+import {Drilling} from '../pages/uslugiPages/drilling/Drilling';
+import {Moving} from '../pages/uslugiPages/moving/Moving';
+import {TreeStumpRemoval} from '../pages/uslugiPages/treeStumpRemoval/TreeStumpRemoval';
+import {Price} from '../pages/price/Price';
+import {Projects} from '../pages/proects/Proects';
+import {Contacts} from '../pages/contacts/Contacts';
 
 
 export const router = createBrowserRouter(
@@ -61,19 +67,19 @@ export const router = createBrowserRouter(
                                to = {ROUTES_PATHS.uslugi.kopanie.url}>{ROUTES_PATHS.uslugi.kopanie.title}</Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.burenie.url} element = {<Services/>}
+                <Route path = {ROUTES_PATHS.uslugi.burenie.url} element = {<Drilling/>}
                        handle = {{
                            crumb: () => <Link
                                to = {ROUTES_PATHS.uslugi.burenie.url}>{ROUTES_PATHS.uslugi.burenie.title}</Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.peremeshchenie_Grunta.url} element = {<Questions/>}
+                <Route path = {ROUTES_PATHS.uslugi.peremeshchenie_Grunta.url} element = {<Moving/>}
                        handle = {{
                            crumb: () => <Link
                                to = {ROUTES_PATHS.uslugi.peremeshchenie_Grunta.url}>{ROUTES_PATHS.uslugi.peremeshchenie_Grunta.title}</Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.korchevanie_Pnej.url} element = {<Services/>}
+                <Route path = {ROUTES_PATHS.uslugi.korchevanie_Pnej.url} element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
                                to = {ROUTES_PATHS.uslugi.korchevanie_Pnej.url}>{ROUTES_PATHS.uslugi.korchevanie_Pnej.title}</Link>
@@ -84,7 +90,7 @@ export const router = createBrowserRouter(
 
             {/* Price Section */}
             <Route path = {ROUTES_PATHS.price.url} element = {<LayoutWithBreadcrumbs/>}>
-                <Route index element = {<Services/>}
+                <Route index element = {<Price/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.price.title}</Link>
                        }}/>
@@ -93,7 +99,7 @@ export const router = createBrowserRouter(
 
             {/* Projects Section */}
             <Route path = {ROUTES_PATHS.projects.url} element = {<LayoutWithBreadcrumbs/>}>
-                <Route index element = {<Services/>}
+                <Route index element = {<Projects/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.projects.title}</Link>
                        }}/>
@@ -103,7 +109,7 @@ export const router = createBrowserRouter(
 
             {/* Contact Section */}
             <Route path = {ROUTES_PATHS.contacts.url} element = {<LayoutWithBreadcrumbs/>}>
-                <Route index element = {<Questions/>}
+                <Route index element = {<Contacts/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.contacts.title}</Link>
                        }}/>
