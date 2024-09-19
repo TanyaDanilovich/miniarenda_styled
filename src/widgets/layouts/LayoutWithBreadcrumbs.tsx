@@ -16,25 +16,26 @@ type props = {};
 export const LayoutWithBreadcrumbs = ({}: props) => {
     const matches = useMatches() as BreadcrumbMatch[];
 
-    console.log(matches.filter((match) => Boolean(match.handle?.crumb)))
+    // console.log(matches.filter((match) => Boolean(match.handle?.crumb)))
 
-
-
-    const breadcrumbs = matches
+    const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))
-        .map((match, index) => (
+
+
+    const breadcrumbs =
+        filteredMatches.map((match, index) => (
             <span key = {index}>
                 {match.handle?.crumb && match.handle.crumb()}
-                {index < matches.length - 1 && ' / '}
-            </span>
-        ));
+                {index < filteredMatches.length - 1 && ' / '}
+            </span>)
+        );
 
     return (
         <S_Breadcrumbs>
             <S_Container>
                 LayoutWithBreadcrumbs
                 <nav>
-                    <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title + ' / '}</Link>
+                    <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title + " / "}</Link>
                     {breadcrumbs}
                 </nav>
                 <Outlet/>
