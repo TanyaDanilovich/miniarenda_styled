@@ -1,49 +1,66 @@
 import {MenuItemType} from '../../types/common.types';
+import {ROUTES_PATHS} from '../../constants';
 
 export const menuItemsData: MenuItemType[] = [
-    {title: "Главная", url: "/"},
     {
-        title: "Аренда", url: "arenda",
+        title: ROUTES_PATHS.home.title,
+        url: ROUTES_PATHS.home.url
+    },
+    {
+        title: ROUTES_PATHS.arenda.index.title,
+        url: ROUTES_PATHS.arenda.index.url,
         subMenuItems: [
             {
-                title: "Аренда мини-экскаватора",
-                url: "arenda/arenda-mini-ekskavatora"
+                title: ROUTES_PATHS.arenda.arenda_Exavatora.title,
+                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Exavatora.url}`,
             },
             {
-                title: "Аренда гидромолота",
-                url: "arenda/arenda-gidromolota"
+                title: ROUTES_PATHS.arenda.arenda_Yamobura.title,
+                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Yamobura.url}`,
             },
 
             {
-                title: "Аренда ямобура",
-                url: "arenda/arenda-yamobura"
+                title: ROUTES_PATHS.arenda.arenda_Gidromolota.title,
+                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Gidromolota.url}`,
             },
         ]
     },
 
     {
-        title: "Услуги", url: "uslugi",
+        title: ROUTES_PATHS.uslugi.index.title,
+        url: ROUTES_PATHS.uslugi.index.url,
         subMenuItems: [
             {
-                title: "Бурение",
-                url: "uslugi/burenie"
+                title: ROUTES_PATHS.uslugi.diggingTrench.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.diggingTrench.url}`,
             },
             {
-                title: "Копание",
-                url: "uslugi/kopanie"
-            },
-
-            {
-                title: "Корчевание пней",
-                url: "uslugi/korchevanie-pnej"
+                title: ROUTES_PATHS.uslugi.diggingFoundation.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.diggingFoundation.url}`,
             },
             {
-                title: "Перемещение грунта",
-                url: "uslugi/peremeshchenie-grunta"
-            }
+                title: ROUTES_PATHS.uslugi.stumpRemoval.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.stumpRemoval.url}`,
+            },
+            {
+                title: ROUTES_PATHS.uslugi.drilling.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.drilling.url}`,
+            },
+            {
+                title: ROUTES_PATHS.uslugi.groundMovement.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.groundMovement.url}`,
+            },
+            {
+                title: ROUTES_PATHS.uslugi.otherGroundworks.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.otherGroundworks.url}`,
+            },
+            {
+                title: ROUTES_PATHS.uslugi.dismantling.title,
+                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.dismantling.url}`,
+            },
         ]
     },
-    {title: "Цены", url: "price"},
-    {title: "Наши работы", url: "projects"},
-    {title: "Контакты", url: "contacts"}
+    {title: ROUTES_PATHS.price.title, url: ROUTES_PATHS.price.url},
+    {title: ROUTES_PATHS.projects.title, url: ROUTES_PATHS.projects.url},
+    {title: ROUTES_PATHS.contacts.title, url: ROUTES_PATHS.contacts.url}
 ]

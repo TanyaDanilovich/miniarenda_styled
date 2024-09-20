@@ -4,6 +4,9 @@ import React from 'react';
 import {outline} from '../../app/styles/mixins';
 import {Link, Outlet, useMatches} from 'react-router-dom';
 import {ROUTES_PATHS} from '../../shared/constants';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faAngleRight} from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 
 type BreadcrumbMatch = {
     handle?: {
@@ -36,6 +39,13 @@ export const LayoutWithBreadcrumbs = ({}: props) => {
                 LayoutWithBreadcrumbs
                 <nav>
                     <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title + " / "}</Link>
+                    {/*<Link to = {ROUTES_PATHS.home.url}>*/}
+                    {/*    <FontAwesomeIcon icon = {faHome}*/}
+                    {/*                     size = {'1x'}*/}
+                    {/*                     color = {"black"}*/}
+                    {/*    />*/}
+                    {/*    {" / "}*/}
+                    {/*</Link>*/}
                     {breadcrumbs}
                 </nav>
                 <Outlet/>

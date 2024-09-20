@@ -1,23 +1,21 @@
 import {createBrowserRouter, createRoutesFromElements, Link, Route} from 'react-router-dom';
 import {Layout} from '../widgets/layouts/Layout';
-import {Questions} from '../widgets/questions/Questions';
-import {Services} from '../widgets/services/Services';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExavatorRental} from '../pages/rentals/exavatorRental/ExavatorRental';
 import React from 'react';
-import {ROUTES_PATHS} from '../shared/constants';
+import {ROUTES_PATHS, SITE_DATA} from '../shared/constants';
 import {Main} from '../widgets/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
 import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
-import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental';
-import {UslugiAll} from '../pages/uslugiPages/uslugiAll/UslugiAll';
-import {Excavation} from '../pages/uslugiPages/excavation/Excavation';
-import {Drilling} from '../pages/uslugiPages/drilling/Drilling';
-import {Moving} from '../pages/uslugiPages/moving/Moving';
-import {TreeStumpRemoval} from '../pages/uslugiPages/treeStumpRemoval/TreeStumpRemoval';
+import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental'
 import {Price} from '../pages/price/Price';
 import {Projects} from '../pages/proects/Proects';
 import {Contacts} from '../pages/contacts/Contacts';
+import {Excavation} from '../pages/services/excavation/Excavation';
+import {UslugiAll} from '../pages/services/uslugiAll/UslugiAll';
+import {Drilling} from '../pages/services/drilling/Drilling';
+import {Moving} from '../pages/services/moving/Moving';
+import {TreeStumpRemoval} from '../pages/services/treeStumpRemoval/TreeStumpRemoval';
 
 
 export const router = createBrowserRouter(
@@ -36,11 +34,11 @@ export const router = createBrowserRouter(
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.arenda.index.title}</Link>
                    }}>
                 <Route index element = {<AllRentals/>}/>
-                <Route path = {ROUTES_PATHS.arenda.arenda_Ekskavatora.url} element = {<ExavatorRental/>}
+                <Route path = {ROUTES_PATHS.arenda.arenda_Exavatora.url} element = {<ExavatorRental/>}
                        handle = {{
                            crumb: () => (
-                               <Link to = {ROUTES_PATHS.arenda.arenda_Ekskavatora.url}>
-                                   {ROUTES_PATHS.arenda.arenda_Ekskavatora.title}
+                               <Link to = {ROUTES_PATHS.arenda.arenda_Exavatora.url}>
+                                   {ROUTES_PATHS.arenda.arenda_Exavatora.title}
                                </Link>)
                        }}
                 />
@@ -61,28 +59,58 @@ export const router = createBrowserRouter(
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.uslugi.index.title}</Link>
                    }}>
                 <Route index element = {<UslugiAll/>}/>
-                <Route path = {ROUTES_PATHS.uslugi.kopanie.url} element = {<Excavation/>}
+                <Route path = {SITE_DATA.categories.services.items["digging-trench"].url} element = {<Excavation/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {ROUTES_PATHS.uslugi.kopanie.url}>{ROUTES_PATHS.uslugi.kopanie.title}</Link>
+                               to = {SITE_DATA.categories.services.items["digging-trench"].url}>{SITE_DATA.categories.services.items["digging-trench"].title}</Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.burenie.url} element = {<Drilling/>}
+                <Route path = {SITE_DATA.categories.services.items["digging-foundation"].url} element = {<Drilling/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {ROUTES_PATHS.uslugi.burenie.url}>{ROUTES_PATHS.uslugi.burenie.title}</Link>
+                               to = {SITE_DATA.categories.services.items["digging-foundation"].url}>{SITE_DATA.categories.services.items["digging-foundation"].title}</Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.peremeshchenie_Grunta.url} element = {<Moving/>}
+                <Route path = {SITE_DATA.categories.services.items["stump-removal"].url} element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {ROUTES_PATHS.uslugi.peremeshchenie_Grunta.url}>{ROUTES_PATHS.uslugi.peremeshchenie_Grunta.title}</Link>
+                               to = {SITE_DATA.categories.services.items["stump-removal"].url}>
+                               {SITE_DATA.categories.services.items["stump-removal"].title}
+                           </Link>
                        }}
                 />
-                <Route path = {ROUTES_PATHS.uslugi.korchevanie_Pnej.url} element = {<TreeStumpRemoval/>}
+                <Route path = {SITE_DATA.categories.services.items["drilling"].url} element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {ROUTES_PATHS.uslugi.korchevanie_Pnej.url}>{ROUTES_PATHS.uslugi.korchevanie_Pnej.title}</Link>
+                               to = {SITE_DATA.categories.services.items["drilling"].url}>
+                               {SITE_DATA.categories.services.items["drilling"].title}
+                           </Link>
+                       }}
+                />
+                <Route path = {SITE_DATA.categories.services.items["ground-movement"].url}
+                       element = {<TreeStumpRemoval/>}
+                       handle = {{
+                           crumb: () => <Link
+                               to = {SITE_DATA.categories.services.items["ground-movement"].url}>
+                               {SITE_DATA.categories.services.items["ground-movement"].title}
+                           </Link>
+                       }}
+                />
+                <Route path = {SITE_DATA.categories.services.items["other-groundworks"].url} element = {<Moving/>}
+                       handle = {{
+                           crumb: () => <Link
+                               to = {SITE_DATA.categories.services.items["other-groundworks"].url}>
+                               {SITE_DATA.categories.services.items["other-groundworks"].title}
+                           </Link>
+                       }}
+                />
+                <Route path = {SITE_DATA.categories.services.items["dismantling"].url}
+                       element = {<TreeStumpRemoval/>}
+                       handle = {{
+                           crumb: () => <Link
+                               to = {SITE_DATA.categories.services.items["dismantling"].url}>
+                               {SITE_DATA.categories.services.items["dismantling"].title}
+                           </Link>
                        }}
                 />
             </Route>
