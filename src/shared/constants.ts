@@ -185,7 +185,7 @@ export const SITE_DATA = {
                         id: "dismantling",
                         subtype: "other",
                         url: "demontazh",
-                        title: "Демонтаж",
+                        title: "Демонтаж бетонных конструкций",
                         description: "Выполняем следующие услуги гидромолота:\n" +
                             "разрушение железобетонных строений;\n" +
                             "объемная и листовая штамповка;\n" +

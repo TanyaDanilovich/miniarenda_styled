@@ -15,11 +15,13 @@ import {ImageProps} from '../../../shared/types/common.types';
 export type ServiceCardData = {
     title: string,
     text: string,
-    image: ImageProps
+    image: ImageProps,
+    typeTitle: string,
+    typeUrl: string,
 }
 
 type props = ServiceCardData & {};
-export const ServiceCard = ({title, text, image}: props) => {
+export const ServiceCard = ({title, text, image, typeTitle, typeUrl}: props) => {
     const theme = useTheme()
     return (
         <StyledServiceCard>
@@ -30,7 +32,7 @@ export const ServiceCard = ({title, text, image}: props) => {
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
                 <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
-                <a href = {""}>Услуги</a>
+                <a href = {typeUrl}>{typeTitle}</a>
             </S_Flex>
 
 

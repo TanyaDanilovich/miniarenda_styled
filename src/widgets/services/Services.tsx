@@ -5,10 +5,10 @@ import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
-import {servicesData} from './servicesData';
+import {getServicesData} from '../../shared/utils/getServicesData';
 
 type props = {
-   // data: ServiceCardData[]
+    // data: ServiceCardData[]
 };
 
 export const Services = ({}: props) => {
@@ -23,6 +23,9 @@ export const Services = ({}: props) => {
         "                        бесперебойно\n" +
         "                        работать на протяжении долгого времени."
     const id = useId();
+
+    const servicesData = getServicesData()
+
     return (
         <StyledServices>
             <S_Container>
@@ -30,8 +33,14 @@ export const Services = ({}: props) => {
 
                 <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
 
-                    {servicesData.map((card, index) => <ServiceCard key = {`${id}-${index}`} title = {card.title}
-                                                            text = {card.text} image = {card.image}/>)}
+                    {servicesData.map((card, index) =>
+                        <ServiceCard key = {`${id}-${index}`}
+                                     title = {card.title}
+                                     text = {card.text}
+                                     image = {card.image}
+                                     typeTitle = {card.typeTitle}
+                                     typeUrl = {card.typeUrl}
+                        />)}
                 </S_Flex>
             </S_Container>
         </StyledServices>);

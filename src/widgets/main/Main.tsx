@@ -13,10 +13,11 @@ import {Hero} from '../hero/Hero';
 
 
 type props = {};
+
 export const Main = ({}: props) => {
+
+
     return (
-
-
         <StyledMain>
             <Hero/>
             <Services/>
