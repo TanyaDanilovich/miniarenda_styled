@@ -40,6 +40,7 @@ export const Services = ({}: props) => {
                                      image = {card.image}
                                      typeTitle = {card.typeTitle}
                                      typeUrl = {card.typeUrl}
+                                     url = {card.url}
                         />)}
                 </S_Flex>
             </S_Container>

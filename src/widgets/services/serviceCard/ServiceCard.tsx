@@ -18,16 +18,17 @@ export type ServiceCardData = {
     image: ImageProps,
     typeTitle: string,
     typeUrl: string,
+    url:string
 }
 
 type props = ServiceCardData & {};
-export const ServiceCard = ({title, text, image, typeTitle, typeUrl}: props) => {
+export const ServiceCard = ({title, text, image, typeTitle, typeUrl,url}: props) => {
     const theme = useTheme()
     return (
         <StyledServiceCard>
             <S_ImageContainer>
                 <S_Image src = {image.src} alt = {image.alt}/>
-                <HoverIcons link = {""} image = {image}/>
+                <HoverIcons link = {url} image = {image}/>
             </S_ImageContainer>
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
@@ -43,7 +44,7 @@ export const ServiceCard = ({title, text, image, typeTitle, typeUrl}: props) => 
                 {text}
             </ServiceCardText>
             <S_Box $marginTop = {"1rem"}>
-                <ReadMoreButton/>
+                <ReadMoreButton url={url}/>
             </S_Box>
         </StyledServiceCard>
     );

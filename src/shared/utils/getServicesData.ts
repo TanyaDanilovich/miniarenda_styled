@@ -1,10 +1,11 @@
 import {SITE_DATA} from '../constants';
 import img from '../../assets/images/servises/servises_1.jpg';
+import {ServiceCardData} from '../../widgets/services/serviceCard/ServiceCard';
 
 export type rentalKeysType = keyof typeof SITE_DATA.categories.rental.items;
 export type servicesKeysType = keyof typeof SITE_DATA.categories.services.items;
 
-export function getServicesData() {
+export function getServicesData(): ServiceCardData[] {
     const rentalKeys = Object.keys(SITE_DATA.categories.rental.items);
     const servicesKeys = Object.keys(SITE_DATA.categories.services.items);
 
@@ -14,13 +15,13 @@ export function getServicesData() {
                 ...SITE_DATA.categories.rental.items[rentItem as rentalKeysType],
                 type: SITE_DATA.categories.rental.type,
                 typeTitle: SITE_DATA.categories.rental.title,
-                typeUrl:SITE_DATA.categories.rental.url,
+                typeUrl: SITE_DATA.categories.rental.url,
             })),
         ...servicesKeys.map(serviceItem => ({
             ...SITE_DATA.categories.services.items[serviceItem as servicesKeysType],
             type: SITE_DATA.categories.services.type,
             typeTitle: SITE_DATA.categories.services.title,
-            typeUrl:SITE_DATA.categories.services.url,
+            typeUrl: SITE_DATA.categories.services.url,
         }))
     ]
 
@@ -35,5 +36,6 @@ export function getServicesData() {
         type: item.type,
         typeTitle: item.typeTitle,
         typeUrl: item.typeUrl,
+        url: `${item.typeUrl}/${item.url}`,
     }));
 }
