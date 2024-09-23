@@ -6,6 +6,7 @@ import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
 import {getServicesData} from '../../shared/utils/getServicesData';
+import {SITE_DATA} from '../../shared/constants';
 
 type props = {
     // data: ServiceCardData[]
@@ -24,7 +25,7 @@ export const Services = ({}: props) => {
         "                        работать на протяжении долгого времени."
     const id = useId();
 
-    const servicesData = getServicesData()
+    const servicesData = getServicesData(SITE_DATA)
 
     return (
         <StyledServices>

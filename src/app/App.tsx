@@ -9,7 +9,7 @@ import {router} from './router';
 register();
 
 function App() {
-
+    console.error();
     return <RouterProvider router = {router}/>
 
 }

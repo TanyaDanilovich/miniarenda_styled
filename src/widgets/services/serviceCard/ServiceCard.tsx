@@ -18,11 +18,11 @@ export type ServiceCardData = {
     image: ImageProps,
     typeTitle: string,
     typeUrl: string,
-    url:string
+    url: string
 }
 
 type props = ServiceCardData & {};
-export const ServiceCard = ({title, text, image, typeTitle, typeUrl,url}: props) => {
+export const ServiceCard = ({title, text, image, typeTitle, typeUrl, url}: props) => {
     const theme = useTheme()
     return (
         <StyledServiceCard>
@@ -38,13 +38,13 @@ export const ServiceCard = ({title, text, image, typeTitle, typeUrl,url}: props)
 
 
             <ServiceCardTitle>
-                <a href = {''}>{title}</a>
+                <a href = {url}>{title}</a>
             </ServiceCardTitle>
             <ServiceCardText>
                 {text}
             </ServiceCardText>
             <S_Box $marginTop = {"1rem"}>
-                <ReadMoreButton url={url}/>
+                <ReadMoreButton url = {url}/>
             </S_Box>
         </StyledServiceCard>
     );
