@@ -1,11 +1,11 @@
-import {SITE_DATA} from '../constants';
+import {SERVICES_DATA} from '../constants';
 import img from '../../assets/images/servises/servises_1.jpg';
 import {ServiceCardData} from '../../widgets/services/serviceCard/ServiceCard';
 import {ServicesDataType} from '../types/common.types';
 
 
-export type rentalKeysType = keyof typeof SITE_DATA.categories.rental.items;
-export type servicesKeysType = keyof typeof SITE_DATA.categories.services.items;
+export type rentalKeysType = keyof typeof SERVICES_DATA.categories.rental.items;
+export type servicesKeysType = keyof typeof SERVICES_DATA.categories.services.items;
 
 export function getServicesData(data:ServicesDataType): ServiceCardData[] {
     const rentalKeys = Object.keys(data.categories.rental.items);

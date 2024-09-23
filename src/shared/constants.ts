@@ -1,4 +1,4 @@
-import {RentalSubcategoriesType, ServicesDataType} from './types/common.types';
+import {ServicesDataType} from './types/common.types';
 
 export const BREAKPOINTS = {
     smallMobile: "321px",
@@ -15,7 +15,7 @@ export const BASE: number = 16
 export const countReviewLines: number = 4
 
 
-export const SITE_DATA: ServicesDataType = {
+export const SERVICES_DATA: ServicesDataType = {
     categories: {
         rental: {
             type: "rental",
@@ -125,12 +125,7 @@ export const SITE_DATA: ServicesDataType = {
                         subtype: "digging",
                         url: "korchevanie-pnej",
                         title: "Корчевание пней",
-                        description: "Способы корчевания на участке, как это происходит, описание" +
-                            "В зависимости от особенностей участка и ваших предпочтений, мы предлагаем различные методы корчевания:" +
-                            "Ручной метод: Этот способ подразумевает использование инструментов вроде лопаты, топора и пилы. " +
-                            "Для маленьких пней этот метод может быть достаточно эффективным, однако он требует потраченного времени и физических усилий." +
-                            "" +
-                            "Механический способ: Механическое уничтожение пней проводится с использованием специализированной " +
+                        description: "Механический способ: Механическое уничтожение пней проводится с использованием специализированной " +
                             "техники, такой как гидромолот или корчеватель. Такой метод значительно быстрее и эффективнее, " +
                             "особенно когда речь идёт о крупных и старых пнях.",
                         images: [],
@@ -184,9 +179,7 @@ export const SITE_DATA: ServicesDataType = {
                         url: "prochie-zemlyanye-raboty",
                         title: "Прочие земляные работы",
                         description: "Земляные работы с помощью мини-экскаватора и мини-погрузчика в Минске" +
-                            "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, " +
-                            "включая мини-экскаваторы и мини-погрузчики. Использование такой техники позволяет нам работать в условиях " +
-                            "ограниченного пространства при сохранении высокой производительности и точности выполнения задач.",
+                            "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, " ,
                         images: [],
                         seo: {
                             metaTitle: "Копка траншей",
@@ -235,54 +228,54 @@ export const ROUTES_PATHS = {
 
     arenda: {
         index: {
-            url: SITE_DATA.categories.rental.url,
-            title: SITE_DATA.categories.rental.title
+            url: SERVICES_DATA.categories.rental.url,
+            title: SERVICES_DATA.categories.rental.title
         },
         arenda_Exavatora: {
-            url: SITE_DATA.categories.rental.items["rental-exavator"].url,
-            title: SITE_DATA.categories.rental.items["rental-exavator"].title
+            url: SERVICES_DATA.categories.rental.items["rental-exavator"].url,
+            title: SERVICES_DATA.categories.rental.items["rental-exavator"].title
         },
         arenda_Gidromolota: {
-            url: SITE_DATA.categories.rental.items["rentals-hammer"].url,
-            title: SITE_DATA.categories.rental.items["rentals-hammer"].title
+            url: SERVICES_DATA.categories.rental.items["rentals-hammer"].url,
+            title: SERVICES_DATA.categories.rental.items["rentals-hammer"].title
         },
         arenda_Yamobura: {
-            url: SITE_DATA.categories.rental.items["rentals-drill"].url,
-            title: SITE_DATA.categories.rental.items["rentals-drill"].title
+            url: SERVICES_DATA.categories.rental.items["rentals-drill"].url,
+            title: SERVICES_DATA.categories.rental.items["rentals-drill"].title
         },
     },
     uslugi: {
         index: {
-            url: SITE_DATA.categories.services.url,
-            title: SITE_DATA.categories.services.title,
+            url: SERVICES_DATA.categories.services.url,
+            title: SERVICES_DATA.categories.services.title,
         },
         diggingTrench: {
-            url: SITE_DATA.categories.services.items["digging-trench"].url,
-            title: SITE_DATA.categories.services.items["digging-trench"].title,
+            url: SERVICES_DATA.categories.services.items["digging-trench"].url,
+            title: SERVICES_DATA.categories.services.items["digging-trench"].title,
         },
         diggingFoundation: {
-            url: SITE_DATA.categories.services.items["digging-foundation"].url,
-            title: SITE_DATA.categories.services.items["digging-foundation"].title,
+            url: SERVICES_DATA.categories.services.items["digging-foundation"].url,
+            title: SERVICES_DATA.categories.services.items["digging-foundation"].title,
         },
         stumpRemoval: {
-            url: SITE_DATA.categories.services.items["stump-removal"].url,
-            title: SITE_DATA.categories.services.items["stump-removal"].title,
+            url: SERVICES_DATA.categories.services.items["stump-removal"].url,
+            title: SERVICES_DATA.categories.services.items["stump-removal"].title,
         },
         drilling: {
-            url: SITE_DATA.categories.services.items["drilling"].url,
-            title: SITE_DATA.categories.services.items["drilling"].title,
+            url: SERVICES_DATA.categories.services.items["drilling"].url,
+            title: SERVICES_DATA.categories.services.items["drilling"].title,
         },
         groundMovement: {
-            url: SITE_DATA.categories.services.items["ground-movement"].url,
-            title: SITE_DATA.categories.services.items["ground-movement"].title,
+            url: SERVICES_DATA.categories.services.items["ground-movement"].url,
+            title: SERVICES_DATA.categories.services.items["ground-movement"].title,
         },
         otherGroundworks: {
-            url: SITE_DATA.categories.services.items["other-groundworks"].url,
-            title: SITE_DATA.categories.services.items["other-groundworks"].title,
+            url: SERVICES_DATA.categories.services.items["other-groundworks"].url,
+            title: SERVICES_DATA.categories.services.items["other-groundworks"].title,
         },
         dismantling: {
-            url: SITE_DATA.categories.services.items["dismantling"].url,
-            title: SITE_DATA.categories.services.items["dismantling"].title,
+            url: SERVICES_DATA.categories.services.items["dismantling"].url,
+            title: SERVICES_DATA.categories.services.items["dismantling"].title,
         },
     }
 }
