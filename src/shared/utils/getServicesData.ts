@@ -7,7 +7,7 @@ import {ServicesDataType} from '../types/common.types';
 export type rentalKeysType = keyof typeof SERVICES_DATA.categories.rental.items;
 export type servicesKeysType = keyof typeof SERVICES_DATA.categories.services.items;
 
-export function getServicesData(data:ServicesDataType): ServiceCardData[] {
+export function getServicesData(data: ServicesDataType): ServiceCardData[] {
     const rentalKeys = Object.keys(data.categories.rental.items);
     const servicesKeys = Object.keys(data.categories.services.items);
 
@@ -27,7 +27,7 @@ export function getServicesData(data:ServicesDataType): ServiceCardData[] {
         }))
     ]
 
-    console.log(servicesData)
+    //console.log(servicesData)
 
 
     return servicesData.map(item => ({

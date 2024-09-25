@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import {S_Container} from '../../shared/styled/S_Container';
-import React, {useId} from 'react';
+import React, {useEffect, useId, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
 import {getServicesData} from '../../shared/utils/getServicesData';
-import {SERVICES_DATA} from '../../shared/constants';
+import {BREAKPOINTS, SERVICES_DATA} from '../../shared/constants';
+import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 
 type props = {
     // data: ServiceCardData[]
 };
 
 export const Services = ({}: props) => {
-
 //&#8288;
     const serviceTitle = `Мини-погрузчики и мини-экскаваторы в аренду`
     const serviceText = " Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и\n" +
@@ -25,7 +25,21 @@ export const Services = ({}: props) => {
         "                        работать на протяжении долгого времени."
     const id = useId();
 
-    const servicesData = getServicesData(SERVICES_DATA)
+    const fullServicesData = getServicesData(SERVICES_DATA);
+    const [servicesData, setServicesData] = useState(fullServicesData);
+    const [width] = useDebouncedWindowSize();
+
+    useEffect(() => {
+        if (width <= parseInt(BREAKPOINTS.mobile)) {
+            setServicesData(fullServicesData)
+        } else if (width > parseInt(BREAKPOINTS.mobile) && width <= parseInt(BREAKPOINTS.tablet)) {
+            fullServicesData.length = ~~(fullServicesData.length / 2) * 2
+            setServicesData(fullServicesData)
+        } else {
+            fullServicesData.length = ~~(fullServicesData.length / 3) * 3
+            setServicesData(fullServicesData)
+        }
+    }, [width]);
 
     return (
         <StyledServices>

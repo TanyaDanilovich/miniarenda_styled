@@ -18,11 +18,19 @@ export type ServiceCardData = {
     image: ImageProps,
     typeTitle: string,
     typeUrl: string,
-    url: string
+    url: string,
 }
 
 type props = ServiceCardData & {};
-export const ServiceCard = ({title, text, image, typeTitle, typeUrl, url}: props) => {
+export const ServiceCard = ({
+                                title,
+                                text,
+                                image,
+                                typeTitle,
+                                typeUrl,
+                                url,
+
+                            }: props) => {
     const theme = useTheme()
     return (
         <StyledServiceCard>
@@ -70,7 +78,6 @@ export const StyledServiceCard = styled.article <{}>`
   @media ${({theme}) => theme.media.tablet} {
     width: calc(30%);
 
-
   }
 
 `;
@@ -87,4 +94,11 @@ export const ServiceCardTitle = styled.h3 <{}>`
 `;
 
 export const ServiceCardText = styled.p<{}>`
-  flex-grow: 1`;
+  flex-grow: 1;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  position: relative;`;

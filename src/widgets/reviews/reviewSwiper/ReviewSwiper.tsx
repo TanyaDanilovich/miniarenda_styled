@@ -92,8 +92,12 @@ export const ReviewSwiper = ({id}: props) => {
 
 
             {reviewsData.map((review, index) =>
-                <ReviewSlide userName = {review.userName} reviewContent = {review.reviewContent} close = {close}resetClose={resetClose}
-                             key = {`${id}-${index}`}/>)}
+                <ReviewSlide userName = {review.userName}
+                             reviewContent = {review.reviewContent}
+                             close = {close}
+                             resetClose = {resetClose}
+                             key = {`${id}-${index}`}
+                />)}
 
         </S_ReviewSwiper>);
 };
