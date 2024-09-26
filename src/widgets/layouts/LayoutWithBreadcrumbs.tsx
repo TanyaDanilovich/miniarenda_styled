@@ -1,65 +1,146 @@
 import styled from "styled-components";
-import {S_Container} from '../../shared/styled/S_Container';
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
 import {Link, Outlet, useMatches} from 'react-router-dom';
 import {ROUTES_PATHS} from '../../shared/constants';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faAngleRight} from '@fortawesome/free-solid-svg-icons/faAngleRight';
-import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
+import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
+import {S_Container} from '../../shared/styled/S_Container';
+import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 
 type BreadcrumbMatch = {
     handle?: {
         crumb?: () => JSX.Element;
-    };
+    },
+
 };
-type props = {};
+type props = {
+    title: string;
+};
 
 
-export const LayoutWithBreadcrumbs = ({}: props) => {
+export const LayoutWithBreadcrumbs = ({title}: props) => {
     const matches = useMatches() as BreadcrumbMatch[];
-
-    // console.log(matches.filter((match) => Boolean(match.handle?.crumb)))
 
     const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))
 
-
     const breadcrumbs =
-        filteredMatches.map((match, index) => (
-            <span key = {index}>
+        filteredMatches.map((match, index) => {
+            return <li key = {index}>
                 {match.handle?.crumb && match.handle.crumb()}
-                {index < filteredMatches.length - 1 && ' / '}
-            </span>)
-        );
+            </li>
+        });
 
     return (
-        <S_Breadcrumbs>
-            <S_Container>
-                LayoutWithBreadcrumbs
-                <nav>
-                    <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title + " / "}</Link>
-                    {/*<Link to = {ROUTES_PATHS.home.url}>*/}
-                    {/*    <FontAwesomeIcon icon = {faHome}*/}
-                    {/*                     size = {'1x'}*/}
-                    {/*                     color = {"black"}*/}
-                    {/*    />*/}
-                    {/*    {" / "}*/}
-                    {/*</Link>*/}
-                    {breadcrumbs}
-                </nav>
-                <Outlet/>
-            </S_Container>
-        </S_Breadcrumbs>);
+        <S_LayoutWithBreadcrumbs>
+            <S_BreadcrumbsContainer $img = {img}>
+                <S_Breadcrumbs>
+                    <S_BreadcrumbsTitle>{title}</S_BreadcrumbsTitle>
+                    <S_BreadcrumbsContent>
+                        <li>
+                            <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title}</Link>
+                        </li>
+                        {breadcrumbs}
+                    </S_BreadcrumbsContent>
+                </S_Breadcrumbs>
+
+            </S_BreadcrumbsContainer>
+            <Outlet/>
+        </S_LayoutWithBreadcrumbs>);
 
 
 }
 
 
+export const S_LayoutWithBreadcrumbs = styled.div<{}>`
+    //${outline()}
+`
+
 export const S_Breadcrumbs = styled.div<{}>`
-  ${outline()}
+    //${outline()}
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+
+  &::before {
+    background-color: ${({theme}) => theme.colors.bg_primary};
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: 0;
+  }
+`
+export const S_BreadcrumbsTitle = styled.h2`
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  //line-height: 3rem;
+`;
+export const S_BreadcrumbsContainer = styled.nav<{ $img: string }>`
+
+    //${outline()}
+
+  position: relative;
+  background-image: url(${props => props.$img});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 12rem;
+  color: white;
+  align-content: center;
+
+  &::before {
+    background-color: ${({theme}) => theme.colors.bg_primary};
+    opacity: 0.7;
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 12rem;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    list-style: none;
+    font-weight: ${({theme}) => theme.fonts.regular};
+    text-decoration: none;
+    color: white;
+  }
+
+  li {
+    position: relative;
+    z-index: 1;
+      //${outline(2)}
+  }
+
+  li:not(:first-child) {
+    position: relative;
+
+      //${outline(2)}
+    &::before {
+      content: "/";
+      width: 100%;
+      z-index: -1;
+      padding-inline: 0.5rem;
+    }
 
 `
 
 
-
+export const S_BreadcrumbsContent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+`

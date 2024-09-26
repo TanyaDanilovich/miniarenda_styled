@@ -29,7 +29,8 @@ export const router = createBrowserRouter(
             />
 
             {/* Arenda Section */}
-            <Route path = {ROUTES_PATHS.arenda.index.url} element = {<LayoutWithBreadcrumbs/>}
+            <Route path = {ROUTES_PATHS.arenda.index.url}
+                   element = {<LayoutWithBreadcrumbs title = {ROUTES_PATHS.arenda.index.title}/>}
                    handle = {{
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.arenda.index.title}</Link>
                    }}>
@@ -54,24 +55,32 @@ export const router = createBrowserRouter(
             {/* Arenda Section */}
 
             {/* Uslugi Section */}
-            <Route path = {ROUTES_PATHS.uslugi.index.url} element = {<LayoutWithBreadcrumbs/>}
+            <Route path = {ROUTES_PATHS.uslugi.index.url}
+                   element = {<LayoutWithBreadcrumbs title = {ROUTES_PATHS.uslugi.index.title}/>}
                    handle = {{
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.uslugi.index.title}</Link>
                    }}>
                 <Route index element = {<UslugiAll/>}/>
                 <Route path = {SERVICES_DATA.categories.services.items["digging-trench"].url} element = {<Excavation/>}
                        handle = {{
-                           crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["digging-trench"].url}>{SERVICES_DATA.categories.services.items["digging-trench"].title}</Link>
+                           crumb: () =>
+                               <Link
+                                   to = {SERVICES_DATA.categories.services.items["digging-trench"].url}>
+                                   {SERVICES_DATA.categories.services.items["digging-trench"].title}
+                               </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["digging-foundation"].url} element = {<Drilling/>}
+                <Route path = {SERVICES_DATA.categories.services.items["digging-foundation"].url}
+                       element = {<Drilling/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["digging-foundation"].url}>{SERVICES_DATA.categories.services.items["digging-foundation"].title}</Link>
+                               to = {SERVICES_DATA.categories.services.items["digging-foundation"].url}>
+                               {SERVICES_DATA.categories.services.items["digging-foundation"].title}
+                           </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["stump-removal"].url} element = {<TreeStumpRemoval/>}
+                <Route path = {SERVICES_DATA.categories.services.items["stump-removal"].url}
+                       element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
                                to = {SERVICES_DATA.categories.services.items["stump-removal"].url}>
@@ -117,7 +126,8 @@ export const router = createBrowserRouter(
             {/* Uslugi Section */}
 
             {/* Price Section */}
-            <Route path = {ROUTES_PATHS.price.url} element = {<LayoutWithBreadcrumbs/>}>
+            <Route path = {ROUTES_PATHS.price.url}
+                   element = {<LayoutWithBreadcrumbs title = {ROUTES_PATHS.price.title}/>}>
                 <Route index element = {<Price/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.price.title}</Link>
@@ -126,7 +136,8 @@ export const router = createBrowserRouter(
             {/* Price Section */}
 
             {/* Projects Section */}
-            <Route path = {ROUTES_PATHS.projects.url} element = {<LayoutWithBreadcrumbs/>}>
+            <Route path = {ROUTES_PATHS.projects.url}
+                   element = {<LayoutWithBreadcrumbs title = {ROUTES_PATHS.projects.title}/>}>
                 <Route index element = {<Projects/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.projects.title}</Link>
@@ -136,7 +147,8 @@ export const router = createBrowserRouter(
 
 
             {/* Contact Section */}
-            <Route path = {ROUTES_PATHS.contacts.url} element = {<LayoutWithBreadcrumbs/>}>
+            <Route path = {ROUTES_PATHS.contacts.url}
+                   element = {<LayoutWithBreadcrumbs title = {ROUTES_PATHS.contacts.title}/>}>
                 <Route index element = {<Contacts/>}
                        handle = {{
                            crumb: () => <Link to = {""}>{ROUTES_PATHS.contacts.title}</Link>

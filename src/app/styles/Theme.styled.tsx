@@ -3,8 +3,9 @@ import {getResponsiveSize} from "../../shared/utils/getResponsiveSize";
 import {MyDefaultTheme} from 'styled-components';
 
 export const theme: MyDefaultTheme = {
-
-
+    typography: {
+        lineHeight: "1.2"
+    },
     fonts: {
         family: {
             base: "Poppins",

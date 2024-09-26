@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
 
     ${OpenSansFont({})};
-    line-height: 1.2;
+    line-height: ${({theme}) => theme.typography.lineHeight};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${({theme}) => theme.colors.black};
