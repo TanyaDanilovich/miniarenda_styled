@@ -63,10 +63,16 @@ export const S_Breadcrumbs = styled.div<{}>`
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  @media ${({theme}) => theme.media.tablet} {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
 
   &::before {
     background-color: ${({theme}) => theme.colors.bg_primary};
-    opacity: 0.7;
+    opacity: 0.8;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -80,7 +86,7 @@ export const S_BreadcrumbsTitle = styled.h2`
   margin: 0;
   position: relative;
   z-index: 1;
-  //line-height: 3rem;
+  text-transform:uppercase;
 `;
 export const S_BreadcrumbsContainer = styled.nav<{ $img: string }>`
 
@@ -97,7 +103,7 @@ export const S_BreadcrumbsContainer = styled.nav<{ $img: string }>`
 
   &::before {
     background-color: ${({theme}) => theme.colors.bg_primary};
-    opacity: 0.7;
+    opacity: 0.5;
     display: block;
     object-fit: cover;
     position: absolute;
