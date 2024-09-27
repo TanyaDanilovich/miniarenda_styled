@@ -6,7 +6,7 @@ import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
 import {getServicesData} from '../../shared/utils/getServicesData';
-import {BREAKPOINTS, SERVICES_DATA} from '../../shared/constants';
+import {BREAKPOINTS, MAIN_DATA} from '../../shared/constants';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 
 type props = {
@@ -25,7 +25,7 @@ export const Services = ({}: props) => {
         "                        работать на протяжении долгого времени."
     const id = useId();
 
-    const fullServicesData = getServicesData(SERVICES_DATA);
+    const fullServicesData = getServicesData(MAIN_DATA);
     const [servicesData, setServicesData] = useState(fullServicesData);
     const [width] = useDebouncedWindowSize();
 

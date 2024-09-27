@@ -3,7 +3,7 @@ import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExavatorRental} from '../pages/rentals/exavatorRental/ExavatorRental';
 import React from 'react';
-import {ROUTES_PATHS, SERVICES_DATA} from '../shared/constants';
+import {ROUTES_PATHS, MAIN_DATA} from '../shared/constants';
 import {Main} from '../widgets/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
 import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
@@ -61,64 +61,64 @@ export const router = createBrowserRouter(
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.uslugi.index.title}</Link>
                    }}>
                 <Route index element = {<UslugiAll/>}/>
-                <Route path = {SERVICES_DATA.categories.services.items["digging-trench"].url} element = {<Excavation/>}
+                <Route path = {MAIN_DATA.categories.services.items["digging-trench"].url} element = {<Excavation/>}
                        handle = {{
                            crumb: () =>
                                <Link
-                                   to = {SERVICES_DATA.categories.services.items["digging-trench"].url}>
-                                   {SERVICES_DATA.categories.services.items["digging-trench"].title}
+                                   to = {MAIN_DATA.categories.services.items["digging-trench"].url}>
+                                   {MAIN_DATA.categories.services.items["digging-trench"].title}
                                </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["digging-foundation"].url}
+                <Route path = {MAIN_DATA.categories.services.items["digging-foundation"].url}
                        element = {<Drilling/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["digging-foundation"].url}>
-                               {SERVICES_DATA.categories.services.items["digging-foundation"].title}
+                               to = {MAIN_DATA.categories.services.items["digging-foundation"].url}>
+                               {MAIN_DATA.categories.services.items["digging-foundation"].title}
                            </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["stump-removal"].url}
+                <Route path = {MAIN_DATA.categories.services.items["stump-removal"].url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["stump-removal"].url}>
-                               {SERVICES_DATA.categories.services.items["stump-removal"].title}
+                               to = {MAIN_DATA.categories.services.items["stump-removal"].url}>
+                               {MAIN_DATA.categories.services.items["stump-removal"].title}
                            </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["drilling"].url} element = {<TreeStumpRemoval/>}
+                <Route path = {MAIN_DATA.categories.services.items["drilling"].url} element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["drilling"].url}>
-                               {SERVICES_DATA.categories.services.items["drilling"].title}
+                               to = {MAIN_DATA.categories.services.items["drilling"].url}>
+                               {MAIN_DATA.categories.services.items["drilling"].title}
                            </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["ground-movement"].url}
+                <Route path = {MAIN_DATA.categories.services.items["ground-movement"].url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["ground-movement"].url}>
-                               {SERVICES_DATA.categories.services.items["ground-movement"].title}
+                               to = {MAIN_DATA.categories.services.items["ground-movement"].url}>
+                               {MAIN_DATA.categories.services.items["ground-movement"].title}
                            </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["other-groundworks"].url} element = {<Moving/>}
+                <Route path = {MAIN_DATA.categories.services.items["other-groundworks"].url} element = {<Moving/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["other-groundworks"].url}>
-                               {SERVICES_DATA.categories.services.items["other-groundworks"].title}
+                               to = {MAIN_DATA.categories.services.items["other-groundworks"].url}>
+                               {MAIN_DATA.categories.services.items["other-groundworks"].title}
                            </Link>
                        }}
                 />
-                <Route path = {SERVICES_DATA.categories.services.items["dismantling"].url}
+                <Route path = {MAIN_DATA.categories.services.items["dismantling"].url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {SERVICES_DATA.categories.services.items["dismantling"].url}>
-                               {SERVICES_DATA.categories.services.items["dismantling"].title}
+                               to = {MAIN_DATA.categories.services.items["dismantling"].url}>
+                               {MAIN_DATA.categories.services.items["dismantling"].title}
                            </Link>
                        }}
                 />

@@ -1,4 +1,4 @@
-import {ServicesDataType} from './types/common.types';
+import {CategoriesDataType} from './types/common.types';
 
 export const BREAKPOINTS = {
     smallMobile: "321px",
@@ -15,7 +15,7 @@ export const BASE: number = 16
 export const countReviewLines: number = 4
 
 
-export const SERVICES_DATA: ServicesDataType = {
+export const MAIN_DATA: CategoriesDataType = {
     categories: {
         rental: {
             type: "rental",
@@ -179,7 +179,7 @@ export const SERVICES_DATA: ServicesDataType = {
                         url: "prochie-zemlyanye-raboty",
                         title: "Прочие земляные работы",
                         description: "Земляные работы с помощью мини-экскаватора и мини-погрузчика в Минске" +
-                            "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, " ,
+                            "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, ",
                         images: [],
                         seo: {
                             metaTitle: "Копка траншей",
@@ -228,54 +228,54 @@ export const ROUTES_PATHS = {
 
     arenda: {
         index: {
-            url: SERVICES_DATA.categories.rental.url,
-            title: SERVICES_DATA.categories.rental.title
+            url: MAIN_DATA.categories.rental.url,
+            title: MAIN_DATA.categories.rental.title
         },
         arenda_Exavatora: {
-            url: SERVICES_DATA.categories.rental.items["rental-exavator"].url,
-            title: SERVICES_DATA.categories.rental.items["rental-exavator"].title
+            url: MAIN_DATA.categories.rental.items["rental-exavator"].url,
+            title: MAIN_DATA.categories.rental.items["rental-exavator"].title
         },
         arenda_Gidromolota: {
-            url: SERVICES_DATA.categories.rental.items["rentals-hammer"].url,
-            title: SERVICES_DATA.categories.rental.items["rentals-hammer"].title
+            url: MAIN_DATA.categories.rental.items["rentals-hammer"].url,
+            title: MAIN_DATA.categories.rental.items["rentals-hammer"].title
         },
         arenda_Yamobura: {
-            url: SERVICES_DATA.categories.rental.items["rentals-drill"].url,
-            title: SERVICES_DATA.categories.rental.items["rentals-drill"].title
+            url: MAIN_DATA.categories.rental.items["rentals-drill"].url,
+            title: MAIN_DATA.categories.rental.items["rentals-drill"].title
         },
     },
     uslugi: {
         index: {
-            url: SERVICES_DATA.categories.services.url,
-            title: SERVICES_DATA.categories.services.title,
+            url: MAIN_DATA.categories.services.url,
+            title: MAIN_DATA.categories.services.title,
         },
         diggingTrench: {
-            url: SERVICES_DATA.categories.services.items["digging-trench"].url,
-            title: SERVICES_DATA.categories.services.items["digging-trench"].title,
+            url: MAIN_DATA.categories.services.items["digging-trench"].url,
+            title: MAIN_DATA.categories.services.items["digging-trench"].title,
         },
         diggingFoundation: {
-            url: SERVICES_DATA.categories.services.items["digging-foundation"].url,
-            title: SERVICES_DATA.categories.services.items["digging-foundation"].title,
+            url: MAIN_DATA.categories.services.items["digging-foundation"].url,
+            title: MAIN_DATA.categories.services.items["digging-foundation"].title,
         },
         stumpRemoval: {
-            url: SERVICES_DATA.categories.services.items["stump-removal"].url,
-            title: SERVICES_DATA.categories.services.items["stump-removal"].title,
+            url: MAIN_DATA.categories.services.items["stump-removal"].url,
+            title: MAIN_DATA.categories.services.items["stump-removal"].title,
         },
         drilling: {
-            url: SERVICES_DATA.categories.services.items["drilling"].url,
-            title: SERVICES_DATA.categories.services.items["drilling"].title,
+            url: MAIN_DATA.categories.services.items["drilling"].url,
+            title: MAIN_DATA.categories.services.items["drilling"].title,
         },
         groundMovement: {
-            url: SERVICES_DATA.categories.services.items["ground-movement"].url,
-            title: SERVICES_DATA.categories.services.items["ground-movement"].title,
+            url: MAIN_DATA.categories.services.items["ground-movement"].url,
+            title: MAIN_DATA.categories.services.items["ground-movement"].title,
         },
         otherGroundworks: {
-            url: SERVICES_DATA.categories.services.items["other-groundworks"].url,
-            title: SERVICES_DATA.categories.services.items["other-groundworks"].title,
+            url: MAIN_DATA.categories.services.items["other-groundworks"].url,
+            title: MAIN_DATA.categories.services.items["other-groundworks"].title,
         },
         dismantling: {
-            url: SERVICES_DATA.categories.services.items["dismantling"].url,
-            title: SERVICES_DATA.categories.services.items["dismantling"].title,
+            url: MAIN_DATA.categories.services.items["dismantling"].url,
+            title: MAIN_DATA.categories.services.items["dismantling"].title,
         },
     }
 }

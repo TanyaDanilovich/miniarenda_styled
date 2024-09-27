@@ -11,7 +11,7 @@ export type ServicesSubcategoriesType = 'digging-trench' | 'digging-foundation'
 
 export type RentalSubcategoriesType = 'rental-exavator' | 'rentals-hammer' | 'rentals-drill'
 
-export type ServicesDataType = {
+export type CategoriesDataType = {
     categories: Categories;
 };
 

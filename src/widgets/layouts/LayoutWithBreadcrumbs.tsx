@@ -67,8 +67,9 @@ export const S_Breadcrumbs = styled.div<{}>`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding: 2rem;
   }
-  
+
 
   &::before {
     background-color: ${({theme}) => theme.colors.bg_primary};
@@ -86,7 +87,8 @@ export const S_BreadcrumbsTitle = styled.h2`
   margin: 0;
   position: relative;
   z-index: 1;
-  text-transform:uppercase;
+  text-transform: uppercase;
+  font-size: ${({theme}) => theme.fonts.size.h5};
 `;
 export const S_BreadcrumbsContainer = styled.nav<{ $img: string }>`
 

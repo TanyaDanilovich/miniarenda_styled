@@ -61,7 +61,8 @@ const S_HeroSlider = styled.article<{}>`
   }
 
   &:after {
-    background-color: rgba(87, 43, 22, 0.5);
+    background-color: ${({theme}) => theme.colors.bg_primary};
+    opacity: 0.7;
     display: block;
     object-fit: cover;
     position: absolute;
