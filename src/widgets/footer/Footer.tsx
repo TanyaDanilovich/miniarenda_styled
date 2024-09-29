@@ -11,10 +11,15 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
 import {S_Image} from '../../shared/styled/S_Image';
+import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
+import {Link} from 'react-router-dom';
+import {getServicesData} from '../../shared/utils/getServicesData';
 
 type props = {};
 export const Footer = ({}: props) => {
     const theme = useTheme();
+    const fullServicesData = getServicesData();
+    console.log(fullServicesData)
     return (
 
 
@@ -51,23 +56,31 @@ export const Footer = ({}: props) => {
                     <S_FooterItem><h5><span>РАЗДЕЛЫ</span></h5>
                         <ul>
                             <li>
-                                <a href = "#servises">Услуги</a>
+                                <Link to = {ROUTES_PATHS.arenda.index.url}>
+                                    {ROUTES_PATHS.arenda.index.title}
+                                </Link>
                             </li>
                             <li>
-                                <a href = "#technic">Наша техника</a>
+                                <Link to = {ROUTES_PATHS.uslugi.index.url}>
+                                    {ROUTES_PATHS.uslugi.index.title}
+                                </Link>
                             </li>
                             <li>
-                                <a href = "#portfolio">Наши работы</a>
+                                <Link to = {ROUTES_PATHS.price.url}>
+                                    {ROUTES_PATHS.price.title}
+                                </Link>
                             </li>
                             <li>
-                                <a href = "#feedback">Отзывы</a>
+                                <Link to = {ROUTES_PATHS.projects.url}>
+                                    {ROUTES_PATHS.projects.title}
+                                </Link>
                             </li>
                             <li>
-                                <a href = "#price">Стоимость бурения</a>
+                                <Link to = {ROUTES_PATHS.contacts.url}>
+                                    {ROUTES_PATHS.contacts.title}
+                                </Link>
                             </li>
-                            <li>
-                                <a href = "#contacts">Контакты</a>
-                            </li>
+
 
                         </ul>
                     </S_FooterItem>
@@ -75,21 +88,17 @@ export const Footer = ({}: props) => {
                     <S_FooterItem>
                         <h5><span>НАШИ </span>УСЛУГИ</h5>
                         <ul>
-                            <li>
-                                <a href = "#burenie-svaj">Аренда мини экскаваторов</a>
-                            </li>
-                            <li>
-                                <a href = "#burenie-zabor">Аренда мини экскаваторов c ямобуром</a>
-                            </li>
-                            <li>
-                                <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
-                            </li>
-                            <li>
-                                <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
-                            </li>
-                            <li>
-                                <a href = "#burenie-svet">Аренда мини экскаваторов c гидромолотом</a>
-                            </li>
+                            {
+                                fullServicesData.map((service) => {
+                                    return (
+                                        <li key = {service.id}>
+                                            <Link to = {service.url}>
+                                                {service.subcategoryTitle}
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </S_FooterItem>
 
@@ -257,8 +266,10 @@ export const S_FooterItem = styled.div<{}>`
   }
 
   //Наши услуги
-  &:last-child a {
-
+  &:last-child li {
+      //${outline()}
+    font-size: ${getResponsiveSize(10, 16)};
+    padding-block: 0.25rem;
   }
 
   @media ${({theme}) => theme.media.mobile} {
