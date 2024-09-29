@@ -3,7 +3,6 @@ import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExavatorRental} from '../pages/rentals/exavatorRental/ExavatorRental';
 import React from 'react';
-import {ROUTES_PATHS, MAIN_DATA} from '../shared/constants';
 import {Main} from '../widgets/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
 import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
@@ -16,6 +15,7 @@ import {UslugiAll} from '../pages/services/uslugiAll/UslugiAll';
 import {Drilling} from '../pages/services/drilling/Drilling';
 import {Moving} from '../pages/services/moving/Moving';
 import {TreeStumpRemoval} from '../pages/services/treeStumpRemoval/TreeStumpRemoval';
+import {ROUTES_PATHS} from '../shared/constants/ROUTES_PATHS';
 
 
 export const router = createBrowserRouter(
@@ -61,64 +61,64 @@ export const router = createBrowserRouter(
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.uslugi.index.title}</Link>
                    }}>
                 <Route index element = {<UslugiAll/>}/>
-                <Route path = {MAIN_DATA.categories.services.items["digging-trench"].url} element = {<Excavation/>}
+                <Route path = {ROUTES_PATHS.uslugi.diggingTrench.url} element = {<Excavation/>}
                        handle = {{
                            crumb: () =>
                                <Link
-                                   to = {MAIN_DATA.categories.services.items["digging-trench"].url}>
-                                   {MAIN_DATA.categories.services.items["digging-trench"].title}
+                                   to = {ROUTES_PATHS.uslugi.diggingTrench.url}>
+                                   {ROUTES_PATHS.uslugi.diggingTrench.title}
                                </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["digging-foundation"].url}
+                <Route path = {ROUTES_PATHS.uslugi.diggingFoundation.url}
                        element = {<Drilling/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["digging-foundation"].url}>
-                               {MAIN_DATA.categories.services.items["digging-foundation"].title}
+                               to = {ROUTES_PATHS.uslugi.diggingFoundation.url}>
+                               {ROUTES_PATHS.uslugi.diggingFoundation.title}
                            </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["stump-removal"].url}
+                <Route path = {ROUTES_PATHS.uslugi.stumpRemoval.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["stump-removal"].url}>
-                               {MAIN_DATA.categories.services.items["stump-removal"].title}
+                               to = {ROUTES_PATHS.uslugi.stumpRemoval.url}>
+                               {ROUTES_PATHS.uslugi.stumpRemoval.title}
                            </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["drilling"].url} element = {<TreeStumpRemoval/>}
+                <Route path = {ROUTES_PATHS.uslugi.drilling.url} element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["drilling"].url}>
-                               {MAIN_DATA.categories.services.items["drilling"].title}
+                               to = {ROUTES_PATHS.uslugi.drilling.url}>
+                               {ROUTES_PATHS.uslugi.drilling.title}
                            </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["ground-movement"].url}
+                <Route path = {ROUTES_PATHS.uslugi.groundMovement.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["ground-movement"].url}>
-                               {MAIN_DATA.categories.services.items["ground-movement"].title}
+                               to = {ROUTES_PATHS.uslugi.groundMovement.url}>
+                               {ROUTES_PATHS.uslugi.groundMovement.title}
                            </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["other-groundworks"].url} element = {<Moving/>}
+                <Route path = {ROUTES_PATHS.uslugi.otherGroundworks.url} element = {<Moving/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["other-groundworks"].url}>
-                               {MAIN_DATA.categories.services.items["other-groundworks"].title}
+                               to = {ROUTES_PATHS.uslugi.otherGroundworks.url}>
+                               {ROUTES_PATHS.uslugi.otherGroundworks.title}
                            </Link>
                        }}
                 />
-                <Route path = {MAIN_DATA.categories.services.items["dismantling"].url}
+                <Route path = {ROUTES_PATHS.uslugi.dismantling.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <Link
-                               to = {MAIN_DATA.categories.services.items["dismantling"].url}>
-                               {MAIN_DATA.categories.services.items["dismantling"].title}
+                               to = {ROUTES_PATHS.uslugi.dismantling.url}>
+                               {ROUTES_PATHS.uslugi.dismantling.title}
                            </Link>
                        }}
                 />

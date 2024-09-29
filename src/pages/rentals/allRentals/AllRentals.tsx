@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {S_Container} from '../../../shared/styled/S_Container';
 import React from 'react';
 import {sectionMargin} from '../../../app/styles/mixins';
-import {MAIN_DATA} from '../../../shared/constants';
+
+import {MAIN_DATA} from '../../../shared/constants/MAIN_DATA';
 
 
 type rentalKeysType = keyof typeof MAIN_DATA.categories.rental.items;

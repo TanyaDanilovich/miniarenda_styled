@@ -1,53 +1,15 @@
+import {MainData} from '../types/common.types';
 import {v1} from 'uuid';
-import {MainData} from './types/common.types';
-
-export const BREAKPOINTS = {
-    smallMobile: "321px",
-    mobile: "577px",
-    tablet: "769px",
-    computer: "993px",
-    desktop: "1201px",
-    widescreen: "1401px",
-    extraWidescreen: "1921px",
-} as const;
-
-export const BASE: number = 16
-
-export const countReviewLines: number = 4
-
-export const CATEGORIES = {
-    RENTAL: 'rental',
-    SERVICES: 'services',
-} as const;
-
-export const RENTAL_SUBCATEGORIES = {
-    EXCAVATOR: 'rental-excavator',
-    HAMMER: 'rentals-hammer',
-    DRILL: 'rentals-drill',
-} as const;
-
-export const SERVICE_SUBCATEGORIES = {
-    DIGGING_TRENCH: 'digging-trench',
-    DIGGING_FOUNDATION: 'digging-foundation',
-    STUMP_REMOVAL: 'stump-removal',
-    DRILLING: 'drilling',
-    GROUND_MOVEMENT: 'ground-movement',
-    OTHER_GROUNDWORKS: 'other-groundworks',
-    DISMANTLING: 'dismantling',
-} as const;
-
-export const SERVICE_GROUP = {
-    DIGGING: 'digging',
-    DRILLING: 'drilling',
-    OTHER: 'other-groundworks',
-} as const;
-
+import {CATEGORY} from './CATEGORY';
+import {RENTAL_SUBCATEGORY} from './RENTAL_SUBCATEGORY';
+import {SERVICE_SUBCATEGORY} from './SERVICE_SUBCATEGORY';
+import {SERVICE_GROUP} from './SERVICE_GROUP';
 
 export const MAIN_DATA: MainData = {
     categories: {
-        [CATEGORIES.RENTAL]: {
+        [CATEGORY.RENTAL]: {
             id: v1(),
-            category: CATEGORIES.RENTAL,
+            category: CATEGORY.RENTAL,
             url: "arenda",
             title: 'Аренда',
             description: 'Аренда техники - превосходное решение для выполнения любого типа строительных работ в условиях ограниченного пространства. ' +
@@ -63,14 +25,14 @@ export const MAIN_DATA: MainData = {
             },
 
             items: [
-                RENTAL_SUBCATEGORIES.EXCAVATOR,
-                RENTAL_SUBCATEGORIES.HAMMER,
-                RENTAL_SUBCATEGORIES.DRILL
+                RENTAL_SUBCATEGORY.EXCAVATOR,
+                RENTAL_SUBCATEGORY.HAMMER,
+                RENTAL_SUBCATEGORY.DRILL
             ]
         },
-        [CATEGORIES.SERVICES]: {
+        [CATEGORY.SERVICES]: {
             id: v1(),
-            category: CATEGORIES.SERVICES,
+            category: CATEGORY.SERVICES,
             url: "uslugi",
             title: "Услуги",
             description: "Услуги мини-экскаваторов по земляным работам, копке и бурению.",
@@ -80,13 +42,21 @@ export const MAIN_DATA: MainData = {
                 metaDescription: "Предоставляем услуги мини-экскаваторов для копки, бурения и других земляных работ. Качественное выполнение в сжатые сроки.",
                 metaKeywords: ["земляные работы", "копка траншей", "бурение", "мини-техника"]
             },
-            items: [],
+            items: [
+                SERVICE_SUBCATEGORY.DIGGING_TRENCH,
+                SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
+                SERVICE_SUBCATEGORY.DRILLING,
+                SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
+                SERVICE_SUBCATEGORY.STUMP_REMOVAL,
+                SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
+                SERVICE_SUBCATEGORY.DISMANTLING
+            ],
         },
     },
     subcategoryItems: {
-        [RENTAL_SUBCATEGORIES.EXCAVATOR]: {
+        [RENTAL_SUBCATEGORY.EXCAVATOR]: {
             id: v1(),
-            subcategory: RENTAL_SUBCATEGORIES.EXCAVATOR,
+            subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
             url: "arenda-mini-exavatora",
             title: "Аренда мини-экскаватора",
             description: "Аренда мини-экскаватора – это востребованная услуга для работы на малых площадях и в " +
@@ -100,9 +70,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["аренда мини-экскаватора", "земляные работы", "мини-техника"]
             }
         },
-        [RENTAL_SUBCATEGORIES.HAMMER]: {
+        [RENTAL_SUBCATEGORY.HAMMER]: {
             id: v1(),
-            subcategory: RENTAL_SUBCATEGORIES.HAMMER,
+            subcategory: RENTAL_SUBCATEGORY.HAMMER,
             url: "arenda-gidromolota",
             title: "Аренда гидромолота",
             description: "Мы предлагаем в аренду гидромолот на базе мини-экскаватора или мини-погрузчика с опытным машинистом, " +
@@ -115,9 +85,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["аренда гидромолота", "разрушение бетона", "демонтаж"]
             }
         },
-        [RENTAL_SUBCATEGORIES.DRILL]: {
+        [RENTAL_SUBCATEGORY.DRILL]: {
             id: v1(),
-            subcategory: RENTAL_SUBCATEGORIES.DRILL,
+            subcategory: RENTAL_SUBCATEGORY.DRILL,
             url: "arenda-yamobura",
             title: "Аренда ямобура",
             description: "Аренда ямобура (гидробура, шнекового бура) в Минске на базе мини-экскаватора" +
@@ -131,9 +101,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["аренда ямобура", "бурение отверстий", "бурение скважин"]
             }
         },
-        [SERVICE_SUBCATEGORIES.DIGGING_TRENCH]: {
+        [SERVICE_SUBCATEGORY.DIGGING_TRENCH]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.DIGGING_TRENCH,
+            subcategory: SERVICE_SUBCATEGORY.DIGGING_TRENCH,
             group: SERVICE_GROUP.DIGGING,
             position: 1,
             url: "kopanie-transhej",
@@ -148,9 +118,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["копка траншей", "земляные работы", "прокладка труб"]
             }
         },
-        [SERVICE_SUBCATEGORIES.DIGGING_FOUNDATION]: {
+        [SERVICE_SUBCATEGORY.DIGGING_FOUNDATION]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.DIGGING_FOUNDATION,
+            subcategory: SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
             group: SERVICE_GROUP.DIGGING,
             position: 2,
             url: "kopanie-fundamentov",
@@ -164,9 +134,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["копка фундаментов", "земляные работы", "строительство"]
             }
         },
-        [SERVICE_SUBCATEGORIES.STUMP_REMOVAL]: {
+        [SERVICE_SUBCATEGORY.STUMP_REMOVAL]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.STUMP_REMOVAL,
+            subcategory: SERVICE_SUBCATEGORY.STUMP_REMOVAL,
             group: SERVICE_GROUP.OTHER,
             position: 3,
             url: "korchevanie-pnej",
@@ -181,9 +151,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["корчевание пней", "удаление корней", "земляные работы"]
             }
         },
-        [SERVICE_SUBCATEGORIES.DRILLING]: {
+        [SERVICE_SUBCATEGORY.DRILLING]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.DRILLING,
+            subcategory: SERVICE_SUBCATEGORY.DRILLING,
             group: SERVICE_GROUP.DIGGING,
             position: 4,
             url: "yamobur",
@@ -207,9 +177,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["бурение отверстий", "бурение ям", "услуги бурения", "буронабивные фундаменты", "установка опор", "усиление фундамента", "бурение в Минске"]
             }
         },
-        [SERVICE_SUBCATEGORIES.GROUND_MOVEMENT]: {
+        [SERVICE_SUBCATEGORY.GROUND_MOVEMENT]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.GROUND_MOVEMENT,
+            subcategory: SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
             group: SERVICE_GROUP.OTHER,
             position: 5,
             url: "peremeschenie-grunta",
@@ -224,9 +194,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["перемещение грунта", "земляные работы", "мини-техника"]
             }
         },
-        [SERVICE_SUBCATEGORIES.OTHER_GROUNDWORKS]: {
+        [SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.OTHER_GROUNDWORKS,
+            subcategory: SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
             group: SERVICE_GROUP.OTHER,
             position: 6,
             url: "prochie-zemlyanye-raboty",
@@ -240,9 +210,9 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["земляные работы", "мини-экскаватор", "строительные услуги"]
             }
         },
-        [SERVICE_SUBCATEGORIES.DISMANTLING]: {
+        [SERVICE_SUBCATEGORY.DISMANTLING]: {
             id: v1(),
-            subcategory: SERVICE_SUBCATEGORIES.DISMANTLING,
+            subcategory: SERVICE_SUBCATEGORY.DISMANTLING,
             group: SERVICE_GROUP.OTHER,
             position: 7,
             url: "demontazh",
@@ -268,72 +238,3 @@ export const MAIN_DATA: MainData = {
     },
 
 };
-
-
-export const PROJECTS_DATA = {url: "projects", title: "Наши работы"}
-export const CONTACTS_DATA = {url: "contacts", title: "Контакты"}
-export const PRICES_DATA = {url: "price", title: "Стоимость"}
-
-export const ROUTES_PATHS = {
-    home: {url: "/", title: "Главная"},
-    projects: {url: PROJECTS_DATA.url, title: PROJECTS_DATA.title},
-    contacts: {url: CONTACTS_DATA.url, title: CONTACTS_DATA.title},
-    price: {url: PRICES_DATA.url, title: PRICES_DATA.title},
-
-    arenda: {
-        index: {
-            url: MAIN_DATA.categories.rental.url,
-            title: MAIN_DATA.categories.rental.title
-        },
-        arenda_Exavatora: {
-            url: MAIN_DATA.subcategoryItems[RENTAL_SUBCATEGORIES.EXCAVATOR].url,
-            title: MAIN_DATA.subcategoryItems[RENTAL_SUBCATEGORIES.EXCAVATOR].title
-        },
-        arenda_Gidromolota: {
-            url: MAIN_DATA.categories.rental.items["rentals-hammer"].url,
-            title: MAIN_DATA.categories.rental.items["rentals-hammer"].title
-        },
-        arenda_Yamobura: {
-            url: MAIN_DATA.categories.rental.items["rentals-drill"].url,
-            title: MAIN_DATA.categories.rental.items["rentals-drill"].title
-        },
-    },
-    uslugi: {
-        index: {
-            url: MAIN_DATA.categories.services.url,
-            title: MAIN_DATA.categories.services.title,
-        },
-        diggingTrench: {
-            url: MAIN_DATA.categories.services.items["digging-trench"].url,
-            title: MAIN_DATA.categories.services.items["digging-trench"].title,
-        },
-        diggingFoundation: {
-            url: MAIN_DATA.categories.services.items["digging-foundation"].url,
-            title: MAIN_DATA.categories.services.items["digging-foundation"].title,
-        },
-        stumpRemoval: {
-            url: MAIN_DATA.categories.services.items["stump-removal"].url,
-            title: MAIN_DATA.categories.services.items["stump-removal"].title,
-        },
-        drilling: {
-            url: MAIN_DATA.categories.services.items["drilling"].url,
-            title: MAIN_DATA.categories.services.items["drilling"].title,
-        },
-        groundMovement: {
-            url: MAIN_DATA.categories.services.items["ground-movement"].url,
-            title: MAIN_DATA.categories.services.items["ground-movement"].title,
-        },
-        otherGroundworks: {
-            url: MAIN_DATA.categories.services.items["other-groundworks"].url,
-            title: MAIN_DATA.categories.services.items["other-groundworks"].title,
-        },
-        dismantling: {
-            url: MAIN_DATA.categories.services.items["dismantling"].url,
-            title: MAIN_DATA.categories.services.items["dismantling"].title,
-        },
-    }
-}
-
-
-
-

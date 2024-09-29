@@ -6,8 +6,9 @@ import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
 import {getServicesData} from '../../shared/utils/getServicesData';
-import {BREAKPOINTS, MAIN_DATA} from '../../shared/constants';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
+import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+
 
 type props = {
     // data: ServiceCardData[]
@@ -23,9 +24,9 @@ export const Services = ({}: props) => {
         "                        производства, которые предлагает арендовать наша компания, не подвержены поломкам, могут\n" +
         "                        бесперебойно\n" +
         "                        работать на протяжении долгого времени."
-    const id = useId();
 
-    const fullServicesData = getServicesData(MAIN_DATA);
+
+    const fullServicesData = getServicesData();
     const [servicesData, setServicesData] = useState(fullServicesData);
     const [width] = useDebouncedWindowSize();
 
@@ -48,14 +49,19 @@ export const Services = ({}: props) => {
 
                 <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
 
-                    {servicesData.map((card, index) =>
-                        <ServiceCard key = {`${id}-${index}`}
-                                     title = {card.title}
-                                     text = {card.text}
+                    {servicesData.map((card) =>
+                        <ServiceCard key = {card.id}
+                                     id = {card.id}
+                                     category = {card.category}
+                                     categoryTitle = {card.categoryTitle}
+                                     categoryUrl = {card.categoryUrl}
+                                     subcategory = {card.subcategory}
+                                     subcategoryTitle = {card.subcategoryTitle}
+                                     subcategoryDescription = {card.subcategoryDescription}
+                                     subcategoryUrl = {card.subcategoryUrl}
                                      image = {card.image}
-                                     typeTitle = {card.typeTitle}
-                                     typeUrl = {card.typeUrl}
                                      url = {card.url}
+                                     position = {card.position}
                         />)}
                 </S_Flex>
             </S_Container>

@@ -1,6 +1,8 @@
-import {BASE, BREAKPOINTS} from "../../shared/constants";
+import { BREAKPOINTS } from "../../shared/constants/BREAKPOINTS";
+import {BASE} from "../../shared/constants/constants";
 import {getResponsiveSize} from "../../shared/utils/getResponsiveSize";
 import {MyDefaultTheme} from 'styled-components';
+
 
 export const theme: MyDefaultTheme = {
     typography: {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {sectionMargin} from '../../app/styles/mixins';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {BREAKPOINTS} from '../../shared/constants';
+
 
 
 export const S_OrderModal = styled.div<{}>`

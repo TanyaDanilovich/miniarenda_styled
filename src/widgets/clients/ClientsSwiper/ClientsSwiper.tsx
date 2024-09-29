@@ -10,7 +10,7 @@ import img3 from '../../../assets/images/clients/stroytrest.webp'
 import img4 from '../../../assets/images/clients/world.webp'
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {v4 as uuidv4} from 'uuid';
-import {BASE} from '../../../shared/constants';
+import {BASE} from '../../../shared/constants/constants';
 
 
 type props = {

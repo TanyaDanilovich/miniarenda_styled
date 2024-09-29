@@ -1,43 +1,55 @@
-import {MAIN_DATA} from '../constants';
 import img from '../../assets/images/servises/servises_1.jpg';
 import {ServiceCardData} from '../../widgets/services/serviceCard/ServiceCard';
-import {CategoriesDataType} from '../types/common.types';
+import {MAIN_DATA} from '../constants/MAIN_DATA';
+import {CATEGORY} from '../constants/CATEGORY';
+import {v1} from 'uuid';
 
 
-type rentalKeysType = keyof typeof MAIN_DATA.categories.rental.items;
-type servicesKeysType = keyof typeof MAIN_DATA.categories.services.items;
-
-export function getServicesData(data: CategoriesDataType): ServiceCardData[] {
-    const rentalKeys = Object.keys(data.categories.rental.items);
-    const servicesKeys = Object.keys(data.categories.services.items);
+export function getServicesData(): ServiceCardData[] {
+    const rentalKeys = MAIN_DATA.categories[CATEGORY.RENTAL].items;
+    const servicesKeys = MAIN_DATA.categories[CATEGORY.SERVICES].items;
 
     const servicesData = [
-        ...rentalKeys.map(rentItem =>
+        ...rentalKeys.map((rentItem, index) =>
             ({
-                ...data.categories.rental.items[rentItem as rentalKeysType],
-                type: data.categories.rental.type,
-                typeTitle: data.categories.rental.title,
-                typeUrl: data.categories.rental.url,
+                //...MAIN_DATA.subcategoryItems[rentItem],
+                subcategory: MAIN_DATA.subcategoryItems[rentItem].subcategory,
+                subcategoryTitle: MAIN_DATA.subcategoryItems[rentItem].title,
+                subcategoryDescription: MAIN_DATA.subcategoryItems[rentItem].description,
+                subcategoryUrl: MAIN_DATA.subcategoryItems[rentItem].url,
+                image: MAIN_DATA.subcategoryItems[rentItem].images[0] || {src: img, alt: ""},
+
+                //...MAIN_DATA.categories[CATEGORY.RENTAL],
+                category: MAIN_DATA.categories[CATEGORY.RENTAL].category,
+                categoryTitle: MAIN_DATA.categories[CATEGORY.RENTAL].title,
+                categoryUrl: MAIN_DATA.categories[CATEGORY.RENTAL].url,
+                id: v1(),
+                position: index,
             })),
-        ...servicesKeys.map(serviceItem => ({
-            ...data.categories.services.items[serviceItem as servicesKeysType],
-            type: data.categories.services.type,
-            typeTitle: data.categories.services.title,
-            typeUrl: data.categories.services.url,
-        }))
+        ...servicesKeys.map((serviceItem, index) =>
+            ({
+                //...MAIN_DATA.subcategoryItems[serviceItem],
+                subcategory: MAIN_DATA.subcategoryItems[serviceItem].subcategory,
+                subcategoryTitle: MAIN_DATA.subcategoryItems[serviceItem].title,
+                subcategoryDescription: MAIN_DATA.subcategoryItems[serviceItem].description,
+                subcategoryUrl: MAIN_DATA.subcategoryItems[serviceItem].url,
+                image: MAIN_DATA.subcategoryItems[serviceItem].images[0] || {src: img, alt: ""},
+
+                //...MAIN_DATA.categories[CATEGORY.SERVICES],
+                category: MAIN_DATA.categories[CATEGORY.SERVICES].category,
+                categoryTitle: MAIN_DATA.categories[CATEGORY.SERVICES].title,
+                categoryUrl: MAIN_DATA.categories[CATEGORY.SERVICES].url,
+                id: v1(),
+                position: rentalKeys.length + index,
+            }))
     ]
 
     //console.log(servicesData)
 
 
     return servicesData.map(item => ({
-        id: item.id,
-        title: item.title,
-        text: item.description,
-        image: item.images[0] || {src: img, alt: ""},
-        type: item.type,
-        typeTitle: item.typeTitle,
-        typeUrl: item.typeUrl,
-        url: `${item.typeUrl}/${item.url}`,
-    }));
+        ...item,
+        url: `${item.categoryUrl}/${item.subcategoryUrl}`,
+    }))
+        ;
 }

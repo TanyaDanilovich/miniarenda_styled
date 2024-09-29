@@ -2,10 +2,10 @@ import styled from "styled-components";
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
 import {Link, Outlet, useMatches} from 'react-router-dom';
-import {ROUTES_PATHS} from '../../shared/constants';
 import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
 import {S_Container} from '../../shared/styled/S_Container';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
+import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 
 type BreadcrumbMatch = {
     handle?: {

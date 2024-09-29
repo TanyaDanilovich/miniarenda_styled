@@ -1,5 +1,8 @@
 import {ReactNode} from 'react';
-import {CATEGORIES, RENTAL_SUBCATEGORIES, SERVICE_GROUP, SERVICE_SUBCATEGORIES} from '../constants';
+import {CATEGORY} from '../constants/CATEGORY';
+import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
+import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
+import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 
 export type PropsWithChildren<P> = P & { children?: ReactNode };
 
@@ -8,19 +11,19 @@ export type ImageProps = { src: string, alt: string }
 export type MenuItemType = { title: string, url: string, subMenuItems?: MenuItemType[] }
 
 
-export type Categories =
-    typeof CATEGORIES[keyof typeof CATEGORIES];
+export type Category =
+    typeof CATEGORY[keyof typeof CATEGORY];
 
-export type RentalSubcategories =
-    typeof RENTAL_SUBCATEGORIES[keyof typeof RENTAL_SUBCATEGORIES];
+export type RentalSubcategory =
+    typeof RENTAL_SUBCATEGORY[keyof typeof RENTAL_SUBCATEGORY];
 
-export type ServiceSubcategories =
-    typeof SERVICE_SUBCATEGORIES[keyof typeof SERVICE_SUBCATEGORIES];
+export type ServiceSubcategory =
+    typeof SERVICE_SUBCATEGORY[keyof typeof SERVICE_SUBCATEGORY];
 
 export type ServiceGroup =
     typeof SERVICE_GROUP[keyof typeof SERVICE_GROUP];
 
-export type CategoryItem<T extends Categories> = {
+export type CategoryItem<T extends Category> = {
     id: string;
     category: T;
     url: string;
@@ -32,14 +35,14 @@ export type CategoryItem<T extends Categories> = {
     items: SubcategoriesType<T>[];
 }
 
-export type SubcategoriesType<T extends Categories> =
-    T extends typeof CATEGORIES.RENTAL
-        ? RentalSubcategories
-        : T extends typeof CATEGORIES.SERVICES
-            ? ServiceSubcategories
+export type SubcategoriesType<T extends Category> =
+    T extends typeof CATEGORY.RENTAL
+        ? RentalSubcategory
+        : T extends typeof CATEGORY.SERVICES
+            ? ServiceSubcategory
             : never;
 
-export type SubcategoryItem<T extends RentalSubcategories| ServiceSubcategories> = {
+export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = {
     id: string;
     subcategory: T;
     url: string;
@@ -61,9 +64,11 @@ export type Seo = {
 
 export type MainData = {
     categories: {
-        [key in Categories]: CategoryItem<key>
+        [key in Category]: CategoryItem<key>
     },
     subcategoryItems: {
-        [key in RentalSubcategories | ServiceSubcategories]: SubcategoryItem<key>
+        [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItem<key>
     }
 }
+
+export type RoutesPathData = { url: string, title: string }

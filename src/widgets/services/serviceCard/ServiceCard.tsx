@@ -9,25 +9,35 @@ import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/sty
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
-import {ImageProps} from '../../../shared/types/common.types';
+import {Category, ImageProps, RentalSubcategory, ServiceSubcategory} from '../../../shared/types/common.types';
 
 
 export type ServiceCardData = {
-    title: string,
-    text: string,
+    id: string,
+    category: Category,
+    categoryTitle: string,
+    categoryUrl: string,
+    subcategory: RentalSubcategory | ServiceSubcategory,
+    subcategoryTitle: string,
+    subcategoryDescription: string,
+    subcategoryUrl: string,
     image: ImageProps,
-    typeTitle: string,
-    typeUrl: string,
+    position: number,
     url: string,
 }
 
 type props = ServiceCardData & {};
 export const ServiceCard = ({
-                                title,
-                                text,
+                                id,
+                                category,
+                                categoryTitle,
+                                categoryUrl,
+                                subcategory,
+                                subcategoryTitle,
+                                subcategoryDescription,
+                                subcategoryUrl,
                                 image,
-                                typeTitle,
-                                typeUrl,
+                                position,
                                 url,
 
                             }: props) => {
@@ -41,15 +51,15 @@ export const ServiceCard = ({
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
                 <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
-                <a href = {typeUrl}>{typeTitle}</a>
+                <a href = {categoryUrl}>{categoryTitle}</a>
             </S_Flex>
 
 
             <ServiceCardTitle>
-                <a href = {url}>{title}</a>
+                <a href = {url}>{subcategoryTitle}</a>
             </ServiceCardTitle>
             <ServiceCardText>
-                {text}
+                {subcategoryDescription}
             </ServiceCardText>
             <S_Box $marginTop = {"1rem"}>
                 <ReadMoreButton url = {url}/>

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {ReadMore} from './ReadMore';
-import {BASE, countReviewLines} from '../../../shared/constants';
+import {BASE, countReviewLines} from '../../../shared/constants/constants';
 import {outline} from '../../../app/styles/mixins';
 import {debounceFunction} from '../../../shared/utils/debounceFunction';
 

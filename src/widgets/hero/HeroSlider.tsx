@@ -4,10 +4,12 @@ import {S_Image} from '../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {S_Container} from '../../shared/styled/S_Container';
 import {translateAnimation} from '../../app/styles/animation';
-import {BASE, BREAKPOINTS} from '../../shared/constants';
+import {BASE} from '../../shared/constants/constants';
 import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
 import {PhoneLink, S_PhoneLink} from '../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../shared/styled/S_Flex';
+import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+
 
 
 type props = {

@@ -11,7 +11,8 @@ import img1 from "../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
 import img2 from "../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
 import img3 from "../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
 import img4 from "../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
-import {BREAKPOINTS} from '../../shared/constants';
+import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+
 
 
 type props = {
