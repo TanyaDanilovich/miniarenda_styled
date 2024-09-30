@@ -10,9 +10,7 @@ import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {API} from '../../app/api/API';
 
 
-type props = {
-    // data: ServiceCardData[]
-};
+type props = {};
 
 export const Services = ({}: props) => {
 //&#8288;

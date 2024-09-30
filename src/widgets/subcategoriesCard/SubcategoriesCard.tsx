@@ -33,14 +33,13 @@ export const S_SubcategoriesCard = styled.article <{}>`
   margin-block: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
   width: 100%;
-  //${outline()} 
+    //${outline()} 
   @media ${({theme}) => theme.media.mobile} {
-  // width: calc(30%);
-
-  ${S_Flex} {
-    gap: 1rem;
+    // width: calc(30%);
+    ${S_Flex} {
+      gap: 1rem;
+    }
   }
-}
 
   ${S_Box} {
     min-width: auto;
@@ -51,9 +50,10 @@ export const S_SubcategoriesCard = styled.article <{}>`
   }
 
   h4 {
-    font-size: ${({theme}) => theme.fonts.size.h5};
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     align-content: center;
     color: ${({theme}) => theme.colors.dark};
+    text-transform: uppercase;
   }
 `;
