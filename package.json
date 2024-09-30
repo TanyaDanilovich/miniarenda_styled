@@ -1,4 +1,5 @@
 {
+  "homepage": "https://TanyaDanilovich.github.io/miniarenda_styled",
   "name": "portfolio-start",
   "version": "0.1.0",
   "private": true,
@@ -36,6 +37,7 @@
     "eslint-webpack-plugin": "4.1.0",
     "file-loader": "6.2.0",
     "fs-extra": "11.2.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "5.6.0",
     "i": "^0.3.7",
     "identity-obj-proxy": "3.0.0",
@@ -78,7 +80,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

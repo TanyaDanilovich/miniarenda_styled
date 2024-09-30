@@ -41,7 +41,7 @@ export const AllRentals = ({}: props) => {
 };
 
 
-export const S_AllRentals = styled.div<{}>`
+export const S_AllRentals = styled.section<{}>`
 
   display: flex;
   flex-direction: column;
@@ -83,6 +83,7 @@ export const S_AllRentals = styled.div<{}>`
       margin-bottom: 0.5rem;
     }
   }
+
 
   h1, h2 {
     font-size: ${({theme}) => theme.fonts.size.h1};
