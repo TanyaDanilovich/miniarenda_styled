@@ -5,8 +5,6 @@ import {outline, sectionMargin} from '../../../app/styles/mixins';
 import {API} from '../../../app/api/API';
 import {SubcategoriesCard} from '../../../widgets/subcategoriesCard/SubcategoriesCard';
 import {allRentalText} from './allRentalText';
-import {Services} from '../../../widgets/services/Services';
-import {ServiceCard} from '../../../widgets/services/serviceCard/ServiceCard';
 
 type props = {};
 
@@ -16,29 +14,18 @@ export const AllRentals = ({}: props) => {
     const text: typeof allRentalText = allRentalText;
     return (
         <S_AllRentals>
+
+            <S_Container>
+                <h1>Аренда мини-экскаватора с&nbsp;гидромолотом&nbsp;и&nbsp;ямобуром</h1>
+                {/*<h2>Доставка по Минску и области</h2>*/}
+            </S_Container>
+
             <S_Container>
                 {rentalSubcategories.map((subcategory, index) => (
                     <SubcategoriesCard key = {index} {...subcategory}/>
                 ))}
             </S_Container>
 
-            {/*<S_Container>*/}
-            {/*    {rentalSubcategories.map((card) =>*/}
-            {/*        <ServiceCard key = {card.id}*/}
-            {/*                     id = {card.id}*/}
-            {/*                     category = {card.category}*/}
-            {/*                     categoryTitle = {card.categoryTitle}*/}
-            {/*                     categoryUrl = {card.categoryUrl}*/}
-            {/*                     subcategory = {card.subcategory}*/}
-            {/*                     subcategoryTitle = {card.subcategoryTitle}*/}
-            {/*                     subcategoryDescription = {card.subcategoryDescription}*/}
-            {/*                     subcategoryUrl = {card.subcategoryUrl}*/}
-            {/*                     image = {card.image}*/}
-            {/*                     url = {card.url}*/}
-            {/*                     position = {card.position}*/}
-            {/*        />)}*/}
-            {/*</S_Container>*/}
-            
             <S_Container>
                 <p>{text.p1}</p>
                 <p>{text.p2}</p>
@@ -55,10 +42,22 @@ export const AllRentals = ({}: props) => {
 
 
 export const S_AllRentals = styled.div<{}>`
-  ${sectionMargin};
+
+  display: flex;
+  flex-direction: column;
+
+  ${S_Container}:has(h1) {
+    order: 2;
+  }
+
+  ${S_Container}:has(ul) {
+    order: 3;
+  }
+
 
   @media ${({theme}) => theme.media.tablet} {
-    ${S_Container}:first-child {
+    ${sectionMargin};
+    ${S_Container}:not(:has(h1,p)) {
         //${outline()}
       width: 100%;
       display: grid;
@@ -83,6 +82,15 @@ export const S_AllRentals = styled.div<{}>`
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
+  }
+
+  h1, h2 {
+    font-size: ${({theme}) => theme.fonts.size.h1};
+    text-align: center;
+    color: ${({theme}) => theme.colors.dark};
+    font-weight: normal;
+    white-space: pre-line;
+    margin-block: 2rem;
   }
 `
 
