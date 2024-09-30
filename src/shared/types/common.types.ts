@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactElement, ReactNode, SVGProps} from 'react';
 import {CATEGORY} from '../constants/CATEGORY';
 import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
@@ -45,16 +45,31 @@ export type SubcategoriesType<T extends Category> =
 export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = {
     id: string;
     subcategory: T;
-    url: string;
-    title: string;
-    description: string;
+    subcategoryUrl: string;
+    subcategoryTitle: string;
+    description?: string;
     content?: string;
     images: ImageProps[];
-    seo: Seo;
+    seo?: Seo;
     group?: ServiceGroup;
-    position: number
+    position: number;
+    icon?: string;
 }
 
+export type SubcategoryItemData<T extends Category> = {
+    id: string,
+    category: T,
+    categoryTitle?: string,
+    categoryUrl: string,
+    subcategory: SubcategoriesType<T>,
+    subcategoryTitle: string,
+    subcategoryDescription?: string,
+    subcategoryUrl: string,
+    image?: ImageProps,
+    position: number,
+    url: string,
+    icon?: string;
+}
 
 export type Seo = {
     metaTitle: string;

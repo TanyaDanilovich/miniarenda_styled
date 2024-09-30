@@ -54,6 +54,7 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
 
 export const S_LayoutWithBreadcrumbs = styled.div<{}>`
     //${outline()}
+  flex-grow: 1;
 `
 
 export const S_Breadcrumbs = styled.div<{}>`

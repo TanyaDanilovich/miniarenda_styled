@@ -4,6 +4,7 @@ import {outline} from '../../app/styles/mixins';
 type Props = {
     $display?: string,
     $height?: string,
+    $width?: string,
 
     $paddingLeft?: string,
     $paddingRight?: string,
@@ -26,7 +27,8 @@ type Props = {
 export const S_Box = styled.div<Props>`
   min-height: fit-content;
   height: ${({$height}) => $height || "auto"};
-  
+  width: ${({$width}) => $width || "auto"};
+
   ${({$display}) => $display && css`display: ${$display}`};
 
   ${({$paddingLeft}) => $paddingLeft && css`padding-left: ${$paddingLeft}`};
@@ -44,5 +46,5 @@ export const S_Box = styled.div<Props>`
 
   ${({$lineHeight}) => $lineHeight && css`line-height: ${$lineHeight}`};
   ${({$textAlign}) => $textAlign && css`text-align: ${$textAlign}`};
-  //${outline(5)}
+    //${outline(5)}
 `;

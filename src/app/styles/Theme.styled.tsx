@@ -57,7 +57,8 @@ export const theme: MyDefaultTheme = {
         footer: 100,
         mainContent: 800,
     },
-    shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)"},
+    shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)",
+    right:"5px 0px 15px 0px rgba(0, 0, 0, 0.08)"},
     colors: {
 
         primary: "#fd5d14",

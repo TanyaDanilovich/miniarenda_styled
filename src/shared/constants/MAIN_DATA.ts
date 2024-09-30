@@ -4,6 +4,9 @@ import {CATEGORY} from './CATEGORY';
 import {RENTAL_SUBCATEGORY} from './RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from './SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from './SERVICE_GROUP';
+import excavator from '../../assets/svg/exavator.svg';
+import hammer from '../../assets/svg/gidromolot.svg';
+import drill from '../../assets/svg/bur.svg';
 
 export const MAIN_DATA: MainData = {
     categories: {
@@ -57,8 +60,8 @@ export const MAIN_DATA: MainData = {
         [RENTAL_SUBCATEGORY.EXCAVATOR]: {
             id: v1(),
             subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
-            url: "arenda-mini-exavatora",
-            title: "Аренда мини-экскаватора",
+            subcategoryUrl: "arenda-mini-exavatora",
+            subcategoryTitle: "Аренда мини-экскаватора",
             description: "Аренда мини-экскаватора – это востребованная услуга для работы на малых площадях и в " +
                 "стесненных условиях. Компактные многозадачные машины подходят для небольших строительных площадок." +
                 " Это действенный способ ускорить выполнение работ и сэкономить деньги. ",
@@ -68,13 +71,14 @@ export const MAIN_DATA: MainData = {
                 metaTitle: "Аренда мини-экскаватора в Минске | Доступные цены",
                 metaDescription: "Аренда мини-экскаватора для земляных работ по доступным ценам. Идеально подходит для небольших и сложных площадок.",
                 metaKeywords: ["аренда мини-экскаватора", "земляные работы", "мини-техника"]
-            }
+            },
+            icon: excavator
         },
         [RENTAL_SUBCATEGORY.HAMMER]: {
             id: v1(),
             subcategory: RENTAL_SUBCATEGORY.HAMMER,
-            url: "arenda-gidromolota",
-            title: "Аренда гидромолота",
+            subcategoryUrl: "arenda-gidromolota",
+            subcategoryTitle: "Аренда гидромолота",
             description: "Мы предлагаем в аренду гидромолот на базе мини-экскаватора или мини-погрузчика с опытным машинистом, " +
                 "который быстро сможет выполнить поставленную перед ним задачу.",
             images: [],
@@ -83,13 +87,14 @@ export const MAIN_DATA: MainData = {
                 metaTitle: "Аренда гидромолота | Разрушительные работы",
                 metaDescription: "Гидромолот в аренду для разрушения бетонных и каменных конструкций. Работаем на малых и сложных участках.",
                 metaKeywords: ["аренда гидромолота", "разрушение бетона", "демонтаж"]
-            }
+            },
+            icon: hammer
         },
         [RENTAL_SUBCATEGORY.DRILL]: {
             id: v1(),
             subcategory: RENTAL_SUBCATEGORY.DRILL,
-            url: "arenda-yamobura",
-            title: "Аренда ямобура",
+            subcategoryUrl: "arenda-yamobura",
+            subcategoryTitle: "Аренда ямобура",
             description: "Аренда ямобура (гидробура, шнекового бура) в Минске на базе мини-экскаватора" +
                 "для бурения отверстий глубиной до 2,5 м диаметром от 20 до 60 см. " +
                 "Отверстия диаметром 50 и 60 см можно пробурить глубиной до 3 м.",
@@ -99,15 +104,16 @@ export const MAIN_DATA: MainData = {
                 metaTitle: "Аренда ямобура в Минске | Бурение отверстий",
                 metaDescription: "Аренда ямобура для бурения отверстий различного диаметра и глубины. Услуги по бурению скважин и свай.",
                 metaKeywords: ["аренда ямобура", "бурение отверстий", "бурение скважин"]
-            }
+            },
+            icon: drill
         },
         [SERVICE_SUBCATEGORY.DIGGING_TRENCH]: {
             id: v1(),
             subcategory: SERVICE_SUBCATEGORY.DIGGING_TRENCH,
             group: SERVICE_GROUP.DIGGING,
             position: 1,
-            url: "kopanie-transhej",
-            title: "Копание траншей",
+            subcategoryUrl: "kopanie-transhej",
+            subcategoryTitle: "Копание траншей",
             description: "Прокладка газопроводов, водопроводов, канализации, телефонных кабелей - С такой задачей лучше всего справится мини-экскаватор." +
                 "Мини-экскаваторы оснащены сменными ковшами шириной от 20 см до 1 м, позволяют копать траншеи глубиной до 2,7 м и " +
                 "производить загрузку грунта на транспортные средства высотой до 2,5 м",
@@ -123,8 +129,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
             group: SERVICE_GROUP.DIGGING,
             position: 2,
-            url: "kopanie-fundamentov",
-            title: "Копание фундаментов",
+            subcategoryUrl: "kopanie-fundamentov",
+            subcategoryTitle: "Копание фундаментов",
             description: "Для копания фундаментов наша компания предлагает свои услуги. В любой день недели, месяца и года мы сможем " +
                 "предоставить для ваших работ свои мини-экскаваторы и специалистов высокого класса.",
             images: [],
@@ -139,8 +145,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.STUMP_REMOVAL,
             group: SERVICE_GROUP.OTHER,
             position: 3,
-            url: "korchevanie-pnej",
-            title: "Корчевание пней",
+            subcategoryUrl: "korchevanie-pnej",
+            subcategoryTitle: "Корчевание пней",
             description: "Механический способ: Механическое уничтожение пней проводится с использованием специализированной " +
                 "техники, такой как гидромолот или корчеватель. Такой метод значительно быстрее и эффективнее, " +
                 "особенно когда речь идёт о крупных и старых пнях.",
@@ -156,8 +162,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.DRILLING,
             group: SERVICE_GROUP.DIGGING,
             position: 4,
-            url: "yamobur",
-            title: "Бурение отверстий (ям)",
+            subcategoryUrl: "yamobur",
+            subcategoryTitle: "Бурение отверстий (ям)",
             description: "Буровые работы – важная составляющая строительства." +
                 "" +
                 "В настоящее время существует большое количество техники и оборудования, которые позволяют " +
@@ -182,8 +188,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
             group: SERVICE_GROUP.OTHER,
             position: 5,
-            url: "peremeschenie-grunta",
-            title: "Перемещение грунта",
+            subcategoryUrl: "peremeschenie-grunta",
+            subcategoryTitle: "Перемещение грунта",
             description: "Услуга по перемещению грунта может понадобиться во многих ситуациях: от стройки до уборки или облагораживания " +
                 "территории. Преимущество мини-техники в ее небольших размерах и возможности использования " +
                 "в подвальных помещениях или на свайном поле для перемещения грунта или строительного мусора.",
@@ -199,8 +205,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
             group: SERVICE_GROUP.OTHER,
             position: 6,
-            url: "prochie-zemlyanye-raboty",
-            title: "Прочие земляные работы",
+            subcategoryUrl: "prochie-zemlyanye-raboty",
+            subcategoryTitle: "Прочие земляные работы",
             description: "Земляные работы с помощью мини-экскаватора и мини-погрузчика в Минске" +
                 "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, ",
             images: [],
@@ -215,8 +221,8 @@ export const MAIN_DATA: MainData = {
             subcategory: SERVICE_SUBCATEGORY.DISMANTLING,
             group: SERVICE_GROUP.OTHER,
             position: 7,
-            url: "demontazh",
-            title: "Демонтаж бетонных конструкций",
+            subcategoryUrl: "demontazh",
+            subcategoryTitle: "Демонтаж бетонных конструкций",
             description: "Выполняем следующие услуги гидромолота:" +
                 "разрушение железобетонных строений;" +
                 "объемная и листовая штамповка;" +

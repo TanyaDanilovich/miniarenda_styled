@@ -10,8 +10,8 @@ export function getRoutePath(category: Category,
 
     if (subcategory) {
         return {
-            url: MAIN_DATA.subcategoryItems[subcategory].url,
-            title: MAIN_DATA.subcategoryItems[subcategory].title,
+            url: MAIN_DATA.subcategoryItems[subcategory].subcategoryUrl,
+            title: MAIN_DATA.subcategoryItems[subcategory].subcategoryTitle,
         }
     }
     return categoryData;

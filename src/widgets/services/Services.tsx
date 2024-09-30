@@ -5,9 +5,9 @@ import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {sectionMargin} from '../../app/styles/mixins';
-import {getServicesData} from '../../shared/utils/getServicesData';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+import {API} from '../../app/api/API';
 
 
 type props = {
@@ -26,7 +26,7 @@ export const Services = ({}: props) => {
         "                        работать на протяжении долгого времени."
 
 
-    const fullServicesData = getServicesData();
+    const fullServicesData = API.getFullSubcategoriesData();
     const [servicesData, setServicesData] = useState(fullServicesData);
     const [width] = useDebouncedWindowSize();
 

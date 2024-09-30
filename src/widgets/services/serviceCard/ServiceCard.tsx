@@ -9,24 +9,12 @@ import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/sty
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
-import {Category, ImageProps, RentalSubcategory, ServiceSubcategory} from '../../../shared/types/common.types';
+import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 
 
-export type ServiceCardData = {
-    id: string,
-    category: Category,
-    categoryTitle: string,
-    categoryUrl: string,
-    subcategory: RentalSubcategory | ServiceSubcategory,
-    subcategoryTitle: string,
-    subcategoryDescription: string,
-    subcategoryUrl: string,
-    image: ImageProps,
-    position: number,
-    url: string,
-}
+export type ServiceCardData = {}
 
-type props = ServiceCardData & {};
+type props = ServiceCardData & SubcategoryItemData<Category>;
 export const ServiceCard = ({
                                 id,
                                 category,
@@ -44,10 +32,10 @@ export const ServiceCard = ({
     const theme = useTheme()
     return (
         <StyledServiceCard>
-            <S_ImageContainer>
+            {image && <S_ImageContainer>
                 <S_Image src = {image.src} alt = {image.alt}/>
                 <HoverIcons link = {url} image = {image}/>
-            </S_ImageContainer>
+            </S_ImageContainer>}
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
                 <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>

@@ -25,6 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({theme}) => theme.colors.black};
     background-color: ${({theme}) => theme.colors.white};
     min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
 

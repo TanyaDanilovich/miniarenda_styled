@@ -13,13 +13,14 @@ import {outline} from '../../app/styles/mixins';
 import {S_Image} from '../../shared/styled/S_Image';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from 'react-router-dom';
-import {getServicesData} from '../../shared/utils/getServicesData';
+import {API} from '../../app/api/API';
+
 
 type props = {};
 export const Footer = ({}: props) => {
     const theme = useTheme();
-    const fullServicesData = getServicesData();
-    console.log(fullServicesData)
+    const fullServicesData = API.getFullSubcategoriesData();
+    //console.log(fullServicesData)
     return (
 
 
@@ -268,7 +269,7 @@ export const S_FooterItem = styled.div<{}>`
   //Наши услуги
   &:last-child li {
       //${outline()}
-    font-size: ${getResponsiveSize(10, 16)};
+    font-size: ${getResponsiveSize(12, 14)};
     padding-block: 0.25rem;
   }
 
