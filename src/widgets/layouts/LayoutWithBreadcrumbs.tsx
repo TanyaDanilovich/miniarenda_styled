@@ -5,6 +5,7 @@ import {Link, Outlet, useLocation, useMatches} from 'react-router-dom';
 import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {UIMatch} from '@remix-run/router/utils';
+import {cleanPath} from '../../shared/utils/cleanPath';
 
 type BreadcrumbMatch = UIMatch & {
     handle?: {
@@ -21,16 +22,16 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
     const matches = useMatches() as BreadcrumbMatch[];
     const location = useLocation();
 
-
     const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))
 
     const breadcrumbs =
         filteredMatches.map((match, index) => {
-            const isActive = location.pathname.trim() === match.pathname.trim();
+
+            const isActive = cleanPath(location.pathname) === cleanPath(match.pathname)
 
             //console.log(`"${location.pathname}",`, `"${match.pathname}"`, isActive)
-            
+
             return <S_BreadcrumbsLi key = {index} $active = {isActive}>
                 {match.handle?.crumb && match.handle.crumb()}
             </S_BreadcrumbsLi>

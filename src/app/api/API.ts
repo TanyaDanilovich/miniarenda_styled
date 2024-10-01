@@ -57,7 +57,7 @@ export const API = {
             id: v1(),
             position: index,
         }))
-        console.dir(rentalSubcategoriesData);
+        //console.dir(rentalSubcategoriesData);
         return rentalSubcategoriesData.map(item => (
             {
                 ...item,
