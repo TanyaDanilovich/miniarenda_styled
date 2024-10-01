@@ -1,13 +1,12 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
-import {Link, Outlet, useMatches} from 'react-router-dom';
+import {Link, Outlet, useLocation, useMatches} from 'react-router-dom';
 import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
-import {S_Container} from '../../shared/styled/S_Container';
-import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
+import {UIMatch} from '@remix-run/router/utils';
 
-type BreadcrumbMatch = {
+type BreadcrumbMatch = UIMatch & {
     handle?: {
         crumb?: () => JSX.Element;
     },
@@ -20,15 +19,21 @@ type props = {
 
 export const LayoutWithBreadcrumbs = ({title}: props) => {
     const matches = useMatches() as BreadcrumbMatch[];
+    const location = useLocation();
+
 
     const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))
 
     const breadcrumbs =
         filteredMatches.map((match, index) => {
-            return <li key = {index}>
+            const isActive = location.pathname.trim() === match.pathname.trim();
+
+            //console.log(`"${location.pathname}",`, `"${match.pathname}"`, isActive)
+            
+            return <S_BreadcrumbsLi key = {index} $active = {isActive}>
                 {match.handle?.crumb && match.handle.crumb()}
-            </li>
+            </S_BreadcrumbsLi>
         });
 
     return (
@@ -91,7 +96,9 @@ export const S_BreadcrumbsTitle = styled.h2`
   text-transform: uppercase;
   font-size: ${({theme}) => theme.fonts.size.h5};
 `;
-export const S_BreadcrumbsContainer = styled.nav<{ $img: string }>`
+export const S_BreadcrumbsContainer = styled.nav<{
+    $img: string
+}>`
 
     //${outline()}
 
@@ -153,3 +160,10 @@ export const S_BreadcrumbsContent = styled.div`
   flex-wrap: wrap;
   white-space: nowrap;
 `
+
+export const S_BreadcrumbsLi = styled.li<{
+    $active: boolean
+}>`
+  ${({$active}) => $active && css`
+    color: ${({theme}) => theme.colors.primary}`
+  }`;
