@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/miniarenda_styled/static/css/main.f59f22ac.css",
-    "main.js": "/miniarenda_styled/static/js/main.cadb46c3.js",
+    "main.js": "/miniarenda_styled/static/js/main.04fc8425.js",
     "static/js/488.7e13e7cf.chunk.js": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js",
     "static/media/_DSC3958.jpg": "/miniarenda_styled/static/media/_DSC3958.d223f9ff3997cb863837.jpg",
     "static/media/_DSC4764-1920w.jpg": "/miniarenda_styled/static/media/_DSC4764-1920w.ad0e990186c131cfbe99.jpg",
@@ -24,11 +24,11 @@
     "index.html": "/miniarenda_styled/index.html",
     "static/media/checkmark-circle-green.svg": "/miniarenda_styled/static/media/checkmark-circle-green.10c974073f6afee7460546bc19578154.svg",
     "main.f59f22ac.css.map": "/miniarenda_styled/static/css/main.f59f22ac.css.map",
-    "main.cadb46c3.js.map": "/miniarenda_styled/static/js/main.cadb46c3.js.map",
+    "main.04fc8425.js.map": "/miniarenda_styled/static/js/main.04fc8425.js.map",
     "488.7e13e7cf.chunk.js.map": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f59f22ac.css",
-    "static/js/main.cadb46c3.js"
+    "static/js/main.04fc8425.js"
   ]
 }
