@@ -136,22 +136,31 @@ export const S_BreadcrumbsContainer = styled.nav<{
     color: white;
   }
 
-  li {
+  & li {
     position: relative;
     z-index: 1;
       //${outline(2)}
   }
 
-  li:not(:first-child) {
-    position: relative;
-
-      //${outline(2)}
-    &::before {
-      content: "/";
-      width: 100%;
-      z-index: -1;
-      padding-inline: 0.5rem;
+  li:not(:last-child) {
+    &:hover {
+      color: ${({theme}) => theme.colors.primary};
     }
+
+
+  }
+}
+
+li:not(:first-child) {
+  position: relative;
+
+    //${outline(2)}
+  &::before {
+    content: "/";
+    width: 100%;
+    z-index: -1;
+    padding-inline: 0.5rem;
+  }
 
 `
 
@@ -166,5 +175,8 @@ export const S_BreadcrumbsLi = styled.li<{
     $active: boolean
 }>`
   ${({$active}) => $active && css`
+    & a {
+      cursor: default;
+    }
     color: ${({theme}) => theme.colors.primary}`
   }`;

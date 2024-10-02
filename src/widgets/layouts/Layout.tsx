@@ -6,7 +6,11 @@ import React from 'react';
 export const Layout = () => {
     return (
         <>
-            <ScrollRestoration/>
+            <ScrollRestoration getKey = {(location, matches) => {
+                // default behavior
+                console.log(location, matches)
+                return location.key;
+            }}/>
             <Header/>
             <Outlet/>
             <Footer/>
