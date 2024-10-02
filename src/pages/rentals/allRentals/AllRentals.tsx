@@ -5,12 +5,12 @@ import {outline, sectionMargin} from '../../../app/styles/mixins';
 import {API} from '../../../app/api/API';
 import {SubcategoriesCard} from '../../../widgets/subcategoriesCard/SubcategoriesCard';
 import {allRentalText} from './allRentalText';
+import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 
 type props = {};
 
 export const AllRentals = ({}: props) => {
 
-    const rentalSubcategories = API.getRentalSubcategoriesData()
     const text: typeof allRentalText = allRentalText;
     return (
         <S_AllRentals>
@@ -20,11 +20,8 @@ export const AllRentals = ({}: props) => {
                 {/*<h2>Доставка по Минску и области</h2>*/}
             </S_Container>
 
-            <S_Container>
-                {rentalSubcategories.map((subcategory, index) => (
-                    <SubcategoriesCard key = {index} {...subcategory}/>
-                ))}
-            </S_Container>
+
+            <MappedSubcategoriesCards/>
 
             <S_Container>
                 <p>{text.p1}</p>

@@ -1,7 +1,7 @@
 import {createBrowserRouter, createRoutesFromElements, Link, Route} from 'react-router-dom';
 import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
-import {ExavatorRental} from '../pages/rentals/exavatorRental/ExavatorRental';
+import {ExcavatorRental} from '../pages/rentals/excavatorRental/ExcavatorRental';
 import React from 'react';
 import {Main} from '../widgets/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
@@ -35,7 +35,7 @@ export const router = createBrowserRouter(
                        crumb: () => <Link to = {""}>{ROUTES_PATHS.arenda.index.title}</Link>
                    }}>
                 <Route index element = {<AllRentals/>}/>
-                <Route path = {ROUTES_PATHS.arenda.arenda_Exavatora.url} element = {<ExavatorRental/>}
+                <Route path = {ROUTES_PATHS.arenda.arenda_Exavatora.url} element = {<ExcavatorRental/>}
                        handle = {{
                            crumb: () => (
                                <Link to = {ROUTES_PATHS.arenda.arenda_Exavatora.url}>
