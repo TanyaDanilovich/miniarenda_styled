@@ -14,23 +14,21 @@ import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 type props = {};
 
 export const ExcavatorRental = ({}: props) => {
-    const keys: MachineryCharacteristicKeys[] = ['dimensions', 'width', 'clearance', 'country', 'speed']
+    const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth','drillingDepth','buckets','augers']
     const machineryData = API.getMachineriesData(keys);
     const subcategoriesCardsData = API.getMachinesSubcategoriesData()
     return (
         <S_ExcavatorRental>
             <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
-            {/*<S_ExcavatorRentalContentWrapper>*/}
+
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
-            {/*<S_ExcavatorRentalCardWrapper>*/}
+
             {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
                                                                   id = {machine.id}
                                                                   tableTitle = {machine.tableTitle}
                                                                   characteristics = {machine.characteristics}
                 />)
             )}
-            {/*</S_ExcavatorRentalCardWrapper>*/}
-            {/*</S_ExcavatorRentalContentWrapper>*/}
 
 
         </S_ExcavatorRental>);
@@ -39,6 +37,7 @@ export const ExcavatorRental = ({}: props) => {
 
 export const S_ExcavatorRental = styled(S_Container)<{}>`
   ${sectionMargin};
+  //padding: 0;
 
   & h1 {
     text-wrap: none;
@@ -51,6 +50,14 @@ export const S_ExcavatorRental = styled(S_Container)<{}>`
 
   }
 
+  h1, h2 {
+    font-size: ${({theme}) => theme.fonts.size.h1};
+    text-align: center;
+    color: ${({theme}) => theme.colors.dark};
+    font-weight: normal;
+    white-space: pre-line;
+    margin-block: 2rem;
+  }
 
 
 `

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {S_Container} from '../../../shared/styled/S_Container';
 import React from 'react';
-import {outline, sectionMargin} from '../../../app/styles/mixins';
+import {sectionMargin} from '../../../app/styles/mixins';
 import {API} from '../../../app/api/API';
 import {allRentalText} from './allRentalText';
 import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
@@ -19,9 +19,9 @@ export const AllRentals = ({}: props) => {
                 {/*<h2>Доставка по Минску и области</h2>*/}
             </S_Container>
 
-
-            <MappedSubcategoriesCards data = {rentalSubcategories}/>
-
+            <S_Container>
+                <MappedSubcategoriesCards data = {rentalSubcategories}/>
+            </S_Container>
             <S_Container>
                 <p>{text.p1}</p>
                 <p>{text.p2}</p>
@@ -43,6 +43,7 @@ export const S_AllRentals = styled.section<{}>`
   flex-direction: column;
 
   ${S_Container}:has(h1) {
+
     order: 2;
   }
 

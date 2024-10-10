@@ -1,23 +1,26 @@
 import {outline, plainTransition} from '../../app/styles/mixins';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import React from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {Category, SubcategoryItemData} from '../../shared/types/common.types';
 import {S_Box} from '../../shared/styled/S_Box';
+import {useLocation} from 'react-router-dom';
 
 export type ServiceCardData = {}
 
-type props =
+type props = { isActive: boolean } &
     ServiceCardData &
     SubcategoryItemData<Category>
 export const SubcategoriesCard = ({
                                       subcategoryTitle,
                                       url,
                                       icon,
+                                      isActive,
                                       ...rest
                                   }: props) => {
+
     return (
-        <S_SubcategoriesCard>
+        <S_SubcategoriesCard $isActive = {isActive}>
             <S_Flex $gap = {"2rem"} as = {'a'} href = {url}>
                 {icon && <S_Box $height = {"4rem"} $width = {"4rem"}
                                 style = {{maskImage: `url(${icon})`}}> </S_Box>}
@@ -27,7 +30,7 @@ export const SubcategoriesCard = ({
     );
 };
 
-export const S_SubcategoriesCard = styled.article <{}>`
+export const S_SubcategoriesCard = styled.article <{ $isActive: boolean }>`
   padding-block: 0.5rem;
   padding-inline: 1rem;
   margin-block: 1rem;
@@ -37,7 +40,7 @@ export const S_SubcategoriesCard = styled.article <{}>`
   ${plainTransition()}
   &:hover {
     background-color: ${({theme}) => theme.colors.white_smoke};
-    box-shadow: none;
+    //box-shadow: none;
   }
 
   &:active {
@@ -67,4 +70,10 @@ export const S_SubcategoriesCard = styled.article <{}>`
     color: ${({theme}) => theme.colors.dark};
     text-transform: uppercase;
   }
+
+  ${({$isActive}) => $isActive && css`
+    h4 {
+      color: ${({theme}) => theme.colors.primary};
+    }
+  `}
 `;

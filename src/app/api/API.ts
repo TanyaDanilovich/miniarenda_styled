@@ -92,13 +92,13 @@ export const API = {
     getServiceSubcategories: (): ServiceSubcategory[] => {
         return MAIN_DATA.categories[CATEGORY.SERVICES].items
     },
-    getMachineriesData: (keys:MachineryCharacteristicKeys[]): MachineryData[] => {
-       return machineriesData.map(machine=>{
-           return({
-               ...machine,
-               characteristics:machine.characteristics
-                   .filter(item=>!keys.includes(item.id))
-           })
-       })
+    getMachineriesData: (keys: MachineryCharacteristicKeys[]): MachineryData[] => {
+        return machineriesData.map(machine => {
+            return ({
+                ...machine,
+                characteristics: machine.characteristics
+                    .filter(item => keys.includes(item.id))
+            })
+        })
     }
 }
