@@ -1,8 +1,15 @@
-import {MAIN_DATA} from '../../shared/constants/MAIN_DATA';
+import {MAIN_DATA} from '../../shared/data/MAIN_DATA';
 import {CATEGORY} from '../../shared/constants/CATEGORY';
 import img from '../../assets/images/servises/servises_1.jpg';
 import {v1} from 'uuid';
-import {Category, RentalSubcategory, ServiceSubcategory, SubcategoryItemData} from '../../shared/types/common.types';
+import {
+    Category, MachineryCharacteristicKeys,
+    MachineryData,
+    RentalSubcategory,
+    ServiceSubcategory,
+    SubcategoryItemData
+} from '../../shared/types/common.types';
+import {machineriesData} from '../../shared/data/machineriesData';
 
 export const API = {
     getFullSubcategoriesData: (): SubcategoryItemData<Category>[] => {
@@ -48,7 +55,7 @@ export const API = {
     getRentalSubcategories: (): RentalSubcategory[] => {
         return MAIN_DATA.categories[CATEGORY.RENTAL].items
     },
-    getRentalSubcategoriesData: (): SubcategoryItemData<typeof CATEGORY.RENTAL>[] => {
+    getAllRentalSubcategoriesData: (): SubcategoryItemData<typeof CATEGORY.RENTAL>[] => {
         const rentalSubcategories = MAIN_DATA.categories[CATEGORY.RENTAL].items;
         const rentalSubcategoriesData = rentalSubcategories.map((rentItem, index) => ({
             ...MAIN_DATA.subcategoryItems[rentItem],
@@ -65,7 +72,33 @@ export const API = {
             }
         ))
     },
+    getMachinesSubcategoriesData: (): SubcategoryItemData<typeof CATEGORY.RENTAL>[] => {
+        const rentalSubcategories = MAIN_DATA.categories[CATEGORY.RENTAL].items;
+        const rentalSubcategoriesData = rentalSubcategories.map((rentItem, index) => ({
+            ...MAIN_DATA.subcategoryItems[rentItem],
+            category: MAIN_DATA.categories[CATEGORY.RENTAL].category,
+            categoryUrl: MAIN_DATA.categories[CATEGORY.RENTAL].url,
+            id: v1(),
+            position: index,
+        }))
+        //console.dir(rentalSubcategoriesData);
+        return rentalSubcategoriesData.map(item => (
+            {
+                ...item,
+                url: `${item.subcategoryUrl}`
+            }
+        ))
+    },
     getServiceSubcategories: (): ServiceSubcategory[] => {
         return MAIN_DATA.categories[CATEGORY.SERVICES].items
     },
+    getMachineriesData: (keys:MachineryCharacteristicKeys[]): MachineryData[] => {
+       return machineriesData.map(machine=>{
+           return({
+               ...machine,
+               characteristics:machine.characteristics
+                   .filter(item=>!keys.includes(item.id))
+           })
+       })
+    }
 }

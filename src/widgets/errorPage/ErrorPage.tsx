@@ -1,29 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useNavigate, useRouteError} from 'react-router-dom';
+import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
+import {Link} from 'react-router-dom';
 
 
 type props = {};
 export const ErrorPage = ({}: props) => {
-    const navigate = useNavigate();
-    const error = useRouteError() as Error;
-    console.error(error);
+
 
     return (
         <S_ErrorPage>
             <div>
                 <h1>Something went wrong 😢</h1>
-                <p>
-                    <i>{error.name || error.message}</i>
 
+                <Link to = {ROUTES_PATHS.home.url}>Перейти на главную</Link>
 
-                    {/*<i>*/}
-                    {/*    {(error as Error)?.message ||*/}
-                    {/*        (error as { statusText?: string })?.statusText}*/}
-                    {/*</i>*/}
-
-                </p>
-                <button onClick = {() => navigate(-1)}>&larr; Go back</button>
             </div>
 
 

@@ -1,36 +1,27 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import React, {useId} from 'react';
+import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
-import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
+import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {S_Image} from '../../../shared/styled/S_Image';
-import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
-import {BASE} from '../../../shared/constants/constants';
 import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
-import {ImageProps} from '../../../shared/types/common.types';
+import {MachineryData} from '../../../shared/types/common.types';
+import {
+    MachineCharacteristicsTable
+} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
 
 
-type Characteristic = { id: string, title: string, value: string }
-
-export type machineryCardData = {
-    title: string,
-    image: ImageProps,
-    characteristics: Characteristic[],
-}
-
-type props = machineryCardData & {};
-export const MachineryCard = ({title, image, characteristics}: props) => {
+type props = MachineryData & {}
+export const MachineryCard = ({id, title, image, characteristics}: props) => {
     const theme = useTheme()
-    const id = useId()
     return (
         <S_MachineryCard>
             <S_ImageContainer>
 
-                <S_Image src = {image.src} alt = {image.alt}/>
+                {image && <S_Image src = {image.src} alt = {image.alt}/>}
                 {/*<HoverIcons link={""} image={image}/>*/}
 
                 <FontAwesomeIconCover>
@@ -38,27 +29,9 @@ export const MachineryCard = ({title, image, characteristics}: props) => {
                 </FontAwesomeIconCover>
             </S_ImageContainer>
 
-
-            <S_MachineryCardTable>
-                <S_MachineryCardTitle>
-                    {title}
-                </S_MachineryCardTitle>
-
-                <thead>
-                <tr>
-                    <th>Наименование</th>
-                    <th>Характеристика</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                {characteristics.map((characteristic, index) => (
-                    <tr key = {`${id}-${index}`}>
-                        <td>{characteristic.title}</td>
-                        <td>{characteristic.value}</td>
-                    </tr>))}
-                </tbody>
-            </S_MachineryCardTable>
+            <MachineCharacteristicsTable id = {id}
+                                         title = {title}
+                                         characteristics = {characteristics}/>
 
             <S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>
                 <ReadMoreButton/>
@@ -77,7 +50,7 @@ export const S_MachineryCard = styled.article <{}>`
   max-width: 544px;
   margin: 0 auto;
 
-  // ${ImageHover}
+    // ${ImageHover}
   ${S_ImageContainer} {
     position: relative;
     z-index: 5;
@@ -96,42 +69,12 @@ export const S_MachineryCard = styled.article <{}>`
   }
 
 
-  // ${transitionHoverIcon}
+    // ${transitionHoverIcon}
 `;
 
 
 
-export const S_MachineryCardTitle = styled.caption <{}>`
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  font-weight: ${({theme}) => theme.fonts.weight.bold};
-  font-size: ${({theme}) => theme.fonts.size.h3};
-  margin: 2rem;
-`;
 
-export const S_MachineryCardTable = styled.table<{}>`
-  position: relative;
-  z-index: 10;
-  margin: auto;
-  overflow-x: auto;
-  //width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    border-bottom: 1px solid #ddd;
-    padding-block: ${getResponsiveSize(BASE / 3, BASE / 2, 320)};
-    padding-inline: ${getResponsiveSize(BASE * 0.75, BASE * 2, 320)};
-  }
-
-  tr {
-    ${plainTransition()}
-  }
-
-  tr:hover {
-    background-color: ${({theme}) => theme.colors.white_smoke};
-  }
-`;
 
 
 

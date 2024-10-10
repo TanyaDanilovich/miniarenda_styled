@@ -3,7 +3,7 @@ import React from 'react';
 import {Services} from '../services/Services';
 
 import {Machineries} from '../machineries/Machineries';
-import {machineriesData} from '../machineries/machineriesData';
+import {machineriesData} from '../../shared/data/machineriesData';
 import {Delivery} from '../delivery/Delivery';
 import {Reviews} from '../reviews/Reviews';
 import {Questions} from '../questions/Questions';

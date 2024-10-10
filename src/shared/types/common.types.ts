@@ -3,6 +3,7 @@ import {CATEGORY} from '../constants/CATEGORY';
 import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
+import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 
 export type PropsWithChildren<P> = P & { children?: ReactNode };
 
@@ -87,3 +88,20 @@ export type MainData = {
 }
 
 export type RoutesPathData = { url: string, title: string }
+
+export type MachineryCharacteristicKeys =
+    typeof MACHINERY_CHARACTERISTICS[keyof typeof MACHINERY_CHARACTERISTICS]
+
+export type MachineryCharacteristic = {
+    id: MachineryCharacteristicKeys,
+    title: string,
+    value: string
+}
+
+export type MachineryData = {
+    id: string,
+    title?: string,
+    tableTitle?: string
+    image?: ImageProps,
+    characteristics: MachineryCharacteristic[],
+}

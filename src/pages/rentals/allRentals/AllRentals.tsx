@@ -3,14 +3,13 @@ import {S_Container} from '../../../shared/styled/S_Container';
 import React from 'react';
 import {outline, sectionMargin} from '../../../app/styles/mixins';
 import {API} from '../../../app/api/API';
-import {SubcategoriesCard} from '../../../widgets/subcategoriesCard/SubcategoriesCard';
 import {allRentalText} from './allRentalText';
 import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 
 type props = {};
 
 export const AllRentals = ({}: props) => {
-
+    const rentalSubcategories = API.getAllRentalSubcategoriesData()
     const text: typeof allRentalText = allRentalText;
     return (
         <S_AllRentals>
@@ -21,7 +20,7 @@ export const AllRentals = ({}: props) => {
             </S_Container>
 
 
-            <MappedSubcategoriesCards/>
+            <MappedSubcategoriesCards data = {rentalSubcategories}/>
 
             <S_Container>
                 <p>{text.p1}</p>
@@ -51,17 +50,8 @@ export const S_AllRentals = styled.section<{}>`
     order: 3;
   }
 
+  ${sectionMargin};
 
-  @media ${({theme}) => theme.media.tablet} {
-    ${sectionMargin};
-    ${S_Container}:not(:has(h1,p)) {
-        //${outline()}
-      width: 100%;
-      display: grid;
-      grid-template-columns: calc(33.33% - 0.66rem) calc(33.33% - 0.66rem) calc(33.33% - 0.66rem);
-      column-gap: 1.5rem;
-    }
-  }
 
   p:first-child {
     margin-bottom: 1rem;

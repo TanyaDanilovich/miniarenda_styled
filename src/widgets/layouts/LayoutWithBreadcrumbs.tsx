@@ -142,16 +142,14 @@ export const S_BreadcrumbsContainer = styled.nav<{
       //${outline(2)}
   }
 
-  li:not(:last-child) {
+  & li:not(:last-child) {
     &:hover {
       color: ${({theme}) => theme.colors.primary};
     }
-
-
   }
-}
 
-li:not(:first-child) {
+
+& li:not(:first-child) {
   position: relative;
 
     //${outline(2)}
@@ -161,7 +159,7 @@ li:not(:first-child) {
     z-index: -1;
     padding-inline: 0.5rem;
   }
-
+}
 `
 
 

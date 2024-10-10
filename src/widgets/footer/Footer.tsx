@@ -6,7 +6,7 @@ import {S_HideContent} from '../../shared/styled/S_HideContent';
 import image from '../../assets/images/footer/_DSC3958.jpg'
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {faMobileScreen, faPhone} from '@fortawesome/free-solid-svg-icons';
+import {faMobileScreen, faPhone, faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
@@ -34,10 +34,10 @@ export const Footer = ({}: props) => {
                         <p>Аренда&nbsp;техники по&nbsp;выгодным&nbsp;ценам</p>
                         <p>Огромный&nbsp;опыт в&nbsp;земляных&nbsp;работах</p>
                         <p>
-                            <FontAwesomeIcon icon = {faPhone} size = {'1x'} color = {theme.colors.primary}/>
+                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375296949698">+375 29 694-96-98</a></p>
                         <p>
-                            <FontAwesomeIcon icon = {faMobileScreen} size = {'1x'} color = {theme.colors.primary}/>
+                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375336949698">+375 33 694-96-98</a></p>
                         <p>ИП Данилович А. И.</p>
                         <p>УНП 390053113</p>

@@ -1,4 +1,4 @@
-import {outline} from '../../app/styles/mixins';
+import {outline, plainTransition} from '../../app/styles/mixins';
 import styled from 'styled-components';
 import React from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
@@ -33,6 +33,17 @@ export const S_SubcategoriesCard = styled.article <{}>`
   margin-block: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
   width: 100%;
+
+  ${plainTransition()}
+  &:hover {
+    background-color: ${({theme}) => theme.colors.white_smoke};
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: ${({theme}) => theme.colors.lightGray};
+  }
+
     //${outline()} 
   @media ${({theme}) => theme.media.mobile} {
     // width: calc(30%);

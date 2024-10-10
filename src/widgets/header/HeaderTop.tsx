@@ -2,7 +2,7 @@ import styled, {useTheme} from "styled-components";
 import {outline} from '../../app/styles/mixins';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {faPhone} from '@fortawesome/free-solid-svg-icons';
+import {faPhone, faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -27,12 +27,12 @@ export const HeaderTop = ({}: props) => {
                 <p>Звоните для заказа техники</p>
 
                 <span>
-                    <FontAwesomeIcon icon = {faPhone} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.white}/>
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
                 </span>
 
                 <span>
-                    <FontAwesomeIcon icon = {faPhone} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.white}/>
                     <a href = "tel:+375336949698">+375 (33) 694-96-98</a>
                 </span>
 

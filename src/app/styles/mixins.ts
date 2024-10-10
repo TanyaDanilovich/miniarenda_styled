@@ -2,6 +2,8 @@ import {css} from 'styled-components';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {S_Image} from '../../shared/styled/S_Image';
 import {S_HoverIcons} from '../../shared/ui/hoverIcons/HoverIcons';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
+import {BASE} from '../../shared/constants/constants';
 
 
 export const border = (width: number = 1, color: string = "red") =>
@@ -73,7 +75,7 @@ export const ImageHover = css`
 `
 
 export const sectionMargin = css`
-  margin: 3rem auto;
+  margin: ${getResponsiveSize(BASE * 1.5, BASE * 3)} auto;
 `
 
 export const sectionPadding = css`
@@ -111,27 +113,27 @@ export const outlinedNestedDiv = css`
 export const outlinedNestedEverything = css`
 
   * {
-    ${({theme}) => outline(5, theme.colors.red.b400)};
+    ${({theme}) => outline(2, theme.colors.red.b400)};
     margin: 5px;
   }
 
   * * {
-    ${({theme}) => outline(10, theme.colors.pink.b400)};
+    ${({theme}) => outline(4, theme.colors.pink.b400)};
     margin: 5px;
   }
 
   * * * {
-    ${({theme}) => outline(15, theme.colors.purple.b400)};
+    ${({theme}) => outline(6, theme.colors.purple.b400)};
     margin: 5px;
   }
 
   * * * * {
-    ${({theme}) => outline(20, theme.colors.deeppurple.b400)};
+    ${({theme}) => outline(8, theme.colors.deeppurple.b400)};
     margin: 5px;
   }
 
   * * * * * {
-    ${({theme}) => outline(25, theme.colors.indigo.b400)};
+    ${({theme}) => outline(10, theme.colors.indigo.b400)};
     margin: 5px;
   }
 `

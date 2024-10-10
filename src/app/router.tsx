@@ -1,4 +1,4 @@
-import {createBrowserRouter, createRoutesFromElements, Link, Route} from 'react-router-dom';
+import {createBrowserRouter, createRoutesFromElements, Link, Navigate, Route} from 'react-router-dom';
 import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExcavatorRental} from '../pages/rentals/excavatorRental/ExcavatorRental';
@@ -16,6 +16,7 @@ import {Drilling} from '../pages/services/drilling/Drilling';
 import {Moving} from '../pages/services/moving/Moving';
 import {TreeStumpRemoval} from '../pages/services/treeStumpRemoval/TreeStumpRemoval';
 import {ROUTES_PATHS} from '../shared/constants/ROUTES_PATHS';
+import {ErrorPage} from '../widgets/errorPage/ErrorPage';
 
 
 export const router = createBrowserRouter(
@@ -155,6 +156,9 @@ export const router = createBrowserRouter(
                        }}/>
             </Route>
             {/* Contact Section */}
+            <Route path="/404" element={ <ErrorPage /> } />
+            <Route path="*" element={ <Navigate to="/404" replace />} />
+
 
         </Route>
     )
