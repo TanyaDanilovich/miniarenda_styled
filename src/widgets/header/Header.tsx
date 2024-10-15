@@ -4,7 +4,7 @@ import {HeaderTop} from './HeaderTop';
 import {createRef, useEffect, useState} from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {DesktopNavigation} from '../../shared/ui/navigation/desktop/DesktopNavigation';
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {MobileNavigation} from '../../shared/ui/navigation/mobile/MobileNavigation';
 import {debounceFunction} from '../../shared/utils/debounceFunction';
 
@@ -41,14 +41,14 @@ export const Header = ({}: props) => {
 
 
         <StyledHeader ref = {headerRef}>
-            <S_Container>
+            <S_OuterContainer>
 
                 <Logo/>
                 <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
                     {isMobileNavigation ? <MobileNavigation/> : <DesktopNavigation/>}
                 </S_Flex>
-            </S_Container>
+            </S_OuterContainer>
 
         </StyledHeader>
 
@@ -72,13 +72,13 @@ export const StyledHeader = styled.header<{}>`
 
   @media ${({theme}) => theme.media.tablet} {
     padding: 0;
-    ${S_Container} > ${S_Flex} {
+    ${S_OuterContainer} > ${S_Flex} {
       flex-direction: column;
     }
 
   }
 
-  ${S_Container} {
+  ${S_OuterContainer} {
 
     display: flex;
     padding-inline: 0;

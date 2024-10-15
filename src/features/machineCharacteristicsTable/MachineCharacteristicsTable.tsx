@@ -1,69 +1,38 @@
 import React from 'react';
-import styled from 'styled-components';
-import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {BASE} from '../../shared/constants/constants';
-import {plainTransition} from '../../app/styles/mixins';
 import {MachineryData} from '../../shared/types/common.types';
+import {S_Table, S_TableTitle, S_Tr} from '../../shared/styled/S_Table';
+import styled from 'styled-components';
 
-type props = Omit<MachineryData, 'image'> & {};
+type props = Pick<MachineryData, 'id' | 'title' | 'characteristics'> & {};
 
-export const MachineCharacteristicsTable = ({title, characteristics, id}: props) => {
+export const MachineCharacteristicsTable = ({title, characteristics, id,}: props) => {
 
 
     return (
-        <S_MachineryCardTable>
-            <S_MachineryCardTitle>
+        <S_MachineCharacteristicsTable>
+            <S_TableTitle>
                 {title}
-            </S_MachineryCardTitle>
+            </S_TableTitle>
 
             <thead>
-            <tr>
+            <S_Tr>
                 <th>Наименование</th>
                 <th>Характеристика</th>
-            </tr>
+            </S_Tr>
             </thead>
 
             <tbody>
             {characteristics.map((characteristic, index) => (
-                <tr key = {`${id}-${index}`}>
+                <S_Tr key = {`${id}-${index}`}>
                     <td>{characteristic.title}</td>
                     <td>{characteristic.value}</td>
-                </tr>))}
+                </S_Tr>))}
             </tbody>
-        </S_MachineryCardTable>
+        </S_MachineCharacteristicsTable>
     );
 }
 
-export const S_MachineryCardTitle = styled.caption <{}>`
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  font-weight: ${({theme}) => theme.fonts.weight.bold};
-  font-size: ${({theme}) => theme.fonts.size.h3};
-  margin: 2rem;
-`;
+export const S_MachineCharacteristicsTable = styled(S_Table)`
+ 
 
-export const S_MachineryCardTable = styled.table<{}>`
-  position: relative;
-  z-index: 10;
-  margin: auto;
-  overflow-x: auto;
-  //width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    border-bottom: 1px solid #ddd;
-    padding-block: ${getResponsiveSize(BASE / 3, BASE / 2, 320)};
-    padding-inline: ${getResponsiveSize(BASE * 0.75, BASE * 2, 320)};
-  }
-
-  tr {
-    ${plainTransition()}
-  }
-
-  tr:hover {
-    background-color: ${({theme}) => theme.colors.white_smoke};
-  }
-`;
-
-
+`

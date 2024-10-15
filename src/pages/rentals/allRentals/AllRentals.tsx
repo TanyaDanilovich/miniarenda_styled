@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {S_Container} from '../../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import React from 'react';
 import {sectionMargin} from '../../../app/styles/mixins';
 import {API} from '../../../app/api/API';
@@ -14,15 +14,15 @@ export const AllRentals = ({}: props) => {
     return (
         <S_AllRentals>
 
-            <S_Container>
+            <S_OuterContainer>
                 <h1>Аренда мини-экскаватора с&nbsp;гидромолотом&nbsp;и&nbsp;ямобуром</h1>
                 {/*<h2>Доставка по Минску и области</h2>*/}
-            </S_Container>
+            </S_OuterContainer>
 
-            <S_Container>
+            <S_OuterContainer>
                 <MappedSubcategoriesCards data = {rentalSubcategories}/>
-            </S_Container>
-            <S_Container>
+            </S_OuterContainer>
+            <S_OuterContainer>
                 <p>{text.p1}</p>
                 <p>{text.p2}</p>
                 <ul>
@@ -31,7 +31,7 @@ export const AllRentals = ({}: props) => {
                     })}
                 </ul>
                 <p>{text.p3}</p>
-            </S_Container>
+            </S_OuterContainer>
 
         </S_AllRentals>);
 };
@@ -42,12 +42,12 @@ export const S_AllRentals = styled.section<{}>`
   display: flex;
   flex-direction: column;
 
-  ${S_Container}:has(h1) {
+  ${S_OuterContainer}:has(h1) {
 
     order: 2;
   }
 
-  ${S_Container}:has(ul) {
+  ${S_OuterContainer}:has(ul) {
     order: 3;
   }
 

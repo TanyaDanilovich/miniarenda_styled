@@ -4,12 +4,22 @@ import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
+import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
 
-export type PropsWithChildren<P> = P & { children?: ReactNode };
+export type PropsWithChildren<P> = P & {
+    children?: ReactNode
+};
 
-export type ImageProps = { src: string, alt: string }
+export type ImageProps = {
+    src: string,
+    alt: string
+}
 
-export type MenuItemType = { title: string, url: string, subMenuItems?: MenuItemType[] }
+export type MenuItemType = {
+    title: string,
+    url: string,
+    subMenuItems?: MenuItemType[]
+}
 
 
 export type Category =
@@ -87,13 +97,16 @@ export type MainData = {
     }
 }
 
-export type RoutesPathData = { url: string, title: string }
+export type RoutesPathData = {
+    url: string,
+    title: string
+}
 
 export type MachineryCharacteristicKeys =
     typeof MACHINERY_CHARACTERISTICS[keyof typeof MACHINERY_CHARACTERISTICS]
 
-export type MachineryCharacteristic = {
-    id: MachineryCharacteristicKeys,
+export type Characteristic<T extends MachineryCharacteristicKeys | MachineryPriceCharacteristicKeys> = {
+    id: T,
     title: string,
     value: string
 }
@@ -101,7 +114,12 @@ export type MachineryCharacteristic = {
 export type MachineryData = {
     id: string,
     title?: string,
-    tableTitle?: string
+    tableTitle?: string |undefined,
     image?: ImageProps,
-    characteristics: MachineryCharacteristic[],
+    characteristics: Characteristic<MachineryCharacteristicKeys>[],
+    priceCharacteristics: Characteristic<MachineryPriceCharacteristicKeys>[],
 }
+
+export type MachineryPriceCharacteristicKeys =
+    typeof MACHINERY_PRICE_CHARACTERISTICS[keyof typeof MACHINERY_PRICE_CHARACTERISTICS]
+

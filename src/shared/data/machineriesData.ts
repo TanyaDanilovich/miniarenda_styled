@@ -2,6 +2,7 @@ import img2 from '../../assets/images/servises/servises_2.jpg'
 import {MachineryData} from '../types/common.types';
 import {v1} from 'uuid';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
+import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
 
 
 export const machineriesData: MachineryData[] = [
@@ -21,6 +22,12 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "150, 300, 400, 600, 1000 мм"},
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
+        priceCharacteristics: [
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER, title: "Минимальный заказ (безнал)", value: "8 часов"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS, title: "Время работы", value: "с 8:00 до 22:00 без выходных"},
+        ],
     },
     {
         id: v1(),
@@ -38,5 +45,11 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "150, 300, 400, 600, 1000 мм"},
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
+        priceCharacteristics: [
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER, title: "Минимальный заказ (безнал)", value: "8 часов"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS, title: "Время работы", value: "с 8:00 до 22:00 без выходных"},
+        ],
     }
 ]

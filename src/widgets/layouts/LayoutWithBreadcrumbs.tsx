@@ -58,7 +58,7 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
 }
 
 
-export const S_LayoutWithBreadcrumbs = styled.div<{}>`
+export const S_LayoutWithBreadcrumbs = styled.main<{}>`
     //${outline()}
   flex-grow: 1;
 `
@@ -149,17 +149,17 @@ export const S_BreadcrumbsContainer = styled.nav<{
   }
 
 
-& li:not(:first-child) {
-  position: relative;
+  & li:not(:first-child) {
+    position: relative;
 
-    //${outline(2)}
-  &::before {
-    content: "/";
-    width: 100%;
-    z-index: -1;
-    padding-inline: 0.5rem;
+      //${outline(2)}
+    &::before {
+      content: "/";
+      width: 100%;
+      z-index: -1;
+      padding-inline: 0.5rem;
+    }
   }
-}
 `
 
 
@@ -176,5 +176,6 @@ export const S_BreadcrumbsLi = styled.li<{
     & a {
       cursor: default;
     }
+
     color: ${({theme}) => theme.colors.primary}`
   }`;

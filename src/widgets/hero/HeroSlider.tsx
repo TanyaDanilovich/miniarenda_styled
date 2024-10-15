@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {S_Image} from '../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {translateAnimation} from '../../app/styles/animation';
 import {BASE} from '../../shared/constants/constants';
 import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
@@ -77,7 +77,7 @@ const S_HeroSlider = styled.article<{}>`
   }
 `
 
-export const S_HeroSliderContent = styled(S_Container)`
+export const S_HeroSliderContent = styled(S_OuterContainer)`
   display: flex;
   flex-direction: column;
   justify-content: center;

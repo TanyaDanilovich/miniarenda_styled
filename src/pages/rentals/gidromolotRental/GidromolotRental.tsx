@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {S_Container} from '../../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import React from 'react';
 import {sectionMargin} from '../../../app/styles/mixins';
 import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
@@ -12,12 +12,12 @@ export const GidromolotRental = ({}: props) => {
     const subcategoriesCardsData = API.getMachinesSubcategoriesData()
     return (
         <S_GidromolotRental>
-            <S_Container>
+            <S_OuterContainer>
                 <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
-            </S_Container>
-            <S_Container>
+            </S_OuterContainer>
+            <S_OuterContainer>
                 Arenda Gidromolota
-            </S_Container>
+            </S_OuterContainer>
         </S_GidromolotRental>);
 };
 

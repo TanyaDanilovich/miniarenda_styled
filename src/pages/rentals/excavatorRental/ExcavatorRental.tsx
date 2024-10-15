@@ -7,37 +7,46 @@ import {
 } from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 import {API} from '../../../app/api/API';
 import {ExcavatorRentalCard} from '../../../widgets/excavatorRentalCard/ExcavatorRentalCard';
-import {S_Container} from '../../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
+import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 
 
 type props = {};
 
 export const ExcavatorRental = ({}: props) => {
-    const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth','drillingDepth','buckets','augers']
+    const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth', 'drillingDepth', 'buckets', 'augers']
     const machineryData = API.getMachineriesData(keys);
+
     const subcategoriesCardsData = API.getMachinesSubcategoriesData()
     return (
         <S_ExcavatorRental>
-            <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
 
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
-
-            {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
-                                                                  id = {machine.id}
-                                                                  tableTitle = {machine.tableTitle}
-                                                                  characteristics = {machine.characteristics}
-                />)
-            )}
-
+            <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
+            <p>Умеем работать в стесненных условиях</p>
+            <S_InnerContainer $padding = {'0 1rem'}>
+                {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
+                                                                      id = {machine.id}
+                                                                      tableTitle = {machine.tableTitle}
+                                                                      characteristics = {machine.characteristics}
+                                                                      priceCharacteristics={machine.priceCharacteristics}
+                                                                      image = {machine.image}
+                    />)
+                )}
+            </S_InnerContainer>
 
         </S_ExcavatorRental>);
 };
 
 
-export const S_ExcavatorRental = styled(S_Container)<{}>`
+export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
   ${sectionMargin};
   //padding: 0;
+  & p {
+    margin-block: 2rem;
+    text-align: center;
+  }
 
   & h1 {
     text-wrap: none;

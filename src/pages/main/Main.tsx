@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import React from 'react';
-import {Services} from '../services/Services';
+import {Services} from '../../widgets/services/Services';
 
-import {Machineries} from '../machineries/Machineries';
+import {Machineries} from '../../widgets/machineries/Machineries';
 import {machineriesData} from '../../shared/data/machineriesData';
-import {Delivery} from '../delivery/Delivery';
-import {Reviews} from '../reviews/Reviews';
-import {Questions} from '../questions/Questions';
-import {Clients} from '../clients/Clients';
-import {OrderModal} from '../orderModal/OrderModal';
-import {Hero} from '../hero/Hero';
+import {Delivery} from '../../widgets/delivery/Delivery';
+import {Reviews} from '../../widgets/reviews/Reviews';
+import {Questions} from '../../widgets/questions/Questions';
+import {Clients} from '../../widgets/clients/Clients';
+import {OrderModal} from '../../widgets/orderModal/OrderModal';
+import {Hero} from '../../widgets/hero/Hero';
 
 
 type props = {};

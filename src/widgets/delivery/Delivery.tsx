@@ -1,7 +1,7 @@
 import React from 'react';
 import {S_Delivery, S_DeliveryPrice} from './S_Delivery';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 
 
 type props = {};
@@ -12,10 +12,10 @@ export const Delivery = ({}: props) => {
     return (
         <S_Delivery>
 
-            <S_Container>
+            <S_OuterContainer>
                 <SectionTitle title = {"Доставка техники на объект"} text = {text}/>
                 <S_DeliveryPrice>{deliveryPrice}</S_DeliveryPrice>
-            </S_Container>
+            </S_OuterContainer>
         </S_Delivery>);
 };
 

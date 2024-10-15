@@ -3,7 +3,7 @@ import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExcavatorRental} from '../pages/rentals/excavatorRental/ExcavatorRental';
 import React from 'react';
-import {Main} from '../widgets/main/Main';
+import {Main} from '../pages/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
 import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
 import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental'

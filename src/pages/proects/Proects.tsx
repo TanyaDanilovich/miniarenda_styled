@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from 'react';
 import {sectionMargin} from '../../app/styles/mixins';
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 
 
 type props = {};
@@ -10,9 +10,9 @@ export const Projects = ({}: props) => {
 
     return (
         <S_Projects>
-            <S_Container>
+            <S_OuterContainer>
                 Projects
-            </S_Container>
+            </S_OuterContainer>
         </S_Projects>);
 };
 

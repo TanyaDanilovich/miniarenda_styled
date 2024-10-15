@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {S_Container} from '../../styled/S_Container';
+import {S_OuterContainer} from '../../styled/S_OuterContainer';
 
 
 type props = { title: string, text?: string };
@@ -16,7 +16,7 @@ export const SectionTitle = ({title, text}: props) => {
         ;
 };
 
-export const StyledSectionTitleContainer = styled(S_Container)<{ $isWithText: boolean }>`
+export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithText: boolean }>`
 
   margin: auto auto 4rem;
   white-space: normal;

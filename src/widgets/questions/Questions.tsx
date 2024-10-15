@@ -1,4 +1,4 @@
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import React, {useId, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {questionsData} from './questionsData';
@@ -22,7 +22,7 @@ export const Questions = ({}: props) => {
     return (
         <S_Questions>
 
-            <S_Container>
+            <S_OuterContainer>
 
                 <SectionTitle title = {"Вопросы и ответы"}/>
 
@@ -37,7 +37,7 @@ export const Questions = ({}: props) => {
                     )}
                 </S_Flex>
 
-            </S_Container>
+            </S_OuterContainer>
         </S_Questions>);
 };
 

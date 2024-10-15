@@ -14,7 +14,7 @@ import {
 } from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
 
 
-type props = MachineryData & {}
+type props = Omit<MachineryData, 'priceCharacteristics'> & {}
 export const MachineryCard = ({id, title, image, characteristics}: props) => {
     const theme = useTheme()
     return (

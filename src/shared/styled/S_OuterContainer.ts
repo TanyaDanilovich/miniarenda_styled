@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {outline} from '../../app/styles/mixins';
 
 type ContainerProps = {};
-export const S_Container = styled.div<ContainerProps>`
+export const S_OuterContainer = styled.div<ContainerProps>`
   margin-inline: auto;
   width: 100%;
   min-height: 100%;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Flex} from '../../shared/styled/S_Flex';
@@ -17,7 +17,7 @@ export const Machineries = ({data}: props) => {
     const machineryText = " Аренда мини-экскаватора - превосходное решение для выполнения любого типа строительных работ в условиях ограниченного пространства. Они способны работать вплотную к зданиям и сооружениям, заборам, стенам, внутри зданий, то есть там, где невозможно применение крупногабаритной землеройной техники. Мини стройтехника обладает высокой производительностью при малых габаритах. В ней удачно сочетаются надёжность, маневренность и проходимость, малое давление на грунт, значительная глубина копания и относительно большая высота разгрузки."
     return (
         <StyledMachineries id = {"machineries"}>
-            <S_Container>
+            <S_OuterContainer>
                 <SectionTitle title = {machineryTitle} text = {machineryText}/>
 
                 <S_Flex $direction = {"column"} $gap = {"40px"}>
@@ -32,7 +32,7 @@ export const Machineries = ({data}: props) => {
 
 
                 </S_Flex>
-            </S_Container>
+            </S_OuterContainer>
         </StyledMachineries>);
 };
 

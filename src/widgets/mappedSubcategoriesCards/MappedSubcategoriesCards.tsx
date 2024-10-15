@@ -1,10 +1,10 @@
-import {S_Container} from '../../shared/styled/S_Container';
 import {SubcategoriesCard} from '../subcategoriesCard/SubcategoriesCard';
 import React from 'react';
 import styled from 'styled-components';
 import {SubcategoryItemData} from '../../shared/types/common.types';
 import {useLocation} from 'react-router-dom';
 import {cleanPathFromLocation} from '../../shared/utils/cleanPathFromLocation';
+import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 
 type props = { data: SubcategoryItemData<'rental'>[] };
 export const MappedSubcategoriesCards = ({data}: props) => {
@@ -23,8 +23,7 @@ export const MappedSubcategoriesCards = ({data}: props) => {
         </S_MappedSubcategoriesCards>);
 };
 
-export const S_MappedSubcategoriesCards = styled(S_Container)`
-  padding: 0;
+export const S_MappedSubcategoriesCards = styled(S_InnerContainer)`
   @media ${({theme}) => theme.media.tablet} {
     width: 100%;
     display: grid;

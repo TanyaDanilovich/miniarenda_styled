@@ -1,6 +1,6 @@
 import styled, {useTheme} from "styled-components";
 
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_HideContent} from '../../shared/styled/S_HideContent';
 import image from '../../assets/images/footer/_DSC3958.jpg'
@@ -137,7 +137,7 @@ export const Footer = ({}: props) => {
     );
 };
 
-const S_FooterContainer = styled(S_Container)<{}>`
+const S_FooterContainer = styled(S_OuterContainer)<{}>`
 
 `
 

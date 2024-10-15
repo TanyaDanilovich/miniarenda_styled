@@ -4,7 +4,7 @@ import {BurgerButton} from '../../BurgerButton';
 import React, {useEffect, useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {MobileMenuItem} from './MobileMenuItem';
-import {StyledMain} from '../../../../widgets/main/Main';
+import {StyledMain} from '../../../../pages/main/Main';
 
 type props = {};
 export const MobileNavigation = ({}: props) => {

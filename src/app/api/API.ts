@@ -96,7 +96,7 @@ export const API = {
         return machineriesData.map(machine => {
             return ({
                 ...machine,
-                characteristics: machine.characteristics
+                characteristics: machine.characteristics && machine.characteristics
                     .filter(item => keys.includes(item.id))
             })
         })

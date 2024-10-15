@@ -3,7 +3,7 @@ import {S_SectionTitle, SectionTitle} from '../../shared/ui/sectionTitle/Section
 import {GoogleLink} from './googleLink/GoogleLink';
 import {v4 as uuidv4} from 'uuid';
 import {ReviewSwiper} from './reviewSwiper/ReviewSwiper';
-import {S_Container} from '../../shared/styled/S_Container';
+import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled from "styled-components";
 import {sectionMargin} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
@@ -18,11 +18,11 @@ export const Reviews = ({}: props) => {
 
     return (
         <S_Reviews>
-            <S_Container>
+            <S_OuterContainer>
                 <SectionTitle title={"Отзывы наших клиентов"}/>
                 <GoogleLink/>
                 <ReviewSwiper id = {swiperId}/>
-            </S_Container>
+            </S_OuterContainer>
         </S_Reviews>);
 };
 
