@@ -8,7 +8,7 @@ import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
-import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
+import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 
 

@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from "../../shared/constants/BREAKPOINTS";
+import {BREAKPOINTS} from "../../shared/constants/BREAKPOINTS";
 import {BASE} from "../../shared/constants/constants";
 import {getResponsiveSize} from "../../shared/utils/getResponsiveSize";
 import {MyDefaultTheme} from 'styled-components';
@@ -29,6 +29,9 @@ export const theme: MyDefaultTheme = {
             h5: getResponsiveSize(20, 25),
             p: getResponsiveSize(16.875, 20),
         },
+        color:{
+
+        },
     },
 
     breakpoints: BREAKPOINTS,
@@ -36,6 +39,7 @@ export const theme: MyDefaultTheme = {
     media: {
         smallMobile: `screen and (min-width:${BREAKPOINTS.smallMobile})`,
         mobile: `screen and (min-width:${BREAKPOINTS.mobile})`,
+        largeMobile: `screen and (min-width:${BREAKPOINTS.largeMobile})`,
         tablet: `screen and (min-width:${BREAKPOINTS.tablet})`,
         computer: `screen and (min-width:${BREAKPOINTS.computer})`,
         desktop: `screen and (min-width:${BREAKPOINTS.desktop})`,
@@ -57,8 +61,10 @@ export const theme: MyDefaultTheme = {
         footer: 100,
         mainContent: 800,
     },
-    shadow: {full: "0 0 10px 5px rgba(0, 0, 0, 0.1)",
-    right:"5px 0px 15px 0px rgba(0, 0, 0, 0.08)"},
+    shadow: {
+        full: "0 0 10px 5px rgba(0, 0, 0, 0.1)",
+        right: "5px 0px 15px 0px rgba(0, 0, 0, 0.08)"
+    },
     colors: {
 
         primary: "#fd5d14",

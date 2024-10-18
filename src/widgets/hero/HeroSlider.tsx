@@ -5,7 +5,7 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {translateAnimation} from '../../app/styles/animation';
 import {BASE} from '../../shared/constants/constants';
-import {ContactUsButton} from '../../shared/ui/linkAsButton/ContactUsButton';
+import {ContactUsButton} from '../../shared/ui/buttons/ContactUsButton';
 import {PhoneLink, S_PhoneLink} from '../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';

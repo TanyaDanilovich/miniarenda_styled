@@ -8,6 +8,10 @@ import {S_Image} from '../../shared/styled/S_Image';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 import {MachinePriceTable} from '../../features/machinePriceTable/MachinePriceTable';
 import {S_OrderModal} from '../orderModal/S_OrderModal';
+import {S_LinkAsButton} from '../../shared/ui/buttons/S_LinkAsButton';
+import {OrderedButton} from '../../shared/ui/buttons/OrderedButton';
+import {ReadMoreButton} from '../../shared/ui/buttons/ReadMoreButton';
+import {S_ReadMoreButton} from '../../shared/ui/buttons/S_ReadMoreButton';
 
 
 type props = MachineryData & {}
@@ -21,34 +25,35 @@ export const ExcavatorRentalCard = ({
     const tableID = useId();
 
     return (
-        <S_ExcavatorRentalCard as = {'article'}>
+        <S_ExcavatorRentalCard as = {'article'} $wrap = {"wrap"} $justify = {"center"}>
 
 
             {/*<h4>{tableTitle}</h4>*/}
 
-            <S_Flex $wrap = {"wrap"} $justify = {"center"}>
 
-                {image && <S_ImageContainer $width = {"100%"} style = {{}}>
-                    <S_Image src = {image.src} alt = {image.alt}/>
-                </S_ImageContainer>}
-                
+            {image && <S_ImageContainer $width = {"100%"} style = {{}}>
+                <S_Image src = {image.src} alt = {image.alt}/>
+            </S_ImageContainer>}
+            <OrderedButton/>
 
-                {characteristics && <MachineCharacteristicsTable id = {id}
-                                                                 title = {tableTitle}
-                                                                 characteristics = {characteristics}
-                />}
-                {priceCharacteristics && <MachinePriceTable id = {`${tableID}-${id}`}
-                    // title = {'Цена услуг мини-экскаватора'}
-                                                            priceCharacteristics = {priceCharacteristics}
-                />}
+            {characteristics && <MachineCharacteristicsTable id = {id}
+                                                             title = {tableTitle}
+                                                             characteristics = {characteristics}
+            />}
 
-            </S_Flex>
+
+            {/*{priceCharacteristics && <MachinePriceTable id = {`${tableID}-${id}`}*/}
+            {/*    // title = {'Цена услуг мини-экскаватора'}*/}
+            {/*                                            priceCharacteristics = {priceCharacteristics}*/}
+            {/*/>}*/}
+            <ReadMoreButton/>
+
 
         </S_ExcavatorRentalCard>
     );
 };
 
-export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
+export const S_ExcavatorRentalCard = styled(S_Flex) <{}>`
 
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 
@@ -64,5 +69,8 @@ export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
 
   }
 
+  ${S_ReadMoreButton} {
+    margin: 1.5rem;
+  }
 
 `;

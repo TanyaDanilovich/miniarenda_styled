@@ -10,6 +10,8 @@ import {ExcavatorRentalCard} from '../../../widgets/excavatorRentalCard/Excavato
 import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
+import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
+import {BASE} from '../../../shared/constants/constants';
 
 
 type props = {};
@@ -24,13 +26,24 @@ export const ExcavatorRental = ({}: props) => {
 
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
             <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
-            <p>Умеем работать в стесненных условиях</p>
-            <S_InnerContainer $padding = {'0 1rem'}>
+
+            {/*<p>Умеем работать в стесненных условиях</p>*/}
+
+
+            <S_InnerContainer>
+                <p>Услуги мини-экскаватора</p>
+                <p>70,00 руб/час</p>
+                <p>Минимальный заказ - 4 машино часа</p>
+                <p></p>
+                <p></p>
+            </S_InnerContainer>
+
+            <S_InnerContainer>
                 {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
                                                                       id = {machine.id}
                                                                       tableTitle = {machine.tableTitle}
                                                                       characteristics = {machine.characteristics}
-                                                                      priceCharacteristics={machine.priceCharacteristics}
+                                                                      priceCharacteristics = {machine.priceCharacteristics}
                                                                       image = {machine.image}
                     />)
                 )}
@@ -54,9 +67,6 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
 
     //${outlinedNestedEverything}
   ${S_MappedSubcategoriesCards} {
-
-      //${outline()}
-
   }
 
   h1, h2 {
@@ -68,7 +78,9 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
     margin-block: 2rem;
   }
 
-
+  ${S_InnerContainer} + ${S_InnerContainer} {
+    padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
+  }
 `
 
 
@@ -79,7 +91,5 @@ export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
   }
 `
 export const S_ExcavatorRentalCardWrapper = styled.div<{}>`
-  @media ${({theme}) => theme.media.mobile} {
 
-  }
 `

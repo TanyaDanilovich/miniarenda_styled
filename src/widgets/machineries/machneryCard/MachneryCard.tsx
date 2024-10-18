@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {S_Image} from '../../../shared/styled/S_Image';
-import {ReadMoreButton} from '../../../shared/ui/linkAsButton/ReadMoreButton';
+import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {MachineryData} from '../../../shared/types/common.types';
 import {
     MachineCharacteristicsTable
