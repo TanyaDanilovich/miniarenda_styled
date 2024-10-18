@@ -12,6 +12,7 @@ import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
+import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
 
 
 type props = {};
@@ -29,14 +30,8 @@ export const ExcavatorRental = ({}: props) => {
 
             {/*<p>Умеем работать в стесненных условиях</p>*/}
 
+            <CardPrice/>
 
-            <S_InnerContainer>
-                <p>Услуги мини-экскаватора</p>
-                <p>70,00 руб/час</p>
-                <p>Минимальный заказ - 4 машино часа</p>
-                <p></p>
-                <p></p>
-            </S_InnerContainer>
 
             <S_InnerContainer>
                 {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}

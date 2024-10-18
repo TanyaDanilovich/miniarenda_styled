@@ -34,8 +34,11 @@ export const MachineCharacteristicsTable = ({title, characteristics, id,}: props
 }
 
 export const S_MachineCharacteristicsTable = styled(S_Table)`
- 
-    font-size: ${getResponsiveSize(14, 16, 320, 768)};
-  
+
+  font-size: ${getResponsiveSize(14, 16, 320, 768)};
+
+  ${S_TableTitle} {
+    font-size: ${getResponsiveSize(20, 32, 320, 768)};
+  }
 
 `
