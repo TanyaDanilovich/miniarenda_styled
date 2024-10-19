@@ -51,10 +51,7 @@ export const ExcavatorRental = ({}: props) => {
 export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
   ${sectionMargin};
   //padding: 0;
-  & p {
-    margin-block: 2rem;
-    text-align: center;
-  }
+
 
   & h1 {
     text-wrap: none;

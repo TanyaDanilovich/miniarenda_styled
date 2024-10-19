@@ -34,6 +34,7 @@ export const ExcavatorRentalCard = ({
             {image && <S_ImageContainer $width = {"100%"} style = {{}}>
                 <S_Image src = {image.src} alt = {image.alt}/>
             </S_ImageContainer>}
+
             <OrderedButton/>
 
             {characteristics && <MachineCharacteristicsTable id = {id}

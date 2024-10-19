@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
-import {faCalendarCheck, faCheckDouble} from '@fortawesome/free-solid-svg-icons';
+import {faCheckDouble} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
@@ -11,7 +11,7 @@ export const CardPrice = ({}: props) => {
 
     return (
         <S_CardPrice as = {'article'}>
-            <h2>Цена аренды мини-экскаватора</h2>
+            <h3>Цена аренды мини-экскаватора</h3>
             <p>от <span>80,00</span> руб/час</p>
             <p>
                 <FontAwesomeIcon icon = {faCheckDouble} size = {'1x'} color = {theme.colors.primary}/>
@@ -28,9 +28,9 @@ export const S_CardPrice = styled(S_InnerContainer)<{}>`
   margin-bottom: 3rem;
   position: relative;
 
-  h2 {
+  h3 {
     font-size: ${({theme}) => theme.fonts.size.h4};
-    font-weight: normal;
+    font-weight: bold;
     white-space: pre-line;
     background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.white};
@@ -45,6 +45,7 @@ export const S_CardPrice = styled(S_InnerContainer)<{}>`
     margin: 0;
     padding-inline: 0.5rem;
     padding-block: 0.75rem;
+    text-align: center;
   }
 
   p:not(:last-child) {
