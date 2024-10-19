@@ -13,6 +13,7 @@ import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
+import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 
 
 type props = {};
@@ -44,6 +45,14 @@ export const ExcavatorRental = ({}: props) => {
                 )}
             </S_InnerContainer>
 
+            <S_InnerContainer>
+                <p>
+                    Аренда мини-экскаватора – это востребованная услуга для работы на малых площадях и в стесненных
+                    условиях. Компактные многозадачные машины подходят для небольших строительных площадок. Это
+                    действенный способ ускорить выполнение работ и сэкономить деньги.
+                </p>
+            </S_InnerContainer>
+
         </S_ExcavatorRental>);
 };
 
@@ -70,9 +79,11 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
     margin-block: 2rem;
   }
 
-  ${S_InnerContainer} + ${S_InnerContainer} {
-    padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
-  }
+  // ${S_InnerContainer}:has(img) {
+  //     //${outlinedNestedEverything}
+  //   padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
+  //
+  // }
 `
 
 

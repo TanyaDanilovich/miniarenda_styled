@@ -3,7 +3,8 @@ import {plainTransition} from '../../../app/styles/mixins';
 import {S_LinkAsButton} from './S_LinkAsButton';
 
 export const S_ReadMoreButton = styled(S_LinkAsButton)<{}>`
-
+  width: max-content;
+align-self:center;
   &:after {
     content: " ";
     position: absolute;

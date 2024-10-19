@@ -35,7 +35,7 @@ export const S_CardPrice = styled(S_InnerContainer)<{}>`
     background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.white};
     text-align: center;
-    text-wrap: none;
+    text-wrap: pretty;
     margin: 0;
     padding-block: 0.5rem;
     border: 1px solid ${({theme}) => theme.colors.primary};

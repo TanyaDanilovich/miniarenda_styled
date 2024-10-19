@@ -9,7 +9,7 @@ export const Layout = () => {
             <ScrollRestoration getKey = {(location, matches) => {
                 // default behavior
                 //console.log(location, matches)
-                return location.key;
+                return location.pathname;
             }}/>
             <Header/>
             <Outlet/>

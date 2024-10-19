@@ -21,12 +21,12 @@ export const OrderedButton = ({url = "#"}: props) => {
         </S_OrderedButton>);
 };
 
-const S_OrderedButton = styled(S_LinkAsButton)<{}>`
+export const S_OrderedButton = styled(S_LinkAsButton)<{}>`
   background-color: ${props => props.theme.colors.white};
   color: ${({theme}) => theme.colors.darkGray};
   border: 3px solid ${props => props.theme.colors.primary};
   padding: 1.5rem;
-  width: 100%;
+  width: calc(100% - 2rem);
   margin-inline: 1rem;
   margin-top: 1rem;
   font-weight: ${props => props.theme.fonts.weight.semiBold};
@@ -61,7 +61,7 @@ const S_OrderedButton = styled(S_LinkAsButton)<{}>`
   // box-shadow: 0 0 0 0.5rem transparent;
   // @keyframes pulsate {
   //   0% {
-  //     box-shadow: 0 0 0 0 ${({theme}) => theme.colors.primary};
+    //     box-shadow: 0 0 0 0 ${({theme}) => theme.colors.primary};
   //   }
   // }
 `
