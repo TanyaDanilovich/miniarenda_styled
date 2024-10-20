@@ -9,7 +9,7 @@ import {API} from '../../../app/api/API';
 type props = {};
 
 export const YamoburRental = ({}: props) => {
-    const subcategoriesCardsData = API.getRentalSubcategoriesData()
+    const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
     return (
         <S_YamoburRental>
             <S_OuterContainer>

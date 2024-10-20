@@ -79,7 +79,6 @@ export type SubcategoryItemData<T extends Category> = {
     image?: ImageProps,
     position: number,
     url: string,
-    shortUrl?: string,
     icon?: string;
 }
 

@@ -4,6 +4,7 @@ import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link, useNavigate} from 'react-router-dom';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {outline} from '../../app/styles/mixins';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 
 type props = {};
@@ -34,12 +35,13 @@ export const S_ErrorPage = styled.section<{}>`
   text-align: center;
 
   a, button {
+    --size:${getResponsiveSize(16,32)};
     display: inline-block;
     background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.white};
-    padding: 2rem;
-    font-size: 2rem;
-    margin-top: 2rem;
+    padding: var(--size);
+    font-size: var(--size);
+    margin: var(--size);
   }
 
   ${S_Flex} {

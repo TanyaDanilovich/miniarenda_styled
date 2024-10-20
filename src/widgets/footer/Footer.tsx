@@ -157,11 +157,20 @@ export const S_Footer = styled.footer<{}>`
     display: block;
   }
 
+  ${S_ImageContainer} {
+    width: 50%;
+  }
+
   @media ${({theme}) => theme.media.mobile} {
     & > ${S_FooterContainer} > ${S_Flex} {
       flex-direction: row;
       flex-wrap: wrap;
 
+    }
+  }
+  @media ${({theme}) => theme.media.computer} {
+    ${S_ImageContainer} {
+      //width: 100%;
     }
   }
 `;

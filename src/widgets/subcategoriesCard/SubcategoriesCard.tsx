@@ -4,7 +4,6 @@ import React from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {Category, SubcategoryItemData} from '../../shared/types/common.types';
 import {S_Box} from '../../shared/styled/S_Box';
-import {useLocation} from 'react-router-dom';
 
 export type ServiceCardData = {}
 

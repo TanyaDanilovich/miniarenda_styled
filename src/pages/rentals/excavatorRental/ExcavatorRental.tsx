@@ -8,7 +8,7 @@ import {
 import {API} from '../../../app/api/API';
 import {ExcavatorRentalCard} from '../../../widgets/excavatorRentalCard/ExcavatorRentalCard';
 import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
-import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
+import {MachineryCharacteristicKeys, SubcategoryItemData} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
@@ -21,11 +21,13 @@ export const ExcavatorRental = ({}: props) => {
     const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth', 'drillingDepth', 'buckets', 'augers']
     const machineryData = API.getMachineriesData(keys);
 
-    const subcategoriesCardsData = API.getRentalSubcategoriesData()
+    const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
+    console.log(subcategoriesCardsData)
+    const data:SubcategoryItemData<'rental'>[]=[...subcategoriesCardsData]
     return (
         <S_ExcavatorRental>
 
-            <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
+            <MappedSubcategoriesCards data = {data}/>
             <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
 
             {/*<p>Умеем работать в стесненных условиях</p>*/}
