@@ -8,7 +8,7 @@ import {
 import {API} from '../../../app/api/API';
 import {ExcavatorRentalCard} from '../../../widgets/excavatorRentalCard/ExcavatorRentalCard';
 import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
-import {MachineryCharacteristicKeys, SubcategoryItemData} from '../../../shared/types/common.types';
+import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
@@ -22,12 +22,12 @@ export const ExcavatorRental = ({}: props) => {
     const machineryData = API.getMachineriesData(keys);
 
     const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
-    console.log(subcategoriesCardsData)
-    const data:SubcategoryItemData<'rental'>[]=[...subcategoriesCardsData]
+    //console.log(subcategoriesCardsData)
+
     return (
         <S_ExcavatorRental>
 
-            <MappedSubcategoriesCards data = {data}/>
+            <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
             <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
 
             {/*<p>Умеем работать в стесненных условиях</p>*/}
@@ -85,15 +85,15 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
     //   padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
   //
   // }
- 
+
     //background-color: ${({theme}) => theme.colors.bg_primary};
-  
+
 `
 
 
 export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
-  
+
 `
 export const S_ExcavatorRentalCardWrapper = styled.div<{}>`
-  
+
 `
