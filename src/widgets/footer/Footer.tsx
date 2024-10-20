@@ -6,7 +6,7 @@ import {S_HideContent} from '../../shared/styled/S_HideContent';
 import image from '../../assets/images/footer/_DSC3958.jpg'
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {faMobileScreen, faPhone, faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
+import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
@@ -19,7 +19,7 @@ import {API} from '../../app/api/API';
 type props = {};
 export const Footer = ({}: props) => {
     const theme = useTheme();
-    const fullServicesData = API.getFullSubcategoriesData();
+    const servicesData = API.getServicesSubcategoriesData();
     //console.log(fullServicesData)
     return (
 
@@ -90,7 +90,7 @@ export const Footer = ({}: props) => {
                         <h5><span>НАШИ </span>УСЛУГИ</h5>
                         <ul>
                             {
-                                fullServicesData.map((service) => {
+                                servicesData.map((service) => {
                                     return (
                                         <li key = {service.id}>
                                             <Link to = {service.url}>

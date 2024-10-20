@@ -79,6 +79,7 @@ export type SubcategoryItemData<T extends Category> = {
     image?: ImageProps,
     position: number,
     url: string,
+    shortUrl?: string,
     icon?: string;
 }
 
@@ -114,7 +115,7 @@ export type Characteristic<T extends MachineryCharacteristicKeys | MachineryPric
 export type MachineryData = {
     id: string,
     title?: string,
-    tableTitle?: string |undefined,
+    tableTitle?: string | undefined,
     image?: ImageProps,
     characteristics: Characteristic<MachineryCharacteristicKeys>[],
     priceCharacteristics: Characteristic<MachineryPriceCharacteristicKeys>[],

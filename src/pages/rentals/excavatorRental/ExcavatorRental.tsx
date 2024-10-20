@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from 'react';
-import {outline, outlinedNestedEverything, sectionMargin} from '../../../app/styles/mixins';
+import {outlinedNestedEverything, sectionMargin} from '../../../app/styles/mixins';
 import {
     MappedSubcategoriesCards,
     S_MappedSubcategoriesCards
@@ -13,7 +13,6 @@ import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
-import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 
 
 type props = {};
@@ -22,7 +21,7 @@ export const ExcavatorRental = ({}: props) => {
     const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth', 'drillingDepth', 'buckets', 'augers']
     const machineryData = API.getMachineriesData(keys);
 
-    const subcategoriesCardsData = API.getMachinesSubcategoriesData()
+    const subcategoriesCardsData = API.getRentalSubcategoriesData()
     return (
         <S_ExcavatorRental>
 
@@ -79,20 +78,20 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
     margin-block: 2rem;
   }
 
-  // ${S_InnerContainer}:has(img) {
-  //     //${outlinedNestedEverything}
-  //   padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
+    // ${S_InnerContainer}:has(img) {
+    //     //${outlinedNestedEverything}
+    //   padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
   //
   // }
+ 
+    //background-color: ${({theme}) => theme.colors.bg_primary};
+  
 `
 
 
 export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
-  @media ${({theme}) => theme.media.mobile} {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
+  
 `
 export const S_ExcavatorRentalCardWrapper = styled.div<{}>`
-
+  
 `

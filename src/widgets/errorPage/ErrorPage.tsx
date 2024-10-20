@@ -1,34 +1,51 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {useTheme} from 'styled-components';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {S_Flex} from '../../shared/styled/S_Flex';
+import {outline} from '../../app/styles/mixins';
 
 
 type props = {};
 export const ErrorPage = ({}: props) => {
-
+    const navigate = useNavigate()
 
     return (
         <S_ErrorPage>
-            <div>
-                <h1>Something went wrong 😢</h1>
+            <h1>Something went wrong 😢</h1>
+
+            <S_Flex $direction = {"column"}>
 
                 <Link to = {ROUTES_PATHS.home.url}>Перейти на главную</Link>
+                <button onClick={()=>navigate(-1)}>Вернуться на предыдущую</button>
+                {/*<Link to = {navigate(-1)}>Вернуться на предыдущую</Link>*/}
 
-            </div>
+            </S_Flex>
 
 
         </S_ErrorPage>);
 };
 
 export const S_ErrorPage = styled.section<{}>`
-  aspect-ratio: 4/3;
   width: 100%;
+  flex-grow: 1;
+  align-content: center;
+  margin: auto;
+  text-align: center;
 
+  a, button {
+    display: inline-block;
+    background-color: ${({theme}) => theme.colors.primary};
+    color: ${({theme}) => theme.colors.white};
+    padding: 2rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
 
-  @media ${({theme}) => theme.media.computer} {
-    height: calc(100svh - 110px);
-    aspect-ratio: initial;
+  ${S_Flex} {
+      //${outline()}
+    width: max-content;
+    margin: auto;
   }
 
 `

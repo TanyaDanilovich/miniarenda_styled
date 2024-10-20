@@ -9,7 +9,7 @@ import {API} from '../../../app/api/API';
 type props = {};
 
 export const GidromolotRental = ({}: props) => {
-    const subcategoriesCardsData = API.getMachinesSubcategoriesData()
+    const subcategoriesCardsData = API.getRentalSubcategoriesData()
     return (
         <S_GidromolotRental>
             <S_OuterContainer>

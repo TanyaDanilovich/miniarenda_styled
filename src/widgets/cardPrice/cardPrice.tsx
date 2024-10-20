@@ -3,6 +3,7 @@ import styled, {useTheme} from 'styled-components';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 import {faCheckDouble} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 
 
 type props = {};
@@ -27,6 +28,7 @@ export const S_CardPrice = styled(S_InnerContainer)<{}>`
   border: 1px solid ${({theme}) => theme.colors.gray};
   margin-bottom: 3rem;
   position: relative;
+  max-width: ${BREAKPOINTS.tablet};
 
   h3 {
     font-size: ${({theme}) => theme.fonts.size.h4};

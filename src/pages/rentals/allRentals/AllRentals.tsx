@@ -9,7 +9,7 @@ import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCard
 type props = {};
 
 export const AllRentals = ({}: props) => {
-    const rentalSubcategories = API.getAllRentalSubcategoriesData()
+    const rentalSubcategories = API.getRentalSubcategoriesData()
     const text: typeof allRentalText = allRentalText;
     return (
         <S_AllRentals>
