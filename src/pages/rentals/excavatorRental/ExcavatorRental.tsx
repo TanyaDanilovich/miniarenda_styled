@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import React from 'react';
-import {outlinedNestedEverything, sectionMargin} from '../../../app/styles/mixins';
+import React, {useEffect, useRef, useState} from 'react';
+import {outline, outlinedNestedEverything, sectionMargin} from '../../../app/styles/mixins';
 import {
     MappedSubcategoriesCards,
     S_MappedSubcategoriesCards
@@ -21,9 +21,15 @@ export const ExcavatorRental = ({}: props) => {
     const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth', 'drillingDepth', 'buckets', 'augers']
     const machineryData = API.getMachineriesData(keys);
 
+    const ref = useRef<HTMLDivElement>(null);
+    const [refOffset, setRefOffset] = useState<number>(0);
     const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
     //console.log(subcategoriesCardsData)
-
+    useEffect(() => {
+        if (ref.current) {
+            setRefOffset(((ref.current.scrollWidth - ref.current.clientWidth) / 2))
+        }
+    }, []);
     return (
         <S_ExcavatorRental>
 
@@ -35,7 +41,7 @@ export const ExcavatorRental = ({}: props) => {
             <CardPrice/>
 
 
-            <S_InnerContainer>
+            <S_ExcavatorRentalCardWrapper ref = {ref} $offset = {refOffset}>
                 {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
                                                                       id = {machine.id}
                                                                       tableTitle = {machine.tableTitle}
@@ -44,7 +50,7 @@ export const ExcavatorRental = ({}: props) => {
                                                                       image = {machine.image}
                     />)
                 )}
-            </S_InnerContainer>
+            </S_ExcavatorRentalCardWrapper>
 
             <S_InnerContainer>
                 <p>
@@ -80,13 +86,14 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
     margin-block: 2rem;
   }
 
-    // ${S_InnerContainer}:has(img) {
-    //     //${outlinedNestedEverything}
-    //   padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
-  //
-  // }
+  ${S_InnerContainer}:first-child {
+      //${outlinedNestedEverything}
+      //padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
+      //background-color: ${({theme}) => theme.colors.bg_primary};
 
-    //background-color: ${({theme}) => theme.colors.bg_primary};
+  }
+
+
 
 `
 
@@ -94,6 +101,23 @@ export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
 export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
 
 `
-export const S_ExcavatorRentalCardWrapper = styled.div<{}>`
+export const S_ExcavatorRentalCardWrapper = styled.div<{ $offset: number }>`
+    //${outline(10)};
+  position: relative;
+  padding-block: 3rem;
+  //overflow-x: hidden;
+
+  &:after {
+    //overflow-x: visible;
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: ${({theme}) => theme.colors.bg_primary};
+    top: 0;
+    left: ${({$offset}) => `-${$offset}px`};
+    right: 0;
+    z-index: -100;
+  }
 
 `

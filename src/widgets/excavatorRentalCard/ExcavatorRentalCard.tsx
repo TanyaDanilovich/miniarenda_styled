@@ -67,9 +67,6 @@ export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
     margin-bottom: 4rem;
   }
 
-  &:last-child {
-    margin-bottom: 3rem;
-  }
 
   ${S_ReadMoreButton} {
     margin: 1.5rem;
@@ -91,6 +88,7 @@ export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
 
     ${S_OrderedButton} {
       grid-area: orderedButton;
+      margin: 1rem;
     }
 
     ${S_MachineCharacteristicsTable} {
@@ -102,13 +100,12 @@ export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
     }
 
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
     ". table"
     "image table"
     "image table"
     ". table"
-    ". orderedButton"
     "readMoreButton orderedButton";
     gap: 1rem;
 

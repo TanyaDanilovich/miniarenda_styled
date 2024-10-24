@@ -31,6 +31,7 @@ export const S_OrderedButton = styled(S_LinkAsButton)<{}>`
   margin-top: 1rem;
   font-weight: ${props => props.theme.fonts.weight.semiBold};
   letter-spacing: 1px;
+  align-content: center;
 
   & > span {
     margin-left: 1rem;
@@ -40,7 +41,7 @@ export const S_OrderedButton = styled(S_LinkAsButton)<{}>`
   &:hover {
     background-color: ${props => props.theme.colors.primary};
     color: ${({theme}) => theme.colors.white};
-    border: 2px solid transparent;
+    border: 3px solid transparent;
 
     svg path {
       ${plainTransition()}
