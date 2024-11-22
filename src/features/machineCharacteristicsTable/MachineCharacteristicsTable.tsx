@@ -6,8 +6,7 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 type props = Pick<MachineryData, 'id' | 'title' | 'characteristics'> & {};
 
-export const MachineCharacteristicsTable = ({title, characteristics, id,}: props) => {
-
+export const MachineCharacteristicsTable = ({title, characteristics, id, }: props) => {
 
     return (
         <S_MachineCharacteristicsTable>

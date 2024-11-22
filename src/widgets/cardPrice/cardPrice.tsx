@@ -4,23 +4,38 @@ import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 import {faCheckDouble} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+import {MeasurementUnits} from '../../shared/types/common.types';
 
 
-type props = {};
-export const CardPrice = ({}: props) => {
+type props = {
+    title?: string,
+    price?: number,
+    measurementUnits?: MeasurementUnits,
+    minOrderCash?: string,
+    minOrderNonCash?: string,
+};
+export const CardPrice = ({
+                              title = "Цена аренды мини-экскаватора",
+                              price = 80,
+                              measurementUnits='час',
+                              minOrderCash = "4\u00A0машино\u00A0часа",
+                              minOrderNonCash = "8\u00A0машино\u00A0часов"
+                          }: props) => {
     const theme = useTheme()
+    const formattedPrice = price.toFixed(2);
 
     return (
         <S_CardPrice as = {'article'}>
-            <h3>Цена аренды мини-экскаватора</h3>
-            <p>от <span>80,00</span> руб/час</p>
+            <h3>{title}</h3>
+            <p>от <span>{formattedPrice}</span>{` руб/${measurementUnits}`}</p>
             <p>
                 <FontAwesomeIcon icon = {faCheckDouble} size = {'1x'} color = {theme.colors.primary}/>
-                Минимальный заказ - 4&nbsp;машино&nbsp;часа
+                {`Минимальный заказ - ${minOrderCash}`}
             </p>
             <p>
                 <FontAwesomeIcon icon = {faCheckDouble} size = {'1x'} color = {theme.colors.primary}/>
-                Минимальный заказ (безнал) - 8&nbsp;машино&nbsp;часов</p>
+                {`Минимальный заказ (безнал) - ${minOrderNonCash}`}
+            </p>
         </S_CardPrice>)
 };
 

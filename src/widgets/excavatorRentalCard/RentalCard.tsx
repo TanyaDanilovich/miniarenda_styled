@@ -16,7 +16,7 @@ import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 
 
 type props = MachineryData & {}
-export const ExcavatorRentalCard = ({
+export const RentalCard = ({
                                         id, characteristics,
                                         priceCharacteristics,
                                         tableTitle,
@@ -25,17 +25,12 @@ export const ExcavatorRentalCard = ({
                                     }: props) => {
 
     return (
-        <S_ExcavatorRentalCard as = {'article'}>
-
-
-            {/*<h4>{tableTitle}</h4>*/}
-
+        <S_RentalCard as = {'article'}>
 
             {image && <S_ImageContainer $width = {"100%"} style = {{}} $background = {"transparent"}>
                 <S_Image src = {image.src} alt = {image.alt}/>
             </S_ImageContainer>}
 
-            {/*<S_Flex $direction = {'column'} $justify = {"center"}>*/}
             <OrderedButton/>
 
             {characteristics && <MachineCharacteristicsTable id = {id}
@@ -43,20 +38,13 @@ export const ExcavatorRentalCard = ({
                                                              characteristics = {characteristics}
             />}
 
-
-            {/*{priceCharacteristics && <MachinePriceTable id = {`${tableID}-${id}`}*/}
-            {/*    // title = {'Цена услуг мини-экскаватора'}*/}
-            {/*                                            priceCharacteristics = {priceCharacteristics}*/}
-            {/*/>}*/}
-
             <ReadMoreButton/>
-            {/*</S_Flex>*/}
 
-        </S_ExcavatorRentalCard>
+        </S_RentalCard>
     );
 };
 
-export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
+export const S_RentalCard = styled(S_InnerContainer) <{}>`
     //${outlinedNestedEverything};
   background-color: ${({theme}) => theme.colors.white};
   width: 100%;
@@ -80,6 +68,7 @@ export const S_ExcavatorRentalCard = styled(S_InnerContainer) <{}>`
 
 
   @media ${({theme}) => theme.media.tablet} {
+    padding: 2rem;
     display: grid;
     ${S_ImageContainer} {
       grid-area: image;

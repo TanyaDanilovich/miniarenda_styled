@@ -6,13 +6,14 @@ import {
     S_MappedSubcategoriesCards
 } from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 import {API} from '../../../app/api/API';
-import {ExcavatorRentalCard} from '../../../widgets/excavatorRentalCard/ExcavatorRentalCard';
+import {RentalCard} from '../../../widgets/excavatorRentalCard/RentalCard';
 import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
+import {S_RentalWrapper} from '../styled/S_RentalWrapper';
 
 
 type props = {};
@@ -31,26 +32,27 @@ export const ExcavatorRental = ({}: props) => {
         }
     }, []);
     return (
-        <S_ExcavatorRental>
+        <S_RentalWrapper>
 
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
+
             <h1>Аренда мини-экскаватора в Минске и Минской области</h1>
 
             {/*<p>Умеем работать в стесненных условиях</p>*/}
 
             <CardPrice/>
 
+            <S_RentalCardWrapper ref = {ref} $offset = {refOffset}>
 
-            <S_ExcavatorRentalCardWrapper ref = {ref} $offset = {refOffset}>
-                {machineryData.map((machine) => (<ExcavatorRentalCard key = {machine.id}
-                                                                      id = {machine.id}
-                                                                      tableTitle = {machine.tableTitle}
-                                                                      characteristics = {machine.characteristics}
-                                                                      priceCharacteristics = {machine.priceCharacteristics}
-                                                                      image = {machine.image}
+                {machineryData.map((machine) => (<RentalCard key = {machine.id}
+                                                             id = {machine.id}
+                                                             tableTitle = {machine.tableTitle}
+                                                             characteristics = {machine.characteristics}
+                                                             priceCharacteristics = {machine.priceCharacteristics}
+                                                             image = {machine.image}
                     />)
                 )}
-            </S_ExcavatorRentalCardWrapper>
+            </S_RentalCardWrapper>
 
             <S_InnerContainer>
                 <p>
@@ -60,48 +62,14 @@ export const ExcavatorRental = ({}: props) => {
                 </p>
             </S_InnerContainer>
 
-        </S_ExcavatorRental>);
+        </S_RentalWrapper>);
 };
-
-
-export const S_ExcavatorRental = styled(S_OuterContainer)<{}>`
-  ${sectionMargin};
-  //padding: 0;
-
-
-  & h1 {
-    text-wrap: none;
-  }
-
-    //${outlinedNestedEverything}
-  ${S_MappedSubcategoriesCards} {
-  }
-
-  h1, h2 {
-    font-size: ${({theme}) => theme.fonts.size.h1};
-    text-align: center;
-    color: ${({theme}) => theme.colors.dark};
-    font-weight: normal;
-    white-space: pre-line;
-    margin-block: 2rem;
-  }
-
-  ${S_InnerContainer}:first-child {
-      //${outlinedNestedEverything}
-      //padding-inline: ${getResponsiveSize(0, BASE, 320, 425)};
-      //background-color: ${({theme}) => theme.colors.bg_primary};
-
-  }
-
-
-
-`
 
 
 export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
 
 `
-export const S_ExcavatorRentalCardWrapper = styled.div<{ $offset: number }>`
+export const S_RentalCardWrapper = styled.div<{ $offset: number }>`
     //${outline(10)};
   position: relative;
   padding-block: 3rem;

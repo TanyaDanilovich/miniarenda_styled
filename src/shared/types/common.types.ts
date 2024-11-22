@@ -1,4 +1,4 @@
-import {ReactElement, ReactNode, SVGProps} from 'react';
+import {ReactNode} from 'react';
 import {CATEGORY} from '../constants/CATEGORY';
 import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
@@ -21,6 +21,7 @@ export type MenuItemType = {
     subMenuItems?: MenuItemType[]
 }
 
+export type MeasurementUnits = 'час' | 'отв.'
 
 export type Category =
     typeof CATEGORY[keyof typeof CATEGORY];
