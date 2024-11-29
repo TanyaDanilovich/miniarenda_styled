@@ -70,7 +70,7 @@ export const Services = ({}: props) => {
 export const StyledServices = styled.section<{}>`
   ${sectionMargin};
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     ${S_Flex} {
       flex-direction: row;
       //gap: 1rem;

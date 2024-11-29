@@ -24,7 +24,7 @@ export const MappedSubcategoriesCards = ({data}: props) => {
 };
 
 export const S_MappedSubcategoriesCards = styled(S_InnerContainer)`
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, calc(33.33% - 0.66rem));

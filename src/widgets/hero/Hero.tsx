@@ -32,7 +32,7 @@ export const S_Hero = styled.section<{}>`
     overflow: hidden;
   }
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     height: calc(100svh - 110px);
     aspect-ratio: initial;
   }

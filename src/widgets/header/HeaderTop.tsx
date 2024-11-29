@@ -62,7 +62,7 @@ export const S_HeaderTop = styled.div    <{}>`
     font-weight: ${({theme}) => theme.fonts.weight.semiBold};
   }
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     position: relative;
     background-color: ${({theme}) => theme.colors.primary};
     padding-block: 0.75rem;
@@ -128,7 +128,7 @@ export const S_Phone = styled(S_Flex)<{}>`
     margin-right: 1rem;
   }
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     flex-direction: row;
 
     p {
@@ -153,7 +153,7 @@ export const S_Phone = styled(S_Flex)<{}>`
     }
 
   }
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     width: auto;
   }
 `;
@@ -170,7 +170,7 @@ const S_WorkingHours = styled.div<{}>`
     font-weight: ${({theme}) => theme.fonts.weight.bold};
   }
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     display: block;
   }
 `

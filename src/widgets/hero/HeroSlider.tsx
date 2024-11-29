@@ -130,7 +130,7 @@ export const S_HeroPhoneWrapper = styled(S_Flex)<{}>`
   row-gap: ${getResponsiveSize(BASE / 2, BASE * 1.5, 320, 768)};
   margin-top: ${getResponsiveSize(0, BASE * 4, 320, 1200)};
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     --animation-start: 25vh;
     flex-direction: row;
     width: 100%;
@@ -145,7 +145,7 @@ export const S_HeroPhoneWrapper = styled(S_Flex)<{}>`
     overflow: hidden;
     padding: 0;
 
-    @media ${({theme}) => theme.media.tablet} {
+    @media ${({theme}) => theme.mediaMinWidth.tablet} {
       width: auto;
       height: auto;
     }

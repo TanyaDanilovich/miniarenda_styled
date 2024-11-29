@@ -47,7 +47,7 @@ export const S_SubcategoriesCard = styled.article <{ $isActive: boolean }>`
   }
 
     //${outline()} 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     // width: calc(30%);
     ${S_Flex} {
       gap: 1rem;

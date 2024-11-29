@@ -67,7 +67,7 @@ export const S_RentalCard = styled(S_InnerContainer) <{}>`
   }
 
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     padding: 2rem;
     display: grid;
     ${S_ImageContainer} {

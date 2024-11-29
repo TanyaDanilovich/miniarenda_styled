@@ -7,6 +7,8 @@ import {DesktopNavigation} from '../../shared/ui/navigation/desktop/DesktopNavig
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {MobileNavigation} from '../../shared/ui/navigation/mobile/MobileNavigation';
 import {debounceFunction} from '../../shared/utils/debounceFunction';
+import {S_LayoutWithBreadcrumbs} from '../layouts/LayoutWithBreadcrumbs';
+import {outline} from '../../app/styles/mixins';
 
 
 type props = {};
@@ -40,7 +42,7 @@ export const Header = ({}: props) => {
     return (
 
 
-        <StyledHeader ref = {headerRef}>
+        <StyledHeader ref = {headerRef} $isMobileNavigation = {isMobileNavigation}>
             <S_OuterContainer>
 
                 <Logo/>
@@ -56,11 +58,13 @@ export const Header = ({}: props) => {
     );
 };
 
-export const StyledHeader = styled.header<{}>`
+export const StyledHeader = styled.header<{$isMobileNavigation:boolean}>`
+
   background-color: ${({theme}) => theme.colors.bg_primary};
   padding-block: 0.5rem;
   padding-inline: 1rem;
-  position: sticky;
+  position: ${({$isMobileNavigation}) => ($isMobileNavigation ? "fixed" : "sticky")};
+
   z-index: ${({theme}) => theme.zIndices.header};
   top: 0;
   left: 0;
@@ -70,7 +74,7 @@ export const StyledHeader = styled.header<{}>`
   display: flex;
 
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     padding: 0;
     ${S_OuterContainer} > ${S_Flex} {
       flex-direction: column;
@@ -83,7 +87,7 @@ export const StyledHeader = styled.header<{}>`
     display: flex;
     padding-inline: 0;
 
-    @media ${({theme}) => theme.media.desktop} {
+    @media ${({theme}) => theme.mediaMinWidth.desktop} {
       max-width: min(calc(100vw - 6rem), 1500px);
     }
   }

@@ -3,10 +3,19 @@ import {faCalendarCheck} from '@fortawesome/free-solid-svg-icons';
 import styled, {useTheme} from 'styled-components';
 import {S_LinkAsButton} from './S_LinkAsButton';
 import {plainTransition} from '../../../app/styles/mixins';
+import {IconDefinition} from '@fortawesome/fontawesome-common-types';
 
 
-type props = { url?: string };
-export const OrderedButton = ({url = "#"}: props) => {
+type props = {
+    url?: string,
+    title?: string,
+    icon?: IconDefinition
+};
+export const OrderedButton = ({
+                                  url = "#",
+                                  title = "Забронировать",
+                                  icon = faCalendarCheck
+                              }: props) => {
     const theme = useTheme()
 
 
@@ -15,9 +24,9 @@ export const OrderedButton = ({url = "#"}: props) => {
 
             {/*<FontAwesomeIcon icon = {faCalendarDays} size = {'1x'} color = {theme.colors.primary}/>*/}
 
-            <FontAwesomeIcon icon = {faCalendarCheck} size = {'1x'} color = {theme.colors.primary}/>
+            <FontAwesomeIcon icon = {icon} size = {'1x'} color = {theme.colors.primary}/>
 
-            <span>Забронировать</span>
+            <span>{title}</span>
         </S_OrderedButton>);
 };
 
@@ -57,12 +66,4 @@ export const S_OrderedButton = styled(S_LinkAsButton)<{}>`
       }
     }
   }
-
-  // animation: pulsate 2s linear infinite;
-  // box-shadow: 0 0 0 0.5rem transparent;
-  // @keyframes pulsate {
-  //   0% {
-    //     box-shadow: 0 0 0 0 ${({theme}) => theme.colors.primary};
-  //   }
-  // }
 `

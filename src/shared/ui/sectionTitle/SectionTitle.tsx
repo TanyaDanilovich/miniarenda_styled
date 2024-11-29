@@ -26,7 +26,7 @@ export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithTex
     text-align: justify;
   }
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     display: flex;
     gap: 1rem;
     width: 100%;
@@ -35,7 +35,7 @@ export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithTex
     ${({$isWithText}) => $isWithText && css`
       border-left: 5px solid ${({theme}) => theme.colors.primary};
       align-items: center;
-      @media ${({theme}) => theme.media.tablet} {
+      @media ${({theme}) => theme.mediaMinWidth.tablet} {
 
         p {
           width: 50%;
@@ -55,7 +55,7 @@ export const S_SectionTitle = styled.h2<{ $isWithText: boolean }>`
   font-size: ${({theme}) => theme.fonts.size.h2};
   width: 100%;
   ${({$isWithText}) => $isWithText && css`
-    @media ${({theme}) => theme.media.tablet} {
+    @media ${({theme}) => theme.mediaMinWidth.tablet} {
       width: 50%;
       padding-left: 1.5rem;
       text-align: left;

@@ -16,15 +16,15 @@ export const S_InnerContainer = styled.div<ContainerProps>`
     //${outline(5, "green")};
 
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     max-width: 750px;
   }
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     max-width: 970px;
   }
 
-  @media ${({theme}) => theme.media.desktop} {
+  @media ${({theme}) => theme.mediaMinWidth.desktop} {
     max-width: 1170px;
   }
 `;

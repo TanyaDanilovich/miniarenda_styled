@@ -17,7 +17,7 @@ const S_LogoContainer = styled.div<{}>`
   display: none;
   max-height: 110px;
   padding: 1rem 2rem 1rem 1rem;
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     display: block;
 
   }

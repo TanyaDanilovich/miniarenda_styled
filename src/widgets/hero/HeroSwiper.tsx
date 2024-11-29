@@ -14,7 +14,6 @@ import img4 from "../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 
 
-
 type props = {
     id: string,
 };
@@ -34,7 +33,7 @@ export const HeroSwiper = ({id}: props) => {
         //injectStyles: [swiperCss],
 
         loop: true,
-        //autoplay: {waitForTransition: true, delay: 3000, pauseOnMouseEnter: true},
+        autoplay: {waitForTransition: true, delay: 3000, pauseOnMouseEnter: true},
     }
 
 

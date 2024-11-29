@@ -161,14 +161,14 @@ export const S_Footer = styled.footer<{}>`
     width: 50%;
   }
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     & > ${S_FooterContainer} > ${S_Flex} {
       flex-direction: row;
       flex-wrap: wrap;
 
     }
   }
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     ${S_ImageContainer} {
       //width: 100%;
     }
@@ -282,16 +282,16 @@ export const S_FooterItem = styled.div<{}>`
     padding-block: 0.25rem;
   }
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     width: calc(50% - 0.5rem);
   }
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     &:nth-child(odd) {
       padding-left: 4rem;
     }
   }
-  @media ${({theme}) => theme.media.desktop} {
+  @media ${({theme}) => theme.mediaMinWidth.desktop} {
     width: calc(25% - 0.75rem);
     &:nth-child(1) {
       padding-left: 0;

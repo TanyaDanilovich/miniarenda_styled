@@ -69,11 +69,11 @@ export const StyledServiceCard = styled.article <{}>`
   }
 
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     width: calc(50% - 20px);
     margin: 1rem auto;
   }
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     width: calc(30%);
 
   }

@@ -52,7 +52,7 @@ export const StyledMachineries = styled.section<{}>`
   padding-block: 3rem;
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
-  ${sectionMargin} @media ${({theme}) => theme.media.tablet} {
+  ${sectionMargin} @media ${({theme}) => theme.mediaMinWidth.tablet} {
   ${S_Flex} {
     flex-direction: row;
     gap: 2rem;

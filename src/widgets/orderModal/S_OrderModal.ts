@@ -48,7 +48,7 @@ export const S_OrderModal = styled.div<{}>`
     padding: 0.5rem;
   }
 
-  @media ${({theme}) => theme.media.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
     display: block;
   }
 `

@@ -81,7 +81,7 @@ export const S_CardPrice = styled(S_InnerContainer)<{}>`
   }
 
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
 
   }
 

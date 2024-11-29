@@ -16,17 +16,17 @@ export const S_OuterContainer = styled.div<ContainerProps>`
     //${outline(5, "green")};
 
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     padding: 0 1rem;
     max-width: 750px;
   }
 
-  @media ${({theme}) => theme.media.computer} {
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     padding: 0;
     max-width: 970px;
   }
 
-  @media ${({theme}) => theme.media.desktop} {
+  @media ${({theme}) => theme.mediaMinWidth.desktop} {
     max-width: 1170px;
   }
 `;

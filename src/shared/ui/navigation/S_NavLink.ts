@@ -27,7 +27,7 @@ export const S_NavLink = styled(NavLink)<{}>`
     color: ${({theme}) => theme.colors.primary};
   }
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     padding: 1rem 0.75rem;
   }
 `;

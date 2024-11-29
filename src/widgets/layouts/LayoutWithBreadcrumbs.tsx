@@ -61,6 +61,9 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
 export const S_LayoutWithBreadcrumbs = styled.main<{}>`
     //${outline()}
   flex-grow: 1;
+  @media ${({theme}) => theme.mediaMaxWidth.tablet} {
+    margin-top: 4rem;
+  }
 `
 
 export const S_Breadcrumbs = styled.div<{}>`
@@ -70,7 +73,7 @@ export const S_Breadcrumbs = styled.div<{}>`
   flex-direction: column;
   gap: 1rem;
   position: relative;
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -101,7 +104,7 @@ export const S_BreadcrumbsContainer = styled.nav<{
     $img: string
 }>`
 
-    //${outline()}
+  //${outline(5)}
 
   position: relative;
   background-image: url(${props => props.$img});

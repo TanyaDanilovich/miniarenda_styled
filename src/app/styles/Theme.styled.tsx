@@ -29,14 +29,12 @@ export const theme: MyDefaultTheme = {
             h5: getResponsiveSize(20, 25),
             p: getResponsiveSize(16.875, 20),
         },
-        color:{
-
-        },
+        color: {},
     },
 
     breakpoints: BREAKPOINTS,
 
-    media: {
+    mediaMinWidth: {
         smallMobile: `screen and (min-width:${BREAKPOINTS.smallMobile})`,
         mobile: `screen and (min-width:${BREAKPOINTS.mobile})`,
         largeMobile: `screen and (min-width:${BREAKPOINTS.largeMobile})`,
@@ -45,6 +43,16 @@ export const theme: MyDefaultTheme = {
         desktop: `screen and (min-width:${BREAKPOINTS.desktop})`,
         widescreen: `screen and (min-width:${BREAKPOINTS.widescreen})`,
         extraWidescreen: `screen and (min-width:${BREAKPOINTS.extraWidescreen})`,
+    },
+    mediaMaxWidth: {
+        smallMobile: `screen and (max-width:${BREAKPOINTS.smallMobile})`,
+        mobile: `screen and (max-width:${BREAKPOINTS.mobile})`,
+        largeMobile: `screen and (max-width:${BREAKPOINTS.largeMobile})`,
+        tablet: `screen and (max-width:${BREAKPOINTS.tablet})`,
+        computer: `screen and (max-width:${BREAKPOINTS.computer})`,
+        desktop: `screen and (max-width:${BREAKPOINTS.desktop})`,
+        widescreen: `screen and (max-width:${BREAKPOINTS.widescreen})`,
+        extraWidescreen: `screen and (max-width:${BREAKPOINTS.extraWidescreen})`,
     },
 
     duration: {
