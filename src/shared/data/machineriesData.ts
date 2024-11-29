@@ -16,6 +16,8 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "3854х990х2289 м"},
             {id: MACHINERY_CHARACTERISTICS.DIGGING_DEPTH, title: "Глубина копания", value: "до 2 м"},
             {id: MACHINERY_CHARACTERISTICS.DRILLING_DEPTH, title: "Глубина бурения", value: "до 2,5 м"},
+            {id: MACHINERY_CHARACTERISTICS.HAMMER_POWER, title: "Мощность гидромолота", value: "10000"},
+            {id: MACHINERY_CHARACTERISTICS.STRIKE_FREQUENCY, title: "Частота ударов", value: "5000"},
             {id: MACHINERY_CHARACTERISTICS.SPEED, title: "Скорость передвижения макс.", value: "5 км/ч"},
             {id: MACHINERY_CHARACTERISTICS.WIDTH, title: "Ширина гусеницы", value: "230 мм"},
             {id: MACHINERY_CHARACTERISTICS.CLEARANCE, title: "Дорожный просвет", value: "210 мм"},
@@ -25,8 +27,16 @@ export const machineriesData: MachineryData[] = [
         priceCharacteristics: [
             {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
-            {id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER, title: "Минимальный заказ (безнал)", value: "8 часов"},
-            {id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS, title: "Время работы", value: "с 8:00 до 22:00 без выходных"},
+            {
+                id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,
+                title: "Минимальный заказ (безнал)",
+                value: "8 часов"
+            },
+            {
+                id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS,
+                title: "Время работы",
+                value: "с 8:00 до 22:00 без выходных"
+            },
         ],
     },
     {
@@ -39,6 +49,8 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "4022х1400х2390  м"},
             {id: MACHINERY_CHARACTERISTICS.DIGGING_DEPTH, title: "Глубина копания", value: "до 2,5 м"},
             {id: MACHINERY_CHARACTERISTICS.DRILLING_DEPTH, title: "Глубина бурения", value: "до 3 м"},
+            {id: MACHINERY_CHARACTERISTICS.HAMMER_POWER, title: "Мощность гидромолота", value: "20000"},
+            {id: MACHINERY_CHARACTERISTICS.STRIKE_FREQUENCY, title: "Частота ударов", value: "8000"},
             {id: MACHINERY_CHARACTERISTICS.SPEED, title: "Скорость передвижения макс.", value: "4 км/ч"},
             {id: MACHINERY_CHARACTERISTICS.WIDTH, title: "Ширина гусеницы", value: "295 мм"},
             {id: MACHINERY_CHARACTERISTICS.CLEARANCE, title: "Дорожный просвет", value: "210 мм"},
@@ -48,8 +60,16 @@ export const machineriesData: MachineryData[] = [
         priceCharacteristics: [
             {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
-            {id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER, title: "Минимальный заказ (безнал)", value: "8 часов"},
-            {id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS, title: "Время работы", value: "с 8:00 до 22:00 без выходных"},
+            {
+                id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,
+                title: "Минимальный заказ (безнал)",
+                value: "8 часов"
+            },
+            {
+                id: MACHINERY_PRICE_CHARACTERISTICS.BUSINESS_HOURS,
+                title: "Время работы",
+                value: "с 8:00 до 22:00 без выходных"
+            },
         ],
     }
 ]

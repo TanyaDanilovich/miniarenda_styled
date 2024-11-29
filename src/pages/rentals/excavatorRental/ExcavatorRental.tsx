@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import React, {useEffect, useRef, useState} from 'react';
-import {outline, outlinedNestedEverything, sectionMargin} from '../../../app/styles/mixins';
-import {
-    MappedSubcategoriesCards,
-    S_MappedSubcategoriesCards
-} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
+import {outline} from '../../../app/styles/mixins';
+import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 import {API} from '../../../app/api/API';
 import {RentalCard} from '../../../widgets/excavatorRentalCard/RentalCard';
-import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
 import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
-import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
-import {BASE} from '../../../shared/constants/constants';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
 import {S_RentalWrapper} from '../styled/S_RentalWrapper';
 

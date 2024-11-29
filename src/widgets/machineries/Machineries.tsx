@@ -5,13 +5,24 @@ import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {MachineryCard} from './machneryCard/MachneryCard';
 import {sectionMargin} from '../../app/styles/mixins';
-import {MachineryData} from '../../shared/types/common.types';
+import {MachineryCharacteristicKeys} from '../../shared/types/common.types';
+import {API} from '../../app/api/API';
 
-type props = {
-    data: MachineryData[]
-};
+type props = {};
 
-export const Machineries = ({data}: props) => {
+export const Machineries = ({}: props) => {
+
+    const keys: MachineryCharacteristicKeys[] = [
+        "weight",
+        "dimensions",
+        "diggingDepth",
+        "speed",
+        "width",
+        "clearance",
+        "buckets",
+        "country",
+    ]
+    const machineryData = API.getMachineriesData(keys);
 
     const machineryTitle = "Наша техника"
     const machineryText = " Аренда мини-экскаватора - превосходное решение для выполнения любого типа строительных работ в условиях ограниченного пространства. Они способны работать вплотную к зданиям и сооружениям, заборам, стенам, внутри зданий, то есть там, где невозможно применение крупногабаритной землеройной техники. Мини стройтехника обладает высокой производительностью при малых габаритах. В ней удачно сочетаются надёжность, маневренность и проходимость, малое давление на грунт, значительная глубина копания и относительно большая высота разгрузки."
@@ -22,7 +33,7 @@ export const Machineries = ({data}: props) => {
 
                 <S_Flex $direction = {"column"} $gap = {"40px"}>
 
-                    {data.map((card) => (
+                    {machineryData.map((card) => (
                         <MachineryCard key = {card.id}
                                        id = {card.id}
                                        title = {card.title}
