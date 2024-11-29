@@ -61,8 +61,9 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
 export const S_LayoutWithBreadcrumbs = styled.main<{}>`
     //${outline()}
   flex-grow: 1;
-  @media ${({theme}) => theme.mediaMaxWidth.tablet} {
-    margin-top: 4rem;
+  margin-top: 4rem;
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    margin-top: 0;
   }
 `
 
