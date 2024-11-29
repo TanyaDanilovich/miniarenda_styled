@@ -13,13 +13,14 @@ import {RuleSet, css, keyframes} from 'styled-components';
 
 type props = {
     start?: RuleSet | string,
+    middle?: RuleSet | string,
     end?: RuleSet | string,
     duration?: RuleSet | string,
     delay?: RuleSet | string,
     transformType?: RuleSet | string
     isWithOpacity?:boolean
 }
-export const translateAnimation = ({start, end, transformType, duration, delay, isWithOpacity}: props) => {
+export const translateAnimation = ({start,middle, end, transformType, duration, delay, isWithOpacity}: props) => {
 
     const animation = keyframes`
       0% {
@@ -27,6 +28,9 @@ export const translateAnimation = ({start, end, transformType, duration, delay, 
         opacity: ${isWithOpacity && "0" ||"1"}
       }
       50% {
+        ${middle && css`
+          transform: ${transformType}(${middle});
+        `};
         opacity: 1;
       }
       100% {

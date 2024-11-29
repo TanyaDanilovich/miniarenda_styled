@@ -29,7 +29,7 @@ export const YamoburRental = ({}: props) => {
     }, []);
 
     return (
-        <S_RentalWrapper>
+        <S_YamoburRental>
 
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
 
@@ -63,21 +63,13 @@ export const YamoburRental = ({}: props) => {
                 </p>
             </S_InnerContainer>
 
-        </S_RentalWrapper>);
-    // const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
-    // return (
-    //     <S_YamoburRental>
-    //         <S_OuterContainer>
-    //             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
-    //         </S_OuterContainer>
-    //         <S_OuterContainer>
-    //             Arenda Yamobura
-    //         </S_OuterContainer>
-    //     </S_YamoburRental>);
+        </S_YamoburRental>);
+
+
 };
 
 
-export const S_YamoburRental = styled.div<{}>`
+export const S_YamoburRental = styled(S_RentalWrapper)<{}>`
   ${sectionMargin};
 
 `
