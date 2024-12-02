@@ -5,7 +5,7 @@ import {ExcavatorRental} from '../pages/rentals/excavatorRental/ExcavatorRental'
 import React from 'react';
 import {Main} from '../pages/main/Main';
 import {LayoutWithBreadcrumbs} from '../widgets/layouts/LayoutWithBreadcrumbs';
-import {GidromolotRental} from '../pages/rentals/gidromolotRental/GidromolotRental';
+import {HammerRental} from '../pages/rentals/hammerRental/HammerRental';
 import {YamoburRental} from '../pages/rentals/yamoburRental/YamoburRental'
 import {Price} from '../pages/price/Price';
 import {Projects} from '../pages/proects/Proects';
@@ -44,7 +44,7 @@ export const router = createBrowserRouter(
                                </Link>)
                        }}
                 />
-                <Route path = {ROUTES_PATHS.arenda.arenda_Gidromolota.url} element = {<GidromolotRental/>} handle = {{
+                <Route path = {ROUTES_PATHS.arenda.arenda_Gidromolota.url} element = {<HammerRental/>} handle = {{
                     crumb: () => <Link
                         to = {ROUTES_PATHS.arenda.arenda_Gidromolota.url}>{ROUTES_PATHS.arenda.arenda_Gidromolota.title}</Link>
                 }}/>

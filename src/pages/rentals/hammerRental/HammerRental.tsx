@@ -1,23 +1,21 @@
-import styled from "styled-components";
-import {S_OuterContainer} from '../../../shared/styled/S_OuterContainer';
+import styled, {useTheme} from "styled-components";
 import React, {useEffect, useRef, useState} from 'react';
 import {sectionMargin} from '../../../app/styles/mixins';
 import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
 import {API} from '../../../app/api/API';
 import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
-import {S_RentalCardWrapper} from '../excavatorRental/ExcavatorRental';
 import {RentalCard} from '../../../widgets/excavatorRentalCard/RentalCard';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {S_RentalWrapper} from '../styled/S_RentalWrapper';
-import {ServiceCard} from '../../../widgets/services/serviceCard/ServiceCard';
-import {S_Flex} from '../../../shared/styled/S_Flex';
-import {OrderedButton} from '../../../shared/ui/buttons/OrderedButton';
+import {SubcategoryItemCards} from '../../../widgets/subcategoryItemCards/SubcategoryItemCards';
+import {S_BackgroundWrapper} from '../../../shared/styled/S_BackgroundWrapper';
 
 
 type props = {};
 
-export const GidromolotRental = ({}: props) => {
+export const HammerRental = ({}: props) => {
+    const theme = useTheme();
     const keys: MachineryCharacteristicKeys[] = ['weight', 'dimensions', 'drillingDepth', 'augers']
     const machineryData = API.getMachineriesData(keys);
 
@@ -25,11 +23,13 @@ export const GidromolotRental = ({}: props) => {
     const [refOffset, setRefOffset] = useState<number>(0);
     const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
     //console.log(subcategoriesCardsData)
+
     useEffect(() => {
         if (ref.current) {
             setRefOffset(((ref.current.scrollWidth - ref.current.clientWidth) / 2))
         }
     }, []);
+
     return (
         <S_GidromolotRental>
             <MappedSubcategoriesCards data = {subcategoriesCardsData}/>
@@ -44,9 +44,11 @@ export const GidromolotRental = ({}: props) => {
                        minOrderNonCash = {"8\u00A0машино\u00A0часов"}
             />
 
-            <OrderedButton title = {"Позвонить"}/>
-            и получить быструю консультацию
-            <S_RentalCardWrapper ref = {ref} $offset = {refOffset}>
+            <S_BackgroundWrapper ref = {ref} $offset = {refOffset} $backgroundColor = {theme.colors.white_smoke}>
+                <SubcategoryItemCards/>
+            </S_BackgroundWrapper>
+
+            <S_BackgroundWrapper ref = {ref} $offset = {refOffset}>
 
                 {machineryData.map((machine) => (<RentalCard key = {machine.id}
                                                              id = {machine.id}
@@ -56,27 +58,7 @@ export const GidromolotRental = ({}: props) => {
                                                              image = {machine.image}
                     />)
                 )}
-            </S_RentalCardWrapper>
-
-            <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
-
-
-                {/*{servicesData.map((card) =>*/}
-                {/*    <ServiceCard key = {card.id}*/}
-                {/*                 id = {card.id}*/}
-                {/*                 category = {card.category}*/}
-                {/*                 categoryTitle = {card.categoryTitle}*/}
-                {/*                 categoryUrl = {card.categoryUrl}*/}
-                {/*                 subcategory = {card.subcategory}*/}
-                {/*                 subcategoryTitle = {card.subcategoryTitle}*/}
-                {/*                 subcategoryDescription = {card.subcategoryDescription}*/}
-                {/*                 subcategoryUrl = {card.subcategoryUrl}*/}
-                {/*                 image = {card.image}*/}
-                {/*                 url = {card.url}*/}
-                {/*                 position = {card.position}*/}
-                {/*    />)}*/}
-            </S_Flex>
-
+            </S_BackgroundWrapper>
 
             <S_InnerContainer>
                 <p>

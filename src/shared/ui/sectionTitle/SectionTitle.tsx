@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {S_OuterContainer} from '../../styled/S_OuterContainer';
+import {getResponsiveSize} from '../../utils/getResponsiveSize';
+import {BASE} from '../../constants/constants';
 
 
 type props = { title: string, text?: string };
@@ -18,7 +20,7 @@ export const SectionTitle = ({title, text}: props) => {
 
 export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithText: boolean }>`
 
-  margin: auto auto 4rem;
+  margin: auto auto ${getResponsiveSize(BASE, 4 * BASE)}
   white-space: normal;
 
   p {

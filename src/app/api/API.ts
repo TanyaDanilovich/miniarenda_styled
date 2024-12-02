@@ -6,7 +6,7 @@ import {
     Category, MachineryCharacteristicKeys,
     MachineryData,
     RentalSubcategory,
-    ServiceSubcategory,
+    ServiceSubcategory, SubcategoryItemCard,
     SubcategoryItemData
 } from '../../shared/types/common.types';
 import {machineriesData} from '../../shared/data/machineriesData';
@@ -96,6 +96,7 @@ export const API = {
             }
         ))
     },
+
     getServicesSubcategoriesData: (): SubcategoryItemData<typeof CATEGORY.SERVICES>[] => {
         const serviceSubcategories = MAIN_DATA.categories[CATEGORY.SERVICES].items;
         const serviceSubcategoriesData = serviceSubcategories.map((serviceItem, index) => ({
@@ -122,5 +123,9 @@ export const API = {
                     .filter(item => keys.includes(item.id))
             })
         })
+    },
+
+    getSubcategoryItemCards: (key: ServiceSubcategory | RentalSubcategory): SubcategoryItemCard[] | undefined => {
+        return MAIN_DATA.subcategoryItemCards[key]
     }
 }

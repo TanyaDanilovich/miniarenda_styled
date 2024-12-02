@@ -95,8 +95,21 @@ export type MainData = {
     },
     subcategoryItems: {
         [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItem<key>
-    }
+    },
+    subcategoryItemCards: Partial<{
+        [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItemCard[]
+    }>
 }
+
+
+export type SubcategoryItemCard = {
+    id: string;
+    title: string;
+    description: string;
+    images: ImageProps[];
+    position: number;
+}
+
 
 export type RoutesPathData = {
     url: string,

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {useTheme} from "styled-components";
 import React, {useEffect, useRef, useState} from 'react';
 import {outline} from '../../../app/styles/mixins';
 import {MappedSubcategoriesCards} from '../../../widgets/mappedSubcategoriesCards/MappedSubcategoriesCards';
@@ -8,11 +8,13 @@ import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
 import {S_RentalWrapper} from '../styled/S_RentalWrapper';
+import {S_BackgroundWrapper} from '../../../shared/styled/S_BackgroundWrapper';
 
 
 type props = {};
 
 export const ExcavatorRental = ({}: props) => {
+    const theme = useTheme();
     const keys: MachineryCharacteristicKeys[] = ['weight', 'diggingDepth', 'drillingDepth', 'buckets', 'augers']
     const machineryData = API.getMachineriesData(keys);
 
@@ -36,7 +38,7 @@ export const ExcavatorRental = ({}: props) => {
 
             <CardPrice/>
 
-            <S_RentalCardWrapper ref = {ref} $offset = {refOffset}>
+            <S_BackgroundWrapper ref = {ref} $offset = {refOffset} $backgroundColor={theme.colors.bg_primary}>
 
                 {machineryData.map((machine) => (<RentalCard key = {machine.id}
                                                              id = {machine.id}
@@ -46,7 +48,7 @@ export const ExcavatorRental = ({}: props) => {
                                                              image = {machine.image}
                     />)
                 )}
-            </S_RentalCardWrapper>
+            </S_BackgroundWrapper>
 
             <S_InnerContainer>
                 <p>
@@ -61,25 +63,5 @@ export const ExcavatorRental = ({}: props) => {
 
 
 export const S_ExcavatorRentalContentWrapper = styled.div<{}>`
-
-`
-export const S_RentalCardWrapper = styled.div<{ $offset: number }>`
-    //${outline(10)};
-  position: relative;
-  padding-block: 3rem;
-  //overflow-x: hidden;
-
-  &:after {
-    //overflow-x: visible;
-    content: "";
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    background-color: ${({theme}) => theme.colors.bg_primary};
-    top: 0;
-    left: ${({$offset}) => `-${$offset}px`};
-    right: 0;
-    z-index: -100;
-  }
 
 `

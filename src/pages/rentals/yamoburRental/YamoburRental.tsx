@@ -7,8 +7,8 @@ import {MachineryCharacteristicKeys} from '../../../shared/types/common.types';
 import {CardPrice} from '../../../widgets/cardPrice/cardPrice';
 import {RentalCard} from '../../../widgets/excavatorRentalCard/RentalCard';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
-import {S_RentalCardWrapper} from '../excavatorRental/ExcavatorRental';
 import {S_RentalWrapper} from '../styled/S_RentalWrapper';
+import {S_BackgroundWrapper} from '../../../shared/styled/S_BackgroundWrapper';
 
 
 type props = {};
@@ -43,7 +43,7 @@ export const YamoburRental = ({}: props) => {
                        minOrderNonCash = {"8\u00A0машино\u00A0часов"}
             />
 
-            <S_RentalCardWrapper ref = {ref} $offset = {refOffset}>
+            <S_BackgroundWrapper ref = {ref} $offset = {refOffset}>
 
                 {machineryData.map((machine) => (<RentalCard key = {machine.id}
                                                              id = {machine.id}
@@ -53,7 +53,7 @@ export const YamoburRental = ({}: props) => {
                                                              image = {machine.image}
                     />)
                 )}
-            </S_RentalCardWrapper>
+            </S_BackgroundWrapper>
 
             <S_InnerContainer>
                 <p>
