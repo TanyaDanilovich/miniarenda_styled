@@ -1,38 +1,38 @@
 import React from 'react';
-import {S_SectionTitle, SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
+import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {GoogleLink} from './googleLink/GoogleLink';
 import {v4 as uuidv4} from 'uuid';
 import {ReviewSwiper} from '../swipers/reviewSwiper/ReviewSwiper';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import styled from "styled-components";
+import styled, {useTheme} from "styled-components";
 import {sectionMargin} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
+import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 
 
-
-type props = {};
-export const Reviews = ({}: props) => {
-
+type props = { offset: number };
+export const Reviews = ({offset}: props) => {
+    const theme = useTheme();
     const swiperId = uuidv4();
 
 
     return (
         <S_Reviews>
-            <S_OuterContainer>
-                <SectionTitle title={"Отзывы наших клиентов"}/>
-                <GoogleLink/>
-                <ReviewSwiper id = {swiperId}/>
-            </S_OuterContainer>
+            <S_BackgroundWrapper $offset = {offset} $backgroundColor = {theme.colors.white_smoke}>
+                <S_OuterContainer>
+                    <SectionTitle title = {"Отзывы наших клиентов"}/>
+                    <GoogleLink/>
+                    <ReviewSwiper id = {swiperId}/>
+                </S_OuterContainer>
+            </S_BackgroundWrapper>
         </S_Reviews>);
 };
-
-
 
 
 export const S_Reviews = styled.section<{}>`
   background-image: url(${bgImg});
 
-  ${sectionMargin};
+  // ${sectionMargin};
   padding-block: 2rem;
 
 
@@ -42,6 +42,9 @@ export const S_Reviews = styled.section<{}>`
   //position: relative;
   background-repeat: no-repeat;
   background-color: ${({theme}) => theme.colors.white_smoke};
+  & h2{
+    margin-top: 2rem;
+  }
 `
 
 

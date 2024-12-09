@@ -310,6 +310,10 @@ export const MAIN_DATA: MainData = {
                 title: "Гидромолот",
                 description: "позволяет копать даже при замерзшем грунте",
                 image: {},
+                characteristicList: [
+                    "гидромолот массой 155 кг",
+                    "энергия удара 5000кДж",
+                    "частота удара 600-1100 уд/мин"],
                 position: 2
             },
         [EQUIPMENT_SUBCATEGORY.DRILL]:
@@ -318,7 +322,8 @@ export const MAIN_DATA: MainData = {
                 title: "Ямобур",
                 description: "для бурения под сваи, столбы фундаментов и пр.",
                 image: {},
-                position: 1
+                characteristicList: ["шнеки: 200, 250, 300, 350, 400, 500, 600 мм"],
+                position: 3
             },
         [EQUIPMENT_SUBCATEGORY.FANG]:
             {
@@ -326,14 +331,17 @@ export const MAIN_DATA: MainData = {
                 title: "Клык рыхлитель",
                 description: "Для рыхления плотного и мерзлого грунта",
                 image: {},
-                position: 3
+                characteristicList: ["глубина рыхления : до 700 мм"],
+                position: 1
             },
         [EQUIPMENT_SUBCATEGORY.BUCKETS]:
             {
                 id: v1(),
                 title: "Ковши",
-                description: "Большой выбор ковшей",
+                description: "Большой выбор ковшей разного размера",
                 image: {},
+                characteristicList: [
+                    "Ковши: 150, 300, 400, 600 мм"],
                 position: 4
             },
 

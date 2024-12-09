@@ -113,7 +113,8 @@ export type Equipment = {
     title: string,
     description: string,
     image: ImageProps | {},
-    position: number;
+    position: number,
+    characteristicList:string[]
 }
 
 export type SubcategoryItemCard = {

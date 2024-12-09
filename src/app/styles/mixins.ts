@@ -78,8 +78,9 @@ export const sectionMargin = css`
   margin: ${getResponsiveSize(BASE * 1.5, BASE * 3)} auto;
 `
 
+
 export const sectionPadding = css`
-  padding-block: 3rem;
+  padding-block: ${getResponsiveSize(BASE * 1.5, BASE * 3)};
 `
 
 export const outlinedNestedDiv = css`

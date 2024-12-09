@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Services} from '../../widgets/services/Services';
 import {Machineries} from '../../widgets/machineries/Machineries';
 import {Delivery} from '../../widgets/delivery/Delivery';
@@ -14,16 +14,23 @@ import {Equipments} from '../../widgets/equipments/Equipments';
 type props = {};
 
 export const Main = ({}: props) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const [refOffset, setRefOffset] = useState<number>(0);
 
+    useEffect(() => {
+        if (ref.current) {
+            setRefOffset(((ref.current.scrollWidth - ref.current.clientWidth) / 2))
+        }
+    }, []);
 
     return (
-        <StyledMain>
+        <StyledMain ref = {ref}>
             <Hero/>
             <Services/>
             <Machineries/>
             <Delivery/>
-            <Equipments/>
-            <Reviews/>
+            <Equipments offset = {refOffset}/>
+            <Reviews offset = {refOffset}/>
             <Questions/>
             <Clients/>
             <OrderModal/>
