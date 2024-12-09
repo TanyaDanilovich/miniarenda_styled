@@ -15,14 +15,15 @@ import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 
 
-type props = MachineryData & {}
+type props = MachineryData & { isWithButton?: boolean }
 export const RentalCard = ({
-                                        id, characteristics,
-                                        priceCharacteristics,
-                                        tableTitle,
-                                        image,
-                                        ...rest
-                                    }: props) => {
+                               id, characteristics,
+                               priceCharacteristics,
+                               tableTitle,
+                               image,
+                               isWithButton = true,
+                               ...rest
+                           }: props) => {
 
     return (
         <S_RentalCard as = {'article'}>
@@ -38,7 +39,7 @@ export const RentalCard = ({
                                                              characteristics = {characteristics}
             />}
 
-            <ReadMoreButton/>
+            {isWithButton && <ReadMoreButton/>}
 
         </S_RentalCard>
     );

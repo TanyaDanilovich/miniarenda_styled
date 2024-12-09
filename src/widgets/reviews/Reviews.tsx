@@ -2,7 +2,7 @@ import React from 'react';
 import {S_SectionTitle, SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {GoogleLink} from './googleLink/GoogleLink';
 import {v4 as uuidv4} from 'uuid';
-import {ReviewSwiper} from './reviewSwiper/ReviewSwiper';
+import {ReviewSwiper} from '../swipers/reviewSwiper/ReviewSwiper';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled from "styled-components";
 import {sectionMargin} from '../../app/styles/mixins';

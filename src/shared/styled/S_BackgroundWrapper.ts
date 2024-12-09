@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import {outline} from '../../app/styles/mixins';
 
-export const S_BackgroundWrapper = styled.div<{ $offset: number, $backgroundColor?: string }>`
+export const S_BackgroundWrapper = styled.div<{ $offset: number, $backgroundColor?: string, $paddingBlock?: string }>`
     //${outline(10)};
   position: relative;
-  padding-block: 3rem;
+  padding-block: ${({ $paddingBlock}) => $paddingBlock || "1px"};
   //overflow-x: hidden;
 
   &:after {

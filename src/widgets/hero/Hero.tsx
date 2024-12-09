@@ -1,5 +1,5 @@
 import React, {useId} from 'react';
-import {HeroSwiper} from './HeroSwiper';
+import {HeroSwiper} from '../swipers/heroSwiper/HeroSwiper';
 import styled from 'styled-components';
 
 type props = {};

@@ -2,16 +2,16 @@ import React from 'react';
 
 import {v4 as uuidv4} from 'uuid';
 import styled from 'styled-components';
-import {heroData} from './heroData';
-import {AppSwiperSlide} from '../../shared/ui/Swiper/AppSwiperSlide';
-import {AppSwiper} from '../../shared/ui/Swiper/AppSwiper';
+import {heroData} from '../../hero/heroData';
+import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
+import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
-import img1 from "../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
-import img2 from "../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
-import img3 from "../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
-import img4 from "../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
-import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
+import img1 from "../../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
+import img2 from "../../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
+import img3 from "../../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
+import img4 from "../../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
+import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
 
 
 type props = {

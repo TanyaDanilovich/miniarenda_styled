@@ -73,6 +73,9 @@ export const theme: MyDefaultTheme = {
         full: "0 0 10px 5px rgba(0, 0, 0, 0.1)",
         right: "5px 0px 15px 0px rgba(0, 0, 0, 0.08)"
     },
+    hrefs:{
+        tel: "tel:+375296949698",
+    },
     colors: {
 
         primary: "#fd5d14",

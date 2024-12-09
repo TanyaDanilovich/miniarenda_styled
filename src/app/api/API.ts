@@ -3,13 +3,17 @@ import {CATEGORY} from '../../shared/constants/CATEGORY';
 import img from '../../assets/images/servises/servises_1.jpg';
 import {v1} from 'uuid';
 import {
-    Category, MachineryCharacteristicKeys,
+    Category,
+    Equipment, EquipmentSubcategory,
+    MachineryCharacteristicKeys,
     MachineryData,
     RentalSubcategory,
-    ServiceSubcategory, SubcategoryItemCard,
+    ServiceSubcategory,
+    SubcategoryItemCard,
     SubcategoryItemData
 } from '../../shared/types/common.types';
 import {machineriesData} from '../../shared/data/machineriesData';
+import {EQUIPMENT_SUBCATEGORY} from '../../shared/constants/EQUIPMENT_SUBCATEGORY';
 
 export const API = {
     getServiceSubcategories: (): ServiceSubcategory[] => {
@@ -127,5 +131,13 @@ export const API = {
 
     getSubcategoryItemCards: (key: ServiceSubcategory | RentalSubcategory): SubcategoryItemCard[] | undefined => {
         return MAIN_DATA.subcategoryItemCards[key]
+    },
+
+    getAdditionEquipmentSubcategoriesData: (): Equipment[] => {
+        const equipments: EquipmentSubcategory[] = Object.values(EQUIPMENT_SUBCATEGORY);
+        return equipments.map(equipment =>
+            MAIN_DATA.equipments[equipment])
+            .sort((a, b) => a.position - b.position);
     }
+
 }

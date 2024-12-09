@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
-import {ReviewCard} from '../reviewCard/ReviewCard';
+import {ReviewCard} from '../../reviews/reviewCard/ReviewCard';
 import {v4 as uuidv4} from 'uuid';
 
 

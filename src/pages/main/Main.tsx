@@ -8,6 +8,7 @@ import {Questions} from '../../widgets/questions/Questions';
 import {Clients} from '../../widgets/clients/Clients';
 import {OrderModal} from '../../widgets/orderModal/OrderModal';
 import {Hero} from '../../widgets/hero/Hero';
+import {Equipments} from '../../widgets/equipments/Equipments';
 
 
 type props = {};
@@ -21,6 +22,7 @@ export const Main = ({}: props) => {
             <Services/>
             <Machineries/>
             <Delivery/>
+            <Equipments/>
             <Reviews/>
             <Questions/>
             <Clients/>

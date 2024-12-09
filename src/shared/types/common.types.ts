@@ -5,6 +5,7 @@ import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
+import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
 export type PropsWithChildren<P> = P & {
     children?: ReactNode
@@ -34,6 +35,9 @@ export type ServiceSubcategory =
 
 export type ServiceGroup =
     typeof SERVICE_GROUP[keyof typeof SERVICE_GROUP];
+
+export type EquipmentSubcategory =
+    typeof EQUIPMENT_SUBCATEGORY[keyof typeof EQUIPMENT_SUBCATEGORY];
 
 export type CategoryItem<T extends Category> = {
     id: string;
@@ -98,9 +102,19 @@ export type MainData = {
     },
     subcategoryItemCards: Partial<{
         [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItemCard[]
-    }>
+    }>,
+    equipments: {
+        [key in EquipmentSubcategory]: Equipment
+    }
 }
 
+export type Equipment = {
+    id: string,
+    title: string,
+    description: string,
+    image: ImageProps | {},
+    position: number;
+}
 
 export type SubcategoryItemCard = {
     id: string;
@@ -109,7 +123,6 @@ export type SubcategoryItemCard = {
     images: ImageProps[];
     position: number;
 }
-
 
 export type RoutesPathData = {
     url: string,

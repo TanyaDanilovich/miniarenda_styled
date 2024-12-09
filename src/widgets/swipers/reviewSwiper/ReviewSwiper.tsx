@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
-import {reviewsData} from '../reviewData';
-import {ReviewSlide} from '../reviewSlide/ReviewSlide';
+import {reviewsData} from '../../reviews/reviewData';
+import {ReviewSlide} from './ReviewSlide';
 
 
 type props = {

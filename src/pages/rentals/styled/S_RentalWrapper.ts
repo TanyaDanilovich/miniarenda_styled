@@ -12,7 +12,7 @@ export const S_RentalWrapper = styled(S_OuterContainer)<{}>`
   h1, h2 {
     font-size: ${({theme}) => theme.fonts.size.h1};
     text-align: center;
-    color: ${({theme}) => theme.colors.dark};
+    //color: ${({theme}) => theme.colors.dark};
     font-weight: normal;
     white-space: pre-line;
     margin-block: 2rem;

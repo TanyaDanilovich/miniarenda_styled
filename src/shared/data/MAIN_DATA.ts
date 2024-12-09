@@ -1,4 +1,4 @@
-import {ImageProps, MainData} from '../types/common.types';
+import {MainData} from '../types/common.types';
 import {v1} from 'uuid';
 import {CATEGORY} from '../constants/CATEGORY';
 import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
@@ -7,6 +7,7 @@ import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import excavator from '../../assets/svg/exavator.svg';
 import hammer from '../../assets/svg/gidromolot.svg';
 import drill from '../../assets/svg/bur.svg';
+import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
 export const MAIN_DATA: MainData = {
     categories: {
@@ -301,5 +302,40 @@ export const MAIN_DATA: MainData = {
                 title: "Разрушение лестничных конструкций"
             },
         ]
+    },
+    equipments: {
+        [EQUIPMENT_SUBCATEGORY.HAMMER]:
+            {
+                id: v1(),
+                title: "Гидромолот",
+                description: "позволяет копать даже при замерзшем грунте",
+                image: {},
+                position: 2
+            },
+        [EQUIPMENT_SUBCATEGORY.DRILL]:
+            {
+                id: v1(),
+                title: "Ямобур",
+                description: "для бурения под сваи, столбы фундаментов и пр.",
+                image: {},
+                position: 1
+            },
+        [EQUIPMENT_SUBCATEGORY.FANG]:
+            {
+                id: v1(),
+                title: "Клык рыхлитель",
+                description: "Для рыхления плотного и мерзлого грунта",
+                image: {},
+                position: 3
+            },
+        [EQUIPMENT_SUBCATEGORY.BUCKETS]:
+            {
+                id: v1(),
+                title: "Ковши",
+                description: "Большой выбор ковшей",
+                image: {},
+                position: 4
+            },
+
     }
 };

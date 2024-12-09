@@ -3,9 +3,9 @@ import React from 'react';
 import {sectionMargin} from '../../app/styles/mixins';
 import {API} from '../../app/api/API';
 import {RENTAL_SUBCATEGORY} from '../../shared/constants/RENTAL_SUBCATEGORY';
-import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
+import {S_SectionTitle, SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
-import {SubcategoryItemCardsSwiper} from './SubcategoryItemCardsSwiper';
+import {SubcategoryItemCardsSwiper} from '../swipers/subcategoryItemCardsSwiper/SubcategoryItemCardsSwiper';
 
 
 type props = {};
@@ -31,6 +31,9 @@ export const SubcategoryItemCards = ({}: props) => {
 export const S_SubcategoryItemCards = styled.section<{}>`
   ${sectionMargin};
 
+  ${S_SectionTitle} {
+    color: ${({theme}) => theme.colors.dark};
+  }
 `
 
 

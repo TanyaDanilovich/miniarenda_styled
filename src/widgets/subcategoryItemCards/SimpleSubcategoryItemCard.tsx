@@ -42,7 +42,7 @@ export const SimpleSubcategoryItemCard = ({
             </S_SubcategoryItemCardText>
 
             <S_Box $marginTop = {"1rem"}>
-                <ReadMoreButton url = {"#"}/>
+                <ReadMoreButton url = {"#"} title = {"Узнать больше"}/>
             </S_Box>
 
         </S_SubcategoryItemCard>
@@ -52,7 +52,7 @@ export const SimpleSubcategoryItemCard = ({
 export const S_SubcategoryItemCard = styled.article <{}>`
 
   padding: 1rem;
-  //margin: 1rem;
+  margin-top: 3rem;
   box-shadow: ${({theme}) => theme.shadow.full};
   display: flex;
   flex-direction: column;
