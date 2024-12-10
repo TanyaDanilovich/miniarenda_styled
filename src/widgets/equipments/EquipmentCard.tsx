@@ -11,6 +11,7 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
 import {faCircleCheck} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {S_ReadMoreButton} from '../../shared/ui/buttons/S_ReadMoreButton';
 
 type props = {
     id: string,
@@ -59,7 +60,7 @@ export const EquipmentCard = ({
                 )}
             </S_EquipmentCardCharacteristics>
 
-            <S_Box $marginTop = {"1rem"}>
+            <S_Box $marginTop = {"1rem"} $textAlign = {"center"}>
                 <ReadMoreButton url = {theme.hrefs.tel} title = {"Заказать"}/>
             </S_Box>
 
@@ -71,32 +72,41 @@ export const EquipmentCard = ({
 type S_EquipmentCardProps = {}
 export const S_EquipmentCard = styled(S_Flex)<S_EquipmentCardProps>`
 
-  padding: ${getResponsiveSize(BASE * 0.4, BASE, 320)};
+  padding: ${getResponsiveSize(BASE * 0.5, BASE, 320,1200)};
   box-shadow: ${({theme}) => theme.shadow.full};
   display: flex;
   flex-direction: column;
-  width: calc(50% - 0.3rem);
+  width: calc(50% - 0.25rem);
+  
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    width: calc(25% - 0.75rem);
+  }
+  
   background-color: ${({theme}) => theme.colors.white};
-
-  h3 {
-    margin: 0;
-    padding: 0;
+  
+  ${S_ReadMoreButton}{
+    font-size: ${getResponsiveSize(14, 16, 320,768)};
   }
 `;
 
 export const S_EquipmentCardTitle = styled.h3<{}>`
   color: ${({theme}) => theme.colors.black};
   font-weight: 600;
+  margin-block: ${getResponsiveSize(BASE*0.5 , BASE*2, 320,1200)};
+  font-size: ${getResponsiveSize(18, 22, 320,768)};
 `;
 
 
 export const S_EquipmentCardDescription = styled.p<{}>`
   color: ${({theme}) => theme.colors.black};
+  //text-wrap: pretti;
+  font-size: ${getResponsiveSize(14, 16, 320,768)};
 `;
 
 export const S_EquipmentCardCharacteristics = styled.ul<{}>`
   flex-grow: 1;
-
+  margin-top: ${getResponsiveSize(BASE*0.5 , BASE*2, 320,1200)};
+  
   svg {
     position: absolute;
     left: -1.25rem;
@@ -106,6 +116,6 @@ export const S_EquipmentCardCharacteristics = styled.ul<{}>`
   & li {
     position: relative;
     margin-left: 1.5rem;
-    font-size: 0.8rem;
+    font-size: ${getResponsiveSize(12, 14, 320,768)};
   }
 `

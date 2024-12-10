@@ -1,10 +1,10 @@
 export const BREAKPOINTS = {
-    smallMobile: "321px",
-    mobile: "426px",
-    largeMobile: "577px",
-    tablet: "769px",
-    computer: "993px",
-    desktop: "1201px",
-    widescreen: "1401px",
-    extraWidescreen: "1921px",
+    smallMobile: "320px",
+    mobile: "425px",
+    largeMobile: "576px",
+    tablet: "768px",
+    computer: "992px",
+    desktop: "1200px",
+    widescreen: "1400px",
+    extraWidescreen: "1920px",
 } as const;

@@ -26,7 +26,7 @@ export const Equipments = ({offset}: props) => {
                     <SectionTitle title = {"Всегда в наличии"}
                                   text = {'Все необходимое оборудование для выполнения работ'}/>
 
-                    <S_Flex $wrap = {"wrap"}>
+                    <S_EquipmentCardWrapper>
                         {equipmentsData.map(
                             equipment => <EquipmentCard key = {equipment.id}
                                                         id = {equipment.id}
@@ -34,7 +34,7 @@ export const Equipments = ({offset}: props) => {
                                                         description = {equipment.description}
                                                         characteristicList = {equipment.characteristicList}
                             />)}
-                    </S_Flex>
+                    </S_EquipmentCardWrapper>
 
                 </S_OuterContainer>
             </S_BackgroundWrapper>
@@ -48,8 +48,15 @@ export const S_Equipments = styled.section<S_EquipmentsProps>`
     margin-top: 2rem;
   }
 
-  & ${S_Flex} {
-    margin-top: 1rem;
-    gap: 0.6rem;
+`
+
+export const S_EquipmentCardWrapper = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    gap: 1rem;
   }
+
 `

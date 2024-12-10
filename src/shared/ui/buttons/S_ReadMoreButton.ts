@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import {plainTransition} from '../../../app/styles/mixins';
 import {S_LinkAsButton} from './S_LinkAsButton';
 
