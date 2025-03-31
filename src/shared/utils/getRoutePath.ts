@@ -3,14 +3,17 @@ import {MAIN_DATA} from '../data/MAIN_DATA';
 
 export function getRoutePath(category: Category,
                              subcategory?: ServiceSubcategory | RentalSubcategory): RoutesPathData {
+    const normalize = (path: string): string =>
+        path.replace(/^\//, ""); // удаляет ведущий слэш, если он есть
+
     const categoryData: RoutesPathData = {
-        url: MAIN_DATA.categories[category].url,
+        url: normalize(MAIN_DATA.categories[category].url),
         title: MAIN_DATA.categories[category].title,
     };
 
     if (subcategory) {
         return {
-            url: MAIN_DATA.subcategoryItems[subcategory].subcategoryUrl,
+            url: normalize(MAIN_DATA.subcategoryItems[subcategory].subcategoryUrl),
             title: MAIN_DATA.subcategoryItems[subcategory].subcategoryTitle,
         }
     }

@@ -1,4 +1,4 @@
-import {createBrowserRouter, createRoutesFromElements, Link, Navigate, Route} from 'react-router-dom';
+import {createHashRouter, createRoutesFromElements, Link, Navigate, Route} from 'react-router-dom';
 import {Layout} from '../widgets/layouts/Layout';
 import {AllRentals} from '../pages/rentals/allRentals/AllRentals';
 import {ExcavatorRental} from '../pages/rentals/excavatorRental/ExcavatorRental';
@@ -19,7 +19,7 @@ import {ROUTES_PATHS} from '../shared/constants/ROUTES_PATHS';
 import {ErrorPage} from '../widgets/errorPage/ErrorPage';
 
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
     createRoutesFromElements(
         <Route path = {ROUTES_PATHS.home.url} element = {<Layout/>}>
 

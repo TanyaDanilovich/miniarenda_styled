@@ -5,7 +5,7 @@ import {CONTACTS_DATA, PRICES_DATA, PROJECTS_DATA} from './constants';
 import {getRoutePath} from '../utils/getRoutePath';
 
 export const ROUTES_PATHS = {
-    home: {url: "/", title: "Главная"},
+    home: {url: "", title: "Главная"},
     projects: {url: PROJECTS_DATA.url, title: PROJECTS_DATA.title},
     contacts: {url: CONTACTS_DATA.url, title: CONTACTS_DATA.title},
     price: {url: PRICES_DATA.url, title: PRICES_DATA.title},
