@@ -20,7 +20,7 @@ export const YamoburRental = ({}: props) => {
 
     const ref = useRef<HTMLDivElement>(null);
     const [refOffset, setRefOffset] = useState<number>(0);
-    const subcategoriesCardsData = API.getRentalSubcategoriesDataShortUrl()
+    const subcategoriesCardsData = API.getRentalSubcategoriesDataFullUrl()
     //console.log(subcategoriesCardsData)
     useEffect(() => {
         if (ref.current) {
