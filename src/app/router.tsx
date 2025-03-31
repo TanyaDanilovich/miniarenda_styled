@@ -157,7 +157,7 @@ export const router = createHashRouter(
             </Route>
             {/* Contact Section */}
             <Route path="/404" element={ <ErrorPage /> } />
-            <Route path="*" element={ <Navigate to="/404" replace />} />
+            {/*<Route path="*" element={ <Navigate to="/404" replace />} />*/}
 
 
         </Route>

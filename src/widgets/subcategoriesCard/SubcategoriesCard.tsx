@@ -4,6 +4,7 @@ import React from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {Category, SubcategoryItemData} from '../../shared/types/common.types';
 import {S_Box} from '../../shared/styled/S_Box';
+import {Link} from 'react-router-dom';
 
 export type ServiceCardData = {}
 
@@ -20,11 +21,13 @@ export const SubcategoriesCard = ({
 
     return (
         <S_SubcategoriesCard $isActive = {isActive}>
-            <S_Flex $gap = {"2rem"} as = {'a'} href = {url}>
-                {icon && <S_Box $height = {"4rem"} $width = {"4rem"}
-                                style = {{maskImage: `url(${icon})`}}> </S_Box>}
-                <h4>{subcategoryTitle}</h4>
-            </S_Flex>
+            <Link to = {`/${url}`}>
+                <S_Flex $gap = {"2rem"}>
+                    {icon && <S_Box $height = {"4rem"} $width = {"4rem"}
+                                    style = {{maskImage: `url(${icon})`}}> </S_Box>}
+                    <h4>{subcategoryTitle}</h4>
+                </S_Flex>
+            </Link>
         </S_SubcategoriesCard>
     );
 };
