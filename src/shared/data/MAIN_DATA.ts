@@ -1,5 +1,4 @@
 import {MainData} from '../types/common.types';
-import {v1} from 'uuid';
 import {CATEGORY} from '../constants/CATEGORY';
 import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
@@ -12,7 +11,7 @@ import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 export const MAIN_DATA: MainData = {
     categories: {
         [CATEGORY.RENTAL]: {
-            id: v1(),
+            id: "category-001",
             category: CATEGORY.RENTAL,
             url: "arenda",
             title: 'Аренда',
@@ -21,7 +20,7 @@ export const MAIN_DATA: MainData = {
                 'землеройной техники.' +
                 'Мини стройтехника обладает высокой производительностью при малых габаритах. В ней удачно сочетаются надёжность, маневренность и проходимость, ' +
                 'малое давление на грунт, значительная глубина копания и относительно большая высота разгрузки.',
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Аренда техники | Доступные цены и гибкие условия",
                 metaDescription: "Арендуйте технику для строительства и земляных работ по выгодным ценам. Мини-экскаваторы, гидромолоты и ямобуры на выбор.",
@@ -35,12 +34,12 @@ export const MAIN_DATA: MainData = {
             ]
         },
         [CATEGORY.SERVICES]: {
-            id: v1(),
+            id: "category-002",
             category: CATEGORY.SERVICES,
             url: "uslugi",
             title: "Услуги",
             description: "Услуги мини-экскаваторов по земляным работам, копке и бурению.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Земляные работы и услуги мини-техники",
                 metaDescription: "Предоставляем услуги мини-экскаваторов для копки, бурения и других земляных работ. Качественное выполнение в сжатые сроки.",
@@ -59,14 +58,14 @@ export const MAIN_DATA: MainData = {
     },
     subcategoryItems: {
         [RENTAL_SUBCATEGORY.EXCAVATOR]: {
-            id: v1(),
+            id: "subcategory-001",
             subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
             subcategoryUrl: "arenda-mini-exavatora",
             subcategoryTitle: "Аренда мини-экскаватора",
             description: "Аренда мини-экскаватора – это востребованная услуга для работы на малых площадях и в " +
                 "стесненных условиях. Компактные многозадачные машины подходят для небольших строительных площадок." +
                 " Это действенный способ ускорить выполнение работ и сэкономить деньги. ",
-            images: [],
+            images: [{src: "", alt: ""}],
             position: 1,
             seo: {
                 metaTitle: "Аренда мини-экскаватора в Минске | Доступные цены",
@@ -76,13 +75,13 @@ export const MAIN_DATA: MainData = {
             icon: excavator
         },
         [RENTAL_SUBCATEGORY.HAMMER]: {
-            id: v1(),
+            id: "subcategory-002",
             subcategory: RENTAL_SUBCATEGORY.HAMMER,
             subcategoryUrl: "arenda-gidromolota",
             subcategoryTitle: "Аренда гидромолота",
             description: "Мы предлагаем в аренду гидромолот на базе мини-экскаватора или мини-погрузчика с опытным машинистом, " +
                 "который быстро сможет выполнить поставленную перед ним задачу.",
-            images: [],
+            images: [{src: "", alt: ""}],
             position: 2,
             seo: {
                 metaTitle: "Аренда гидромолота | Разрушительные работы",
@@ -92,14 +91,14 @@ export const MAIN_DATA: MainData = {
             icon: hammer
         },
         [RENTAL_SUBCATEGORY.DRILL]: {
-            id: v1(),
+            id: "subcategory-003",
             subcategory: RENTAL_SUBCATEGORY.DRILL,
             subcategoryUrl: "arenda-yamobura",
             subcategoryTitle: "Аренда ямобура",
             description: "Аренда ямобура (гидробура, шнекового бура) в Минске на базе мини-экскаватора" +
                 "для бурения отверстий глубиной до 2,5 м диаметром от 20 до 60 см. " +
                 "Отверстия диаметром 50 и 60 см можно пробурить глубиной до 3 м.",
-            images: [],
+            images: [{src: "", alt: ""}],
             position: 3,
             seo: {
                 metaTitle: "Аренда ямобура в Минске | Бурение отверстий",
@@ -108,8 +107,9 @@ export const MAIN_DATA: MainData = {
             },
             icon: drill
         },
+
         [SERVICE_SUBCATEGORY.DIGGING_TRENCH]: {
-            id: v1(),
+            id: "subcategory-004",
             subcategory: SERVICE_SUBCATEGORY.DIGGING_TRENCH,
             group: SERVICE_GROUP.DIGGING,
             position: 1,
@@ -118,7 +118,7 @@ export const MAIN_DATA: MainData = {
             description: "Прокладка газопроводов, водопроводов, канализации, телефонных кабелей - С такой задачей лучше всего справится мини-экскаватор." +
                 "Мини-экскаваторы оснащены сменными ковшами шириной от 20 см до 1 м, позволяют копать траншеи глубиной до 2,7 м и " +
                 "производить загрузку грунта на транспортные средства высотой до 2,5 м",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Копание траншей | Прокладка коммуникаций",
                 metaDescription: "Услуги по копанию траншей для прокладки инженерных коммуникаций и трубопроводов.",
@@ -126,7 +126,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.DIGGING_FOUNDATION]: {
-            id: v1(),
+            id: "subcategory-005",
             subcategory: SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
             group: SERVICE_GROUP.DIGGING,
             position: 2,
@@ -134,7 +134,7 @@ export const MAIN_DATA: MainData = {
             subcategoryTitle: "Копание фундаментов",
             description: "Для копания фундаментов наша компания предлагает свои услуги. В любой день недели, месяца и года мы сможем " +
                 "предоставить для ваших работ свои мини-экскаваторы и специалистов высокого класса.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Копание фундаментов | Профессиональные услуги",
                 metaDescription: "Копка фундаментов под дома и другие постройки. Мини-экскаваторы для любой сложности работы.",
@@ -142,7 +142,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.STUMP_REMOVAL]: {
-            id: v1(),
+            id: "subcategory-006",
             subcategory: SERVICE_SUBCATEGORY.STUMP_REMOVAL,
             group: SERVICE_GROUP.OTHER,
             position: 3,
@@ -151,7 +151,7 @@ export const MAIN_DATA: MainData = {
             description: "Механический способ: Механическое уничтожение пней проводится с использованием специализированной " +
                 "техники, такой как гидромолот или корчеватель. Такой метод значительно быстрее и эффективнее, " +
                 "особенно когда речь идёт о крупных и старых пнях.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Корчевание пней | Удаление корней",
                 metaDescription: "Услуги по корчеванию пней с применением спецтехники. Быстрое и эффективное удаление корней.",
@@ -159,7 +159,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.DRILLING]: {
-            id: v1(),
+            id: "subcategory-007",
             subcategory: SERVICE_SUBCATEGORY.DRILLING,
             group: SERVICE_GROUP.DIGGING,
             position: 4,
@@ -177,7 +177,7 @@ export const MAIN_DATA: MainData = {
                 "- усиление аварийного фундамента, укрепление откосов;" +
                 "- строительство переходов, мостов и причалов, колодцев;" +
                 "- посадка небольших деревьев или кустарников.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Бурение отверстий и ям | Услуги бурения в Минске",
                 metaDescription: "Профессиональные услуги по бурению отверстий ямобуром для фундаментов, столбов и опор. Работаем быстро и качественно, используя современное оборудование.",
@@ -185,7 +185,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.GROUND_MOVEMENT]: {
-            id: v1(),
+            id: "subcategory-008",
             subcategory: SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
             group: SERVICE_GROUP.OTHER,
             position: 5,
@@ -194,7 +194,7 @@ export const MAIN_DATA: MainData = {
             description: "Услуга по перемещению грунта может понадобиться во многих ситуациях: от стройки до уборки или облагораживания " +
                 "территории. Преимущество мини-техники в ее небольших размерах и возможности использования " +
                 "в подвальных помещениях или на свайном поле для перемещения грунта или строительного мусора.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Перемещение грунта | Земляные работы",
                 metaDescription: "Услуги по перемещению грунта с использованием мини-техники. Работаем на любых участках.",
@@ -202,7 +202,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS]: {
-            id: v1(),
+            id: "subcategory-009",
             subcategory: SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
             group: SERVICE_GROUP.OTHER,
             position: 6,
@@ -210,7 +210,7 @@ export const MAIN_DATA: MainData = {
             subcategoryTitle: "Прочие земляные работы",
             description: "Земляные работы с помощью мини-экскаватора и мини-погрузчика в Минске" +
                 "мы осуществляем земляные работы в Минске и окрестностях с применением современной спецтехники, ",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Прочие земляные работы | Мини-экскаваторы",
                 metaDescription: "Земляные работы различной сложности с использованием мини-экскаваторов. Оперативное выполнение задач.",
@@ -218,7 +218,7 @@ export const MAIN_DATA: MainData = {
             }
         },
         [SERVICE_SUBCATEGORY.DISMANTLING]: {
-            id: v1(),
+            id: "subcategory-010",
             subcategory: SERVICE_SUBCATEGORY.DISMANTLING,
             group: SERVICE_GROUP.OTHER,
             position: 7,
@@ -235,7 +235,7 @@ export const MAIN_DATA: MainData = {
                 "разрушение пород в карьерах (вместо взрывчатки);" +
                 "подводные работы (расширение русел каналов)." +
                 "Наш опыт и оборудование позволяют нам обеспечивать качественное выполнение работ в сжатые сроки и при любых условиях.",
-            images: [],
+            images: [{src: "", alt: ""}],
             seo: {
                 metaTitle: "Демонтаж бетонных и железобетонных конструкций | Разрушительные работы",
                 metaDescription: "Профессиональный демонтаж бетонных с помощью гидромолота. Разрушение сооружений, вскрытие подземных коммуникаций.",
@@ -246,58 +246,58 @@ export const MAIN_DATA: MainData = {
     subcategoryItemCards: {
         [RENTAL_SUBCATEGORY.HAMMER]: [
             {
-                id: v1(),
+                id: "card-001",
                 position: 1,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Мы профессионально демонтируем старые бетонные стяжки для подготовки участка к новым покрытиям. Используем мощное оборудование, чтобы ускорить работы и сохранить ровность основания. Услуга идеально подходит для внутренних и наружных работ.",
                 title: "Разбивание бетонных стяжек"
             },
             {
-                id: v1(),
+                id: "card-002",
                 position: 2,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Удаляем монолитные бетонные конструкции любой сложности, включая стены, перекрытия и основания. Работаем точно и безопасно, сохраняя прилегающие строения. Идеально для подготовки участка к новым строительным проектам.",
                 title: "Демонтаж бетона"
             },
             {
-                id: v1(),
+                id: "card-003",
                 position: 3,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Сносим кирпичные перегородки, заборы и другие сооружения с минимальным уровнем шума и пыли. Услуга востребована при реконструкции зданий или перепланировке помещений. Оставляем участок чистым и готовым к дальнейшим работам.",
                 title: "Разрушение кирпичных стен"
             },
             {
-                id: v1(),
+                id: "card-004",
                 position: 4,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Удаляем старый асфальт с дорог, тротуаров или площадок, оставляя поверхность чистой. Используем гидромолоты для аккуратного демонтажа. Услуга необходима при обновлении дорожной инфраструктуры.",
                 title: "Снос асфальтового покрытия"
             },
             {
-                id: v1(),
+                id: "card-005",
                 position: 5,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Очищаем участки от ненужных бетонных и каменных объектов, включая старые фундаменты. Гарантируем своевременное выполнение работ и готовность площадки к строительству. Услуга подходит для частных и коммерческих проектов.",
                 title: "Подготовка участка под строительство"
             },
             {
-                id: v1(),
+                id: "card-006",
                 position: 6,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Удаляем бетонные столбы, ограждения и опоры ЛЭП быстро и безопасно. Услуга востребована при модернизации инфраструктуры или расчистке участка. Работаем с конструкциями любой высоты и сложности.",
                 title: "Демонтаж бетонных опор или столбов"
             },
             {
-                id: v1(),
+                id: "card-007",
                 position: 7,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Удаляем старые бетонные фундаменты, готовя участок под новое строительство. Используем профессиональное оборудование для эффективного выполнения работы. Услуга актуальна при строительстве домов, коммерческих объектов или производственных зданий.",
                 title: "Демонтаж фундаментов"
             },
             {
-                id: v1(),
+                id: "card-008",
                 position: 8,
-                images: [],
+                images: [{src: "", alt: ""}],
                 description: "Сносим бетонные лестницы в зданиях и на открытых площадках. Работаем быстро и аккуратно, сохраняя прилегающие конструкции. Услуга востребована при реконструкции зданий или модернизации инфраструктуры.",
                 title: "Разрушение лестничных конструкций"
             },
@@ -306,10 +306,10 @@ export const MAIN_DATA: MainData = {
     equipments: {
         [EQUIPMENT_SUBCATEGORY.HAMMER]:
             {
-                id: v1(),
+                id: "equipment-001",
                 title: "Гидромолот",
                 description: "позволяет копать даже при замерзшем грунте",
-                image: {},
+                image: {src: "", alt: ""},
                 characteristicList: [
                     "гидромолот массой 155 кг",
                     "энергия удара 5000кДж",
@@ -318,28 +318,28 @@ export const MAIN_DATA: MainData = {
             },
         [EQUIPMENT_SUBCATEGORY.DRILL]:
             {
-                id: v1(),
+                id: "equipment-002",
                 title: "Ямобур",
                 description: "для бурения под сваи, столбы фундаментов и пр.",
-                image: {},
+                image: {src: "", alt: ""},
                 characteristicList: ["шнеки: 200, 250, 300, 350, 400, 500, 600 мм"],
                 position: 3
             },
         [EQUIPMENT_SUBCATEGORY.FANG]:
             {
-                id: v1(),
+                id: "equipment-003",
                 title: "Клык рыхлитель",
                 description: "Для рыхления плотного и мерзлого грунта",
-                image: {},
+                image: {src: "", alt: ""},
                 characteristicList: ["глубина рыхления : до 700 мм"],
                 position: 1
             },
         [EQUIPMENT_SUBCATEGORY.BUCKETS]:
             {
-                id: v1(),
+                id: "equipment-004",
                 title: "Ковши",
                 description: "Большой выбор ковшей разного размера",
-                image: {},
+                image: {src: "", alt: ""},
                 characteristicList: [
                     "Ковши: 150, 300, 400, 600 мм"],
                 position: 4
