@@ -8,13 +8,13 @@ export function getRoutePath(category: Category,
 
     const categoryData: RoutesPathData = {
         url: normalize(MAIN_DATA.categories[category].url),
-        title: MAIN_DATA.categories[category].title,
+        i18nKey: MAIN_DATA.categories[category].i18nKey,
     };
 
     if (subcategory) {
         return {
-            url: normalize(MAIN_DATA.subcategoryItems[subcategory].subcategoryUrl),
-            title: MAIN_DATA.subcategoryItems[subcategory].subcategoryTitle,
+            url: normalize(MAIN_DATA.subcategories[subcategory].subcategoryUrl),
+            i18nKey: MAIN_DATA.subcategories[subcategory].i18nKey,
         }
     }
     return categoryData;

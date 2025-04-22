@@ -14,11 +14,13 @@ import {S_Image} from '../../shared/styled/S_Image';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from 'react-router-dom';
 import {API} from '../../app/api/API';
+import {useTranslation} from 'react-i18next';
 
 
 type props = {};
 export const Footer = ({}: props) => {
     const theme = useTheme();
+    const {t} = useTranslation();
     const servicesData = API.getServicesSubcategoriesData();
     //console.log(fullServicesData)
     return (
@@ -58,27 +60,27 @@ export const Footer = ({}: props) => {
                         <ul>
                             <li>
                                 <Link to = {ROUTES_PATHS.arenda.index.url}>
-                                    {ROUTES_PATHS.arenda.index.title}
+                                    {t('navigation.arenda.index')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to = {ROUTES_PATHS.uslugi.index.url}>
-                                    {ROUTES_PATHS.uslugi.index.title}
+                                    {t('navigation.uslugi.index')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to = {ROUTES_PATHS.price.url}>
-                                    {ROUTES_PATHS.price.title}
+                                    {t('navigation.price')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to = {ROUTES_PATHS.projects.url}>
-                                    {ROUTES_PATHS.projects.title}
+                                    {t('navigation.projects')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to = {ROUTES_PATHS.contacts.url}>
-                                    {ROUTES_PATHS.contacts.title}
+                                    {t('navigation.contacts')}
                                 </Link>
                             </li>
 
@@ -94,7 +96,7 @@ export const Footer = ({}: props) => {
                                     return (
                                         <li key = {service.id}>
                                             <Link to = {service.url}>
-                                                {service.subcategoryTitle}
+                                                {t(`${service.i18nKey}.title`)}
                                             </Link>
                                         </li>
                                     )

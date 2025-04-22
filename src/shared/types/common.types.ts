@@ -17,7 +17,7 @@ export type ImageProps = {
 }
 
 export type MenuItemType = {
-    title: string,
+    i18nKey: string,
     url: string,
     subMenuItems?: MenuItemType[]
 }
@@ -43,8 +43,9 @@ export type CategoryItem<T extends Category> = {
     id: string;
     category: T;
     url: string;
-    title: string;
-    description: string;
+    // title: string;
+    // description: string;
+    i18nKey: string;
     content?: string;
     images: ImageProps[];
     seo: Seo;
@@ -62,9 +63,11 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     id: string;
     subcategory: T;
     subcategoryUrl: string;
-    subcategoryTitle: string;
-    description?: string;
-    content?: string;
+    i18nKey: string,
+
+    //subcategoryTitle: string;
+    //description?: string;
+    //content?: string;
     images: ImageProps[];
     seo?: Seo;
     group?: ServiceGroup;
@@ -75,11 +78,12 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
 export type SubcategoryItemData<T extends Category> = {
     id: string,
     category: T,
-    categoryTitle?: string,
     categoryUrl: string,
     subcategory: SubcategoriesType<T>,
-    subcategoryTitle: string,
-    subcategoryDescription?: string,
+    // categoryTitle?: string,
+    // subcategoryTitle: string,
+    // subcategoryDescription?: string,
+    i18nKey: string,
     subcategoryUrl: string,
     image?: ImageProps,
     position: number,
@@ -97,7 +101,7 @@ export type MainData = {
     categories: {
         [key in Category]: CategoryItem<key>
     },
-    subcategoryItems: {
+    subcategories: {
         [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItem<key>
     },
     subcategoryItemCards: Partial<{
@@ -110,24 +114,26 @@ export type MainData = {
 
 export type Equipment = {
     id: string,
-    title: string,
-    description: string,
+    //title: string,
+    //description: string,
+    i18nKey:string,
     image: ImageProps | {},
     position: number,
-    characteristicList:string[]
+    //characteristicList:string[]
 }
 
 export type SubcategoryItemCard = {
     id: string;
-    title: string;
-    description: string;
+    //title: string;
+    //description: string;
+    i18nKey:string,
     images: ImageProps[];
     position: number;
 }
 
 export type RoutesPathData = {
     url: string,
-    title: string
+    i18nKey: string;
 }
 
 export type MachineryCharacteristicKeys =

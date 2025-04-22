@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {outline, plainTransition} from '../../../../app/styles/mixins';
 import {MobileDropdownMenu} from './MobileDropdownMenu';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons/faAngleRight';
-
+import { useTranslation } from 'react-i18next';
 type props = {
     id: string,
     dropDownId: string | null,
@@ -23,6 +23,7 @@ export const MobileMenuItem = ({
                                    setDropDown,
                                    collapsedDropdown
                                }: props) => {
+    const { t } = useTranslation();
     //const ref = useRef(null)
     const setAsDropDown = () => setDropDown(id)
     const toggleDropdown = () => {
@@ -46,7 +47,7 @@ export const MobileMenuItem = ({
                             <S_NavLink to = {menuItem.url}
                                        onClick = {setNavigationClose}
                             >
-                                {menuItem.title}
+                                {t(menuItem.i18nKey)}
                             </S_NavLink>
 
                             <button onClick = {(e) => {
@@ -61,7 +62,7 @@ export const MobileMenuItem = ({
                         </S_MobileDropdownNavLink>
 
                         <MobileDropdownMenu mainUrl = {menuItem.url}
-                                            mainTitle = {menuItem.title}
+                                            mainTitle = {t(menuItem.i18nKey)}
                                             subMenuItems = {menuItem.subMenuItems}
                                             isDropdown = {dropDownId === id}
                                             setDropdown = {setAsDropDown}
@@ -71,7 +72,7 @@ export const MobileMenuItem = ({
                 :
 
                 <S_NavLink to = {menuItem.url} onClick = {setNavigationClose}>
-                    {menuItem.title}
+                    {t(menuItem.i18nKey)}
                 </S_NavLink>
             }
         </S_MobileMenuItem>

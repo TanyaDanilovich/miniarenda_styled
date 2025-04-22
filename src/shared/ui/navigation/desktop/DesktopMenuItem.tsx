@@ -6,13 +6,14 @@ import {DesktopDropdownMenu} from './DesktopDropdownMenu';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import {plainTransition} from '../../../../app/styles/mixins';
+import { useTranslation } from 'react-i18next';
 
 type props = {
     menuItem: MenuItemType,
     setClose?: () => void
 };
 export const DesktopMenuItem = ({menuItem, setClose}: props) => {
-
+    const { t } = useTranslation();
     const [isDropdown, setIsDropdown] = useState(false);
     const setDropdown = () => setIsDropdown(true)
     const setCollapsed = () => setIsDropdown(false)
@@ -27,7 +28,7 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
                         <S_NavLink to = {menuItem.url} onClick = {setClose}
                                    onMouseEnter = {setDropdown}
                                    onMouseLeave = {setCollapsed}>
-                            {menuItem.title}
+                            {t(menuItem.i18nKey)}
                             <FontAwesomeIcon icon = {faAngleDown}
                                              size = {'1x'}
                                              transform = {"right-6"}/>
@@ -42,7 +43,7 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
                 :
 
                 <S_NavLink to = {menuItem.url} onClick = {setClose}>
-                    {menuItem.title}
+                    {t(menuItem.i18nKey)}
                 </S_NavLink>
             }
         </S_DesktopMenuItem>

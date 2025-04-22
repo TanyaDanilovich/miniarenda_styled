@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import React, {useEffect, useId, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
@@ -8,20 +8,25 @@ import {sectionMargin} from '../../app/styles/mixins';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {API} from '../../app/api/API';
+import { useTranslation } from 'react-i18next';
 
 
 type props = {};
 
 export const Services = ({}: props) => {
+    const { t } = useTranslation();
+
 //&#8288;
-    const serviceTitle = `Мини-погрузчики и мини-экскаваторы в аренду`
-    const serviceText = " Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и\n" +
-        "                        производственным\n" +
-        "                        компаниям, так и представителям малого бизнеса, также и частным заказчикам. Мини-экскаваторы\n" +
-        "                        зарубежного\n" +
-        "                        производства, которые предлагает арендовать наша компания, не подвержены поломкам, могут\n" +
-        "                        бесперебойно\n" +
-        "                        работать на протяжении долгого времени."
+    const serviceTitle = t('services.title');
+    const serviceText = t('services.description');
+    // const serviceTitle = `Мини-погрузчики и мини-экскаваторы в аренду`
+    // const serviceText = " Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и\n" +
+    //     "                        производственным\n" +
+    //     "                        компаниям, так и представителям малого бизнеса, также и частным заказчикам. Мини-экскаваторы\n" +
+    //     "                        зарубежного\n" +
+    //     "                        производства, которые предлагает арендовать наша компания, не подвержены поломкам, могут\n" +
+    //     "                        бесперебойно\n" +
+    //     "                        работать на протяжении долгого времени."
 
 
     const fullServicesData = API.getFullSubcategoriesData();
@@ -48,18 +53,9 @@ export const Services = ({}: props) => {
                 <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
 
                     {servicesData.map((card) =>
-                        <ServiceCard key = {card.id}
-                                     id = {card.id}
-                                     category = {card.category}
-                                     categoryTitle = {card.categoryTitle}
-                                     categoryUrl = {card.categoryUrl}
-                                     subcategory = {card.subcategory}
-                                     subcategoryTitle = {card.subcategoryTitle}
-                                     subcategoryDescription = {card.subcategoryDescription}
-                                     subcategoryUrl = {card.subcategoryUrl}
-                                     image = {card.image}
-                                     url = {card.url}
-                                     position = {card.position}
+                        <ServiceCard
+                            key={card.id}
+                            {...card}
                         />)}
                 </S_Flex>
             </S_OuterContainer>

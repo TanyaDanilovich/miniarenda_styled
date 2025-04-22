@@ -3,7 +3,7 @@ import React, {useId} from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {S_DesktopMenuItem} from './DesktopMenuItem';
-
+import { useTranslation } from 'react-i18next';
 
 type props = {
     subMenuItems: MenuItemType[],
@@ -23,7 +23,7 @@ export const DesktopDropdownMenu = ({
 
     const id = useId();
 
-
+    const { t } = useTranslation();
     return (
         <S_DropdownMenu onClick = {onClickCallback}
                         $isDropdown = {isDropdown}
@@ -33,7 +33,7 @@ export const DesktopDropdownMenu = ({
 
                 {subMenuItems.map((item, index) =>
                     <S_DesktopMenuItem key = {`${id}-${index}`} onClick = {onClickCallback}>
-                        <S_NavLink to = {item.url}>{item.title}</S_NavLink>
+                        <S_NavLink to = {item.url}>{t(item.i18nKey)}</S_NavLink>
                     </S_DesktopMenuItem>)}
 
         </S_DropdownMenu>);

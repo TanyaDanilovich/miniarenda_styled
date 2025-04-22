@@ -6,6 +6,7 @@ import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {UIMatch} from '@remix-run/router/utils';
 import {cleanPath} from '../../shared/utils/cleanPath';
+import { useTranslation } from "react-i18next";
 
 type BreadcrumbMatch = UIMatch & {
     handle?: {
@@ -14,13 +15,14 @@ type BreadcrumbMatch = UIMatch & {
 
 };
 type props = {
-    title: string;
+    i18nKey: string;
 };
 
 
-export const LayoutWithBreadcrumbs = ({title}: props) => {
+export const LayoutWithBreadcrumbs = ({i18nKey}: props) => {
     const matches = useMatches() as BreadcrumbMatch[];
     const location = useLocation();
+    const { t } = useTranslation();
 
     const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))
@@ -41,7 +43,7 @@ export const LayoutWithBreadcrumbs = ({title}: props) => {
         <S_LayoutWithBreadcrumbs>
             <S_BreadcrumbsContainer $img = {img}>
                 <S_Breadcrumbs>
-                    <S_BreadcrumbsTitle>{title}</S_BreadcrumbsTitle>
+                    <S_BreadcrumbsTitle>{t(i18nKey)}</S_BreadcrumbsTitle>
                     <S_BreadcrumbsContent>
                         <li>
                             <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title}</Link>

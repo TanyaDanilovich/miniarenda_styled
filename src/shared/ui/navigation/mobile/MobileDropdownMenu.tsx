@@ -7,6 +7,7 @@ import {outline, plainTransition} from '../../../../app/styles/mixins';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowUpFromBracket} from '@fortawesome/free-solid-svg-icons/faArrowUpFromBracket';
 import {faLeftLong} from '@fortawesome/free-solid-svg-icons/faLeftLong';
+import { useTranslation } from 'react-i18next';
 
 
 type props = {
@@ -28,7 +29,7 @@ export const MobileDropdownMenu = ({
 
     const id = useId();
     //console.log(isDropdown);
-
+    const { t } = useTranslation();
     const goBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.stopPropagation();
         setCollapsed();
@@ -48,7 +49,7 @@ export const MobileDropdownMenu = ({
 
             {subMenuItems.map((item, index) =>
                 <S_MobileMenuItem key = {`${id}-${index}`} onClick = {onClickCallback} $isDropdown = {isDropdown}>
-                    <S_NavLink to = {item.url}>{item.title}</S_NavLink>
+                    <S_NavLink to = {item.url}>{t(item.i18nKey)}</S_NavLink>
                 </S_MobileMenuItem>)}
 
         </S_MobileDropdownMenu>);

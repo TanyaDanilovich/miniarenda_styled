@@ -10,7 +10,7 @@ import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
-
+import {useTranslation} from 'react-i18next';
 
 export type ServiceCardData = {}
 
@@ -18,11 +18,10 @@ type props = ServiceCardData & SubcategoryItemData<Category>;
 export const ServiceCard = ({
                                 id,
                                 category,
-                                categoryTitle,
+                                i18nKey,
                                 categoryUrl,
                                 subcategory,
-                                subcategoryTitle,
-                                subcategoryDescription,
+
                                 subcategoryUrl,
                                 image,
                                 position,
@@ -30,6 +29,7 @@ export const ServiceCard = ({
 
                             }: props) => {
     const theme = useTheme()
+    const {t} = useTranslation();
     return (
         <StyledServiceCard>
             {image && <S_ImageContainer>
@@ -39,15 +39,15 @@ export const ServiceCard = ({
 
             <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
                 <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
-                <a href = {categoryUrl}>{categoryTitle}</a>
+                <a href = {categoryUrl}>{t(`categories.${category}.title`)}</a>
             </S_Flex>
 
 
             <ServiceCardTitle>
-                <a href = {url}>{subcategoryTitle}</a>
+                <a href = {url}> {t(`${i18nKey}.title`)}</a>
             </ServiceCardTitle>
             <ServiceCardText>
-                {subcategoryDescription}
+                {t(`${i18nKey}.description`)}
             </ServiceCardText>
             <S_Box $marginTop = {"1rem"}>
                 <ReadMoreButton url = {url}/>

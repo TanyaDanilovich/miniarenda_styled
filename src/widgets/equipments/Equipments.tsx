@@ -8,13 +8,14 @@ import {API} from '../../app/api/API';
 import {Equipment} from '../../shared/types/common.types';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
+import {useTranslation} from 'react-i18next';
 
 
-type props = {offset:number}
+type props = { offset: number }
 
 export const Equipments = ({offset}: props) => {
     const theme = useTheme();
-
+    const {t} = useTranslation();
     const equipmentsData: Equipment[] = API.getAdditionEquipmentSubcategoriesData();
 
     return (
@@ -23,17 +24,23 @@ export const Equipments = ({offset}: props) => {
 
                 <S_OuterContainer>
 
-                    <SectionTitle title = {"Всегда в наличии"}
-                                  text = {'Все необходимое оборудование для выполнения работ'}/>
+                    <SectionTitle
+                        title = {t('equipments.title')}
+                        text = {t('equipments.description')}
+                    />
 
                     <S_EquipmentCardWrapper>
                         {equipmentsData.map(
-                            equipment => <EquipmentCard key = {equipment.id}
-                                                        id = {equipment.id}
-                                                        title = {equipment.title}
-                                                        description = {equipment.description}
-                                                        characteristicList = {equipment.characteristicList}
-                            />)}
+                            (equipment) => {
+                                const characteristicList = t(`${equipment.i18nKey}.characteristicList`, {returnObjects: true}) as Array<string>;
+                                return <EquipmentCard
+                                    key = {equipment.id}
+                                    id = {equipment.id}
+                                    title = {t(`${equipment.i18nKey}.title`)}
+                                    description = {t(`${equipment.i18nKey}.description`)}
+                                    characteristicList = {characteristicList}
+                                />
+                            })}
                     </S_EquipmentCardWrapper>
 
                 </S_OuterContainer>
@@ -44,7 +51,7 @@ export const Equipments = ({offset}: props) => {
 
 type S_EquipmentsProps = {}
 export const S_Equipments = styled.section<S_EquipmentsProps>`
-  & h2{
+  & h2 {
     margin-top: 2rem;
   }
 
