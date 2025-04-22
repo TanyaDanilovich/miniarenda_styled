@@ -46,7 +46,7 @@ export const LayoutWithBreadcrumbs = ({i18nKey}: props) => {
                     <S_BreadcrumbsTitle>{t(i18nKey)}</S_BreadcrumbsTitle>
                     <S_BreadcrumbsContent>
                         <li>
-                            <Link to = {ROUTES_PATHS.home.url}>{ROUTES_PATHS.home.title}</Link>
+                            <Link to={ROUTES_PATHS.home.url}>{t('navigation.home')}</Link>
                         </li>
                         {breadcrumbs}
                     </S_BreadcrumbsContent>

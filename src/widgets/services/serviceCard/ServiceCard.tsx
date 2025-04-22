@@ -15,8 +15,9 @@ import {Link} from 'react-router-dom';
 
 export type ServiceCardData = {}
 
-type props = ServiceCardData & {data:SubcategoryItemData<Category>};
-export const ServiceCard = ({data
+type props = ServiceCardData & { data: SubcategoryItemData<Category> };
+export const ServiceCard = ({
+                                data
 
                             }: props) => {
     const theme = useTheme()
@@ -25,27 +26,28 @@ export const ServiceCard = ({data
         <StyledServiceCard>
             {data.image && (
                 <S_ImageContainer>
-                    <S_Image src={data.image.src} alt={data.image.alt} />
-                    <HoverIcons link={data.url} image={data.image} />
+                    <S_Image src = {data.image.src} alt = {data.image.alt}/>
+                    <HoverIcons link = {data.url} image = {data.image}/>
                 </S_ImageContainer>
             )}
 
-            <S_Flex $gap={"1rem"} $style={"margin-top: 1rem"}>
-                <FontAwesomeIcon icon={faFolderOpen} size={'1x'} color={theme.colors.primary} />
-                <Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>
+            <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
+                <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
+                <Link to = {data.categoryUrl}>{t(`categories.${data.category}.title`)}</Link>
+                {/*<Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>*/}
             </S_Flex>
 
 
             <ServiceCardTitle>
-                <Link to={`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>
+                <Link to = {`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>
             </ServiceCardTitle>
 
             <ServiceCardText>
                 {t(`${data.i18nKey}.description`)}
             </ServiceCardText>
 
-            <S_Box $marginTop={"1rem"}>
-                <ReadMoreButton url={`/${data.url}`} />
+            <S_Box $marginTop = {"1rem"}>
+                <ReadMoreButton url = {`/${data.url}`}/>
             </S_Box>
         </StyledServiceCard>
     );

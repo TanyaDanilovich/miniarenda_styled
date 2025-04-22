@@ -2,11 +2,12 @@ import styled from "styled-components";
 import React, {useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {DesktopMenuItem} from './DesktopMenuItem';
+import {useTranslation} from 'react-i18next';
 
 type props = {};
 export const DesktopNavigation = ({}: props) => {
     const id = useId();
-
+    const {t} = useTranslation();
     //console.log("DesktopNavigation")
 
     return (
@@ -16,7 +17,7 @@ export const DesktopNavigation = ({}: props) => {
             <nav>
                 <ul>
                     {menuItemsData.map((menuItem, index) =>
-                        <DesktopMenuItem key = {`${id}-${index}`} menuItem = {menuItem}/>
+                        <DesktopMenuItem key = {index} menuItem = {{...menuItem, i18nKey: t(menuItem.i18nKey)}}/>
                     )}
                 </ul>
             </nav>

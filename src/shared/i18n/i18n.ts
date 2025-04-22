@@ -13,11 +13,13 @@ i18n
             //be: { translation: be },
         },
         lng: 'ru', // язык по умолчанию
+        defaultNS: 'translation',
         fallbackLng: 'ru', // если перевод не найден
         interpolation: {
             escapeValue: false, // React сам экранирует HTML
         },
-        returnObjects: true, // позволяет возвращать вложенные структуры
+        returnObjects: true,// позволяет возвращать вложенные структуры
+        debug: false,
     });
 
 export default i18n;
