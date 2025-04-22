@@ -1,5 +1,4 @@
 import styled, {useTheme} from "styled-components";
-
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_HideContent} from '../../shared/styled/S_HideContent';
@@ -9,107 +8,79 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
-import {outline} from '../../app/styles/mixins';
 import {S_Image} from '../../shared/styled/S_Image';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from 'react-router-dom';
 import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
-
+import {outline} from '../../app/styles/mixins';
 
 type props = {};
+
 export const Footer = ({}: props) => {
     const theme = useTheme();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const servicesData = API.getServicesSubcategoriesData();
-    //console.log(fullServicesData)
+
     return (
-
-
         <S_Footer>
             <S_FooterContainer>
-                <S_Flex $gap = {"1rem"}>
-
+                <S_Flex $gap="1rem">
 
                     <S_FooterItem>
-                        <h5><span>MINIARENDA.BY</span></h5>
-                        <p>Аренда&nbsp;техники по&nbsp;выгодным&nbsp;ценам</p>
-                        <p>Огромный&nbsp;опыт в&nbsp;земляных&nbsp;работах</p>
+                        <h5><span>{t('footer.companyName')}</span></h5>
+                        <p>{t('footer.slogan1')}</p>
+                        <p>{t('footer.slogan2')}</p>
                         <p>
-                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
-                            <a className = "tel" href = "tel:+375296949698">+375 29 694-96-98</a></p>
+                            <FontAwesomeIcon icon={faPhoneVolume} size={'1x'} color={theme.colors.primary} />
+                            <a className="tel" href="tel:+375296949698">+375 29 694-96-98</a>
+                        </p>
                         <p>
-                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
-                            <a className = "tel" href = "tel:+375336949698">+375 33 694-96-98</a></p>
-                        <p>ИП Данилович А. И.</p>
-                        <p>УНП 390053113</p>
+                            <FontAwesomeIcon icon={faPhoneVolume} size={'1x'} color={theme.colors.primary} />
+                            <a className="tel" href="tel:+375336949698">+375 33 694-96-98</a>
+                        </p>
+                        <p>{t('footer.owner')}</p>
+                        <p>{t('footer.unp')}</p>
                     </S_FooterItem>
 
                     <S_FooterItem>
-                        <h5><span>НАША</span> ТЕХНИКА</h5>
+                        <h5><span>{t('footer.ourEquipment')}</span></h5>
                         <S_ImageContainer>
-                            <S_Image src = {image} alt = "" width = "300"/>
+                            <S_Image src={image} alt="" width="300" />
                         </S_ImageContainer>
-                        <S_Flex $direction = {"column"}>
-                            <a href = "#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
-                            <a href = "#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
+                        <S_Flex $direction={"column"}>
+                            <a href="#et1404">Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
+                            <a href="#et24">Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
                         </S_Flex>
                     </S_FooterItem>
 
-                    <S_FooterItem><h5><span>РАЗДЕЛЫ</span></h5>
+                    <S_FooterItem>
+                        <h5><span>{t('footer.sections')}</span></h5>
                         <ul>
-                            <li>
-                                <Link to = {ROUTES_PATHS.arenda.index.url}>
-                                    {t('navigation.arenda.index')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to = {ROUTES_PATHS.uslugi.index.url}>
-                                    {t('navigation.uslugi.index')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to = {ROUTES_PATHS.price.url}>
-                                    {t('navigation.price')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to = {ROUTES_PATHS.projects.url}>
-                                    {t('navigation.projects')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to = {ROUTES_PATHS.contacts.url}>
-                                    {t('navigation.contacts')}
-                                </Link>
-                            </li>
-
-
+                            <li><Link to={ROUTES_PATHS.arenda.index.url}>{t('navigation.arenda.index')}</Link></li>
+                            <li><Link to={ROUTES_PATHS.uslugi.index.url}>{t('navigation.uslugi.index')}</Link></li>
+                            <li><Link to={ROUTES_PATHS.price.url}>{t('navigation.price')}</Link></li>
+                            <li><Link to={ROUTES_PATHS.projects.url}>{t('navigation.projects')}</Link></li>
+                            <li><Link to={ROUTES_PATHS.contacts.url}>{t('navigation.contacts')}</Link></li>
                         </ul>
                     </S_FooterItem>
 
                     <S_FooterItem>
-                        <h5><span>НАШИ </span>УСЛУГИ</h5>
+                        <h5><span>{t('footer.ourServices')}</span></h5>
                         <ul>
-                            {
-                                servicesData.map((service) => {
-                                    return (
-                                        <li key = {service.id}>
-                                            <Link to = {service.url}>
-                                                {t(`${service.i18nKey}.title`)}
-                                            </Link>
-                                        </li>
-                                    )
-                                })
-                            }
+                            {servicesData.map((service) => (
+                                <li key={service.id}>
+                                    <Link to={service.url}>
+                                        {t(`${service.i18nKey}.title`)}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </S_FooterItem>
 
-
                 </S_Flex>
-                <small>
-                    Copyright © 2024 miniarenda.by
-                </small>
+
+                <small>Copyright © 2024 miniarenda.by</small>
                 <S_HideContent>
                     <p>Предосталяем в аренду мини-экскаватор в Минске и
                        Минской области

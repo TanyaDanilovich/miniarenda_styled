@@ -11,46 +11,41 @@ import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {useTranslation} from 'react-i18next';
+import {Link} from 'react-router-dom';
 
 export type ServiceCardData = {}
 
-type props = ServiceCardData & SubcategoryItemData<Category>;
-export const ServiceCard = ({
-                                id,
-                                category,
-                                i18nKey,
-                                categoryUrl,
-                                subcategory,
-
-                                subcategoryUrl,
-                                image,
-                                position,
-                                url,
+type props = ServiceCardData & {data:SubcategoryItemData<Category>};
+export const ServiceCard = ({data
 
                             }: props) => {
     const theme = useTheme()
     const {t} = useTranslation();
     return (
         <StyledServiceCard>
-            {image && <S_ImageContainer>
-                <S_Image src = {image.src} alt = {image.alt}/>
-                <HoverIcons link = {url} image = {image}/>
-            </S_ImageContainer>}
+            {data.image && (
+                <S_ImageContainer>
+                    <S_Image src={data.image.src} alt={data.image.alt} />
+                    <HoverIcons link={data.url} image={data.image} />
+                </S_ImageContainer>
+            )}
 
-            <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
-                <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
-                <a href = {categoryUrl}>{t(`categories.${category}.title`)}</a>
+            <S_Flex $gap={"1rem"} $style={"margin-top: 1rem"}>
+                <FontAwesomeIcon icon={faFolderOpen} size={'1x'} color={theme.colors.primary} />
+                <Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>
             </S_Flex>
 
 
             <ServiceCardTitle>
-                <a href = {url}> {t(`${i18nKey}.title`)}</a>
+                <Link to={`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>
             </ServiceCardTitle>
+
             <ServiceCardText>
-                {t(`${i18nKey}.description`)}
+                {t(`${data.i18nKey}.description`)}
             </ServiceCardText>
-            <S_Box $marginTop = {"1rem"}>
-                <ReadMoreButton url = {url}/>
+
+            <S_Box $marginTop={"1rem"}>
+                <ReadMoreButton url={`/${data.url}`} />
             </S_Box>
         </StyledServiceCard>
     );

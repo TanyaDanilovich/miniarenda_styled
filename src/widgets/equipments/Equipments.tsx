@@ -32,13 +32,17 @@ export const Equipments = ({offset}: props) => {
                     <S_EquipmentCardWrapper>
                         {equipmentsData.map(
                             (equipment) => {
-                                const characteristicList = t(`${equipment.i18nKey}.characteristicList`, {returnObjects: true}) as Array<string>;
+                                const equipmentContent = t(equipment.i18nKey, { returnObjects: true }) as {
+                                    title: string;
+                                    description: string;
+                                    characteristicList: string[];
+                                };
                                 return <EquipmentCard
-                                    key = {equipment.id}
-                                    id = {equipment.id}
-                                    title = {t(`${equipment.i18nKey}.title`)}
-                                    description = {t(`${equipment.i18nKey}.description`)}
-                                    characteristicList = {characteristicList}
+                                    key={equipment.id}
+                                    id={equipment.id}
+                                    title={equipmentContent.title}
+                                    description={equipmentContent.description}
+                                    characteristicList={equipmentContent.characteristicList}
                                 />
                             })}
                     </S_EquipmentCardWrapper>
