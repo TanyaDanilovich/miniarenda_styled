@@ -5,6 +5,7 @@ import {S_Flex} from '../../shared/styled/S_Flex';
 import {Category, SubcategoryItemData} from '../../shared/types/common.types';
 import {S_Box} from '../../shared/styled/S_Box';
 import {Link} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 
 export type ServiceCardData = {}
 
@@ -12,20 +13,21 @@ type props = { isActive: boolean } &
     ServiceCardData &
     SubcategoryItemData<Category>
 export const SubcategoriesCard = ({
-                                      subcategoryTitle,
+
                                       url,
                                       icon,
                                       isActive,
+                                      i18nKey,
                                       ...rest
                                   }: props) => {
-
+    const { t } = useTranslation();
     return (
         <S_SubcategoriesCard $isActive = {isActive}>
             <Link to = {`/${url}`}>
                 <S_Flex $gap = {"2rem"}>
                     {icon && <S_Box $height = {"4rem"} $width = {"4rem"}
                                     style = {{maskImage: `url(${icon})`}}> </S_Box>}
-                    <h4>{subcategoryTitle}</h4>
+                    <h4>{t(`${i18nKey}.title`)}</h4>
                 </S_Flex>
             </Link>
         </S_SubcategoriesCard>

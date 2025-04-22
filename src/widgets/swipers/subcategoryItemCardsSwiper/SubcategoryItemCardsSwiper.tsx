@@ -7,13 +7,15 @@ import {SubcategoryItemCard} from '../../../shared/types/common.types';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {SwiperOptions} from 'swiper/types';
 import {BASE} from '../../../shared/constants/constants';
+import { useTranslation } from 'react-i18next';
+
 
 
 type props = { cards: SubcategoryItemCard[] };
 
 export const SubcategoryItemCardsSwiper = ({cards}: props) => {
     const id = useId();
-
+    const { t } = useTranslation();
     const params: SwiperProps & SwiperOptions = {
         breakpoints: {
             320: {
@@ -54,12 +56,11 @@ export const SubcategoryItemCardsSwiper = ({cards}: props) => {
 
             {cards && cards.map((card) =>
                 <AppSwiperSlide id = {card.id}>
-                    <SimpleSubcategoryItemCard key = {card.id}
-                                               id = {card.id}
-                                               title = {card.title}
-                                               description = {card.description}
-                                               images = {card.images}
-                                               position = {card.position}
+                    <SimpleSubcategoryItemCard
+                        id={card.id}
+                        i18nKey={card.i18nKey}
+                        images={card.images}
+                        position={card.position}
                     />
                 </AppSwiperSlide>)}
 
