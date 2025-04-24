@@ -20,9 +20,11 @@ type props = {
 
 
 export const LayoutWithBreadcrumbs = ({i18nKey}: props) => {
+
     const matches = useMatches() as BreadcrumbMatch[];
     const location = useLocation();
     const { t } = useTranslation();
+
 
     const filteredMatches = matches
         .filter((match) => Boolean(match.handle?.crumb))

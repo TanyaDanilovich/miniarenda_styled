@@ -10,15 +10,15 @@ type props = { data: SubcategoryItemData<'rental'>[] };
 export const MappedSubcategoriesCards = ({data}: props) => {
 
     const location = useLocation();
-    // console.log(data[0].url)
+     //console.log(data)
     // console.log(data[1].url)
     // console.log(data[2].url)
     return (
         <S_MappedSubcategoriesCards>
 
-            {data.map((subcategory) => {
+            {data.map((subcategory,index) => {
                 const isActive = subcategory.url === cleanPathFromLocation(location.pathname)
-                return <SubcategoriesCard key = {subcategory.id} {...subcategory} isActive = {isActive}/>
+                return <SubcategoriesCard key = {`${subcategory.id}-${index}`} {...subcategory} isActive = {isActive}/>
             })}
 
 
