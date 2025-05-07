@@ -1,8 +1,11 @@
 export const ru = {
         navigation: {
             home: "Главная",
+
             projects: "Наши проекты",
+
             contacts: "Контакты",
+
             price: "Прайс-лист",
 
             arenda: {

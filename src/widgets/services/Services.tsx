@@ -8,15 +8,15 @@ import {sectionMargin} from '../../app/styles/mixins';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {API} from '../../app/api/API';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 type props = {};
 
 export const Services = ({}: props) => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
-    const serviceTitle = t('services.title');
-    const serviceText = t('services.description');
+    const serviceTitle = t('categories.services.title');
+    const serviceText = t('categories.services.description');
 
     const fullServicesData = API.getFullSubcategoriesData();
     const [servicesData, setServicesData] = useState(fullServicesData);
@@ -37,12 +37,12 @@ export const Services = ({}: props) => {
     return (
         <StyledServices>
             <S_OuterContainer>
-                <SectionTitle title={serviceTitle} text={serviceText} />
-                <S_Flex $direction={"column"} $gap={"1rem"} $wrap={"wrap"}>
+                <SectionTitle title = {serviceTitle} text = {serviceText}/>
+                <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
                     {servicesData.map(card => (
                         <ServiceCard
-                            key={card.id}
-                            data={card}
+                            key = {card.id}
+                            data = {card}
                         />
                     ))}
                 </S_Flex>
