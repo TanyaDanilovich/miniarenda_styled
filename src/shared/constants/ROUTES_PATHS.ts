@@ -39,75 +39,75 @@ export const ROUTES_PATHS = {
     home: {
         url: "",
         title: "Главная",
-        i18nKey: "navigation.home",
+        i18nKey: "pages.home.navigation",
     },
     projects: {
         url: PROJECTS_DATA.url,
         title: PROJECTS_DATA.title,
-        i18nKey: "navigation.projects",
+        i18nKey: "pages.projects.navigation",
     },
     contacts: {
         url: CONTACTS_DATA.url,
         title: CONTACTS_DATA.title,
-        i18nKey: "navigation.contacts",
+        i18nKey: "pages.contacts.navigation",
     },
     price: {
         url: PRICES_DATA.url,
         title: PRICES_DATA.title,
-        i18nKey: "navigation.price",
+        i18nKey: "pages.price.navigation",
     },
 
     arenda: {
         index: {
             ...getRoutePath(CATEGORY.RENTAL),
-            i18nKey: "navigation.arenda.index",
+            i18nKey: "pages.arenda.index.navigation",
         },
         arenda_Exavatora: {
             ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.EXCAVATOR),
-            i18nKey: "navigation.arenda.excavator",
+            i18nKey: "pages.arenda.excavator.navigation",
         },
         arenda_Gidromolota: {
             ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.HAMMER),
-            i18nKey: "navigation.arenda.hammer",
+            i18nKey: "pages.arenda.hammer.navigation",
         },
         arenda_Yamobura: {
             ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.DRILL),
-            i18nKey: "navigation.arenda.yamobur",
+            i18nKey: "pages.arenda.yamobur.navigation",
         },
     },
 
     uslugi: {
         index: {
             ...getRoutePath(CATEGORY.SERVICES),
-            i18nKey: "navigation.uslugi.index",
+            i18nKey: "pages.uslugi.index.navigation",
         },
         diggingTrench: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DIGGING_TRENCH),
-            i18nKey: "navigation.uslugi.diggingTrench",
+            i18nKey: "pages.uslugi.diggingTrench.navigation",
         },
         diggingFoundation: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DIGGING_FOUNDATION),
-            i18nKey: "navigation.uslugi.diggingFoundation",
+            i18nKey: "pages.uslugi.diggingFoundation.navigation",
         },
         stumpRemoval: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.STUMP_REMOVAL),
-            i18nKey: "navigation.uslugi.stumpRemoval",
+            i18nKey: "pages.uslugi.stumpRemoval.navigation",
         },
         drilling: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DRILLING),
-            i18nKey: "navigation.uslugi.drilling",
+            i18nKey: "pages.uslugi.drilling.navigation",
         },
         groundMovement: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.GROUND_MOVEMENT),
-            i18nKey: "navigation.uslugi.groundMovement",
+            i18nKey: "pages.uslugi.groundMovement.navigation",
         },
         otherGroundworks: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS),
-            i18nKey: "navigation.uslugi.otherGroundworks",
+            i18nKey: "pages.uslugi.otherGroundworks.navigation",
         },
         dismantling: {
             ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DISMANTLING),
-            i18nKey: "navigation.uslugi.dismantling",
+            i18nKey: "pages.uslugi.dismantling.navigation",
         },
     },
 };

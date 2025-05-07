@@ -1,29 +1,29 @@
 export const ru = {
-        navigation: {
-            home: "Главная",
+        pages: {
+            home: {navigation: "Главная"},
 
-            projects: "Наши проекты",
+            projects: {navigation: "Наши проекты"},
 
-            contacts: "Контакты",
+            contacts: {navigation: "Контакты"},
 
-            price: "Прайс-лист",
+            price: {navigation: "Прайс-лист"},
 
             arenda: {
-                index: "Аренда техники",
-                excavator: "Аренда мини-экскаватора",
-                hammer: "Аренда гидромолота",
-                yamobur: "Аренда ямобура",
+                index: {navigation: "Аренда техники"},
+                excavator: {navigation: "Аренда мини-экскаватора"},
+                hammer: {navigation: "Аренда гидромолота"},
+                yamobur: {navigation: "Аренда ямобура"},
             },
 
             uslugi: {
-                index: "Услуги мини-техники",
-                diggingTrench: "Копание траншей",
-                diggingFoundation: "Копание фундаментов",
-                stumpRemoval: "Корчевание пней",
-                drilling: "Бурение отверстий",
-                groundMovement: "Перемещение грунта",
-                otherGroundworks: "Прочие земляные работы",
-                dismantling: "Демонтаж конструкций",
+                index: {navigation: "Услуги мини-техники"},
+                diggingTrench: {navigation: "Копание траншей"},
+                diggingFoundation: {navigation: "Копание фундаментов"},
+                stumpRemoval: {navigation: "Корчевание пней"},
+                drilling: {navigation: "Бурение отверстий"},
+                groundMovement: {navigation: "Перемещение грунта"},
+                otherGroundworks: {navigation: "Прочие земляные работы"},
+                dismantling: {navigation: "Демонтаж конструкций"},
             }
         },
         categories: {
@@ -116,6 +116,13 @@ export const ru = {
                     "подводные работы (расширение русел каналов)." +
                     "Наш опыт и оборудование позволяют нам обеспечивать качественное выполнение работ в сжатые сроки и при любых условиях.",
             },
+        },
+
+        sections: {
+            services: {
+                title: "Мини-экскаваторы в аренду",
+                description: "Компания СтройМиниТехника оказывает услуги по аренде мини-техники как строительным и производственным компаниям, так и представителям малого бизнеса, также и частным заказчикам. Мини-экскаваторы зарубежного производства, которые предлагает арендовать наша компания, не подвержены поломкам, могут бесперебойно работать на протяжении долгого времени.",
+            }
         },
 
         subcategoryItemCards: {

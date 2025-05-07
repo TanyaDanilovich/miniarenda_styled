@@ -50,13 +50,13 @@ export const EquipmentCard = ({
 
             <S_EquipmentCardCharacteristics>
                 {characteristicList.map((characteristic, index) =>
-                    <>
+
 
                         <li key = {`${id}-${index}`}>
                             <FontAwesomeIcon icon = {faCircleCheck} size = {'1x'} color = {theme.colors.primary}/>
                             {characteristic}
                         </li>
-                    </>
+
                 )}
             </S_EquipmentCardCharacteristics>
 

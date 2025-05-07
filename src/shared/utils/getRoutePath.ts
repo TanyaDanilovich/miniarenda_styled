@@ -17,5 +17,6 @@ export function getRoutePath(category: Category,
             i18nKey: MAIN_DATA.subcategories[subcategory].i18nKey,
         }
     }
+    //console.log("getRoutePath - ",categoryData);
     return categoryData;
 }

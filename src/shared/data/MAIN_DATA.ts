@@ -8,6 +8,14 @@ import hammer from '../../assets/svg/gidromolot.svg';
 import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
+import img from "../../assets/images/servises/servises_1.jpg"
+
+
+
+
+
+
+
 export const MAIN_DATA: MainData = {
     categories: {
         [CATEGORY.RENTAL]: {
@@ -15,7 +23,7 @@ export const MAIN_DATA: MainData = {
             category: CATEGORY.RENTAL,
             url: "arenda",
             i18nKey: "categories.rental",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Аренда техники | Доступные цены и гибкие условия",
                 metaDescription: "Арендуйте технику для строительства и земляных работ по выгодным ценам. Мини-экскаваторы, гидромолоты и ямобуры на выбор.",
@@ -33,7 +41,7 @@ export const MAIN_DATA: MainData = {
             category: CATEGORY.SERVICES,
             url: "uslugi",
             i18nKey: "categories.services",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Земляные работы и услуги мини-техники",
                 metaDescription: "Предоставляем услуги мини-экскаваторов для копки, бурения и других земляных работ. Качественное выполнение в сжатые сроки.",
@@ -56,7 +64,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
             subcategoryUrl: "arenda-mini-exavatora",
             i18nKey: "subcategories.rentalExcavator",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             position: 1,
             icon: excavator,
             seo: {
@@ -70,7 +78,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.HAMMER,
             subcategoryUrl: "arenda-gidromolota",
             i18nKey: "subcategories.rentalsHammer",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             position: 2,
             icon: hammer,
             seo: {
@@ -84,7 +92,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.DRILL,
             subcategoryUrl: "arenda-yamobura",
             i18nKey: "subcategories.rentalsDrill",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             position: 3,
             icon: drill,
             seo: {
@@ -101,7 +109,7 @@ export const MAIN_DATA: MainData = {
             position: 1,
             subcategoryUrl: "kopanie-transhej",
             i18nKey: "subcategories.diggingTrench",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Копание траншей | Прокладка коммуникаций",
                 metaDescription: "Услуги по копанию траншей для прокладки инженерных коммуникаций и трубопроводов.",
@@ -115,7 +123,7 @@ export const MAIN_DATA: MainData = {
             position: 2,
             subcategoryUrl: "kopanie-fundamentov",
             i18nKey: "subcategories.diggingFoundation",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Копание фундаментов | Профессиональные услуги",
                 metaDescription: "Копка фундаментов под дома и другие постройки. Мини-экскаваторы для любой сложности работы.",
@@ -129,7 +137,7 @@ export const MAIN_DATA: MainData = {
             position: 3,
             subcategoryUrl: "korchevanie-pnej",
             i18nKey: "subcategories.stumpRemoval",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Корчевание пней | Удаление корней",
                 metaDescription: "Услуги по корчеванию пней с применением спецтехники. Быстрое и эффективное удаление корней.",
@@ -143,7 +151,7 @@ export const MAIN_DATA: MainData = {
             position: 4,
             subcategoryUrl: "yamobur",
             i18nKey: "subcategories.drilling",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Бурение отверстий и ям | Услуги бурения в Минске",
                 metaDescription: "Профессиональные услуги по бурению отверстий ямобуром для фундаментов, столбов и опор. Работаем быстро и качественно, используя современное оборудование.",
@@ -157,7 +165,7 @@ export const MAIN_DATA: MainData = {
             position: 5,
             subcategoryUrl: "peremeschenie-grunta",
             i18nKey: "subcategories.groundMovement",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Перемещение грунта | Земляные работы",
                 metaDescription: "Услуги по перемещению грунта с использованием мини-техники. Работаем на любых участках.",
@@ -171,7 +179,7 @@ export const MAIN_DATA: MainData = {
             position: 6,
             subcategoryUrl: "prochie-zemlyanye-raboty",
             i18nKey: "subcategories.otherGroundworks",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Прочие земляные работы | Мини-экскаваторы",
                 metaDescription: "Земляные работы различной сложности с использованием мини-экскаваторов. Оперативное выполнение задач.",
@@ -185,7 +193,7 @@ export const MAIN_DATA: MainData = {
             position: 7,
             subcategoryUrl: "demontazh",
             i18nKey: "subcategories.dismantling",
-            images: [{src: "", alt: ""}],
+            images: [{src: img, alt: ""}],
             seo: {
                 metaTitle: "Демонтаж бетонных и железобетонных конструкций | Разрушительные работы",
                 metaDescription: "Профессиональный демонтаж бетонных с помощью гидромолота. Разрушение сооружений, вскрытие подземных коммуникаций.",
@@ -198,49 +206,49 @@ export const MAIN_DATA: MainData = {
             {
                 id: "card-001",
                 position: 1,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card001",
             },
             {
                 id: "card-002",
                 position: 2,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card002",
             },
             {
                 id: "card-003",
                 position: 3,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card003",
             },
             {
                 id: "card-004",
                 position: 4,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card004",
             },
             {
                 id: "card-005",
                 position: 5,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card005",
             },
             {
                 id: "card-006",
                 position: 6,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card006",
             },
             {
                 id: "card-007",
                 position: 7,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card007",
             },
             {
                 id: "card-008",
                 position: 8,
-                images: [{src: "", alt: ""}],
+                images: [{src: img, alt: ""}],
                 i18nKey: "subcategoryItemCards.rentalsHammer.card008",
             },
         ]
@@ -250,25 +258,25 @@ export const MAIN_DATA: MainData = {
         [EQUIPMENT_SUBCATEGORY.HAMMER]: {
             id: "equipment-001",
             i18nKey: "equipments.hammer",
-            image: {src: "", alt: ""},
+            image: {src: img, alt: ""},
             position: 2
         },
         [EQUIPMENT_SUBCATEGORY.DRILL]: {
             id: "equipment-002",
             i18nKey: "equipments.drill",
-            image: {src: "", alt: ""},
+            image: {src: img, alt: ""},
             position: 3
         },
         [EQUIPMENT_SUBCATEGORY.FANG]: {
             id: "equipment-003",
             i18nKey: "equipments.fang",
-            image: {src: "", alt: ""},
+            image: {src: img, alt: ""},
             position: 1
         },
         [EQUIPMENT_SUBCATEGORY.BUCKETS]: {
             id: "equipment-004",
             i18nKey: "equipments.buckets",
-            image: {src: "", alt: ""},
+            image: {src: img, alt: ""},
             position: 4
         },
 

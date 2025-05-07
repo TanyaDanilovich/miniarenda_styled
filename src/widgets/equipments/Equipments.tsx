@@ -31,14 +31,14 @@ export const Equipments = ({offset}: props) => {
 
                     <S_EquipmentCardWrapper>
                         {equipmentsData.map(
-                            (equipment) => {
+                            (equipment,index) => {
                                 const equipmentContent = t(equipment.i18nKey, { returnObjects: true }) as {
                                     title: string;
                                     description: string;
                                     characteristicList: string[];
                                 };
                                 return <EquipmentCard
-                                    key={equipment.id}
+                                    key = {`${equipment.id}-${index}`}
                                     id={equipment.id}
                                     title={equipmentContent.title}
                                     description={equipmentContent.description}

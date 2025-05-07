@@ -25,16 +25,16 @@ export const router = createHashRouter(
             {/* Главная страница */}
             <Route index element = {<Main/>}
                    handle = {{
-                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.home.url} i18nKey = "navigation.home"/>
+                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.home.url} i18nKey = "pages.home.navigation"/>
                    }}
             />
 
             {/* Аренда Section */}
             <Route path = {ROUTES_PATHS.arenda.index.url}
-                   element = {<LayoutWithBreadcrumbs i18nKey = "navigation.arenda.index"/>}
+                   element = {<LayoutWithBreadcrumbs i18nKey = "pages.arenda.index.navigation"/>}
                    handle = {{
                        crumb: () => <LocalizedLink to = {ROUTES_PATHS.arenda.index.url}
-                                                   i18nKey = "navigation.arenda.index"/>
+                                                   i18nKey = "pages.arenda.index.navigation"/>
                    }}
             >
                 <Route index element = {<AllRentals/>}/>
@@ -42,31 +42,31 @@ export const router = createHashRouter(
                        element = {<ExcavatorRental/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.arenda.arenda_Exavatora.url}
-                                                       i18nKey = "navigation.arenda.excavator"/>
+                                                       i18nKey = "pages.arenda.excavator.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.arenda.arenda_Gidromolota.url}
                        element = {<HammerRental/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.arenda.arenda_Gidromolota.url}
-                                                       i18nKey = "navigation.arenda.hammer"/>
+                                                       i18nKey = "pages.arenda.hammer.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.arenda.arenda_Yamobura.url}
                        element = {<YamoburRental/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.arenda.arenda_Yamobura.url}
-                                                       i18nKey = "navigation.arenda.yamobur"/>
+                                                       i18nKey = "pages.arenda.yamobur.navigation"/>
                        }}
                 />
             </Route>
 
             {/* Услуги Section */}
             <Route path = {ROUTES_PATHS.uslugi.index.url}
-                   element = {<LayoutWithBreadcrumbs i18nKey = "navigation.uslugi.index"/>}
+                   element = {<LayoutWithBreadcrumbs i18nKey = "pages.uslugi.index.navigation"/>}
                    handle = {{
                        crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.index.url}
-                                                   i18nKey = "navigation.uslugi.index"/>
+                                                   i18nKey = "pages.uslugi.index.navigation"/>
                    }}
             >
                 <Route index element = {<UslugiAll/>}/>
@@ -74,58 +74,58 @@ export const router = createHashRouter(
                        element = {<Excavation/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.diggingTrench.url}
-                                                       i18nKey = "navigation.uslugi.diggingTrench"/>
+                                                       i18nKey = "pages.uslugi.diggingTrench.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.diggingFoundation.url}
                        element = {<Drilling/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.diggingFoundation.url}
-                                                       i18nKey = "navigation.uslugi.diggingFoundation"/>
+                                                       i18nKey = "pages.uslugi.diggingFoundation.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.stumpRemoval.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.stumpRemoval.url}
-                                                       i18nKey = "navigation.uslugi.stumpRemoval"/>
+                                                       i18nKey = "pages.uslugi.stumpRemoval.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.drilling.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.drilling.url}
-                                                       i18nKey = "navigation.uslugi.drilling"/>
+                                                       i18nKey = "pages.uslugi.drilling.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.groundMovement.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.groundMovement.url}
-                                                       i18nKey = "navigation.uslugi.groundMovement"/>
+                                                       i18nKey = "pages.uslugi.groundMovement.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.otherGroundworks.url}
                        element = {<Moving/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.otherGroundworks.url}
-                                                       i18nKey = "navigation.uslugi.otherGroundworks"/>
+                                                       i18nKey = "pages.uslugi.otherGroundworks.navigation"/>
                        }}
                 />
                 <Route path = {ROUTES_PATHS.uslugi.dismantling.url}
                        element = {<TreeStumpRemoval/>}
                        handle = {{
                            crumb: () => <LocalizedLink to = {ROUTES_PATHS.uslugi.dismantling.url}
-                                                       i18nKey = "navigation.uslugi.dismantling"/>
+                                                       i18nKey = "pages.uslugi.dismantling.navigation"/>
                        }}
                 />
             </Route>
 
             {/* Price Section */}
             <Route path = {ROUTES_PATHS.price.url}
-                   element = {<LayoutWithBreadcrumbs i18nKey = "navigation.price"/>}
+                   element = {<LayoutWithBreadcrumbs i18nKey = "pages.price.navigation"/>}
                    handle = {{
-                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.price.url} i18nKey = "navigation.price"/>
+                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.price.url} i18nKey = "pages.price.navigation"/>
                    }}
             >
                 <Route index element = {<Price/>}/>
@@ -133,9 +133,9 @@ export const router = createHashRouter(
 
             {/* Projects Section */}
             <Route path = {ROUTES_PATHS.projects.url}
-                   element = {<LayoutWithBreadcrumbs i18nKey = "navigation.projects"/>}
+                   element = {<LayoutWithBreadcrumbs i18nKey = "pages.projects.navigation"/>}
                    handle = {{
-                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.projects.url} i18nKey = "navigation.projects"/>
+                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.projects.url} i18nKey = "pages.projects.navigation"/>
                    }}
             >
                 <Route index element = {<Projects/>}/>
@@ -143,9 +143,9 @@ export const router = createHashRouter(
 
             {/* Contacts Section */}
             <Route path = {ROUTES_PATHS.contacts.url}
-                   element = {<LayoutWithBreadcrumbs i18nKey = "navigation.contacts"/>}
+                   element = {<LayoutWithBreadcrumbs i18nKey = "pages.contacts.navigation"/>}
                    handle = {{
-                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.contacts.url} i18nKey = "navigation.contacts"/>
+                       crumb: () => <LocalizedLink to = {ROUTES_PATHS.contacts.url} i18nKey = "pages.contacts.navigation"/>
                    }}
             >
                 <Route index element = {<Contacts/>}/>
@@ -153,7 +153,7 @@ export const router = createHashRouter(
 
             {/* 404 */}
             <Route path = "404" element = {<ErrorPage/>}/>
-            <Route path = "*" element = {<Navigate to = "404" replace/>}/>
+            {/*<Route path = "*" element = {<Navigate to = "404" replace/>}/>*/}
 
         </Route>
     )

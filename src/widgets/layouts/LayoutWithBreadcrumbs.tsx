@@ -34,7 +34,7 @@ export const LayoutWithBreadcrumbs = ({i18nKey}: props) => {
 
             const isActive = cleanPath(location.pathname) === cleanPath(match.pathname)
 
-            //console.log(`"${location.pathname}",`, `"${match.pathname}"`, isActive)
+            console.log(`"${location.pathname}",`, `"${match.pathname}"`, isActive)
 
             return <S_BreadcrumbsLi key = {index} $active = {isActive}>
                 {match.handle?.crumb && match.handle.crumb()}
@@ -48,7 +48,7 @@ export const LayoutWithBreadcrumbs = ({i18nKey}: props) => {
                     <S_BreadcrumbsTitle>{t(i18nKey)}</S_BreadcrumbsTitle>
                     <S_BreadcrumbsContent>
                         <li>
-                            <Link to={ROUTES_PATHS.home.url}>{t('navigation.home')}</Link>
+                            <Link to={ROUTES_PATHS.home.url}>{t('pages.home.navigation')}</Link>
                         </li>
                         {breadcrumbs}
                     </S_BreadcrumbsContent>

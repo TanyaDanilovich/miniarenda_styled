@@ -57,11 +57,11 @@ export const Footer = ({}: props) => {
                     <S_FooterItem>
                         <h5><span>{t('footer.sections')}</span></h5>
                         <ul>
-                            <li><Link to = {ROUTES_PATHS.arenda.index.url}>{t('navigation.arenda.index')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.uslugi.index.url}>{t('navigation.uslugi.index')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.price.url}>{t('navigation.price')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.projects.url}>{t('navigation.projects')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.contacts.url}>{t('navigation.contacts')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.arenda.index.url}>{t('pages.arenda.index.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.uslugi.index.url}>{t('pages.uslugi.index.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.price.url}>{t('pages.price.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.contacts.url}>{t('pages.contacts.navigation')}</Link></li>
                         </ul>
                     </S_FooterItem>
 
