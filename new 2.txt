@@ -1,0 +1,344 @@
+Design a website for mini-excavator rentals with an operator.
+Main design colors: orange (the primary color for highlighting key elements, buttons, and headings) and blue (the secondary color for backgrounds, links, and minor elements). The design should be created for both dark and light themes. Navigation should be as simple as possible, and all pages should include CTA buttons (Call to Action) with prompts like "Order" or "Call." There should be a theme switch button for toggling between light and dark modes. Additionally, include a language switch button for Russian and Belarusian. The design should be modern, clean, and responsive for mobile devices. Special attention should be given to website loading speed and mobile responsiveness.
+
+### **1. Home Page**
+
+**Goal:** Present the company, its services, and key advantages. Make the homepage as informative and user-friendly as possible for quick navigation.
+
+#### **Structure:**
+
+1. **Header:**
+   - Company logo (orange) on the left and phone number for contact on the right. The phone number is highlighted in orange, with a "Call" button, especially for mobile devices.
+   - Navigation menu (links to pages: Rental, Services, Pricing, Our Work, Contacts). Menu on a blue background with white or orange links, with links turning orange on hover.
+
+2. **First screen:**
+   - **Headline:** A large headline with a catchy message, such as: "Mini-excavator rental with experienced operators." The font is orange on a white background.
+   - **Slider:** Rotating photos of equipment at work. Each image is accompanied by a brief description, such as "Wacker Neuson mini-excavator at work on a construction site." The background can be blue to contrast with the images and text.
+   - **CTA Button:** "Order rental" in bright orange, immediately drawing attention. A "Call" button is also included for quick action.
+
+3. **Block "Our Services":**
+   - Cards presenting all the main services: Mini-excavator rental, mini-excavator with auger, mini-excavator with hydraulic hammer, Trench digging, Foundation digging, Stump removal, Hole (pit) drilling, Soil movement, Other earthworks, Demolition of concrete structures of buildings.
+   - Each card contains a photo, a brief service description, and a "Learn more" button (orange button, white text).
+
+4. **Block "Our Equipment":**
+   - Two cards for excavators: Wacker Neuson ET14 and Wacker Neuson ET24.
+   - Photos of equipment, basic specifications (weight, digging depth, power), and an orange "Order" button below each card.
+   - Visually, the cards are placed on a light background with blue accents.
+
+5. **Block "Customer Reviews":**
+   - Around 3-4 reviews with real customer names. Each review is placed in a separate card with an orange title and a blue border.
+   - A link "Read all reviews on Google" highlighted in blue for navigation to external resources.
+
+6. **Block "Questions and Answers" (FAQ):**
+   - Questions in a drop-down list format. Questions are highlighted in orange font, answers in blue. Example questions:
+     - How much does it cost to rent a mini-excavator for 1 day?
+     - Is it possible to rent equipment without an operator?
+     - How quickly can you deliver the equipment to the site?
+   - A "Ask a Question" button in orange, which opens a form for submitting a question.
+
+7. **Block "Advantages":**
+   - Cards with icons and text describing the main advantages of the company. Icons are orange, text is blue:
+     - Equipment always in working condition
+     - 14 years of experience, Experienced operators
+     - Timely delivery of equipment
+     - Competent advice on work execution
+     - Work in all weather conditions
+     - No weekends or holidays
+     
+8. **Footer:**
+   - Links to all pages, contact information, logo, and a "Call" button. The footer background is blue with orange elements.
+
+---
+
+### **2. "Rental" Page**
+
+**Goal:** Simplified navigation through the main equipment rental services.
+
+#### **Structure:**
+
+1. **Page Title:**
+   - Large title in orange: "Mini-excavator rental and additional equipment."
+
+2. **Large clickable service buttons:**
+   - Three clickable cards with images/contours of the equipment:
+     - Mini-excavator
+     - Mini-excavator with auger
+     - Mini-excavator with hydraulic hammer
+   - Each button is a card with an icon (orange equipment outline) on a blue background. Buttons lead to respective service description pages.
+
+3. **SEO Text:**
+   - A detailed description of the equipment rental service and the benefits of working with the company. Text on a light background with blue and orange accents.
+
+4. **Customer Reviews:**
+   - 4-5 short reviews with star ratings. Reviews are highlighted in blue cards with orange titles.
+
+---
+
+### **3. "Mini-Excavator Rental" Page**
+
+**Goal:** Detailed description of mini-excavator rental services.
+
+#### **Structure:**
+
+1. **Title:**
+   - Title with orange text: "Mini-excavator rental with an operator."
+
+2. **Equipment Cards:**
+   - Photos of Wacker Neuson ET14 and Wacker Neuson ET24 excavators.
+   - Under the photos, the technical specifications are listed (weight, power, digging depth).
+   - Prices: hourly rental and for one full shift (8 hours). Prices are displayed in a separate card with an orange background.
+
+3. **"Order Rental" Button:** Orange.
+
+4. **Block of Advantages:**
+   - Convenient cards with icons, such as: "Equipment maneuverability," "Work on confined spaces."
+
+5. **Customer Reviews:**
+   - Orange titles with blue background cards. Includes 2-3 short reviews.
+
+6. **SEO Text:**
+   - Detailed description of the service, including keywords.
+
+---
+
+### **4. "Mini-Excavator with Auger Rental" Page**
+
+**Goal:** Description of mini-excavator with auger rental, detailing services.
+
+#### **Structure:**
+
+1. **Title:**
+   - Orange title: "Mini-excavator with auger rental."
+
+2. **Service Cards:**
+   - Drilling holes for foundations
+   - Drilling holes for fences and posts
+   - Drilling holes for planting trees
+   - Each card includes:
+     - Equipment photo
+     - Brief service description
+     - Price
+     - "Order" button in bright orange.
+
+3. **Block with Photos of Equipment at Work:**
+   - Photos of equipment at work with short descriptions (for example, "Drilling for the foundation of a private house").
+
+4. **Customer Reviews:**
+   - 2-3 reviews with orange borders on a blue background.
+
+5. **SEO Text:**
+   - Service description with keywords.
+
+---
+
+### **5. "Mini-Excavator with Hydraulic Hammer Rental" Page**
+
+**Goal:** Description of mini-excavator with hydraulic hammer rental, demolition services.
+
+#### **Structure:**
+
+1. **Title:**
+   - "Mini-excavator with hydraulic hammer rental" (orange text).
+
+2. **Service Cards:**
+   - Breaking concrete slabs
+   - Demolition of concrete
+   - Destruction of walls and small structures
+   - Each card contains:
+     - Photo
+     - Service description
+     - Price
+     - "Order" button (orange).
+
+3. **Block with Photos of Work:**
+   - Photos of equipment during demolition, descriptions of completed projects.
+
+4. **Customer Reviews:**
+   - Customer reviews on a blue background with orange accents.
+
+5. **SEO Text:**
+   - Detailed description of services with keywords.
+
+---
+
+### **6. "Services" Page**
+
+**Goal:** Collect all services on one page.
+
+#### **Structure:**
+
+1. **Title:**
+   - Orange title: "Our Services."
+
+2. **Links to All Services:**
+   - Clickable cards (orange icons) on a blue background:
+     - Trench digging
+     - Foundation digging
+     - Stump removal
+     - Hole drilling
+     - Soil movement
+     - Other earthworks
+     - Concrete structure demolition
+
+3. **SEO Text:**
+   - Description of all services with keywords.
+
+---
+
+### **7. "Trench Digging" Page**
+
+**Goal:** Attract clients for trench digging services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+### **8. "Foundation Digging" Page**
+
+**Goal:** Attract clients for foundation digging services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+### **9. "Stump Removal" Page**
+
+**Goal:** Attract clients for stump removal services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+### **10. "Hole Drilling" Page**
+
+**Goal:** Attract clients for hole drilling services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+### **11. "Soil Movement" Page**
+
+**Goal:** Attract clients for soil movement services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+### **12. "Other Earthworks" Page**
+
+**Goal:** Attract clients for other earthworks services and provide the ability to place an order.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "
+
+Get Consultation" button
+
+---
+
+### **13. "Demolition of Concrete Structures" Page**
+
+**Goal:** Attract clients for demolition services.
+
+#### **Page Structure:**
+
+1. Photo of the service (before and after)
+2. Service description + SEO text
+3. "Order Service" or "Get Consultation" button
+
+---
+
+Here’s the translation of the structure for the pages "Cost," "Our Projects," and "Contacts":
+
+---
+
+### **14. Page "Cost"**
+
+**Objective:** Provide detailed information on the rental cost of equipment.
+
+#### **Structure:**
+
+1. **Heading:**
+   - Orange text: "Mini Excavator Rental Cost."
+
+2. **Rental cost table:**
+   - **Cost per hour for bucket work** — 85 BYN. This rate applies for orders under 8 hours. For orders of 8 hours or more, the hourly rate is 80 BYN.
+   - **Cost per hour for hydraulic hammer work** — 110 BYN. This rate applies for orders under 8 hours. For orders of 8 hours or more, the hourly rate is 100 BYN.
+   - **Cost of equipment transportation to and from the site** — 1 BYN per kilometer. The transportation cost within Minsk and up to 15 km from the city boundary is 160 BYN.
+   - Minimum order:
+     - **Cash payment:** 4 hours of work.
+     - **Non-cash payment:** 8 hours of work.
+     - **Minimum order for bucket work** (includes 4 hours of work and transportation) — 500 BYN.
+     - **Minimum order for hydraulic hammer work** — 600 BYN.
+     - **Minimum order for auger work** — 700 BYN.
+   - Specify that equipment rental with different attachments is possible: auger and hydraulic hammer.
+
+3. **Design:**
+   - Orange highlights on the numbers.
+   - Main text in blue.
+
+---
+
+### **15. Page "Our Projects"**
+
+**Objective:** Showcase completed projects to demonstrate the quality of work.
+
+#### **Structure:**
+
+1. **Heading:**
+   - Orange heading: "Our Projects."
+
+2. **Photo gallery:**
+   - Photos of completed projects with brief descriptions of the work. For example, "Excavation for a private house foundation."
+   - Orange frames around the photos on a blue background.
+
+3. **Client testimonials:**
+   - Several reviews from clients along with project details.
+
+4. **SEO text:**
+   - Description of completed projects and their quality.
+
+---
+
+### **16. Page "Contacts"**
+
+**Objective:** Ensure easy access to contact information.
+
+#### **Structure:**
+
+1. **Heading:**
+   - Orange heading: "Contacts."
+
+2. **Contact information:**
+   - Address, phone number, email, and a map showing the location.
+   - A "Call" button in orange.
+
+3. **Feedback form:**
+   - A simple form (name, email, message) with a submit button in orange.
+
+---
+
+
