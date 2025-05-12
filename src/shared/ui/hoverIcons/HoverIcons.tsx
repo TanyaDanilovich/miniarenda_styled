@@ -31,10 +31,10 @@ export const HoverIcons = ({link, image, children}: PropsWithChildren<props>) =>
 
             <div popover = {"auto"} id = {popoverId}>
 
-                {/*<button popoverTarget = {popoverId} popoverTargetAction="hide">*/}
-                {/*    <span>❌</span>*/}
-                {/*    <p className ="sr-only">Close</p>*/}
-                {/*</button>*/}
+                <button popoverTarget = {popoverId} popoverTargetAction = "hide">
+                    <span>❌</span>
+                    <p className = "sr-only">Close</p>
+                </button>
 
                 <S_ImageContainer>
                     {newImage()}
@@ -81,4 +81,10 @@ export const S_HoverIcons = styled.div<{}>`
 
   }
 
+  [popover] button {
+    top: -1rem;
+    right: -2rem;
+    background-color: rgb(255, 255, 255);
+    z-index: 101;
+  }
 `;

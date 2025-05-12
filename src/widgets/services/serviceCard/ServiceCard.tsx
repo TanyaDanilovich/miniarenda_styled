@@ -27,7 +27,7 @@ export const ServiceCard = ({
             {data.image && (
                 <S_ImageContainer>
                     <S_Image src = {data.image.src} alt = {data.image.alt}/>
-                    <HoverIcons link = {data.url} image = {data.image}/>
+                    {/*<HoverIcons link = {data.url} image = {data.image}/>*/}
                 </S_ImageContainer>
             )}
 
