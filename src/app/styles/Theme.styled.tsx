@@ -24,7 +24,7 @@ export const theme: MyDefaultTheme = {
             base: `${BASE}px`,
             h1: getResponsiveSize(20, 45, 320, 768),
             h2: "2rem",
-            h3: getResponsiveSize(22, 22),
+            h3: getResponsiveSize(16, 22),
             h4: getResponsiveSize(20, 35),
             h5: getResponsiveSize(20, 25),
             p: getResponsiveSize(16.875, 20),

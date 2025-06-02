@@ -9,6 +9,7 @@ import {Clients} from '../../widgets/clients/Clients';
 import {OrderModal} from '../../widgets/orderModal/OrderModal';
 import {Hero} from '../../widgets/hero/Hero';
 import {Equipments} from '../../widgets/equipments/Equipments';
+import Skills from '../../widgets/skills/Skills';
 
 
 type props = {};
@@ -27,6 +28,7 @@ export const Main = ({}: props) => {
         <StyledMain ref = {ref}>
             <Hero/>
             <Services/>
+            <Skills/>
             <Machineries/>
             <Delivery/>
             <Equipments offset = {refOffset}/>

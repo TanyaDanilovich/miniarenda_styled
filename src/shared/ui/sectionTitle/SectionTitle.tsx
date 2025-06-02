@@ -20,7 +20,8 @@ export const SectionTitle = ({title, text, color}: props) => {
 
 export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithText: boolean }>`
 
-  margin: auto auto ${getResponsiveSize(BASE, 4 * BASE)}
+  margin-block: ${getResponsiveSize(BASE * 2, BASE * 4)};
+  //margin-block: 1rem;
   white-space: normal;
 
   p {

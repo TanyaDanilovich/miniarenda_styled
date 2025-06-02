@@ -5,7 +5,7 @@ import {S_ReadMoreButton} from './S_ReadMoreButton';
 
 
 type props = { url?: string, title?: string };
-export const ReadMoreButton = ({url, title = "Подробнее"}: props) => {
+export const ReadMoreButton = ({url, title = "Заказать"}: props) => {
     const theme = useTheme()
 
 

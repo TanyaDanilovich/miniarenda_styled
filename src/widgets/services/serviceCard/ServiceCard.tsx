@@ -12,6 +12,10 @@ import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
+import {OrderedButton} from '../../../shared/ui/buttons/OrderedButton';
+import {ContactUsButton} from '../../../shared/ui/buttons/ContactUsButton';
+import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
+import {BASE} from '../../../shared/constants/constants';
 
 export type ServiceCardData = {}
 
@@ -22,6 +26,7 @@ export const ServiceCard = ({
                             }: props) => {
     const theme = useTheme()
     const {t} = useTranslation();
+    const sBoxPadding = getResponsiveSize(BASE / 2, BASE)
     return (
         <StyledServiceCard>
             {data.image && (
@@ -31,34 +36,37 @@ export const ServiceCard = ({
                 </S_ImageContainer>
             )}
 
-            <S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>
-                <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>
-                <Link to = {data.categoryUrl}>{t(`categories.${data.category}.title`)}</Link>
-                {/*<Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>*/}
-            </S_Flex>
+            {/*<S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>*/}
+            {/*    <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>*/}
+            {/*    <Link to = {data.categoryUrl}>{t(`categories.${data.category}.title`)}</Link>*/}
+            {/*    /!*<Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>*!/*/}
+            {/*</S_Flex>*/}
 
 
             <ServiceCardTitle>
-                <Link to = {`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>
+                {/*<Link to = {`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>*/}
+                {t(`${data.i18nKey}.title`)}
             </ServiceCardTitle>
 
-            <ServiceCardText>
-                {t(`${data.i18nKey}.description`)}
-            </ServiceCardText>
+            {/*<ServiceCardText>*/}
+            {/*    {t(`${data.i18nKey}.description`)}*/}
+            {/*</ServiceCardText>*/}
 
-            <S_Box $marginTop = {"1rem"}>
-                <ReadMoreButton url = {`/${data.url}`}/>
+            <S_Box $marginTop = {"1rem"} $paddingLeft = {sBoxPadding} $paddingRight = {sBoxPadding}>
+                {/*<ReadMoreButton url = {`/${data.url}`}/>*/}
+                <ContactUsButton/>
             </S_Box>
         </StyledServiceCard>
     );
 };
 
 export const StyledServiceCard = styled.article <{}>`
-  padding: 1rem;
-  margin: 1rem;
+  padding-bottom: ${getResponsiveSize(BASE / 2, BASE)};
+  //margin: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
   display: flex;
   flex-direction: column;
+
 
   ${transitionHoverIcon}
   & > ${S_ImageContainer} {
@@ -78,12 +86,15 @@ export const StyledServiceCard = styled.article <{}>`
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`
+  margin-bottom: 0;
+  flex-grow: 1;
+  padding-inline: ${getResponsiveSize(8, 16)};
   color: ${({theme}) => theme.colors.black};
   ${plainTransition()};
 
-  &:hover {
-    color: ${({theme}) => theme.colors.primary};
-  }
+  // &:hover {
+    //   color: ${({theme}) => theme.colors.primary};
+  // }
 
 
 `;
