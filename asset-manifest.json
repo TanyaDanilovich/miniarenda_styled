@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/miniarenda_styled/static/css/main.f59f22ac.css",
-    "main.js": "/miniarenda_styled/static/js/main.636c3f89.js",
+    "main.js": "/miniarenda_styled/static/js/main.509b530c.js",
     "static/js/488.7e13e7cf.chunk.js": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js",
     "static/media/_DSC3958.jpg": "/miniarenda_styled/static/media/_DSC3958.d223f9ff3997cb863837.jpg",
-    "static/media/_DSC4764-1920w.jpg": "/miniarenda_styled/static/media/_DSC4764-1920w.ad0e990186c131cfbe99.jpg",
     "static/media/_DSC4349-1920w.jpg": "/miniarenda_styled/static/media/_DSC4349-1920w.5c6e7c730e2adfa4b0d3.jpg",
     "static/media/_DSC4666-1920w.jpg": "/miniarenda_styled/static/media/_DSC4666-1920w.77b351bfceef86713ec8.jpg",
     "static/media/_DSC2623-1920w.jpg": "/miniarenda_styled/static/media/_DSC2623-1920w.19b40992b267e92bc9ed.jpg",
@@ -12,6 +11,7 @@
     "static/media/reviews-bg.png": "/miniarenda_styled/static/media/reviews-bg.52524127bf3f0b2b315b.png",
     "static/media/servises_2.jpg": "/miniarenda_styled/static/media/servises_2.1a88fe333ee414cec001.jpg",
     "static/media/servises_1.jpg": "/miniarenda_styled/static/media/servises_1.e676c55f9524fb455a89.jpg",
+    "static/media/separate-image-1-370w.jpg": "/miniarenda_styled/static/media/separate-image-1-370w.3d764222f0591907c909.jpg",
     "static/media/portfolio9-370w.jpg": "/miniarenda_styled/static/media/portfolio9-370w.6b1f8d83e3eae98eccb1.jpg",
     "static/media/aquapark.png": "/miniarenda_styled/static/media/aquapark.86364b3dd1df702d6f35.png",
     "static/media/logo.svg": "/miniarenda_styled/static/media/logo.34f1c3562ca8e1d956746fefee2add52.svg",
@@ -25,11 +25,11 @@
     "index.html": "/miniarenda_styled/index.html",
     "static/media/checkmark-circle-green.svg": "/miniarenda_styled/static/media/checkmark-circle-green.10c974073f6afee7460546bc19578154.svg",
     "main.f59f22ac.css.map": "/miniarenda_styled/static/css/main.f59f22ac.css.map",
-    "main.636c3f89.js.map": "/miniarenda_styled/static/js/main.636c3f89.js.map",
+    "main.509b530c.js.map": "/miniarenda_styled/static/js/main.509b530c.js.map",
     "488.7e13e7cf.chunk.js.map": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f59f22ac.css",
-    "static/js/main.636c3f89.js"
+    "static/js/main.509b530c.js"
   ]
 }
