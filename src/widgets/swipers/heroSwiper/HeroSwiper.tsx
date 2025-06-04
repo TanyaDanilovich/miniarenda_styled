@@ -12,6 +12,7 @@ import img2 from "../../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
 import img3 from "../../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
 import img4 from "../../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
+import {Autoplay} from 'swiper/modules';
 
 
 type props = {
@@ -19,10 +20,11 @@ type props = {
 };
 export const HeroSwiper = ({id}: props) => {
 
-    const urls = [img1, img2, img3, img4]
+    const urls = [img1, img2, img3]
 
 
     const params: SwiperOptions = {
+        modules: [Autoplay], // ← ВАЖНО!
         slidesPerView: 1,
 
         navigation: true,

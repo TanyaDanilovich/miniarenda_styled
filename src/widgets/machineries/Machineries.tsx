@@ -7,6 +7,8 @@ import {MachineryCard} from './machneryCard/MachneryCard';
 import {sectionMargin} from '../../app/styles/mixins';
 import {MachineryCharacteristicKeys} from '../../shared/types/common.types';
 import {API} from '../../app/api/API';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
+import {BASE} from '../../shared/constants/constants';
 
 type props = {};
 
@@ -21,7 +23,7 @@ export const Machineries = ({}: props) => {
         // "clearance",
         "buckets",
         "augers",
-        "country",
+        // "country",
     ]
     const machineryData = API.getMachineriesData(keys);
 
@@ -50,7 +52,7 @@ export const Machineries = ({}: props) => {
 
 
 export const StyledMachineries = styled.section<{}>`
-  padding-block: 3rem;
+  padding-block: ${getResponsiveSize(BASE, BASE * 3)};
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
   ${sectionMargin} @media ${({theme}) => theme.mediaMinWidth.tablet} {

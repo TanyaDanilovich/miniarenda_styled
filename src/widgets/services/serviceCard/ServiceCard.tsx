@@ -1,30 +1,27 @@
-import styled, {useTheme} from 'styled-components';
+import styled, {css, useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFolderOpen} from '@fortawesome/free-solid-svg-icons/faFolderOpen';
-import {S_Flex} from '../../../shared/styled/S_Flex';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
-import {HoverIcons} from '../../../shared/ui/hoverIcons/HoverIcons';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {useTranslation} from 'react-i18next';
-import {Link} from 'react-router-dom';
-import {OrderedButton} from '../../../shared/ui/buttons/OrderedButton';
-import {ContactUsButton} from '../../../shared/ui/buttons/ContactUsButton';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
+import {DropdownText, S_DropdownText} from '../../questions/DropdownText';
 
-export type ServiceCardData = {}
+export type ServiceCardData = {
+    toggleDescriptionCallback: () => void,
+    isOpen: boolean
+}
 
 type props = ServiceCardData & { data: SubcategoryItemData<Category> };
 export const ServiceCard = ({
-                                data
+                                data, toggleDescriptionCallback, isOpen
 
                             }: props) => {
-    const theme = useTheme()
+
     const {t} = useTranslation();
     const sBoxPadding = getResponsiveSize(BASE / 2, BASE)
     return (
@@ -54,8 +51,14 @@ export const ServiceCard = ({
 
             <S_Box $marginTop = {"1rem"} $paddingLeft = {sBoxPadding} $paddingRight = {sBoxPadding}>
                 {/*<ReadMoreButton url = {`/${data.url}`}/>*/}
-                <ContactUsButton/>
+                <ReadMoreButton url = "" onClick = {toggleDescriptionCallback}
+                                title = {isOpen ? "Свернуть" : "Подробнее"}/>
+                {/*<ContactUsButton/>*/}
             </S_Box>
+
+            <DropdownText
+                text = {t(`${data.i18nKey}.description`)}
+                isOpen = {isOpen}/>
         </StyledServiceCard>
     );
 };
@@ -73,25 +76,38 @@ export const StyledServiceCard = styled.article <{}>`
     ${ImageHover};
   }
 
-
-  @media ${({theme}) => theme.mediaMinWidth.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
     width: calc(50% - 20px);
     margin: 1rem auto;
   }
-  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     width: calc(30%);
 
   }
+
+  ${S_DropdownText} {
+    p {
+      padding: 0 1rem 0 1rem;
+    }
+  }
+
+
 
 `;
 
 export const ServiceCardTitle = styled.h3 <{}>`
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
   flex-grow: 1;
   padding-inline: ${getResponsiveSize(8, 16)};
   color: ${({theme}) => theme.colors.black};
   ${plainTransition()};
 
+  @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
+    min-height: 2.4em;
+  }
   // &:hover {
     //   color: ${({theme}) => theme.colors.primary};
   // }

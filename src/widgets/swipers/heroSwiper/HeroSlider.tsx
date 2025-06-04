@@ -11,7 +11,6 @@ import {S_Flex} from '../../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
 
 
-
 type props = {
     mainText: string,
     additionalText: string,
@@ -28,7 +27,7 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
                 <S_HeroText>{additionalText}</S_HeroText>
                 <S_HeroPhoneWrapper $align = {"center"}>
                     <PhoneLink/>
-                    <ContactUsButton/>
+                    <ContactUsButton title = {"Позвонить"}/>
                 </S_HeroPhoneWrapper>
 
             </S_HeroSliderContent>
@@ -64,7 +63,7 @@ const S_HeroSlider = styled.article<{}>`
 
   &:after {
     background-color: ${({theme}) => theme.colors.bg_primary};
-    opacity: 0.7;
+    opacity: 0.6;
     display: block;
     object-fit: cover;
     position: absolute;

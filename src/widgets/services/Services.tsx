@@ -14,7 +14,12 @@ type props = {};
 
 export const Services = ({}: props) => {
     const {t} = useTranslation();
+    const [openIndex, setOpenIndex] = useState<string | null>(null)
 
+
+    const toggleDescription = (index: string) => {
+        setOpenIndex(openIndex !== index ? index : null)
+    };
     const serviceTitle = t('sections.services.title');
     const serviceText = t('sections.services.description');
 
@@ -34,15 +39,18 @@ export const Services = ({}: props) => {
         setServicesData(newServicesData);
     }, [width]);
 
+
     return (
         <StyledServices>
             <S_OuterContainer>
                 <SectionTitle title = {serviceTitle} text = {serviceText}/>
-                <S_Flex $direction = {"column"} $gap = {"1rem"} $wrap = {"wrap"}>
+                <S_Flex $direction = {"column"} $rowGap = {"2rem"} $wrap = {"wrap"}>
                     {servicesData.map((card, index) => (
                         <ServiceCard
                             key = {`${card.id}-${index}`}
                             data = {card}
+                            toggleDescriptionCallback = {() => toggleDescription(`${card.id}-${index}`)}
+                            isOpen = {openIndex === `${card.id}-${index}`}
                         />
                     ))}
                 </S_Flex>
@@ -51,8 +59,12 @@ export const Services = ({}: props) => {
     );
 };
 
-export const StyledServices = styled.section`
+export const StyledServices = styled.section<{}>`
   ${sectionMargin};
+
+  ${S_Flex} {
+    align-items: flex-start;
+  }
 
   @media ${({theme}) => theme.mediaMinWidth.mobile} {
     ${S_Flex} {

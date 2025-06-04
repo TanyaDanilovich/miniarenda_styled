@@ -32,6 +32,7 @@ export const theme: MyDefaultTheme = {
         color: {},
     },
 
+
     breakpoints: BREAKPOINTS,
 
     mediaMinWidth: {

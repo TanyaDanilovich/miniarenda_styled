@@ -29,7 +29,7 @@ export const StyledSectionTitleContainer = styled(S_OuterContainer)<{ $isWithTex
     text-align: justify;
   }
 
-  @media ${({theme}) => theme.mediaMinWidth.mobile} {
+  @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
     display: flex;
     gap: 1rem;
     width: 100%;

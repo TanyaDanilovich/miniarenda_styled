@@ -117,7 +117,7 @@ export type Equipment = {
     //title: string,
     //description: string,
     i18nKey:string,
-    image: ImageProps | {},
+    image: ImageProps,
     position: number,
     //characteristicList:string[]
 }

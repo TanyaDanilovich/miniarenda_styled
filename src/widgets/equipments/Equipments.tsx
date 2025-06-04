@@ -1,14 +1,13 @@
 import styled, {useTheme} from 'styled-components';
-import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {EquipmentCard} from './EquipmentCard';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {API} from '../../app/api/API';
 import {Equipment} from '../../shared/types/common.types';
-import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 import {useTranslation} from 'react-i18next';
+
 
 
 type props = { offset: number }
@@ -17,6 +16,9 @@ export const Equipments = ({offset}: props) => {
     const theme = useTheme();
     const {t} = useTranslation();
     const equipmentsData: Equipment[] = API.getAdditionEquipmentSubcategoriesData();
+
+
+
 
     return (
         <S_Equipments>
@@ -32,6 +34,7 @@ export const Equipments = ({offset}: props) => {
                     <S_EquipmentCardWrapper>
                         {equipmentsData.map(
                             (equipment,index) => {
+
                                 const equipmentContent = t(equipment.i18nKey, { returnObjects: true }) as {
                                     title: string;
                                     description: string;
@@ -40,6 +43,7 @@ export const Equipments = ({offset}: props) => {
                                 return <EquipmentCard
                                     key = {`${equipment.id}-${index}`}
                                     id={equipment.id}
+                                    image={equipment.image}
                                     title={equipmentContent.title}
                                     description={equipmentContent.description}
                                     characteristicList={equipmentContent.characteristicList}

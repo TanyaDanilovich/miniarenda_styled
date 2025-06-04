@@ -1,65 +1,68 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {useTheme} from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {
-    faAward,
-    faBriefcaseClock,
-    faCalendar,
-    faFolderOpen,
-    faHandshakeSimple,
-    faSearch, faSuitcase
-} from '@fortawesome/free-solid-svg-icons';
+import {faAward, faCalendarDays, faHandshakeSimple, faSuitcase} from '@fortawesome/free-solid-svg-icons';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
+import {BASE} from '../../shared/constants/constants';
+import {S_Flex} from '../../shared/styled/S_Flex';
+import {outline} from '../../app/styles/mixins';
+import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 
 
 const Skills = () => {
+    const theme = useTheme()
     return (
         <SkillsSection>
             <SkillsWrapper>
                 <SkillsContent>
-                    <SkillsTitle>Аренда ямобура у нас это выгодно и надежно</SkillsTitle>
-                    <SkillsText>
-                        Мы предоставляем в аренду ямобур со шнеками различных диаметров: <b>200 mm, 250 mm, 300 mm, 400
-                                                                                            mm, 500 mm, 600 mm</b>
-                    </SkillsText>
+                    <SectionTitle title={"Почему мы?"}/>
+
                 </SkillsContent>
 
-                <SkillsGrid>
-                    <SkillsItem>
-                        <SkillsIconContainer>
-                            <SkillsIcon icon = {faAward}/>
+                <SkillsGrid $wrap = {"wrap"} $justify = {"space-between"}>
+
+                    <SkillsItem $direction = {"column"} $align = {"center"}>
+                        <SkillsIconContainer $justify = {"center"} $align = {"center"}>
+                            <FontAwesomeIcon icon = {faAward} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
+
                         <SkillsInnerContent>
-                            <SkillsInnerTitle>12 ЛЕТ РАБОТЫ</SkillsInnerTitle>
-                            <SkillsInnerItem>У нас большая команда профессионалов с большим опытом
+                            <SkillsInnerTitle>16 ЛЕТ РАБОТЫ</SkillsInnerTitle>
+                            <SkillsInnerItem>У нас большая команда профессионалов с огромным опытом
                                              работы</SkillsInnerItem>
                         </SkillsInnerContent>
                     </SkillsItem>
 
-                    <SkillsItem>
-                        <SkillsIconContainer>
-                            <SkillsIcon icon = {faCalendar}/>
+                    <SkillsItem $direction = {"column"} $align = {"center"}>
+                        <SkillsIconContainer $justify = {"center"} $align = {"center"}>
+                            <FontAwesomeIcon icon = {faCalendarDays} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
+
                         <SkillsInnerContent>
-                            <SkillsInnerTitle>РАБОТАЕМ БЕЗ ВЫХОДНЫХ И ПРАЗДНИКОВ</SkillsInnerTitle>
+                            <SkillsInnerTitle>РАБОТАЕМ без выходных</SkillsInnerTitle>
                             <SkillsInnerItem>Обеспечиваем бесперебойную работу техники на объекте</SkillsInnerItem>
                         </SkillsInnerContent>
                     </SkillsItem>
 
-                    <SkillsItem>
-                        <SkillsIconContainer>
-                            <SkillsIcon icon = {faSuitcase}/>
+                    <SkillsItem $direction = {"column"} $align = {"center"}>
+
+                        <SkillsIconContainer $justify = {"center"} $align = {"center"}>
+                            <FontAwesomeIcon icon = {faSuitcase} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
+
                         <SkillsInnerContent>
                             <SkillsInnerTitle>УЗКАЯ СПЕЦИАЛИЗАЦИЯ</SkillsInnerTitle>
-                            <SkillsInnerItem>Мы специализируемся на арендке ямобуров на мини-экскаваторах, и поэтому
-                                             бурим быстро и качественно.</SkillsInnerItem>
+                            <SkillsInnerItem>Мы специализируемся на аренде мини-экскаваторов, и поэтому
+                                             работаем быстро и качественно.</SkillsInnerItem>
                         </SkillsInnerContent>
                     </SkillsItem>
 
-                    <SkillsItem>
-                        <SkillsIconContainer>
-                            <SkillsIcon icon = {faHandshakeSimple}/>
+                    <SkillsItem $direction = {"column"} $align = {"center"}>
+                        <SkillsIconContainer $justify = {"center"} $align = {"center"}>
+                            <FontAwesomeIcon icon = {faHandshakeSimple} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
+
+
                         <SkillsInnerContent>
                             <SkillsInnerTitle>ОТЛИЧНАЯ РЕПУТАЦИЯ</SkillsInnerTitle>
                             <SkillsInnerItem>Большая часть клиентов возвращается к нам и также,
@@ -74,10 +77,12 @@ const Skills = () => {
 
 export default Skills;
 
-
+// Общая секция
 const SkillsSection = styled.section`
-  padding: 3rem 0;
-  background-color: #f4f4f4;
+  padding-block: ${getResponsiveSize(BASE, BASE * 3)};
+  background-color: ${({theme}) => theme.colors.black};
+  color: ${({theme}) => theme.colors.white};
+
 `;
 
 const SkillsWrapper = styled.div`
@@ -94,52 +99,71 @@ const SkillsContent = styled.div`
 const SkillsTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: ${({theme}) => theme.colors.primary};
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    font-size: 2.5rem;
+  }
 `;
 
 const SkillsText = styled.div`
   font-size: 1.1rem;
   margin-bottom: 3rem;
+  color: ${({theme}) => theme.colors.text};
 `;
 
-const SkillsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+// Сетка для элементов
+const SkillsGrid = styled(S_Flex)`
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+`;
+
+// Индивидуальные элементы
+const SkillsItem = styled(S_Flex)`
+
+  width: 100%;
+  padding: ${getResponsiveSize(BASE / 2, BASE * 2)};
+  margin-block: ${getResponsiveSize(BASE, BASE * 2)};
+  @media ${({theme}) => theme.mediaMinWidth.mobile} {
+    width: calc(50% - 0.5rem);
   }
-`;
 
-const SkillsItem = styled.div`
-  background-color: #fff;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
+    width: calc(25% - 0.75rem);
+  }
+  background-color: ${({theme}) => theme.colors.bg_primary};
+  //padding: 2rem;
+  box-shadow: ${({theme}) => theme.shadow.full};
   text-align: center;
 `;
 
-const SkillsIconContainer = styled.span`
-  display: inline-block;
+const SkillsIconContainer = styled(S_Flex)`
+  display: inline-flex;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
   margin-bottom: 1rem;
-  background-color: #ff9800;
-  padding: 10px;
+
+  background-color: ${({theme}) => theme.colors.primary};
   border-radius: 50%;
 `;
 
 const SkillsIcon = styled(FontAwesomeIcon)`
   font-size: 2rem;
-  color: #fff;
+  color: ${({theme}) => theme.colors.white};
 `;
 
 const SkillsInnerContent = styled.div`
-  color: #333;
+  color: ${({theme}) => theme.colors.text};
 `;
 
 const SkillsInnerTitle = styled.h3`
-  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-size: ${getResponsiveSize(16, 20)};
   margin-bottom: 1rem;
+  color: ${({theme}) => theme.colors.primary};
 `;
 
 const SkillsInnerItem = styled.p`
-  font-size: 1rem;
+  
+
 `;
+

@@ -33,9 +33,9 @@ export const MachineryCard = ({id, title, image, characteristics}: props) => {
                                          title = {title}
                                          characteristics = {characteristics}/>
 
-            <S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>
-                <ReadMoreButton url = {"tel:+375296949698"}/>
-            </S_Box>
+            {/*<S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>*/}
+            {/*    <ReadMoreButton url = {"tel:+375296949698"}/>*/}
+            {/*</S_Box>*/}
 
         </S_MachineryCard>
     );

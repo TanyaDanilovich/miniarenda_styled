@@ -11,7 +11,10 @@ import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 import img from "../../assets/images/servises/servises_1.jpg"
 
 
-
+import kovsh from '../../assets/images/equipments/kovsh.jpg';
+import bur from '../../assets/images/equipments/bur.jpg';
+import clik from '../../assets/images/equipments/clik.jpg';
+import soosan from '../../assets/images/equipments/soosan.jpg';
 
 
 
@@ -31,9 +34,10 @@ export const MAIN_DATA: MainData = {
             },
 
             items: [
+                RENTAL_SUBCATEGORY.DRILL,
                 RENTAL_SUBCATEGORY.EXCAVATOR,
                 RENTAL_SUBCATEGORY.HAMMER,
-                RENTAL_SUBCATEGORY.DRILL
+
             ]
         },
         [CATEGORY.SERVICES]: {
@@ -51,10 +55,10 @@ export const MAIN_DATA: MainData = {
                 SERVICE_SUBCATEGORY.DIGGING_TRENCH,
                 SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
                 SERVICE_SUBCATEGORY.DRILLING,
-                SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
-                SERVICE_SUBCATEGORY.STUMP_REMOVAL,
-                SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
-                SERVICE_SUBCATEGORY.DISMANTLING
+                // SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
+                // SERVICE_SUBCATEGORY.STUMP_REMOVAL,
+                // SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
+                // SERVICE_SUBCATEGORY.DISMANTLING
             ],
         },
     },
@@ -254,30 +258,34 @@ export const MAIN_DATA: MainData = {
         ]
     },
 
+
+
+
+
     equipments: {
         [EQUIPMENT_SUBCATEGORY.HAMMER]: {
             id: "equipment-001",
             i18nKey: "equipments.hammer",
-            image: {src: img, alt: ""},
+            image: {src: soosan, alt: ""},
             position: 2
         },
         [EQUIPMENT_SUBCATEGORY.DRILL]: {
             id: "equipment-002",
             i18nKey: "equipments.drill",
-            image: {src: img, alt: ""},
-            position: 3
+            image: {src: bur, alt: ""},
+            position: 1
         },
         [EQUIPMENT_SUBCATEGORY.FANG]: {
             id: "equipment-003",
             i18nKey: "equipments.fang",
-            image: {src: img, alt: ""},
-            position: 1
+            image: {src: clik, alt: ""},
+            position: 4
         },
         [EQUIPMENT_SUBCATEGORY.BUCKETS]: {
             id: "equipment-004",
             i18nKey: "equipments.buckets",
-            image: {src: img, alt: ""},
-            position: 4
+            image: {src: kovsh, alt: ""},
+            position: 3
         },
 
     }

@@ -4,13 +4,13 @@ import styled, {useTheme} from 'styled-components';
 import {S_ReadMoreButton} from './S_ReadMoreButton';
 
 
-type props = { url?: string, title?: string };
-export const ReadMoreButton = ({url, title = "Заказать"}: props) => {
+type props = { url?: string, title?: string, onClick?: () => void };
+export const ReadMoreButton = ({title = "Подробнее",onClick=()=>{}}: props) => {
     const theme = useTheme()
 
 
     return (
-        <S_ReadMoreButton href = {url}>
+        <S_ReadMoreButton onClick={onClick}>
             <StyledCircle>
                 <FontAwesomeIcon icon = {faPlusCircle} size = {'1x'} color = {theme.colors.primary}/>
             </StyledCircle>

@@ -10,6 +10,7 @@ import {OrderModal} from '../../widgets/orderModal/OrderModal';
 import {Hero} from '../../widgets/hero/Hero';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
+import {Prices} from '../../widgets/prices/Prices';
 
 
 type props = {};
@@ -29,8 +30,9 @@ export const Main = ({}: props) => {
             <Hero/>
             <Services/>
             <Skills/>
+            <Prices/>
             <Machineries/>
-            <Delivery/>
+
             <Equipments offset = {refOffset}/>
             <Reviews offset = {refOffset}/>
             <Questions/>
