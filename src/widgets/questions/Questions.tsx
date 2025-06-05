@@ -20,7 +20,7 @@ export const Questions = ({}: props) => {
 
 
     return (
-        <S_Questions>
+        <S_Questions id = {"questions"}>
 
             <S_OuterContainer>
 

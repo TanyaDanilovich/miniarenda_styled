@@ -17,7 +17,7 @@ export const Reviews = ({offset}: props) => {
 
 
     return (
-        <S_Reviews>
+        <S_Reviews id={"reviews"}>
             <S_BackgroundWrapper $offset = {offset} $backgroundColor = {theme.colors.white_smoke}>
                 <S_OuterContainer>
                     <SectionTitle title = {"Отзывы наших клиентов"}/>

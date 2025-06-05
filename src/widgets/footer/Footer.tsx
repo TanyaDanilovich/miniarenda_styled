@@ -7,14 +7,11 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
-import {S_Image} from '../../shared/styled/S_Image';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
-import {Link} from 'react-router-dom';
+import {Link} from '../../shared/ui/Link';
 import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
-import et14 from '../../assets/images/footer/et14.jpg'
-import et24 from '../../assets/images/footer/et24.jpg'
 
 type props = {};
 
@@ -24,7 +21,7 @@ export const Footer = ({}: props) => {
     const servicesData = API.getServicesSubcategoriesData();
 
     return (
-        <S_Footer>
+        <S_Footer id = "footer">
             <S_FooterContainer>
                 <S_Flex $gap = "1rem">
 

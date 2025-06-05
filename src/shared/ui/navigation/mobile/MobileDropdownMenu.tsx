@@ -49,7 +49,7 @@ export const MobileDropdownMenu = ({
 
             {subMenuItems.map((item, index) =>
                 <S_MobileMenuItem key = {`${id}-${index}`} onClick = {onClickCallback} $isDropdown = {isDropdown}>
-                    <S_NavLink to = {item.url}>{t(item.i18nKey)}</S_NavLink>
+                    <S_NavLink href = {item.url}>{t(item.i18nKey)}</S_NavLink>
                 </S_MobileMenuItem>)}
 
         </S_MobileDropdownMenu>);

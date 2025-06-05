@@ -44,7 +44,7 @@ export const MobileMenuItem = ({
                         <S_MobileDropdownNavLink
                             //ref = {ref}
                         >
-                            <S_NavLink to = {menuItem.url}
+                            <S_NavLink href= {menuItem.url}
                                        onClick = {setNavigationClose}
                             >
                                 {t(menuItem.i18nKey)}
@@ -71,7 +71,7 @@ export const MobileMenuItem = ({
                 )
                 :
 
-                <S_NavLink to = {menuItem.url} onClick = {setNavigationClose}>
+                <S_NavLink href = {menuItem.url} onClick = {setNavigationClose}>
                     {t(menuItem.i18nKey)}
                 </S_NavLink>
             }

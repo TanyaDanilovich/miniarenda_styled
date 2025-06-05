@@ -8,7 +8,7 @@ import hammer from '../../assets/svg/gidromolot.svg';
 import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
-import img from "../../assets/images/servises/exavator/IMG_20190608_115344.jpg"
+import img from "../../assets/images/empty-image.jpg"
 import exavator_main from "../../assets/images/servises/exavator/exavator-main.jpg";
 import drill_main from "../../assets/images/servises/drill/drill-main.jpg"
 import hummer_main from "../../assets/images/servises/hummer/main-hummer.jpg"
@@ -267,11 +267,6 @@ export const MAIN_DATA: MainData = {
             },
         ]
     },
-
-
-
-
-
     equipments: {
         [EQUIPMENT_SUBCATEGORY.HAMMER]: {
             id: "equipment-001",

@@ -7,7 +7,7 @@ export const Hero = ({}: props) => {
     const id = useId()
 
     return (
-        <S_Hero>
+        <S_Hero id={"hero"}>
             <h1>
                 <span>Аренда мини-экскаваторов</span>
                 <span>с ямобуром и гидромолотом.</span>

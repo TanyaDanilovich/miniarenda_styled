@@ -4,8 +4,9 @@ import React from 'react';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {Category, SubcategoryItemData} from '../../shared/types/common.types';
 import {S_Box} from '../../shared/styled/S_Box';
-import {Link} from 'react-router-dom';
+
 import {useTranslation} from 'react-i18next';
+import {Link} from '../../shared/ui/Link';
 
 export type ServiceCardData = {}
 

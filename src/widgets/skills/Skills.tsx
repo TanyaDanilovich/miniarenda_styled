@@ -12,7 +12,7 @@ import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 const Skills = () => {
     const theme = useTheme()
     return (
-        <SkillsSection>
+        <SkillsSection id={"skills"}>
             <SkillsWrapper>
                 <SkillsContent>
                     <SectionTitle title={"Почему мы?"}/>

@@ -15,7 +15,7 @@ export const Prices = ({}: props) => {
 
     const theme = useTheme();
     return (
-        <S_Prices>
+        <S_Prices id = {"prices"}>
 
             <S_OuterContainer>
                 <SectionTitle title = {"Стоимость"}/>

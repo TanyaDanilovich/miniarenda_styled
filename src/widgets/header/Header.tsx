@@ -42,7 +42,7 @@ export const Header = ({}: props) => {
     return (
 
 
-        <StyledHeader ref = {headerRef} $isMobileNavigation = {isMobileNavigation}>
+        <StyledHeader ref = {headerRef} $isMobileNavigation = {isMobileNavigation} id="header">
             <S_OuterContainer>
 
                 <Logo/>

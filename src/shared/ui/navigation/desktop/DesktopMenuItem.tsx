@@ -25,7 +25,7 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
             {menuItem.subMenuItems
                 ? (
                     <>
-                        <S_NavLink to = {menuItem.url} onClick = {setClose}
+                        <S_NavLink href = {menuItem.url} onClick = {setClose}
                                    onMouseEnter = {setDropdown}
                                    onMouseLeave = {setCollapsed}>
                             {t(menuItem.i18nKey)}
@@ -42,7 +42,7 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
                 )
                 :
 
-                <S_NavLink to = {menuItem.url} onClick = {setClose}>
+                <S_NavLink href = {menuItem.url} onClick = {setClose}>
                     {t(menuItem.i18nKey)}
                 </S_NavLink>
             }

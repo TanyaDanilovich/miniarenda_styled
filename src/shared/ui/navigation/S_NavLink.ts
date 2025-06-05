@@ -5,7 +5,7 @@ import {BASE} from '../../constants/constants';
 import {NavLink} from 'react-router-dom';
 
 
-export const S_NavLink = styled(NavLink)<{}>`
+export const S_NavLink = styled.a<{}>`
     //${outline(3, "blue")}
   display: inline-block;
   width: 100%;

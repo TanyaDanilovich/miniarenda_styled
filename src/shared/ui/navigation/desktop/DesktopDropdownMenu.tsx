@@ -33,7 +33,7 @@ export const DesktopDropdownMenu = ({
 
                 {subMenuItems.map((item, index) =>
                     <S_DesktopMenuItem key = {`${id}-${index}`} onClick = {onClickCallback}>
-                        <S_NavLink to = {item.url}>{t(item.i18nKey)}</S_NavLink>
+                        <S_NavLink href = {item.url}>{t(item.i18nKey)}</S_NavLink>
                     </S_DesktopMenuItem>)}
 
         </S_DropdownMenu>);

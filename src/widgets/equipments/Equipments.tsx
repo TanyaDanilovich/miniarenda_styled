@@ -21,7 +21,7 @@ export const Equipments = ({offset}: props) => {
 
 
     return (
-        <S_Equipments>
+        <S_Equipments id="equipments">
             <S_BackgroundWrapper $offset = {offset} $backgroundColor = {theme.colors.white_smoke}>
 
                 <S_OuterContainer>

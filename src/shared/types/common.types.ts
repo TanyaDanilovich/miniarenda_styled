@@ -109,7 +109,8 @@ export type MainData = {
     }>,
     equipments: {
         [key in EquipmentSubcategory]: Equipment
-    }
+    },
+
 }
 
 export type Equipment = {

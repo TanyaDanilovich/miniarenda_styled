@@ -41,7 +41,7 @@ export const Services = ({}: props) => {
 
 
     return (
-        <StyledServices>
+        <StyledServices id = {"services"}>
             <S_OuterContainer>
                 <SectionTitle title = {serviceTitle} text = {serviceText}/>
                 <S_Flex $direction = {"column"} $rowGap = {"2rem"} $wrap = {"wrap"}>
