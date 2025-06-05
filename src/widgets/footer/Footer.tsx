@@ -14,7 +14,6 @@ import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
 import {S_Image} from '../../shared/styled/S_Image';
 import et24Img from '../../assets/images/footer/et24.jpg';
-import {menuItemsData} from '../../shared/ui/navigation/menuItemsData';
 
 
 type props = {};

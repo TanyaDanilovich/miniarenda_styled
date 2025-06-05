@@ -60,6 +60,7 @@ export const Equipments = ({offset}: props) => {
 
 type S_EquipmentsProps = {}
 export const S_Equipments = styled.section<S_EquipmentsProps>`
+
   & h2 {
     margin-top: 2rem;
   }

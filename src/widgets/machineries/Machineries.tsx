@@ -52,11 +52,12 @@ export const Machineries = ({}: props) => {
 
 
 export const StyledMachineries = styled.section<{}>`
-  ${sectionMargin};
+  
   ${sectionPadding};
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
-  ${sectionMargin} @media ${({theme}) => theme.mediaMinWidth.tablet} {
+  
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
   ${S_Flex} {
     flex-direction: row;
     gap: 2rem;

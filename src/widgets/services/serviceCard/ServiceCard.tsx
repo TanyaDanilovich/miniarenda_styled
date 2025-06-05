@@ -74,6 +74,7 @@ export const StyledServiceCard = styled.article <{}>`
   ${transitionHoverIcon}
   & > ${S_ImageContainer} {
     ${ImageHover};
+    aspect-ratio: 4/3;
   }
 
   @media ${({theme}) => theme.mediaMinWidth.largeMobile} {

@@ -75,14 +75,14 @@ export const ImageHover = css`
 `
 
 export const sectionMargin = css`
-  margin: ${getResponsiveSize(BASE * 1.5, BASE * 3)} auto;
+  margin: 0 auto;
 
 `
 
 
 export const sectionPadding = css`
-  padding-top: ${getResponsiveSize(BASE * 3, BASE * 3.5)};
-  padding-bottom: ${getResponsiveSize(BASE * 2, BASE * 4)};
+  padding-top: ${getResponsiveSize(BASE * 1.75, BASE * 3)};
+  padding-bottom: ${getResponsiveSize(BASE * 1.5, BASE * 2)};
 `
 
 export const outlinedNestedDiv = css`
