@@ -5,7 +5,7 @@ import {faAward, faCalendarDays, faHandshakeSimple, faSuitcase} from '@fortaweso
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {outline} from '../../app/styles/mixins';
+import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 
 
@@ -79,7 +79,9 @@ export default Skills;
 
 // Общая секция
 const SkillsSection = styled.section`
-  padding-block: ${getResponsiveSize(BASE, BASE * 3)};
+  ${sectionMargin};
+  ${sectionPadding};
+  //padding-block: ${getResponsiveSize(BASE, BASE * 3)};
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
 

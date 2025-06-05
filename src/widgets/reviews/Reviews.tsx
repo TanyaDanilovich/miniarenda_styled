@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import {ReviewSwiper} from '../swipers/reviewSwiper/ReviewSwiper';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from "styled-components";
-import {sectionMargin} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 
@@ -32,8 +32,8 @@ export const Reviews = ({offset}: props) => {
 export const S_Reviews = styled.section<{}>`
   background-image: url(${bgImg});
 
-  // ${sectionMargin};
-  padding-block: 2rem;
+  ${sectionMargin};
+  ${sectionPadding};
 
 
   background-position: top center;

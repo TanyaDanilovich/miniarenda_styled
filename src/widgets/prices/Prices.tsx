@@ -2,7 +2,7 @@ import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from 'styled-components';
-import {outline, sectionMargin} from '../../app/styles/mixins';
+import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import image from '../../assets/images/servises/exavator/IMG_20190608_115344.jpg';
 import {S_Image} from '../../shared/styled/S_Image';
@@ -72,7 +72,8 @@ export const Prices = ({}: props) => {
 
 const S_Prices = styled.section<{}>`
   background-color: ${({theme}) => theme.colors.white};
-  ${sectionMargin}
+  ${sectionMargin};
+  ${sectionPadding};
 `
 
 const S_PriceContentWrapper = styled(S_Flex)`

@@ -1,5 +1,5 @@
-import { MenuItemType } from '../../types/common.types';
-import { ROUTES_PATHS } from '../../constants/ROUTES_PATHS';
+import {MenuItemType} from '../../types/common.types';
+import {ROUTES_PATHS} from '../../constants/ROUTES_PATHS';
 
 export const menuItemsData: MenuItemType[] = [
     {
@@ -7,67 +7,31 @@ export const menuItemsData: MenuItemType[] = [
         url: ROUTES_PATHS.home.url
     },
     {
-        i18nKey: ROUTES_PATHS.arenda.index.i18nKey,
-        url: ROUTES_PATHS.arenda.index.url,
-        subMenuItems: [
-            {
-                i18nKey: ROUTES_PATHS.arenda.arenda_Exavatora.i18nKey,
-                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Exavatora.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.arenda.arenda_Yamobura.i18nKey,
-                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Yamobura.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.arenda.arenda_Gidromolota.i18nKey,
-                url: `${ROUTES_PATHS.arenda.index.url}/${ROUTES_PATHS.arenda.arenda_Gidromolota.url}`,
-            },
-        ]
-    },
-    {
-        i18nKey: ROUTES_PATHS.uslugi.index.i18nKey,
-        url: ROUTES_PATHS.uslugi.index.url,
-        subMenuItems: [
-            {
-                i18nKey: ROUTES_PATHS.uslugi.diggingTrench.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.diggingTrench.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.diggingFoundation.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.diggingFoundation.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.stumpRemoval.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.stumpRemoval.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.drilling.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.drilling.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.groundMovement.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.groundMovement.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.otherGroundworks.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.otherGroundworks.url}`,
-            },
-            {
-                i18nKey: ROUTES_PATHS.uslugi.dismantling.i18nKey,
-                url: `${ROUTES_PATHS.uslugi.index.url}/${ROUTES_PATHS.uslugi.dismantling.url}`,
-            },
-        ]
+        i18nKey: ROUTES_PATHS.services.i18nKey,
+        url: ROUTES_PATHS.services.url,
     },
     {
         i18nKey: ROUTES_PATHS.price.i18nKey,
         url: ROUTES_PATHS.price.url
     },
     {
-        i18nKey: ROUTES_PATHS.projects.i18nKey,
-        url: ROUTES_PATHS.projects.url
+        i18nKey: ROUTES_PATHS.equipments.i18nKey,
+        url: ROUTES_PATHS.equipments.url
+    },
+    // {
+    //     i18nKey: ROUTES_PATHS.machineries.i18nKey,
+    //     url: ROUTES_PATHS.machineries.url
+    // },
+    // {
+    //     i18nKey: ROUTES_PATHS.projects.i18nKey,
+    //     url: ROUTES_PATHS.projects.url
+    // },
+    {
+        i18nKey: ROUTES_PATHS.reviews.i18nKey,
+        url: ROUTES_PATHS.reviews.url
     },
     {
-        i18nKey: ROUTES_PATHS.contacts.i18nKey,
-        url: ROUTES_PATHS.contacts.url
-    }
+        i18nKey: ROUTES_PATHS.faq.i18nKey,
+        url: ROUTES_PATHS.faq.url
+    },
 ];

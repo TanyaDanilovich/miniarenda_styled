@@ -7,8 +7,6 @@ import {DesktopNavigation} from '../../shared/ui/navigation/desktop/DesktopNavig
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {MobileNavigation} from '../../shared/ui/navigation/mobile/MobileNavigation';
 import {debounceFunction} from '../../shared/utils/debounceFunction';
-import {S_LayoutWithBreadcrumbs} from '../layouts/LayoutWithBreadcrumbs';
-import {outline} from '../../app/styles/mixins';
 
 
 type props = {};

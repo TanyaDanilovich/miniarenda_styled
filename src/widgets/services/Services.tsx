@@ -4,7 +4,7 @@ import React, {useEffect, useId, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {sectionMargin} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {API} from '../../app/api/API';
@@ -61,6 +61,7 @@ export const Services = ({}: props) => {
 
 export const StyledServices = styled.section<{}>`
   ${sectionMargin};
+  ${sectionPadding};
 
   ${S_Flex} {
     align-items: flex-start;

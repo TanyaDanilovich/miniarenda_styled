@@ -46,7 +46,11 @@ export const Main = ({}: props) => {
 
 export const StyledMain = styled.main
     < {} > `
-
+    margin-top: 4rem;
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+   
+margin-top: 0;
+  }
 
 `
 

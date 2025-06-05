@@ -5,7 +5,7 @@ import {questionsData} from './questionsData';
 import {FullQuestion} from './FullQuestion';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import styled from 'styled-components';
-import {sectionMargin} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 
@@ -20,11 +20,11 @@ export const Questions = ({}: props) => {
 
 
     return (
-        <S_Questions id = {"questions"}>
+        <S_Questions id = {"faq"}>
 
             <S_OuterContainer>
 
-                <SectionTitle title = {"Вопросы и ответы"}/>
+                <SectionTitle title = {"Вопросы"} text = {"Самые частые вопросы и ответы на них"}/>
 
                 <S_Flex $direction = {'column'} $gap = {"1rem"}>
                     {questionsData.map((q, index) => <FullQuestion id = {`${id}-${index}`}
@@ -45,5 +45,6 @@ export const Questions = ({}: props) => {
 export const S_Questions = styled.section<{}>`
   background-color: ${({theme}) => theme.colors.white};
   ${sectionMargin};
+  ${sectionPadding};
   padding-inline: ${getResponsiveSize(5, 16 * 4, 320, 992)};
 `

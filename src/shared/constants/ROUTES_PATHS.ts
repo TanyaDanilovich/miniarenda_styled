@@ -28,86 +28,45 @@
 //     }
 // }
 
-
-import { CATEGORY } from './CATEGORY';
-import { RENTAL_SUBCATEGORY } from './RENTAL_SUBCATEGORY';
-import { SERVICE_SUBCATEGORY } from './SERVICE_SUBCATEGORY';
-import { CONTACTS_DATA, PRICES_DATA, PROJECTS_DATA } from './constants';
-import { getRoutePath } from '../utils/getRoutePath';
-
 export const ROUTES_PATHS = {
     home: {
-        url: "",
+        url: "#hero",
         title: "Главная",
         i18nKey: "pages.home.navigation",
     },
-    projects: {
-        url: PROJECTS_DATA.url,
-        title: PROJECTS_DATA.title,
-        i18nKey: "pages.projects.navigation",
-    },
-    contacts: {
-        url: CONTACTS_DATA.url,
-        title: CONTACTS_DATA.title,
-        i18nKey: "pages.contacts.navigation",
+    services: {
+        url: "#services",
+        title: "Услуги",
+        i18nKey: "pages.services.navigation",
     },
     price: {
-        url: PRICES_DATA.url,
-        title: PRICES_DATA.title,
+        url: "#prices",
+        title: "Стоимость услуг",
         i18nKey: "pages.price.navigation",
     },
-
-    arenda: {
-        index: {
-            ...getRoutePath(CATEGORY.RENTAL),
-            i18nKey: "pages.arenda.index.navigation",
-        },
-        arenda_Exavatora: {
-            ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.EXCAVATOR),
-            i18nKey: "pages.arenda.excavator.navigation",
-        },
-        arenda_Gidromolota: {
-            ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.HAMMER),
-            i18nKey: "pages.arenda.hammer.navigation",
-        },
-        arenda_Yamobura: {
-            ...getRoutePath(CATEGORY.RENTAL, RENTAL_SUBCATEGORY.DRILL),
-            i18nKey: "pages.arenda.yamobur.navigation",
-        },
+    machineries: {
+        url: "#machineries",
+        title: "Наша техника",
+        i18nKey: "pages.machineries.navigation",
     },
-
-    uslugi: {
-        index: {
-            ...getRoutePath(CATEGORY.SERVICES),
-            i18nKey: "pages.uslugi.index.navigation",
-        },
-        diggingTrench: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DIGGING_TRENCH),
-            i18nKey: "pages.uslugi.diggingTrench.navigation",
-        },
-        diggingFoundation: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DIGGING_FOUNDATION),
-            i18nKey: "pages.uslugi.diggingFoundation.navigation",
-        },
-        stumpRemoval: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.STUMP_REMOVAL),
-            i18nKey: "pages.uslugi.stumpRemoval.navigation",
-        },
-        drilling: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DRILLING),
-            i18nKey: "pages.uslugi.drilling.navigation",
-        },
-        groundMovement: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.GROUND_MOVEMENT),
-            i18nKey: "pages.uslugi.groundMovement.navigation",
-        },
-        otherGroundworks: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS),
-            i18nKey: "pages.uslugi.otherGroundworks.navigation",
-        },
-        dismantling: {
-            ...getRoutePath(CATEGORY.SERVICES, SERVICE_SUBCATEGORY.DISMANTLING),
-            i18nKey: "pages.uslugi.dismantling.navigation",
-        },
+    equipments: {
+        url: "#equipments",
+        title: "Оборудование",
+        i18nKey: "pages.equipments.navigation",
+    },
+    projects: {
+        url: "#projects",
+        title: "Наши работы",
+        i18nKey: "pages.projects.navigation",
+    },
+    reviews: {
+        url: "#reviews",
+        title: "Отзывы",
+        i18nKey: "pages.reviews.navigation",
+    },
+    faq: {
+        url: "#faq",
+        title: "Вопрос-ответ",
+        i18nKey: "pages.faq.navigation",
     },
 };

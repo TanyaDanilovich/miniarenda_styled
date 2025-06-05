@@ -7,6 +7,7 @@ import {API} from '../../app/api/API';
 import {Equipment} from '../../shared/types/common.types';
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 import {useTranslation} from 'react-i18next';
+import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
 
 
 

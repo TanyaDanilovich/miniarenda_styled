@@ -1,30 +1,14 @@
 export const ru = {
         pages: {
             home: {navigation: "Главная"},
+            services: {navigation: "Услуги"},
+            price: {navigation: "Стоимость"},
+            // machineries: {navigation: "Наша Техника"},
+            equipments: {navigation: "Оборудование"},
+            projects: {navigation: "Наши работы"},
+            reviews: {navigation: "Отзывы"},
+            faq: {navigation: "FAQ"},
 
-            projects: {navigation: "Наши проекты"},
-
-            contacts: {navigation: "Контакты"},
-
-            price: {navigation: "Прайс-лист"},
-
-            arenda: {
-                index: {navigation: "Аренда техники"},
-                excavator: {navigation: "Аренда мини-экскаватора"},
-                hammer: {navigation: "Аренда гидромолота"},
-                yamobur: {navigation: "Аренда ямобура"},
-            },
-
-            uslugi: {
-                index: {navigation: "Услуги мини-техники"},
-                diggingTrench: {navigation: "Копание траншей"},
-                diggingFoundation: {navigation: "Копание фундаментов"},
-                stumpRemoval: {navigation: "Корчевание пней"},
-                drilling: {navigation: "Бурение отверстий"},
-                groundMovement: {navigation: "Перемещение грунта"},
-                otherGroundworks: {navigation: "Прочие земляные работы"},
-                dismantling: {navigation: "Демонтаж конструкций"},
-            }
         },
         categories: {
             rental: {

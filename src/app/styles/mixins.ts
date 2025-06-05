@@ -52,8 +52,8 @@ export const fullAbsoluteElement = (opacity: number = 0.4) => css`
 export const ImageHover = css`
 
   // &:before {
-  //   ${fullAbsoluteElement()}
-  //   ${plainTransition()};
+    //   ${fullAbsoluteElement()}
+    //   ${plainTransition()};
   //   z-index: 3;
   // }
   //
@@ -76,11 +76,13 @@ export const ImageHover = css`
 
 export const sectionMargin = css`
   margin: ${getResponsiveSize(BASE * 1.5, BASE * 3)} auto;
+
 `
 
 
 export const sectionPadding = css`
-  padding-block: ${getResponsiveSize(BASE * 1.5, BASE * 3)};
+  padding-top: ${getResponsiveSize(BASE * 3, BASE * 3.5)};
+  padding-bottom: ${getResponsiveSize(BASE * 2, BASE * 4)};
 `
 
 export const outlinedNestedDiv = css`

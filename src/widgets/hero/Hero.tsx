@@ -25,7 +25,7 @@ export const Hero = ({}: props) => {
 export const S_Hero = styled.section<{}>`
   aspect-ratio: 3/4;
   width: 100%;
-  margin-top: 4rem;
+
 
   & > h1 {
     height: 1px;

@@ -4,7 +4,7 @@ import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {MachineryCard} from './machneryCard/MachneryCard';
-import {sectionMargin} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {MachineryCharacteristicKeys} from '../../shared/types/common.types';
 import {API} from '../../app/api/API';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
@@ -52,7 +52,8 @@ export const Machineries = ({}: props) => {
 
 
 export const StyledMachineries = styled.section<{}>`
-  padding-block: ${getResponsiveSize(BASE, BASE * 3)};
+  ${sectionMargin};
+  ${sectionPadding};
   background-color: ${({theme}) => theme.colors.black};
   color: ${({theme}) => theme.colors.white};
   ${sectionMargin} @media ${({theme}) => theme.mediaMinWidth.tablet} {

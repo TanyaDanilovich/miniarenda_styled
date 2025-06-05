@@ -12,13 +12,17 @@ import {Link} from '../../shared/ui/Link';
 import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
+import {S_Image} from '../../shared/styled/S_Image';
+import et24Img from '../../assets/images/footer/et24.jpg';
+import {menuItemsData} from '../../shared/ui/navigation/menuItemsData';
+
 
 type props = {};
 
 export const Footer = ({}: props) => {
     const theme = useTheme();
     const {t} = useTranslation();
-    const servicesData = API.getServicesSubcategoriesData();
+    const fullServicesData = API.getFullSubcategoriesData();
 
     return (
         <S_Footer id = "footer">
@@ -41,41 +45,38 @@ export const Footer = ({}: props) => {
                         <p>{t('footer.unp')}</p>
                     </S_FooterItem>
 
-                    {/*<S_FooterItem>*/}
-                    {/*    <h5><span>{t('footer.ourEquipment')}</span></h5>*/}
-                    {/*    <S_ImageContainer>*/}
-                    {/*        <S_Image src = {et14} alt = "" width = "300"/>*/}
-                    {/*    </S_ImageContainer>*/}
-                    {/*    <S_Flex $direction = {"column"}>*/}
-                    {/*        <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>*/}
-                    {/*    </S_Flex>*/}
-                    {/*    <S_ImageContainer>*/}
-                    {/*        <S_Image src = {et24} alt = "" width = "300"/>*/}
-                    {/*    </S_ImageContainer>*/}
-                    {/*    <S_Flex $direction = {"column"}>*/}
-                    {/*        <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>*/}
-                    {/*    </S_Flex>*/}
-                    {/*</S_FooterItem>*/}
+                    <S_FooterItem>
+                        <h5><span>{t('footer.ourEquipment')}</span></h5>
+                        <S_ImageContainer>
+                            <S_Image src = {et24Img} alt = "" width = "300"/>
+                        </S_ImageContainer>
+                        <S_Flex $direction = {"column"}>
+                            <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
+                        </S_Flex>
+                        <S_Flex $direction = {"column"}>
+                            <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
+                        </S_Flex>
+                    </S_FooterItem>
 
                     <S_FooterItem>
                         <h5><span>{t('footer.sections')}</span></h5>
                         <ul>
-                            <li><Link to = {ROUTES_PATHS.arenda.index.url}>{t('pages.arenda.index.navigation')}</Link>
-                            </li>
-                            <li><Link to = {ROUTES_PATHS.uslugi.index.url}>{t('pages.uslugi.index.navigation')}</Link>
+
+                            <li><Link to = {ROUTES_PATHS.services.url}>{t('pages.services.navigation')}</Link>
                             </li>
                             <li><Link to = {ROUTES_PATHS.price.url}>{t('pages.price.navigation')}</Link></li>
                             <li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.contacts.url}>{t('pages.contacts.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.reviews.url}>{t('pages.reviews.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.faq.url}>{t('pages.faq.navigation')}</Link></li>
                         </ul>
                     </S_FooterItem>
 
                     <S_FooterItem>
                         <h5><span>{t('footer.ourServices')}</span></h5>
                         <ul>
-                            {servicesData.map((service, index) => (
+                            {fullServicesData.map((service, index) => (
                                 <li key = {`${service.id}-${index}`}>
-                                    <Link to = {`${service.categoryUrl}/${service.url}`}>
+                                    <Link to = {ROUTES_PATHS.services.url}>
                                         {t(`${service.i18nKey}.title`)}
                                     </Link>
                                 </li>
@@ -85,7 +86,7 @@ export const Footer = ({}: props) => {
 
                 </S_Flex>
 
-                <small>Copyright © 2024 miniarenda.by</small>
+                <small>Copyright © 2025 miniarenda.by</small>
                 <S_HideContent>
                     <p>Предосталяем в аренду мини-экскаватор в Минске и
                        Минской области
