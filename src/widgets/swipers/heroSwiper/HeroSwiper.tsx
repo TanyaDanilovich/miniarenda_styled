@@ -7,10 +7,6 @@ import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
-import img1 from "../../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
-import img2 from "../../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
-import img3 from "../../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
-import img4 from "../../../assets/images/main-slider/1920px/_DSC4764-1920w.jpg"
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
 import {Autoplay} from 'swiper/modules';
 
@@ -19,8 +15,6 @@ type props = {
     id: string,
 };
 export const HeroSwiper = ({id}: props) => {
-
-    const urls = [img1, img2, img3]
 
 
     const params: SwiperOptions = {
@@ -45,13 +39,14 @@ export const HeroSwiper = ({id}: props) => {
                       {...params}
         >
 
-            {heroData.map(({mainText, additionalText, imgUrl}, index) => {
+            {heroData.map(({mainText, additionalText, image}, index) => {
+                    console.log(image);
                     const slideId = uuidv4();
                     return (
                         <AppSwiperSlide id = {slideId} key = {`${id}-${index}`}>
                             <HeroSlider mainText = {mainText}
                                         additionalText = {additionalText}
-                                        imgUrl = {urls[index]}
+                                        image = {image}
                             />
                         </AppSwiperSlide>)
                 }

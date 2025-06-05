@@ -1,4 +1,5 @@
-import img2 from '../../assets/images/servises/servises_2.jpg'
+import et14 from '../../assets/images/footer/et14.jpg'
+import et24 from '../../assets/images/footer/et24.jpg'
 import {MachineryData} from '../types/common.types';
 import {v1} from 'uuid';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
@@ -11,7 +12,7 @@ export const machineriesData: MachineryData[] = [
         id: v1(),
         title: "Технические характеристики мини экскаватора Wacker Neuson ET-24",
         tableTitle: "Мини-экскаватор Wacker Neuson ET-24",
-        image: {src: img2, alt: "Мини-экскаватор Wacker Neuson ET-24"},
+        image: {src: et24, alt: "Мини-экскаватор Wacker Neuson ET-24"},
         characteristics: [
             {id: MACHINERY_CHARACTERISTICS.WEIGHT, title: "Масса", value: "2500  кг"},
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "4022х1400х2390  м"},
@@ -47,7 +48,7 @@ export const machineriesData: MachineryData[] = [
         id: v1(),
         title: "Технические характеристики мини экскаватора Wacker Neuson ET-14",
         tableTitle: "Мини-экскаватор Wacker Neuson ET-14",
-        image: {src: img2, alt: "Мини-экскаватор Wacker Neuson ET-14"},
+        image: {src: et14, alt: "Мини-экскаватор Wacker Neuson ET-14"},
         characteristics: [
             {id: MACHINERY_CHARACTERISTICS.WEIGHT, title: "Масса", value: "1500 кг"},
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "3854х990х2289 м"},

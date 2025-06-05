@@ -9,14 +9,15 @@ import {ContactUsButton} from '../../../shared/ui/buttons/ContactUsButton';
 import {PhoneLink, S_PhoneLink} from '../../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
+import {ImageProps} from '../../../shared/types/common.types';
 
 
 type props = {
     mainText: string,
     additionalText: string,
-    imgUrl: string
+    image: ImageProps,
 };
-export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
+export const HeroSlider = ({mainText, additionalText, image}: props) => {
 
     return (
         <S_HeroSlider>
@@ -32,7 +33,7 @@ export const HeroSlider = ({mainText, additionalText, imgUrl}: props) => {
 
             </S_HeroSliderContent>
 
-            <S_Image src = {imgUrl}/>
+            <S_Image src = {image.src} alt = {image.alt}/>
 
         </S_HeroSlider>);
 };

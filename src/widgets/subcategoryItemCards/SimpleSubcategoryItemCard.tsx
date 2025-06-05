@@ -6,7 +6,7 @@ import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../a
 import {S_Image} from '../../shared/styled/S_Image';
 import {ReadMoreButton} from '../../shared/ui/buttons/ReadMoreButton';
 import {SubcategoryItemCard} from '../../shared/types/common.types';
-import img from '../../assets/images/portfolio/370/portfolio9-370w.jpg';
+import img from '../../assets/images/servises/exavator/IMG_20190608_115344.jpg';
 import { useTranslation } from 'react-i18next';
 
 type props = SubcategoryItemCard & {};

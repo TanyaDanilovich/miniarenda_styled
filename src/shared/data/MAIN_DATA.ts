@@ -8,8 +8,18 @@ import hammer from '../../assets/svg/gidromolot.svg';
 import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
-import img from "../../assets/images/servises/servises_1.jpg"
+import img from "../../assets/images/servises/exavator/IMG_20190608_115344.jpg"
+import exavator_main from "../../assets/images/servises/exavator/exavator-main.jpg";
+import drill_main from "../../assets/images/servises/drill/drill-main.jpg"
+import hummer_main from "../../assets/images/servises/hummer/main-hummer.jpg"
+import jamy_main from "../../assets/images/servises/jamy/jamy-main.jpg"
+import fundament_main from "../../assets/images/servises/fundaments/fundaments-main.jpg"
+import transhei_main from "../../assets/images/servises/transhei/transhei-main.jpg"
 
+
+// DIGGING_TRENCH,
+//     SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
+//     SERVICE_SUBCATEGORY.DRILLING,
 
 import kovsh from '../../assets/images/equipments/kovsh.jpg';
 import bur from '../../assets/images/equipments/bur.jpg';
@@ -68,7 +78,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
             subcategoryUrl: "arenda-mini-exavatora",
             i18nKey: "subcategories.rentalExcavator",
-            images: [{src: img, alt: ""}],
+            images: [{src: exavator_main, alt: ""}],
             position: 1,
             icon: excavator,
             seo: {
@@ -82,7 +92,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.HAMMER,
             subcategoryUrl: "arenda-gidromolota",
             i18nKey: "subcategories.rentalsHammer",
-            images: [{src: img, alt: ""}],
+            images: [{src: hummer_main, alt: ""}],
             position: 2,
             icon: hammer,
             seo: {
@@ -96,7 +106,7 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.DRILL,
             subcategoryUrl: "arenda-yamobura",
             i18nKey: "subcategories.rentalsDrill",
-            images: [{src: img, alt: ""}],
+            images: [{src: drill_main, alt: ""}],
             position: 3,
             icon: drill,
             seo: {
@@ -113,7 +123,7 @@ export const MAIN_DATA: MainData = {
             position: 1,
             subcategoryUrl: "kopanie-transhej",
             i18nKey: "subcategories.diggingTrench",
-            images: [{src: img, alt: ""}],
+            images: [{src: transhei_main, alt: ""}],
             seo: {
                 metaTitle: "Копание траншей | Прокладка коммуникаций",
                 metaDescription: "Услуги по копанию траншей для прокладки инженерных коммуникаций и трубопроводов.",
@@ -127,7 +137,7 @@ export const MAIN_DATA: MainData = {
             position: 2,
             subcategoryUrl: "kopanie-fundamentov",
             i18nKey: "subcategories.diggingFoundation",
-            images: [{src: img, alt: ""}],
+            images: [{src: fundament_main, alt: ""}],
             seo: {
                 metaTitle: "Копание фундаментов | Профессиональные услуги",
                 metaDescription: "Копка фундаментов под дома и другие постройки. Мини-экскаваторы для любой сложности работы.",
@@ -155,7 +165,7 @@ export const MAIN_DATA: MainData = {
             position: 4,
             subcategoryUrl: "yamobur",
             i18nKey: "subcategories.drilling",
-            images: [{src: img, alt: ""}],
+            images: [{src: jamy_main, alt: ""}],
             seo: {
                 metaTitle: "Бурение отверстий и ям | Услуги бурения в Минске",
                 metaDescription: "Профессиональные услуги по бурению отверстий ямобуром для фундаментов, столбов и опор. Работаем быстро и качественно, используя современное оборудование.",

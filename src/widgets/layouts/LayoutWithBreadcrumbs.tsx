@@ -2,7 +2,7 @@ import styled, {css} from "styled-components";
 import React from 'react';
 import {outline} from '../../app/styles/mixins';
 import {Link, Outlet, useLocation, useMatches} from 'react-router-dom';
-import img from '../../assets/images/portfolio/1170/portfolio4-1170w.jpg';
+import img from '../../assets/images/servises/exavator/IMG_20190608_115344.jpg';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {UIMatch} from '@remix-run/router/utils';
 import {cleanPath} from '../../shared/utils/cleanPath';

@@ -51,15 +51,15 @@ export const fullAbsoluteElement = (opacity: number = 0.4) => css`
 
 export const ImageHover = css`
 
-  &:before {
-    ${fullAbsoluteElement()}
-    ${plainTransition()};
-    z-index: 3;
-  }
-
-  &:hover:before {
-    opacity: 1;
-  }
+  // &:before {
+  //   ${fullAbsoluteElement()}
+  //   ${plainTransition()};
+  //   z-index: 3;
+  // }
+  //
+  // &:hover:before {
+  //   opacity: 1;
+  // }
 
   & > ${S_Image} {
     transform: scale(1);

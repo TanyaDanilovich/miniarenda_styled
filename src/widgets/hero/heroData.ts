@@ -1,18 +1,39 @@
-export const heroData = [
+import {ImageProps} from '../../shared/types/common.types';
+import imgSlide1 from '../../assets/images/hero-slider/1920px/_DSC2623-1920w.jpg';
+import imgSlide2 from '../../assets/images/hero-slider/1920px/_DSC4666-1920w.jpg';
+import imgSlide3 from '../../assets/images/hero-slider/1920px/_DSC4764-1920w.jpg';
+
+type HeroSlideData = {
+    mainText: string,
+    additionalText: string,
+    image:ImageProps
+}
+
+
+export const heroData: HeroSlideData[] = [
     {
-        mainText: "Аренда мини-техники с гидромолотом и ямобуром",
+        mainText: "Аренда мини-экскаватора с гидромолотом и ямобуром",
         additionalText: "Доставка по Минску и Минской области",
-        imgUrl: "../../assets/images/main-slider/1920px/_DSC2623-1920w.jpg"
+        image: {
+            src:imgSlide1,
+            alt: "Аренда мини-экскаватора с гидромолотом и ямобуром"
+        }
     },
     {
-        mainText: "Услуги мини-экскаваторов в Минске и по Минской области",
+        mainText: "Услуги мини-экскаваторов в Минске и Минской области",
         additionalText: "от 85 руб в час, от 4 часов",
-        imgUrl: "../../assets/images/main-slider/1920px/_DSC4349-1920w.jpg"
+        image: {
+            src:imgSlide2,
+            alt: "Аренда мини-экскаватора с ямобуром в Минске и Минской области"
+        }
     },
     {
         mainText: "Работаем с частными лицами и с организациями",
         additionalText: "Наличный и безналичный расчет ",
-        imgUrl: "../../assets/images/main-slider/1920px/_DSC4666-1920w.jpg"
+        image: {
+            src:imgSlide3,
+            alt: "Аренда мини-экскаватора с гидромолотом в Минске и Минской области"
+        }
     },
     // {
     //     mainText: "100 % клиентов довольны качеством и ценой",

@@ -2,7 +2,6 @@ import styled, {useTheme} from "styled-components";
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_HideContent} from '../../shared/styled/S_HideContent';
-import image from '../../assets/images/footer/_DSC3958.jpg'
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
@@ -14,6 +13,8 @@ import {Link} from 'react-router-dom';
 import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
+import et14 from '../../assets/images/footer/et14.jpg'
+import et24 from '../../assets/images/footer/et24.jpg'
 
 type props = {};
 
@@ -43,22 +44,29 @@ export const Footer = ({}: props) => {
                         <p>{t('footer.unp')}</p>
                     </S_FooterItem>
 
-                    <S_FooterItem>
-                        <h5><span>{t('footer.ourEquipment')}</span></h5>
-                        <S_ImageContainer>
-                            <S_Image src = {image} alt = "" width = "300"/>
-                        </S_ImageContainer>
-                        <S_Flex $direction = {"column"}>
-                            <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
-                            <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
-                        </S_Flex>
-                    </S_FooterItem>
+                    {/*<S_FooterItem>*/}
+                    {/*    <h5><span>{t('footer.ourEquipment')}</span></h5>*/}
+                    {/*    <S_ImageContainer>*/}
+                    {/*        <S_Image src = {et14} alt = "" width = "300"/>*/}
+                    {/*    </S_ImageContainer>*/}
+                    {/*    <S_Flex $direction = {"column"}>*/}
+                    {/*        <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>*/}
+                    {/*    </S_Flex>*/}
+                    {/*    <S_ImageContainer>*/}
+                    {/*        <S_Image src = {et24} alt = "" width = "300"/>*/}
+                    {/*    </S_ImageContainer>*/}
+                    {/*    <S_Flex $direction = {"column"}>*/}
+                    {/*        <a href = {`#${ROUTES_PATHS.home.url}/#machineries`}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>*/}
+                    {/*    </S_Flex>*/}
+                    {/*</S_FooterItem>*/}
 
                     <S_FooterItem>
                         <h5><span>{t('footer.sections')}</span></h5>
                         <ul>
-                            <li><Link to = {ROUTES_PATHS.arenda.index.url}>{t('pages.arenda.index.navigation')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.uslugi.index.url}>{t('pages.uslugi.index.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.arenda.index.url}>{t('pages.arenda.index.navigation')}</Link>
+                            </li>
+                            <li><Link to = {ROUTES_PATHS.uslugi.index.url}>{t('pages.uslugi.index.navigation')}</Link>
+                            </li>
                             <li><Link to = {ROUTES_PATHS.price.url}>{t('pages.price.navigation')}</Link></li>
                             <li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>
                             <li><Link to = {ROUTES_PATHS.contacts.url}>{t('pages.contacts.navigation')}</Link></li>
