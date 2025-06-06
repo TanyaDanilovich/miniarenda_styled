@@ -1,18 +1,24 @@
 {
   "files": {
     "main.css": "/miniarenda_styled/static/css/main.f59f22ac.css",
-    "main.js": "/miniarenda_styled/static/js/main.33809839.js",
+    "main.js": "/miniarenda_styled/static/js/main.518fc282.js",
     "static/js/488.7e13e7cf.chunk.js": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js",
+    "static/media/jamy-main.jpg": "/miniarenda_styled/static/media/jamy-main.c28335439c0c067b6980.jpg",
+    "static/media/transhei-main.jpg": "/miniarenda_styled/static/media/transhei-main.8859b22dd590ee97362f.jpg",
+    "static/media/drill-main.jpg": "/miniarenda_styled/static/media/drill-main.9e8704ed7bff31b4b119.jpg",
+    "static/media/hummer-main.jpg": "/miniarenda_styled/static/media/hummer-main.8385c87c1f4a99552aeb.jpg",
+    "static/media/IMG_20190608_115344.jpg": "/miniarenda_styled/static/media/IMG_20190608_115344.4895d6a57c585337598d.jpg",
+    "static/media/_DSC1723.jpg": "/miniarenda_styled/static/media/_DSC1723.80ce61b2ed6e366caef9.jpg",
+    "static/media/_DSC2715_copy.jpg": "/miniarenda_styled/static/media/_DSC2715_copy.769c4b1950d41b0043e0.jpg",
+    "static/media/et24.jpg": "/miniarenda_styled/static/media/et24.50be9d3f39ac5f0119a4.jpg",
+    "static/media/wacker neuson et1404.jpg": "/miniarenda_styled/static/media/wacker neuson et1404.4e4c4b97e44f7d810260.jpg",
     "static/media/_DSC4764-1920w.jpg": "/miniarenda_styled/static/media/_DSC4764-1920w.ad0e990186c131cfbe99.jpg",
     "static/media/_DSC4666-1920w.jpg": "/miniarenda_styled/static/media/_DSC4666-1920w.77b351bfceef86713ec8.jpg",
     "static/media/_DSC2623-1920w.jpg": "/miniarenda_styled/static/media/_DSC2623-1920w.19b40992b267e92bc9ed.jpg",
+    "static/media/fundaments-main.jpg": "/miniarenda_styled/static/media/fundaments-main.7034cdadd8352654997e.jpg",
     "static/media/kovsh.jpg": "/miniarenda_styled/static/media/kovsh.53ac9aa346307275dedb.jpg",
-    "static/media/portfolio4-1170w.jpg": "/miniarenda_styled/static/media/portfolio4-1170w.d55112badd165c759ef2.jpg",
     "static/media/reviews-bg.png": "/miniarenda_styled/static/media/reviews-bg.52524127bf3f0b2b315b.png",
-    "static/media/servises_2.jpg": "/miniarenda_styled/static/media/servises_2.1a88fe333ee414cec001.jpg",
-    "static/media/servises_1.jpg": "/miniarenda_styled/static/media/servises_1.e676c55f9524fb455a89.jpg",
-    "static/media/separate-image-1-370w.jpg": "/miniarenda_styled/static/media/separate-image-1-370w.3d764222f0591907c909.jpg",
-    "static/media/portfolio9-370w.jpg": "/miniarenda_styled/static/media/portfolio9-370w.6b1f8d83e3eae98eccb1.jpg",
+    "static/media/empty-image.jpg": "/miniarenda_styled/static/media/empty-image.7e1cad6822150182b8d6.jpg",
     "static/media/bur.jpg": "/miniarenda_styled/static/media/bur.3c366a5f9d55addf54d1.jpg",
     "static/media/clik.jpg": "/miniarenda_styled/static/media/clik.11ce1257d6668f9a8a7e.jpg",
     "static/media/soosan.jpg": "/miniarenda_styled/static/media/soosan.dd939a7cec5f5cfec049.jpg",
@@ -28,11 +34,11 @@
     "index.html": "/miniarenda_styled/index.html",
     "static/media/checkmark-circle-green.svg": "/miniarenda_styled/static/media/checkmark-circle-green.10c974073f6afee7460546bc19578154.svg",
     "main.f59f22ac.css.map": "/miniarenda_styled/static/css/main.f59f22ac.css.map",
-    "main.33809839.js.map": "/miniarenda_styled/static/js/main.33809839.js.map",
+    "main.518fc282.js.map": "/miniarenda_styled/static/js/main.518fc282.js.map",
     "488.7e13e7cf.chunk.js.map": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f59f22ac.css",
-    "static/js/main.33809839.js"
+    "static/js/main.518fc282.js"
   ]
 }
