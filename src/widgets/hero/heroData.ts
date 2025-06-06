@@ -15,7 +15,7 @@ export const heroData: HeroSlideData[] = [
         mainText: "Аренда мини-экскаватора с гидромолотом и ямобуром",
         additionalText: "Доставка по Минску и Минской области",
         image: {
-            src:imgSlide1,
+            src:`${process.env.PUBLIC_URL}/1920px/_DSC2623-1920w.jpg`,
             alt: "Аренда мини-экскаватора с гидромолотом и ямобуром"
         }
     },

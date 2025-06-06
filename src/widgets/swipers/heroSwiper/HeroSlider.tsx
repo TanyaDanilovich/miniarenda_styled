@@ -18,7 +18,7 @@ type props = {
     image: ImageProps,
 };
 export const HeroSlider = ({mainText, additionalText, image}: props) => {
-
+    console.log(image.src);
     return (
         <S_HeroSlider>
 

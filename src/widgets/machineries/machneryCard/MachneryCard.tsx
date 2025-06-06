@@ -68,6 +68,10 @@ export const S_MachineryCard = styled.article <{}>`
     }
   }
 
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    width: 50%;
+
+  }
 
     // ${transitionHoverIcon}
 `;

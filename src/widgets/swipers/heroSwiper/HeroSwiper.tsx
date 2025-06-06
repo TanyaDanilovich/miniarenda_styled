@@ -40,7 +40,7 @@ export const HeroSwiper = ({id}: props) => {
         >
 
             {heroData.map(({mainText, additionalText, image}, index) => {
-                    console.log(image);
+                    //console.log(image);
                     const slideId = uuidv4();
                     return (
                         <AppSwiperSlide id = {slideId} key = {`${id}-${index}`}>

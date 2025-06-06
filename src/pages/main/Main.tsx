@@ -11,6 +11,8 @@ import {Hero} from '../../widgets/hero/Hero';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
 import {Prices} from '../../widgets/prices/Prices';
+import CustomAppSlider from '../../widgets/swipers/customAppSlider/CustomSlider';
+import Slider from '../../widgets/swipers/customAppSlider/CustomSlider';
 
 
 type props = {};
@@ -32,7 +34,7 @@ export const Main = ({}: props) => {
             <Skills/>
             <Prices/>
             <Machineries/>
-
+            <Slider/>
             <Equipments offset = {refOffset}/>
             <Reviews offset = {refOffset}/>
             <Questions/>
