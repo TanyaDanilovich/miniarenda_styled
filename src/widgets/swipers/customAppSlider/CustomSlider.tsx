@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
-
+import React, { useState, useEffect, useRef } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import img1 from '../../../assets/images/hero-slider/1920px/_DSC2623-1920w.jpg';
 import img2 from '../../../assets/images/hero-slider/1920px/_DSC4666-1920w.jpg';
 import img3 from '../../../assets/images/hero-slider/1920px/_DSC4349-1920w.jpg';
 import img4 from '../../../assets/images/hero-slider/1920px/_DSC4764-1920w.jpg';
 
-// Типизация
 interface SlideData {
     id: number;
     image: string;
@@ -58,27 +56,63 @@ const slides: SlideData[] = [
 const Slider: React.FC = () => {
     const [current, setCurrent] = useState(0);
     const length = slides.length;
+    const startX = useRef<number | null>(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrent(prev => (prev + 1) % length);
+            nextSlide();
         }, 6000);
         return () => clearInterval(interval);
-    }, [length]);
+    }, [current]);
+
+    const nextSlide = () => {
+        setCurrent((prev) => (prev + 1) % length);
+    };
+
+    const prevSlide = () => {
+        setCurrent((prev) => (prev - 1 + length) % length);
+    };
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        startX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (startX.current === null) return;
+        const deltaX = e.changedTouches[0].clientX - startX.current;
+        if (deltaX > 50) prevSlide();
+        else if (deltaX < -50) nextSlide();
+        startX.current = null;
+    };
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        startX.current = e.clientX;
+    };
+
+    const handleMouseUp = (e: React.MouseEvent) => {
+        if (startX.current === null) return;
+        const deltaX = e.clientX - startX.current;
+        if (deltaX > 50) prevSlide();
+        else if (deltaX < -50) nextSlide();
+        startX.current = null;
+    };
 
     return (
         <Wrapper>
-            <SliderContainer>
+            <SliderContainer
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+            >
                 {slides.map((slide, index) => {
                     let position: SlideProps['position'] = 'nextSlide';
-                    if (index === current) {
-                        position = 'activeSlide';
-                    } else if (
+                    if (index === current) position = 'activeSlide';
+                    else if (
                         index === current - 1 ||
                         (current === 0 && index === slides.length - 1)
-                    ) {
+                    )
                         position = 'lastSlide';
-                    }
 
                     return (
                         <Slide key={slide.id} bg={slide.image} position={position}>
@@ -89,6 +123,13 @@ const Slider: React.FC = () => {
                         </Slide>
                     );
                 })}
+
+                <Arrow className="prev" onClick={prevSlide}>
+                    ‹
+                </Arrow>
+                <Arrow className="next" onClick={nextSlide}>
+                    ›
+                </Arrow>
             </SliderContainer>
         </Wrapper>
     );
@@ -96,9 +137,17 @@ const Slider: React.FC = () => {
 
 export default Slider;
 
-// ------------------------
-// Styled-components ниже:
-// ------------------------
+// ----------------- Стили и анимации -----------------
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const fadeOut = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`;
 
 const Wrapper = styled.section`
   width: 100%;
@@ -115,6 +164,7 @@ const SliderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 `;
 
 const Slide = styled.article<SlideProps>`
@@ -123,31 +173,35 @@ const Slide = styled.article<SlideProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(${props => props.bg});
+  background-image: url(${(props) => props.bg});
   background-size: cover;
   background-position: center;
   opacity: 0;
+  z-index: 0;
   transform: translateX(100%);
-  transition: opacity 4s linear, transform 5s ease-in-out;
 
-  ${props =>
+  ${(props) =>
           props.position === 'activeSlide' &&
           css`
-            opacity: 1;
-            transform: translateX(0);
-          `}
+      z-index: 2;
+      animation: ${fadeIn} 0.8s ease forwards;
+      transform: translateX(0);
+    `}
 
-  ${props =>
+  ${(props) =>
           props.position === 'lastSlide' &&
           css`
-            transform: translateX(-100%);
-          `}
+      z-index: 1;
+      animation: ${fadeOut} 0.6s ease forwards;
+      transform: translateX(-100%);
+    `}
 
-  ${props =>
+  ${(props) =>
           props.position === 'nextSlide' &&
           css`
-            transform: translateX(100%);
-          `}
+      z-index: 0;
+      transform: translateX(100%);
+    `}
 `;
 
 const SlideContent = styled.div`
@@ -180,3 +234,30 @@ const Description = styled.p`
   font-size: 0.95rem;
 `;
 
+const Arrow = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &.prev {
+    left: 1rem;
+  }
+
+  &.next {
+    right: 1rem;
+  }
+`;
