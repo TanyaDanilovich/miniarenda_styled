@@ -9,18 +9,12 @@ import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
 import img from "../../assets/images/empty-image.jpg"
-import exavator_main from "../../assets/images/servises/exavator/exavator-main.jpg";
+import exavator_main from "../../assets/images/servises/exavator/_DSC2715_copy.jpg";
 import drill_main from "../../assets/images/servises/drill/drill-main.jpg"
-import hummer_main from "../../assets/images/servises/hummer/main-hummer.jpg"
+import hummer_main from "../../assets/images/servises/hummer/hummer-main.jpg"
 import jamy_main from "../../assets/images/servises/jamy/jamy-main.jpg"
 import fundament_main from "../../assets/images/servises/fundaments/fundaments-main.jpg"
 import transhei_main from "../../assets/images/servises/transhei/transhei-main.jpg"
-
-
-// DIGGING_TRENCH,
-//     SERVICE_SUBCATEGORY.DIGGING_FOUNDATION,
-//     SERVICE_SUBCATEGORY.DRILLING,
-
 import kovsh from '../../assets/images/equipments/kovsh.jpg';
 import bur from '../../assets/images/equipments/bur.jpg';
 import clik from '../../assets/images/equipments/clik.jpg';

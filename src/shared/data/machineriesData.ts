@@ -1,5 +1,5 @@
-import et14 from '../../assets/images/footer/et14.jpg'
-import et24 from '../../assets/images/footer/et24.jpg'
+import et14 from '../../assets/images/machineries/wacker neuson et1404.jpg'
+import et24 from '../../assets/images/machineries/et24.jpg'
 import {MachineryData} from '../types/common.types';
 import {v1} from 'uuid';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';

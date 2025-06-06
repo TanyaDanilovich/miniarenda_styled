@@ -13,7 +13,7 @@ import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
 import {S_Image} from '../../shared/styled/S_Image';
-import et24Img from '../../assets/images/footer/et24.jpg';
+import et24Img from '../../assets/images/mini-ekskavatory-et-24-wacker-neuson(17).jpg';
 
 
 type props = {};
@@ -26,7 +26,7 @@ export const Footer = ({}: props) => {
     return (
         <S_Footer id = "footer">
             <S_FooterContainer>
-                <S_Flex $gap = "1rem">
+                <S_Flex $gap = "1rem" $justify = "center">
 
                     <S_FooterItem>
                         <h5><span>{t('footer.companyName')}</span></h5>
@@ -44,18 +44,18 @@ export const Footer = ({}: props) => {
                         <p>{t('footer.unp')}</p>
                     </S_FooterItem>
 
-                    <S_FooterItem>
-                        <h5><span>{t('footer.ourEquipment')}</span></h5>
-                        <S_ImageContainer>
-                            <S_Image src = {et24Img} alt = "" width = "300"/>
-                        </S_ImageContainer>
-                        <S_Flex $direction = {"column"}>
-                            <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>
-                        </S_Flex>
-                        <S_Flex $direction = {"column"}>
-                            <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>
-                        </S_Flex>
-                    </S_FooterItem>
+                    {/*<S_FooterItem>*/}
+                    {/*    <h5><span>{t('footer.ourEquipment')}</span></h5>*/}
+                    {/*    <S_ImageContainer>*/}
+                    {/*        <S_Image src = {et24Img} alt = "" width = "300"/>*/}
+                    {/*    </S_ImageContainer>*/}
+                    {/*    <S_Flex $direction = {"column"}>*/}
+                    {/*        <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;1404</a>*/}
+                    {/*    </S_Flex>*/}
+                    {/*    <S_Flex $direction = {"column"}>*/}
+                    {/*        <a href = {ROUTES_PATHS.machineries.url}>Wacker&nbsp;Neuson&nbsp;ET&nbsp;24</a>*/}
+                    {/*    </S_Flex>*/}
+                    {/*</S_FooterItem>*/}
 
                     <S_FooterItem>
                         <h5><span>{t('footer.sections')}</span></h5>
@@ -156,7 +156,7 @@ export const S_Footer = styled.footer<{}>`
 
 export const S_FooterItem = styled.div<{}>`
   padding-block: 0.5rem;
-
+  
   & > p:first-of-type {
     margin-bottom: 1rem;
   }
@@ -173,7 +173,7 @@ export const S_FooterItem = styled.div<{}>`
   li {
     padding: 0.5rem;
   }
-
+  
   //span {
   //  position: relative;
   //}
@@ -197,7 +197,7 @@ export const S_FooterItem = styled.div<{}>`
     background-color: ${({theme}) => theme.colors.primary};
     clip-path: polygon(0 0, 96% 0%, 100% 100%, 6% 100%);
   }
-
+  
   //miniarenda
   &:first-child {
     & p:nth-of-type(-n+2),
@@ -222,7 +222,7 @@ export const S_FooterItem = styled.div<{}>`
     }
 
   }
-
+  
   //наша техника
   ${S_ImageContainer} {
     margin-bottom: 1rem;
@@ -234,7 +234,7 @@ export const S_FooterItem = styled.div<{}>`
     }
   }
 
-
+  
   //Разделы
   &:nth-child(3) a {
     position: relative;
@@ -260,9 +260,9 @@ export const S_FooterItem = styled.div<{}>`
     padding-block: 0.25rem;
   }
 
-  @media ${({theme}) => theme.mediaMinWidth.mobile} {
-    width: calc(50% - 0.5rem);
-  }
+  // @media ${({theme}) => theme.mediaMinWidth.mobile} {
+  //   width: calc(50% - 0.5rem);
+  // }
 
   @media ${({theme}) => theme.mediaMinWidth.computer} {
     &:nth-child(odd) {
