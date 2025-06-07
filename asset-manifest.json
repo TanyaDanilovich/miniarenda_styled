@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/miniarenda_styled/static/css/main.f59f22ac.css",
-    "main.js": "/miniarenda_styled/static/js/main.868f50e3.js",
+    "main.js": "/miniarenda_styled/static/js/main.332d6dbd.js",
     "static/js/488.7e13e7cf.chunk.js": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js",
     "static/media/jamy-main.jpg": "/miniarenda_styled/static/media/jamy-main.c28335439c0c067b6980.jpg",
     "static/media/transhei-main.jpg": "/miniarenda_styled/static/media/transhei-main.8859b22dd590ee97362f.jpg",
@@ -35,11 +35,11 @@
     "index.html": "/miniarenda_styled/index.html",
     "static/media/checkmark-circle-green.svg": "/miniarenda_styled/static/media/checkmark-circle-green.10c974073f6afee7460546bc19578154.svg",
     "main.f59f22ac.css.map": "/miniarenda_styled/static/css/main.f59f22ac.css.map",
-    "main.868f50e3.js.map": "/miniarenda_styled/static/js/main.868f50e3.js.map",
+    "main.332d6dbd.js.map": "/miniarenda_styled/static/js/main.332d6dbd.js.map",
     "488.7e13e7cf.chunk.js.map": "/miniarenda_styled/static/js/488.7e13e7cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f59f22ac.css",
-    "static/js/main.868f50e3.js"
+    "static/js/main.332d6dbd.js"
   ]
 }
