@@ -26,8 +26,8 @@ export const HeroSwiper = ({id}: props) => {
             clickable: true
         },
 
-        autoplay:{
-            delay:4000,
+        autoplay: {
+            delay: 4000,
         },
 
         loop: true,
@@ -40,15 +40,15 @@ export const HeroSwiper = ({id}: props) => {
                       {...params}
         >
 
-            {heroData.map(({mainText, additionalText}, index) => {
+            {heroData.map(({mainText, additionalText, image}, index) => {
                     //console.log(index);
                     const slideId = uuidv4();
                     return (
                         <AppSwiperSlide id = {slideId} key = {`${id}-${index}`}>
                             <HeroSlider mainText = {mainText}
                                         additionalText = {additionalText}
-                                       // image = {img}
-                                        index={index}
+                                        image = {image}
+                                        index = {index}
                             />
                         </AppSwiperSlide>)
                 }
