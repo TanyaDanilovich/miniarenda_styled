@@ -10,6 +10,7 @@ import {useTranslation} from 'react-i18next';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {DropdownText, S_DropdownText} from '../../questions/DropdownText';
+import ResponsiveImage from '../../responsiveImage/responsiveImage';
 
 export type ServiceCardData = {
     toggleDescriptionCallback: () => void,
@@ -28,7 +29,8 @@ export const ServiceCard = ({
         <StyledServiceCard>
             {data.image && (
                 <S_ImageContainer>
-                    <S_Image src = {data.image.src} alt = {data.image.alt}/>
+                    <ResponsiveImage image = {data.image}/>
+                    {/*<S_Image src = {data.image.src} alt = {data.image.alt}/>*/}
                     {/*<HoverIcons link = {data.url} image = {data.image}/>*/}
                 </S_ImageContainer>
             )}

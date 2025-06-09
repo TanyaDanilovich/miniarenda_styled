@@ -8,21 +8,17 @@ import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
-import {Autoplay} from 'swiper/modules';
-import imgSlide1 from '../../../assets/images/hero-slider/1920px/_DSC2623-1920w.jpg';
-import imgSlide2 from '../../../assets/images/hero-slider/1920px/_DSC4666-1920w.jpg';
-import imgSlide3 from '../../../assets/images/hero-slider/1920px/_DSC4764-1920w.jpg';
+
 
 type props = {
     id: string,
 };
 
-const imgArr=[{src:imgSlide1, alt:"Alt1"}, {src:imgSlide2, alt:"Alt2"}, {src:imgSlide3, alt:"Alt3"}];
+
 export const HeroSwiper = ({id}: props) => {
 
 
     const params: SwiperOptions = {
-        modules: [Autoplay], // ← ВАЖНО!
         slidesPerView: 1,
 
         navigation: true,
@@ -30,10 +26,11 @@ export const HeroSwiper = ({id}: props) => {
             clickable: true
         },
 
-        //injectStyles: [swiperCss],
+        autoplay:{
+            delay:4000,
+        },
 
         loop: true,
-        autoplay: {waitForTransition: true, delay: 3000, pauseOnMouseEnter: true},
     }
 
 
@@ -50,7 +47,8 @@ export const HeroSwiper = ({id}: props) => {
                         <AppSwiperSlide id = {slideId} key = {`${id}-${index}`}>
                             <HeroSlider mainText = {mainText}
                                         additionalText = {additionalText}
-                                        image = {imgArr[index]}
+                                       // image = {img}
+                                        index={index}
                             />
                         </AppSwiperSlide>)
                 }

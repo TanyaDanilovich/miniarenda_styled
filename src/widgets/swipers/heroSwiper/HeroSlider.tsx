@@ -10,15 +10,20 @@ import {PhoneLink, S_PhoneLink} from '../../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
 import {ImageProps} from '../../../shared/types/common.types';
-
+import imgSlide1 from '../../../assets/images/hero-slider/1920px/DSC2623-1920w.jpg';
+import imgSlide2 from '../../../assets/images/hero-slider/1920px/DSC4666-1920w.jpg';
+import imgSlide3 from '../../../assets/images/hero-slider/1920px/DSC4764-1920w.jpg';
 
 type props = {
     mainText: string,
     additionalText: string,
-    image: ImageProps,
+    image?: ImageProps,
+    index: number
 };
-export const HeroSlider = ({mainText, additionalText, image}: props) => {
-    console.log(image.src);
+const imgArr = [{src: imgSlide1, alt: "Alt1"}, {src: imgSlide2, alt: "Alt2"}, {src: imgSlide3, alt: "Alt3"}];
+
+export const HeroSlider = ({mainText, additionalText, image, index}: props) => {
+    //console.log(image.src);
     return (
         <S_HeroSlider>
 
@@ -33,7 +38,7 @@ export const HeroSlider = ({mainText, additionalText, image}: props) => {
 
             </S_HeroSliderContent>
 
-            <S_Image src = {image.src} alt = {image.alt}/>
+            <S_Image src = {imgArr[index].src} alt = {imgArr[index].alt}/>
 
         </S_HeroSlider>);
 };

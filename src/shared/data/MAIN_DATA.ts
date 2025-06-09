@@ -9,7 +9,7 @@ import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
 import img from "../../assets/images/empty-image.jpg"
-import exavator_main from "../../assets/images/servises/exavator/_DSC2715_copy.jpg";
+import exavator_main from "../../assets/images/servises/exavator/excavator-main(1).jpg";
 import drill_main from "../../assets/images/servises/drill/drill-main.jpg"
 import hummer_main from "../../assets/images/servises/hummer/hummer-main.jpg"
 import jamy_main from "../../assets/images/servises/jamy/jamy-main.jpg"
@@ -72,7 +72,10 @@ export const MAIN_DATA: MainData = {
             subcategory: RENTAL_SUBCATEGORY.EXCAVATOR,
             subcategoryUrl: "arenda-mini-exavatora",
             i18nKey: "subcategories.rentalExcavator",
-            images: [{src: exavator_main, alt: ""}],
+            images: [
+                {src: exavator_main,
+                    srcSet:{'480':exavator_main,'768':exavator_main,'1280': exavator_main},
+                    alt: ""}],
             position: 1,
             icon: excavator,
             seo: {

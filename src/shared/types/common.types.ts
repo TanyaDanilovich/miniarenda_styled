@@ -13,6 +13,11 @@ export type PropsWithChildren<P> = P & {
 
 export type ImageProps = {
     src: string,
+    srcSet?: {
+        480: string,
+        768: string,
+        1280: string,
+    },
     alt: string
 }
 

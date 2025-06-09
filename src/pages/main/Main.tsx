@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React, {useEffect, useRef, useState} from 'react';
 import {Services} from '../../widgets/services/Services';
 import {Machineries} from '../../widgets/machineries/Machineries';
-import {Delivery} from '../../widgets/delivery/Delivery';
 import {Reviews} from '../../widgets/reviews/Reviews';
 import {Questions} from '../../widgets/questions/Questions';
 import {Clients} from '../../widgets/clients/Clients';
@@ -11,8 +10,7 @@ import {Hero} from '../../widgets/hero/Hero';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
 import {Prices} from '../../widgets/prices/Prices';
-import CustomAppSlider from '../../widgets/swipers/customAppSlider/CustomSlider';
-import Slider from '../../widgets/swipers/customAppSlider/CustomSlider';
+
 
 
 type props = {};
@@ -34,7 +32,7 @@ export const Main = ({}: props) => {
             <Skills/>
             <Prices/>
             <Machineries/>
-            <Slider/>
+
             <Equipments offset = {refOffset}/>
             <Reviews offset = {refOffset}/>
             <Questions/>
