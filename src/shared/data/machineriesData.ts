@@ -4,6 +4,10 @@ import {MachineryData} from '../types/common.types';
 import {v1} from 'uuid';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
+import et24_480w from "../../assets/images/machineries/480/et24-480w.jpg"
+import et1404_480w from "../../assets/images/machineries/480/et1404-480w.jpg"
+import et24_768w from "../../assets/images/machineries/768/et24-768w.jpg"
+import et1404_768w from "../../assets/images/machineries/768/et1404-768w.jpg"
 
 
 export const machineriesData: MachineryData[] = [
@@ -12,7 +16,9 @@ export const machineriesData: MachineryData[] = [
         id: v1(),
         title: "Технические характеристики мини экскаватора Wacker Neuson ET-24",
         tableTitle: "Мини-экскаватор Wacker Neuson ET-24",
-        image: {src: et24, alt: "Мини-экскаватор Wacker Neuson ET-24"},
+        image: {src: et24_768w,
+            srcSet: {'480': et24_480w, '768': et24_480w, '1200': et24_768w},
+        alt: "Мини-экскаватор Wacker Neuson ET-24"},
         characteristics: [
             {id: MACHINERY_CHARACTERISTICS.WEIGHT, title: "Масса", value: "2500  кг"},
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "4022х1400х2390  м"},
@@ -27,7 +33,7 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
         priceCharacteristics: [
-            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 85 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
             {
                 id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,
@@ -48,7 +54,9 @@ export const machineriesData: MachineryData[] = [
         id: v1(),
         title: "Технические характеристики мини экскаватора Wacker Neuson ET-14",
         tableTitle: "Мини-экскаватор Wacker Neuson ET-14",
-        image: {src: et14, alt: "Мини-экскаватор Wacker Neuson ET-14"},
+        image: {src: et1404_768w,
+            srcSet: {'480': et1404_480w, '768': et1404_480w, '1200': et1404_768w},
+            alt: "Мини-экскаватор Wacker Neuson ET-1404"},
         characteristics: [
             {id: MACHINERY_CHARACTERISTICS.WEIGHT, title: "Масса", value: "1500 кг"},
             {id: MACHINERY_CHARACTERISTICS.DIMENSION, title: "Габаритные размеры", value: "3854х990х2289 м"},
@@ -63,7 +71,7 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
         priceCharacteristics: [
-            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 75 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 85 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
             {
                 id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,

@@ -16,7 +16,7 @@ export type ImageProps = {
     srcSet?: {
         480: string,
         768: string,
-        1280: string,
+        1200: string,
     },
     alt: string
 }
@@ -122,7 +122,7 @@ export type Equipment = {
     id: string,
     //title: string,
     //description: string,
-    i18nKey:string,
+    i18nKey: string,
     image: ImageProps,
     position: number,
     //characteristicList:string[]
@@ -132,7 +132,7 @@ export type SubcategoryItemCard = {
     id: string;
     //title: string;
     //description: string;
-    i18nKey:string,
+    i18nKey: string,
     images: ImageProps[];
     position: number;
 }

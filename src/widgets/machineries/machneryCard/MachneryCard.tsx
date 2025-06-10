@@ -12,6 +12,7 @@ import {MachineryData} from '../../../shared/types/common.types';
 import {
     MachineCharacteristicsTable
 } from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
+import ResponsiveImage from '../../responsiveImage/responsiveImage';
 
 
 type props = Omit<MachineryData, 'priceCharacteristics'> & {}
@@ -21,7 +22,8 @@ export const MachineryCard = ({id, title, image, characteristics}: props) => {
         <S_MachineryCard>
             <S_ImageContainer>
 
-                {image && <S_Image src = {image.src} alt = {image.alt}/>}
+                {/*{image && <S_Image src = {image.src} alt = {image.alt}/>}*/}
+                {image && <ResponsiveImage image = {image}/>}
                 {/*<HoverIcons link={""} image={image}/>*/}
 
                 <FontAwesomeIconCover>

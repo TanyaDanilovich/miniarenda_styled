@@ -25,7 +25,7 @@ export const HeroSwiper = ({id}: props) => {
         pagination: {
             clickable: true
         },
-
+        speed: 2000,
         autoplay: {
             delay: 4000,
         },

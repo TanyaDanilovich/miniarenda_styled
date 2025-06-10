@@ -2,24 +2,27 @@ import {ImageProps} from '../../shared/types/common.types';
 import imgSlide1_1920w from '../../assets/images/hero-slider/1920px/DSC2623-1920w.jpg';
 import imgSlide1_480w from '../../assets/images/hero-slider/480px/DSC2623-480w.jpg';
 import imgSlide1_768w from '../../assets/images/hero-slider/768px/DSC2623-768w.jpg';
-import imgSlide1_1280w from '../../assets/images/hero-slider/1200px/DSC2623-1200w.jpg';
+import imgSlide1_1200w from '../../assets/images/hero-slider/1200px/DSC2623-1200w.jpg';
 
 import imgSlide2_1920w from '../../assets/images/hero-slider/1920px/DSC4666-1920w.jpg';
 import imgSlide2_480w from '../../assets/images/hero-slider/480px/DSC4666-480w.jpg';
 import imgSlide2_768w from '../../assets/images/hero-slider/768px/DSC4666-768w.jpg';
-import imgSlide2_1280w from '../../assets/images/hero-slider/1200px/DSC4666-1200w.jpg';
+import imgSlide2_1200w from '../../assets/images/hero-slider/1200px/DSC4666-1200w.jpg';
 
 import imgSlide3_1920w from '../../assets/images/hero-slider/1920px/DSC4349-1920w.jpg';
 import imgSlide3_480w from '../../assets/images/hero-slider/480px/DSC4349-480w.jpg';
 import imgSlide3_768w from '../../assets/images/hero-slider/768px/DSC4349-768w.jpg';
-import imgSlide3_1280w from '../../assets/images/hero-slider/1200px/DSC4349-1200w.jpg';
+import imgSlide3_1200w from '../../assets/images/hero-slider/1200px/DSC4349-1200w.jpg';
 
+import img1920w from "../../assets/images/test/1920.jpg"
+import img1200w from "../../assets/images/test/1200.jpg"
+import img768w from "../../assets/images/test/768.jpg"
+import img480w from "../../assets/images/test/480.jpg"
 type HeroSlideData = {
     mainText: string,
     additionalText: string,
     image: ImageProps
 }
-
 
 export const heroData: HeroSlideData[] = [
     {
@@ -30,7 +33,12 @@ export const heroData: HeroSlideData[] = [
             srcSet: {
                 '480': imgSlide1_480w,
                 '768': imgSlide1_768w,
-                '1280': imgSlide1_1280w
+                '1200': imgSlide1_1200w
+            // src: img1920w,
+            // srcSet: {
+            //     '480': img480w,
+            //     '768': img768w,
+            //     '1200': img1200w
             },
             alt: "Аренда мини-экскаватора с гидромолотом и ямобуром"
         }
@@ -43,7 +51,7 @@ export const heroData: HeroSlideData[] = [
             srcSet: {
                 '480': imgSlide2_480w,
                 '768': imgSlide2_768w,
-                '1280': imgSlide2_1280w
+                '1200': imgSlide2_1200w
             },
             alt: "Аренда мини-экскаватора с ямобуром в Минске и Минской области"
         }
@@ -56,7 +64,7 @@ export const heroData: HeroSlideData[] = [
             srcSet: {
                 '480': imgSlide3_480w,
                 '768': imgSlide3_768w,
-                '1280': imgSlide3_1280w
+                '1200': imgSlide3_1200w
             },
             alt: "Аренда мини-экскаватора с гидромолотом в Минске и Минской области"
         }

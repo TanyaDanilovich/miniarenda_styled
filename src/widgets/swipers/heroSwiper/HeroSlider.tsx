@@ -11,6 +11,8 @@ import {S_Flex} from '../../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
 import {ImageProps} from '../../../shared/types/common.types';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import {outline} from '../../../app/styles/mixins';
+import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 
 type props = {
     mainText: string,
@@ -27,13 +29,14 @@ export const HeroSlider = ({mainText, additionalText, image, index}: props) => {
 
 
             <S_HeroSliderContent>
-                <S_HeroTitle>{mainText}</S_HeroTitle>
-                <S_HeroText>{additionalText}</S_HeroText>
-                <S_HeroPhoneWrapper $align = {"center"}>
-                    <PhoneLink/>
-                    <ContactUsButton title = {"Позвонить"}/>
-                </S_HeroPhoneWrapper>
-
+                <S_InnerContainer $padding = {`${BASE}px`}>
+                    <S_HeroTitle>{mainText}</S_HeroTitle>
+                    <S_HeroText>{additionalText}</S_HeroText>
+                    <S_HeroPhoneWrapper $align = {"center"}>
+                        <PhoneLink/>
+                        <ContactUsButton title = {"Позвонить"}/>
+                    </S_HeroPhoneWrapper>
+                </S_InnerContainer>
             </S_HeroSliderContent>
 
             <ResponsiveImage image = {image}/>
@@ -45,6 +48,21 @@ const S_HeroSlider = styled.article<{}>`
   height: 100%;
   position: relative;
   overflow: hidden;
+
+  ${S_InnerContainer} {
+    padding-block: 2rem;
+
+    //background-color: rgba(0, 0, 0, 0.6);
+    ${translateAnimation({
+      duration: "1.3s",
+      delay: "0.5s",
+      isWithOpacity: true
+    })};
+      // background-color: ${({theme}) => theme.colors.bg_primary};
+    // opacity: 0.6;
+    background-color: rgba(3, 14, 39, 0.7);
+    border-radius: 1.5rem;
+  }
 
   ${S_Image} {
     display: block;
@@ -67,7 +85,7 @@ const S_HeroSlider = styled.article<{}>`
 
   &:after {
     background-color: ${({theme}) => theme.colors.bg_primary};
-    opacity: 0.6;
+    opacity: 0.4;
     display: block;
     object-fit: cover;
     position: absolute;
@@ -78,10 +96,14 @@ const S_HeroSlider = styled.article<{}>`
     z-index: -1;
     content: "";
   }
+}
 `
 
 export const S_HeroSliderContent = styled(S_OuterContainer)`
+
+
   display: flex;
+  margin-block: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -89,7 +111,6 @@ export const S_HeroSliderContent = styled(S_OuterContainer)`
   position: relative;
   font-weight: ${({theme}) => theme.fonts.weight.semiBold};
   line-height: 1.75;
-
   @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     padding-inline: 60px;
   }

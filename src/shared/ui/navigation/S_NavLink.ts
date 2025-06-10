@@ -11,7 +11,7 @@ export const S_NavLink = styled.a<{}>`
   width: 100%;
   color: ${({theme}) => theme.colors.white};
   cursor: pointer;
-  padding-inline: ${getResponsiveSize(3 * BASE, 6 * BASE, 360, 767)};
+  padding-inline: ${getResponsiveSize(3 * BASE, 6 * BASE, 360, 768)};
   padding-block: 1rem;
   font-size: 1rem;
   font-weight: ${({theme}) => theme.fonts.weight.medium};
@@ -28,6 +28,9 @@ export const S_NavLink = styled.a<{}>`
   }
 
   @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    padding: 1rem 0.5rem;
+  }
+  @media ${({theme}) => theme.mediaMinWidth.computer} {
     padding: 1rem 0.75rem;
   }
 `;

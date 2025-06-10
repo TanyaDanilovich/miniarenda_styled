@@ -52,12 +52,12 @@ export const AppSwiper = ({
     }, []);
     return (
         <swiper-container init = {false} ref = {swiperRef}
-                          autoplay-delay = {autoplay?.delay ?? 10000}
+                          autoplay-delay = {autoplay?.delay ?? 200000}
                           autoplay-disable-on-interaction = {autoplay?.disableOnInteraction ?? false}
                           autoplay-pause-on-mouse-enter = {autoplay?.pauseOnMouseEnter ?? false}
                           autoplay-reverse-direction = {autoplay?.reverseDirection ?? false}
         >
-                          {children}
+            {children}
         </swiper-container>
     );
 };

@@ -16,7 +16,7 @@ export const Header = ({}: props) => {
     const theme = useTheme();
 
     const [isMobileNavigation, setMobileNavigation] = useState<boolean>(
-        () => window.innerWidth <= parseInt(theme.breakpoints.tablet)
+        () => window.innerWidth < parseInt(theme.breakpoints.tablet)
     );
 
     const headerRef = createRef<HTMLElement>()
@@ -40,11 +40,11 @@ export const Header = ({}: props) => {
     return (
 
 
-        <StyledHeader ref = {headerRef} $isMobileNavigation = {isMobileNavigation} id="header">
+        <StyledHeader ref = {headerRef} $isMobileNavigation = {isMobileNavigation} id = "header">
             <S_OuterContainer>
 
                 <Logo/>
-                <S_Flex $direction = {"row"} $align = {"center"} $justify = {"space-between"} $grow = {"1"}>
+                <S_Flex $direction = {"row"} $align = {"flex-end"} $justify = {"space-between"} $grow = {"1"}>
                     <HeaderTop/>
                     {isMobileNavigation ? <MobileNavigation/> : <DesktopNavigation/>}
                 </S_Flex>
@@ -56,7 +56,7 @@ export const Header = ({}: props) => {
     );
 };
 
-export const StyledHeader = styled.header<{$isMobileNavigation:boolean}>`
+export const StyledHeader = styled.header<{ $isMobileNavigation: boolean }>`
 
   background-color: ${({theme}) => theme.colors.bg_primary};
   padding-block: 0.5rem;
