@@ -1,24 +1,27 @@
 {
   "files": {
     "main.css": "/miniarenda_styled/static/css/main.f59f22ac.css",
-    "main.js": "/miniarenda_styled/static/js/main.0f9ee2ab.js",
+    "main.js": "/miniarenda_styled/static/js/main.e8af22d8.js",
     "static/js/488.8efae5ef.chunk.js": "/miniarenda_styled/static/js/488.8efae5ef.chunk.js",
-    "static/media/jamy-main.jpg": "/miniarenda_styled/static/media/jamy-main.c28335439c0c067b6980.jpg",
-    "static/media/transhei-main.jpg": "/miniarenda_styled/static/media/transhei-main.8859b22dd590ee97362f.jpg",
-    "static/media/excavator-main(1).jpg": "/miniarenda_styled/static/media/excavator-main(1).1e2f99b602983ee0ab0f.jpg",
-    "static/media/drill-main.jpg": "/miniarenda_styled/static/media/drill-main.9e8704ed7bff31b4b119.jpg",
-    "static/media/hummer-main.jpg": "/miniarenda_styled/static/media/hummer-main.8385c87c1f4a99552aeb.jpg",
     "static/media/IMG_20190608_115344.jpg": "/miniarenda_styled/static/media/IMG_20190608_115344.4895d6a57c585337598d.jpg",
     "static/media/_DSC1723.jpg": "/miniarenda_styled/static/media/_DSC1723.80ce61b2ed6e366caef9.jpg",
-    "static/media/et24.jpg": "/miniarenda_styled/static/media/et24.50be9d3f39ac5f0119a4.jpg",
-    "static/media/wacker neuson et1404.jpg": "/miniarenda_styled/static/media/wacker neuson et1404.4e4c4b97e44f7d810260.jpg",
+    "static/media/et24-768w.jpg": "/miniarenda_styled/static/media/et24-768w.bc356966088ae0c921f3.jpg",
+    "static/media/et1404-768w.jpg": "/miniarenda_styled/static/media/et1404-768w.a4edae07376eaf05643a.jpg",
+    "static/media/price-768w.jpg": "/miniarenda_styled/static/media/price-768w.f48bdb9faf03cbb0d4b4.jpg",
     "static/media/DSC4349-1920w.jpg": "/miniarenda_styled/static/media/DSC4349-1920w.5c6e7c730e2adfa4b0d3.jpg",
     "static/media/DSC4666-1920w.jpg": "/miniarenda_styled/static/media/DSC4666-1920w.77b351bfceef86713ec8.jpg",
     "static/media/DSC2623-1920w.jpg": "/miniarenda_styled/static/media/DSC2623-1920w.19b40992b267e92bc9ed.jpg",
+    "static/media/drill-main-480w.jpg": "/miniarenda_styled/static/media/drill-main-480w.82afdc73bae933f8718b.jpg",
+    "static/media/hummer-main-480w.jpg": "/miniarenda_styled/static/media/hummer-main-480w.c228031377b5a4993c3e.jpg",
+    "static/media/transhei-main-480w.jpg": "/miniarenda_styled/static/media/transhei-main-480w.20335410d9edabf2b841.jpg",
     "static/media/DSC4666-1200w.jpg": "/miniarenda_styled/static/media/DSC4666-1200w.a341b559a97b0ef8c2db.jpg",
+    "static/media/fundaments-main-480w.jpg": "/miniarenda_styled/static/media/fundaments-main-480w.15a742470e9ab290e86e.jpg",
+    "static/media/et1404-480w.jpg": "/miniarenda_styled/static/media/et1404-480w.e1188755fef46c56a966.jpg",
+    "static/media/et24-480w.jpg": "/miniarenda_styled/static/media/et24-480w.02de41faa28a630bce5e.jpg",
+    "static/media/excavatorMain4-480w.jpg": "/miniarenda_styled/static/media/excavatorMain4-480w.8224358ee185072b543c.jpg",
     "static/media/DSC4349-1200w.jpg": "/miniarenda_styled/static/media/DSC4349-1200w.b7670c4945f21d4c0b67.jpg",
-    "static/media/fundaments-main.jpg": "/miniarenda_styled/static/media/fundaments-main.7034cdadd8352654997e.jpg",
     "static/media/kovsh.jpg": "/miniarenda_styled/static/media/kovsh.53ac9aa346307275dedb.jpg",
+    "static/media/jamy-main-480w.jpg": "/miniarenda_styled/static/media/jamy-main-480w.26be0c78bd292fbe10f4.jpg",
     "static/media/DSC2623-1200w.jpg": "/miniarenda_styled/static/media/DSC2623-1200w.7bf4fb7935da9bebc8f5.jpg",
     "static/media/reviews-bg.png": "/miniarenda_styled/static/media/reviews-bg.52524127bf3f0b2b315b.png",
     "static/media/DSC4666-768w.jpg": "/miniarenda_styled/static/media/DSC4666-768w.99111f9126f95308c98f.jpg",
@@ -43,11 +46,11 @@
     "index.html": "/miniarenda_styled/index.html",
     "static/media/checkmark-circle-green.svg": "/miniarenda_styled/static/media/checkmark-circle-green.10c974073f6afee7460546bc19578154.svg",
     "main.f59f22ac.css.map": "/miniarenda_styled/static/css/main.f59f22ac.css.map",
-    "main.0f9ee2ab.js.map": "/miniarenda_styled/static/js/main.0f9ee2ab.js.map",
+    "main.e8af22d8.js.map": "/miniarenda_styled/static/js/main.e8af22d8.js.map",
     "488.8efae5ef.chunk.js.map": "/miniarenda_styled/static/js/488.8efae5ef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f59f22ac.css",
-    "static/js/main.0f9ee2ab.js"
+    "static/js/main.e8af22d8.js"
   ]
 }
