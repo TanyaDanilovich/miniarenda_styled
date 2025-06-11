@@ -11,6 +11,7 @@ import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {DropdownText, S_DropdownText} from '../../questions/DropdownText';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import {ReadMoreButtonAsButton} from '../../../shared/ui/buttons/ReadMoreButtonAsButton';
 
 export type ServiceCardData = {
     toggleDescriptionCallback: () => void,
@@ -53,8 +54,8 @@ export const ServiceCard = ({
 
             <S_Box $marginTop = {"1rem"} $paddingLeft = {sBoxPadding} $paddingRight = {sBoxPadding}>
                 {/*<ReadMoreButton url = {`/${data.url}`}/>*/}
-                <ReadMoreButton url = "" onClick = {toggleDescriptionCallback}
-                                title = {isOpen ? "Свернуть" : "Подробнее"}/>
+                <ReadMoreButtonAsButton onClick = {toggleDescriptionCallback}
+                                        title = {isOpen ? "Свернуть" : "Подробнее"}/>
                 {/*<ContactUsButton/>*/}
             </S_Box>
 

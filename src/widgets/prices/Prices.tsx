@@ -23,7 +23,10 @@ export const Prices = ({}: props) => {
                     <S_PriceContent $direction = {"column"} $rowGap = {"1rem"}>
                         <S_P>
 
-                            <S_Span $color = {theme.colors.primary} $fontWeight = {theme.fonts.weight.bold}>
+                            <S_Span //$color = {theme.colors.primary}
+                                    $fontWeight = {theme.fonts.weight.bold}
+                                    //$background = {theme.colors.lightSlateGray}
+                                >
                                 Техника предоставляется в аренду только с экипажем.</S_Span>
                         </S_P>
 
@@ -31,8 +34,10 @@ export const Prices = ({}: props) => {
                             Минимальный срок аренды — <S_Span $fontWeight = {theme.fonts.weight.bold}> 4 часа. </S_Span>
                         </S_P>
 
-                        <S_P>Стоимость аренды с ковшами — <S_Span $fontWeight = {theme.fonts.weight.bold}> от 85 руб. / за 1
-                                                                                                 час. </S_Span> </S_P>
+                        <S_P>Стоимость аренды с ковшами — <S_Span $fontWeight = {theme.fonts.weight.bold}> от 85 руб. /
+                                                                                                           за 1
+                                                                                                           час. </S_Span>
+                        </S_P>
 
                         <S_P>Стоимость аренды мини-экскаватора с гидромолотом —
                             <S_Span $fontWeight = {theme.fonts.weight.bold}> 120 руб. / за 1 час.
@@ -62,7 +67,7 @@ export const Prices = ({}: props) => {
                     </S_PriceContent>
 
                     <S_ImageContainer $width = {"50%"}>
-                        <S_Image src = {image}/>
+                        <S_Image src = {image} alt = {"Стоимость аренды мини экскаватора"}/>
                     </S_ImageContainer>
                 </S_PriceContentWrapper>
             </S_OuterContainer>

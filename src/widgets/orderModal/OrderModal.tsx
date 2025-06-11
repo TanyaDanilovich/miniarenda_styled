@@ -14,9 +14,9 @@ export const OrderModal = ({}: props) => {
             <S_OuterContainer>
                 <S_Flex>
                     <div>
-                        <h4>
+                        <p>
                             Доставим мини-&#8288;технику по Минску и Минской области
-                        </h4>
+                        </p>
                     </div>
                     <div>
                         <ContactUsButton/>

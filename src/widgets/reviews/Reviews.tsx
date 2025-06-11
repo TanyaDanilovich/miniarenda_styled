@@ -17,10 +17,10 @@ export const Reviews = ({offset}: props) => {
 
 
     return (
-        <S_Reviews id={"reviews"}>
+        <S_Reviews id={"reviews"} >
             <S_BackgroundWrapper $offset = {offset} $backgroundColor = {theme.colors.white_smoke}>
-                <S_OuterContainer>
-                    <SectionTitle title = {"Отзывы наших клиентов"}/>
+                <S_OuterContainer itemScope itemType="http://schema.org/Review">
+                    <SectionTitle title = {"Отзывы наших клиентов"} itemProp="name"/>
                     <GoogleLink/>
                     <ReviewSwiper id = {swiperId}/>
                 </S_OuterContainer>

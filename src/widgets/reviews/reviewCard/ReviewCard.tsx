@@ -15,11 +15,11 @@ type props = {
 export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed, setCollapsed}: props) => {
 
     return (
-        <S_ReviewCard>
+        <S_ReviewCard itemProp = "reviewRating" itemScope itemType = "http://schema.org/Rating">
             <S_Flex $align = {"center"} $gap = {"0.5rem"}>
                 <S_UserLetter>{userName[0]}</S_UserLetter>
                 <S_Flex $align = {"start"} $gap = {"0.5rem"} $wrap = {'wrap'} $direction = {'column'}>
-                    <S_UserName>{userName}</S_UserName>
+                    <S_UserName itemProp = "author">{userName}</S_UserName>
                     <Rating size = {'xs'}/>
                 </S_Flex>
             </S_Flex>

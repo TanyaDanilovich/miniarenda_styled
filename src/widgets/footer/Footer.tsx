@@ -29,7 +29,7 @@ export const Footer = ({}: props) => {
                 <S_Flex $gap = "1rem" $justify = "center">
 
                     <S_FooterItem>
-                        <h5><span>{t('footer.companyName')}</span></h5>
+                        <S_FooterItemTitle><span>{t('footer.companyName')}</span></S_FooterItemTitle>
                         <p>{t('footer.slogan1')}</p>
                         <p>{t('footer.slogan2')}</p>
                         <p>
@@ -58,7 +58,7 @@ export const Footer = ({}: props) => {
                     {/*</S_FooterItem>*/}
 
                     <S_FooterItem>
-                        <h5><span>{t('footer.sections')}</span></h5>
+                        <S_FooterItemTitle><span>{t('footer.sections')}</span></S_FooterItemTitle>
                         <ul>
 
                             <li><Link to = {ROUTES_PATHS.services.url}>{t('pages.services.navigation')}</Link>
@@ -71,7 +71,7 @@ export const Footer = ({}: props) => {
                     </S_FooterItem>
 
                     <S_FooterItem>
-                        <h5><span>{t('footer.ourServices')}</span></h5>
+                        <S_FooterItemTitle><span>{t('footer.ourServices')}</span></S_FooterItemTitle>
                         <ul>
                             {fullServicesData.map((service, index) => (
                                 <li key = {`${service.id}-${index}`}>
@@ -161,14 +161,7 @@ export const S_FooterItem = styled.div<{}>`
     margin-bottom: 1rem;
   }
 
-  & h5 {
-    position: relative;
-    padding-bottom: 1rem;
-    //padding-left: 2rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-    font-size: ${({theme}) => theme.fonts.size.h5};
-  }
+ 
 
   li {
     padding: 0.5rem;
@@ -285,3 +278,13 @@ export const S_FooterItem = styled.div<{}>`
 
 
 
+export const S_FooterItemTitle = styled.h2<{}>`
+
+  position: relative;
+  padding-bottom: 1rem;
+  //padding-left: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  font-size: ${({theme}) => theme.fonts.size.h5};
+
+`

@@ -5,16 +5,27 @@ import {getResponsiveSize} from '../../utils/getResponsiveSize';
 import {BASE} from '../../constants/constants';
 
 
-type props = { title: string, text?: string, color?: string };
-export const SectionTitle = ({title, text, color}: props) => {
+type props = { title: string, text?: string, color?: string, itemProp?: string };
+export const SectionTitle = ({title, text, color, itemProp}: props) => {
+    const titleContent = <>
+        <S_SectionTitle $isWithText = {!!text} $color = {color}>
+            {title}
+        </S_SectionTitle>
+        {text && <p>{text}</p>}
+    </>
+    return (<>
+            {itemProp ?
+                <StyledSectionTitleContainer $isWithText = {!!text} itemProp = {itemProp}>
+                    {titleContent}
+                </StyledSectionTitleContainer>
+                :
+                <StyledSectionTitleContainer $isWithText = {!!text}>
+                    {titleContent}
+                </StyledSectionTitleContainer>}
 
-    return (
-        <StyledSectionTitleContainer $isWithText = {!!text}>
-            <S_SectionTitle $isWithText = {!!text} $color = {color}>
-                {title}
-            </S_SectionTitle>
-            {text && <p>{text}</p>}
-        </StyledSectionTitleContainer>)
+
+        </>
+    )
         ;
 };
 
