@@ -1,18 +1,14 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React from 'react';
-import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
-import {S_Image} from '../../../shared/styled/S_Image';
-import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {MachineryData} from '../../../shared/types/common.types';
-import {
-    MachineCharacteristicsTable
-} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
+import {MachineCharacteristicsTable} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import {S_TableTitle} from '../../../shared/styled/S_Table';
 
 
 type props = Omit<MachineryData, 'priceCharacteristics'> & {}
@@ -30,7 +26,9 @@ export const MachineryCard = ({id, title, image, characteristics}: props) => {
                     <FontAwesomeIcon icon = {faTable} size = {'1x'} color = {theme.colors.white}/>
                 </FontAwesomeIconCover>
             </S_ImageContainer>
-
+            <S_TableTitle>
+                {title}
+            </S_TableTitle>
             <MachineCharacteristicsTable id = {id}
                                          title = {title}
                                          characteristics = {characteristics}/>

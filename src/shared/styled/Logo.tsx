@@ -7,7 +7,7 @@ type props = {
 };
 export const Logo = ({}: props) => {
     return <S_LogoContainer>
-        <S_Logo src = {logo}/>
+        <S_Logo src = {logo} alt={"miniarenda.by"}/>
     </S_LogoContainer>
 
 

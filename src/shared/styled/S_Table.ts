@@ -4,7 +4,7 @@ import {BASE} from '../constants/constants';
 import {outline, plainTransition} from '../../app/styles/mixins';
 
 
-export const S_TableTitle = styled.caption <{}>`
+export const S_TableTitle = styled.h3 <{}>`
   position: relative;
   z-index: 10;
   text-align: center;

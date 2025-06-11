@@ -54,6 +54,7 @@ const S_HeroSlider = styled.article<{}>`
 
     //background-color: rgba(0, 0, 0, 0.6);
     ${translateAnimation({
+      
       duration: "1.3s",
       delay: "0.5s",
       isWithOpacity: true
@@ -104,6 +105,7 @@ export const S_HeroSliderContent = styled(S_OuterContainer)`
 
   display: flex;
   margin-block: auto;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -114,7 +116,9 @@ export const S_HeroSliderContent = styled(S_OuterContainer)`
   @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     padding-inline: 60px;
   }
-
+  @media screen and (min-width: ${BREAKPOINTS.desktop}) {
+    margin-inline: 5vw auto;
+  }
 
 `
 
@@ -133,6 +137,7 @@ export const S_HeroText = styled.p<{}>`
   color: ${({theme}) => theme.colors.primary};
   font-size: ${getResponsiveSize(12, 32, 360, 768)};
   font-weight: ${({theme}) => theme.fonts.weight.bold};
+  text-align: center;
   ${translateAnimation({
     delay: "1.5s", transformType: "translateY", start: "0", duration: "0.4s", isWithOpacity: true
   })};

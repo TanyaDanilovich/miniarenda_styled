@@ -42,7 +42,7 @@ export const Footer = ({}: props) => {
                         </p>
                         <p>{t('footer.owner')}</p>
                         <p>{t('footer.unp')}</p>
-                    </S_FooterItem>
+                        </S_FooterItem>
 
                     {/*<S_FooterItem>*/}
                     {/*    <h5><span>{t('footer.ourEquipment')}</span></h5>*/}
@@ -64,7 +64,7 @@ export const Footer = ({}: props) => {
                             <li><Link to = {ROUTES_PATHS.services.url}>{t('pages.services.navigation')}</Link>
                             </li>
                             <li><Link to = {ROUTES_PATHS.price.url}>{t('pages.price.navigation')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>
+                            {/*<li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>*/}
                             <li><Link to = {ROUTES_PATHS.reviews.url}>{t('pages.reviews.navigation')}</Link></li>
                             <li><Link to = {ROUTES_PATHS.faq.url}>{t('pages.faq.navigation')}</Link></li>
                         </ul>
@@ -200,6 +200,7 @@ export const S_FooterItem = styled.div<{}>`
   
   //miniarenda
   &:first-child {
+  //width: 100%;
     & p:nth-of-type(-n+2),
     & p:nth-last-of-type(-n+2) {
 

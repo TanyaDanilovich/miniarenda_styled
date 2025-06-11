@@ -10,9 +10,9 @@ export const MachineCharacteristicsTable = ({title, characteristics, id, }: prop
 
     return (
         <S_MachineCharacteristicsTable>
-            <S_TableTitle>
-                {title}
-            </S_TableTitle>
+            {/*<S_TableTitle>*/}
+            {/*    {title}*/}
+            {/*</S_TableTitle>*/}
 
             <thead>
             <S_Tr>
