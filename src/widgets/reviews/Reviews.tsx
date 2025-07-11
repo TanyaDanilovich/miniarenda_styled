@@ -7,6 +7,8 @@ import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from "styled-components";
 import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
+import productImg from "../../assets/images/servises/exavator/_DSC1723.jpg"
+import logoImg from "../../assets/icons/logo.svg"
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 
 
@@ -19,9 +21,13 @@ export const Reviews = ({offset}: props) => {
     return (
         <S_Reviews id={"reviews"} >
             <S_BackgroundWrapper $offset = {offset} $backgroundColor = {theme.colors.white_smoke}>
-                <S_OuterContainer itemScope itemType="http://schema.org/Review">
-                    <SectionTitle title = {"Отзывы наших клиентов"} itemProp="name"/>
+                <S_OuterContainer>
+                    <SectionTitle title = {"Отзывы наших клиентов"}/>
+
+
+
                     <GoogleLink/>
+
                     <ReviewSwiper id = {swiperId}/>
                 </S_OuterContainer>
             </S_BackgroundWrapper>

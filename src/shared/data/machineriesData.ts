@@ -4,10 +4,10 @@ import {MachineryData} from '../types/common.types';
 import {v1} from 'uuid';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
-import et24_480w from "../../assets/images/machineries/480/et24-480w.jpg"
-import et1404_480w from "../../assets/images/machineries/480/et1404-480w.jpg"
-import et24_768w from "../../assets/images/machineries/768/et24-768w.jpg"
-import et1404_768w from "../../assets/images/machineries/768/et1404-768w.jpg"
+import et24_480w from "../../assets/images/machineries/480/webp/et24-480w.webp"
+import et1404_480w from "../../assets/images/machineries/480/webp/et1404-480w.webp"
+import et24_768w from "../../assets/images/machineries/768/webp/et24-768w.webp"
+import et1404_768w from "../../assets/images/machineries/768/webp/et1404-768w.webp"
 
 
 export const machineriesData: MachineryData[] = [

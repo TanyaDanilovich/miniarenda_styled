@@ -4,7 +4,7 @@ import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from 'styled-components';
 import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
-import image from '../../assets/images/price/768/price-768w.jpg';
+import image from '../../assets/images/price/768/webp/price-768w.webp';
 import {S_Image} from '../../shared/styled/S_Image';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_P} from '../../shared/styled/S_P';

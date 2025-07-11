@@ -1,17 +1,24 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {plainTransition} from '../../app/styles/mixins';
+import {SchemaOrgData} from '../../shared/types/common.types';
 
-
-export const DropdownText = ({text, isOpen}: { text: string, isOpen: boolean }) => {
+type Props = { text: string, isOpen: boolean, schemaOrg?: SchemaOrgData, textSchemaOrg?: SchemaOrgData };
+export const DropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: Props) => {
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
 
 
     return (
-        <S_DropdownText $maxHeight = {maxHeight} $height = {height}>
-            <p>
+        <S_DropdownText $maxHeight = {maxHeight} $height = {height}
+                        {...(schemaOrg && {
+                            ...(schemaOrg.itemType && { itemType: schemaOrg.itemType }),
+                            ...(schemaOrg.itemProp && { itemProp: schemaOrg.itemProp }),
+                            ...(schemaOrg.itemScope && { itemScope: schemaOrg.itemScope })
+                        })}
+        >
+            <p {...textSchemaOrg}>
                 {text}
             </p>
         </S_DropdownText>);

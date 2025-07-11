@@ -20,7 +20,7 @@ export const Questions = ({}: props) => {
 
 
     return (
-        <S_Questions id = {"faq"}>
+        <S_Questions id = {"faq"} itemScope itemType="https://schema.org/FAQPage">
 
             <S_OuterContainer>
 

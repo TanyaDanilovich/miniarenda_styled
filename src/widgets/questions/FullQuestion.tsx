@@ -20,9 +20,14 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
     const theme = useTheme()
 
     const onToggleQuestion = () => toggleQuestionCallback()
+    const textSchemaOrg = {itemProp: "text"}
+
+    const schemaOrg = {
+        itemScope: true, itemProp: "acceptedAnswer", itemType: "https://schema.org/Answer"
+    }
 
     return (
-        <S_FullQuestion $isOpen = {isOpen}>
+        <S_FullQuestion $isOpen = {isOpen} itemScope itemProp = "mainEntity" itemType = "https://schema.org/Question">
 
             <S_Flex $align = {"center"} onClick = {onToggleQuestion}>
 
@@ -39,7 +44,7 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
             </S_Flex>
 
 
-            <DropdownText text = {answer} isOpen = {isOpen}/>
+            <DropdownText text = {answer} isOpen = {isOpen} schemaOrg = {schemaOrg} textSchemaOrg = {textSchemaOrg}/>
 
         </S_FullQuestion>);
 };

@@ -48,7 +48,7 @@ export const ReviewContent = ({text, isCollapsed, setUnCollapsed, setCollapsed}:
 
 
     return (
-        <S_reviewContent $isCollapsed = {isCollapsed} itemProp="reviewBody">
+        <S_reviewContent $isCollapsed = {isCollapsed}>
             <p ref = {contentRef}>{text}</p>
             {showButton && <ReadMore isCollapsed = {isCollapsed} callback = {readMoreCallback}/>}
         </S_reviewContent>

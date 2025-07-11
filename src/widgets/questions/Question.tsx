@@ -6,7 +6,7 @@ export const Question = ({text}: { text: string }) => {
 
 
     return (
-        <S_QuestionText>
+        <S_QuestionText itemProp="name">
             {text}
         </S_QuestionText>)
 }

@@ -10,7 +10,11 @@ import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 export type PropsWithChildren<P> = P & {
     children?: ReactNode
 };
-
+export type SchemaOrgData = {
+    itemType?: string,
+    itemProp?: string,
+    itemScope?: boolean,
+}
 export type ImageProps = {
     src: string,
     srcSet?: {

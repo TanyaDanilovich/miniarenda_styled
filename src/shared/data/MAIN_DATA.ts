@@ -14,25 +14,25 @@ import img1200w from "../../assets/images/test/1200.jpg"
 import img768w from "../../assets/images/test/768.jpg"
 import img480w from "../../assets/images/test/480.jpg"
 
-import excavator_main_1920w from "../../assets/images/servises/exavator/1920/excavatorMain4-1920w.jpg";
-import excavator_main_1200w from "../../assets/images/servises/exavator/1200/excavatorMain4-1200w.jpg";
-import excavator_main_768w from "../../assets/images/servises/exavator/768/excavatorMain3-768w.jpg";
-import excavator_main_480w from "../../assets/images/servises/exavator/480/excavatorMain4-480w.jpg";
+import excavator_main_1920w from "../../assets/images/servises/exavator/1920/webp/excavatorMain4-1920w.webp";
+import excavator_main_1200w from "../../assets/images/servises/exavator/1200/webp/excavatorMain4-1200w.webp";
+import excavator_main_768w from "../../assets/images/servises/exavator/768/webp/excavatorMain3-768w.webp";
+import excavator_main_480w from "../../assets/images/servises/exavator/480/webp/excavatorMain4-480w.webp";
 
-import drill_main_1920w from "../../assets/images/servises/drill/1920/drill-main-1920w.jpg"
-import drill_main_1200w from "../../assets/images/servises/drill/1200/drill-main-1200w.jpg"
-import drill_main_768w from "../../assets/images/servises/drill/768/drill-main-768w.jpg"
-import drill_main_480w from "../../assets/images/servises/drill/480/drill-main-480w.jpg"
+import drill_main_1920w from "../../assets/images/servises/drill/1920/webp/drill-main-1920w.webp"
+import drill_main_1200w from "../../assets/images/servises/drill/1200/webp/drill-main-1200w.webp"
+import drill_main_768w from "../../assets/images/servises/drill/768/webp/drill-main-768w.webp"
+import drill_main_480w from "../../assets/images/servises/drill/480/webp/drill-main-480w.webp"
 
-import hummer_main_480w from "../../assets/images/servises/hummer/480/hummer-main-480w.jpg"
-import jamy_main_480w from "../../assets/images/servises/jamy/480/jamy-main-480w.jpg"
-import fundament_main_480w from "../../assets/images/servises/fundaments/480/fundaments-main-480w.jpg"
-import transhei_main_480w from "../../assets/images/servises/transhei/480/transhei-main-480w.jpg"
+import hummer_main_480w from "../../assets/images/servises/hummer/480/webp/hummer-main-480w.webp"
+import jamy_main_480w from "../../assets/images/servises/jamy/480/webp/jamy-main-480w.webp"
+import fundament_main_480w from "../../assets/images/servises/fundaments/480/webp/fundaments-main-480w.webp"
+import transhei_main_480w from "../../assets/images/servises/transhei/480/webp/transhei-main-480w.webp"
 
-import kovsh from '../../assets/images/equipments/kovsh.jpg';
-import bur from '../../assets/images/equipments/bur.jpg';
-import clik from '../../assets/images/equipments/clik.jpg';
-import soosan from '../../assets/images/equipments/soosan.jpg';
+import kovsh from '../../assets/images/equipments/webp/kovsh.webp';
+import bur from '../../assets/images/equipments/webp/bur.webp';
+import clik from '../../assets/images/equipments/webp/clik.webp';
+import soosan from '../../assets/images/equipments/webp/soosan.webp';
 
 
 export const MAIN_DATA: MainData = {
@@ -130,7 +130,6 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["аренда ямобура", "бурение отверстий", "бурение ям"]
             }
         },
-
         [SERVICE_SUBCATEGORY.DIGGING_TRENCH]: {
             id: "subcategory-004",
             subcategory: SERVICE_SUBCATEGORY.DIGGING_TRENCH,

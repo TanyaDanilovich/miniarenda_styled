@@ -25,6 +25,7 @@ export const Main = ({}: props) => {
         }
     }, []);
 
+
     return (
         <StyledMain ref = {ref}>
             <Hero/>
@@ -32,7 +33,6 @@ export const Main = ({}: props) => {
             <Skills/>
             <Prices/>
             <Machineries/>
-
             <Equipments offset = {refOffset}/>
             <Reviews offset = {refOffset}/>
             <Questions/>

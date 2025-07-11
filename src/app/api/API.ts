@@ -1,6 +1,6 @@
 import {MAIN_DATA} from '../../shared/data/MAIN_DATA';
 import {CATEGORY} from '../../shared/constants/CATEGORY';
-import img from '../../assets/images/servises/exavator/_DSC1723.jpg';
+import img from '../../assets/images/servises/exavator/webp/_DSC1723.webp';
 
 import {
     Category,

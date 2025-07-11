@@ -6,7 +6,7 @@ const ResponsiveImage = ({image}: props) => {
 
     return (<>
             {!image.srcSet
-                ? <S_Image src = {image.src} alt = {image.alt || "мини экскаватор"}/>
+                ? <S_Image src = {image.src} alt = {image.alt || "мини экскаватор"} itemProp="image"/>
                 : <picture>
                     {image.srcSet?.['480'] && <source media = "(max-width: 480px)" srcSet = {image.srcSet?.['480']}/>}
                     {image.srcSet?.['768'] && <source media = "(max-width: 768px)" srcSet = {image.srcSet?.['768']}/>}
@@ -19,7 +19,7 @@ const ResponsiveImage = ({image}: props) => {
                         // sizes = "(max-width: 480px) 480px, (max-width: 960px) 768px, (max-width: 1400px) 1200px, 1920px"
                         alt = {image.alt || "мини экскаватор"}
                         // loading="lazy"
-
+                        itemProp="image"
                     />
                 </picture>}
         </>

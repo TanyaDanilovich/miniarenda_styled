@@ -10,12 +10,12 @@ export const Rating = ({size = '1x'}: props) => {
     const theme = useTheme()
     const id = useId()
     return (
-        <span>
+        <div>
                     {[...Array(5)].map((undefined, index) => <FontAwesomeIcon key = {`${id}-${index}`} icon = {faStar}
                                                                               size = {size}
                                                                               color = {theme.colors.primary}/>)}
 
-                </span>
+                </div>
     );
 };
 

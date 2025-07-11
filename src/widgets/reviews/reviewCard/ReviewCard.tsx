@@ -3,6 +3,7 @@ import {S_ReviewCard, S_UserLetter, S_UserName} from './S_ReviewsCard';
 import {ReviewContent} from './ReviewContent';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import {Rating} from '../../../shared/ui/rating/Rating';
+import styled from 'styled-components';
 
 
 type props = {
@@ -21,6 +22,7 @@ export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed
                 <S_Flex $align = {"start"} $gap = {"0.5rem"} $wrap = {'wrap'} $direction = {'column'}>
                     <S_UserName itemProp = "author">{userName}</S_UserName>
                     <Rating size = {'xs'}/>
+                    <S_RatingValue itemProp = "ratingValue">5</S_RatingValue>
                 </S_Flex>
             </S_Flex>
 
@@ -32,3 +34,8 @@ export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed
 };
 
 
+export const S_RatingValue = styled.div`
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+`
