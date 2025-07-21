@@ -3,10 +3,9 @@ import React, {useState} from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {DesktopDropdownMenu} from './DesktopDropdownMenu';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import {plainTransition} from '../../../../app/styles/mixins';
 import { useTranslation } from 'react-i18next';
+import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
 
 type props = {
     menuItem: MenuItemType,
@@ -29,9 +28,9 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
                                    onMouseEnter = {setDropdown}
                                    onMouseLeave = {setCollapsed}>
                             {t(menuItem.i18nKey)}
-                            <FontAwesomeIcon icon = {faAngleDown}
+                            <FontAwesomeIcon icon = {'icon-angle-down'}
                                              size = {'1x'}
-                                             transform = {"right-6"}/>
+                                             transform = {"translate(6,0)"}/>
                         </S_NavLink>
                         <DesktopDropdownMenu mainUrl = {menuItem.url}
                                              subMenuItems = {menuItem.subMenuItems}

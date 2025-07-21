@@ -1,11 +1,10 @@
 import React from 'react';
 import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faMinus} from '@fortawesome/free-solid-svg-icons';
 import {plainTransition} from '../../app/styles/mixins';
 import {Question} from './Question';
 import {DropdownText} from './DropdownText';
+import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 
 type props = {
@@ -32,9 +31,9 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
             <S_Flex $align = {"center"} onClick = {onToggleQuestion}>
 
                 <S_MinusContainer>
-                    <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
+                    <FontAwesomeIcon icon = {'icon-minus'} size = {'2x'} color = {theme.colors.primary}
                     />
-                    <FontAwesomeIcon icon = {faMinus} size = {'xl'} color = {theme.colors.primary}
+                    <FontAwesomeIcon icon = {'icon-minus'} size = {'2x'} color = {theme.colors.primary}
                     />
                 </S_MinusContainer>
 

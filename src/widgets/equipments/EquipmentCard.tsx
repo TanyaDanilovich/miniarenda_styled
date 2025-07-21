@@ -8,9 +8,8 @@ import {ImageProps} from '../../shared/types/common.types';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
-import {faCircleCheck} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {S_ReadMoreButton} from '../../shared/ui/buttons/S_ReadMoreButton';
+import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 type props = {
     id: string,
@@ -53,7 +52,7 @@ export const EquipmentCard = ({
 
 
                     <li key = {`${id}-${index}`}>
-                        <FontAwesomeIcon icon = {faCircleCheck} size = {'1x'} color = {theme.colors.primary}/>
+                        <FontAwesomeIcon icon = {'icon-check-circle'} size = {'1x'} color = {theme.colors.primary}/>
                         {characteristic}
                     </li>
                 )}

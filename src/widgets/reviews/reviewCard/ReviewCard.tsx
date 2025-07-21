@@ -21,7 +21,7 @@ export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed
                 <S_UserLetter>{userName[0]}</S_UserLetter>
                 <S_Flex $align = {"start"} $gap = {"0.5rem"} $wrap = {'wrap'} $direction = {'column'}>
                     <S_UserName itemProp = "author">{userName}</S_UserName>
-                    <Rating size = {'xs'}/>
+                    <Rating size = {'0.5x'}/>
                     <S_RatingValue itemProp = "ratingValue">5</S_RatingValue>
                 </S_Flex>
             </S_Flex>

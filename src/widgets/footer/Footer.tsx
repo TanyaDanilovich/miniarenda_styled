@@ -4,16 +4,14 @@ import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_HideContent} from '../../shared/styled/S_HideContent';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 import React from 'react';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from '../../shared/ui/Link';
 import {API} from '../../app/api/API';
 import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
-import {S_Image} from '../../shared/styled/S_Image';
-import et24Img from '../../assets/images/mini-ekskavatory-et-24-wacker-neuson(17).jpg';
+import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 
 type props = {};
@@ -33,11 +31,11 @@ export const Footer = ({}: props) => {
                         <p>{t('footer.slogan1')}</p>
                         <p>{t('footer.slogan2')}</p>
                         <p>
-                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
+                            <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375296949698">+375 29 694-96-98</a>
                         </p>
                         <p>
-                            <FontAwesomeIcon icon = {faPhoneVolume} size = {'1x'} color = {theme.colors.primary}/>
+                            <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375336949698">+375 33 694-96-98</a>
                         </p>
                         <p>{t('footer.owner')}</p>

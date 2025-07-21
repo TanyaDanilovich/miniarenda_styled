@@ -1,10 +1,9 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
-import {faCheckDouble} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {MeasurementUnits} from '../../shared/types/common.types';
+import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 
 type props = {
@@ -29,11 +28,11 @@ export const CardPrice = ({
             <h3>{title}</h3>
             <p>от <span>{formattedPrice}</span>{` руб/${measurementUnits}`}</p>
             <p>
-                <FontAwesomeIcon icon = {faCheckDouble} size = {'1x'} color = {theme.colors.primary}/>
+                <FontAwesomeIcon icon = {'icon-check-double'} size = {'1x'} color = {theme.colors.primary}/>
                 {`Минимальный заказ - ${minOrderCash}`}
             </p>
             <p>
-                <FontAwesomeIcon icon = {faCheckDouble} size = {'1x'} color = {theme.colors.primary}/>
+                <FontAwesomeIcon icon = {'icon-check-double'} size = {'1x'} color = {theme.colors.primary}/>
                 {`Минимальный заказ (безнал) - ${minOrderNonCash}`}
             </p>
         </S_CardPrice>)

@@ -4,10 +4,8 @@ import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {S_MobileMenuItem} from './MobileMenuItem';
 import {outline, plainTransition} from '../../../../app/styles/mixins';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowUpFromBracket} from '@fortawesome/free-solid-svg-icons/faArrowUpFromBracket';
-import {faLeftLong} from '@fortawesome/free-solid-svg-icons/faLeftLong';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
+import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
 
 
 type props = {
@@ -41,7 +39,7 @@ export const MobileDropdownMenu = ({
                               onMouseLeave = {setCollapsed}>
 
             <S_GoBackButton onClick = {goBack}>
-                <FontAwesomeIcon icon = {faLeftLong}
+                <FontAwesomeIcon icon = {'icon-arrow-left'}
                                  size = {'1x'}
                                  color = {"white"}
                 />

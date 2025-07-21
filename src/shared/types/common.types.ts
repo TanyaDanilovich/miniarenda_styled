@@ -167,3 +167,54 @@ export type MachineryData = {
 export type MachineryPriceCharacteristicKeys =
     typeof MACHINERY_PRICE_CHARACTERISTICS[keyof typeof MACHINERY_PRICE_CHARACTERISTICS]
 
+export type IconSizeProp =
+    | "2xs"
+    | "xs"
+    | "sm"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "1x"
+    | "2x"
+    | "3x"
+    | "4x"
+    | "5x"
+    | "6x"
+    | "7x"
+    | "8x"
+    | "9x"
+    | "10x";
+
+
+// src/types/icons.d.ts
+
+
+export type IconId =
+    | 'icon-angle-down'
+    | 'icon-angle-right'
+    | 'icon-award'
+    | 'icon-calendar'
+    | 'icon-check-circle'
+    | 'icon-check-double'
+    | 'icon-handshake'
+    | 'icon-link'
+    | 'icon-long-arrow-left'
+    | 'icon-minus'
+    | 'icon-phone'
+    | 'icon-phone-volume'
+    | 'icon-plus-circle'
+    | 'icon-search'
+    | 'icon-star'
+    | 'icon-suitcase'
+    | 'icon-table'
+    |'icon-arrow-left';
+
+
+export type IconSize =
+    | '0.5x'
+    | '1x'
+    | '1.5x'
+    | '2x'
+    | '3x'
+    | '4x'
+    | '5x'

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 import {faAward, faCalendarDays, faHandshakeSimple, faSuitcase} from '@fortawesome/free-solid-svg-icons';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
+import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 
 const Skills = () => {
@@ -23,7 +24,7 @@ const Skills = () => {
 
                     <SkillsItem $direction = {"column"} $align = {"center"}>
                         <SkillsIconContainer $justify = {"center"} $align = {"center"}>
-                            <FontAwesomeIcon icon = {faAward} size = {'2x'} color = {theme.colors.white}/>
+                            <FontAwesomeIcon icon = {'icon-award'} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
 
                         <SkillsInnerContent>
@@ -35,7 +36,7 @@ const Skills = () => {
 
                     <SkillsItem $direction = {"column"} $align = {"center"}>
                         <SkillsIconContainer $justify = {"center"} $align = {"center"}>
-                            <FontAwesomeIcon icon = {faCalendarDays} size = {'2x'} color = {theme.colors.white}/>
+                            <FontAwesomeIcon icon = {'icon-calendar'} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
 
                         <SkillsInnerContent>
@@ -47,7 +48,7 @@ const Skills = () => {
                     <SkillsItem $direction = {"column"} $align = {"center"}>
 
                         <SkillsIconContainer $justify = {"center"} $align = {"center"}>
-                            <FontAwesomeIcon icon = {faSuitcase} size = {'2x'} color = {theme.colors.white}/>
+                            <FontAwesomeIcon icon = {'icon-suitcase'} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
 
                         <SkillsInnerContent>
@@ -59,7 +60,7 @@ const Skills = () => {
 
                     <SkillsItem $direction = {"column"} $align = {"center"}>
                         <SkillsIconContainer $justify = {"center"} $align = {"center"}>
-                            <FontAwesomeIcon icon = {faHandshakeSimple} size = {'2x'} color = {theme.colors.white}/>
+                            <FontAwesomeIcon icon = {'icon-handshake'} size = {'2x'} color = {theme.colors.white}/>
                         </SkillsIconContainer>
 
 

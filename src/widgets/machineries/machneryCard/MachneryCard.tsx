@@ -2,13 +2,12 @@ import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React from 'react';
 import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTable} from '@fortawesome/free-solid-svg-icons/faTable';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {MachineryData} from '../../../shared/types/common.types';
 import {MachineCharacteristicsTable} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
 import {S_TableTitle} from '../../../shared/styled/S_Table';
+import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon';
 
 
 type props = Omit<MachineryData, 'priceCharacteristics'> & {}
@@ -23,7 +22,7 @@ export const MachineryCard = ({id, title, image, characteristics}: props) => {
                 {/*<HoverIcons link={""} image={image}/>*/}
 
                 <FontAwesomeIconCover>
-                    <FontAwesomeIcon icon = {faTable} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {'icon-table'} size = {'1x'} color = {theme.colors.white}/>
                 </FontAwesomeIconCover>
             </S_ImageContainer>
             <S_TableTitle>

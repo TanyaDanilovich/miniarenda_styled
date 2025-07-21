@@ -1,10 +1,9 @@
 import styled, {useTheme} from 'styled-components';
-import {faLink, faSearch} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {S_ImageContainer} from '../../styled/S_ImageContainer';
 import {S_Image} from '../../styled/S_Image';
 import React, {useId} from 'react';
 import {ImageProps, PropsWithChildren} from '../../types/common.types';
+import FontAwesomeIcon from '../icon/FontAwesomeIcon';
 
 
 type props = {
@@ -21,12 +20,12 @@ export const HoverIcons = ({link, image, children}: PropsWithChildren<props>) =>
 
 
             <a href = {link}>
-                <FontAwesomeIcon icon = {faLink} size = {'1x'} color = {theme.colors.primary}/>
+                <FontAwesomeIcon icon = {'icon-link'} size = {'1x'} color = {theme.colors.primary}/>
             </a>
 
 
             <button popoverTarget = {popoverId}>
-                <FontAwesomeIcon icon = {faSearch} size = {'1x'} color = {theme.colors.primary}/>
+                <FontAwesomeIcon icon = {'icon-search'} size = {'1x'} color = {theme.colors.primary}/>
             </button>
 
             <div popover = {"auto"} id = {popoverId}>

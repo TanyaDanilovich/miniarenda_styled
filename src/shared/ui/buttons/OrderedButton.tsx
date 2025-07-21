@@ -1,20 +1,19 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCalendarCheck} from '@fortawesome/free-solid-svg-icons';
 import styled, {useTheme} from 'styled-components';
 import {S_LinkAsButton} from './S_LinkAsButton';
 import {plainTransition} from '../../../app/styles/mixins';
-import {IconDefinition} from '@fortawesome/fontawesome-common-types';
+import FontAwesomeIcon from '../icon/FontAwesomeIcon';
+import {IconId} from '../../types/common.types';
 
 
 type props = {
     url?: string,
     title?: string,
-    icon?: IconDefinition
+    icon?: IconId
 };
 export const OrderedButton = ({
                                   url = "#",
                                   title = "Забронировать",
-                                  icon = faCalendarCheck
+                                  icon = 'icon-calendar'
                               }: props) => {
     const theme = useTheme()
 
