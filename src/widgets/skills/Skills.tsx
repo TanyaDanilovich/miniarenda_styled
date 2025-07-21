@@ -1,11 +1,9 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components';
-
-import {faAward, faCalendarDays, faHandshakeSimple, faSuitcase} from '@fortawesome/free-solid-svg-icons';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
 import {S_Flex} from '../../shared/styled/S_Flex';
-import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 

@@ -7,8 +7,6 @@ import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from "styled-components";
 import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
-import productImg from "../../assets/images/servises/exavator/_DSC1723.jpg"
-import logoImg from "../../assets/icons/logo.svg"
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 
 

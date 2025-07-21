@@ -31,9 +31,9 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
             <S_Flex $align = {"center"} onClick = {onToggleQuestion}>
 
                 <S_MinusContainer>
-                    <FontAwesomeIcon icon = {'icon-minus'} size = {'2x'} color = {theme.colors.primary}
+                    <FontAwesomeIcon icon = {'icon-minus'} size = {'1x'} color = {theme.colors.primary}
                     />
-                    <FontAwesomeIcon icon = {'icon-minus'} size = {'2x'} color = {theme.colors.primary}
+                    <FontAwesomeIcon icon = {'icon-minus'} size = {'1x'} color = {theme.colors.primary}
                     />
                 </S_MinusContainer>
 

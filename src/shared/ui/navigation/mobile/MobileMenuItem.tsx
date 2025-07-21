@@ -3,11 +3,11 @@ import React from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 
-import {outline, plainTransition} from '../../../../app/styles/mixins';
+import {plainTransition} from '../../../../app/styles/mixins';
 import {MobileDropdownMenu} from './MobileDropdownMenu';
-import {faAngleRight} from '@fortawesome/free-solid-svg-icons/faAngleRight';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
+
 type props = {
     id: string,
     dropDownId: string | null,
