@@ -26,12 +26,12 @@ export const HeaderTop = ({}: props) => {
                 <p>Звоните для заказа техники</p>
 
                 <span>
-                    <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                     <a href = "tel:+375296949698">+375 (29) 694-96-98</a>
                 </span>
 
                 <span>
-                    <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.white}/>
+                    <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                     <a href = "tel:+375336949698">+375 (33) 694-96-98</a>
                 </span>
 
