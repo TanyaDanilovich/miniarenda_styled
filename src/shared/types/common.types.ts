@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 import {CATEGORY} from '../constants/CATEGORY';
-import {RENTAL_SUBCATEGORY} from '../constants/RENTAL_SUBCATEGORY';
+import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
@@ -37,7 +37,7 @@ export type Category =
     typeof CATEGORY[keyof typeof CATEGORY];
 
 export type RentalSubcategory =
-    typeof RENTAL_SUBCATEGORY[keyof typeof RENTAL_SUBCATEGORY];
+    typeof SUBCATEGORY[keyof typeof SUBCATEGORY];
 
 export type ServiceSubcategory =
     typeof SERVICE_SUBCATEGORY[keyof typeof SERVICE_SUBCATEGORY];
@@ -73,10 +73,9 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     subcategory: T;
     subcategoryUrl: string;
     i18nKey: string,
-
-    //subcategoryTitle: string;
-    //description?: string;
-    //content?: string;
+    title: string;
+    description?: string;
+    content?: string;
     images: ImageProps[];
     seo?: Seo;
     group?: ServiceGroup;
@@ -84,20 +83,20 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     icon?: string;
 }
 
-export type SubcategoryItemData<T extends Category> = {
-    id: string,
-    category: T,
-    categoryUrl: string,
-    subcategory: SubcategoriesType<T>,
+export type SubcategoryItemData<T extends Category> =  SubcategoriesType<T> & {
+    // id: string,
+    // category?: T,
+    // categoryUrl?: string,
+    // subcategory?: SubcategoriesType<T>,
     // categoryTitle?: string,
-    // subcategoryTitle: string,
+    // subcategoryTitle?: string,
     // subcategoryDescription?: string,
-    i18nKey: string,
-    subcategoryUrl: string,
-    image?: ImageProps,
+    // i18nKey?: string,
+    // subcategoryUrl: string,
+    // image?: ImageProps,
     position: number,
-    url: string,
-    icon?: string;
+    // url?: string,
+    // icon?: string;
 }
 
 export type Seo = {
@@ -129,7 +128,7 @@ export type Equipment = {
     i18nKey: string,
     image: ImageProps,
     position: number,
-    characteristicList:string[]
+    characteristicList: string[]
 }
 
 export type SubcategoryItemCard = {
@@ -207,7 +206,7 @@ export type IconId =
     | 'icon-star'
     | 'icon-suitcase'
     | 'icon-table'
-    |'icon-arrow-left';
+    | 'icon-arrow-left';
 
 
 export type IconSize =

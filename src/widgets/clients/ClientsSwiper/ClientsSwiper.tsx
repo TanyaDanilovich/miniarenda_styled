@@ -9,7 +9,6 @@ import img2 from '../../../assets/images/clients/gavan.webp'
 import img3 from '../../../assets/images/clients/stroytrest.webp'
 import img4 from '../../../assets/images/clients/world.webp'
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
-import {v4 as uuidv4} from 'uuid';
 import {BASE} from '../../../shared/constants/constants';
 
 
@@ -17,12 +16,8 @@ type props = {
     id: string,
 };
 export const ClientsSwiper = ({id}: props) => {
-    const theme = useTheme()
 
-    const css = `
-
-    
-`
+    const css = ``
 
     const params: SwiperProps = {
         slidesPerView: 3, spaceBetween: BASE * 2,
@@ -36,22 +31,22 @@ export const ClientsSwiper = ({id}: props) => {
                          id = {id}
                          {...params}
         >
-            <AppSwiperSlide id = {uuidv4()}>
+            <AppSwiperSlide id = {"uuidv4(1)"}>
                 <S_ImageContainer>
                     <img src = {img1} alt = {"alt"}/>
                 </S_ImageContainer>
             </AppSwiperSlide>
-            <AppSwiperSlide id = {uuidv4()}>
+            <AppSwiperSlide id = {"uuidv4(2)"}>
                 <S_ImageContainer>
                     <img src = {img2} alt = {"alt"}/>
                 </S_ImageContainer>
             </AppSwiperSlide>
-            <AppSwiperSlide id = {uuidv4()}>
+            <AppSwiperSlide id = {"uuidv4(3)"}>
                 <S_ImageContainer>
                     <img src = {img3} alt = {"alt"}/>
                 </S_ImageContainer>
             </AppSwiperSlide>
-            <AppSwiperSlide id = {uuidv4()}>
+            <AppSwiperSlide id = {"uuidv4(4)"}>
                 <S_ImageContainer>
                     <img src = {img4} alt = {"alt"}/>
                 </S_ImageContainer>

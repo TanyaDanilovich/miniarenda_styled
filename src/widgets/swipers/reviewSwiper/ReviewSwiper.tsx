@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
@@ -35,8 +35,6 @@ export const ReviewSwiper = ({id}: props) => {
             clickable: true
         },
         navigation: true,
-        // injectStyles: [swiperCss],
-        //loop: true
     }
 
     return (

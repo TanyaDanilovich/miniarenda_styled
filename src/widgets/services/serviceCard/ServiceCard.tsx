@@ -1,18 +1,14 @@
-import styled, {css, useTheme} from 'styled-components';
+import styled from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
-import {S_Image} from '../../../shared/styled/S_Image';
-import {ReadMoreButton} from '../../../shared/ui/buttons/ReadMoreButton';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
-import {useTranslation} from 'react-i18next';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {DropdownText, S_DropdownText} from '../../questions/DropdownText';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
 import {ReadMoreButtonAsButton} from '../../../shared/ui/buttons/ReadMoreButtonAsButton';
-import {GoogleLink} from '../../reviews/googleLink/GoogleLink';
 
 export type ServiceCardData = {
     toggleDescriptionCallback: () => void,
@@ -25,10 +21,9 @@ export const ServiceCard = ({
 
                             }: props) => {
 
-    const {t} = useTranslation();
-    const cardPadding = getResponsiveSize(BASE, BASE*3)
+    const cardPadding = getResponsiveSize(BASE, BASE * 3)
     return (
-        <StyledServiceCard $paddingInline ={cardPadding}>
+        <StyledServiceCard $paddingInline = {cardPadding}>
             {/*<StyledServiceCard itemScope itemType = "http://schema.org/Product" itemProp="itemReviewed">*/}
             {data.image && (
                 <S_ImageContainer>
@@ -45,9 +40,9 @@ export const ServiceCard = ({
             {/*</S_Flex>*/}
 
 
-            <ServiceCardTitle itemProp = "name" $paddingInline ={cardPadding}>
+            <ServiceCardTitle itemProp = "name" $paddingInline = {cardPadding}>
                 {/*<Link to = {`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>*/}
-                {t(`${data.i18nKey}.title`)}
+                {data.title}
             </ServiceCardTitle>
 
             {/*<ServiceCardText>*/}
@@ -62,14 +57,14 @@ export const ServiceCard = ({
             </S_Box>
             <div itemProp = "description">
                 <DropdownText
-                    text = {t(`${data.i18nKey}.description`)}
+                    text = {data.description}
                     isOpen = {isOpen}/>
             </div>
         </StyledServiceCard>
     );
 };
 
-export const StyledServiceCard = styled.article <{$paddingInline:string}>`
+export const StyledServiceCard = styled.article <{ $paddingInline: string }>`
   padding-bottom: ${({$paddingInline}) => $paddingInline || '1rem'};
   //margin: 1rem;
   box-shadow: ${({theme}) => theme.shadow.full};
@@ -103,7 +98,7 @@ export const StyledServiceCard = styled.article <{$paddingInline:string}>`
 
 `;
 
-export const ServiceCardTitle = styled.h3 <{$paddingInline:string}>`
+export const ServiceCardTitle = styled.h3 <{ $paddingInline: string }>`
   margin-bottom: 0;
   display: flex;
   align-items: center;

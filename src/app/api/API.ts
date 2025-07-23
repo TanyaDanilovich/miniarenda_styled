@@ -31,38 +31,21 @@ export const API = {
         const servicesData = [
             ...rentalKeys.map((rentItem, index) =>
                 ({
-                    subcategory: MAIN_DATA.subcategories[rentItem].subcategory,
-                    subcategoryTitle: '',
-                    subcategoryDescription: '',
-                    subcategoryUrl: MAIN_DATA.subcategories[rentItem].subcategoryUrl,
-                    image: MAIN_DATA.subcategories[rentItem].images[0] || {src: img, alt: ""},
-                    category: MAIN_DATA.categories[CATEGORY.RENTAL].category,
-                    categoryTitle: '',
-                    categoryUrl: MAIN_DATA.categories[CATEGORY.RENTAL].url,
-                    i18nKey: MAIN_DATA.subcategories[rentItem].i18nKey,
-                    id: MAIN_DATA.subcategories[rentItem].id,
+                    ...rentItem,
                     position: index,
                 })),
             ...servicesKeys.map((serviceItem, index) =>
                 ({
-                    subcategory: MAIN_DATA.subcategories[serviceItem].subcategory,
-                    subcategoryTitle: '',
-                    subcategoryDescription: '',
-                    subcategoryUrl: MAIN_DATA.subcategories[serviceItem].subcategoryUrl,
-                    image: MAIN_DATA.subcategories[serviceItem].images[0] || {src: img, alt: ""},
-                    category: MAIN_DATA.categories[CATEGORY.SERVICES].category,
-                    categoryTitle: '',
-                    categoryUrl: MAIN_DATA.categories[CATEGORY.SERVICES].url,
-                    id: MAIN_DATA.categories[CATEGORY.SERVICES].id,
-                    i18nKey: MAIN_DATA.subcategories[serviceItem].i18nKey,
+                    ...serviceItem,
                     position: rentalKeys.length + index,
                 }))
         ]
-        return servicesData.map(item => ({
-            ...item,
-            url: `${item.categoryUrl}/${item.subcategoryUrl}`,
-        }))
-            ;
+        // return servicesData.map(item => ({
+        //     ...item,
+        //     url: `${item.categoryUrl}/${item.subcategoryUrl}`,
+        // }))
+        //     ;
+        return servicesData
     },
 
     getRentalSubcategoriesDataFullUrl: (): SubcategoryItemData<typeof CATEGORY.RENTAL>[] => {
