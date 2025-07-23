@@ -5,8 +5,8 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import React from 'react';
 import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
-type props = {};
-export const HeaderTop = ({}: props) => {
+
+export const HeaderTop = () => {
     const theme = useTheme();
     return (
 
