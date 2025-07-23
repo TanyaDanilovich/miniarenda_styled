@@ -63,6 +63,7 @@
     "resolve-url-loader": "5.0.0",
     "sass-loader": "14.2.0",
     "semver": "7.6.0",
+    "source-map-explorer": "^2.5.3",
     "source-map-loader": "5.0.0",
     "style-loader": "3.3.4",
     "styled-components": "6.1.8",
@@ -81,7 +82,9 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "analyze&build": "npm run build && npm run analyze"
   },
   "eslintConfig": {
     "extends": [
