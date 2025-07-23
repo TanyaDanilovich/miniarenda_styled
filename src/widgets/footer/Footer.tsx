@@ -9,16 +9,15 @@ import React from 'react';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from '../../shared/ui/Link';
 import {API} from '../../app/api/API';
-import {useTranslation} from 'react-i18next';
 import {outline} from '../../app/styles/mixins';
 import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
-
+import {footerData} from './footerData.ts';
 
 type props = {};
 
 export const Footer = ({}: props) => {
     const theme = useTheme();
-    const {t} = useTranslation();
+    console.log(theme);
     const fullServicesData = API.getFullSubcategoriesData();
 
     return (
@@ -27,9 +26,9 @@ export const Footer = ({}: props) => {
                 <S_Flex $gap = "1rem" $justify = "center">
 
                     <S_FooterItem>
-                        <S_FooterItemTitle><span>{t('footer.companyName')}</span></S_FooterItemTitle>
-                        <p>{t('footer.slogan1')}</p>
-                        <p>{t('footer.slogan2')}</p>
+                        <S_FooterItemTitle><span>{footerData.companyName}</span></S_FooterItemTitle>
+                        <p>{footerData.slogan1}</p>
+                        <p>{footerData.slogan2}</p>
                         <p>
                             <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375296949698">+375 29 694-96-98</a>
@@ -38,12 +37,12 @@ export const Footer = ({}: props) => {
                             <FontAwesomeIcon icon = {'icon-phone-volume'} size = {'1x'} color = {theme.colors.primary}/>
                             <a className = "tel" href = "tel:+375336949698">+375 33 694-96-98</a>
                         </p>
-                        <p>{t('footer.owner')}</p>
-                        <p>{t('footer.unp')}</p>
-                        </S_FooterItem>
+                        <p>{footerData.owner}</p>
+                        <p>{footerData.unp}</p>
+                    </S_FooterItem>
 
                     {/*<S_FooterItem>*/}
-                    {/*    <h5><span>{t('footer.ourEquipment')}</span></h5>*/}
+                    {/*    <h5><span>{footerData.ourEquipment}</span></h5>*/}
                     {/*    <S_ImageContainer>*/}
                     {/*        <S_Image src = {et24Img} alt = "" width = "300"/>*/}
                     {/*    </S_ImageContainer>*/}
@@ -56,25 +55,25 @@ export const Footer = ({}: props) => {
                     {/*</S_FooterItem>*/}
 
                     <S_FooterItem>
-                        <S_FooterItemTitle><span>{t('footer.sections')}</span></S_FooterItemTitle>
+                        <S_FooterItemTitle><span>{footerData.sections}</span></S_FooterItemTitle>
                         <ul>
 
-                            <li><Link to = {ROUTES_PATHS.services.url}>{t('pages.services.navigation')}</Link>
+                            <li><Link to = {ROUTES_PATHS.services.url}>{ROUTES_PATHS.services.title}</Link>
                             </li>
-                            <li><Link to = {ROUTES_PATHS.price.url}>{t('pages.price.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.price.url}>{ROUTES_PATHS.price.title}</Link></li>
                             {/*<li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>*/}
-                            <li><Link to = {ROUTES_PATHS.reviews.url}>{t('pages.reviews.navigation')}</Link></li>
-                            <li><Link to = {ROUTES_PATHS.faq.url}>{t('pages.faq.navigation')}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.reviews.url}>{ROUTES_PATHS.reviews.title}</Link></li>
+                            <li><Link to = {ROUTES_PATHS.faq.url}>{ROUTES_PATHS.faq.title}</Link></li>
                         </ul>
                     </S_FooterItem>
 
                     <S_FooterItem>
-                        <S_FooterItemTitle><span>{t('footer.ourServices')}</span></S_FooterItemTitle>
+                        <S_FooterItemTitle><span>{footerData.ourServices}</span></S_FooterItemTitle>
                         <ul>
                             {fullServicesData.map((service, index) => (
                                 <li key = {`${service.id}-${index}`}>
                                     <Link to = {ROUTES_PATHS.services.url}>
-                                        {t(`${service.i18nKey}.title`)}
+                                        {ROUTES_PATHS.services.title}
                                     </Link>
                                 </li>
                             ))}
@@ -154,17 +153,16 @@ export const S_Footer = styled.footer<{}>`
 
 export const S_FooterItem = styled.div<{}>`
   padding-block: 0.5rem;
-  
+
   & > p:first-of-type {
     margin-bottom: 1rem;
   }
 
- 
 
   li {
     padding: 0.5rem;
   }
-  
+
   //span {
   //  position: relative;
   //}
@@ -188,10 +186,10 @@ export const S_FooterItem = styled.div<{}>`
     background-color: ${({theme}) => theme.colors.primary};
     clip-path: polygon(0 0, 96% 0%, 100% 100%, 6% 100%);
   }
-  
+
   //miniarenda
   &:first-child {
-  //width: 100%;
+    //width: 100%;
     & p:nth-of-type(-n+2),
     & p:nth-last-of-type(-n+2) {
 
@@ -214,7 +212,7 @@ export const S_FooterItem = styled.div<{}>`
     }
 
   }
-  
+
   //наша техника
   ${S_ImageContainer} {
     margin-bottom: 1rem;
@@ -226,7 +224,7 @@ export const S_FooterItem = styled.div<{}>`
     }
   }
 
-  
+
   //Разделы
   &:nth-child(3) a {
     position: relative;
@@ -252,7 +250,7 @@ export const S_FooterItem = styled.div<{}>`
     padding-block: 0.25rem;
   }
 
-  // @media ${({theme}) => theme.mediaMinWidth.mobile} {
+    // @media ${({theme}) => theme.mediaMinWidth.mobile} {
   //   width: calc(50% - 0.5rem);
   // }
 
@@ -272,8 +270,6 @@ export const S_FooterItem = styled.div<{}>`
     }
   }
 `;
-
-
 
 
 export const S_FooterItemTitle = styled.h2<{}>`

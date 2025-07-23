@@ -26,9 +26,9 @@ export type ImageProps = {
 }
 
 export type MenuItemType = {
-    i18nKey: string,
+    title: string,
     url: string,
-    subMenuItems?: MenuItemType[]
+
 }
 
 export type MeasurementUnits = 'час' | 'отв.'
@@ -124,12 +124,12 @@ export type MainData = {
 
 export type Equipment = {
     id: string,
-    //title: string,
-    //description: string,
+    title: string,
+    description: string,
     i18nKey: string,
     image: ImageProps,
     position: number,
-    //characteristicList:string[]
+    characteristicList:string[]
 }
 
 export type SubcategoryItemCard = {

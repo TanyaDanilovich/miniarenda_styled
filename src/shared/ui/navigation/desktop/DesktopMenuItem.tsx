@@ -4,7 +4,6 @@ import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {DesktopDropdownMenu} from './DesktopDropdownMenu';
 import {plainTransition} from '../../../../app/styles/mixins';
-import { useTranslation } from 'react-i18next';
 import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
 
 type props = {
@@ -12,7 +11,7 @@ type props = {
     setClose?: () => void
 };
 export const DesktopMenuItem = ({menuItem, setClose}: props) => {
-    const { t } = useTranslation();
+
     const [isDropdown, setIsDropdown] = useState(false);
     const setDropdown = () => setIsDropdown(true)
     const setCollapsed = () => setIsDropdown(false)
@@ -20,31 +19,12 @@ export const DesktopMenuItem = ({menuItem, setClose}: props) => {
     return (
 
 
-        <S_DesktopMenuItem onClick={setCollapsed} onMouseEnter={setDropdown} onMouseLeave = {setCollapsed}>
-            {menuItem.subMenuItems
-                ? (
-                    <>
-                        <S_NavLink href = {menuItem.url} onClick = {setClose}
-                                   onMouseEnter = {setDropdown}
-                                   onMouseLeave = {setCollapsed}>
-                            {t(menuItem.i18nKey)}
-                            <FontAwesomeIcon icon = {'icon-angle-down'}
-                                             size = {'1x'}
-                                             transform = {"translate(6,0)"}/>
-                        </S_NavLink>
-                        <DesktopDropdownMenu mainUrl = {menuItem.url}
-                                             subMenuItems = {menuItem.subMenuItems}
-                                             isDropdown = {isDropdown}
-                                             setDropdown = {setDropdown}
-                                             setCollapsed = {setCollapsed}/>
-                    </>
-                )
-                :
+        <S_DesktopMenuItem onClick = {setCollapsed} onMouseEnter = {setDropdown} onMouseLeave = {setCollapsed}>
 
                 <S_NavLink href = {menuItem.url} onClick = {setClose}>
-                    {t(menuItem.i18nKey)}
+                    {menuItem.title}
                 </S_NavLink>
-            }
+
         </S_DesktopMenuItem>
 
 
@@ -58,7 +38,7 @@ export const S_DesktopMenuItem = styled.li<{}>`
   &, & > a {
     ${plainTransition()}
   }
-  
+
   & > a:hover {
     background-color: ${({theme}) => theme.colors.dark};
     color: ${({theme}) => theme.colors.primary};

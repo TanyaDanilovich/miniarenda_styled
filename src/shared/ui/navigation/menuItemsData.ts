@@ -3,35 +3,27 @@ import {ROUTES_PATHS} from '../../constants/ROUTES_PATHS';
 
 export const menuItemsData: MenuItemType[] = [
     {
-        i18nKey: ROUTES_PATHS.home.i18nKey,
+        title: ROUTES_PATHS.home.title,
         url: ROUTES_PATHS.home.url
     },
     {
-        i18nKey: ROUTES_PATHS.services.i18nKey,
+        title: ROUTES_PATHS.services.title,
         url: ROUTES_PATHS.services.url,
     },
     {
-        i18nKey: ROUTES_PATHS.price.i18nKey,
+        title: ROUTES_PATHS.price.title,
         url: ROUTES_PATHS.price.url
     },
     {
-        i18nKey: ROUTES_PATHS.equipments.i18nKey,
+        title: ROUTES_PATHS.equipments.title,
         url: ROUTES_PATHS.equipments.url
     },
-    // {
-    //     i18nKey: ROUTES_PATHS.machineries.i18nKey,
-    //     url: ROUTES_PATHS.machineries.url
-    // },
-    // {
-    //     i18nKey: ROUTES_PATHS.projects.i18nKey,
-    //     url: ROUTES_PATHS.projects.url
-    // },
     {
-        i18nKey: ROUTES_PATHS.reviews.i18nKey,
+        title: ROUTES_PATHS.reviews.title,
         url: ROUTES_PATHS.reviews.url
     },
     {
-        i18nKey: ROUTES_PATHS.faq.i18nKey,
+        title: ROUTES_PATHS.faq.title,
         url: ROUTES_PATHS.faq.url
     },
 ];

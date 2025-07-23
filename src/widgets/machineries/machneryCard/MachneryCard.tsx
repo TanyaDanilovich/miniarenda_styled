@@ -1,0 +1,84 @@
+import styled, {useTheme} from 'styled-components';
+import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
+import React from 'react';
+import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
+import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
+import {MachineryData} from '../../../shared/types/common.types';
+import {MachineCharacteristicsTable} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
+import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import {S_TableTitle} from '../../../shared/styled/S_Table';
+import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon';
+
+
+type props = Omit<MachineryData, 'priceCharacteristics'> & {}
+export const MachineryCard = ({id, title, image, characteristics}: props) => {
+    const theme = useTheme()
+    return (
+        <S_MachineryCard>
+            <S_ImageContainer>
+
+                {/*{image && <S_Image src = {image.src} alt = {image.alt}/>}*/}
+                {image && <ResponsiveImage image = {image}/>}
+                {/*<HoverIcons link={""} image={image}/>*/}
+
+                <FontAwesomeIconCover>
+                    <FontAwesomeIcon icon = {'icon-table'} size = {'1x'} color = {theme.colors.white}/>
+                </FontAwesomeIconCover>
+            </S_ImageContainer>
+            <S_TableTitle>
+                {title}
+            </S_TableTitle>
+            <MachineCharacteristicsTable id = {id}
+                                         title = {title}
+                                         characteristics = {characteristics}/>
+
+            {/*<S_Box $marginTop = {"1rem"} $marginLeft = {"1rem"}>*/}
+            {/*    <ReadMoreButton url = {"tel:+375296949698"}/>*/}
+            {/*</S_Box>*/}
+
+        </S_MachineryCard>
+    );
+};
+
+export const S_MachineryCard = styled.article <{}>`
+  background-color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.black};
+  position: relative;
+  z-index: 10;
+  padding-bottom: 1rem;
+  max-width: 544px;
+  margin: 0 auto;
+
+    // ${ImageHover}
+  ${S_ImageContainer} {
+    position: relative;
+    z-index: 5;
+
+    &:after {
+      position: absolute;
+      content: "";
+      height: 6rem;
+      bottom: -4rem;
+      border-top: 10px solid ${({theme}) => theme.colors.primary};
+      width: 100%;
+      transform: skew(0deg, 5deg);
+      background-color: ${({theme}) => theme.colors.white};
+      z-index: 3;
+    }
+  }
+
+  @media ${({theme}) => theme.mediaMinWidth.tablet} {
+    width: 50%;
+
+  }
+
+    // ${transitionHoverIcon}
+`;
+
+
+
+
+
+
+
+

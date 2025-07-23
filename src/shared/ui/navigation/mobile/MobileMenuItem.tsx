@@ -2,11 +2,7 @@ import styled, {css} from "styled-components";
 import React from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
-
 import {plainTransition} from '../../../../app/styles/mixins';
-import {MobileDropdownMenu} from './MobileDropdownMenu';
-import {useTranslation} from 'react-i18next';
-import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
 
 type props = {
     id: string,
@@ -24,7 +20,7 @@ export const MobileMenuItem = ({
                                    setDropDown,
                                    collapsedDropdown
                                }: props) => {
-    const { t } = useTranslation();
+
     //const ref = useRef(null)
     const setAsDropDown = () => setDropDown(id)
     const toggleDropdown = () => {
@@ -39,43 +35,12 @@ export const MobileMenuItem = ({
 
 
         <S_MobileMenuItem $isThereDropDown = {!!dropDownId}>
-            {menuItem.subMenuItems
-                ? (
-                    <>
-                        <S_MobileDropdownNavLink
-                            //ref = {ref}
-                        >
-                            <S_NavLink href= {menuItem.url}
-                                       onClick = {setNavigationClose}
-                            >
-                                {t(menuItem.i18nKey)}
-                            </S_NavLink>
 
-                            <button onClick = {(e) => {
-                                e.stopPropagation();
-                                toggleDropdown();
-                            }}>
-                                <FontAwesomeIcon icon = {'icon-angle-right'}
-                                                 size = {'1x'}
-                                                 color = {"white"}
-                                />
-                            </button>
-                        </S_MobileDropdownNavLink>
-
-                        <MobileDropdownMenu mainUrl = {menuItem.url}
-                                            mainTitle = {t(menuItem.i18nKey)}
-                                            subMenuItems = {menuItem.subMenuItems}
-                                            isDropdown = {dropDownId === id}
-                                            setDropdown = {setAsDropDown}
-                                            setCollapsed = {collapsedDropdown}/>
-                    </>
-                )
-                :
 
                 <S_NavLink href = {menuItem.url} onClick = {setNavigationClose}>
-                    {t(menuItem.i18nKey)}
+                    {menuItem.title}
                 </S_NavLink>
-            }
+
         </S_MobileMenuItem>
 
 
