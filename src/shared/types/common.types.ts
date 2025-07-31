@@ -74,7 +74,8 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     subcategoryUrl: string;
     i18nKey: string,
     title: string;
-    description?: string;
+    descriptionUser: string[];
+    descriptionGoogle?: string;
     content?: string;
     images: ImageProps[];
     seo?: Seo;
@@ -83,20 +84,8 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     icon?: string;
 }
 
-export type SubcategoryItemData<T extends Category> =  SubcategoriesType<T> & {
-    // id: string,
-    // category?: T,
-    // categoryUrl?: string,
-    // subcategory?: SubcategoriesType<T>,
-    // categoryTitle?: string,
-    // subcategoryTitle?: string,
-    // subcategoryDescription?: string,
-    // i18nKey?: string,
-    // subcategoryUrl: string,
-    // image?: ImageProps,
+export type SubcategoryItemData<T extends Category> = SubcategoriesType<T> & {
     position: number,
-    // url?: string,
-    // icon?: string;
 }
 
 export type Seo = {

@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
+import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {ServiceCardDropdownText} from './ServiceCardDropdownText.tsx';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
 import {ReadMoreButtonAsButton} from '../../../shared/ui/buttons/ReadMoreButtonAsButton';
-import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 
 export type ServiceCardData = {
     toggleDescriptionCallback: () => void,
@@ -46,7 +45,8 @@ export const ServiceCard = ({
 
             </S_Box>
             <ServiceCardDropdownText itemProp = "description"
-                                     text = {data.description}
+                                     descriptionUser={data.descriptionUser}
+                                     descriptionGoogle={data.descriptionGoogle}
                                      isOpen = {isOpen}/>
 
         </StyledServiceCard>
