@@ -3,6 +3,7 @@ import {SchemaOrgData} from '../../../shared/types/common.types.ts';
 import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 import styled, {useTheme} from 'styled-components';
 import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon.tsx';
+import {plainTransition} from '../../../app/styles/mixins.ts';
 
 type Props = {
     descriptionUser: string[];
@@ -27,16 +28,14 @@ export const ServiceCardDropdownText = ({
 
     return (
         <S_ServiceCardDropdownText $maxHeight = {maxHeight} $height = {height}>
-
-            {descriptionUser.map((characteristic, index) =>
-
-
-                <li key = {`${id}-${index}`}>
-                    <FontAwesomeIcon icon = {'icon-check-circle'} size = {'1x'} color = {theme.colors.primary}/>
-                    {characteristic}
-                </li>
-            )}
-
+            <ul>
+                {descriptionUser.map((characteristic, index) =>
+                    <li key = {`${id}-${index}`}>
+                        <FontAwesomeIcon icon = {'icon-check-circle'} size = {'1x'} color = {theme.colors.primary}/>
+                        {characteristic}
+                    </li>
+                )}
+            </ul>
             <p {...textSchemaOrg}>
                 {descriptionGoogle}
             </p>
@@ -45,8 +44,15 @@ export const ServiceCardDropdownText = ({
 
 
 export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
-  p {
+  p, ul,li {
     padding: 0 1rem 0 1rem;
+  }
+
+  ul,li {
+    ${plainTransition()}
+    max-height: ${({$maxHeight}) => $maxHeight};
+    height: ${({$height}) => $height};
+   
   }
 `
 

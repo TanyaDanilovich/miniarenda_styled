@@ -84,7 +84,8 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "arenda-mini-exavatora",
             i18nKey: "subcategories.rentalExcavator",
             title: "Аренда мини-экскаватора",
-            descriptionUser: ["","",""],
+            descriptionUser: ["Большой выбор ковшей разного размера",
+                "Ковши: 150, 300, 400, 600 мм"],
             descriptionGoogle: "Мини-экскаватор — это универсальная компактная спецтехника, предназначенная для широкого спектра задач на ограниченных или труднодоступных участках. Благодаря своим небольшим габаритам, маневренности и высокой производительности, мини-экскаваторы широко используются как в частном строительстве, так и при городских и коммунальных работах.\n" +
                 "Эта техника особенно эффективна в условиях плотной застройки, вблизи существующих сооружений, на небольших участках и во дворах, где применение крупной строительной техники невозможно или нецелесообразно. Мини-экскаваторы выполняют работы без повреждения асфальта, тротуарной плитки, газонов и других элементов благоустройства.\n" +
                 "Основные сферы применения:\n" +
@@ -114,7 +115,8 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "arenda-gidromolota",
             i18nKey: "subcategories.rentalsHammer",
             title: "Аренда гидромолота",
-            descriptionUser: ["","",""],
+            descriptionUser: ["гидромолот массой от 70 до 170 кг",
+                "мин. проём:  \n ширина - 1 м, высота - 1,5 м"],
             descriptionGoogle: "Мини-экскаватор с гидромолотом обычно используется для выполнения демонтажных работ. Эта техника обеспечивает высокую производительность и эффективность в стеснённых условиях и на ограниченных площадках, включая работы внутри зданий и помещений с ограниченным доступом, где требуется особая точность и аккуратность.\n" +
                 "Область применения:\n" +
                 "•\tДемонтаж: бетонных и железобетонных конструкций, асфальтового покрытия и дорожных оснований.\n" +
@@ -135,7 +137,10 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "arenda-yamobura",
             i18nKey: "subcategories.rentalsDrill",
             title: "Аренда ямобура",
-            descriptionUser: ["","",""],
+            descriptionUser: [
+                "глубина буления до 3 м",
+                "шнеки: 200, 250, 300, 350, 400, 500, 600 мм",
+            ],
             descriptionGoogle: "Аренда мини-экскаватора с ямобуром — это отличное решение для выполнения бурения отверстий в земле, требующего мощности и точности. Благодаря своей маневренности, мини-экскаватор с ямобуром эффективно применяется для установки разнообразных опор и создания фундаментов в стесненных условиях, на участках с ограниченным доступом и вблизи существующих объектов." +
                 "Этот мини экскаватор с ямобуром используется для:\n" +
                 "•\tУстановки опор: под заборы (металлические, деревянные, бетонные), столбы освещения, камеры видеонаблюдения, дорожные знаки.\n" +
@@ -164,7 +169,8 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "kopanie-transhej",
             i18nKey: "subcategories.diggingTrench",
             title: "Копание траншей",
-            descriptionUser: ["","",""],
+            descriptionUser: [
+                "Ковши: 150, 300, 400, 600 мм"],
             descriptionGoogle: "Для копки траншей лучшим выбором является мини-экскаватор. Он оснащен сменными ковшами шириной от 20 см до 1 м и способен копать траншеи глубиной до 2,7 м.\n" +
                 "Эта услуга незаменима для:\n" +
                 "•\tПрокладки инженерных коммуникаций: водопровод, канализация, газопровод, электрокабель.\n" +
@@ -192,10 +198,9 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "kopanie-fundamentov",
             i18nKey: "subcategories.diggingFoundation",
             title: "Копание фундаментов",
-            descriptionUser: ["","",""],
+            descriptionUser: ["Глубина копания: до 2,2 метров.",
+                "Ширина ковшей: от 250 до 1000 мм."],
             descriptionGoogle: "Мини-экскаватор — применяется для копания ленточных фундаментов для жилых домов, коттеджей и хозяйственных построек различной сложности. \n" +
-                "Глубина копания: до 2,2 метров.\n" +
-                "Ширина ковшей: от 250 до 1000 мм.\n" +
                 "Использование мини-экскаватора при копании фундаментов обеспечивает высокую точность и аккуратность выполнения работ.\n",
             images: [{
                 src: fundament_main_480w,
@@ -207,23 +212,6 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["копка фундаментов", "земляные работы", "строительство"]
             }
         },
-        [SUBCATEGORY.STUMP_REMOVAL]: {
-            id: "subcategory-006",
-            subcategory: SUBCATEGORY.STUMP_REMOVAL,
-            group: SERVICE_GROUP.OTHER,
-            position: 3,
-            subcategoryUrl: "korchevanie-pnej",
-            i18nKey: "subcategories.stumpRemoval",
-            title: "",
-            descriptionUser: ["","",""],
-            descriptionGoogle: "",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Корчевание пней | Удаление корней",
-                metaDescription: "Услуги по корчеванию пней с применением спецтехники. Быстрое и эффективное удаление корней.",
-                metaKeywords: ["корчевание пней", "удаление корней", "земляные работы"]
-            }
-        },
         [SUBCATEGORY.DRILLING]: {
             id: "subcategory-007",
             subcategory: SUBCATEGORY.DRILLING,
@@ -232,7 +220,7 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "yamobur",
             i18nKey: "subcategories.drilling",
             title: "Бурение отверстий (ям)",
-            descriptionUser: ["","",""],
+            descriptionUser: ["шнеки: 200, 250, 300, 350, 400, 500, 600 мм"],
             descriptionGoogle: "Бурение отверстий с использованием мини-экскаватора — это эффективное решение для разнообразных строительных и ландшафтных задач. Благодаря компактным размерам и высокой маневренности, эта услуга широко применяется как в частном строительстве, так и на городских строительных площадках для подготовки лунок и посадочных мест.\n" +
                 "Основные сферы применения:\n" +
                 "•\tПодготовка лунок: для посадки деревьев и кустарников в ландшафтном дизайне.\n" +
@@ -248,40 +236,6 @@ export const MAIN_DATA: MainData = {
                 metaKeywords: ["бурение отверстий", "бурение ям", "услуги бурения", "буронабивные фундаменты", "установка опор", "усиление фундамента", "бурение в Минске"]
             }
         },
-        [SUBCATEGORY.GROUND_MOVEMENT]: {
-            id: "subcategory-008",
-            subcategory: SUBCATEGORY.GROUND_MOVEMENT,
-            group: SERVICE_GROUP.OTHER,
-            position: 5,
-            subcategoryUrl: "peremeschenie-grunta",
-            i18nKey: "subcategories.groundMovement",
-            title: "",
-            descriptionUser: ["","",""],
-            descriptionGoogle: "",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Перемещение грунта | Земляные работы",
-                metaDescription: "Услуги по перемещению грунта с использованием мини-техники. Работаем на любых участках.",
-                metaKeywords: ["перемещение грунта", "земляные работы", "мини-техника"]
-            }
-        },
-        [SUBCATEGORY.OTHER_GROUNDWORKS]: {
-            id: "subcategory-009",
-            subcategory: SUBCATEGORY.OTHER_GROUNDWORKS,
-            group: SERVICE_GROUP.OTHER,
-            position: 6,
-            subcategoryUrl: "prochie-zemlyanye-raboty",
-            i18nKey: "subcategories.otherGroundworks",
-            title: "",
-            descriptionUser: ["","",""],
-            descriptionGoogle: "",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Прочие земляные работы | Мини-экскаваторы",
-                metaDescription: "Земляные работы различной сложности с использованием мини-экскаваторов. Оперативное выполнение задач.",
-                metaKeywords: ["земляные работы", "мини-экскаватор", "строительные услуги"]
-            }
-        },
         [SUBCATEGORY.DISMANTLING]: {
             id: "subcategory-010",
             subcategory: SUBCATEGORY.DISMANTLING,
@@ -290,7 +244,10 @@ export const MAIN_DATA: MainData = {
             subcategoryUrl: "demontazh",
             i18nKey: "subcategories.dismantling",
             title: "",
-            descriptionUser: ["","",""],
+            descriptionUser: [
+                "гидромолот массой от 70 до 170 кг",
+                "мин. проём:  \n ширина - 1 м, высота - 1,5 м"
+            ],
             descriptionGoogle: "",
             images: [{src: img, alt: ""}],
             seo: {
