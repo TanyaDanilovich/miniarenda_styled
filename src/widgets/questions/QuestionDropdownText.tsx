@@ -8,10 +8,10 @@ export const QuestionDropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: P
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
-
+    const padding = isOpen ? "1rem 1rem 1rem 3.5rem" : "0 1rem 0 3.5rem";
 
     return (
-        <S_QuestionDropdownText $maxHeight = {maxHeight} $height = {height}>
+        <S_QuestionDropdownText $maxHeight = {maxHeight} $height = {height} $padding = {padding}>
             <p {...textSchemaOrg}>
                 {text}
             </p>
