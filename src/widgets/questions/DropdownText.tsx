@@ -11,13 +11,7 @@ export const DropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: Props) =>
 
 
     return (
-        <S_DropdownText $maxHeight = {maxHeight} $height = {height}
-                        {...(schemaOrg && {
-                            ...(schemaOrg.itemType && { itemType: schemaOrg.itemType }),
-                            ...(schemaOrg.itemProp && { itemProp: schemaOrg.itemProp }),
-                            ...(schemaOrg.itemScope && { itemScope: schemaOrg.itemScope })
-                        })}
-        >
+        <S_DropdownText $maxHeight = {maxHeight} $height = {height}>
             <p {...textSchemaOrg}>
                 {text}
             </p>
@@ -35,9 +29,7 @@ export const S_DropdownText = styled.div<{ $maxHeight: string, $height: string }
     max-height: ${({$maxHeight}) => $maxHeight};
     height: ${({$height}) => $height};
 
-    ${({$height}) => $height !== "0" && css`
-      padding: 1rem 1rem 1rem 3.5rem;
-    `}
+
   }
 
 `

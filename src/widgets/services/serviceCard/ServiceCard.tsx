@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import React from 'react';
 import {S_Box} from '../../../shared/styled/S_Box';
-import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
+import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
@@ -22,44 +22,32 @@ export const ServiceCard = ({
                             }: props) => {
 
     const cardPadding = getResponsiveSize(BASE, BASE * 3)
+    const cardPaddingBottom = isOpen ? "1rem" : "0"
     return (
         <StyledServiceCard $paddingInline = {cardPadding}>
             {/*<StyledServiceCard itemScope itemType = "http://schema.org/Product" itemProp="itemReviewed">*/}
             {data.image && (
                 <S_ImageContainer>
                     <ResponsiveImage image = {data.image}/>
-                    {/*<S_Image src = {data.image.src} alt = {data.image.alt}/>*/}
-                    {/*<HoverIcons link = {data.url} image = {data.image}/>*/}
                 </S_ImageContainer>
             )}
 
-            {/*<S_Flex $gap = {"1rem"} $style = {"margin-top: 1rem"}>*/}
-            {/*    <FontAwesomeIcon icon = {faFolderOpen} size = {'1x'} color = {theme.colors.primary}/>*/}
-            {/*    <Link to = {data.categoryUrl}>{t(`categories.${data.category}.title`)}</Link>*/}
-            {/*    /!*<Link to={`/${data.categoryUrl}`}>{t(`categories.${data.category}.title`)}</Link>*!/*/}
-            {/*</S_Flex>*/}
-
-
             <ServiceCardTitle itemProp = "name" $paddingInline = {cardPadding}>
-                {/*<Link to = {`/${data.url}`}>{t(`${data.i18nKey}.title`)}</Link>*/}
                 {data.title}
             </ServiceCardTitle>
 
-            {/*<ServiceCardText>*/}
-            {/*    {t(`${data.i18nKey}.description`)}*/}
-            {/*</ServiceCardText>*/}
 
-            <S_Box $marginTop = {"1rem"} $paddingLeft = {cardPadding} $paddingRight = {cardPadding}>
-                {/*<ReadMoreButton url = {`/${data.url}`}/>*/}
+            <S_Box $marginTop = {"1rem"} $paddingLeft = {cardPadding} $paddingRight = {cardPadding}
+                   $paddingBottom = {cardPaddingBottom}>
+
                 <ReadMoreButtonAsButton onClick = {toggleDescriptionCallback}
                                         title = {isOpen ? "Свернуть" : "Подробнее"}/>
-                {/*<ContactUsButton/>*/}
+
             </S_Box>
-            <div itemProp = "description">
-                <DropdownText
-                    text = {data.description}
-                    isOpen = {isOpen}/>
-            </div>
+            <DropdownText itemProp = "description"
+                          text = {data.description}
+                          isOpen = {isOpen}/>
+
         </StyledServiceCard>
     );
 };
@@ -110,19 +98,5 @@ export const ServiceCardTitle = styled.h3 <{ $paddingInline: string }>`
   @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
     min-height: 2.4em;
   }
-  // &:hover {
-    //   color: ${({theme}) => theme.colors.primary};
-  // }
-
-
 `;
 
-export const ServiceCardText = styled.p<{}>`
-  flex-grow: 1;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
-  position: relative;`;
