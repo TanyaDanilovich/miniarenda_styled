@@ -3,8 +3,8 @@ import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {plainTransition} from '../../app/styles/mixins';
 import {Question} from './Question';
-import {DropdownText} from './DropdownText';
 import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
+import {QuestionDropdownText} from './QuestionDropdownText.tsx';
 
 
 type props = {
@@ -43,7 +43,7 @@ export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOp
             </S_Flex>
 
 
-            <DropdownText text = {answer} isOpen = {isOpen} schemaOrg = {schemaOrg} textSchemaOrg = {textSchemaOrg}/>
+            <QuestionDropdownText text = {answer} isOpen = {isOpen} schemaOrg = {schemaOrg} textSchemaOrg = {textSchemaOrg}/>
 
         </S_FullQuestion>);
 };

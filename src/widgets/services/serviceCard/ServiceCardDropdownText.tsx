@@ -1,9 +1,9 @@
 import React from 'react';
-import {SchemaOrgData} from '../../shared/types/common.types';
-import {S_DropdownText} from '../../shared/styled/S_DropdownText.ts';
+import {SchemaOrgData} from '../../../shared/types/common.types.ts';
+import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 
 type Props = { text: string, isOpen: boolean, schemaOrg?: SchemaOrgData, textSchemaOrg?: SchemaOrgData };
-export const DropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: Props) => {
+export const ServiceCardDropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: Props) => {
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
