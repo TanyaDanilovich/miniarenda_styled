@@ -33,7 +33,7 @@ export const S_UserName = styled.div<{}>`
     //background-color: ${({theme}) => theme.colors.red.b100};
   //flex-grow: 1;
   font-size: ${({theme}) => theme.fonts.size.p};
-  font-weight: ${({theme}) => theme.fonts.weight.bold};
+  font-weight: ${({theme}) => theme.fonts.weight.semiBold};
   //text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -58,34 +58,4 @@ export const S_ReviewCard = styled.div<{}>`
     max-width: 100%;
     min-width: 0;
   }
-
-  // &:before {
-  //   content: close-quote;
-  //   position: absolute;
-  //   z-index: 0;
-  //   display: block;
-  //   height: 4rem;
-  //   width: 4rem;
-  //   bottom: 0;
-    //   ${outlinedNestedDiv};
-  //   right: 0;
-    //      background-color: ${({theme}) => theme.colors.red.b100};
-    //   box-shadow: ${({theme}) => theme.shadow.full};
-  // }
-
-  // &:after {
-  //   content: " ";
-  //   position: absolute;
-  //   z-index: -3;
-  //   display: block;
-  //   width: 96%;
-  //   height: 60px;
-  //   bottom: 4px;
-  //   left: 0;
-  //   transform-origin: left bottom;
-  //   transform: rotate(3deg);
-    //   background-color: ${({theme}) => theme.colors.white};
-  // }
-
-    //    ${outlinedNestedDiv}
 `

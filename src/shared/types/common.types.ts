@@ -18,9 +18,9 @@ export type SchemaOrgData = {
 export type ImageProps = {
     src: string,
     srcSet?: {
-        480: string,
-        768: string,
-        1200: string,
+        480?: string,
+        768?: string,
+        1200?: string,
     },
     alt: string
 }

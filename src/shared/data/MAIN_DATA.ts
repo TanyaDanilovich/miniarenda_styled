@@ -1,7 +1,6 @@
 import {MainData} from '../types/common.types';
 import {CATEGORY} from '../constants/CATEGORY';
 import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
-import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import excavator from '../../assets/svg/exavator.svg';
 import hammer from '../../assets/svg/gidromolot.svg';
