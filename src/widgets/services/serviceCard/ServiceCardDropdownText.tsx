@@ -20,6 +20,8 @@ export const ServiceCardDropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}
 
 
 export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
-
+  p {
+    padding: 0 1rem 0 1rem;
+  }
 `
 
