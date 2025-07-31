@@ -6,9 +6,10 @@ import {ImageHover, outline, plainTransition, transitionHoverIcon} from '../../.
 import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
-import {DropdownText, S_DropdownText} from '../../questions/DropdownText';
+import {DropdownText} from '../../questions/DropdownText';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
 import {ReadMoreButtonAsButton} from '../../../shared/ui/buttons/ReadMoreButtonAsButton';
+import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 
 export type ServiceCardData = {
     toggleDescriptionCallback: () => void,
