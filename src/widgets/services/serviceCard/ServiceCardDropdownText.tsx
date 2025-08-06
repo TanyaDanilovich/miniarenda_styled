@@ -24,18 +24,18 @@ export const ServiceCardDropdownText = ({
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"
-
+    const listPadding = isOpen ? "0.5rem 1rem 0.5rem 1rem" : "0 1rem 0 1rem"
 
     return (
         <S_ServiceCardDropdownText $maxHeight = {maxHeight} $height = {height}>
-            <ul>
+            <S_DropdownTextList $maxHeight = {maxHeight} $height = {height} $padding = {listPadding}>
                 {descriptionUser.map((characteristic, index) =>
                     <li key = {`${id}-${index}`}>
                         <FontAwesomeIcon icon = {'icon-check-circle'} size = {'1x'} color = {theme.colors.primary}/>
-                        {characteristic}
+                        <span>{characteristic}</span>
                     </li>
                 )}
-            </ul>
+            </S_DropdownTextList>
             <p {...textSchemaOrg}>
                 {descriptionGoogle}
             </p>
@@ -44,15 +44,34 @@ export const ServiceCardDropdownText = ({
 
 
 export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
-  p, ul,li {
-    padding: 0 1rem 0 1rem;
-  }
 
-  ul,li {
-    ${plainTransition()}
-    max-height: ${({$maxHeight}) => $maxHeight};
-    height: ${({$height}) => $height};
-   
+  //padding: 0 1rem 0 1rem;
+
+  ${plainTransition()}
+  p {
+    height: 1px;
+    overflow: hidden;
   }
 `
 
+export const S_DropdownTextList = styled.ul<{
+    $maxHeight: string,
+    $height: string,
+    $padding?: string
+}>`
+
+  padding: ${({$padding}) => $padding || "0 1rem 0 1rem"};
+
+
+  ${plainTransition()}
+  max-height: ${({$maxHeight}) => $maxHeight ||"0"};
+  height: ${({$height}) => $height};
+
+  li:not(:last-child) {
+    padding-bottom: 0.5rem;
+  }
+
+  li >span {
+    padding-left: 0.5rem;
+  }
+`

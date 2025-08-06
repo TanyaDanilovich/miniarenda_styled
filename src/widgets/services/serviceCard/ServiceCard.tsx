@@ -24,7 +24,7 @@ export const ServiceCard = ({
     const cardPadding = getResponsiveSize(BASE, BASE * 3)
     const cardPaddingBottom = isOpen ? "1rem" : "0"
     return (
-        <StyledServiceCard $paddingInline = {cardPadding}>
+        <StyledServiceCard $paddingInline = {cardPadding} id = {data.subcategoryUrl}>
             {/*<StyledServiceCard itemScope itemType = "http://schema.org/Product" itemProp="itemReviewed">*/}
             {data.image && (
                 <S_ImageContainer>
@@ -45,8 +45,8 @@ export const ServiceCard = ({
 
             </S_Box>
             <ServiceCardDropdownText itemProp = "description"
-                                     descriptionUser={data.descriptionUser}
-                                     descriptionGoogle={data.descriptionGoogle}
+                                     descriptionUser = {data.descriptionUser}
+                                     descriptionGoogle = {data.descriptionGoogle}
                                      isOpen = {isOpen}/>
 
         </StyledServiceCard>

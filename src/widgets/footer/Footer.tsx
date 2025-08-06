@@ -20,6 +20,7 @@ export const Footer = ({}: props) => {
     console.log(theme);
     const fullServicesData = API.getFullSubcategoriesData();
 
+
     return (
         <S_Footer id = "footer">
             <S_FooterContainer>
@@ -70,13 +71,15 @@ export const Footer = ({}: props) => {
                     <S_FooterItem>
                         <S_FooterItemTitle><span>{footerData.ourServices}</span></S_FooterItemTitle>
                         <ul>
-                            {fullServicesData.map((service, index) => (
-                                <li key = {`${service.id}-${index}`}>
-                                    <Link to = {ROUTES_PATHS.services.url}>
-                                        {ROUTES_PATHS.services.title}
+                            {fullServicesData.map((service, index) => {
+                                console.log(`#${service.subcategoryUrl}`);
+
+                                return <li key = {`${service.id}-${index}`}>
+                                    <Link to = {`#${service.subcategoryUrl}`}>
+                                        {service.title}
                                     </Link>
                                 </li>
-                            ))}
+                            })}
                         </ul>
                     </S_FooterItem>
 
