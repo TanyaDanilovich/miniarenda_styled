@@ -1,4 +1,4 @@
-import React, {useEffect, useId, useState} from 'react';
+import {useEffect, useId, useState} from 'react';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {ReviewCard} from '../../reviews/reviewCard/ReviewCard';
 

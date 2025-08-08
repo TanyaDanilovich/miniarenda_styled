@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled, {css} from 'styled-components';
 import {S_OuterContainer} from '../../styled/S_OuterContainer';
 import {getResponsiveSize} from '../../utils/getResponsiveSize';

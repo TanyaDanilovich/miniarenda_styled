@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {Rating} from '../../../shared/ui/rating/Rating';
 import styled from 'styled-components';
 import bgImg from "../../../assets/svg/google-logo.svg"

@@ -1,6 +1,6 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
-import React from 'react';
+
 import {S_Box} from '../../shared/styled/S_Box';
 import {S_Image} from '../../shared/styled/S_Image';
 import img from '../../assets/images/servises/exavator/IMG_20190608_115344.jpg';

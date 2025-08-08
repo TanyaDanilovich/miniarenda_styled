@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Services} from '../../widgets/services/Services';
 import {Machineries} from '../../widgets/machineries/Machineries';
 import {Reviews} from '../../widgets/reviews/Reviews';

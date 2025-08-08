@@ -2,7 +2,7 @@ import styled, {useTheme} from "styled-components";
 import {outline} from '../../app/styles/mixins';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import React from 'react';
+
 import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, {css} from 'styled-components';
 import {S_Image} from '../../../shared/styled/S_Image';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
@@ -9,9 +8,8 @@ import {ContactUsButton} from '../../../shared/ui/buttons/ContactUsButton';
 import {PhoneLink, S_PhoneLink} from '../../../shared/ui/phoneLink/PhoneLink';
 import {S_Flex} from '../../../shared/styled/S_Flex';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
-import {ImageProps} from '../../../shared/types/common.types';
+import {type ImageProps} from '../../../shared/types/common.types';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
-import {outline} from '../../../app/styles/mixins';
 import {S_InnerContainer} from '../../../shared/styled/S_InnerContainer';
 
 type props = {
@@ -22,7 +20,7 @@ type props = {
 };
 
 
-export const HeroSlider = ({mainText, additionalText, image, index}: props) => {
+export const HeroSlider = ({mainText, additionalText, image}: props) => {
     //console.log(image.src);
     return (
         <S_HeroSlider>

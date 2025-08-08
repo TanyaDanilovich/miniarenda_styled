@@ -1,6 +1,5 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ReadMoreButton} from './S_ReadMoreButton';
-import {S_ReadMoreButtonAsButton} from './S_ReadMoreButtonAsButton';
 import FontAwesomeIcon from '../icon/FontAwesomeIcon';
 
 

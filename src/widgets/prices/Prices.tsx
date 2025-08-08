@@ -1,8 +1,7 @@
-import React from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import styled, {useTheme} from 'styled-components';
-import {outline, sectionMargin, sectionPadding} from '../../app/styles/mixins';
+import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import image from '../../assets/images/price/768/webp/price-768w.webp';
 import {S_Image} from '../../shared/styled/S_Image';

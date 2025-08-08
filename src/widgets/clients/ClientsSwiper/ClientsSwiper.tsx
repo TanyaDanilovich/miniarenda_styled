@@ -1,7 +1,4 @@
-import React from 'react';
-
 import {S_ClientsSwiper} from './S_ClientsSwiper';
-import {useTheme} from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import img1 from '../../../assets/images/clients/aquapark.png'

@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {S_NavLink} from '../S_NavLink';
-import {MenuItemType} from '../../../types/common.types';
-import {DesktopDropdownMenu} from './DesktopDropdownMenu';
+import {type MenuItemType} from '../../../types/common.types';
 import {plainTransition} from '../../../../app/styles/mixins';
-import FontAwesomeIcon from '../../icon/FontAwesomeIcon';
 
 type props = {
     menuItem: MenuItemType,
@@ -12,7 +10,7 @@ type props = {
 };
 export const DesktopMenuItem = ({menuItem, setClose}: props) => {
 
-    const [isDropdown, setIsDropdown] = useState(false);
+    const [_, setIsDropdown] = useState(false);
     const setDropdown = () => setIsDropdown(true)
     const setCollapsed = () => setIsDropdown(false)
 

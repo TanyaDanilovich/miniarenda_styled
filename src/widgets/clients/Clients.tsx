@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {S_Clients} from './S_Clients';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ClientsSwiper} from './ClientsSwiper/ClientsSwiper';

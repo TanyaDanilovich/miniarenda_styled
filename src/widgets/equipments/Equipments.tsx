@@ -1,6 +1,6 @@
 import styled, {useTheme} from 'styled-components';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import React from 'react';
+
 import {EquipmentCard} from './EquipmentCard';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {API} from '../../app/api/API';

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, {useId} from 'react';
+import {useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {DesktopMenuItem} from './DesktopMenuItem';
 

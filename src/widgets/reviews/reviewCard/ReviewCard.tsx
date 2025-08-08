@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {S_ReviewCard, S_UserLetter, S_UserName} from './S_ReviewsCard';
 import {ReviewContent} from './ReviewContent';
 import {S_Flex} from '../../../shared/styled/S_Flex';

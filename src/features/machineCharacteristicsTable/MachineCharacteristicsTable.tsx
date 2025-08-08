@@ -1,12 +1,12 @@
-import React from 'react';
-import {MachineryData} from '../../shared/types/common.types';
+
+import {type MachineryData} from '../../shared/types/common.types';
 import {S_Table, S_TableTitle, S_Tr} from '../../shared/styled/S_Table';
 import styled from 'styled-components';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 
 type props = Pick<MachineryData, 'id' | 'title' | 'characteristics'> & {};
 
-export const MachineCharacteristicsTable = ({title, characteristics, id, }: props) => {
+export const MachineCharacteristicsTable = ({ characteristics, id, }: props) => {
 
     return (
         <S_MachineCharacteristicsTable>

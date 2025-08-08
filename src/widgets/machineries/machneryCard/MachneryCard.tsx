@@ -1,6 +1,6 @@
 import styled, {useTheme} from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import React from 'react';
+
 import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {MachineryData} from '../../../shared/types/common.types';

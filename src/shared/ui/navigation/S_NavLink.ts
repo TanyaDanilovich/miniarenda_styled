@@ -1,8 +1,7 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import {outline} from '../../../app/styles/mixins';
 import {getResponsiveSize} from '../../utils/getResponsiveSize';
 import {BASE} from '../../constants/constants';
-import {NavLink} from 'react-router-dom';
 
 
 export const S_NavLink = styled.a<{}>`

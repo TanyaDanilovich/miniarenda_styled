@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {GoogleLink} from './googleLink/GoogleLink';
 import {ReviewSwiper} from '../swipers/reviewSwiper/ReviewSwiper';

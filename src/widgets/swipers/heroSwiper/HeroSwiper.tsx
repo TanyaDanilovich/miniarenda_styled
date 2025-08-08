@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import {heroData} from '../../hero/heroData';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';

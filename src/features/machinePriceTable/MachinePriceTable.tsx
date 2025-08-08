@@ -1,6 +1,5 @@
-import React from 'react';
 import {S_Table, S_TableTitle, S_Tr} from '../../shared/styled/S_Table';
-import {Characteristic, MachineryData, MachineryPriceCharacteristicKeys} from '../../shared/types/common.types';
+import {type MachineryData} from '../../shared/types/common.types';
 import styled from 'styled-components';
 
 type props = Pick<MachineryData, 'id' | 'priceCharacteristics' | 'tableTitle'> & {};

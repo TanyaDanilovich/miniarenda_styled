@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {plainTransition} from '../../../app/styles/mixins';
-import {S_LinkAsButton} from './S_LinkAsButton';
 
 export const S_ReadMoreButtonAsButton = styled.button<{}>`
   width: max-content;

@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {outline, plainTransition} from '../../../../app/styles/mixins';
 import {BurgerButton} from '../../BurgerButton';
-import React, {useEffect, useId} from 'react';
+import {useEffect, useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {MobileMenuItem} from './MobileMenuItem';
 import {StyledMain} from '../../../../pages/main/Main';

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 import {SwiperProps} from 'swiper/swiper-react';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';

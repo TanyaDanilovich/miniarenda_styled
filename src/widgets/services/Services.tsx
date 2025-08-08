@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import React, {useEffect, useId, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {ServiceCard} from './serviceCard/ServiceCard';
 import {S_Flex} from '../../shared/styled/S_Flex';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {S_OrderModal} from './S_OrderModal';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {S_Flex} from '../../shared/styled/S_Flex';

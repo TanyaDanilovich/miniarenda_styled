@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import React from 'react';
+
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {MachineryCard} from './machneryCard/MachneryCard';
-import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
-import {MachineryCharacteristicKeys} from '../../shared/types/common.types';
+import {sectionPadding} from '../../app/styles/mixins';
+import {type MachineryCharacteristicKeys} from '../../shared/types/common.types';
 import {API} from '../../app/api/API';
-import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-import {BASE} from '../../shared/constants/constants';
+
 
 type props = {};
 
@@ -52,18 +51,16 @@ export const Machineries = ({}: props) => {
 
 
 export const StyledMachineries = styled.section<{}>`
-  
-  ${sectionPadding};
-  background-color: ${({theme}) => theme.colors.black};
-  color: ${({theme}) => theme.colors.white};
-  
-  @media ${({theme}) => theme.mediaMinWidth.tablet} {
-  ${S_Flex} {
-    flex-direction: row;
-    gap: 2rem;
 
-  }
-}
+    ${sectionPadding};
+    background-color:${({theme}) => theme.colors.black};
+    color:${({theme}) => theme.colors.white};
+    @media ${({theme}) => theme.mediaMinWidth.tablet}{
+        ${S_Flex}{
+            flex-direction:row;
+            gap:2rem;
+        }
+    }
 
 `
 

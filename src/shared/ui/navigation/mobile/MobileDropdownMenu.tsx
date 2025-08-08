@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import React, {useId} from 'react';
+import {useId} from 'react';
 import {S_NavLink} from '../S_NavLink';
 import {MenuItemType} from '../../../types/common.types';
 import {S_MobileMenuItem} from './MobileMenuItem';

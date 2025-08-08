@@ -10,5 +10,5 @@ export const S_Span = styled.span<{
   color: ${({$color, theme}) => $color || theme.colors.dark};
   font-weight: ${({$fontWeight, theme}) => $fontWeight || theme.fonts.weight.regular};
   font-size: ${({$fontSize, theme}) => $fontSize || theme.fonts.weight.regular};
-  background-color: ${({$background, theme}) => $background || 'transparent'};
+  background-color: ${({$background}) => $background || 'transparent'};
 `;

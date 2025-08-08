@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, {useTheme} from 'styled-components';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
@@ -11,10 +10,10 @@ import FontAwesomeIcon from '../../shared/ui/icon/FontAwesomeIcon';
 const Skills = () => {
     const theme = useTheme()
     return (
-        <SkillsSection id={"skills"}>
+        <SkillsSection id = {"skills"}>
             <SkillsWrapper>
                 <SkillsContent>
-                    <SectionTitle title={"Почему мы?"}/>
+                    <SectionTitle title = {"Почему мы?"}/>
 
                 </SkillsContent>
 
@@ -78,38 +77,23 @@ export default Skills;
 
 // Общая секция
 const SkillsSection = styled.section`
-  ${sectionMargin};
-  ${sectionPadding};
-  //padding-block: ${getResponsiveSize(BASE, BASE * 3)};
-  background-color: ${({theme}) => theme.colors.black};
-  color: ${({theme}) => theme.colors.white};
+    ${sectionMargin};
+    ${sectionPadding};
+        //padding-block: ${getResponsiveSize(BASE, BASE * 3)};
+    background-color:${({theme}) => theme.colors.black};
+    color:${({theme}) => theme.colors.white};
 
 `;
 
 const SkillsWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 1rem;
 `;
 
 const SkillsContent = styled.div`
-  text-align: center;
-  margin-bottom: 2rem;
-`;
-
-const SkillsTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: ${({theme}) => theme.colors.primary};
-  @media ${({theme}) => theme.mediaMinWidth.tablet} {
-    font-size: 2.5rem;
-  }
-`;
-
-const SkillsText = styled.div`
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  color: ${({theme}) => theme.colors.text};
+    text-align:center;
+    margin-bottom:2rem;
 `;
 
 // Сетка для элементов
@@ -120,51 +104,44 @@ const SkillsGrid = styled(S_Flex)`
 // Индивидуальные элементы
 const SkillsItem = styled(S_Flex)`
 
-  width: 100%;
-  padding: ${getResponsiveSize(BASE / 2, BASE * 2)};
-  margin-block: ${getResponsiveSize(BASE, BASE * 2)};
-  @media ${({theme}) => theme.mediaMinWidth.mobile} {
-    width: calc(50% - 0.5rem);
-  }
-
-  @media ${({theme}) => theme.mediaMinWidth.computer} {
-    width: calc(25% - 0.75rem);
-  }
-  background-color: ${({theme}) => theme.colors.bg_primary};
-  //padding: 2rem;
-  box-shadow: ${({theme}) => theme.shadow.full};
-  text-align: center;
+    width:100%;
+    padding:${getResponsiveSize(BASE / 2, BASE * 2)};
+    margin-block:${getResponsiveSize(BASE, BASE * 2)};
+    @media ${({theme}) => theme.mediaMinWidth.mobile}{
+        width:calc(50% - 0.5rem);
+    }
+    @media ${({theme}) => theme.mediaMinWidth.computer}{
+        width:calc(25% - 0.75rem);
+    }
+    background-color:${({theme}) => theme.colors.bg_primary};
+    //padding: 2rem;
+    box-shadow:${({theme}) => theme.shadow.full};
+    text-align:center;
 `;
 
 const SkillsIconContainer = styled(S_Flex)`
-  display: inline-flex;
-  width: 4rem;
-  height: 4rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  background-color: ${({theme}) => theme.colors.primary};
-  border-radius: 50%;
-`;
-
-const SkillsIcon = styled(FontAwesomeIcon)`
-  font-size: 2rem;
-  color: ${({theme}) => theme.colors.white};
+    display:inline-flex;
+    width:4rem;
+    height:4rem;
+    padding:1rem;
+    margin-bottom:1rem;
+    background-color:${({theme}) => theme.colors.primary};
+    border-radius:50%;
 `;
 
 const SkillsInnerContent = styled.div`
-  color: ${({theme}) => theme.colors.text};
+    color:${({theme}) => theme.colors.bg_primary};
 `;
 
 const SkillsInnerTitle = styled.h3`
-  text-transform: uppercase;
-  font-size: ${getResponsiveSize(16, 20)};
-  margin-bottom: 1rem;
-  color: ${({theme}) => theme.colors.primary};
+    text-transform:uppercase;
+    font-size:${getResponsiveSize(16, 20)};
+    margin-bottom:1rem;
+    color:${({theme}) => theme.colors.primary};
 `;
 
 const SkillsInnerItem = styled.p`
-  
+
 
 `;
 

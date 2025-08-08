@@ -1,8 +1,8 @@
 import {useEffect, useRef} from 'react';
-import {SwiperContainer} from 'swiper/element/bundle';
+import {type SwiperContainer} from 'swiper/element/bundle';
 import "swiper/swiper-bundle.css";
-import {PropsWithChildren} from '../../types/common.types';
-import {AutoplayOptions, SwiperOptions} from 'swiper/types';
+import {type PropsWithChildren} from '../../types/common.types';
+import {type AutoplayOptions, type SwiperOptions} from 'swiper/types';
 import {Swiper} from 'swiper';
 import {Autoplay, Navigation} from 'swiper/modules';
 

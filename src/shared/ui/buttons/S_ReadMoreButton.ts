@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {outline, plainTransition} from '../../../app/styles/mixins';
+import { plainTransition} from '../../../app/styles/mixins';
 import {S_LinkAsButton} from './S_LinkAsButton';
 
 export const S_ReadMoreButton = styled(S_LinkAsButton)<{}>`

@@ -1,10 +1,10 @@
-import React from 'react';
-import {SchemaOrgData} from '../../shared/types/common.types';
+
+import {type SchemaOrgData} from '../../shared/types/common.types';
 import {S_DropdownText} from '../../shared/styled/S_DropdownText.ts';
 import styled from 'styled-components';
 
 type Props = { text: string, isOpen: boolean, schemaOrg?: SchemaOrgData, textSchemaOrg?: SchemaOrgData };
-export const QuestionDropdownText = ({text, isOpen, schemaOrg, textSchemaOrg}: Props) => {
+export const QuestionDropdownText = ({text, isOpen, textSchemaOrg}: Props) => {
 
     const maxHeight = isOpen ? "24rem" : "0";
     const height = isOpen ? "100%" : "0"

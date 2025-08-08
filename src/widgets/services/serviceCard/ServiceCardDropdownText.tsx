@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 import styled, {useTheme} from 'styled-components';
 import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon.tsx';
@@ -6,6 +6,7 @@ import {plainTransition} from '../../../app/styles/mixins.ts';
 import type {SchemaOrgData} from '../../../shared/types/common.types.ts';
 
 type Props = {
+    id: string,
     descriptionUser: string[];
     descriptionGoogle?: string;
     isOpen: boolean,
@@ -17,7 +18,6 @@ export const ServiceCardDropdownText = ({
                                             descriptionUser,
                                             descriptionGoogle,
                                             isOpen,
-                                            schemaOrg,
                                             textSchemaOrg
                                         }: Props) => {
     const theme = useTheme();
@@ -45,13 +45,13 @@ export const ServiceCardDropdownText = ({
 
 export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
 
-  //padding: 0 1rem 0 1rem;
+    //padding: 0 1rem 0 1rem;
 
-  ${plainTransition()}
-  p {
-    height: 1px;
-    overflow: hidden;
-  }
+    ${plainTransition()}
+    p{
+        height:1px;
+        overflow:hidden;
+    }
 `;
 
 export const S_DropdownTextList = styled.ul<{
@@ -60,18 +60,16 @@ export const S_DropdownTextList = styled.ul<{
     $padding?: string
 }>`
 
-  padding: ${({$padding}) => $padding || "0 1rem 0 1rem"};
+    padding:${({$padding}) => $padding || "0 1rem 0 1rem"};
+    ${plainTransition()}
+    max-height:${({$maxHeight}) => $maxHeight || "0"};
+    height:${({$height}) => $height};
 
+    li:not(:last-child){
+        padding-bottom:0.5rem;
+    }
 
-  ${plainTransition()}
-  max-height: ${({$maxHeight}) => $maxHeight ||"0"};
-  height: ${({$height}) => $height};
-
-  li:not(:last-child) {
-    padding-bottom: 0.5rem;
-  }
-
-  li >span {
-    padding-left: 0.5rem;
-  }
+    li > span{
+        padding-left:0.5rem;
+    }
 `;

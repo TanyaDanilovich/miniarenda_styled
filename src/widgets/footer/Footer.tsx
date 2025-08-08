@@ -1,11 +1,9 @@
-import styled, {useTheme} from "styled-components";
+import styled, {useTheme, type DefaultTheme} from "styled-components";
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_HideContent} from '../../shared/styled/S_HideContent';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
-
-import React from 'react';
 import {ROUTES_PATHS} from '../../shared/constants/ROUTES_PATHS';
 import {Link} from '../../shared/ui/Link';
 import {API} from '../../app/api/API';
@@ -16,7 +14,7 @@ import {footerData} from './footerData.ts';
 type props = {};
 
 export const Footer = ({}: props) => {
-    const theme = useTheme();
+    const theme: DefaultTheme = useTheme();
     console.log(theme);
     const fullServicesData = API.getFullSubcategoriesData();
 
@@ -120,168 +118,168 @@ const S_FooterContainer = styled(S_OuterContainer)<{}>`
 `
 
 export const S_Footer = styled.footer<{}>`
-  padding-block: 1rem;
-  background-color: ${({theme}) => theme.colors.bg_primary};
-  color: ${({theme}) => theme.colors.white};
+    padding-block:1rem;
+    background-color:${({theme}) => theme.colors.bg_primary};
+    color:${({theme}) => theme.colors.white};
 
-  & ${S_FooterContainer} ${S_Flex} {
-    flex-direction: column;
-
-  }
-
-  small {
-    text-align: center;
-    padding-top: 1rem;
-    display: block;
-  }
-
-  ${S_ImageContainer} {
-    width: 50%;
-  }
-
-  @media ${({theme}) => theme.mediaMinWidth.mobile} {
-    & > ${S_FooterContainer} > ${S_Flex} {
-      flex-direction: row;
-      flex-wrap: wrap;
-
+    & ${S_FooterContainer} ${S_Flex}{
+        flex-direction:column;
     }
-  }
-  @media ${({theme}) => theme.mediaMinWidth.computer} {
-    ${S_ImageContainer} {
-      //width: 100%;
+
+    small{
+        text-align:center;
+        padding-top:1rem;
+        display:block;
     }
-  }
+
+    ${S_ImageContainer}{
+        width:50%;
+    }
+
+    @media ${({theme}) => theme.mediaMinWidth.mobile}{
+        & > ${S_FooterContainer} > ${S_Flex}{
+            flex-direction:row;
+            flex-wrap:wrap;
+        }
+    }
+    @media ${({theme}) => theme.mediaMinWidth.computer}{
+        ${S_ImageContainer}{
+            //width: 100%;
+        }
+    }
 `;
 
 
 export const S_FooterItem = styled.div<{}>`
-  padding-block: 0.5rem;
+    padding-block:0.5rem;
 
-  & > p:first-of-type {
-    margin-bottom: 1rem;
-  }
-
-
-  li {
-    padding: 0.5rem;
-  }
-
-  //span {
-  //  position: relative;
-  //}
-  span:before,
-  span:after {
-    position: absolute;
-    content: "";
-    height: 5px;
-    bottom: 0;
-  }
-
-  span:before {
-    width: 40%;
-    background-color: ${({theme}) => theme.colors.white};
-    clip-path: polygon(0 0, 91% 0%, 100% 100%, 9% 100%);
-  }
-
-  span:after {
-    width: 60%;
-    right: 0;
-    background-color: ${({theme}) => theme.colors.primary};
-    clip-path: polygon(0 0, 96% 0%, 100% 100%, 6% 100%);
-  }
-
-  //miniarenda
-  &:first-child {
-    //width: 100%;
-    & p:nth-of-type(-n+2),
-    & p:nth-last-of-type(-n+2) {
-
+    & > p:first-of-type{
+        margin-bottom:1rem;
     }
 
-    & p:nth-of-type(2n):not(p:last-of-type) {
-      margin-bottom: 1rem;
+    li{
+        padding:0.5rem;
     }
 
-    //phone
-    p:has(a) {
-      font-weight: ${({theme}) => theme.fonts.weight.bold};
-      font-size: ${getResponsiveSize(25, 25)};
-      padding-left: 1rem;
+    //span {
+    //  position: relative;
+    //}
 
-      svg {
-        position: relative;
-        left: -1rem
-      }
+    span:before,
+    span:after{
+        position:absolute;
+        content:"";
+        height:5px;
+        bottom:0;
     }
 
-  }
-
-  //наша техника
-  ${S_ImageContainer} {
-    margin-bottom: 1rem;
-  }
-
-  &:has(img) {
-    a {
-      padding: 0.25rem;
-    }
-  }
-
-
-  //Разделы
-  &:nth-child(3) a {
-    position: relative;
-    padding-left: 1.5rem;
-
-    &:before {
-      position: absolute;
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-bottom: 3px solid ${({theme}) => theme.colors.primary};
-      border-right: 3px solid ${({theme}) => theme.colors.primary};
-      top: 6px;
-      left: 0;
-      transform: rotate(-45deg);
-    }
-  }
-
-  //Наши услуги
-  &:last-child li {
-      //${outline()}
-    font-size: ${getResponsiveSize(12, 14)};
-    padding-block: 0.25rem;
-  }
-
-    // @media ${({theme}) => theme.mediaMinWidth.mobile} {
-  //   width: calc(50% - 0.5rem);
-  // }
-
-  @media ${({theme}) => theme.mediaMinWidth.computer} {
-    &:nth-child(odd) {
-      padding-left: 4rem;
-    }
-  }
-  @media ${({theme}) => theme.mediaMinWidth.desktop} {
-    width: calc(25% - 0.75rem);
-    &:nth-child(1) {
-      padding-left: 0;
+    span:before{
+        width:40%;
+        background-color:${({theme}) => theme.colors.white};
+        clip-path:polygon(0 0, 91% 0%, 100% 100%, 9% 100%);
     }
 
-    &:nth-child(3) {
-      padding-left: 2rem;
+    span:after{
+        width:60%;
+        right:0;
+        background-color:${({theme}) => theme.colors.primary};
+        clip-path:polygon(0 0, 96% 0%, 100% 100%, 6% 100%);
     }
-  }
+
+    //miniarenda
+
+    &:first-child{
+        //width: 100%;
+
+        & p:nth-of-type(-n+2),
+        & p:nth-last-of-type(-n+2){
+        }
+
+        & p:nth-of-type(2n):not(p:last-of-type){
+            margin-bottom:1rem;
+        }
+
+        //phone
+
+        p:has(a){
+            font-weight:${({theme}) => theme.fonts.weight.bold};
+            font-size:${getResponsiveSize(25, 25)};
+            padding-left:1rem;
+
+            svg{
+                position:relative;
+                left:-1rem
+            }
+        }
+    }
+
+    //наша техника
+
+    ${S_ImageContainer}{
+        margin-bottom:1rem;
+    }
+
+    &:has(img){
+        a{
+            padding:0.25rem;
+        }
+    }
+
+    //Разделы
+
+    &:nth-child(3) a{
+        position:relative;
+        padding-left:1.5rem;
+
+        &:before{
+            position:absolute;
+            content:"";
+            width:6px;
+            height:6px;
+            border-bottom:3px solid ${({theme}) => theme.colors.primary};
+            border-right:3px solid ${({theme}) => theme.colors.primary};
+            top:6px;
+            left:0;
+            transform:rotate(-45deg);
+        }
+    }
+
+    //Наши услуги
+
+    &:last-child li{
+            //${outline()}
+        font-size:${getResponsiveSize(12, 14)};
+        padding-block:0.25rem;
+    }
+
+        // @media ${({theme}) => theme.mediaMinWidth.mobile} {
+    //   width: calc(50% - 0.5rem);
+    // }
+    @media ${({theme}) => theme.mediaMinWidth.computer}{
+        &:nth-child(odd){
+            padding-left:4rem;
+        }
+    }
+    @media ${({theme}) => theme.mediaMinWidth.desktop}{
+        width:calc(25% - 0.75rem);
+        &:nth-child(1){
+            padding-left:0;
+        }
+
+        &:nth-child(3){
+            padding-left:2rem;
+        }
+    }
 `;
 
 
 export const S_FooterItemTitle = styled.h2<{}>`
 
-  position: relative;
-  padding-bottom: 1rem;
-  //padding-left: 2rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-  font-size: ${({theme}) => theme.fonts.size.h5};
+    position:relative;
+    padding-bottom:1rem;
+    //padding-left: 2rem;
+    margin-bottom:1rem;
+    display:inline-block;
+    font-size:${({theme}) => theme.fonts.size.h5};
 
 `

@@ -1,5 +1,5 @@
 // src/components/Icon.tsx
-import React, {useMemo} from 'react';
+import {useMemo} from 'react';
 import styled from 'styled-components';
 import spritePath from '../../../assets/svg/landing-svg-sprite.svg';
 import {IconId, IconSize} from '../../types/common.types';

@@ -1,10 +1,9 @@
 import {BREAKPOINTS} from "../../shared/constants/BREAKPOINTS";
 import {BASE} from "../../shared/constants/constants";
 import {getResponsiveSize} from "../../shared/utils/getResponsiveSize";
-import {MyDefaultTheme} from 'styled-components';
 
 
-export const theme: MyDefaultTheme = {
+export const theme = {
     typography: {
         lineHeight: "1.2"
     },
@@ -74,7 +73,7 @@ export const theme: MyDefaultTheme = {
         full: "0 0 10px 5px rgba(0, 0, 0, 0.1)",
         right: "5px 0px 15px 0px rgba(0, 0, 0, 0.08)"
     },
-    hrefs:{
+    hrefs: {
         tel: "tel:+375296949698",
     },
     colors: {

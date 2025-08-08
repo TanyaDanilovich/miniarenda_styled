@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled, {css, useTheme} from 'styled-components';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {plainTransition} from '../../app/styles/mixins';
@@ -15,7 +15,7 @@ type props = {
     isOpen: boolean
 }
 
-export const FullQuestion = ({question, answer, id, toggleQuestionCallback, isOpen}: props) => {
+export const FullQuestion = ({question, answer, toggleQuestionCallback, isOpen}: props) => {
     const theme = useTheme()
 
     const onToggleQuestion = () => toggleQuestionCallback()

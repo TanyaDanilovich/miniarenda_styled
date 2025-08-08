@@ -1,5 +1,5 @@
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import React, {useId, useState} from 'react';
+import {useId, useState} from 'react';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {questionsData} from './questionsData';
 import {FullQuestion} from './FullQuestion';

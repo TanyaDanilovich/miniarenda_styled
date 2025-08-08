@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {outlinedNestedEverything, plainTransition} from '../../../app/styles/mixins';
+import {plainTransition} from '../../../app/styles/mixins';
 
 
 

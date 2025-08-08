@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import {S_Flex} from '../../styled/S_Flex';
 import FontAwesomeIcon from '../icon/FontAwesomeIcon';
