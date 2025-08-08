@@ -15,7 +15,7 @@ type props = {};
 
 export const Footer = ({}: props) => {
     const theme: DefaultTheme = useTheme();
-    console.log(theme);
+    //console.log(theme);
     const fullServicesData = API.getFullSubcategoriesData();
 
 
@@ -70,7 +70,7 @@ export const Footer = ({}: props) => {
                         <S_FooterItemTitle><span>{footerData.ourServices}</span></S_FooterItemTitle>
                         <ul>
                             {fullServicesData.map((service, index) => {
-                                console.log(`#${service.subcategoryUrl}`);
+                                //console.log(`#${service.subcategoryUrl}`);
 
                                 return <li key = {`${service.id}-${index}`}>
                                     <Link to = {`#${service.subcategoryUrl}`}>
