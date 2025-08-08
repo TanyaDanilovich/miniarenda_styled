@@ -5,6 +5,7 @@ import {useEffect, useId} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {MobileMenuItem} from './MobileMenuItem';
 import {StyledMain} from '../../../../pages/main/Main';
+import React from 'react';
 
 type props = {};
 export const MobileNavigation = ({}: props) => {

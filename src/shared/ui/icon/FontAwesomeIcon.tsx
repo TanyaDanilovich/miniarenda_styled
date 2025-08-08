@@ -2,7 +2,8 @@
 import {useMemo} from 'react';
 import styled from 'styled-components';
 import spritePath from '../../../assets/svg/landing-svg-sprite.svg';
-import {IconId, IconSize} from '../../types/common.types';
+import {type IconId, type  IconSize} from '../../types/common.types';
+import * as React from 'react';
 
 // Пропсы для компонента
 type IconProps = React.SVGAttributes<SVGSVGElement> & {
@@ -13,10 +14,10 @@ type IconProps = React.SVGAttributes<SVGSVGElement> & {
 
 // Styled‑компонент для SVG
 const StyledSvg = styled.svg<{ $size: string, $color?: string }>`
-  width: ${({$size}) => $size};
-  height: ${({$size}) => $size};
-  fill: ${({$color, theme}) => $color || theme.colors.primary};
-  vertical-align: middle;
+    width:${({$size}) => $size};
+    height:${({$size}) => $size};
+    fill:${({$color, theme}) => $color || theme.colors.primary};
+    vertical-align:middle;
 `;
 
 const FontAwesomeIcon =

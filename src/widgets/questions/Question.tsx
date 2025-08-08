@@ -1,4 +1,3 @@
-;
 import styled from 'styled-components';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize.ts';
 import {BASE} from '../../shared/constants/constants.ts';
