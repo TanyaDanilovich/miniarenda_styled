@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {ReadMore} from './ReadMore';
 import {BASE, countReviewLines} from '../../../shared/constants/constants';
@@ -19,9 +19,10 @@ export const ReviewContent = ({text, isCollapsed, setUnCollapsed, setCollapsed}:
     const contentRef = useRef<HTMLParagraphElement>(null)
 
 
-    const readMoreCallback = () => {
-        isCollapsed ? setUnCollapsed() : setCollapsed()
-    }
+    const readMoreCallback = useCallback(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        isCollapsed ? setUnCollapsed() : setCollapsed();
+    }, [isCollapsed, setCollapsed, setUnCollapsed]);
 
     useEffect(() => {
         const checkIsShowButton = () => {
@@ -57,39 +58,37 @@ export const ReviewContent = ({text, isCollapsed, setUnCollapsed, setCollapsed}:
 
 
 export const S_reviewContent = styled.div<{ $isCollapsed: boolean | null }>`
-  p {
-    padding-top: 1rem;
-  }
-
-  ${({$isCollapsed}) => $isCollapsed && css`
-    p {
-
-      -webkit-line-clamp: ${countReviewLines};
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      overflow-wrap: break-word;
-      position: relative;
-        //${outline(5)}
+    p{
+        padding-top:1rem;
     }
 
+    ${({$isCollapsed}) => $isCollapsed && css`
+        p{
+            -webkit-line-clamp:${countReviewLines};
+            -webkit-box-orient:vertical;
+            display:-webkit-box;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            overflow-wrap:break-word;
+            position:relative;
+                //${outline(5)}
+        }
 
-    p:after {
-      display: block;
-      color: black;
-      //content: close-quote;
-      //content: '\201E';
-      height: 4rem;
-      width: 4rem;
-      font-size: 3rem;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      //opacity: 0.85;
-        //${outline(10)} //background-color: grey;
-    }
-  `}
+        p:after{
+            display:block;
+            color:black;
+            //content: close-quote;
+            //content: '\201E';
+            height:4rem;
+            width:4rem;
+            font-size:3rem;
+            margin:auto;
+            position:absolute;
+            right:0;
+            bottom:0;
+            z-index:2;
+            //opacity: 0.85;
+                //${outline(10)} //background-color: grey;
+        }
+    `}
 `

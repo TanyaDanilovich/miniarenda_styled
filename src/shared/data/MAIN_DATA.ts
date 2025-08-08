@@ -1,4 +1,3 @@
-import {MainData} from '../types/common.types';
 import {CATEGORY} from '../constants/CATEGORY';
 import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
 import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
@@ -8,19 +7,7 @@ import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 
 import img from "../../assets/images/empty-image.jpg"
-import img1920w from "../../assets/images/test/1920.jpg"
-import img1200w from "../../assets/images/test/1200.jpg"
-import img768w from "../../assets/images/test/768.jpg"
-import img480w from "../../assets/images/test/480.jpg"
-
-import excavator_main_1920w from "../../assets/images/servises/exavator/1920/webp/excavatorMain4-1920w.webp";
-import excavator_main_1200w from "../../assets/images/servises/exavator/1200/webp/excavatorMain4-1200w.webp";
-import excavator_main_768w from "../../assets/images/servises/exavator/768/webp/excavatorMain3-768w.webp";
 import excavator_main_480w from "../../assets/images/servises/exavator/480/webp/excavatorMain4-480w.webp";
-
-import drill_main_1920w from "../../assets/images/servises/drill/1920/webp/drill-main-1920w.webp"
-import drill_main_1200w from "../../assets/images/servises/drill/1200/webp/drill-main-1200w.webp"
-import drill_main_768w from "../../assets/images/servises/drill/768/webp/drill-main-768w.webp"
 import drill_main_480w from "../../assets/images/servises/drill/480/webp/drill-main-480w.webp"
 
 import hummer_main_480w from "../../assets/images/servises/hummer/480/webp/hummer-main-480w.webp"
@@ -32,6 +19,7 @@ import kovsh from '../../assets/images/equipments/webp/kovsh.webp';
 import bur from '../../assets/images/equipments/webp/bur.webp';
 import clik from '../../assets/images/equipments/webp/clik.webp';
 import soosan from '../../assets/images/equipments/webp/soosan.webp';
+import type {MainData} from '../types/common.types.ts';
 
 
 export const MAIN_DATA: MainData = {

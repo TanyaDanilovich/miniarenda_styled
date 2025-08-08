@@ -15,6 +15,7 @@ export const MobileNavigation = ({}: props) => {
     const [dropDownId, setDropDownId] = React.useState<string | null>(null);
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         isNavigationOpen
             ? document.body.style.overflow = "hidden"
             : document.body.style.overflow = "scroll"

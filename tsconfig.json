@@ -10,7 +10,23 @@
   ],
   "compilerOptions": {
     "types": [
-      "styled-components"
-    ]
-  }
+      "styled-components",
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    // Если есть кастомные типы
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

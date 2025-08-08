@@ -27,7 +27,7 @@ export const Services = ({}: props) => {
     const [width] = useDebouncedWindowSize();
 
     useEffect(() => {
-        let newServicesData = [...fullServicesData];
+        const newServicesData = [...fullServicesData];
         if (width <= parseInt(BREAKPOINTS.mobile)) {
             // оставить как есть
         } else if (width > parseInt(BREAKPOINTS.mobile) && width <= parseInt(BREAKPOINTS.tablet)) {

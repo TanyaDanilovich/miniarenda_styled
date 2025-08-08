@@ -1,9 +1,9 @@
 import React from 'react';
-import {SchemaOrgData} from '../../../shared/types/common.types.ts';
 import {S_DropdownText} from '../../../shared/styled/S_DropdownText.ts';
 import styled, {useTheme} from 'styled-components';
 import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon.tsx';
 import {plainTransition} from '../../../app/styles/mixins.ts';
+import type {SchemaOrgData} from '../../../shared/types/common.types.ts';
 
 type Props = {
     descriptionUser: string[];
@@ -20,11 +20,11 @@ export const ServiceCardDropdownText = ({
                                             schemaOrg,
                                             textSchemaOrg
                                         }: Props) => {
-    const theme = useTheme()
+    const theme = useTheme();
 
     const maxHeight = isOpen ? "24rem" : "0";
-    const height = isOpen ? "100%" : "0"
-    const listPadding = isOpen ? "0.5rem 1rem 0.5rem 1rem" : "0 1rem 0 1rem"
+    const height = isOpen ? "100%" : "0";
+    const listPadding = isOpen ? "0.5rem 1rem 0.5rem 1rem" : "0 1rem 0 1rem";
 
     return (
         <S_ServiceCardDropdownText $maxHeight = {maxHeight} $height = {height}>
@@ -52,7 +52,7 @@ export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
     height: 1px;
     overflow: hidden;
   }
-`
+`;
 
 export const S_DropdownTextList = styled.ul<{
     $maxHeight: string,
@@ -74,4 +74,4 @@ export const S_DropdownTextList = styled.ul<{
   li >span {
     padding-left: 0.5rem;
   }
-`
+`;
