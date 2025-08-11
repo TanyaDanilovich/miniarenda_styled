@@ -1,4 +1,4 @@
-import {MachineryData} from '../types/common.types';
+import {type MachineryData} from '../types/common.types';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
 import et24_480w from "../../assets/images/machineries/480/webp/et24-480w.webp"

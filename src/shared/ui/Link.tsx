@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {PropsWithChildren} from '../types/common.types';
+import {type PropsWithChildren} from '../types/common.types';
 
 
 

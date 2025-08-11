@@ -1,4 +1,4 @@
-import {ImageProps} from '../../shared/types/common.types';
+import {type ImageProps} from '../../shared/types/common.types';
 import {S_Image} from '../../shared/styled/S_Image';
 
 type props = { image: ImageProps };

@@ -1,4 +1,4 @@
-import {PropsWithChildren} from '../../types/common.types';
+import {type PropsWithChildren} from '../../types/common.types';
 import {SwiperSlideProps} from 'swiper/swiper-react';
 
 type props = SwiperSlideProps & {

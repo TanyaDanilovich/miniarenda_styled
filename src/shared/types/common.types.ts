@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import type {ReactNode} from 'react';
 import {CATEGORY} from '../constants/CATEGORY';
 import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
 import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
@@ -86,6 +86,7 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
 
 export type SubcategoryItemData<T extends Category> = SubcategoriesType<T> & {
     position: number,
+    image: ImageProps
 }
 
 export type Seo = {
@@ -98,9 +99,9 @@ export type MainData = {
     categories: {
         [key in Category]: CategoryItem<key>
     },
-    subcategories: {
+    subcategories: Partial<{  // Используем Partial<>
         [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItem<key>
-    },
+    }>,
     subcategoryItemCards: Partial<{
         [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItemCard[]
     }>,

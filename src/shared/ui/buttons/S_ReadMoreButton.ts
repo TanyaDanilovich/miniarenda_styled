@@ -33,10 +33,6 @@ export const S_ReadMoreButton = styled(S_LinkAsButton)<{}>`
       background-color: ${({theme}) => theme.colors.primary};
     }
 
-    .fa-circle-plus {
-      color: ${({theme}) => theme.colors.white};
-      ${plainTransition()}
-    }
 
     & span:nth-child(1) {
       background-color: ${({theme}) => theme.colors.bg_primary};

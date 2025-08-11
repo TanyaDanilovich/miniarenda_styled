@@ -1,13 +1,11 @@
 import {MAIN_DATA} from '../../shared/data/MAIN_DATA';
-import {CATEGORY} from '../../shared/constants/CATEGORY';
-
 import {
-    Category,
-    Equipment,
-    EquipmentSubcategory,
-    MachineryCharacteristicKeys,
-    MachineryData,
-    SubcategoryItemData
+    type Category,
+    type Equipment,
+    type EquipmentSubcategory,
+    type MachineryCharacteristicKeys,
+    type MachineryData,
+    type SubcategoryItemData
 } from '../../shared/types/common.types';
 import {machineriesData} from '../../shared/data/machineriesData';
 import {EQUIPMENT_SUBCATEGORY} from '../../shared/constants/EQUIPMENT_SUBCATEGORY';
@@ -15,14 +13,24 @@ import {EQUIPMENT_SUBCATEGORY} from '../../shared/constants/EQUIPMENT_SUBCATEGOR
 export const API = {
 
     getFullSubcategoriesData: (): SubcategoryItemData<Category>[] => {
-        const rentalKeys = MAIN_DATA.categories[CATEGORY.RENTAL].items;
-        const servicesKeys = MAIN_DATA.categories[CATEGORY.SERVICES].items;
-        return [...rentalKeys,...servicesKeys]
-            .map((item, index) =>
-                ({
-                    ...MAIN_DATA.subcategories[item], position: index,
-                    image:MAIN_DATA.subcategories[item].images[0]
-                }))
+        const subcategoriesKeys = Object.keys(MAIN_DATA.subcategories) as Array<
+            keyof typeof MAIN_DATA.subcategories
+        >;
+        //console.log(subcategoriesKeys)
+
+        return subcategoriesKeys.map((key, index) => {
+            const subcategoryItem = MAIN_DATA.subcategories[key];
+            if (!subcategoryItem) {
+                throw new Error(`Подкатегория ${key} не найдена`);
+            }
+
+            return {
+                subcategory: key,
+                position: index,
+                image: subcategoryItem.images[0],
+                // Добавьте другие нужные свойства
+            };
+        });
     },
 
 
@@ -42,5 +50,4 @@ export const API = {
             MAIN_DATA.equipments[equipment])
             .sort((a, b) => a.position - b.position);
     }
-
 }

@@ -4,7 +4,7 @@ import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import {S_Box} from '../../shared/styled/S_Box';
 import {S_Image} from '../../shared/styled/S_Image';
 import img from '../../assets/images/servises/exavator/IMG_20190608_115344.jpg';
-import {ImageProps} from '../../shared/types/common.types';
+import {type ImageProps} from '../../shared/types/common.types';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';

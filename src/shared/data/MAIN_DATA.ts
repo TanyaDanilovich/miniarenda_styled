@@ -223,27 +223,7 @@ export const MAIN_DATA: MainData = {
                 metaDescription: "Профессиональные услуги по бурению отверстий ямобуром для фундаментов, столбов и опор. Работаем быстро и качественно, используя современное оборудование.",
                 metaKeywords: ["бурение отверстий", "бурение ям", "услуги бурения", "буронабивные фундаменты", "установка опор", "усиление фундамента", "бурение в Минске"]
             }
-        },
-        [SUBCATEGORY.DISMANTLING]: {
-            id: "subcategory-010",
-            subcategory: SUBCATEGORY.DISMANTLING,
-            group: SERVICE_GROUP.OTHER,
-            position: 7,
-            subcategoryUrl: "demontazh",
-            i18nKey: "subcategories.dismantling",
-            title: "",
-            descriptionUser: [
-                "гидромолот массой от 70 до 170 кг",
-                "мин. проём:  \n ширина - 1 м, высота - 1,5 м"
-            ],
-            descriptionGoogle: "",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Демонтаж бетонных и железобетонных конструкций | Разрушительные работы",
-                metaDescription: "Профессиональный демонтаж бетонных с помощью гидромолота. Разрушение сооружений, вскрытие подземных коммуникаций.",
-                metaKeywords: ["демонтаж конструкций", "разрушение бетона", "разрушение железобетона", "услуги гидромолота", "забивка свай", "разрушение пород"]
-            }
-        },
+        }
     },
     subcategoryItemCards: {
         [SUBCATEGORY.HAMMER]: [

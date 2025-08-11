@@ -4,7 +4,7 @@ import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {EquipmentCard} from './EquipmentCard';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
 import {API} from '../../app/api/API';
-import {Equipment} from '../../shared/types/common.types';
+import {type Equipment} from '../../shared/types/common.types';
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
 
 

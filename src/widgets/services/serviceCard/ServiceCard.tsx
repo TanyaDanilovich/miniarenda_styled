@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
-import {Category, SubcategoryItemData} from '../../../shared/types/common.types';
+import {type Category, type SubcategoryItemData} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {ServiceCardDropdownText} from './ServiceCardDropdownText.tsx';

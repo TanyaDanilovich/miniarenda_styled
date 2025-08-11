@@ -1,4 +1,4 @@
-import {Category, RentalSubcategory, RoutesPathData, ServiceSubcategory} from '../types/common.types';
+import {type Category, type RentalSubcategory, type RoutesPathData, type ServiceSubcategory} from '../types/common.types';
 import {MAIN_DATA} from '../data/MAIN_DATA';
 
 export function getRoutePath(category: Category,

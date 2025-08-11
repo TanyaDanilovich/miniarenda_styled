@@ -9,7 +9,7 @@
  * @returns {RuleSet} Return animation
  */
 
-import {RuleSet, css, keyframes} from 'styled-components';
+import {type RuleSet, css, keyframes} from 'styled-components';
 
 type props = {
     start?: RuleSet | string,

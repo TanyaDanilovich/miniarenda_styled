@@ -3,7 +3,7 @@ import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 
 import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
-import {MachineryData} from '../../../shared/types/common.types';
+import {type MachineryData} from '../../../shared/types/common.types';
 import {MachineCharacteristicsTable} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
 import ResponsiveImage from '../../responsiveImage/responsiveImage';
 import {S_TableTitle} from '../../../shared/styled/S_Table';

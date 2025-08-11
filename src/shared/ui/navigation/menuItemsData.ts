@@ -1,4 +1,4 @@
-import {MenuItemType} from '../../types/common.types';
+import {type MenuItemType} from '../../types/common.types';
 import {ROUTES_PATHS} from '../../constants/ROUTES_PATHS';
 
 export const menuItemsData: MenuItemType[] = [

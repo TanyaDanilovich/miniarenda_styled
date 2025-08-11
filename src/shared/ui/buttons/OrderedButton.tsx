@@ -2,7 +2,7 @@ import styled, {useTheme} from 'styled-components';
 import {S_LinkAsButton} from './S_LinkAsButton';
 import {plainTransition} from '../../../app/styles/mixins';
 import FontAwesomeIcon from '../icon/FontAwesomeIcon';
-import {IconId} from '../../types/common.types';
+import {type IconId} from '../../types/common.types';
 
 
 type props = {
