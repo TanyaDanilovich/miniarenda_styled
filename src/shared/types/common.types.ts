@@ -100,15 +100,6 @@ export type Equipment = {
     characteristicList: string[]
 }
 
-export type SubcategoryItemCard = {
-    id: string;
-    //title: string;
-    //description: string;
-    i18nKey: string,
-    images: ImageProps[];
-    position: number;
-}
-
 export type RoutesPathData = {
     url: string,
     i18nKey: string;

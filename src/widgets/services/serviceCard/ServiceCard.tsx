@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import {S_Box} from '../../../shared/styled/S_Box';
 import {ImageHover, plainTransition, transitionHoverIcon} from '../../../app/styles/mixins';
-import {type Category, type SubcategoryItemData} from '../../../shared/types/common.types';
+import {type SubcategoryItem} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {ServiceCardDropdownText} from './ServiceCardDropdownText.tsx';
@@ -14,7 +14,7 @@ export type ServiceCardData = {
     isOpen: boolean
 }
 
-type props = ServiceCardData & { data: SubcategoryItemData<Category> };
+type props = ServiceCardData & { data: SubcategoryItem };
 export const ServiceCard = ({
                                 data, toggleDescriptionCallback, isOpen
 
@@ -25,9 +25,9 @@ export const ServiceCard = ({
     return (
         <StyledServiceCard $paddingInline = {cardPadding} id = {data.subcategoryUrl}>
             {/*<StyledServiceCard itemScope itemType = "http://schema.org/Product" itemProp="itemReviewed">*/}
-            {data.image && (
+            {data.images[0] && (
                 <S_ImageContainer>
-                    <ResponsiveImage image = {data.image}/>
+                    <ResponsiveImage image = {data.images[0]}/>
                 </S_ImageContainer>
             )}
 
@@ -43,7 +43,8 @@ export const ServiceCard = ({
                                         title = {isOpen ? "Свернуть" : "Подробнее"}/>
 
             </S_Box>
-            <ServiceCardDropdownText itemProp = "description"
+            <ServiceCardDropdownText id = {data.id}
+                //itemProp = "description"
                                      descriptionUser = {data.descriptionUser}
                                      descriptionGoogle = {data.descriptionGoogle}
                                      isOpen = {isOpen}/>

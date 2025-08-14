@@ -1,34 +1,30 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
+import js from '@eslint/js';
+import globals from 'globals';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default tseslint.config([
     {
-        ignores: ["dist", "build", "node_modules"]
-    },
-    js.configs.recommended,
-    tseslint.configs.recommended,
-    {
-        files: ["**/*.{ts,tsx,js}"],
+        files: ['**/*.{ts,tsx}'],
+        languageOptions: {
+            parser: tseslint.parser,
+            parserOptions: {projectService: true},
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+            globals: globals.browser,
+        },
+        plugins: {
+            react,
+            'react-hooks': reactHooks,
+        },
         extends: [
             js.configs.recommended,
-            tseslint.configs.recommended,
+            ...tseslint.configs.recommended,
+            react.configs.flat.recommended,
             reactHooks.configs['recommended-latest'],
-            reactRefresh.configs.vite,
         ],
-        plugins: {
-            "react": pluginReact,
-            "react-hooks": pluginReactHooks
-        },
-        languageOptions: {
-            ecmaVersion: "latest",
-            sourceType: "module",
-            globals: {
-                ...globals.browser
-            }
-        },
+        settings: {react: {version: 'detect'}},
         rules: {
             "react/jsx-uses-react": "off",
             "react/react-in-jsx-scope": "off",
@@ -40,8 +36,12 @@ export default tseslint.config(
             '@typescript-eslint/no-empty-object-type': 'off',
             'no-console': 'off',
             "no-empty-pattern": ["error", {
-                "allowObjectPatternsAsParameters": true }] ,// Разрешить пустые паттерны в параметрах
+                "allowObjectPatternsAsParameters": true
+            }],// Разрешить пустые паттерны в параметрах
             'no-constant-binary-expression': 'off'
-        }
-    }
-);
+        },
+    },
+    {
+        ignores: ['dist', 'node_modules'],
+    },
+]);

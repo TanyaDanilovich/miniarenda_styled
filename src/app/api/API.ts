@@ -1,24 +1,23 @@
 import {MAIN_DATA} from '../../shared/data/MAIN_DATA';
 import {
-    type Category,
     type Equipment,
     type EquipmentSubcategory,
     type MachineryCharacteristicKeys,
     type MachineryData,
-    type SubcategoryItemData
+    type SubcategoryItem
 } from '../../shared/types/common.types';
 import {machineriesData} from '../../shared/data/machineriesData';
 import {EQUIPMENT_SUBCATEGORY} from '../../shared/constants/EQUIPMENT_SUBCATEGORY';
 
 export const API = {
 
-    getFullSubcategoriesData: (): SubcategoryItemData<Category>[] => {
+    getFullSubcategoriesData: (): SubcategoryItem[] => {
         const subcategoriesKeys = Object.keys(MAIN_DATA.subcategories) as Array<
             keyof typeof MAIN_DATA.subcategories
         >;
         //console.log(subcategoriesKeys)
 
-        return subcategoriesKeys.map((key, index) => {
+        return subcategoriesKeys.map((key) => {
             const subcategoryItem = MAIN_DATA.subcategories[key];
             if (!subcategoryItem) {
                 throw new Error(`Подкатегория ${key} не найдена`);
@@ -26,7 +25,6 @@ export const API = {
 
             return {
                 ...subcategoryItem,
-                position: index,
                 image: subcategoryItem.images[0],
             };
         });
