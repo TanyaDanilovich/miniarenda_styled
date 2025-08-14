@@ -12,6 +12,12 @@ export default tseslint.config(
     tseslint.configs.recommended,
     {
         files: ["**/*.{ts,tsx,js}"],
+        extends: [
+            js.configs.recommended,
+            tseslint.configs.recommended,
+            reactHooks.configs['recommended-latest'],
+            reactRefresh.configs.vite,
+        ],
         plugins: {
             "react": pluginReact,
             "react-hooks": pluginReactHooks

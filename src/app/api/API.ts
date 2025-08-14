@@ -28,7 +28,6 @@ export const API = {
                 subcategory: key,
                 position: index,
                 image: subcategoryItem.images[0],
-                // Добавьте другие нужные свойства
             };
         });
     },
