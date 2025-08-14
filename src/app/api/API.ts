@@ -25,7 +25,7 @@ export const API = {
             }
 
             return {
-                subcategory: key,
+                ...subcategoryItem,
                 position: index,
                 image: subcategoryItem.images[0],
             };

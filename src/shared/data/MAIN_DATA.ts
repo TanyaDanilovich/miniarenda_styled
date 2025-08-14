@@ -1,12 +1,8 @@
-import {CATEGORY} from '../constants/CATEGORY';
 import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
-import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import excavator from '../../assets/svg/exavator.svg';
 import hammer from '../../assets/svg/gidromolot.svg';
 import drill from '../../assets/svg/bur.svg';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
-
-import img from "../../assets/images/empty-image.jpg"
 import excavator_main_480w from "../../assets/images/servises/exavator/480/webp/excavatorMain4-480w.webp";
 import drill_main_480w from "../../assets/images/servises/drill/480/webp/drill-main-480w.webp"
 
@@ -23,52 +19,47 @@ import type {MainData} from '../types/common.types.ts';
 
 
 export const MAIN_DATA: MainData = {
-    categories: {
-        [CATEGORY.RENTAL]: {
-            id: "category-001",
-            category: CATEGORY.RENTAL,
-            url: "arenda",
-            i18nKey: "categories.rental",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Аренда техники | Доступные цены и гибкие условия",
-                metaDescription: "Арендуйте технику для строительства и земляных работ по выгодным ценам. Мини-экскаваторы, гидромолоты и ямобуры на выбор.",
-                metaKeywords: ["аренда техники", "мини-экскаватор", "гидромолот", "ямобур"]
-            },
-
-            items: [
-                SUBCATEGORY.DRILL,
-                SUBCATEGORY.EXCAVATOR,
-                SUBCATEGORY.HAMMER,
-
-            ]
-        },
-        [CATEGORY.SERVICES]: {
-            id: "category-002",
-            category: CATEGORY.SERVICES,
-            url: "uslugi",
-            i18nKey: "categories.services",
-            images: [{src: img, alt: ""}],
-            seo: {
-                metaTitle: "Земляные работы и услуги мини-техники",
-                metaDescription: "Предоставляем услуги мини-экскаваторов для копки, бурения и других земляных работ. Качественное выполнение в сжатые сроки.",
-                metaKeywords: ["земляные работы", "копка траншей", "бурение", "мини-техника"]
-            },
-            items: [
-                SUBCATEGORY.DIGGING_TRENCH,
-                SUBCATEGORY.DIGGING_FOUNDATION,
-                SUBCATEGORY.DRILLING,
-                // SERVICE_SUBCATEGORY.GROUND_MOVEMENT,
-                // SERVICE_SUBCATEGORY.STUMP_REMOVAL,
-                // SERVICE_SUBCATEGORY.OTHER_GROUNDWORKS,
-                // SERVICE_SUBCATEGORY.DISMANTLING
-            ],
-        },
-    },
+    // categories: {
+    //     [CATEGORY.RENTAL]: {
+    //         id: "category-001",
+    //         category: CATEGORY.RENTAL,
+    //         url: "arenda",
+    //         i18nKey: "categories.rental",
+    //         images: [{src: img, alt: ""}],
+    //         seo: {
+    //             metaTitle: "Аренда техники | Доступные цены и гибкие условия",
+    //             metaDescription: "Арендуйте технику для строительства и земляных работ по выгодным ценам. Мини-экскаваторы, гидромолоты и ямобуры на выбор.",
+    //             metaKeywords: ["аренда техники", "мини-экскаватор", "гидромолот", "ямобур"]
+    //         },
+    //
+    //         items: [
+    //             SUBCATEGORY.DRILL,
+    //             SUBCATEGORY.EXCAVATOR,
+    //             SUBCATEGORY.HAMMER,
+    //
+    //         ]
+    //     },
+    //     [CATEGORY.SERVICES]: {
+    //         id: "category-002",
+    //         category: CATEGORY.SERVICES,
+    //         url: "uslugi",
+    //         i18nKey: "categories.services",
+    //         images: [{src: img, alt: ""}],
+    //         seo: {
+    //             metaTitle: "Земляные работы и услуги мини-техники",
+    //             metaDescription: "Предоставляем услуги мини-экскаваторов для копки, бурения и других земляных работ. Качественное выполнение в сжатые сроки.",
+    //             metaKeywords: ["земляные работы", "копка траншей", "бурение", "мини-техника"]
+    //         },
+    //         items: [
+    //             SUBCATEGORY.DIGGING_TRENCH,
+    //             SUBCATEGORY.DIGGING_FOUNDATION,
+    //             SUBCATEGORY.DRILLING,
+    //         ],
+    //     },
+    // },
     subcategories: {
         [SUBCATEGORY.EXCAVATOR]: {
             id: "subcategory-001",
-            subcategory: SUBCATEGORY.EXCAVATOR,
             subcategoryUrl: "arenda-mini-exavatora",
             i18nKey: "subcategories.rentalExcavator",
             title: "Аренда мини-экскаватора",
@@ -99,7 +90,6 @@ export const MAIN_DATA: MainData = {
         },
         [SUBCATEGORY.HAMMER]: {
             id: "subcategory-002",
-            subcategory: SUBCATEGORY.HAMMER,
             subcategoryUrl: "arenda-gidromolota",
             i18nKey: "subcategories.rentalsHammer",
             title: "Аренда гидромолота",
@@ -121,7 +111,6 @@ export const MAIN_DATA: MainData = {
         },
         [SUBCATEGORY.DRILL]: {
             id: "subcategory-003",
-            subcategory: SUBCATEGORY.DRILL,
             subcategoryUrl: "arenda-yamobura",
             i18nKey: "subcategories.rentalsDrill",
             title: "Аренда ямобура",
@@ -151,8 +140,6 @@ export const MAIN_DATA: MainData = {
         },
         [SUBCATEGORY.DIGGING_TRENCH]: {
             id: "subcategory-004",
-            subcategory: SUBCATEGORY.DIGGING_TRENCH,
-            group: SERVICE_GROUP.DIGGING,
             position: 1,
             subcategoryUrl: "kopanie-transhej",
             i18nKey: "subcategories.diggingTrench",
@@ -180,8 +167,6 @@ export const MAIN_DATA: MainData = {
         },
         [SUBCATEGORY.DIGGING_FOUNDATION]: {
             id: "subcategory-005",
-            subcategory: SUBCATEGORY.DIGGING_FOUNDATION,
-            group: SERVICE_GROUP.DIGGING,
             position: 2,
             subcategoryUrl: "kopanie-fundamentov",
             i18nKey: "subcategories.diggingFoundation",
@@ -202,8 +187,6 @@ export const MAIN_DATA: MainData = {
         },
         [SUBCATEGORY.DRILLING]: {
             id: "subcategory-007",
-            subcategory: SUBCATEGORY.DRILLING,
-            group: SERVICE_GROUP.DIGGING,
             position: 4,
             subcategoryUrl: "yamobur",
             i18nKey: "subcategories.drilling",
@@ -225,58 +208,7 @@ export const MAIN_DATA: MainData = {
             }
         }
     },
-    subcategoryItemCards: {
-        [SUBCATEGORY.HAMMER]: [
-            {
-                id: "card-001",
-                position: 1,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card001",
-            },
-            {
-                id: "card-002",
-                position: 2,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card002",
-            },
-            {
-                id: "card-003",
-                position: 3,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card003",
-            },
-            {
-                id: "card-004",
-                position: 4,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card004",
-            },
-            {
-                id: "card-005",
-                position: 5,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card005",
-            },
-            {
-                id: "card-006",
-                position: 6,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card006",
-            },
-            {
-                id: "card-007",
-                position: 7,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card007",
-            },
-            {
-                id: "card-008",
-                position: 8,
-                images: [{src: img, alt: ""}],
-                i18nKey: "subcategoryItemCards.rentalsHammer.card008",
-            },
-        ]
-    },
+
     equipments: {
         [EQUIPMENT_SUBCATEGORY.HAMMER]: {
             id: "equipment-001",

@@ -1,8 +1,6 @@
 import type {ReactNode} from 'react';
 import {CATEGORY} from '../constants/CATEGORY';
 import {SUBCATEGORY} from '../constants/SUBCATEGORY.ts';
-import {SERVICE_SUBCATEGORY} from '../constants/SERVICE_SUBCATEGORY';
-import {SERVICE_GROUP} from '../constants/SERVICE_GROUP';
 import {MACHINERY_CHARACTERISTICS} from '../constants/MACHINERY_CHARACTERISTICS';
 import {MACHINERY_PRICE_CHARACTERISTICS} from '../constants/MACHINERY_PRICE_CHARACTERISTICS';
 import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
@@ -10,6 +8,7 @@ import {EQUIPMENT_SUBCATEGORY} from '../constants/EQUIPMENT_SUBCATEGORY';
 export type PropsWithChildren<P> = P & {
     children?: ReactNode
 };
+
 export type SchemaOrgData = {
     itemType?: string,
     itemProp?: string,
@@ -27,8 +26,7 @@ export type ImageProps = {
 
 export type MenuItemType = {
     title: string,
-    url: string,
-
+    url: string
 }
 
 export type MeasurementUnits = 'час' | 'отв.'
@@ -36,14 +34,9 @@ export type MeasurementUnits = 'час' | 'отв.'
 export type Category =
     typeof CATEGORY[keyof typeof CATEGORY];
 
-export type RentalSubcategory =
-    typeof SUBCATEGORY[keyof typeof SUBCATEGORY];
+export type SubcategoryValue = typeof SUBCATEGORY[keyof typeof SUBCATEGORY];
 
-export type ServiceSubcategory =
-    typeof SERVICE_SUBCATEGORY[keyof typeof SERVICE_SUBCATEGORY];
-
-export type ServiceGroup =
-    typeof SERVICE_GROUP[keyof typeof SERVICE_GROUP];
+export type Subcategory = keyof typeof SUBCATEGORY;
 
 export type EquipmentSubcategory =
     typeof EQUIPMENT_SUBCATEGORY[keyof typeof EQUIPMENT_SUBCATEGORY];
@@ -58,19 +51,12 @@ export type CategoryItem<T extends Category> = {
     content?: string;
     images: ImageProps[];
     seo: Seo;
-    items: SubcategoriesType<T>[];
+    items: Subcategory[];
 }
 
-export type SubcategoriesType<T extends Category> =
-    T extends typeof CATEGORY.RENTAL
-        ? RentalSubcategory
-        : T extends typeof CATEGORY.SERVICES
-            ? ServiceSubcategory
-            : never;
 
-export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = {
+export type SubcategoryItem = {
     id: string;
-    subcategory: T;
     subcategoryUrl: string;
     i18nKey: string,
     title: string;
@@ -78,16 +64,11 @@ export type SubcategoryItem<T extends RentalSubcategory | ServiceSubcategory> = 
     descriptionGoogle?: string;
     content?: string;
     images: ImageProps[];
-    seo?: Seo;
-    group?: ServiceGroup;
     position: number;
     icon?: string;
+    seo: Seo
 }
 
-export type SubcategoryItemData<T extends Category> = SubcategoriesType<T> & {
-    position: number,
-    image: ImageProps
-}
 
 export type Seo = {
     metaTitle: string;
@@ -96,15 +77,13 @@ export type Seo = {
 }
 
 export type MainData = {
-    categories: {
+    categories?: {
         [key in Category]: CategoryItem<key>
     },
-    subcategories: Partial<{  // Используем Partial<>
-        [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItem<key>
-    }>,
-    subcategoryItemCards: Partial<{
-        [key in RentalSubcategory | ServiceSubcategory]: SubcategoryItemCard[]
-    }>,
+    subcategories: {
+        [key in SubcategoryValue]: SubcategoryItem
+    },
+
     equipments: {
         [key in EquipmentSubcategory]: Equipment
     },
