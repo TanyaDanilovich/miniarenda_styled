@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const S_Span = styled.span<{
     $color?: string,
-    $fontWeight?: string,
+    $fontWeight?: number,
     $background?: string,
     $fontSize?:string
 }>`

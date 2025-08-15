@@ -16,13 +16,12 @@ export default tseslint.config([
         },
         plugins: {
             react,
-            'react-hooks': reactHooks,
+            'react-hooks': reactHooks, // Подключаем плагин явно
         },
         extends: [
             js.configs.recommended,
             ...tseslint.configs.recommended,
-            react.configs.flat.recommended,
-            reactHooks.configs['recommended-latest'],
+            // react.configs.flat.recommended,
         ],
         settings: {react: {version: 'detect'}},
         rules: {
@@ -31,14 +30,16 @@ export default tseslint.config([
             "react/prop-types": "off", // Отключаем проверку prop-types для TypeScript
             "@typescript-eslint/no-unused-vars": ["warn", {"argsIgnorePattern": "^_"}],
             "no-unused-expressions": "off",
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
             '@typescript-eslint/no-empty-object-type': 'off',
             'no-console': 'off',
             "no-empty-pattern": ["error", {
                 "allowObjectPatternsAsParameters": true
             }],// Разрешить пустые паттерны в параметрах
-            'no-constant-binary-expression': 'off'
+            'no-constant-binary-expression': 'off',
+
+            // React Hooks правила
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "warn"
         },
     },
     {

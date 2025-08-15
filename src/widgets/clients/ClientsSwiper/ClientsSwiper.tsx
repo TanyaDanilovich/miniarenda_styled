@@ -1,6 +1,6 @@
 import {S_ClientsSwiper} from './S_ClientsSwiper';
-import {SwiperProps} from 'swiper/swiper-react';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
+import {type SwiperProps} from 'swiper/';
 import img1 from '../../../assets/images/clients/aquapark.png'
 import img2 from '../../../assets/images/clients/gavan.webp'
 import img3 from '../../../assets/images/clients/stroytrest.webp'
