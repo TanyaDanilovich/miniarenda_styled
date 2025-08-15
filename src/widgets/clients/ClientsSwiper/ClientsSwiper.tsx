@@ -1,12 +1,13 @@
 import {S_ClientsSwiper} from './S_ClientsSwiper';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
-import {type SwiperProps} from 'swiper/';
 import img1 from '../../../assets/images/clients/aquapark.png'
 import img2 from '../../../assets/images/clients/gavan.webp'
 import img3 from '../../../assets/images/clients/stroytrest.webp'
 import img4 from '../../../assets/images/clients/world.webp'
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {BASE} from '../../../shared/constants/constants';
+import type {SwiperProps} from 'swiper/types';
+
 
 
 type props = {

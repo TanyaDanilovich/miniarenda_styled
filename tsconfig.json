@@ -1,10 +1,13 @@
 {
   "files": [],
+ // "type": "module",
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "moduleResolution": "node",  // Или "bundler", но тогда:
+    "module": "esnext",          // Должно быть ES-совместимым
     "types": [
       "styled-components",
       "node"
@@ -14,12 +17,12 @@
     ],
     // Если есть кастомные типы
     "jsx": "react-jsx",
-    "moduleResolution": "bundler",
+    //"moduleResolution": "bundler",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["src"]
 }

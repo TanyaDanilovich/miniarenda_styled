@@ -1,20 +1,17 @@
-import {useEffect, useRef} from 'react';
-import {type SwiperContainer} from 'swiper/element/bundle';
-import "swiper/swiper-bundle.css";
-import {type PropsWithChildren} from '../../types/common.types';
-import {type AutoplayOptions, type SwiperOptions} from 'swiper/types';
-import {Swiper} from 'swiper';
+import React, {useRef, useEffect} from 'react';
+import {Swiper as SwiperReact, SwiperSlide} from 'swiper/react';
 import {Autoplay, Navigation} from 'swiper/modules';
+import type {SwiperOptions, AutoplayOptions} from 'swiper/types';
+import type {PropsWithChildren} from '../../types/common.types';
 
 
-type props = SwiperOptions & {
-    id: string,
-    name: string,
-    listenerType?: string,
-    eventCallback?: () => void,
+type Props = SwiperOptions & {
+    id: string;
+    name: string;
+    listenerType?: string;
+    eventCallback?: () => void;
     autoplay?: AutoplayOptions;
-}
-
+};
 
 export const AppSwiper = ({
                               children,
@@ -23,43 +20,35 @@ export const AppSwiper = ({
                               listenerType,
                               autoplay,
                               ...rest
-                          }: PropsWithChildren<props>) => {
-
-    const swiperRef = useRef<SwiperContainer>(null);
-
-    const listener = (event: CustomEvent<[swiper: Swiper]> | Event) => {
-        eventCallback()
-    };
-
+                          }: PropsWithChildren<Props>) => {
+    const swiperRef = useRef<any>(null);
 
     useEffect(() => {
-        const params: SwiperOptions = {
-            modules: [Autoplay, Navigation],
-            autoplay,
-            ...rest,
-        };
+        if (swiperRef.current && listenerType) {
+            const swiperInstance = swiperRef.current.swiper;
+            swiperInstance.on(listenerType, eventCallback);
 
-        if (swiperRef.current) {
-            Object.assign(swiperRef.current, params);
-            swiperRef.current.initialize();
-
-            if (listenerType) {
-                swiperRef.current.addEventListener(listenerType, listener);
-                // Optional cleanup
-                // return () => swiperRef.current?.removeEventListener(listenerType, listener);
-            }
+            return () => {
+                swiperInstance.off(listenerType, eventCallback);
+            };
         }
-    }, []);
+    }, [listenerType, eventCallback]);
+
     return (
-        <swiper-container init = {false} ref = {swiperRef}
-                          autoplay-delay = {autoplay?.delay ?? 200000}
-                          autoplay-disable-on-interaction = {autoplay?.disableOnInteraction ?? false}
-                          autoplay-pause-on-mouse-enter = {autoplay?.pauseOnMouseEnter ?? false}
-                          autoplay-reverse-direction = {autoplay?.reverseDirection ?? false}
+        <SwiperReact
+            ref = {swiperRef}
+            modules = {[Autoplay, Navigation]}
+            autoplay = {{
+                delay: autoplay?.delay ?? 2000,
+                disableOnInteraction: autoplay?.disableOnInteraction ?? false,
+                pauseOnMouseEnter: autoplay?.pauseOnMouseEnter ?? false,
+                reverseDirection: autoplay?.reverseDirection ?? false,
+            }}
+            {...rest}
         >
-            {children}
-        </swiper-container>
+            {React.Children.map(children, (child, index) => (
+                <SwiperSlide key = {index}>{child}</SwiperSlide>
+            ))}
+        </SwiperReact>
     );
 };
-
-

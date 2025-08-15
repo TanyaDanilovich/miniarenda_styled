@@ -1,11 +1,10 @@
-
 import styled from 'styled-components';
 import {heroData} from '../../hero/heroData';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
-import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
-import {SwiperOptions} from 'swiper/types';
 import {HeroSlider} from './HeroSlider';
 import {BREAKPOINTS} from '../../../shared/constants/BREAKPOINTS';
+import type {SwiperOptions} from 'swiper/types';
+import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 
 
 type props = {
@@ -14,7 +13,6 @@ type props = {
 
 
 export const HeroSwiper = ({id}: props) => {
-
 
     const params: SwiperOptions = {
         slidesPerView: 1,
@@ -56,7 +54,7 @@ export const HeroSwiper = ({id}: props) => {
 };
 
 
-export const S_HeroSwiper = styled(AppSwiper)<{}>`
+export const S_HeroSwiper = styled(AppSwiper)<object>`
   --swiper-theme-color: ${({theme}) => theme.colors.primary};
   --swiper-pagination-bottom: 1px;
   --swiper-pagination-bullet-size: 2rem;
