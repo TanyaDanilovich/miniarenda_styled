@@ -12,7 +12,10 @@
     "eslint": "8.57.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "embla-carousel-react": "8.6.0",
+    "embla-carousel": "8.6.0",
+    "embla-carousel-autoplay": "8.6.0"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

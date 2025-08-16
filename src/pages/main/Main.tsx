@@ -6,16 +6,18 @@ import {Reviews} from '../../widgets/reviews/Reviews';
 import {Questions} from '../../widgets/questions/Questions';
 import {Clients} from '../../widgets/clients/Clients';
 import {OrderModal} from '../../widgets/orderModal/OrderModal';
-import {Hero} from '../../widgets/hero/Hero';
+//import {Hero} from '../../widgets/hero/Hero';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
 import {Prices} from '../../widgets/prices/Prices';
+import type {EmblaOptionsType} from 'embla-carousel';
+import EmblaCarousel from '../../shared/ui/slider/AppEmblaCarousel';
 
 
 
-type props = {};
 
-export const Main = ({}: props) => {
+
+export const Main = () => {
     const ref = useRef<HTMLDivElement>(null);
     const [refOffset, setRefOffset] = useState<number>(0);
 
@@ -25,10 +27,14 @@ export const Main = ({}: props) => {
         }
     }, []);
 
+    const OPTIONS: EmblaOptionsType = { loop: true }
+    const SLIDE_COUNT = 5
+    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
     return (
         <StyledMain ref = {ref}>
-            <Hero/>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+            {/*<Hero/>*/}
             <Services/>
             <Skills/>
             <Prices/>
@@ -45,7 +51,7 @@ export const Main = ({}: props) => {
 };
 
 export const StyledMain = styled.main
-    < {} > `
+    < object > `
     margin-top: 4rem;
   @media ${({theme}) => theme.mediaMinWidth.tablet} {
    
