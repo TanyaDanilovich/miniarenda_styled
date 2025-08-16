@@ -3,8 +3,8 @@ import {Swiper, type SwiperRef} from 'swiper/react';
 import {Autoplay, Navigation} from 'swiper/modules';
 import type {SwiperOptions, AutoplayOptions} from 'swiper/types';
 import type {PropsWithChildren} from '../../types/common.types';
-import "swiper/css";
-
+// eslint-disable-next-line
+import 'swiper/swiper-bundle.css';
 
 type Props = SwiperOptions & {
     id: string;
@@ -36,17 +36,19 @@ export const AppSwiper = ({
     }, [listenerType, eventCallback]);
 
     return (
-        <Swiper
-            ref = {swiperRef}
-            modules = {[Autoplay, Navigation]} className="mySwiper"
+        <Swiper style = {{width: "100%", height: "100%"}}
+                ref = {swiperRef}
+                modules = {[Autoplay, Navigation]} className = "mySwiper"
             // autoplay = {{
             //     delay: autoplay?.delay ?? 2000,
             //     disableOnInteraction: autoplay?.disableOnInteraction ?? false,
             //     pauseOnMouseEnter: autoplay?.pauseOnMouseEnter ?? false,
             //     reverseDirection: autoplay?.reverseDirection ?? false,
             // }}
-            {...rest}        >
+                {...rest}        >
             {children}
         </Swiper>
     );
 };
+
+
