@@ -1,8 +1,9 @@
-import React, {useRef, useEffect} from 'react';
-import {Swiper as SwiperReact, SwiperSlide} from 'swiper/react';
+import {useRef, useEffect} from 'react';
+import {Swiper, type SwiperRef} from 'swiper/react';
 import {Autoplay, Navigation} from 'swiper/modules';
 import type {SwiperOptions, AutoplayOptions} from 'swiper/types';
 import type {PropsWithChildren} from '../../types/common.types';
+import "swiper/css";
 
 
 type Props = SwiperOptions & {
@@ -21,34 +22,31 @@ export const AppSwiper = ({
                               autoplay,
                               ...rest
                           }: PropsWithChildren<Props>) => {
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperRef>(null);
 
     useEffect(() => {
-        if (swiperRef.current && listenerType) {
-            const swiperInstance = swiperRef.current.swiper;
-            swiperInstance.on(listenerType, eventCallback);
-
-            return () => {
-                swiperInstance.off(listenerType, eventCallback);
-            };
-        }
+        // if (swiperRef.current && listenerType) {
+        //     const swiperInstance = swiperRef.current.swiper;
+        //     swiperInstance.on(listenerType, eventCallback);
+        //
+        //     return () => {
+        //         swiperInstance.off(listenerType, eventCallback);
+        //     };
+        // }
     }, [listenerType, eventCallback]);
 
     return (
-        <SwiperReact
+        <Swiper
             ref = {swiperRef}
-            modules = {[Autoplay, Navigation]}
-            autoplay = {{
-                delay: autoplay?.delay ?? 2000,
-                disableOnInteraction: autoplay?.disableOnInteraction ?? false,
-                pauseOnMouseEnter: autoplay?.pauseOnMouseEnter ?? false,
-                reverseDirection: autoplay?.reverseDirection ?? false,
-            }}
-            {...rest}
-        >
-            {React.Children.map(children, (child, index) => (
-                <SwiperSlide key = {index}>{child}</SwiperSlide>
-            ))}
-        </SwiperReact>
+            modules = {[Autoplay, Navigation]} className="mySwiper"
+            // autoplay = {{
+            //     delay: autoplay?.delay ?? 2000,
+            //     disableOnInteraction: autoplay?.disableOnInteraction ?? false,
+            //     pauseOnMouseEnter: autoplay?.pauseOnMouseEnter ?? false,
+            //     reverseDirection: autoplay?.reverseDirection ?? false,
+            // }}
+            {...rest}        >
+            {children}
+        </Swiper>
     );
 };

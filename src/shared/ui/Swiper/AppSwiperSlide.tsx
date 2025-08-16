@@ -1,5 +1,6 @@
 import {type PropsWithChildren} from '../../types/common.types';
-import {SwiperSlideProps} from 'swiper/swiper-react';
+
+import {SwiperSlide, type SwiperSlideProps} from 'swiper/react';
 
 type props = SwiperSlideProps & {
     id: string,
@@ -8,8 +9,8 @@ type props = SwiperSlideProps & {
 export function AppSwiperSlide({children, ...rest}: PropsWithChildren<props>) {
 
     return (
-        <swiper-slide {...rest}>
+        <SwiperSlide {...rest}>
             {children}
-        </swiper-slide>
+        </SwiperSlide>
     );
 }

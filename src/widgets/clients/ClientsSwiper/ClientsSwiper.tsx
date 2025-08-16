@@ -6,7 +6,8 @@ import img3 from '../../../assets/images/clients/stroytrest.webp'
 import img4 from '../../../assets/images/clients/world.webp'
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
 import {BASE} from '../../../shared/constants/constants';
-import type {SwiperProps} from 'swiper/types';
+import type {SwiperOptions} from 'swiper/types';
+
 
 
 
@@ -17,9 +18,11 @@ export const ClientsSwiper = ({id}: props) => {
 
     const css = ``
 
-    const params: SwiperProps = {
+    const params: SwiperOptions = {
         slidesPerView: 3, spaceBetween: BASE * 2,
-        injectStyles: [css], loop: true, speed: 3000,
+        injectStyles: [css],
+       // loop: true,
+        speed: 3000,
         autoplay: {delay: 5000},
     }
 

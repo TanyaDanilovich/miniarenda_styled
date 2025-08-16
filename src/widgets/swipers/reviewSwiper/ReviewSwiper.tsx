@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import styled from 'styled-components';
-import {SwiperProps} from 'swiper/swiper-react';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {reviewsData} from '../../reviews/reviewData';
 import {ReviewSlide} from './ReviewSlide';
+import type {SwiperOptions} from 'swiper/types';
 
 
 type props = {
@@ -15,7 +15,7 @@ export const ReviewSwiper = ({id}: props) => {
 
     const resetClose = () => setClose(null)
 
-    const params: SwiperProps = {
+    const params: SwiperOptions = {
         breakpoints: {
             320: {
                 slidesPerView: 1,
