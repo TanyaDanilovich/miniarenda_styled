@@ -1,20 +1,20 @@
-import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import {useAutoplay} from './EmblaCarouselAutoplay'
 import {NextButton, PrevButton, usePrevNextButtons} from './EmblaCarouselArrowButtons'
 import type {EmblaOptionsType} from 'embla-carousel';
 import './embla.css'
+import {DotButton, useDotButton} from './EmblaCarouselDotButton';
 
 type PropType = {
     slides: number[]
     options?: EmblaOptionsType
 }
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
-    const {slides, options} = props
+const EmblaCarousel = ({slides, options}: PropType) => {
+
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-        Autoplay({playOnInit: true, delay: 3000})
+        Autoplay({playOnInit: true, delay: 5000})
     ])
 
     const {
@@ -25,6 +25,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     } = usePrevNextButtons(emblaApi)
 
     const {onAutoplayButtonClick} = useAutoplay(emblaApi)
+    const {selectedIndex, scrollSnaps, onDotButtonClick} =
+        useDotButton(emblaApi)
 
     return (
         <div className = "embla">
@@ -48,6 +50,18 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     <NextButton
                         onClick = {() => onAutoplayButtonClick(onNextButtonClick)}
                         disabled = {nextBtnDisabled}/>
+                </div>
+
+                <div className = "embla__dots">
+                    {scrollSnaps.map((_, index) => (
+                        <DotButton
+                            key = {index}
+                            onClick = {() => onDotButtonClick(index)}
+                            className = {'embla__dot'.concat(
+                                index === selectedIndex ? ' embla__dot--selected' : ''
+                            )}
+                        />
+                    ))}
                 </div>
 
             </div>

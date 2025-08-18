@@ -10,10 +10,7 @@ import {OrderModal} from '../../widgets/orderModal/OrderModal';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
 import {Prices} from '../../widgets/prices/Prices';
-import type {EmblaOptionsType} from 'embla-carousel';
-import EmblaCarousel from '../../shared/ui/slider/AppEmblaCarousel';
-
-
+import {HeroCarousel} from '../../widgets/swipers/carousels/HeroCarousel';
 
 
 
@@ -27,13 +24,9 @@ export const Main = () => {
         }
     }, []);
 
-    const OPTIONS: EmblaOptionsType = { loop: true }
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
     return (
         <StyledMain ref = {ref}>
-            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+            <HeroCarousel id={"эрукщ-useEmblaCarousel"}/>
             {/*<Hero/>*/}
             <Services/>
             <Skills/>
