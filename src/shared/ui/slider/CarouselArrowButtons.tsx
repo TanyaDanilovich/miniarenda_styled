@@ -39,16 +39,7 @@ export const NextArrowButton = (props: PropType) => {
 }
 
 
-export const S_AppCarouselArrowButtonsContainer = styled.div`
-    position:absolute;
-    top:50%;
-    left:0;
-    right:0;
-    display:flex;
-    justify-content:space-between;
-    transform:translateY(-50%);
-    z-index:1;
-`
+
 
 const S_AppCarouselArrowButton = styled.button`
     background:rgba(0, 0, 0, 0.5);

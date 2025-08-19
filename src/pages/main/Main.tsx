@@ -27,7 +27,6 @@ export const Main = () => {
     return (
         <StyledMain ref = {ref}>
             <HeroCarousel/>
-            {/*<Hero/>*/}
             <Services/>
             <Skills/>
             <Prices/>

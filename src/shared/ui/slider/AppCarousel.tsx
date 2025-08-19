@@ -3,13 +3,10 @@ import React, {useCallback} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import styled from 'styled-components'
-
 import {usePrevNextButtons} from './hooks/usePrevNextButtons';
-import {NextArrowButton, PrevArrowButton, S_AppCarouselArrowButtonsContainer} from './CarouselArrowButtons';
+import {NextArrowButton, PrevArrowButton} from './CarouselArrowButtons';
 import {useDotButton} from './hooks/useDotButtons';
-import {DotButton, S_AppCarouselDotsContainer} from './CarouselDotButtons';
-
-
+import {DotButton} from './CarouselDotButtons';
 
 
 export type CarouselAutoplayOptions = {
@@ -30,7 +27,7 @@ export type CarouselProps = {
 export const AppCarousel = ({
                                 id,
                                 options = {},
-                               // autoplay,
+                                // autoplay,
                                 showDots = true,
                                 showArrows = true,
                                 children
@@ -50,7 +47,7 @@ export const AppCarousel = ({
         resetOrStop()
     }, [])
 
-    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
+    const {selectedIndex, scrollSnaps, onDotButtonClick} = useDotButton(
         emblaApi,
         onNavButtonClick
     )
@@ -63,8 +60,6 @@ export const AppCarousel = ({
     } = usePrevNextButtons(emblaApi, onNavButtonClick)
 
 
-
-
     return (
         <S_AppCarouselWrapper id = {id}>
             <S_AppCarouselViewport ref = {emblaRef}>
@@ -74,27 +69,22 @@ export const AppCarousel = ({
             </S_AppCarouselViewport>
 
 
+            {showArrows && <S_AppCarouselArrowButtonsContainer>
+                <PrevArrowButton onClick = {onPrevButtonClick} disabled = {prevBtnDisabled}/>
+                <NextArrowButton onClick = {onNextButtonClick} disabled = {nextBtnDisabled}/>
+            </S_AppCarouselArrowButtonsContainer>}
 
-            <S_AppCarouselArrowButtonsContainer>
-
-
-                <div className = "embla__buttons">
-                    <PrevArrowButton onClick = {onPrevButtonClick} disabled = {prevBtnDisabled}/>
-                    <NextArrowButton onClick = {onNextButtonClick} disabled = {nextBtnDisabled}/>
-                </div>
-
-                <S_AppCarouselDotsContainer>
-                    {scrollSnaps.map((_, index) => (
-                        <DotButton
-                            key = {index}
-                            onClick = {() => onDotButtonClick(index)}
-                            className = {'embla__dot'.concat(
-                                index === selectedIndex ? ' embla__dot--selected' : ''
-                            )}
-                        />
-                    ))}
-                </S_AppCarouselDotsContainer>
-            </S_AppCarouselArrowButtonsContainer>
+            {showDots && <S_AppCarouselDotsContainer>
+                {scrollSnaps.map((_, index) => (
+                    <DotButton
+                        key = {index}
+                        onClick = {() => onDotButtonClick(index)}
+                        className = {'embla__dot'.concat(
+                            index === selectedIndex ? ' embla__dot--selected' : ''
+                        )}
+                    />
+                ))}
+            </S_AppCarouselDotsContainer>}
 
 
         </S_AppCarouselWrapper>
@@ -120,5 +110,25 @@ export const S_AppCarouselContainer = styled.div`
     backface-visibility:hidden; // Добавлено
     touch-action:pan-y; // Добавлено
 `
+export const S_AppCarouselArrowButtonsContainer = styled.div`
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    transform:translateY(-50%);
+    z-index:1;
+`
 
 
+export const S_AppCarouselDotsContainer = styled.div`
+    position:absolute;
+    bottom:20px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    z-index:1;
+`

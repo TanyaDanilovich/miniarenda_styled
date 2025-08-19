@@ -14,17 +14,6 @@ export const DotButton: React.FC<PropType> = (props) => {
 }
 
 
-export const S_AppCarouselDotsContainer = styled.div`
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    z-index: 1;
-`
-
 const S_AppCarouselDotButton = styled.button<{ $isActive?: boolean }>`
     width: ${({ $isActive }) => $isActive ? '12px' : '8px'};
     height: ${({ $isActive }) => $isActive ? '12px' : '8px'};
