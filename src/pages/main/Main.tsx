@@ -10,7 +10,7 @@ import {OrderModal} from '../../widgets/orderModal/OrderModal';
 import {Equipments} from '../../widgets/equipments/Equipments';
 import Skills from '../../widgets/skills/Skills';
 import {Prices} from '../../widgets/prices/Prices';
-import {HeroCarousel} from '../../widgets/swipers/carousels/HeroCarousel';
+import {HeroCarousel} from '../../widgets/heroCarousel/HeroCarousel';
 
 
 
@@ -26,7 +26,7 @@ export const Main = () => {
 
     return (
         <StyledMain ref = {ref}>
-            <HeroCarousel id={"эрукщ-useEmblaCarousel"}/>
+            <HeroCarousel/>
             {/*<Hero/>*/}
             <Services/>
             <Skills/>
