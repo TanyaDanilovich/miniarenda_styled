@@ -8,7 +8,7 @@ export const border = (width: number = 1, color: string = "red") =>
     `border: ${width}px solid ${color};`;
 
 export const outline = (width: number = 1, color: string = "red") =>
-    `border: ${width}px solid ${color};`;
+    `outline: ${width}px solid ${color};`;
 
 export const plainTransition = (duration?: string) => css`
     transition:all ${({theme}) => duration ?? theme.duration.short} linear;
@@ -82,22 +82,22 @@ export const outlinedNestedDiv = css`
     }
 
     div div{
-        ${({theme}) => outline(10, theme.colors.pink.b400)};
+        ${({theme}) => outline(10, theme.colors.purple.b400)};
         margin:5px;
     }
 
     div div div{
-        ${({theme}) => outline(15, theme.colors.purple.b400)};
+        ${({theme}) => outline(15, theme.colors.indigo.b400)};
         margin:5px;
     }
 
     div div div div{
-        ${({theme}) => outline(20, theme.colors.deeppurple.b400)};
+        ${({theme}) => outline(20, theme.colors.lightblue.b400)};
         margin:5px;
     }
 
     div div div div div{
-        ${({theme}) => outline(25, theme.colors.indigo.b400)};
+        ${({theme}) => outline(25, theme.colors.teal.b400)};
         margin:5px;
     }
 `

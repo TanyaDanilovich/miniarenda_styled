@@ -12,6 +12,7 @@ import {type ImageProps} from '../../shared/types/common.types';
 import ResponsiveImage from '../responsiveImage/responsiveImage';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
 
+
 type props = {
     mainText: string,
     additionalText: string,
@@ -41,13 +42,13 @@ export const HeroSlide = ({mainText, additionalText, image}: props) => {
 };
 
 const S_HeroSlide = styled.article<object>`
-    flex:0 0 100%; // Важно!
-    min-width:0; // Важно!
-    position:relative;
-    height:100%;
-    overflow:hidden;
-    padding:0 10px; // Добавьте отступы если нужно
-    scroll-snap-align:start; // Для плавного скролла
+    flex: 0 0 var(--slide-size); /* 100% ширины в переменной */
+    min-width: 0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-left: var(--slide-spacing);
+ 
 
     ${S_InnerContainer}{
         padding-block:2rem;

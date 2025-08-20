@@ -14,6 +14,7 @@ import imgSlide3_480w from '../../assets/images/hero-slider/480px/webp/DSC4349-4
 import imgSlide3_768w from '../../assets/images/hero-slider/768px/webp/DSC4349-768w.webp';
 import imgSlide3_1200w from '../../assets/images/hero-slider/1200px/webp/DSC4349-1200w.webp';
 
+
 // import img1920w from "../../assets/images/test/1920.jpg"
 // import img1200w from "../../assets/images/test/1200.jpg"
 // import img768w from "../../assets/images/test/768.jpg"
@@ -34,11 +35,11 @@ export const heroData: HeroSlideData[] = [
                 '480': imgSlide1_480w,
                 '768': imgSlide1_768w,
                 '1200': imgSlide1_1200w
-            // src: img1920w,
-            // srcSet: {
-            //     '480': img480w,
-            //     '768': img768w,
-            //     '1200': img1200w
+                // src: img1920w,
+                // srcSet: {
+                //     '480': img480w,
+                //     '768': img768w,
+                //     '1200': img1200w
             },
             alt: "Аренда мини-экскаватора с гидромолотом и ямобуром"
         }

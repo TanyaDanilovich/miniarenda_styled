@@ -28,4 +28,29 @@ const S_AppCarouselDotButton = styled.button<{ $isActive?: boolean }>`
     &:hover {
         opacity: 1;
     }
+
+
+
+
+   
+        -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        touch-action: manipulation;
+        display: inline-flex;
+        text-decoration: none;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: 2.6rem;
+        height: 2.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    
+
+
 `

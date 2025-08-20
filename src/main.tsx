@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components';
 import {theme} from './app/styles/Theme.styled.tsx';
 import {GlobalStyle} from './app/styles/GlobalStyle.styled.tsx';
 
+
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');
 
