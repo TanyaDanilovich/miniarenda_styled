@@ -1,9 +1,12 @@
 import {heroData} from '../hero/heroData';
 import {HeroSlide} from './HeroSlide';
 import styled from 'styled-components';
-import {AppCarousel} from '../../shared/ui/slider/AppCarousel';
+import {
+    AppCarousel,
+    S_AppCarouselArrowButtonsContainer,
+    S_AppCarouselDotsContainer
+} from '../../shared/ui/slider/AppCarousel';
 import type {EmblaOptionsType} from 'embla-carousel';
-
 
 export const HeroCarousel = () => {
     const carouselOptions: EmblaOptionsType = {
@@ -33,4 +36,16 @@ export const HeroCarousel = () => {
 
 const S_HeroCarousel = styled(AppCarousel)`
 
+    height:80vh;
+
+    ${S_AppCarouselArrowButtonsContainer}{
+        justify-content:space-between;
+    }
+
+    ${S_AppCarouselDotsContainer}{
+        bottom:-5%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 `

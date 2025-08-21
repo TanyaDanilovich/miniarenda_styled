@@ -21,6 +21,7 @@ export type CarouselProps = {
     showDots?: boolean
     showArrows?: boolean
     children: React.ReactNode
+    className?: string
 }
 
 
@@ -30,6 +31,7 @@ export const AppCarousel = ({
                                 // autoplay,
                                 showDots = true,
                                 showArrows = true,
+                                className,
                                 children
                             }: CarouselProps) => {
 
@@ -61,7 +63,7 @@ export const AppCarousel = ({
 
 
     return (
-        <S_AppCarouselWrapper id = {id}>
+        <S_AppCarouselWrapper id = {id} className = {className}>
 
             <S_AppCarouselViewport ref = {emblaRef}>
                 <S_AppCarouselContainer>
@@ -70,7 +72,7 @@ export const AppCarousel = ({
             </S_AppCarouselViewport>
 
 
-            {showArrows && <S_AppCarouselArrowButtonsContainer>
+            {showArrows && <S_AppCarouselArrowButtonsContainer className = {"45454"}>
                 <PrevArrowButton onClick = {onPrevButtonClick} disabled = {prevBtnDisabled}/>
                 <NextArrowButton onClick = {onNextButtonClick} disabled = {nextBtnDisabled}/>
             </S_AppCarouselArrowButtonsContainer>}
@@ -80,9 +82,7 @@ export const AppCarousel = ({
                     <DotButton
                         key = {index}
                         onClick = {() => onDotButtonClick(index)}
-                        className = {'embla__dot'.concat(
-                            index === selectedIndex ? ' embla__dot--selected' : ''
-                        )}
+                        isActive = {index === selectedIndex}
                     />
                 ))}
             </S_AppCarouselDotsContainer>}
@@ -95,7 +95,6 @@ export const AppCarousel = ({
 export const S_AppCarouselWrapper = styled.section`
     position:relative;
     width:100%;
-    height:80vh;
     margin:0 auto;
     /* те же CSS-переменные, что ты использовала */
     --slide-spacing:0px;
@@ -118,7 +117,11 @@ export const S_AppCarouselContainer = styled.div`
 `
 
 export const S_AppCarouselArrowButtonsContainer = styled.div`
-
+    position:absolute;
+    display:flex;
+    left:0;
+    right:0;
+    top:50%;
 `
 
 
@@ -126,10 +129,7 @@ export const S_AppCarouselDotsContainer = styled.div`
     position:absolute;
     left:0;
     right:0;
-    bottom:8px; /* как --swiper-pagination-bottom */
+    bottom:0; /* как --swiper-pagination-bottom */
     z-index:2;
     display:flex;
-    justify-content:center;
-    gap:8px;
-    padding:0 8px;
 `

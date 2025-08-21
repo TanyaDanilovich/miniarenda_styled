@@ -1,5 +1,6 @@
 import {type ComponentPropsWithRef} from 'react';
 import styled from 'styled-components';
+import {BREAKPOINTS} from '../../constants/BREAKPOINTS';
 
 type PropType = ComponentPropsWithRef<'button'>
 
@@ -42,17 +43,16 @@ export const NextArrowButton = (props: PropType) => {
 
 
 const S_AppCarouselArrowButton = styled.button`
-    background:rgba(0, 0, 0, 0.5);
-    border:none;
-    border-radius:50%;
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
+    //width: 0;
+    background-color:${({theme}) => theme.colors.primary};
+    //height: 1rem;
     color:white;
-    transition:all 0.3s ease;
+    transform:skewX(9deg);
+    box-shadow:3px 3px 0 0 ${({theme}) => theme.colors.dark};
+    //padding-block: 0.5rem;
+    @media screen and (min-width:${BREAKPOINTS.tablet}){
+        width:50px;
+    }
 
     &:disabled{
         opacity:0.3;
@@ -60,34 +60,19 @@ const S_AppCarouselArrowButton = styled.button`
     }
 
     &:not(:disabled):hover{
-        background:rgba(0, 0, 0, 0.8);
+        background:rgba(0, 0, 0, 0.5);
     }
 
-
-
-
-    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    touch-action: manipulation;
-    display: inline-flex;
-    text-decoration: none;
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-    width: 3.6rem;
-    height: 3.6rem;
-    z-index: 1;
-    border-radius: 50%;
-    color: var(--text-body);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+    //-webkit-appearance: none;
+    //appearance: none;
+    //touch-action: manipulation;
 `
 
-export const S_AppCarouselNextButton = styled(S_AppCarouselArrowButton)``
+export const S_AppCarouselNextButton = styled(S_AppCarouselArrowButton)`
+    margin-right:2vw;
+`
 
-export const S_AppCarouselPrevButton = styled(S_AppCarouselArrowButton)``
+export const S_AppCarouselPrevButton = styled(S_AppCarouselArrowButton)`
+    margin-left:2vw;
+`
