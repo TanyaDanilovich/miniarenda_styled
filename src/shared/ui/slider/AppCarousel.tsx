@@ -72,7 +72,7 @@ export const AppCarousel = ({
             </S_AppCarouselViewport>
 
 
-            {showArrows && <S_AppCarouselArrowButtonsContainer className = {"45454"}>
+            {showArrows && <S_AppCarouselArrowButtonsContainer>
                 <PrevArrowButton onClick = {onPrevButtonClick} disabled = {prevBtnDisabled}/>
                 <NextArrowButton onClick = {onNextButtonClick} disabled = {nextBtnDisabled}/>
             </S_AppCarouselArrowButtonsContainer>}
@@ -129,7 +129,7 @@ export const S_AppCarouselDotsContainer = styled.div`
     position:absolute;
     left:0;
     right:0;
-    bottom:0; /* как --swiper-pagination-bottom */
+    bottom:0; 
     z-index:2;
     display:flex;
 `

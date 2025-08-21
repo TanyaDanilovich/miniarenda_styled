@@ -61,12 +61,6 @@ const S_AppCarouselArrowButton = styled.button`
 
     &:not(:disabled):hover{
         background:rgba(0, 0, 0, 0.5);
-    }
-
-    //-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
-    //-webkit-appearance: none;
-    //appearance: none;
-    //touch-action: manipulation;
 `
 
 export const S_AppCarouselNextButton = styled(S_AppCarouselArrowButton)`
