@@ -1,6 +1,6 @@
 import {useEffect, useId, useState} from 'react';
 import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
-import {ReviewCard} from '../../reviews/reviewCard/ReviewCard';
+import {ReviewCard} from '../reviewCard/ReviewCard';
 
 
 type props = {
@@ -20,6 +20,7 @@ export const ReviewSlide = ({userName, reviewContent, close, resetClose}: props)
             resetClose()
         }
     }, [close]);
+
 
     const setCollapsed = () => setIsCollapsed(true)
     const setUnCollapsed = () => setIsCollapsed(false)

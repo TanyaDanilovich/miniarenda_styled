@@ -1,12 +1,17 @@
-import type {EmblaCarouselType, EmblaOptionsType} from 'embla-carousel'
-import React, {useCallback} from 'react'
+import type {EmblaCarouselType, EmblaEventType, EmblaOptionsType} from 'embla-carousel'
+import React, {useCallback, useEffect} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import styled from 'styled-components'
 import {usePrevNextButtons} from './hooks/usePrevNextButtons';
 import {NextArrowButton, PrevArrowButton} from './CarouselArrowButtons';
 import {useDotButton} from './hooks/useDotButtons';
 import {DotButton} from './CarouselDotButtons';
+import {
+    S_AppCarouselArrowButtonsContainer,
+    S_AppCarouselContainer, S_AppCarouselDotsContainer,
+    S_AppCarouselViewport,
+    S_AppCarouselWrapper
+} from './appCarouselStyle';
 
 
 export type CarouselAutoplayOptions = {
@@ -21,7 +26,9 @@ export type CarouselProps = {
     showDots?: boolean
     showArrows?: boolean
     children: React.ReactNode
-    className?: string
+    className?: string,
+    callback?: () => void // Колбек для событий
+    eventType?: EmblaEventType
 }
 
 
@@ -32,9 +39,11 @@ export const AppCarousel = ({
                                 showDots = true,
                                 showArrows = true,
                                 className,
+                                callback = () => {
+                                },
+                                eventType = 'select', // По умолчанию слушаем событие select
                                 children
                             }: CarouselProps) => {
-
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -60,6 +69,15 @@ export const AppCarousel = ({
         onPrevButtonClick,
         onNextButtonClick
     } = usePrevNextButtons(emblaApi, onNavButtonClick)
+
+    useEffect(() => {
+        if (!emblaApi || !callback) return
+        const handleEvent = () => callback()
+        emblaApi.on(eventType, handleEvent)
+        console.log(eventType)
+        // return () => emblaApi.off(eventType, handleEvent)
+
+    }, [emblaApi, callback, eventType])
 
 
     return (
@@ -91,45 +109,3 @@ export const AppCarousel = ({
         </S_AppCarouselWrapper>
     )
 }
-
-export const S_AppCarouselWrapper = styled.section`
-    position:relative;
-    width:100%;
-    margin:0 auto;
-    /* те же CSS-переменные, что ты использовала */
-    --slide-spacing:0px;
-    --slide-size:100%;
-
-`
-
-export const S_AppCarouselViewport = styled.div`
-    overflow:hidden;
-    width:100%;
-    height:100%;
-`
-
-export const S_AppCarouselContainer = styled.div`
-    display:flex;
-    height:100%;
-    user-select:none;
-    backface-visibility:hidden;
-    margin-left:calc(var(--slide-spacing) * -1);
-`
-
-export const S_AppCarouselArrowButtonsContainer = styled.div`
-    position:absolute;
-    display:flex;
-    left:0;
-    right:0;
-    top:50%;
-`
-
-
-export const S_AppCarouselDotsContainer = styled.div`
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0; 
-    z-index:2;
-    display:flex;
-`

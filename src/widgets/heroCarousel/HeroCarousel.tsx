@@ -2,11 +2,11 @@ import {heroData} from '../hero/heroData';
 import {HeroSlide} from './HeroSlide';
 import styled from 'styled-components';
 import {
-    AppCarousel,
     S_AppCarouselArrowButtonsContainer,
     S_AppCarouselDotsContainer
-} from '../../shared/ui/slider/AppCarousel';
+} from '../../shared/ui/slider/appCarouselStyle';
 import type {EmblaOptionsType} from 'embla-carousel';
+import {AppCarousel} from '../../shared/ui/slider/AppCarousel';
 
 export const HeroCarousel = () => {
     const carouselOptions: EmblaOptionsType = {

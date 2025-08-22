@@ -42,7 +42,7 @@ export const NextArrowButton = (props: PropType) => {
 
 
 
-const S_AppCarouselArrowButton = styled.button`
+export const S_AppCarouselArrowButton = styled.button`
     //width: 0;
     background-color:${({theme}) => theme.colors.primary};
     //height: 1rem;

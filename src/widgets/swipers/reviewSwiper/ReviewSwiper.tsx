@@ -2,7 +2,7 @@ import {useState} from 'react';
 import styled from 'styled-components';
 import {AppSwiper} from '../../../shared/ui/Swiper/AppSwiper';
 import {reviewsData} from '../../reviews/reviewData';
-import {ReviewSlide} from './ReviewSlide';
+import {ReviewSlide} from '../../reviews/reviewsCarousel/ReviewSlide';
 import type {SwiperOptions} from 'swiper/types';
 
 
