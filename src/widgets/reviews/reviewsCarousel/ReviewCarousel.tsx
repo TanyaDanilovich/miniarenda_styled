@@ -26,13 +26,8 @@ export const ReviewsCarousel = () => {
         jump: false  // Плавный переход
     }
 
+    const onSlideChange = useCallback(() => setClose(true), []);
 
-    const onSlideChange = useCallback(() => {
-        resetClose()
-        console.log('resetClose()')
-    }, []);
-
-    console.log('close', close)
     return (
         <S_ReviewsCarousel id = "reviews-carousel"
                            options = {carouselOptions}

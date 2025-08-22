@@ -74,7 +74,7 @@ export const AppCarousel = ({
         if (!emblaApi || !callback) return
         const handleEvent = () => callback()
         emblaApi.on(eventType, handleEvent)
-        console.log(eventType)
+        //console.log(eventType)
         // return () => emblaApi.off(eventType, handleEvent)
 
     }, [emblaApi, callback, eventType])
