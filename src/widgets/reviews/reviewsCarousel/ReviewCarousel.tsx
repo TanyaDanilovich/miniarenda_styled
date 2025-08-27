@@ -4,19 +4,24 @@ import {ReviewSlide} from './ReviewSlide';
 import styled from 'styled-components';
 import {AppCarousel} from '../../../shared/ui/slider/AppCarousel';
 import {
-    S_AppCarouselArrowButtonsContainer,
+    S_AppCarouselArrowButtonsContainer, S_AppCarouselContainer,
     S_AppCarouselDotsContainer
 } from '../../../shared/ui/slider/appCarouselStyle';
 import {useCallback, useState} from 'react';
+import {S_AppCarouselArrowButton} from '../../../shared/ui/slider/CarouselArrowButtons';
 
-export const ReviewsCarousel = () => {
+
+export const ReviewCarousel = () => {
     const [close, setClose] = useState<boolean | null>(null)
     const resetClose = () => setClose(null)
 
     const carouselOptions: EmblaOptionsType = {
         loop: true,
         //align: 'center',
-        slidesToScroll: 1  // Явно указываем
+        slidesToScroll: 1,
+        // breakpoints: {
+        //     '(min-width: 576px)': {slidesToScroll: 2}
+        // }
     }
 
     // Настройки автопрокрутки с debounce
@@ -32,7 +37,7 @@ export const ReviewsCarousel = () => {
         <S_ReviewsCarousel id = "reviews-carousel"
                            options = {carouselOptions}
                            autoplay = {autoplayConfig}
-                           showDots = {true}
+                           showDots = {false}
                            showArrows = {true}
                            callback = {onSlideChange} // Передаем колбек
                            eventType = "select" // Слушаем событие выбора слайда
@@ -52,11 +57,19 @@ const S_ReviewsCarousel = styled(AppCarousel)`
 
     height:100%;
     padding-bottom:2rem;
+    gap:2rem;
+
+    ${S_AppCarouselContainer}{
+        column-gap:2rem;
+        @media ${({theme}) => theme.mediaMinWidth.largeMobile}{
+            column-gap:1rem;
+        }
+    }
 
     ${S_AppCarouselArrowButtonsContainer}{
         justify-content:right;
         top:0;
-        gap:1rem;
+        gap:2rem;
     }
 
     ${S_AppCarouselDotsContainer}{
@@ -66,5 +79,8 @@ const S_ReviewsCarousel = styled(AppCarousel)`
         align-items:center;
     }
 
+    ${S_AppCarouselArrowButton}{
+        width:2rem;
+    }
 
 `

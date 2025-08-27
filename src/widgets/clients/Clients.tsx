@@ -1,21 +1,14 @@
-
 import {S_Clients} from './S_Clients';
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
-import {ClientsSwiper} from './ClientsSwiper/ClientsSwiper';
+import {ClientsCarousel} from './ClientsSwiper/ClientsCarousel';
 
 
-
-type props = {};
-export const Clients = ({}: props) => {
-    const swiperId = "clientsSwiper";
+export const Clients = () => {
 
     return (
         <S_Clients>
-
-
             <SectionTitle title = {"Работаем с частными лицами и организациями"} text = {''}/>
-            <ClientsSwiper id = {swiperId}/>
-
+            <ClientsCarousel/>
         </S_Clients>);
 };
 

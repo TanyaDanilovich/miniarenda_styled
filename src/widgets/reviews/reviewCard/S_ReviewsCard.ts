@@ -2,6 +2,7 @@ import styled from "styled-components";
 import checkmark from "../../../assets/icons/checkmark-circle-green.svg"
 import {S_Flex} from '../../../shared/styled/S_Flex';
 
+
 export const S_UserLetter = styled.div<{}>`
 
     border-radius:50%;
@@ -15,6 +16,7 @@ export const S_UserLetter = styled.div<{}>`
     position:relative;
     flex-shrink:0;
 
+    
     &:after{
         position:absolute;
         content:url(${checkmark});
@@ -45,16 +47,34 @@ export const S_UserName = styled.div<{}>`
 export const S_ReviewCard = styled.div<{}>`
     padding:1rem;
     margin:4rem auto 0;
-    width:calc(100% - 2rem);
+    // min-width:calc(100% - 20px);
     min-height:220px;
     background-color:${({theme}) => theme.colors.white};
     position:relative;
     z-index:50;
     box-shadow:${({theme}) => theme.shadow.full};
+    flex:0 0 100%;
+
+    &:last-child{
+        margin-right:2rem;
+    }
+
+    @media ${({theme}) => theme.mediaMinWidth.largeMobile}{
+        &:last-child{
+            margin-right:1rem;
+        }
+    }
 
     & > ${S_Flex} > ${S_Flex}{
         flex:0 1 auto;
         max-width:100%;
         min-width:0;
+    }
+
+    @media ${({theme}) => theme.mediaMinWidth.largeMobile}{
+        flex-basis:calc(50% - 1rem);
+    }
+    @media ${({theme}) => theme.mediaMinWidth.computer}{
+        flex-basis:calc(30% + 1rem);
     }
 `

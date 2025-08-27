@@ -5,7 +5,8 @@ import styled, {useTheme} from "styled-components";
 import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import bgImg from "../../assets/png/reviews-bg.png"
 import {S_BackgroundWrapper} from '../../shared/styled/S_BackgroundWrapper';
-import {ReviewsCarousel} from './reviewsCarousel/reviewCarousel';
+import {ReviewCarousel} from './reviewsCarousel/ReviewCarousel';
+
 
 
 type props = { offset: number };
@@ -21,7 +22,7 @@ export const Reviews = ({offset}: props) => {
 
                     <GoogleLink/>
 
-                    <ReviewsCarousel/>
+                    <ReviewCarousel/>
                 </S_OuterContainer>
             </S_BackgroundWrapper>
         </S_Reviews>);

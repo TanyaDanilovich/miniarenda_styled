@@ -1,5 +1,4 @@
-import {useEffect, useId, useState} from 'react';
-import {AppSwiperSlide} from '../../../shared/ui/Swiper/AppSwiperSlide';
+import {useEffect, useState} from 'react';
 import {ReviewCard} from '../reviewCard/ReviewCard';
 
 
@@ -11,7 +10,7 @@ type props = {
 };
 export const ReviewSlide = ({userName, reviewContent, close, resetClose}: props) => {
 
-    const slideId = useId();
+
     const [isCollapsed, setIsCollapsed] = useState<boolean | null>(true)
 
     useEffect(() => {
@@ -26,17 +25,13 @@ export const ReviewSlide = ({userName, reviewContent, close, resetClose}: props)
     const setUnCollapsed = () => setIsCollapsed(false)
 
     return (
-        <AppSwiperSlide id = {slideId}>
+
             <ReviewCard userName = {userName}
                         reviewContent = {reviewContent}
                         isCollapsed = {isCollapsed}
                         setCollapsed = {setCollapsed}
                         setUnCollapsed = {setUnCollapsed}
             />
-        </AppSwiperSlide>
-
     )
-
-
 }
 
