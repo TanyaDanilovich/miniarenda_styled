@@ -6,6 +6,7 @@ import img1 from '../../../assets/images/clients/aquapark.png';
 import img2 from '../../../assets/images/clients/gavan.webp';
 import img3 from '../../../assets/images/clients/stroytrest.webp';
 import img4 from '../../../assets/images/clients/world.webp';
+import {S_AppCarouselWrapper} from '../../../shared/ui/slider/appCarouselStyle';
 
 
 
@@ -62,11 +63,19 @@ const S_ClientsCarousel = styled(AppCarousel)`
         object-fit:cover;
         object-position:center;
         background:none;
-  
+
         img{
             max-width:100%;
             max-height:100%;
             object-fit:contain;
+        }
+
+        flex:0 0 100%;
+        @media ${({theme}) => theme.mediaMinWidth.largeMobile}{
+            flex-basis:50%;
+        }
+        @media ${({theme}) => theme.mediaMinWidth.computer}{
+            flex-basis:25%;
         }
     }
 

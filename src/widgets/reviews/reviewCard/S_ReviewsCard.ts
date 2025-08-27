@@ -75,6 +75,6 @@ export const S_ReviewCard = styled.div<{}>`
         flex-basis:calc(50% - 1rem);
     }
     @media ${({theme}) => theme.mediaMinWidth.computer}{
-        flex-basis:calc(30% + 1rem);
+        flex-basis:calc((100% - 2rem) / 3);
     }
 `
