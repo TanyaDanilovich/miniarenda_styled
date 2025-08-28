@@ -7,16 +7,15 @@ export const S_DropdownText = styled.div<{
     $height: string,
     $padding?: string
 }>`
-  margin: 0;
+    margin:0;
+    
 
-  overflow: scroll;
-
-  p {
-    ${plainTransition()}
-    padding: ${({$padding}) => $padding || '0'};
-    max-height: ${({$maxHeight}) => $maxHeight};
-    height: ${({$height}) => $height};
-  }
+    p{
+        ${plainTransition()}
+        padding:${({$padding}) => $padding || '0'};
+        max-height:${({$maxHeight}) => $maxHeight};
+        height:${({$height}) => $height};
+    }
 
 
 

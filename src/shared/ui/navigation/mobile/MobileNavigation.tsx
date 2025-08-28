@@ -1,19 +1,18 @@
 import styled, {css} from "styled-components";
 import {outline, plainTransition} from '../../../../app/styles/mixins';
 import {BurgerButton} from '../../BurgerButton';
-import {useEffect, useId} from 'react';
+import {useEffect, useId, useState} from 'react';
 import {menuItemsData} from '../menuItemsData';
 import {MobileMenuItem} from './MobileMenuItem';
 import {StyledMain} from '../../../../pages/main/Main';
-import React from 'react';
 
 type props = {};
 export const MobileNavigation = ({}: props) => {
 
     const id = useId();
 
-    const [isNavigationOpen, setNavigationOpen] = React.useState<boolean>(false);
-    const [dropDownId, setDropDownId] = React.useState<string | null>(null);
+    const [isNavigationOpen, setNavigationOpen] = useState<boolean>(false);
+    const [dropDownId, setDropDownId] = useState<string | null>(null);
 
     useEffect(() => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions

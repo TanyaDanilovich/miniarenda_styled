@@ -1,10 +1,9 @@
-import {useId} from 'react';
-import {HeroSwiper} from '../swipers/heroSwiper/HeroSwiper';
 import styled from 'styled-components';
+import {HeroCarousel} from '../heroCarousel/HeroCarousel';
 
 type props = {};
 export const Hero = ({}: props) => {
-    const id = useId()
+
 
     return (
         <S_Hero id={"hero"}>
@@ -16,7 +15,7 @@ export const Hero = ({}: props) => {
                 <span> От 80 руб в час</span>
                 <span>Работаем без выходных</span>
             </h1>
-            <HeroSwiper id = {id}/>
+            <HeroCarousel/>
 
 
         </S_Hero>);

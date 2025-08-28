@@ -3,6 +3,7 @@ import {getResponsiveSize} from '../../shared/utils/getResponsiveSize.ts';
 import {BASE} from '../../shared/constants/constants.ts';
 
 
+
 export const Question = ({text}: { text: string }) => {
 
 
@@ -14,9 +15,9 @@ export const Question = ({text}: { text: string }) => {
 
 
 export const S_QuestionText = styled.p<{}>`
-  padding: ${getResponsiveSize(BASE / 2, BASE * 2)};
-  padding-left: 1.5rem;
-  cursor: pointer;
-  flex-grow: 1;
+    padding:${getResponsiveSize(BASE / 2, BASE * 2)};
+    padding-left:1.5rem;
+    cursor:pointer;
+    flex-grow:1;
 `
 

@@ -1,7 +1,7 @@
-
 import {type SchemaOrgData} from '../../shared/types/common.types';
 import {S_DropdownText} from '../../shared/styled/S_DropdownText.ts';
 import styled from 'styled-components';
+
 
 type Props = { text: string, isOpen: boolean, schemaOrg?: SchemaOrgData, textSchemaOrg?: SchemaOrgData };
 export const QuestionDropdownText = ({text, isOpen, textSchemaOrg}: Props) => {
@@ -19,7 +19,8 @@ export const QuestionDropdownText = ({text, isOpen, textSchemaOrg}: Props) => {
 };
 
 
-export const S_QuestionDropdownText = styled(S_DropdownText)<{}>`
-
-`
+export const S_QuestionDropdownText =
+    styled(S_DropdownText)`
+        overflow:auto;
+    `
 
