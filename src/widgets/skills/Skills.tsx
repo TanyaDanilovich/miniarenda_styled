@@ -1,4 +1,4 @@
-import styled, {useTheme} from 'styled-components';
+import styled, {useTheme, css} from 'styled-components';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
 import {BASE} from '../../shared/constants/constants';
 import {S_Flex} from '../../shared/styled/S_Flex';
@@ -12,7 +12,7 @@ const Skills = () => {
     return (
         <SkillsSection id = {"skills"}>
             <SkillsWrapper>
-                <SkillsContent>
+                <SkillsContent $isWithText = {false}>
                     <SectionTitle title = {"Почему мы?"}/>
 
                 </SkillsContent>
@@ -91,9 +91,33 @@ const SkillsWrapper = styled.div`
     padding:0 1rem;
 `;
 
-const SkillsContent = styled.div`
+const SkillsContent = styled.div<{ $isWithText: boolean }>`
     text-align:center;
     margin-bottom:2rem;
+    margin-block: ${getResponsiveSize(BASE * 2, BASE * 4)};
+    white-space: normal;
+
+    p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+
+        ${({$isWithText}) => $isWithText && css`
+            border-left: 5px solid ${({theme}) => theme.colors.primary};
+            align-items: center;
+
+            @media ${({theme}) => theme.mediaMinWidth.tablet} {
+                p {
+                    width: 50%;
+                }
+            }
+        `}
+    }
 `;
 
 // Сетка для элементов

@@ -1,6 +1,6 @@
 import {SectionTitle} from '../../shared/ui/sectionTitle/SectionTitle';
 import {S_OuterContainer} from '../../shared/styled/S_OuterContainer';
-import styled, {useTheme} from 'styled-components';
+import styled, {useTheme, css} from 'styled-components';
 import {sectionMargin, sectionPadding} from '../../app/styles/mixins';
 import {S_ImageContainer} from '../../shared/styled/S_ImageContainer';
 import image from '../../assets/images/price/768/webp/price-768w.webp';
@@ -8,6 +8,8 @@ import {S_Image} from '../../shared/styled/S_Image';
 import {S_Flex} from '../../shared/styled/S_Flex';
 import {S_P} from '../../shared/styled/S_P';
 import {S_Span} from '../../shared/styled/S_Span';
+import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
+import {BASE} from '../../shared/constants/constants';
 
 type props = {};
 export const Prices = ({}: props) => {
@@ -17,7 +19,9 @@ export const Prices = ({}: props) => {
         <S_Prices id = {"prices"}>
 
             <S_OuterContainer>
-                <SectionTitle title = {"Стоимость"}/>
+                <S_TitleContainer $isWithText = {false}>
+                    <SectionTitle title = {"Стоимость"}/>
+                </S_TitleContainer>
                 <S_PriceContentWrapper>
                     <S_PriceContent $direction = {"column"} $rowGap = {"1rem"}>
                         <S_P>
@@ -93,3 +97,30 @@ const S_PriceContentWrapper = styled(S_Flex)`
 const S_PriceContent = styled(S_Flex)<{}>`
 
 `
+
+const S_TitleContainer = styled.div<{ $isWithText: boolean }>`
+  margin-block: ${getResponsiveSize(BASE * 2, BASE * 4)};
+  white-space: normal;
+
+  p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  @media ${({theme}) => theme.mediaMinWidth.largeMobile} {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+
+    ${({$isWithText}) => $isWithText && css`
+      border-left: 5px solid ${({theme}) => theme.colors.primary};
+      align-items: center;
+
+      @media ${({theme}) => theme.mediaMinWidth.tablet} {
+        p {
+          width: 50%;
+        }
+      }
+    `}
+  }
+`;
