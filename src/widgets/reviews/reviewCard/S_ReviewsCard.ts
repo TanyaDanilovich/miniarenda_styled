@@ -45,14 +45,15 @@ export const S_UserName = styled.div<{}>`
 
 
 export const S_ReviewCard = styled.div<{}>`
-    padding:1rem;
-    margin:4rem auto 0;
-    // min-width:calc(100% - 20px);
-    min-height:220px;
-    background-color:${({theme}) => theme.colors.white};
-    position:relative;
-    z-index:50;
-    box-shadow:${({theme}) => theme.shadow.full};
+    margin: 4rem auto 0;
+    min-height: 220px;
+    padding: 1rem;
+    border-radius: 16px;
+    background: ${({ theme }) => theme.colors.white};
+    box-shadow: ${({ theme }) => theme.shadow.full};
+    position: relative;
+    z-index: 50;
+    
     flex:0 0 100%;
 
     &:last-child{
