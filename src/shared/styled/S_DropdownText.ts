@@ -8,7 +8,7 @@ export const S_DropdownText = styled.div<{
     $padding?: string
 }>`
     margin:0;
-    
+    overflow:hidden;
 
     p{
         ${plainTransition()}
