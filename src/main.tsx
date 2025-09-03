@@ -4,6 +4,7 @@ import App from './app/App.tsx';
 import {ThemeProvider} from 'styled-components';
 import {theme} from './app/styles/Theme.styled.tsx';
 import {GlobalStyle} from './app/styles/GlobalStyle.styled.tsx';
+import {HelmetProvider} from 'react-helmet-async';
 
 
 const rootElement = document.getElementById('root');
@@ -14,7 +15,9 @@ root.render(
     <StrictMode>
         <ThemeProvider theme = {theme}>
             <GlobalStyle/>
-            <App/>
+            <HelmetProvider>
+                <App/>
+            </HelmetProvider>
         </ThemeProvider>
     </StrictMode>
 )

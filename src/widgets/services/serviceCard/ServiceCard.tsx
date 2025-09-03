@@ -6,7 +6,7 @@ import {type SubcategoryItem} from '../../../shared/types/common.types';
 import {getResponsiveSize} from '../../../shared/utils/getResponsiveSize';
 import {BASE} from '../../../shared/constants/constants';
 import {ServiceCardDropdownText} from './ServiceCardDropdownText.tsx';
-import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import ResponsiveImage from '../../responsiveImage/ResponsiveImage';
 import {ReadMoreButtonAsButton} from '../../../shared/ui/buttons/ReadMoreButtonAsButton';
 
 export type ServiceCardData = {

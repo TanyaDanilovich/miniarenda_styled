@@ -1,9 +1,11 @@
 import {S_ReviewCard} from './S_ReviewsCard';
 import {ReviewContent} from './ReviewContent';
-import {Rating} from '../../../shared/ui/rating/Rating';
+
 import styled from 'styled-components';
 import checkmark from '../../../assets/icons/checkmark-circle-green.svg';
+import {Rating} from '../../../shared/ui/rating/Rating';
 
+//
 
 type props = {
     userName: string,
@@ -21,16 +23,6 @@ export const ReviewCard = ({userName, reviewContent, isCollapsed, setUnCollapsed
                 <Rating size="1x" />
                 <S_RatingValue itemProp="ratingValue">5</S_RatingValue>
             </S_ReviewCard_Header>
-
-
-            {/*<S_Flex $align = {"center"} $gap = {"0.5rem"}>*/}
-            {/*    <S_UserLetter>{userName[0]}</S_UserLetter>*/}
-            {/*    <S_Flex $align = {"start"} $gap = {"0.5rem"} $wrap = {'wrap'} $direction = {'column'}>*/}
-            {/*        <S_UserName itemProp = "author">{userName}</S_UserName>*/}
-            {/*        <Rating size = {'1x'}/>*/}
-            {/*        <S_RatingValue itemProp = "ratingValue">5</S_RatingValue>*/}
-            {/*    </S_Flex>*/}
-            {/*</S_Flex>*/}
 
             <ReviewContent text = {reviewContent}
                            isCollapsed = {isCollapsed}
@@ -86,7 +78,7 @@ export const S_ReviewCard_Header = styled.figcaption`
 
 export const S_Author = styled.span`
   grid-area: name;
-  font: ${({ theme }) => `${theme.fonts.weight.semiBold} ${theme.fonts.size.p}/1.2 ${theme.fonts.family}`};
+  font: ${({ theme }) => `${theme.fonts.weight.bold} ${theme.fonts.size.p}/1.2 ${theme.fonts.family}`};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

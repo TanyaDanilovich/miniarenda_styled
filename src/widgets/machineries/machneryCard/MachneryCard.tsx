@@ -5,7 +5,7 @@ import {ImageHover, transitionHoverIcon} from '../../../app/styles/mixins';
 import {FontAwesomeIconCover} from '../../../shared/styled/FontAwesomeIconCover';
 import {type MachineryData} from '../../../shared/types/common.types';
 import {MachineCharacteristicsTable} from '../../../features/machineCharacteristicsTable/MachineCharacteristicsTable';
-import ResponsiveImage from '../../responsiveImage/responsiveImage';
+import ResponsiveImage from '../../responsiveImage/ResponsiveImage';
 import {S_TableTitle} from '../../../shared/styled/S_Table';
 import FontAwesomeIcon from '../../../shared/ui/icon/FontAwesomeIcon';
 

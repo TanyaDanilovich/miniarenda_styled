@@ -1,4 +1,5 @@
 import {type ImageProps} from '../../shared/types/common.types';
+
 import imgSlide1_1920w from '../../assets/images/hero-slider/1920px/webp/DSC2623-1920w.webp';
 import imgSlide1_480w from '../../assets/images/hero-slider/480px/webp/DSC2623-480w.webp';
 import imgSlide1_768w from '../../assets/images/hero-slider/768px/webp/DSC2623-768w.webp';
@@ -15,10 +16,12 @@ import imgSlide3_768w from '../../assets/images/hero-slider/768px/webp/DSC4349-7
 import imgSlide3_1200w from '../../assets/images/hero-slider/1200px/webp/DSC4349-1200w.webp';
 
 
-// import img1920w from "../../assets/images/test/1920.jpg"
-// import img1200w from "../../assets/images/test/1200.jpg"
-// import img768w from "../../assets/images/test/768.jpg"
-// import img480w from "../../assets/images/test/480.jpg"
+// import imgSlide1_1920w from "../../assets/images/test/1920.jpg"
+// import imgSlide1_1200w from "../../assets/images/test/1200.jpg"
+// import imgSlide1_768w from "../../assets/images/test/768.jpg"
+// import imgSlide1_480w from "../../assets/images/test/480.jpg"
+
+
 type HeroSlideData = {
     mainText: string,
     additionalText: string,
