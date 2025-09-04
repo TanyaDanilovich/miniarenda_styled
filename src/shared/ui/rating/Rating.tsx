@@ -69,7 +69,8 @@ const Stars = styled.span<{
     --gap:${({$gap}) => $gap}px;
     --active:${({$active}) => $active};
     --inactive:${({$inactive}) => $inactive};
-    display:inline-block;
+    display:block;
+    margin-inline:auto;
     height:var(--size);
     width:calc(var(--stars) * var(--size) + (var(--stars) - 1) * var(--gap) + var(--gap));
     background:linear-gradient(

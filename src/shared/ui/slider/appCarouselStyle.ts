@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 
-export const S_AppCarouselWrapper = styled.section<{ $vh?: number }>`
+export const S_AppCarouselWrapper = styled.section<{ $height?: number }>`
     position:relative;
     width:100%;
-    height:${({$vh}) => `${$vh}px`} | 100%;
+    height:${({$height}) => `${$height}px` || "100%"};
     margin:0 auto;
     /* те же CSS-переменные, что ты использовала */
     --slide-spacing:0px;

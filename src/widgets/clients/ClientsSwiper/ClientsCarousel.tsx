@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import type {EmblaOptionsType} from 'embla-carousel';
-import {AppCarousel} from '../../../shared/ui/slider/AppCarousel';
 import {S_ImageContainer} from '../../../shared/styled/S_ImageContainer';
 import img1 from '../../../assets/images/clients/aquapark.png';
 import img2 from '../../../assets/images/clients/gavan.webp';
 import img3 from '../../../assets/images/clients/stroytrest.webp';
 import img4 from '../../../assets/images/clients/world.webp';
+import {S_AppCarouselWrapper} from '../../../shared/ui/slider/appCarouselStyle';
+import {AppCarousel} from '../../../shared/ui/slider/AppCarousel';
 
+export type ClientsCarouselProps = {
+    className?: string,
+}
 
-export const ClientsCarousel = () => {
+export const ClientsCarousel = ({className}: ClientsCarouselProps) => {
     const carouselOptions: EmblaOptionsType = {
         loop: true,
         //align: 'center',
@@ -23,33 +27,32 @@ export const ClientsCarousel = () => {
     }
 
     return (
-        <S_ClientsCarousel id = "clients-carousel"
-                           options = {carouselOptions}
-                           autoplay = {autoplayConfig}
-                           showDots = {false}
-                           showArrows = {false}>
+        <S_ClientsCarousel id = "clients-carousel" className = {className}>
+            <AppCarousel options = {carouselOptions}
+                         autoplay = {autoplayConfig}
+                         showDots = {false}
+                         showArrows = {false}>
+                <S_ImageContainer>
+                    <img src = {img1} alt = {"alt"}/>
+                </S_ImageContainer>
 
-            <S_ImageContainer>
-                <img src = {img1} alt = {"alt"}/>
-            </S_ImageContainer>
+                <S_ImageContainer>
+                    <img src = {img2} alt = {"alt"}/>
+                </S_ImageContainer>
 
-            <S_ImageContainer>
-                <img src = {img2} alt = {"alt"}/>
-            </S_ImageContainer>
+                <S_ImageContainer>
+                    <img src = {img3} alt = {"alt"}/>
+                </S_ImageContainer>
 
-            <S_ImageContainer>
-                <img src = {img3} alt = {"alt"}/>
-            </S_ImageContainer>
-
-            <S_ImageContainer>
-                <img src = {img4} alt = {"alt"}/>
-            </S_ImageContainer>
-
+                <S_ImageContainer>
+                    <img src = {img4} alt = {"alt"}/>
+                </S_ImageContainer>
+            </AppCarousel>
         </S_ClientsCarousel>
     )
 }
 
-const S_ClientsCarousel = styled(AppCarousel)`
+const S_ClientsCarousel = styled(S_AppCarouselWrapper)`
 
     height:100%;
 

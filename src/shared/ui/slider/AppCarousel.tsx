@@ -9,8 +9,7 @@ import {DotButton} from './CarouselDotButtons';
 import {
     S_AppCarouselArrowButtonsContainer,
     S_AppCarouselContainer, S_AppCarouselDotsContainer,
-    S_AppCarouselViewport,
-    S_AppCarouselWrapper
+    S_AppCarouselViewport
 } from './appCarouselStyle';
 
 
@@ -20,32 +19,27 @@ export type CarouselAutoplayOptions = {
 }
 
 export type CarouselProps = {
-    id: string
     options?: EmblaOptionsType
     autoplay?: CarouselAutoplayOptions
     showDots?: boolean
     showArrows?: boolean
     children: React.ReactNode
-    className?: string,
     callback?: () => void // Колбек для событий
     eventType?: EmblaEventType,
-    $height: number
 }
 
 
 export const AppCarousel = ({
-                                id,
-                                options = {},
-                                autoplay,
-                                showDots = true,
-                                showArrows = true,
-                                className,
-                                callback = () => {
-                                },
-                                eventType = 'select',
-                                $height,
-                                children
-                            }: CarouselProps) => {
+
+                                     options = {},
+                                     autoplay,
+                                     showDots = true,
+                                     showArrows = true,
+                                     callback = () => {
+                                     },
+                                     eventType = 'select',
+                                     children
+                                 }: CarouselProps) => {
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({...autoplay})])
 
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -81,10 +75,8 @@ export const AppCarousel = ({
 
     }, [emblaApi, callback, eventType])
 
-    console.log("AppCarousel - ", $height)
-
     return (
-        <S_AppCarouselWrapper id = {id} className = {className} $vh = {$height}>
+        <>
 
             <S_AppCarouselViewport ref = {emblaRef}>
                 <S_AppCarouselContainer>
@@ -109,6 +101,6 @@ export const AppCarousel = ({
             </S_AppCarouselDotsContainer>}
 
 
-        </S_AppCarouselWrapper>
+        </>
     )
 }

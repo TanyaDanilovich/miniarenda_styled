@@ -2,16 +2,21 @@ import type {EmblaOptionsType} from 'embla-carousel';
 import {reviewsData} from '../reviewData';
 import {ReviewSlide} from './ReviewSlide';
 import styled from 'styled-components';
-import {AppCarousel} from '../../../shared/ui/slider/AppCarousel';
 import {
-    S_AppCarouselArrowButtonsContainer, S_AppCarouselContainer,
-    S_AppCarouselDotsContainer
+    S_AppCarouselArrowButtonsContainer,
+    S_AppCarouselContainer,
+    S_AppCarouselDotsContainer,
+    S_AppCarouselWrapper
 } from '../../../shared/ui/slider/appCarouselStyle';
 import {useCallback, useState} from 'react';
 import {S_AppCarouselArrowButton} from '../../../shared/ui/slider/CarouselArrowButtons';
+import {AppCarousel} from '../../../shared/ui/slider/AppCarousel';
 
+export type ReviewCarouselProps = {
+    className?: string,
+}
 
-export const ReviewCarousel = () => {
+export const ReviewCarousel = ({className}: ReviewCarouselProps) => {
     const [close, setClose] = useState<boolean | null>(null)
     const resetClose = () => setClose(null)
 
@@ -26,7 +31,7 @@ export const ReviewCarousel = () => {
 
     // Настройки автопрокрутки с debounce
     const autoplayConfig = {
-        delay: 2000,
+        delay: 8000,
         stopOnInteraction: false,
         jump: false  // Плавный переход
     }
@@ -34,28 +39,31 @@ export const ReviewCarousel = () => {
     const onSlideChange = useCallback(() => setClose(true), []);
 
     return (
-        <S_ReviewsCarousel id = "reviews-carousel"
-                           options = {carouselOptions}
-                           autoplay = {autoplayConfig}
-                           showDots = {false}
-                           showArrows = {true}
-                           callback = {onSlideChange} // Передаем колбек
-                           eventType = "select" // Слушаем событие выбора слайда
-        >
-            {reviewsData.map((review, index) =>
-                <ReviewSlide userName = {review.userName}
-                             reviewContent = {review.reviewContent}
-                             close = {close}
-                             resetClose = {resetClose}
-                             key = {`reviews-carousel-${index}`}
-                />)}
+        <S_ReviewsCarousel id = "reviews-carousel" className = {className}>
+            <AppCarousel options = {carouselOptions}
+                         autoplay = {autoplayConfig}
+                         showDots = {false}
+                         showArrows = {true}
+                         callback = {onSlideChange}
+                         eventType = "select">
+
+                {reviewsData.map((review, index) =>
+                    <ReviewSlide userName = {review.userName}
+                                 reviewContent = {review.reviewContent}
+                                 close = {close}
+                                 resetClose = {resetClose}
+                                 key = {`reviews-carousel-${index}`}
+                    />)}
+            </AppCarousel>
         </S_ReviewsCarousel>
+
+
     )
 }
 
-const S_ReviewsCarousel = styled(AppCarousel)`
+const S_ReviewsCarousel = styled(S_AppCarouselWrapper)`
 
-    height:100%;
+
     padding-bottom:2rem;
     gap:2rem;
 
