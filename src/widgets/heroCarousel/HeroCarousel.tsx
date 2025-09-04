@@ -17,7 +17,7 @@ export const HeroCarousel = () => {
 
     // Настройки автопрокрутки с debounce
     const autoplayConfig = {
-        delay: 2000,
+        delay: 8000,
         stopOnInteraction: false,
         jump: false  // Плавный переход
     }

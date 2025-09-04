@@ -35,7 +35,7 @@ export type CarouselProps = {
 export const AppCarousel = ({
                                 id,
                                 options = {},
-                                // autoplay,
+                                autoplay,
                                 showDots = true,
                                 showArrows = true,
                                 className,
@@ -44,7 +44,7 @@ export const AppCarousel = ({
                                 eventType = 'select', // По умолчанию слушаем событие select
                                 children
                             }: CarouselProps) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
+    const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({...autoplay})])
 
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
         const autoplay = emblaApi?.plugins()?.autoplay
