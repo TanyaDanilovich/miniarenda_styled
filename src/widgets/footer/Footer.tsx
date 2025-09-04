@@ -60,7 +60,6 @@ export const Footer = ({}: props) => {
                             <li><Link to = {ROUTES_PATHS.services.url}>{ROUTES_PATHS.services.title}</Link>
                             </li>
                             <li><Link to = {ROUTES_PATHS.price.url}>{ROUTES_PATHS.price.title}</Link></li>
-                            {/*<li><Link to = {ROUTES_PATHS.projects.url}>{t('pages.projects.navigation')}</Link></li>*/}
                             <li><Link to = {ROUTES_PATHS.reviews.url}>{ROUTES_PATHS.reviews.title}</Link></li>
                             <li><Link to = {ROUTES_PATHS.faq.url}>{ROUTES_PATHS.faq.title}</Link></li>
                         </ul>
@@ -203,7 +202,7 @@ export const S_FooterItem = styled.div<{}>`
 
         p:has(a){
             font-weight:${({theme}) => theme.fonts.weight.bold};
-            font-size:${getResponsiveSize(25, 25)};
+            font-size:${getResponsiveSize(20, 25)};
             padding-left:1rem;
 
             svg{
