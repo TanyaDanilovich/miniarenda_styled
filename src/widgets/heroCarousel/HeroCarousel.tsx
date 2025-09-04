@@ -7,6 +7,7 @@ import {
 } from '../../shared/ui/slider/appCarouselStyle';
 import type {EmblaOptionsType} from 'embla-carousel';
 import {AppCarousel} from '../../shared/ui/slider/AppCarousel';
+import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
 
 export const HeroCarousel = () => {
     const carouselOptions: EmblaOptionsType = {
@@ -14,8 +15,9 @@ export const HeroCarousel = () => {
         //align: 'center',
         slidesToScroll: 1  // Явно указываем
     }
+    const {height} = useDebouncedWindowSize();
+    console.log("HeroCarousel - ",height)
 
-    // Настройки автопрокрутки с debounce
     const autoplayConfig = {
         delay: 8000,
         stopOnInteraction: false,
@@ -23,20 +25,21 @@ export const HeroCarousel = () => {
     }
 
     return (
-        <S_HeroCarousel id = "main-hero-carousel"
+        <S_HeroCarousel as={AppCarousel} id = "main-hero-carousel"
                         options = {carouselOptions}
                         autoplay = {autoplayConfig}
                         showDots = {true}
                         showArrows = {true}
+                        $height={height}
         >
             {heroData.map((slide, index) => <HeroSlide {...slide} index = {index} key = {index}/>)}
         </S_HeroCarousel>
     )
 }
 
-const S_HeroCarousel = styled(AppCarousel)`
+const S_HeroCarousel = styled.section`
 
-    height:80svh;
+    
 
     ${S_AppCarouselArrowButtonsContainer}{
         justify-content:space-between;

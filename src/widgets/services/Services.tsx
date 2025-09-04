@@ -24,7 +24,7 @@ export const Services = ({}: props) => {
 
     const fullServicesData = API.getFullSubcategoriesData();
     const [servicesData, setServicesData] = useState(fullServicesData);
-    const [width] = useDebouncedWindowSize();
+    const {width} = useDebouncedWindowSize();
 
     useEffect(() => {
         const newServicesData = [...fullServicesData];

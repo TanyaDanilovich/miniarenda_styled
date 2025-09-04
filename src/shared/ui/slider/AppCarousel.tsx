@@ -28,7 +28,8 @@ export type CarouselProps = {
     children: React.ReactNode
     className?: string,
     callback?: () => void // Колбек для событий
-    eventType?: EmblaEventType
+    eventType?: EmblaEventType,
+    $height: number
 }
 
 
@@ -41,7 +42,8 @@ export const AppCarousel = ({
                                 className,
                                 callback = () => {
                                 },
-                                eventType = 'select', // По умолчанию слушаем событие select
+                                eventType = 'select',
+                                $height,
                                 children
                             }: CarouselProps) => {
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({...autoplay})])
@@ -79,9 +81,10 @@ export const AppCarousel = ({
 
     }, [emblaApi, callback, eventType])
 
+    console.log("AppCarousel - ", $height)
 
     return (
-        <S_AppCarouselWrapper id = {id} className = {className}>
+        <S_AppCarouselWrapper id = {id} className = {className} $vh = {$height}>
 
             <S_AppCarouselViewport ref = {emblaRef}>
                 <S_AppCarouselContainer>

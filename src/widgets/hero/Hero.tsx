@@ -22,7 +22,7 @@ export const Hero = ({}: props) => {
 };
 
 export const S_Hero = styled.section<{}>`
-  aspect-ratio: 3/4;
+  //aspect-ratio: 3/4;
   width: 100%;
 
 
