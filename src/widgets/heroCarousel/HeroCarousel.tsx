@@ -36,7 +36,7 @@ export const HeroCarousel = () => {
 
 const S_HeroCarousel = styled(AppCarousel)`
 
-    height:80vh;
+    height:80svh;
 
     ${S_AppCarouselArrowButtonsContainer}{
         justify-content:space-between;

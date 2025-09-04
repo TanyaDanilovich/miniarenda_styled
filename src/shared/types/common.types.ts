@@ -14,13 +14,15 @@ export type SchemaOrgData = {
     itemProp?: string,
     itemScope?: boolean,
 }
+export type SrcSetProps = {
+    480?: string,
+    768?: string,
+    1200?: string,
+}
+
 export type ImageProps = {
     src: string,
-    srcSet?: {
-        480?: string,
-        768?: string,
-        1200?: string,
-    },
+    srcSet?: SrcSetProps|undefined,
     alt: string
 }
 

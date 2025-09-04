@@ -11,7 +11,7 @@ import {BREAKPOINTS} from '../../shared/constants/BREAKPOINTS';
 import {type ImageProps} from '../../shared/types/common.types';
 import ResponsiveImage from '../responsiveImage/ResponsiveImage';
 import {S_InnerContainer} from '../../shared/styled/S_InnerContainer';
-import {Helmet} from 'react-helmet-async';
+import {PreloadImageLink} from '../../shared/PreloadImageLink';
 
 
 type props = {
@@ -26,58 +26,7 @@ export const HeroSlide = ({mainText, additionalText, image, index}: props) => {
     const isFirst: boolean = index === 0
     return (
         <S_HeroSlide>
-            {isFirst && (
-                <Helmet>
-                    {/* ≤480px — только мобилки */}
-                    {image.srcSet?.['480'] && (
-                        <link
-                            rel = "preload"
-                            as = "image"
-                            href = {image.srcSet['480']}
-                            media = "(max-width: 480px)"
-                            fetchPriority = "high"
-                            type = "image/webp"
-                        />
-                    )}
-
-                    {/* 481–768px — мобильные побольше */}
-                    {image.srcSet?.['768'] && (
-                        <link
-                            rel = "preload"
-                            as = "image"
-                            href = {image.srcSet['768']}
-                            media = "(min-width: 481px) and (max-width: 768px)"
-                            fetchPriority = "high"
-                            type = "image/webp"
-                        />
-                    )}
-
-                    {/* 769–1199px — планшеты/малые ноуты */}
-                    {image.srcSet?.['1200'] && (
-                        <link
-                            rel = "preload"
-                            as = "image"
-                            href = {image.srcSet['1200']}
-                            media = "(min-width: 769px) and (max-width: 1199px)"
-                            fetchPriority = "high"
-                            type = "image/webp"
-                        />
-                    )}
-
-                    {/* ≥1200px — десктоп */}
-                    <link
-                        rel = "preload"
-                        as = "image"
-                        href = {image.src}         // 1920w
-                        media = "(min-width: 1200px)"
-                        fetchPriority = "high"
-                        type = "image/webp"
-                    />
-                </Helmet>
-
-            )}
-
-
+            {isFirst && <PreloadImageLink srcSet = {image.srcSet} href = {image.src}/>}
             <S_HeroSliderContent>
                 <S_InnerContainer $padding = {`${BASE}px`}>
                     <S_HeroTitle>{mainText}</S_HeroTitle>

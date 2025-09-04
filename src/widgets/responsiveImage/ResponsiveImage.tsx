@@ -67,7 +67,7 @@ const ResponsiveImage = ({image, sizes = "100vw", ...rest}: props) => {
                 src = {src480 ?? src768 ?? src1200 ?? src1920}
                 alt = {image.alt || 'мини экскаватор'}
                 decoding = "async"
-                {...rest} // тут окажутся loading / fetchPriority
+                {...rest}
             />
         </picture>
     )
