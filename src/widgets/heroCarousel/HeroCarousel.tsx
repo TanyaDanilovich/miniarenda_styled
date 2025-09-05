@@ -8,7 +8,7 @@ import {
 } from '../../shared/ui/slider/appCarouselStyle';
 import type {EmblaOptionsType} from 'embla-carousel';
 import {useDebouncedWindowSize} from '../../shared/hooks/useDebounsedWindowSize';
-import {AppCarousel} from '../../shared/ui/slider/AppCarousel';
+import {AppCarousel, type CarouselAutoplayOptions} from '../../shared/ui/slider/AppCarousel';
 
 
 export type HeroCarouselProps = {
@@ -21,17 +21,19 @@ export const HeroCarousel = ({className}: HeroCarouselProps) => {
         //align: 'center',
         slidesToScroll: 1  // Явно указываем
     }
-    const {height} = useDebouncedWindowSize();
+    const {width, height} = useDebouncedWindowSize();
     console.log("HeroCarousel - ", height)
 
-    const autoplayConfig = {
+    const autoplayConfig: CarouselAutoplayOptions = {
         delay: 8000,
         stopOnInteraction: false,
-        jump: false  // Плавный переход
+        jump: false,
+        playOnInit: false,
+        stopOnMouseEnter:true
     }
 
     return (
-        <S_HeroCarousel id = {"main-hero-carousel"} className = {className} $height = {height*0.93}>
+        <S_HeroCarousel id = {"main-hero-carousel"} className = {className} $height = {height * 0.93} $width = {width}>
             <AppCarousel options = {carouselOptions}
                          autoplay = {autoplayConfig}
                          showDots = {true}
@@ -42,8 +44,9 @@ export const HeroCarousel = ({className}: HeroCarouselProps) => {
     )
 }
 
-const S_HeroCarousel = styled(S_AppCarouselWrapper)`
-    
+const S_HeroCarousel = styled(S_AppCarouselWrapper)<{ $width?: number }>`
+    aspect-ratio:${({$height, $width}) => `${$height}/${$width}` || "1/1"};
+
     ${S_AppCarouselArrowButtonsContainer}{
         justify-content:space-between;
     }

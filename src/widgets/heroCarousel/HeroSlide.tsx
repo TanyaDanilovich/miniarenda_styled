@@ -24,6 +24,7 @@ type props = {
 
 export const HeroSlide = ({mainText, additionalText, image, index}: props) => {
     const isFirst: boolean = index === 0
+    
     return (
         <S_HeroSlide>
             {isFirst && <PreloadImageLink srcSet = {image.srcSet} href = {image.src}/>}

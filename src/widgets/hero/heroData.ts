@@ -34,15 +34,16 @@ export const heroData: HeroSlideData[] = [
         additionalText: "Доставка по Минску и Минской области",
         image: {
             src: imgSlide1_1920w,
+            srcSize: {width: "1920", height: "941"},
             srcSet: {
                 '480': imgSlide1_480w,
                 '768': imgSlide1_768w,
                 '1200': imgSlide1_1200w
-                // src: img1920w,
-                // srcSet: {
-                //     '480': img480w,
-                //     '768': img768w,
-                //     '1200': img1200w
+            },
+            srcSetSize: {
+                '480': {width: "480", height: "561"},
+                '768': {width: "768", height: "897"},
+                '1200': {width: "1200", height: "588"},
             },
             alt: "Аренда мини-экскаватора с гидромолотом и ямобуром"
         }

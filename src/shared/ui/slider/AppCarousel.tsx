@@ -1,7 +1,7 @@
 import type {EmblaCarouselType, EmblaEventType, EmblaOptionsType} from 'embla-carousel'
 import React, {useCallback, useEffect} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
+import Autoplay, {type AutoplayOptionsType} from 'embla-carousel-autoplay'
 import {usePrevNextButtons} from './hooks/usePrevNextButtons';
 import {NextArrowButton, PrevArrowButton} from './CarouselArrowButtons';
 import {useDotButton} from './hooks/useDotButtons';
@@ -13,7 +13,11 @@ import {
 } from './appCarouselStyle';
 
 
-export type CarouselAutoplayOptions = {
+
+
+
+
+export type CarouselAutoplayOptions = AutoplayOptionsType & {
     delay: number
     stopOnInteraction?: boolean
 }

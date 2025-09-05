@@ -19,10 +19,18 @@ export type SrcSetProps = {
     768?: string,
     1200?: string,
 }
+export type ImageSizeProps = { width: string, height: string }
 
+export type SrcSetSizeProps = {
+    480?: ImageSizeProps,
+    768?: ImageSizeProps,
+    1200?: ImageSizeProps,
+}
 export type ImageProps = {
     src: string,
-    srcSet?: SrcSetProps|undefined,
+    srcSize?: ImageSizeProps,
+    srcSet?: SrcSetProps | undefined,
+    srcSetSize?: SrcSetSizeProps | undefined,
     alt: string
 }
 
