@@ -34,10 +34,10 @@ export const S_ReadMoreButton = styled(S_LinkAsButton)<{}>`
     }
 
 
-    & span:nth-child(1) {
-      background-color: ${({theme}) => theme.colors.bg_primary};
-      ${plainTransition()}
-    }
+    // & span:nth-child(1) {
+    //   background-color: ${({theme}) => theme.colors.bg_primary};
+    //   ${plainTransition()}
+    // }
   }
 
 `;

@@ -8,13 +8,13 @@ type props = {
 } & ImgHTMLAttributes<HTMLImageElement>;
 const ResponsiveImage = ({image, sizes = "100vw", ...rest}: props) => {
     const src480 = image.srcSet?.['480'];
-    const srcSetSize480 = image.srcSetSize?.['480'];
+    //const srcSetSize480 = image.srcSetSize?.['480'];
     const src768 = image.srcSet?.['768'];
-    const srcSetSize768 = image.srcSetSize?.['768'];
+    //const srcSetSize768 = image.srcSetSize?.['768'];
     const src1200 = image.srcSet?.['1200'];
-    const srcSetSize1200 = image.srcSetSize?.['1200'];
+    //const srcSetSize1200 = image.srcSetSize?.['1200'];
     const src1920 = image.src;
-    const srcSetSize1920 = image.srcSize;
+    //const srcSetSize1920 = image.srcSize;
 
     return (
         <picture>
