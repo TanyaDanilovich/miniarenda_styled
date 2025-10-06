@@ -1,0 +1,20 @@
+{
+    "name": "miniarenda",
+    "short_name": "miniarenda",
+    "start_url": "https://mini-ekskavator.by/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#fd5d14",
+    "icons": [
+    {
+        "src": "/favicon_excavator_192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "/favicon_excavator_512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+]
+}
