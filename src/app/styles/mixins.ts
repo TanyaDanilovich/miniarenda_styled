@@ -19,7 +19,8 @@ type FontProps = { size?: string, weight?: number }
 
 
 export const OpenSansFont = ({size, weight}: FontProps) => css`
-    font-family:"Open Sans", sans-serif;
+    //font-family:"Open Sans", sans-serif;
+        font-family:"Roboto-Bold", sans-serif;
     font-optical-sizing:auto;
     font-size:${({theme}) => size ?? theme.fonts.size.base};
     font-weight:${({theme}) => weight ?? theme.fonts.weight.regular};

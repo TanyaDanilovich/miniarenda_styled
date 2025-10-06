@@ -2,7 +2,13 @@ import {createGlobalStyle} from "styled-components";
 import {OpenSansFont} from './mixins';
 
 export const GlobalStyle = createGlobalStyle`
-
+    @font-face {
+        font-family: 'Roboto-Bold';
+        src: url('../fonts/Roboto/Roboto-Bold') format('woff2'),
+        url('../fonts/Roboto/Roboto-Bold') format('ttf');
+        font-display: swap;
+    }
+    
   html {
     scroll-behavior: smooth;
     overflow-x:hidden;

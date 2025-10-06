@@ -260,12 +260,12 @@ export const S_FooterItem = styled.div<{}>`
         }
     }
     @media ${({theme}) => theme.mediaMinWidth.desktop}{
-        width:calc(25% - 0.75rem);
+        width:calc(30% - 0.75rem);
         &:nth-child(1){
             padding-left:0;
         }
 
-        &:nth-child(3){
+        &:nth-child(n+1){
             padding-left:2rem;
         }
     }
