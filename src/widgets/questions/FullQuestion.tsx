@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import {S_Flex} from '../../shared/styled/S_Flex';
 import {plainTransition} from '../../app/styles/mixins';
 import {QuestionDropdownText} from './QuestionDropdownText.tsx';
 import {getResponsiveSize} from '../../shared/utils/getResponsiveSize';
@@ -36,18 +35,13 @@ export const FullQuestion = ({question, answer, toggleQuestionCallback, isOpen}:
 
 
 export const S_FullQuestion = styled.div<{ $isOpen: boolean }>`
-    position:relative;
+    
     border:1px solid ${({theme}) => theme.colors.gray};
-
-    ${S_Flex}{
-        background-color:transparent;
-        ${({$isOpen}) => $isOpen && css`
-            background-color:${({theme}) => theme.colors.gainsboro};
-        `
-        }`
+`
 
 
 const S_QuestionHeader = styled.button<{ $isOpen: boolean }>`
+    position:relative;
     padding:${getResponsiveSize(BASE / 2, BASE * 2)};
     padding-left:4.5rem;
     cursor:pointer;
@@ -59,10 +53,17 @@ const S_QuestionHeader = styled.button<{ $isOpen: boolean }>`
     background:transparent;
     border:0;
     text-align:left;
+    ${plainTransition()};
+
+    &:hover{
+        background-color:${({theme}) => theme.colors.gainsboro};
+    }
 
     &:before, &:after{
         position:absolute;
-        inset:1.5rem 1.5rem 1.5rem 1.5rem;
+        top:50%;
+        left:1.5rem;
+        transform:translateY(-50%);
         display:inline-block;
         content:" ";
         width:1rem;
@@ -75,12 +76,14 @@ const S_QuestionHeader = styled.button<{ $isOpen: boolean }>`
     }
 
     &:after{
-        transform:rotate(90deg);
+        transform: translateY(-50%) rotate(90deg);
     }
 
     ${({$isOpen}) => $isOpen && css`
+        background-color:${({theme}) => theme.colors.gainsboro};
+
         &:after{
-            transform:rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
         }
     `};
 
