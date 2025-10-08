@@ -51,6 +51,7 @@ export const S_ServiceCardDropdownText = styled(S_DropdownText)<{}>`
     p{
         height:1px;
         overflow:hidden;
+        //overflow:auto;
     }
 `;
 

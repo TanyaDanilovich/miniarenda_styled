@@ -27,7 +27,7 @@ export const API = {
                 ...subcategoryItem,
                 image: subcategoryItem.images[0],
             };
-        });
+        }).sort((a, b) => a.position - b.position);
     },
 
 

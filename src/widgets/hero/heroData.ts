@@ -50,7 +50,7 @@ export const heroData: HeroSlideData[] = [
     },
     {
         mainText: "Услуги мини-экскаваторов в Минске и Минской области",
-        additionalText: "от 85 руб в час, от 4 часов",
+        additionalText: "от 90 руб в час, от 4 часов",
         image: {
             src: imgSlide2_1920w,
             srcSet: {

@@ -26,11 +26,11 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.SPEED, title: "Скорость передвижения макс.", value: "4 км/ч"},
             {id: MACHINERY_CHARACTERISTICS.WIDTH, title: "Ширина гусеницы", value: "295 мм"},
             {id: MACHINERY_CHARACTERISTICS.CLEARANCE, title: "Дорожный просвет", value: "210 мм"},
-            {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "150, 300, 400, 600, 1000 мм"},
+            {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "200, 300, 350, 400, 600, 1000 мм"},
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
         priceCharacteristics: [
-            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 85 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 90 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
             {
                 id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,
@@ -64,11 +64,11 @@ export const machineriesData: MachineryData[] = [
             {id: MACHINERY_CHARACTERISTICS.SPEED, title: "Скорость передвижения макс.", value: "5 км/ч"},
             {id: MACHINERY_CHARACTERISTICS.WIDTH, title: "Ширина гусеницы", value: "230 мм"},
             {id: MACHINERY_CHARACTERISTICS.CLEARANCE, title: "Дорожный просвет", value: "210 мм"},
-            {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "150, 300, 400, 600, 1000 мм"},
+            {id: MACHINERY_CHARACTERISTICS.BUCKETS, title: "Ковши", value: "200, 300, 350, 400, 600, 1000 мм"},
             {id: MACHINERY_CHARACTERISTICS.AUGERS, title: "Шнеки", value: "200, 250, 300, 350, 400, 500, 600 мм"},
             {id: MACHINERY_CHARACTERISTICS.COUNTRY, title: "Страна производства", value: "Германия"}],
         priceCharacteristics: [
-            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 85 руб/час"},
+            {id: MACHINERY_PRICE_CHARACTERISTICS.PRICE, title: "Цена", value: "от 90 руб/час"},
             {id: MACHINERY_PRICE_CHARACTERISTICS.MINIMUM_ORDER, title: "Минимальный заказ", value: "4 часа"},
             {
                 id: MACHINERY_PRICE_CHARACTERISTICS.CASHLESS_MINIMUM_ORDER,

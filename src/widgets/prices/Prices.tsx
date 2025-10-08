@@ -33,19 +33,19 @@ export const Prices = ({}: props) => {
                             Минимальный срок аренды — <S_Span $fontWeight = {theme.fonts.weight.bold}> 4 часа. </S_Span>
                         </S_P>
 
-                        <S_P>Стоимость аренды с ковшами — <S_Span $fontWeight = {theme.fonts.weight.bold}> от 85 руб. /
+                        <S_P>Стоимость аренды с ковшами — <S_Span $fontWeight = {theme.fonts.weight.bold}> от 90 руб. /
                                                                                                            за 1
                                                                                                            час. </S_Span>
                         </S_P>
 
                         <S_P>Стоимость аренды мини-экскаватора с гидромолотом —
-                            <S_Span $fontWeight = {theme.fonts.weight.bold}> 120 руб. / за 1 час.
+                            <S_Span $fontWeight = {theme.fonts.weight.bold}> 140 руб. / за 1 час.
                             </S_Span>
                         </S_P>
 
                         <S_P>Стоимость аренды мини-экскаватора с
                              гидробуром —
-                            <S_Span $fontWeight = {theme.fonts.weight.bold}> от 12 руб. / за 1 отв.
+                            <S_Span $fontWeight = {theme.fonts.weight.bold}> от 14 руб. / за 1 отв.
                             </S_Span>
                         </S_P>
 
